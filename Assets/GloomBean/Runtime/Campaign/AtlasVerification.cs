@@ -41,12 +41,56 @@ namespace GloomBean.Campaign
             input.frame=new InputFrame{move=Vector2.right};yield return Steps(72);
             C("echo.waits-two-seconds",actor.Body.position.x>start+4&&Mathf.Abs(echo.Echo.Body.position.x-start)<.2f);
             yield return Steps(105);C("echo.replays-input-with-delay",echo.Echo.Body.position.x>start+2&&actor.Body.position.x-echo.Echo.Body.position.x>8,(actor.Body.position.x-echo.Echo.Body.position.x).ToString());
+            var cue=GameAudio.Synthesize("turn");C("audio.original-cue-bounded-and-finite",cue.Length>10000&&cue.All(v=>!float.IsNaN(v)&&!float.IsInfinity(v)&&Mathf.Abs(v)<.3f));
+            C("audio.native-verification-is-muted",game.GetComponent<GameAudio>()&&game.GetComponent<GameAudio>().Muted);
+
+            yield return Arena();var editable=b.Solid("Editable fixture ledge",new Vector2(605,2),new Vector2(3,.4f));var machine=b.Slider(new Vector2(610,2),new Vector2(615,2),Vector2.one);
+            var overlay=StageLayoutSnapshot.Install("fixture",fixture.transform,false);var oldPosition=editable.transform.position;
+            C("layout.captures-static-positive-control",overlay.Nodes.Any(n=>n.target==editable.transform),"nodes="+overlay.Nodes.Count);
+            C("layout.excludes-scripted-machinery",!overlay.Nodes.Any(n=>n.target==machine.transform));
+            editable.transform.position+=Vector3.up*2;editable.transform.localScale=new Vector3(1.5f,1.5f,1);
+            var authored=JsonUtility.FromJson<LayoutPatch>(JsonUtility.ToJson(overlay.Export()));
+            editable.transform.position=oldPosition;editable.transform.localScale=Vector3.one;
+            bool applied=overlay.Apply(authored,out string overlayWhy);overlayWhy+=" changes="+authored.changes.Count+" position="+editable.transform.position+" size="+editable.GetComponent<BoxCollider2D>().size;
+            C("layout.persisted-pose-and-collider-size",applied&&Mathf.Abs(editable.transform.position.y-4)<.001f&&Vector2.Distance(editable.GetComponent<BoxCollider2D>().size,new Vector2(4.5f,.6f))<.001f,overlayWhy);
+            if(authored.changes.Count>0){
+            Vector3 acceptedPosition=editable.transform.position;authored.sourceFingerprint="stale";authored.changes[0].position+=Vector2.right*9;
+            C("layout.stale-patch-rejected-atomically",!overlay.Apply(authored,out overlayWhy)&&editable.transform.position==acceptedPosition);
+            authored.sourceFingerprint=overlay.Fingerprint;authored.changes.Add(authored.changes[0]);
+            C("layout.duplicate-target-rejected",!overlay.Apply(authored,out overlayWhy)&&editable.transform.position==acceptedPosition);
+            }else C("layout.requires-a-real-exported-change",false);
+
+            // Regression for repeated simulated=true writes: velocities alone did not expose the old drift.
+            yield return Arena();input.frame=new InputFrame{move=Vector2.right};yield return Steps(30);host.Acquire(HostKind.Echo);echo=host.Form<EchoForm>();
+            float replayError=0;var witnessed=new List<Vector2>();int comparisons=0;
+            Action<InputFrame,float> observe=(frame,dt)=>{
+                witnessed.Add(actor.Body.position);
+                int old=witnessed.Count-121;
+                if(old>=0&&echo.Echo.Body.simulated){replayError=Mathf.Max(replayError,Vector2.Distance(echo.Echo.Body.position,witnessed[old]));comparisons++;}
+            };
+            actor.Stepped+=observe;yield return Steps(220);actor.Stepped-=observe;
+            C("echo.position-replay-not-just-velocity",comparisons>80&&replayError<.14f,"max error="+replayError+" over "+comparisons+" fixed-step comparisons");
+
+            yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();float inheritedMass=actor.Body.mass,inheritedHeight=actor.Height;
+            host.Acquire(HostKind.Echo,null,true);echo=host.Form<EchoForm>();
+            C("echo.inherits-core-dimensions-and-mass",Mathf.Abs(echo.Echo.Height-inheritedHeight)<.001f&&Mathf.Abs(echo.Echo.Body.mass-inheritedMass)<.001f&&echo.Echo.chargeDisabled,"height="+echo.Echo.Height+" mass="+echo.Echo.Body.mass);
+            C("cure.absent-tenant-preserves-existing-body",host.Cure(HostKind.Marionette)&&host.Has(HostKind.Molt)&&Mathf.Abs(actor.Height-inheritedHeight)<.001f);
+
+            yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();var tetherSource=Source(HostKind.Marionette);tetherSource.rail=a.Rail(new Vector2(596,9),new Vector2(606,9));host.Acquire(HostKind.Marionette,tetherSource,true);host.Cure(HostKind.Marionette);
+            C("composition.cutting-thread-keeps-molt-cost",host.Has(HostKind.Molt)&&actor.chargeDisabled&&actor.Height<1.2f&&actor.Body.mass<.6f,"height="+actor.Height+" mass="+actor.Body.mass+" tackle disabled="+actor.chargeDisabled);
+
+            yield return Arena();var thin=b.Platform(new Vector2(600,1.8f),new Vector2(5,.4f));thin.AddComponent<OneWaySurface>();yield return Steps(3);
+            input.frame=new InputFrame{jump=true,jumpHeld=true};yield return Steps(1);input.frame=new InputFrame{jumpHeld=true};float thinPeak=actor.Feet.y;
+            for(int step=0;step<70;step++){yield return tick;thinPeak=Mathf.Max(thinPeak,actor.Feet.y);}
+            C("oneway.pass-up-and-land-on-top",thinPeak>2.15f&&actor.Grounded&&Mathf.Abs(actor.Feet.y-2)<.12f,"peak="+thinPeak+" landing="+actor.Feet.y);
+
             yield return Arena();host.Acquire(HostKind.Echo);echo=host.Form<EchoForm>();echo.Leading=true;start=actor.Body.position.x;
             input.frame=new InputFrame{move=Vector2.right};yield return Steps(70);C("echo.leading-is-body-latency",echo.Echo.Body.position.x>start+3&&Mathf.Abs(actor.Body.position.x-start)<.5f,"body="+(actor.Body.position.x-start)+" echo="+(echo.Echo.Body.position.x-start));
             yield return Steps(75);C("echo.delayed-primary-eventually-moves",actor.Body.position.x>start+1);
 
             yield return Arena();var rail=a.Rail(new Vector2(600,9),new Vector2(604,9));var next=a.Rail(new Vector2(604,9),new Vector2(604,16));var source=Source(HostKind.Marionette);source.rail=rail;host.Acquire(source.kind,source);var puppet=host.Form<MarionetteForm>();input.frame=new InputFrame{move=Vector2.right};yield return Steps(55);
             C("marionette.anchor-follows-rail",puppet.Joint.connectedAnchor.x>603.8f);C("marionette.body-is-tethered",Mathf.Abs(Vector2.Distance(puppet.Joint.connectedAnchor,actor.Body.position+Vector2.up*.5f)-puppet.Joint.distance)<.5f);
+            C("marionette.thread-does-not-push-like-a-strut",puppet.Joint.maxDistanceOnly&&puppet.Joint.enableCollision);
             C("marionette.transfers-at-junction",puppet.Transfer()&&puppet.Rail==next);float anchor=puppet.Joint.connectedAnchor.y;input.frame=new InputFrame{move=Vector2.up};yield return Steps(30);C("marionette.vertical-rail",puppet.Joint.connectedAnchor.y>anchor+1);
 
             yield return Arena();host.Acquire(HostKind.Molt);var molt=host.Form<MoltForm>();C("molt.first-real-skin",molt.Shed()&&host.Husks.Count==1&&actor.Height<1.2f);
@@ -117,7 +161,7 @@ namespace GloomBean.Campaign
                     var sourceKinds=session.GetComponentsInChildren<HostSource>(true).Select(s=>s.kind).ToHashSet();foreach(var k in sourceKinds)seen.Add(k);
                     C("course."+level.id+".declared-tenants-present",level.possessions.All(k=>sourceKinds.Contains((HostKind)Enum.Parse(typeof(HostKind),k))),string.Join(",",sourceKinds));
                     Overview(session,Path.Combine(dir,level.id+"-outward.png"));session.Turn();yield return Steps(40);
-                    C("course."+level.id+".turn-state",session.Phase==RunPhase.Returning&&TurnState(level.course,session));Overview(session,Path.Combine(dir,level.id+"-return.png"));
+                    C("course."+level.id+".turn-state",session.Phase==RunPhase.Returning&&TurnState(level.course,session));if(level.course==1)C("nail.withdrawn-after-pulling",!session.GetComponentInChildren<TurnSwitch>().GetComponent<Collider2D>().enabled);Overview(session,Path.Combine(dir,level.id+"-return.png"));
                 }
                 yield return game.Load(world.boss,true);yield return Steps(8);game.Session.player.disabled=true;game.Session.player.Body.simulated=false;var boss=game.Session.GetComponentInChildren<AtlasBoss>();C("boss."+world.id+".distinct-mechanical-encounter",boss&&boss.phases==3&&boss.Solve!=null&&boss.EnterPhase!=null);
                 Overview(game.Session,Path.Combine(dir,world.boss.id+".png"));

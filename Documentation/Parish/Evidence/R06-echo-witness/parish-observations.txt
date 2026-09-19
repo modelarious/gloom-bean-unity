@@ -1,0 +1,124 @@
+BEGIN GB-L02 Belfry of Late Voices
+TRACE t=0.50 body=(2.19, 0.76) echo=none
+TRACE t=1.00 body=(4.92, 0.76) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+PASS GB-L02 walk 6.8 | (6.61, 0.76) feet=0.01 hp=6
+PASS GB-L02 bell-wisp contact | (6.61, 0.76) feet=0.01 hp=6
+EVENT t=1.38 bell Lower clapper
+TRACE t=1.51 body=(6.79, 1.86) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+TRACE t=2.01 body=(8.19, 2.75) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+PASS GB-L02 jump 9 / 2 peak 2.37 | (8.79, 2.75) feet=2.00 hp=6
+TRACE t=2.52 body=(8.97, 3.69) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+EVENT t=2.85 echo-witness t=0.017 expected=(4.00, 0.76) actual=(4.00, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.85 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.87 echo-witness t=0.033 expected=(4.09, 0.76) actual=(4.08, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.87 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.88 echo-witness t=0.050 expected=(4.18, 0.76) actual=(4.16, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.88 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.90 echo-witness t=0.067 expected=(4.28, 0.76) actual=(4.24, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.90 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.92 echo-witness t=0.083 expected=(4.37, 0.76) actual=(4.32, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.92 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.93 echo-witness t=0.100 expected=(4.46, 0.76) actual=(4.39, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.93 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.95 echo-witness t=0.117 expected=(4.55, 0.76) actual=(4.48, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.95 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.97 echo-witness t=0.133 expected=(4.64, 0.76) actual=(4.56, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.97 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=2.98 echo-witness t=0.150 expected=(4.73, 0.76) actual=(4.64, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=2.98 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.00 echo-witness t=0.167 expected=(4.83, 0.76) actual=(4.72, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.00 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.02 echo-witness t=0.183 expected=(4.92, 0.76) actual=(4.80, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.02 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+TRACE t=3.02 body=(11.57, 4.76) echo=(4.89, 0.76) velocity=(5.50, 0.00) live=True
+EVENT t=3.03 echo-witness t=0.200 expected=(5.01, 0.76) actual=(4.89, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.03 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.05 echo-witness t=0.217 expected=(5.10, 0.76) actual=(4.97, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.05 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.07 echo-witness t=0.233 expected=(5.19, 0.76) actual=(5.06, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.07 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.08 echo-witness t=0.250 expected=(5.28, 0.76) actual=(5.15, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.08 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.10 echo-witness t=0.267 expected=(5.38, 0.76) actual=(5.24, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.10 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.12 echo-witness t=0.283 expected=(5.47, 0.76) actual=(5.33, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.12 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.13 echo-witness t=0.300 expected=(5.56, 0.76) actual=(5.37, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.13 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.15 echo-witness t=0.317 expected=(5.65, 0.76) actual=(5.42, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.15 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.17 echo-witness t=0.333 expected=(5.74, 0.76) actual=(5.47, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.17 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.18 echo-witness t=0.350 expected=(5.83, 0.76) actual=(5.52, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.18 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.20 echo-witness t=0.367 expected=(5.93, 0.76) actual=(5.57, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.20 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.22 echo-witness t=0.383 expected=(6.02, 0.76) actual=(5.62, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.22 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.23 echo-witness t=0.400 expected=(6.11, 0.76) actual=(5.67, 0.76) before=(5.50, 0.00) f=(1.00, 0.00) j=False E=False
+EVENT t=3.23 echo-velocity expected=(5.50, -1.00) actual=(5.50, -1.00) ground=True
+EVENT t=3.25 echo-witness t=0.417 expected=(6.20, 0.76) actual=(5.72, 0.76) before=(5.50, 0.00) f=(0.87, 0.00) j=False E=False
+EVENT t=3.25 echo-velocity expected=(4.78, -1.00) actual=(4.78, -1.00) ground=True
+EVENT t=3.27 echo-witness t=0.433 expected=(6.28, 0.76) actual=(5.77, 0.76) before=(4.78, 0.00) f=(0.75, 0.00) j=False E=False
+EVENT t=3.27 echo-velocity expected=(4.14, -1.00) actual=(4.14, -1.00) ground=True
+EVENT t=3.28 echo-witness t=0.450 expected=(6.35, 0.76) actual=(5.81, 0.76) before=(4.14, 0.00) f=(0.65, 0.00) j=False E=False
+EVENT t=3.28 echo-velocity expected=(3.60, -1.00) actual=(3.60, -1.00) ground=True
+EVENT t=3.30 echo-witness t=0.467 expected=(6.41, 0.76) actual=(5.84, 0.76) before=(3.60, 0.00) f=(0.57, 0.00) j=False E=False
+EVENT t=3.30 echo-velocity expected=(3.12, -1.00) actual=(3.12, -1.00) ground=True
+EVENT t=3.32 echo-witness t=0.483 expected=(6.46, 0.76) actual=(5.88, 0.76) before=(3.12, 0.00) f=(0.49, 0.00) j=False E=False
+EVENT t=3.32 echo-velocity expected=(2.70, -1.00) actual=(2.70, -1.00) ground=True
+EVENT t=3.33 echo-witness t=0.500 expected=(6.51, 0.76) actual=(5.90, 0.76) before=(2.70, 0.00) f=(0.43, 0.00) j=False E=False
+EVENT t=3.33 echo-velocity expected=(2.34, -1.00) actual=(2.34, -1.00) ground=True
+EVENT t=3.35 echo-witness t=0.517 expected=(6.54, 0.76) actual=(5.93, 0.76) before=(2.34, 0.00) f=(0.37, 0.00) j=False E=False
+EVENT t=3.35 echo-velocity expected=(2.03, -1.00) actual=(2.03, -1.00) ground=True
+EVENT t=3.37 echo-witness t=0.533 expected=(6.58, 0.76) actual=(5.95, 0.76) before=(2.03, 0.00) f=(0.32, 0.00) j=False E=False
+EVENT t=3.37 echo-velocity expected=(1.76, -1.00) actual=(1.76, -1.00) ground=True
+EVENT t=3.38 echo-witness t=0.550 expected=(6.61, 0.76) actual=(5.97, 0.76) before=(1.76, 0.00) f=(0.00, 0.00) j=False E=True
+EVENT t=3.38 echo-velocity expected=(0.68, -1.00) actual=(0.68, -1.00) ground=True
+EVENT t=3.40 echo-witness t=0.567 expected=(6.62, 0.76) actual=(5.98, 0.76) before=(0.68, 0.00) f=(0.00, 0.00) j=False E=False
+EVENT t=3.40 echo-velocity expected=(0.00, -1.00) actual=(0.00, -1.00) ground=True
+EVENT t=3.42 echo-witness t=0.583 expected=(6.62, 0.76) actual=(5.98, 0.76) before=(0.00, 0.00) f=(1.00, 0.00) j=True E=False
+EVENT t=3.42 echo-velocity expected=(0.75, 12.40) actual=(0.75, 12.40) ground=False
+EVENT t=3.43 echo-witness t=0.600 expected=(6.63, 0.97) actual=(5.98, 0.89) before=(0.75, 12.40) f=(1.00, 0.00) j=False E=False
+EVENT t=3.43 echo-velocity expected=(1.15, 11.83) actual=(1.15, 11.83) ground=False
+EVENT t=3.45 echo-witness t=0.617 expected=(6.65, 1.16) actual=(6.00, 1.03) before=(1.15, 11.83) f=(1.00, 0.00) j=False E=False
+EVENT t=3.45 echo-velocity expected=(1.55, 11.27) actual=(1.55, 11.27) ground=False
+EVENT t=3.47 echo-witness t=0.633 expected=(6.68, 1.35) actual=(6.01, 1.16) before=(1.55, 11.27) f=(1.00, 0.00) j=False E=False
+EVENT t=3.47 echo-velocity expected=(1.95, 10.70) actual=(1.95, 10.70) ground=False
+EVENT t=3.48 echo-witness t=0.650 expected=(6.71, 1.53) actual=(6.04, 1.28) before=(1.95, 10.70) f=(1.00, 0.00) j=False E=False
+EVENT t=3.48 echo-velocity expected=(2.35, 10.13) actual=(2.35, 10.13) ground=False
+EVENT t=3.50 echo-witness t=0.667 expected=(6.75, 1.70) actual=(6.07, 1.40) before=(2.35, 10.13) f=(1.00, 0.00) j=False E=False
+EVENT t=3.50 echo-velocity expected=(2.75, 9.57) actual=(2.75, 9.57) ground=False
+EVENT t=3.52 echo-witness t=0.683 expected=(6.79, 1.86) actual=(6.10, 1.52) before=(2.75, 9.57) f=(1.00, 0.00) j=False E=False
+EVENT t=3.52 echo-velocity expected=(3.15, 9.00) actual=(3.15, 9.00) ground=False
+TRACE t=3.53 body=(12.70, 4.75) echo=(6.15, 1.67) velocity=(3.15, 9.00) live=True
+PASS GB-L02 jump 13 / 4 peak 4.37 | (12.79, 4.75) feet=4.00 hp=6
+TRACE t=4.03 body=(14.51, 7.12) echo=(6.98, 2.67) velocity=(0.00, 0.00) live=True
+EVENT t=4.45 echo-witness t=1.617 expected=(8.79, 2.75) actual=(6.98, 2.66) before=(-0.06, -0.05) f=(1.00, 0.00) j=True E=False
+TRACE t=4.54 body=(16.46, 6.75) echo=(7.10, 3.45) velocity=(2.69, 9.57) live=True
+PASS GB-L02 jump 17 / 6 peak 6.37 | (16.79, 6.75) feet=6.00 hp=6
+TRACE t=5.04 body=(17.51, 6.75) echo=(9.24, 3.50) velocity=(4.29, -7.43) live=True
+PASS GB-L02 walk 17.8 | (17.58, 6.75) feet=6.00 hp=6
+EVENT t=5.08 bell Upper clapper
+TRACE t=5.55 body=(19.45, 9.06) echo=(10.06, 2.75) velocity=(0.92, 0.00) live=True
+EVENT t=5.65 echo-witness t=2.817 expected=(12.79, 4.75) actual=(10.12, 2.75) before=(0.67, 0.00) f=(1.00, 0.00) j=True E=False
+TRACE t=6.05 body=(20.67, 8.75) echo=(11.00, 4.68) velocity=(0.76, 0.55) live=True
+PASS GB-L02 jump 21 / 8 peak 8.37 | (20.78, 8.75) feet=8.00 hp=6
+TRACE t=6.55 body=(22.67, 8.75) echo=(11.55, 4.76) velocity=(1.61, 0.00) live=True
+EVENT t=6.71 pulse-arrived Left brake:1
+TRACE t=7.06 body=(25.42, 8.75) echo=(12.47, 4.76) velocity=(2.31, 0.00) live=True
+EVENT t=7.08 echo-witness t=4.250 expected=(17.58, 6.75) actual=(12.50, 4.76) before=(2.00, 0.00) f=(0.00, 0.00) j=False E=True
+EVENT t=7.12 echo-witness t=4.283 expected=(17.60, 6.75) actual=(12.51, 4.76) before=(0.00, 0.00) f=(1.00, 0.00) j=True E=False
+PASS GB-L02 walk 26 | (25.78, 8.75) feet=8.00 hp=6
+TRACE t=7.56 body=(25.80, 8.75) echo=(13.93, 6.81) velocity=(4.64, -2.33) live=True
+TRACE t=8.06 body=(25.80, 8.75) echo=(14.73, 4.75) velocity=(0.99, 0.00) live=True
+TRACE t=8.57 body=(25.80, 8.75) echo=(16.68, 2.97) velocity=(5.50, -10.63) live=True
+EVENT t=8.92 pulse-arrived Right brake:1
+TRACE t=9.07 body=(25.80, 8.75) echo=(18.57, 0.76) velocity=(4.75, 0.00) live=True
+TRACE t=9.57 body=(25.80, 8.75) echo=(18.79, 0.76) velocity=(0.00, 0.00) live=True
+TRACE t=10.08 body=(25.80, 8.75) echo=(18.79, 0.76) velocity=(0.00, 0.00) live=True
+TRACE t=10.58 body=(25.80, 8.75) echo=(18.79, 0.76) velocity=(0.00, 0.00) live=True
+FAIL GB-L02 two traveling signals release lift | (25.80, 8.75) feet=8.00 hp=6
+FAIL GB-L02 upper key | (25.80, 8.75) feet=8.00 hp=6
+FAIL GB-L02 crack the main bell | (25.80, 8.75) feet=8.00 hp=6
+FAIL GB-L02 critical path returns to entrance | (25.80, 8.75) feet=8.00 hp=6

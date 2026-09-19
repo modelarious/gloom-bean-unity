@@ -50,13 +50,13 @@ namespace GloomBean.Campaign
         }
         public bool Cure(HostKind only=HostKind.None,bool force=false)
         {
-            if(Forms.Count==0)return true;
+            if(Forms.Count==0||(only!=HostKind.None&&!Has(only)))return true;
             // Restoration is rejected, not clipped through a ceiling or a still-solid wall.
             if(!force&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
             for(int i=Forms.Count-1;i>=0;i--)if(only==HostKind.None||Forms[i].Kind==only)
             {var f=Forms[i];f.Leave();Forms.RemoveAt(i);Cured?.Invoke(f.Kind);RuntimeEvents.Emit("cure",f.Kind.ToString());}
             focus=Mathf.Clamp(focus,0,Mathf.Max(0,Forms.Count-1));
-            if(Forms.Count==0)ResetBody();return true;
+            if(Forms.Count==0)ResetBody();else Form<MoltForm>()?.Refresh();return true;
         }
         public bool CanStand(Vector2 p)
         {

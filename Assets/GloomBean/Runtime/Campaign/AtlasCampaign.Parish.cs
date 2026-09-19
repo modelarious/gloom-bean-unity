@@ -18,7 +18,7 @@ namespace GloomBean.Campaign
             a.Steps(61,-2.2f,6,5,1.5f,4);a.Ledge(92,5.3f,13);a.Key(81,5);a.Nail(96,5.75f);a.Health(60,-2.8f);
             var backs=new List<GameObject>();for(int i=0;i<9;i++){var g=a.Ledge(28+i*7,5.3f,7.4f);g.name="Backstage return brace";g.SetActive(false);backs.Add(g);}
             b.session.Turned+=()=>{foreach(var g in welcomeSteps)g.SetActive(false);foreach(var g in backs)g.SetActive(true);foreach(var g in pretty)g.SetActive(false);horror.SetActive(true);};
-            var jawPlate=b.Plate(new Vector2(27,5.45f));var jaw=b.Door(new Vector2(20,9),new Vector2(.4f,3),jawPlate);jaw.holdSeconds=.6f;
+            var jawPlate=b.Plate(new Vector2(27,5.45f));var jaw=b.Door(new Vector2(20,9),new Vector2(.4f,3),jawPlate);jaw.holdSeconds=1.2f;
             // The secret lives above the exit route. Its closed jaw must never gate ordinary completion.
             a.Ledge(22,7.4f,3);a.Mercy(18,8.9f);
             // Return-only shelves must not create a 1.2 m headroom trap over the opening 1.5 m Host.
@@ -39,8 +39,15 @@ namespace GloomBean.Campaign
             var returnGate=b.Door(new Vector2(11,28),new Vector2(.7f,18));var strong=a.Receiver(new Vector2(11,28));strong.gate=returnGate;strong.minimumStrength=2;strong.hold=12;
             a.Bell(new Vector2(13,31.7f),new[]{new Vector2(13,31.7f),new Vector2(10,32),new Vector2(10,28),new Vector2(11,28)},strong);
             a.Ledge(6,27,8);a.Ledge(5,20,6);a.Ledge(7,13,5);a.Ledge(5,6,6);
-            var secretPlate=b.Plate(new Vector2(18,8.15f));var secretDoor=b.Door(new Vector2(16,17),new Vector2(.5f,4),secretPlate);secretDoor.holdSeconds=9;
-            b.Solid("Echo-catching cabinet",new Vector2(16.7f,9),new Vector2(1,2));a.Ledge(16,15,7);a.Mercy(14,16.3f);a.Health(26,9.2f);
+            var secretPlate=b.Plate(new Vector2(16.7f,10.14f));secretPlate.name="Echo high clapper";
+            var secretDoor=b.Door(new Vector2(16,20),new Vector2(.5f,10),secretPlate);secretDoor.name="Mercy acoustic shutter";secretDoor.holdSeconds=9;
+            var shrineRelease=b.Switch(new Vector2(13.5f,16),"UNHOOK SHUTTER");shrineRelease.Changed+=v=>{secretDoor.latched=true;secretDoor.SetOpen(true);};
+            b.Solid("Echo-catching cabinet",new Vector2(16.7f,9),new Vector2(1,2));
+            a.Ledge(19,8,10).AddComponent<OneWaySurface>();a.Ledge(22,15,12).AddComponent<OneWaySurface>();
+            a.Ledge(14,15,4);b.Solid("Bell shrine roof",new Vector2(14,25),new Vector2(4.5f,.6f));b.Solid("Bell shrine back",new Vector2(11.8f,20),new Vector2(.5f,10));
+            a.Ledge(22,17,3).AddComponent<OneWaySurface>();a.Ledge(25,19,3).AddComponent<OneWaySurface>();a.Ledge(29,20,3).AddComponent<OneWaySurface>();
+            a.Mercy(14,16.3f);a.Health(26,9.2f);
+            b.Tip(new Vector2(21,15.8f),"The lift carried you, but not your past. Listen below: the cabinet catches your echo. A short leftward jump places it on the high clapper.");
             b.session.Turned+=()=>{dual.latched=true;upper.speed=3.4f;};
             b.Tip(new Vector2(7,2),"E rings a bell. Follow the traveling light along its rope. Two brakes must hear together to release the lift.");a.Cure(HostKind.Echo,3,1);
         }
@@ -63,12 +70,12 @@ namespace GloomBean.Campaign
             a.Begin(new Rect(-8,-10,118,39),new Vector2(2,1));var b=a.b;a.Floor(-5,26);a.Floor(26,46,2);a.Floor(62,105,2);a.Exit(2,1.1f);a.Source(HostKind.Molt,7);
             var plate=b.Plate(new Vector2(13,.14f),.7f);var throat=b.Door(new Vector2(25,3.5f),new Vector2(.6f,7),plate);throat.holdSeconds=.5f;
             b.Solid("Borrowed skin low ceiling",new Vector2(34,3.85f),new Vector2(12,1));a.Ledge(23,1.6f,5);
-            var bridge=a.Hinge(new Vector2(46,2),16,82);var seam=b.Switch(new Vector2(42,3),"PEEL SEAM");seam.Changed+=v=>{bridge.targetAngle=v?0:82;bridge.folding=true;};
+            var bridge=a.Hinge(new Vector2(46,1.775f),16,82);var seam=b.Switch(new Vector2(42,3),"PEEL SEAM");seam.Changed+=v=>{bridge.targetAngle=v?0:82;bridge.folding=true;};
             var rail=a.Rail(new Vector2(42,13),new Vector2(78,13));a.Source(HostKind.Marionette,52,3,true).rail=rail;a.Cure(HostKind.Marionette,64,3);a.Cure(HostKind.Marionette,43,3);a.Source(HostKind.Echo,68,3,true);
             var hide=b.Solid("Returning room-skin",new Vector2(79,4),new Vector2(1,4),new Color(.67f,.35f,.4f),Layers.Moving).AddComponent<SkinReturn>();hide.home=new Vector2(64,4);seam.Changed+=v=>hide.gameObject.SetActive(!v);
             var returnSpider=a.Source(HostKind.Marionette,83,5,true);returnSpider.rail=rail;returnSpider.gameObject.SetActive(false);
-            a.Ledge(84,4,5);a.Ledge(91,6,6);a.Ledge(100,8,9);a.Key(93,7.5f);a.Nail(103,8.4f);
-            a.Ledge(43,3.3f,3);a.Ledge(30,5,4);a.Ledge(34,7,4);a.Ledge(39,7,5);b.Solid("Fine decorative seam roof",new Vector2(38,7.92f),new Vector2(10,.8f));a.Mercy(41,7.25f);
+            a.Ledge(84,4,6).AddComponent<OneWaySurface>();a.Ledge(89,6,6).AddComponent<OneWaySurface>();a.Ledge(94,8,6).AddComponent<OneWaySurface>();a.Ledge(100,8,9);a.Key(97,9.2f);a.Nail(103,8.4f);
+            a.Ledge(43,3.3f,3).AddComponent<OneWaySurface>();a.Ledge(30,5,4);a.Ledge(33,7,4).AddComponent<OneWaySurface>();a.Ledge(39,7,8);b.Solid("Fine decorative seam roof",new Vector2(38,7.92f),new Vector2(10,.8f));a.Mercy(41,7.25f);
             b.session.Turned+=()=>{hide.gameObject.SetActive(true);hide.crawling=true;rail.loose=true;returnSpider.gameObject.SetActive(true);};a.Health(67,3.2f);a.Cure(HostKind.None,4,1,true);
             b.Tip(new Vector2(9,2),"Shed a real skin on the scale. The smaller body can move through the wardrobe's throat; the body you leave behind still matters.");
         }

@@ -78,7 +78,7 @@ namespace GloomBean.Campaign
             if(!Rail){Notice("The spider has no connected overhead rail.");return;}
             railT=Rail.Nearest(Actor.Body.position);Joint=Actor.gameObject.AddComponent<DistanceJoint2D>();Joint.autoConfigureConnectedAnchor=false;Joint.autoConfigureDistance=false;
             Joint.anchor=Vector2.up*.5f;Joint.connectedAnchor=Rail.Point(railT);Joint.distance=Mathf.Clamp(Vector2.Distance(Joint.connectedAnchor,Actor.Body.position+Vector2.up*.5f),1,12);
-            Joint.maxDistanceOnly=false;Joint.enableCollision=true;Actor.chargeDisabled=true;Actor.CancelActions();
+            Joint.maxDistanceOnly=true;Joint.enableCollision=true;Actor.chargeDisabled=true;Actor.CancelActions();
         }
         public override bool Move(InputFrame f,float dt)
         {
@@ -122,7 +122,7 @@ namespace GloomBean.Campaign
                 h.GetComponent<Collider2D>().enabled=false;UnityEngine.Object.Destroy(h.gameObject);host.Husks.RemoveAt(i);Refresh();return true;}
             Notice("Your last skin is out of reach.");return false;
         }
-        void Refresh(){float s=host.Husks.Count==0?1:host.Husks.Count==1?.73f:.48f;Actor.SetStandingSize(new Vector2(.88f,1.5f)*s);Actor.Body.mass=s*s;Actor.chargeDisabled=host.Husks.Count>0;}
+        public void Refresh(){float s=host.Husks.Count==0?1:host.Husks.Count==1?.73f:.48f;Actor.SetStandingSize(new Vector2(.88f,1.5f)*s);Actor.Body.mass=s*s;Actor.chargeDisabled=host.Husks.Count>0;}
         public override void Leave(){Actor.Body.mass=1;Actor.chargeDisabled=false;Actor.RestoreShape();}
     }
     public sealed class CoffinForm : HostForm

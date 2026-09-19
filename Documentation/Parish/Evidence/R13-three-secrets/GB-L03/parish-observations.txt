@@ -1,0 +1,26 @@
+BEGIN GB-L03 The Puppet Laundry
+PASS GB-L03 walk 8 | (7.85, 0.76) feet=0.01 hp=6
+PASS GB-L03 spider strings Host | (7.85, 0.76) feet=0.01 hp=6
+PASS GB-L03 thread 29 length 9.5 | (35.03, 2.96) feet=2.21 hp=6
+PASS GB-L03 thread 43 length 9.5 | (46.00, 1.69) feet=0.94 hp=6
+PASS GB-L03 thread 43 length 2 | (44.47, 9.16) feet=8.41 hp=6
+PASS GB-L03 thread 23 length 2 | (42.91, 20.27) feet=19.52 hp=6
+PASS GB-L03 thread 47 length 2 | (48.72, 21.70) feet=20.95 hp=6
+PASS GB-L03 cabinet Mercy | (48.72, 21.70) feet=20.95 hp=6
+PASS GB-L03 thread 43 length 2 | (41.55, 21.25) feet=20.50 hp=6
+PASS GB-L03 thread 12 length 2 | (44.38, 10.17) feet=9.42 hp=6
+PASS GB-L03 thread 43 length 11.5 | (43.47, -0.70) feet=-1.45 hp=6
+PASS GB-L03 lower body before the hanging sheet | (43.47, -0.70) feet=-1.45 hp=6
+PASS GB-L03 thread 53 length 11.5 | (58.28, 1.33) feet=0.58 hp=6
+PASS GB-L03 thread 76 length 10.5 | (81.80, 3.05) feet=2.30 hp=6
+PASS GB-L03 thread 89 length 5.5 | (93.99, 10.37) feet=9.62 hp=6
+PASS GB-L03 physical laundry key | (86.49, 7.50) feet=6.75 hp=6
+PASS GB-L03 thread 99 length 6.4 | (98.87, 6.84) feet=6.09 hp=6
+PASS GB-L03 lines cut on Turn | (98.87, 6.83) feet=6.08 hp=6
+PASS GB-L03 thread 77 length 5.5 | (76.62, 4.95) feet=4.20 hp=6
+PASS GB-L03 thread 62 length 10.5 | (64.78, 0.80) feet=0.05 hp=6
+PASS GB-L03 thread 53 length 9.5 | (48.46, 2.55) feet=1.80 hp=6
+PASS GB-L03 thread 40 length 9.5 | (40.41, -0.49) feet=-1.24 hp=6
+PASS GB-L03 shears release the body | (3.34, 0.75) feet=0.00 hp=6
+PASS GB-L03 walk 2 | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L03 critical path returns to entrance | (3.15, 0.75) feet=0.00 hp=6

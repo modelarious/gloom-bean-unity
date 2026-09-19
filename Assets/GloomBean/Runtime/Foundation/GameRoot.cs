@@ -57,6 +57,7 @@ namespace GloomBean.Foundation
             Save=new SaveStore(savePath);
             if(!UnityEngine.Camera.main){var cam=new GameObject("Menu Camera").AddComponent<UnityEngine.Camera>();cam.tag="MainCamera";cam.orthographic=true;cam.backgroundColor=new Color(.045f,.035f,.075f);cam.transform.position=new Vector3(0,0,-10);}
             if(!UnityEngine.Camera.main.GetComponent<AudioListener>())UnityEngine.Camera.main.gameObject.AddComponent<AudioListener>();
+            gameObject.AddComponent<GameAudio>().Initialize(testMode);
             if(testMode)StartCoroutine(BeginVerification());
         }
         static string Argument(string[] args,string flag,string fallback)
@@ -102,6 +103,7 @@ namespace GloomBean.Foundation
             Session=stageRoot.gameObject.AddComponent<StageSession>();Session.Configure(d,practice?null:Save);
             var cam=UnityEngine.Camera.main;var follow=cam.GetComponent<FollowCamera>();if(!follow)follow=cam.gameObject.AddComponent<FollowCamera>();Session.Camera=follow;
             var builder=new StageBuilder(stageRoot,Session);Source.Build(d,builder);
+            StageLayoutSnapshot.Install(d.id,stageRoot);
             follow.target=Session.player.transform;follow.secondary=null;follow.Snap();cam.backgroundColor=builder.background;
             Session.player.GetComponent<ActorView>().corrupted=d.atlas&&IsCorrupted;
             Session.Completed+=()=>{screen=d.boss&&d.worldId=="W5"?ScreenMode.Ending:ScreenMode.Clear;Time.timeScale=0;choice=0;};
@@ -202,7 +204,7 @@ namespace GloomBean.Foundation
                 Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));GUI.Label(new Rect(50,35,860,55),Practice?"CHOOSE A WORLD — PRACTICE":"CHOOSE A WORLD",heading);
                 for(int i=0;i<worlds.Length;i++)
                 {
-                    bool open=Practice||i==0||Save.Data.cleared.Contains(worlds[i-1].boss.id);
+                    bool open=CampaignProgression.WorldOpen(worlds,i,Save.Data,Practice);
                     if(Button(new Rect(55,108+i*70,830,55),worlds[i].title+(open?"":"  [clear previous boss]"),open)){worldIndex=i;screen=ScreenMode.Levels;choice=0;}
                 }
                 if(Button(new Rect(55,500,350,43),"Back")){screen=ScreenMode.Home;choice=0;}
@@ -214,10 +216,10 @@ namespace GloomBean.Foundation
                 for(int i=0;i<world.levels.Length;i++)
                 {
                     var stage=world.levels[i];bool done=Save.Data.cleared.Contains(stage.id);all&=done;
-                    bool unlocked=Practice||i==0||Save.Data.cleared.Contains(world.levels[i-1].id);
+                    bool unlocked=CampaignProgression.LevelOpen(world,i,Save.Data,Practice);
                     if(Button(new Rect(55,106+i*64,830,49),(i+1)+". "+stage.title+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
                 }
-                if(Button(new Rect(55,380,830,52),"BOSS — "+world.boss.title,Practice||all))LoadStage(world.boss,Practice);
+                if(Button(new Rect(55,380,830,52),"BOSS — "+world.boss.title,CampaignProgression.BossOpen(world,Save.Data,Practice)))LoadStage(world.boss,Practice);
                 if(Button(new Rect(55,470,350,44),"World select")){screen=ScreenMode.Worlds;choice=0;}
             }
             if(screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
@@ -240,7 +242,7 @@ namespace GloomBean.Foundation
             if(controls)
             {
                 Panel(new Rect(95,90,770,420),new Color(.02f,.015f,.04f,.98f));GUI.Label(new Rect(119,108,725,35),"CONTROLS / MOVEMENT VOCABULARY",heading);
-                GUI.Label(new Rect(119,153,715,332),"Move: WASD / arrows / left stick\nJump: Space / Z / gamepad A (release early for a shorter jump)\nRun: Shift / LB. Tackle: J / X / gamepad X\nGround pound: L or Down + tackle while airborne\nCrouch / crawl: Down. Start a roll by crouching on a slope\nCarry / throw: K / C / gamepad Y (stun first; aim up/down)\nSwim dash: tackle while swimming. Surface jump: A / Space\nInteract / pull Nail: E / gamepad B\nPossession action: U / RB. Secondary / swap: I / Back\nPause: Esc / Start. Close this card: F1\n\nPossessions are acquired from entities in the level, never from a menu.\nTheir on-screen short rules appear only after contact.",body);
+                GUI.Label(new Rect(119,153,715,332),"Move: WASD / arrows / left stick\nJump: Space / Z / gamepad A (release early for a shorter jump)\nRun: Shift / LB. Tackle: J / X / gamepad X\nGround pound: L or Down + tackle while airborne\nCrouch / crawl: Down. Start a roll by crouching on a slope\nCarry / throw: K / C / gamepad Y (stun first; aim up/down)\nSwim dash: tackle while swimming. Surface jump: A / Space\nInteract / pull Nail: E / gamepad B\nPossession action: U / RB. Secondary / swap: I / Back\nPause: Esc / Start. Close this card: F1. Sound on/off: F4\n\nPossessions are acquired from entities in the level, never from a menu.\nTheir on-screen short rules appear only after contact.",body);
             }
             if(Event.current.type==EventType.Repaint&&buttonIndex>0){choice=Mathf.Clamp(choice,0,buttonIndex-1);pendingEnter=false;}
         }

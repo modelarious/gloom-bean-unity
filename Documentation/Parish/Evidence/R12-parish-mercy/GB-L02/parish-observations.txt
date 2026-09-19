@@ -1,0 +1,53 @@
+BEGIN GB-L02 Belfry of Late Voices
+PASS GB-L02 walk 6.8 | (6.62, 0.76) feet=0.01 hp=6
+PASS GB-L02 bell-wisp contact | (6.62, 0.76) feet=0.01 hp=6
+EVENT t=1.43 bell Lower clapper
+PASS GB-L02 jump 9 / 2 peak 2.37 | (8.79, 2.75) feet=2.00 hp=6
+EVENT t=3.43 bell Lower clapper
+PASS GB-L02 jump 13 / 4 peak 4.37 | (12.79, 4.75) feet=4.00 hp=6
+PASS GB-L02 jump 17 / 6 peak 6.37 | (16.79, 6.75) feet=6.00 hp=6
+PASS GB-L02 walk 17.8 | (17.58, 6.75) feet=6.00 hp=6
+EVENT t=5.13 bell Upper clapper
+PASS GB-L02 jump 21 / 8 peak 8.37 | (20.78, 8.75) feet=8.00 hp=6
+EVENT t=6.76 pulse-arrived Left brake:1
+EVENT t=7.13 bell Upper clapper
+PASS GB-L02 walk 26 | (25.79, 8.75) feet=8.00 hp=6
+EVENT t=8.77 pulse-arrived Left brake:1
+EVENT t=8.96 pulse-arrived Right brake:1
+PASS GB-L02 two traveling signals release lift | (25.80, 8.75) feet=8.00 hp=6
+PASS GB-L02 walk 28 | (27.81, 10.74) feet=9.99 hp=6
+EVENT t=10.97 pulse-arrived Right brake:1
+PASS GB-L02 ride physical lower lift | (27.81, 20.20) feet=19.45 hp=6
+PASS GB-L02 walk 18.2 | (18.40, 15.76) feet=15.01 hp=6
+PASS GB-L02 upper shrine balcony | (18.40, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 16.65 | (16.86, 15.76) feet=15.01 hp=6
+PASS GB-L02 cabinet physically desynchronizes echo | (16.84, 15.76) feet=15.01 hp=6
+PASS GB-L02 delayed jump rings high clapper | (16.70, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 14 | (14.19, 15.76) feet=15.01 hp=6
+PASS GB-L02 Belfry Mercy | (14.19, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 20.8 | (20.60, 15.76) feet=15.01 hp=6
+PASS GB-L02 jump 22 / 17 peak 17.37 | (21.78, 17.75) feet=17.00 hp=6
+PASS GB-L02 jump 25 / 19 peak 19.36 | (24.79, 19.76) feet=19.01 hp=6
+PASS GB-L02 jump 29 / 20 peak 21.37 | (28.79, 20.75) feet=20.00 hp=6
+PASS GB-L02 walk 29.1 | (28.88, 20.76) feet=20.01 hp=6
+PASS GB-L02 jump 33 / 20 peak 22.37 | (32.79, 20.76) feet=20.01 hp=6
+PASS GB-L02 jump 37 / 22 peak 22.37 | (36.79, 22.76) feet=22.01 hp=6
+PASS GB-L02 jump 33 / 24 peak 24.37 | (33.22, 24.76) feet=24.01 hp=6
+PASS GB-L02 jump 29 / 26 peak 26.37 | (29.21, 26.76) feet=26.01 hp=6
+PASS GB-L02 jump 25 / 28 peak 28.37 | (25.21, 28.76) feet=28.01 hp=6
+PASS GB-L02 jump 21 / 30 peak 30.37 | (21.21, 30.76) feet=30.01 hp=6
+PASS GB-L02 jump 18 / 32 peak 32.37 | (18.21, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 20 | (19.81, 32.75) feet=32.00 hp=6
+PASS GB-L02 upper key | (19.81, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 16.2 | (16.41, 32.75) feet=32.00 hp=6
+PASS GB-L02 crack the main bell | (16.39, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 14.4 | (14.60, 32.75) feet=32.00 hp=6
+EVENT t=35.83 bell Signal bell
+EVENT t=37.87 pulse-arrived Bell brake:2
+PASS GB-L02 jump 12 / 32 peak 34.37 | (12.22, 32.86) feet=32.11 hp=6
+PASS GB-L02 walk 6 | (6.20, 27.75) feet=27.00 hp=6
+PASS GB-L02 left balcony landing | (6.20, 27.75) feet=27.00 hp=6
+PASS GB-L02 walk 0 | (0.21, 25.98) feet=25.23 hp=6
+PASS GB-L02 return descent reaches ground | (0.04, 0.85) feet=0.10 hp=6
+PASS GB-L02 walk 2 | (0.85, 0.75) feet=0.00 hp=6
+PASS GB-L02 critical path returns to entrance | (0.85, 0.75) feet=0.00 hp=6

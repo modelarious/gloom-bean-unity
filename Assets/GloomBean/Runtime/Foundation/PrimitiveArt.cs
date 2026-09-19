@@ -38,7 +38,7 @@ namespace GloomBean.Foundation
         }
         public static GameObject Shape(string name,Transform parent,Vector2 position,Vector2 size,Color color,Icon icon=Icon.Block,int order=0)
         {
-            var go=new GameObject(name);go.transform.SetParent(parent);go.transform.position=position;go.transform.localScale=size;
+            var go=new GameObject(name);go.transform.SetParent(parent);go.transform.position=position;go.transform.localScale=new Vector3(size.x,size.y,1);
             var sr=go.AddComponent<SpriteRenderer>();sr.sprite=Sprite(icon);sr.color=color;sr.sortingOrder=order;return go;
         }
         public static LineRenderer Line(string name,Transform parent,Vector3 a,Vector3 b,float width,Color color,int order=1)

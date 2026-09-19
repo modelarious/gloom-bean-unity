@@ -265,6 +265,10 @@ namespace GloomBean.Foundation
         {
             if(!replica)throw new InvalidOperationException("Only a replica may copy initial locomotion.");
             tuning=original.tuning;Body.linearVelocity=original.Body.linearVelocity;Facing=original.Facing;
+            // An echo of a small core must not become a full-size, full-mass substitute.
+            standingSize=original.standingSize;Shape.size=original.Shape.size;Shape.offset=original.Shape.offset;
+            Crouched=original.Crouched;Body.mass=original.Body.mass;chargeDisabled=original.chargeDisabled;
+            collisionMask=original.collisionMask;Shape.excludeLayers=original.Shape.excludeLayers;Shape.includeLayers=original.Shape.includeLayers;
             coyote=original.coyote;buffer=original.buffer;runUp=original.runUp;
             groundIgnore=original.groundIgnore;jumpWasHeld=original.jumpWasHeld;
             State=original.State;Water=original.Water;gravityFactor=original.gravityFactor;speedFactor=original.speedFactor;
