@@ -1,0 +1,20 @@
+{
+  "result": "Succeeded",
+  "errors": 0,
+  "warnings": 14,
+  "bytes": 153003921,
+  "unity": "6000.5.9f1",
+  "host": "gamer-bro",
+  "verification_cases_passed": 43,
+  "verification_cases_failed": 0,
+  "runtime_exceptions": 0,
+  "player_exit_code": 0,
+  "csharp_sha256": "feb6a73dc3bf382fde4408f6b9b1957fb7a305cf9c66370e77f628a90d82e783",
+  "report_sha256": "9023f790019338f9f7495b77d890e18b37bef0acadced121dd60a13e8b0c04c5",
+  "limits": [
+    "Native development build, original tuning, not a frame-perfect WL4 recreation.",
+    "Course construction tests are not full-course playthroughs.",
+    "Controller feel and campaign pacing require human playtesting.",
+    "Remote GitHub repository creation failed HTTP 401; no remote push is claimed."
+  ]
+}
