@@ -1,0 +1,2 @@
+using UnityEngine;
+namespace GloomBean.Campaign {public sealed class BoughCollapse:MonoBehaviour {public FoldPanel[] branches;float clock;int i;void Update(){clock+=Time.deltaTime;if(branches==null||i>=branches.Length||clock<9+i*12)return;var p=branches[i++];if(!p)return;var branch=p.GetComponent<MassBranch>();if(branch)branch.enabled=false;p.enabled=false;p.body.bodyType=RigidbodyType2D.Dynamic;p.body.gravityScale=.7f;}} }

@@ -61,6 +61,7 @@ namespace GloomBean.Foundation
         public void Step(InputFrame f,float dt)
         {
             if(disabled||State==MotionState.Dead||Time.timeScale==0) return;
+            if(modifier is IActorInputFilter filter)f=filter.Filter(f,dt);
             LastInput=f; Invulnerability=Mathf.Max(0,Invulnerability-dt); hurtTime-=dt; groundIgnore-=dt;
             if(Mathf.Abs(f.move.x)>.1f && attackTime<=0 && !rolling)Facing=f.move.x>0?1:-1;
             CarryWithSupport(); ProbeGround();

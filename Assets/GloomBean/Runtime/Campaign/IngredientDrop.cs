@@ -1,0 +1,2 @@
+using UnityEngine;
+namespace GloomBean.Campaign { public sealed class IngredientDrop:MonoBehaviour {public string kind="grease";void OnCollisionEnter2D(Collision2D c){var dish=c.collider.GetComponent<FeastDish>();if(dish){dish.Receive(kind);Destroy(gameObject);}}} }

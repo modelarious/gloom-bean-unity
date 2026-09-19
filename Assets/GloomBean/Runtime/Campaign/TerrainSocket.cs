@@ -1,0 +1,2 @@
+using UnityEngine;
+namespace GloomBean.Campaign { public sealed class TerrainSocket:MonoBehaviour {public Vector2 capacity=Vector2.one;public bool Accepts(EdibleChunk c)=>c&&c.Size.x<=capacity.x+.01f&&c.Size.y<=capacity.y+.01f;} }

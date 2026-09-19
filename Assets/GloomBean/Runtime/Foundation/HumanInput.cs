@@ -20,6 +20,7 @@ namespace GloomBean.Foundation
             }
             held.move=Vector2.ClampMagnitude(new Vector2(x,y),1);
             held.run=Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)||Input.GetKey(KeyCode.JoystickButton4);
+            held.actionHeld=Input.GetKey(KeyCode.U)||Input.GetKey(KeyCode.JoystickButton5);
             held.jumpHeld=Input.GetKey(KeyCode.Space)||Input.GetKey(KeyCode.Z)||Input.GetKey(KeyCode.JoystickButton0);
             pending.jump |= Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Z)||Input.GetKeyDown(KeyCode.JoystickButton0);
             pending.attack |= Input.GetKeyDown(KeyCode.J)||Input.GetKeyDown(KeyCode.X)||Input.GetKeyDown(KeyCode.JoystickButton2);
@@ -31,7 +32,7 @@ namespace GloomBean.Foundation
         }
         public InputFrame Consume()
         {
-            var result=pending; result.move=held.move; result.run=held.run; result.jumpHeld=held.jumpHeld;
+            var result=pending; result.move=held.move; result.run=held.run; result.jumpHeld=held.jumpHeld; result.actionHeld=held.actionHeld;
             pending=default; return result;
         }
     }

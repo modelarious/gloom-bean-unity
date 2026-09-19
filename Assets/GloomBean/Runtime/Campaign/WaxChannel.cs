@@ -1,0 +1,3 @@
+using UnityEngine;
+using GloomBean.Foundation;
+namespace GloomBean.Campaign {public sealed class WaxChannel:MonoBehaviour {public WaxDrain drain;public Vector2 normal,diverted;void OnTriggerStay2D(Collider2D c){var a=c.GetComponent<ActorMotor>();var h=a?a.GetComponent<HostController>():null;var wax=h?h.Form<WaxForm>():null;if(wax!=null&&wax.Liquid)a.Body.AddForce((drain&&drain.Sealed?diverted:normal)*a.Body.mass*7,ForceMode2D.Force);}} }

@@ -1,0 +1,1 @@
+Recovered foundation-v0.1.0 (84c52bb) from the actual Windows worktree. Foundation reports retained. Atlas implementation now proceeds in Runtime/Campaign; original tag is immutable. GitHub factory request #37 failed HTTP 401. No remote publication claimed. Source atlas: Gloom_Bean_Host_Cycle_Design_Atlas.pdf, 44 pages. Human acceptance UNKNOWN.
