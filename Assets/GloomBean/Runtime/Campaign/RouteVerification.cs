@@ -46,8 +46,22 @@ namespace GloomBean.Campaign
             bool arrived=Mathf.Abs(actor.Feet.y-floor)<.28f&&actor.Grounded&&Mathf.Abs(actor.Body.position.x-x)<1.3f;
             Check("jump to "+x+" @ "+floor+" peak="+peak,arrived);stopped|=!arrived;
         }
+        IEnumerator Probe()
+        {
+            game.SelectSource(1);yield return game.Load(game.AvailableWorlds[0].boss,true);
+            var boss=game.Session.GetComponentInChildren<AtlasBoss>();boss.combat=false;
+            actor=game.Session.player;actor.disabled=true;actor.Body.simulated=false;
+            var impact=game.Session.GetComponentInChildren<ChandelierImpact>();var rb=impact.GetComponent<Rigidbody2D>();var joint=impact.GetComponent<DistanceJoint2D>();
+            observations.Add("target="+impact.receiver.bounds+" start="+rb.position+" anchor="+joint.connectedAnchor+" distance="+joint.distance+" mass="+rb.mass+" gravity="+rb.gravityScale);
+            rb.AddForce(Vector2.right*18,ForceMode2D.Impulse);
+            for(int i=0;i<170;i++){yield return new WaitForFixedUpdate();if(i%6==0)observations.Add("physics "+rb.position+" velocity="+rb.linearVelocity+" contact="+impact.lastContact+" speed="+impact.contactSpeed);}
+            Check("real-pendulum-catch",impact.struck);
+            File.WriteAllLines(Path.Combine(dir,"pendulum-observations.txt"),observations);
+            Application.logMessageReceived-=Log;Application.Quit(failures==0?0:1);
+        }
         IEnumerator Run()
         {
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-boss-probe")>=0){yield return Probe();yield break;}
             game.SelectSource(1);yield return game.Load(game.AvailableWorlds[0].levels[0],false);
             session=game.Session;actor=session.player;actor.GetComponent<HumanInput>().disabled=true;input=new ScriptedInput();actor.input=input;
             yield return new WaitForSeconds(.3f);

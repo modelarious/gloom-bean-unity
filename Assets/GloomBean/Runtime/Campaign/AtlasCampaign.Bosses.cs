@@ -12,7 +12,7 @@ namespace GloomBean.Campaign
         AtlasBoss Director(AtlasBuilder a,Vector2 p,string title,Color color)
         {
             var go=new GameObject(title+" encounter");go.transform.SetParent(a.b.root);var boss=go.AddComponent<AtlasBoss>();boss.title=title;boss.arenaCenter=new Vector2(24,7);
-            var art=PrimitiveArt.Shape(title,a.b.root,p,new Vector2(6,9),color,PrimitiveArt.Icon.Arch,-1);PrimitiveArt.Shape("Witnessing eye",art.transform,p+Vector2.up*2,new Vector2(2,2.5f),new Color(.97f,.86f,.58f),PrimitiveArt.Icon.Eye,0);boss.body=art.transform;return boss;
+            var art=PrimitiveArt.Shape(title,a.b.root,p,new Vector2(6,9),color,PrimitiveArt.Icon.Arch,-1);PrimitiveArt.Shape("Witnessing eye",a.b.root,p+Vector2.up*2,new Vector2(2,2.5f),new Color(.97f,.86f,.58f),PrimitiveArt.Icon.Eye,0);boss.body=art.transform;return boss;
         }
         void Usher(AtlasBuilder a)
         {
@@ -20,7 +20,7 @@ namespace GloomBean.Campaign
             var echo=a.Source(HostKind.Echo,7);var stringSource=a.Source(HostKind.Marionette,7,1);stringSource.enabledSource=false;stringSource.gameObject.SetActive(false);var molt=a.Source(HostKind.Molt,7);molt.enabledSource=false;molt.gameObject.SetActive(false);
             var left=b.Plate(new Vector2(12,.14f));var right=b.Plate(new Vector2(23,.14f));var front=b.Door(new Vector2(29,3),new Vector2(1,6));
             stringSource.rail=a.Rail(new Vector2(5,15),new Vector2(40,15));var target=b.Solid("The Usher's chandelier catch",new Vector2(28.5f,11.8f),new Vector2(2.2f,3),new Color(.73f,.42f,.5f));
-            var chandelier=b.Solid("A weight, not a damage button",new Vector2(24,10),new Vector2(2,1),new Color(.79f,.64f,.35f),Layers.Prop);var rb=chandelier.AddComponent<Rigidbody2D>();rb.mass=2;rb.gravityScale=2;var joint=chandelier.AddComponent<DistanceJoint2D>();joint.autoConfigureConnectedAnchor=false;joint.connectedAnchor=new Vector2(24,16);joint.autoConfigureDistance=false;joint.distance=6;var impact=chandelier.AddComponent<ChandelierImpact>();impact.receiver=target.GetComponent<Collider2D>();
+            var chandelier=b.Solid("A weight, not a damage button",new Vector2(24,10),new Vector2(2,1),new Color(.79f,.64f,.35f),Layers.Prop);var rb=chandelier.AddComponent<Rigidbody2D>();rb.mass=2;rb.gravityScale=2;var joint=chandelier.AddComponent<DistanceJoint2D>();joint.autoConfigureConnectedAnchor=false;joint.connectedAnchor=new Vector2(24,16);joint.autoConfigureDistance=false;joint.distance=6;joint.enableCollision=true;var impact=chandelier.AddComponent<ChandelierImpact>();impact.receiver=target.GetComponent<Collider2D>();
             var shellPlate=b.Plate(new Vector2(19,.14f),.6f);var skinGate=b.Door(new Vector2(35,1.6f),new Vector2(.5f,3.2f),shellPlate);b.Solid("Thin backstage crawl",new Vector2(39,1.8f),new Vector2(7,2));
             a.Ledge(14,2,4);a.Ledge(18,4,4);a.Health(4,1.2f);a.Health(45,1.2f);float together=0;
             boss.Configure(boss.title,p=>{if(p==0){together=left.Pressed&&right.Pressed?together+Time.deltaTime:0;return together>.65f;}if(p==1)return impact.struck;return a.Player.Body.position.x>40&&a.Player.Height<.9f&&shellPlate.Pressed;},p=>{

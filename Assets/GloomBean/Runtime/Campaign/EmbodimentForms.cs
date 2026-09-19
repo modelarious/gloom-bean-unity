@@ -73,7 +73,7 @@ namespace GloomBean.Campaign
             if(!Rail){Notice("The spider has no connected overhead rail.");return;}
             railT=Rail.Nearest(Actor.Body.position);Joint=Actor.gameObject.AddComponent<DistanceJoint2D>();Joint.autoConfigureConnectedAnchor=false;Joint.autoConfigureDistance=false;
             Joint.anchor=Vector2.up*.5f;Joint.connectedAnchor=Rail.Point(railT);Joint.distance=Mathf.Clamp(Vector2.Distance(Joint.connectedAnchor,Actor.Body.position+Vector2.up*.5f),1,12);
-            Joint.maxDistanceOnly=false;Actor.chargeDisabled=true;Actor.CancelActions();
+            Joint.maxDistanceOnly=false;Joint.enableCollision=true;Actor.chargeDisabled=true;Actor.CancelActions();
         }
         public override bool Move(InputFrame f,float dt)
         {
