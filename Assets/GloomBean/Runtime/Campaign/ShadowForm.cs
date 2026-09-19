@@ -17,10 +17,18 @@ namespace GloomBean.Campaign
         }
         public override bool Move(InputFrame f,float dt)
         {
-            if(f.alternate)Toggle();if(!Controlling){if(Vector2.Distance(Position,Actor.Body.position)>tether)Position=Actor.Feet;return false;}
+            if(f.alternate)Toggle();if(!Controlling)return false;
             Actor.Body.linearVelocity=new Vector2(0,Mathf.Max(-18,Actor.Body.linearVelocity.y-28*dt));Advance(f.move*5*dt);
             if(!Allowed(Position)){stranded+=dt;if(stranded>.65f){Position=Actor.Feet;Controlling=false;stranded=0;Notice("The light severed your route. Your shadow snaps back.");}}else stranded=0;
             return true;
+        }
+        public override void After(InputFrame f,float dt)
+        {
+            if(Controlling||dt<=0)return;
+            Vector2 radial=Actor.Body.position-Position;
+            Vector2 predicted=radial+Actor.Body.linearVelocity*dt;
+            if(predicted.magnitude>tether)
+                Actor.Body.linearVelocity=(predicted.normalized*tether-radial)/dt;
         }
         public override void Draw(){if(cursor)cursor.transform.position=Position;PrimitiveArt.Line("Shadow tether",Actor.transform,Actor.Feet,Position,.025f,new Color(.6f,.55f,.8f,.4f),3);}
         public override void Leave(){if(cursor)UnityEngine.Object.Destroy(cursor);var l=Actor.transform.Find("Shadow tether");if(l)UnityEngine.Object.Destroy(l.gameObject);}

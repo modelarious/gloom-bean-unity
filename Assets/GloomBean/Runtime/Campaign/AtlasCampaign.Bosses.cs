@@ -19,7 +19,7 @@ namespace GloomBean.Campaign
             a.Begin(new Rect(-8,-8,64,39),new Vector2(3,1));var b=a.b;a.Floor(-5,48);var boss=Director(a,new Vector2(31,6),"The Kindly Usher",new Color(.57f,.28f,.44f));
             var echo=a.Source(HostKind.Echo,7);var stringSource=a.Source(HostKind.Marionette,7,1);stringSource.enabledSource=false;stringSource.gameObject.SetActive(false);var molt=a.Source(HostKind.Molt,7);molt.enabledSource=false;molt.gameObject.SetActive(false);
             var left=b.Plate(new Vector2(12,.14f));var right=b.Plate(new Vector2(23,.14f));var front=b.Door(new Vector2(29,3),new Vector2(1,6));
-            stringSource.rail=a.Rail(new Vector2(5,15),new Vector2(40,15));var target=b.Solid("The Usher's chandelier catch",new Vector2(31,9),new Vector2(2.2f,3),new Color(.73f,.42f,.5f));
+            stringSource.rail=a.Rail(new Vector2(5,15),new Vector2(40,15));var target=b.Solid("The Usher's chandelier catch",new Vector2(28.5f,11.8f),new Vector2(2.2f,3),new Color(.73f,.42f,.5f));
             var chandelier=b.Solid("A weight, not a damage button",new Vector2(24,10),new Vector2(2,1),new Color(.79f,.64f,.35f),Layers.Prop);var rb=chandelier.AddComponent<Rigidbody2D>();rb.mass=2;rb.gravityScale=2;var joint=chandelier.AddComponent<DistanceJoint2D>();joint.autoConfigureConnectedAnchor=false;joint.connectedAnchor=new Vector2(24,16);joint.autoConfigureDistance=false;joint.distance=6;var impact=chandelier.AddComponent<ChandelierImpact>();impact.receiver=target.GetComponent<Collider2D>();
             var shellPlate=b.Plate(new Vector2(19,.14f),.6f);var skinGate=b.Door(new Vector2(35,1.6f),new Vector2(.5f,3.2f),shellPlate);b.Solid("Thin backstage crawl",new Vector2(39,1.8f),new Vector2(7,2));
             a.Ledge(14,2,4);a.Ledge(18,4,4);a.Health(4,1.2f);a.Health(45,1.2f);float together=0;
@@ -60,9 +60,10 @@ namespace GloomBean.Campaign
         void Everyone(AtlasBuilder a)
         {
             a.Begin(new Rect(-8,-15,78,69),new Vector2(3,1));var b=a.b;a.Floor(-5,65);var boss=Director(a,new Vector2(37,25),"The Weight of Everyone",new Color(.48f,.39f,.43f));boss.combat=false;
-            a.Source(HostKind.Censer,7);for(int i=0;i<5;i++){var f=a.Figure(14+i*5,32+i,2+i*2.1f,1+i*.35f);f.hold=7;}a.Ledge(37,12,8);a.Source(HostKind.Stitch,38,13,true);
+            a.Source(HostKind.Censer,7);a.Ledge(10,1.5f,4);for(int i=0;i<5;i++){var f=a.Figure(14+i*5,32+i,2+i*2.1f,1+i*.35f);f.hold=7;}a.Ledge(37,12,8);a.Source(HostKind.Stitch,38,13,true);
             var hinge=a.Hinge(new Vector2(41,13),12,-40,"mass");a.Seam(new Vector2(49.5f,21.5f),"mass");a.Ledge(43,16,4);a.Ledge(47,18,4);a.Ledge(51,21,6);
-            a.Source(HostKind.Coffin,52,22,true);var moving=b.Slider(new Vector2(55,23),new Vector2(55,21.7f),new Vector2(4,.8f),.7f);var finish=b.Door(new Vector2(59,24),new Vector2(.7f,6));var receiver=b.Trigger("Keystone bearing",new Vector2(55,22.2f),new Vector2(4,1.3f),new Color(.74f,.69f,.54f,.2f)).AddComponent<BraceReceiver>();receiver.gate=finish;receiver.holdRequired=1.8f;a.Ledge(63,22,7);
+            a.Source(HostKind.Coffin,50.2f,22,true);a.Ledge(57,21,12);var moving=b.Slider(new Vector2(55,23),new Vector2(55,21.7f),new Vector2(4,.8f),.7f);var finish=b.Door(new Vector2(59,24),new Vector2(.7f,6));var receiver=b.Trigger("Keystone bearing",new Vector2(53,22.2f),new Vector2(4,1.3f),new Color(.74f,.69f,.54f,.2f)).AddComponent<BraceReceiver>();receiver.gate=finish;receiver.holdRequired=1.8f;a.Ledge(63,21,7);
+            var release=moving.gameObject.AddComponent<BracedLiftRelease>();release.receiver=receiver;release.motion=moving;release.destination=new Vector2(55,27);a.Cure(HostKind.Coffin,59.5f,22);
             float deadline=200;boss.Configure(boss.title,p=>p==0?a.Player.Feet.y>11.5f:p==1?hinge.angle>30&&a.Player.Feet.y>20:receiver.latched&&a.Player.Body.position.x>59,p=>boss.objective=p==0?"No health bar. Cross the falling congregation before the foundation gives way.":p==1?"Fold the hanging mass into a traversable incline.":"Brace the settling keystone with a horizontal lid, then reach the released arch.");
             var budget=b.root.gameObject.AddComponent<EncounterBudget>();budget.boss=boss;budget.remaining=deadline;a.Health(37,13.2f);
         }

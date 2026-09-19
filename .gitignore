@@ -22,3 +22,11 @@ Reports/Atlas/*.log
 Reports/Atlas/*.exit
 *.log
 
+
+# Local execution logs and transient watchdog wrappers
+Reports/Atlas/
+Reports/InputRoutes-*/
+Reports/Native-Atlas-*/
+Tools/Build-Atlas.ps1
+Tools/Verify-Atlas.ps1
+Tools/Acceptance-Local.ps1

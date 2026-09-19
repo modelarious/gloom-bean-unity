@@ -16,7 +16,9 @@ namespace GloomBean.Campaign
         public void Synchronize()
         {
             if(Echo)UnityEngine.Object.Destroy(Echo.gameObject);history.Clear();clock=0;
-            Echo=host.Replica(Actor.Body.position,new Color(.53f,.8f,.9f));Echo.Body.simulated=false;alive=true;
+            Echo=host.Replica(Actor.Body.position,new Color(.53f,.8f,.9f));
+            // Only temporal echoes ignore their initially overlapping original. Mirror twins remain physical obstacles.
+            Physics2D.IgnoreCollision(Echo.Shape,Actor.Shape,true);Echo.Body.simulated=false;alive=true;
             Echo.Died+=()=>{alive=false;};
         }
         public override void After(InputFrame f,float dt)
@@ -147,6 +149,6 @@ namespace GloomBean.Campaign
             else{fallSpeed=Mathf.Min(18,fallSpeed+25*dt);var hit=Physics2D.BoxCast(Actor.Body.position,Hull.size*.96f,Actor.Body.rotation,Vector2.down,fallSpeed*dt,Layers.Solids);Actor.Body.position+=Vector2.down*(hit?Mathf.Max(0,hit.distance-.02f):fallSpeed*dt);}
             brace.bracing=Horizontal&&!flipping;return true;
         }
-        public override void Leave(){if(Hull){Hull.enabled=false;UnityEngine.Object.Destroy(Hull);}if(brace)UnityEngine.Object.Destroy(brace);Actor.Shape.enabled=true;Actor.Body.bodyType=RigidbodyType2D.Dynamic;Actor.Body.mass=1;Actor.Body.rotation=0;Actor.chargeDisabled=false;}
+        public override void Leave(){if(Hull){Hull.enabled=false;UnityEngine.Object.Destroy(Hull);}if(brace)UnityEngine.Object.Destroy(brace);Actor.Shape.enabled=true;Actor.Body.bodyType=RigidbodyType2D.Dynamic;Actor.Body.mass=1;Actor.Body.rotation=0;Actor.RestoreShape();Actor.chargeDisabled=false;}
     }
 }

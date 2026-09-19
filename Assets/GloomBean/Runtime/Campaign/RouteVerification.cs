@@ -48,7 +48,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator Run()
         {
-            game.SelectSource(1);yield return game.Load(game.AvailableWorlds[0].levels[0],true);
+            game.SelectSource(1);yield return game.Load(game.AvailableWorlds[0].levels[0],false);
             session=game.Session;actor=session.player;actor.GetComponent<HumanInput>().disabled=true;input=new ScriptedInput();actor.input=input;
             yield return new WaitForSeconds(.3f);
             yield return Walk(6.7f);yield return Jump(9.5f,1.6f);
@@ -69,6 +69,8 @@ namespace GloomBean.Campaign
                 float timeout=Time.realtimeSinceStartup+4;while(session.Phase!=RunPhase.Cleared&&Time.realtimeSinceStartup<timeout)yield return null;
                 Check("Sunday Best entrance-to-exit with production inputs",session.Phase==RunPhase.Cleared);
                 Check("Mercy never required for ordinary clear",session.Mercies.Count==0);
+                var saved=new SaveStore(Path.Combine(dir,"test-save.json"));
+                Check("ordinary completion persisted in isolated real save",saved.Data.cleared.Contains("GB-L01")&&saved.Data.corrupted);
             }
             else Check("Sunday Best input-only playthrough",false);
             if(actor&&session.Camera)FoundationVerification.Capture(session.Camera.GetComponent<UnityEngine.Camera>(),Path.Combine(dir,"last-frame.png"));

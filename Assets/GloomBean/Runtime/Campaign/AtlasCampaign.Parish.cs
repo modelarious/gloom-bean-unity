@@ -8,7 +8,7 @@ namespace GloomBean.Campaign
         void Sunday(AtlasBuilder a)
         {
             a.Begin(new Rect(-8,-12,120,40),new Vector2(2,1.1f));var b=a.b;a.Floor(-5,32);a.Floor(33,101,-4);a.Exit(2,1.15f);
-            a.Ledge(10,1.6f,4);a.Ledge(17,2.6f,5);a.Ledge(25,1.5f,4);b.CoinLine(new Vector2(7,2.5f),new Vector2(28,3.6f),9);
+            var welcomeSteps=new[]{a.Ledge(10,1.6f,4),a.Ledge(17,2.6f,5),a.Ledge(25,1.5f,4)};b.CoinLine(new Vector2(7,2.5f),new Vector2(28,3.6f),9);
             var pretty=new List<GameObject>();for(int i=0;i<5;i++){var g=PrimitiveArt.Shape("Smiling parade facade",b.root,new Vector2(i*6+5,5),new Vector2(5,7),new Color(.64f+i*.04f,.77f,.61f),PrimitiveArt.Icon.Arch,-3);pretty.Add(g);}
             var horror=b.Solid("Behind the mascot",new Vector2(18,7.5f),new Vector2(5,.4f),new Color(.39f,.17f,.3f));horror.SetActive(false);
             var infection=b.Trigger("The thing under the smiling face",new Vector2(35,-1),new Vector2(3,12),new Color(.9f,.16f,.44f,.35f),PrimitiveArt.Icon.Eye).AddComponent<CorruptionTrigger>();infection.pretty=pretty.ToArray();infection.revealed=new[]{horror};
@@ -16,9 +16,11 @@ namespace GloomBean.Campaign
             a.Source(HostKind.Echo,40,-3);var plate=b.Plate(new Vector2(46,-3.88f));var door=b.Door(new Vector2(55,-1.5f),new Vector2(.8f,5),plate);door.holdSeconds=.7f;
             b.Tip(new Vector2(39,-2),"A bell-wisp caught in your torn body. Keep walking; the second pair of footsteps arrives later.");
             a.Steps(61,-2.2f,6,5,1.5f,4);a.Ledge(92,5.3f,13);a.Key(81,5);a.Nail(96,5.75f);a.Health(60,-2.8f);
-            var backs=new List<GameObject>();for(int i=0;i<9;i++){var g=a.Ledge(28+i*7,5.3f,6);g.name="Backstage return brace";g.SetActive(false);backs.Add(g);}
-            b.session.Turned+=()=>{foreach(var g in backs)g.SetActive(true);foreach(var g in pretty)g.SetActive(false);horror.SetActive(true);};
-            var jawPlate=b.Plate(new Vector2(27,5.45f));var jaw=b.Door(new Vector2(22,8.9f),new Vector2(.4f,3),jawPlate);jaw.holdSeconds=.6f;a.Ledge(23,6.7f,3);a.Mercy(18,8.4f);
+            var backs=new List<GameObject>();for(int i=0;i<9;i++){var g=a.Ledge(28+i*7,5.3f,7.4f);g.name="Backstage return brace";g.SetActive(false);backs.Add(g);}
+            b.session.Turned+=()=>{foreach(var g in welcomeSteps)g.SetActive(false);foreach(var g in backs)g.SetActive(true);foreach(var g in pretty)g.SetActive(false);horror.SetActive(true);};
+            var jawPlate=b.Plate(new Vector2(27,5.45f));var jaw=b.Door(new Vector2(20,9),new Vector2(.4f,3),jawPlate);jaw.holdSeconds=.6f;
+            // The secret lives above the exit route. Its closed jaw must never gate ordinary completion.
+            a.Ledge(22,7.4f,3);a.Mercy(18,8.9f);
             // Return-only shelves must not create a 1.2 m headroom trap over the opening 1.5 m Host.
             var returnStepA=a.Ledge(10,3.2f,4);returnStepA.SetActive(false);backs.Add(returnStepA);
             var returnStepB=a.Ledge(17,4.7f,4);returnStepB.SetActive(false);backs.Add(returnStepB);a.Cure(HostKind.Echo,5,1);

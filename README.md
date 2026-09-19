@@ -1,67 +1,56 @@
-# Gloom Bean — native Unity project
+# Gloom Bean - native Unity platformer
 
-## Open and play
+## Start here
+**Unity project:** Open this folder with Unity **6000.5.9f1**, open `Assets/GloomBean/Scenes/Boot.unity`, and press Play. **Gloom Bean > Campaign workbench** lets you jump directly to any foundation course, atlas level or boss in practice mode. Its tuning button selects the movement configuration in the Inspector.
 
-Open this directory in **Unity 6000.5.9f1** (the version installed on gamer-bro).
-Open `Assets/GloomBean/Scenes/Boot.unity` and press Play. The first import creates an editable movement-tuning asset. The boot scene can also be regenerated from **Gloom Bean → Create or refresh boot scene**.
+**Windows player:** Run `GloomBean.exe` in the separately delivered Windows folder. Keep the executable, DLLs, MonoBleedingEdge and GloomBean_Data together. Select FOUNDATION for the reusable mechanics playground or HOST CYCLE for the atlas campaign. Normal progression is separate from practice, which neither grants clears nor banks Mercy secrets.
 
-No Asset Store purchases, external models, Nintendo assets, game ROMs, or generated-C# dependencies are needed. The current art is original deterministic graybox art, not the atlas's final production art.
+## Two products, separate history
+`foundation-v0.1.0` is the original base commit, made before atlas implementation. The `foundation` branch contains an updated base-only project with no possession/campaign dependency. `main` adds the Host Cycle. A Git bundle travels with the delivery so both histories remain recoverable even while the GitHub creation request is blocked.
 
-## Two milestones
+The foundation has four authored mechanics courses plus a foreman boss. The atlas has five worlds with four levels plus one boss in each. Campaign sizes are data in ICampaignSource, not fixed assumptions in the save system.
 
-1. `foundation-v0.1.0` preserves the reusable platformer foundation before atlas implementation.
-2. The later campaign checkpoint adds Gloom Bean without replacing that baseline.
+## Implemented base
+Walking/running acceleration and braking; variable jump, coyote time and buffering; crouching, crawl clearance and slope rolling; standing/running/air tackle tiers; ordinary and height-powered ground pounds; patrol enemies with wall/optional ledge responses, stun/recovery, carry, aimed throws and thrown-enemy collisions; swimming and swim dash; moving surfaces, conveyors, sliders and four-arm orbital platforms; bounded camera; Keyling follower, pickups, World Nail/return timer, exit validation, world/level/boss selection and atomic save with backup recovery.
 
-The foundation has four mechanical courses followed by a boss. Campaign counts live in the campaign source; they are not hard-coded into the save model. The atlas uses **five worlds, four levels per world, then a boss**. Practice selection does not grant normal progress or Mercy secrets.
+Movement numbers are original tunable defaults, not measured frame-perfect Wario Land 4 values. No Nintendo assets, ROMs, paid assets or runtime AI services are needed.
 
 ## Controls
-
-| Action | Keyboard | Standard gamepad |
+| Action | Keyboard | Common Windows gamepad |
 |---|---|---|
-| Move / aim throw / swim | WASD or arrows | Left stick |
-| Variable-height jump | Space or Z | A |
+| Move, throw aim, swim | WASD / arrows | Left stick |
+| Variable jump | Space / Z | A |
 | Run | Shift | LB |
-| Tackle / swim dash | J or X | X |
-| Ground pound | L, or Down + tackle in air | Down + X |
-| Crouch / crawl / initiate slope roll | Down | Stick down |
-| Pick up stunned enemy / throw | K or C | Y |
-| Interact / pull return switch | E | B |
-| Possession action | U | RB |
+| Tackle / swim dash | J / X | X |
+| Ground pound | L or airborne Down + J | Airborne Down + X |
+| Crouch, crawl, begin slope roll | Down | Stick down |
+| Pick up / throw | K / C | Y |
+| Interact / pull Nail | E | B |
+| Possession primary | U (hold for Root) | RB |
 | Possession secondary | I | Back |
+| Focus other possession in a pair | Down + I | Down + Back |
 | Pause | Escape | Start |
-| Controls card | F1 | Keyboard fallback |
+| Controls / designer notes | F1 / F2 | Keyboard fallback |
 
-Gamepad button positions assume the common Windows/XInput layout. Physical controller mapping and feel still require a human check.
+Physical-controller mapping and feel still require a human check. Not every generic controller shares XInput's button numbering.
 
-## Iteration map
+## Edit and extend
+- `Runtime/Foundation/ActorMotor.cs` and `Resources/MovementTuning.asset`: player movement and its numbers.
+- `Runtime/Foundation/CarryableEnemy.cs`: patrol, combat, stun, carry, throw and recovery.
+- `Runtime/Foundation/StageBuilder.cs`, `FoundationCampaign.cs`: reusable environment pieces and foundation courses.
+- `Runtime/Foundation/StageSession.cs`, `Progress.cs`: game/escape state and save data.
+- `Runtime/Campaign/HostController.cs` and the form files: possession lifecycle, control ownership, cures and interactions.
+- `Runtime/Campaign/AtlasCampaign.*.cs`: the 20 courses and five bosses; `ATLAS_COVERAGE.csv` maps them to the source PDF.
+- `Editor/CampaignWorkbench.cs`: direct practice navigation; no editor-only dependency in the player.
 
-- `ActorMotor.cs`: movement state machine, terrain probes, jump buffer/coyote, crouch clearance, tackle tiers, pounding, swimming and rolling.
-- `MovementTuning.asset`: created on first import; tune speeds and timings without editing the motor.
-- `CarryableEnemy.cs`: patrol, wall/ledge response, stun, recovery, carry and projectile-enemy collision.
-- `MotionPlatform.cs` / `Carousel.cs`: moving surfaces and rotation. Contact-point carry is separate from player velocity.
-- `StageBuilder.cs`: composable physical-level authoring helpers; creates ordinary inspectable Unity objects.
-- `FoundationCampaign.cs`: four authored practice courses and the foundation boss.
-- `StageSession.cs` / `SaveStore.cs`: escape phase, prerequisites, optional pickups and atomic JSON save with backup recovery.
-- `GameRoot.cs`: boot, menus, practice, pause and stage loading.
-- `FoundationVerification.cs`: actual-engine physics/integration checks, enabled with `-gb-verify`.
+Geometry and components are ordinary inspectable Unity objects during Play. To make durable layout changes, edit the campaign builders. The scene-snapshot command is an inspection aid, not a production substitute for reconstructing runtime callbacks/textures. This release does not pretend to contain 20 hand-authored tilemap scenes.
 
-The scene snapshot menu exports a current runtime scene for inspection. It is not a replacement for the source authoring API; runtime-generated textures and callbacks are reconstructed by the builders.
+## Build and verify
+Run `Tools/Build-Windows.ps1` as your normal licensed Windows account. It discovers the pinned Hub editor or accepts `-UnityPath`. Then run `Tools/Verify-Windows.ps1 -Suite Mechanics`; use `-Suite OpeningRoute` for the separate input-only opening-level check. Each process has a maximum nine-minute timeout, a unique report directory and an isolated verification save. No new credentials or licence changes are performed.
 
-## Build / verify
+The final receipts identify what passed. Mechanical tests, scene construction and screenshots are **not** a complete 20-level/5-boss playthrough or a human-fun certificate. Read `Documentation/ATLAS_IMPLEMENTATION.md` and `Documentation/RELEASE_STATUS.md` before interpreting the prototype as finished.
 
-Use **Gloom Bean → Build Windows x64**, or:
+## Save and recovery
+Normal saves live at Unity's `persistentDataPath/host-cycle-save.json`. `-gb-save <absolute path>` selects a separate save. Verification always forces its own test save. Permanent first corruption is retained. Restoration requires every exact `GB-L01-MERCY` through `GB-L20-MERCY` identifier; duplicate or unrelated identifiers cannot satisfy that ending.
 
-```text
-Unity.exe -batchmode -quit -projectPath <project> -executeMethod GloomBean.Editor.BuildTools.BuildWindows -logFile <build.log>
-Builds/Windows/GloomBean.exe -batchmode -gb-verify -gb-reports <absolute-report-directory> -logFile <runtime.log>
-```
-
-`Reports/verification.json` distinguishes named observations from a production or human-acceptance claim. Construction tests are not full-course playthrough proofs. A body of C# is not a verified game; consult the shipped evidence and known-limitations record.
-
-## Save / safety
-
-Normal saves use Unity's `persistentDataPath/host-cycle-save.json`; backup recovery is automatic. `-gb-save <path>` selects an isolated save. Verification uses a separate test save. No other project, Unity install, credential or existing save is modified by this project.
-
-## Provenance
-
-The user's exact current request and atlas are preserved under `Documentation/Source` in the delivery package. The code references design principles, not Nintendo implementation, art or audio. This work is a separate platformer project and does not replace DungeonForge's normative source.
+The original user request is in `Documentation/Source/CURRENT_REQUEST.txt`; the PDF is bundled alongside the project with a SHA-256 reference. New code/tuning is an experimental implementation, not a silent amendment to the design atlas or DungeonForge requirements.

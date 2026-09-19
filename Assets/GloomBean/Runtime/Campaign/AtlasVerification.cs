@@ -66,6 +66,7 @@ namespace GloomBean.Campaign
             C("root.body-follows-curve-not-chord",high>5&&actor.Body.position.x>607&&actor.Shape.enabled,actor.Body.position+" peak="+high);
 
             yield return Arena();source=Source(HostKind.Mirror);source.explicitAxis=true;source.mirrorAxis=605;host.Acquire(source.kind,source);var mirror=host.Form<MirrorForm>();b.Wall(608,2,4);input.frame=new InputFrame{move=Vector2.right};yield return Steps(35);
+            C("mirror.twins-remain-collidable",!Physics2D.GetIgnoreCollision(actor.Shape,mirror.Twin.Shape));
             C("mirror.opposite-controls",actor.Body.position.x>602&&mirror.Twin.Body.position.x<610);C("mirror.collision-desynchronizes",Mathf.Abs(actor.Body.position.x+mirror.Twin.Body.position.x-1210)>.5f);
 
             yield return Arena();b.Solid("Inverse floor",new Vector2(605,-.2f),new Vector2(30,.4f),Color.gray,Layers.Interior);b.Solid("Ordinary sealed mass",new Vector2(604,2),new Vector2(2,4));b.Solid("Inverse end stop",new Vector2(611,2),new Vector2(1,4),Color.gray,Layers.Interior);host.Acquire(HostKind.InsideOut);input.frame=new InputFrame{move=Vector2.right};yield return Steps(145);
@@ -85,6 +86,9 @@ namespace GloomBean.Campaign
             yield return Arena();host.Acquire(HostKind.Coffin);var coffin=host.Form<CoffinForm>();yield return Steps(8);start=actor.Body.position.x;bool flip=coffin.BeginFlip(1);yield return Steps(23);
             C("coffin.corner-pivot-not-jump",flip&&actor.Body.position.x>start+1&&coffin.Horizontal,actor.Body.position+" rot="+actor.Body.rotation);C("coffin.horizontal-brace",actor.GetComponent<LoadBearingBody>().bracing);
             b.Wall(actor.Body.position.x+1.6f,2,4);yield return Steps(2);C("coffin.rejects-blocked-swept-volume",!coffin.BeginFlip(1));
+            host.Acquire(HostKind.Censer,null,true);host.Cure(HostKind.Coffin);yield return Steps(3);
+            C("coffin.partial-cure-restores-capsule",host.Has(HostKind.Censer)&&!host.Has(HostKind.Coffin)&&actor.Shape.enabled&&actor.Height>1.3f&&actor.Height<1.6f&&actor.Body.bodyType==RigidbodyType2D.Dynamic);
+
 
             yield return Arena();var metal=a.Metal(new Vector2(605,2),new Vector2(1,2),4,false,-1);metal.strength=140;host.Acquire(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();float metalX=metal.transform.position.x;start=actor.Body.position.x;yield return Steps(24);
             C("lodestone.reciprocal-motion",actor.Body.position.x>start+.3f&&metal.transform.position.x<metalX-.1f,actor.Body.position.x+" / "+metal.transform.position.x);
@@ -92,6 +96,9 @@ namespace GloomBean.Campaign
 
             yield return Arena();var sunObj=new GameObject("Fixture sun");sunObj.transform.SetParent(fixture.transform);sunObj.transform.position=new Vector2(590,10);var sun=sunObj.AddComponent<ShadowSun>();sun.reach=25;var occluder=b.Solid("Shadow screen",new Vector2(600,3),new Vector2(2,6));occluder.AddComponent<ShadowCaster>();host.Acquire(HostKind.Shadow);var shadow=host.Form<ShadowForm>();yield return Steps(4);sun.Rebuild();shadow.Toggle();Vector2 shadowStart=shadow.Position;bool walked=true;for(int i=0;i<8;i++)walked&=shadow.Advance(Vector2.right*.3f);
             C("shadow.follows-projected-silhouette",walked&&shadow.Position.x>shadowStart.x+2);C("shadow.cannot-cross-empty-light",!shadow.Advance(Vector2.up*15));C("shadow.primary-body-remains",actor.Shape.enabled&&actor.Body.simulated&&Vector2.Distance(actor.Body.position,shadow.Position)>1);
+
+            yield return Arena();host.Acquire(HostKind.Shadow);shadow=host.Form<ShadowForm>();start=actor.Body.position.x;input.frame=new InputFrame{move=Vector2.left};yield return Steps(240);
+            C("shadow.tether-constrains-physical-body",Vector2.Distance(actor.Body.position,shadow.Position)<=14.2f&&actor.Body.position.x<start-12,actor.Body.position+" shadow="+shadow.Position);
 
             yield return Arena();host.Acquire(HostKind.Ink);var ink=host.Form<InkForm>();var stroke=ink.Add(new Vector2(600,3),new Vector2(603,3));yield return Steps(35);C("ink.not-solid-immediately",stroke&&!stroke.Solid);yield return Steps(40);C("ink.hardens-after-delay",stroke&&stroke.Solid);yield return Steps(450);C("ink.expires",!stroke);
             for(int i=0;i<9;i++)ink.Add(new Vector2(600+i*3,5),new Vector2(603+i*3,5));yield return Steps(3);C("ink.finite-length-budget",ink.Length<=18.01f,ink.Length.ToString());
@@ -114,6 +121,13 @@ namespace GloomBean.Campaign
                 }
                 yield return game.Load(world.boss,true);yield return Steps(8);game.Session.player.disabled=true;game.Session.player.Body.simulated=false;var boss=game.Session.GetComponentInChildren<AtlasBoss>();C("boss."+world.id+".distinct-mechanical-encounter",boss&&boss.phases==3&&boss.Solve!=null&&boss.EnterPhase!=null);
                 Overview(game.Session,Path.Combine(dir,world.boss.id+".png"));
+                if(world.id=="W1")
+                {
+                    boss.combat=false;var pendulum=game.Session.GetComponentInChildren<ChandelierImpact>();var rb=pendulum.GetComponent<Rigidbody2D>();
+                    rb.AddForce(Vector2.right*18,ForceMode2D.Impulse);yield return Steps(170);
+                    C("boss.usher.pendulum-can-physically-hit-catch",pendulum.struck,"real joint, force and collision; not a boss victory certificate");
+                }
+
             }
             C("coverage.all-fifteen-sources",seen.Count==15,string.Join(",",seen));C("coverage.twenty-unique-mercy-secrets",all.Count==20);
             C("permanent-corruption.retained",game.IsCorrupted);
