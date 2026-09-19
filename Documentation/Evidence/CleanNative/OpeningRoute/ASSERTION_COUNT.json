@@ -1,0 +1,7 @@
+{
+  "passed_assertions": 31,
+  "failed_assertions": 0,
+  "trace_lines": 56,
+  "raw_receipt_checks_field": "Includes trace observations, not just assertions. Use this reconciled count, not the raw 87, as the assertion total.",
+  "scope": "One input-only Sunday Best critical-path completion and real isolated save; not full campaign completion."
+}

@@ -1,18 +1,20 @@
-# Gloom Bean Unity acceptance gates
+# Acceptance ledger - native iteration checkpoint
 
-Scope: two sequenced commits. An import, a source presence check and a gameplay result are different evidence.
+The original immutable gate text is preserved in Documentation/History/ORIGINAL_GATES.md. This ledger records evidence against it without treating partial content as a completed commercial game.
 
-- [ ] G01 Foundation: complete editable Unity project boots and builds with installed Unity 6000.5.9f1.
-- [ ] G02 Movement: actual physics tests cover acceleration, variable jump, buffered jump, crouch clearance, crawl, roll on slope and moving-platform carry.
-- [ ] G03 Combat: grounded/air tackle tiers, pound/strong pound, stun/carry/release/throw with enemy-to-enemy collision and recovery.
-- [ ] G04 Traversal: swim, swim dash, water transitions, conveyor/sliding/four-arm carousel and camera bounds.
-- [ ] G05 Game loop: key follower, configurable required/optional pickups, switch/return, timer success/failure, world/level/boss menu progression, persistent save.
-- [ ] G06 Foundation checkpoint committed and tagged before atlas-specific implementation.
-- [ ] G07 Atlas traceability: all 20 level / 5 boss / 15 possession requirements preserved against PDF pages, with implementation/evidence/limits per requirement.
-- [ ] G08 Atlas mechanics: each possession has actual distinct simulation, acquisition, constraint, cure and a playable example; no mere renamed enum/door check.
-- [ ] G09 Atlas campaign: twenty distinct authored courses, unique stage mechanisms/Turn, Mercy secrets and five distinct multi-phase bosses.
-- [ ] G10 Corruption: opening transition, permanent save/menu mutation, ordinary ending remains corrupted; all-20 Mercy restoration occurs only in ending.
-- [ ] G11 Regression and shipping: engine compile, runtime integration checks, native build boot, archive/source integrity, clean git history and readable controls/iteration guide.
-- [ ] G12 Human feel/readability: uncoached controller playtest. UNKNOWN until performed; not implied by automated checks.
+| Gate | State | Evidence / remaining boundary |
+|---|---|---|
+| G01 Native editable foundation boots/builds | PASS | Independent clean build; foundation Evidence JSON |
+| G02 Player movement | PASS for named machine cases | 44 base checks include acceleration/jumps/clearance/rolling/moving support; human feel UNKNOWN |
+| G03 Combat/carry/throw | PASS for named machine cases | Production physics observations, not exact Nintendo timing |
+| G04 Water/environment/camera | PASS for named machine cases | Base/native suite; no universal geometry proof |
+| G05 Menus/escape/save loop | PASS for named machine cases | Suite plus actual Sunday Best key/Turn/exit/save route |
+| G06 Foundation committed before atlas | PASS | Immutable foundation-v0.1.0 is ancestor of atlas commits |
+| G07 Atlas full fidelity/traceability | PARTIAL | All20 mapped to source pages; exact geometry/advanced choreography unresolved |
+| G08 Possessions | PARTIAL | All15 distinct simulations exercised; not every authored puzzle solution validated |
+| G09 Full campaign | PARTIAL | 20 authored courses/Turn states and five boss controllers; 19 route completions and five boss victories UNKNOWN |
+| G10 Permanent corruption/restoration | PASS for state rules; PARTIAL presentation | Actual opening contact/save; exact20secret ending guard; final cinematics absent |
+| G11 Reproducible iteration release | PASS build/regression; see archive receipt for packaging | Fresh clone, 165 native checks, 31 route assertions; source identity manifest |
+| G12 Human acceptance | UNKNOWN | Physical-controller/blind playtest not performed |
 
-Gates are evaluated with the actual Unity validation harness and independent source/content audits authored during this session. Never mark a feature passed because its name appears in a file. Machine tests cannot certify enjoyment or production-ready art.
+Commands: Tools/Build-Windows.ps1; Tools/Verify-Windows.ps1 -Suite Mechanics; Tools/Verify-Windows.ps1 -Suite OpeningRoute. Each has bounded runtime and an isolated verification save. Full-campaign acceptance is intentionally not marked PASS.
