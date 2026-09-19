@@ -8,11 +8,12 @@ namespace GloomBean.Foundation
     public struct InputFrame
     {
         public Vector2 move;
-        public bool jump, jumpHeld, attack, run, grab, interact, action, alternate, pound;
+        public bool jump, jumpHeld, attack, run, grab, interact, action, actionHeld, alternate, pound;
         public InputFrame WithoutEdges() { var v = this; v.jump=v.attack=v.grab=v.interact=v.action=v.alternate=v.pound=false; return v; }
     }
 
     public interface IActorInput { InputFrame Consume(); }
+    public interface IActorInputFilter { InputFrame Filter(InputFrame frame,float dt); }
     public interface IActorModifier
     {
         // Return true when the possession takes responsibility for locomotion this tick.

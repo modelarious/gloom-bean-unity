@@ -50,7 +50,7 @@ namespace GloomBean.Foundation
             if(atlasType!=null&&typeof(ICampaignSource).IsAssignableFrom(atlasType))sources.Add((ICampaignSource)Activator.CreateInstance(atlasType));
             Source=sources[0];worlds=Source.Worlds();screen=ScreenMode.Home;
             string[] args=Environment.GetCommandLineArgs();
-            testMode=Array.IndexOf(args,"-gb-verify")>=0;
+            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0;
             reportDirectory=Argument(args,"-gb-reports",Path.Combine(Application.persistentDataPath,"Reports"));
             string savePath=Argument(args,"-gb-save",Path.Combine(Application.persistentDataPath,"host-cycle-save.json"));
             if(testMode)savePath=Path.Combine(reportDirectory,"test-save.json");
@@ -61,7 +61,28 @@ namespace GloomBean.Foundation
         }
         static string Argument(string[] args,string flag,string fallback)
         {int i=Array.IndexOf(args,flag);return i>=0&&i+1<args.Length?args[i+1]:fallback;}
-        IEnumerator BeginVerification(){yield return null;gameObject.AddComponent<FoundationVerification>().Begin(this);}
+        IEnumerator BeginVerification()
+        {
+            yield return null;
+            var type=Type.GetType("GloomBean.Campaign.RouteVerification, Assembly-CSharp");
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-route-verify")>=0&&type!=null)
+                type.GetMethod("Begin").Invoke(gameObject.AddComponent(type),new object[]{this});
+            else gameObject.AddComponent<FoundationVerification>().Begin(this);
+        }
+        public bool OpenPractice(string stageId)
+        {
+            for(int si=0;si<sources.Count;si++)
+            {
+                var list=sources[si].Worlds();
+                for(int wi=0;wi<list.Length;wi++)
+                {
+                    foreach(var stage in list[wi].levels)
+                        if(stage.id==stageId){SelectSource(si);worldIndex=wi;LoadStage(stage,true);return true;}
+                    if(list[wi].boss.id==stageId){SelectSource(si);worldIndex=wi;LoadStage(list[wi].boss,true);return true;}
+                }
+            }
+            return false;
+        }
         public void SelectSource(int index){sourceIndex=Mathf.Clamp(index,0,sources.Count-1);Source=sources[sourceIndex];worlds=Source.Worlds();worldIndex=0;}
         public WorldDefinition[] AvailableWorlds=>worlds;
         public int SourceCount=>sources.Count;

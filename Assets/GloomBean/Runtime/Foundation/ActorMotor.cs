@@ -61,6 +61,7 @@ namespace GloomBean.Foundation
         public void Step(InputFrame f,float dt)
         {
             if(disabled||State==MotionState.Dead||Time.timeScale==0) return;
+            if(modifier is IActorInputFilter filter)f=filter.Filter(f,dt);
             LastInput=f; Invulnerability=Mathf.Max(0,Invulnerability-dt); hurtTime-=dt; groundIgnore-=dt;
             if(Mathf.Abs(f.move.x)>.1f && attackTime<=0 && !rolling)Facing=f.move.x>0?1:-1;
             CarryWithSupport(); ProbeGround();
@@ -182,7 +183,10 @@ namespace GloomBean.Foundation
             }
             else
             {
-                float target=f.move.x*(Crouched?tuning.crawlSpeed:f.run?tuning.runSpeed:tuning.walkSpeed)*speedFactor*(Carried? .8f:1f);
+                float beltSpeed=0;
+                if(Grounded&&GroundCollider){var belt=GroundCollider.GetComponent<Conveyor>();if(belt)beltSpeed=belt.speed;}
+                // A belt sets a support-relative target. Adding its speed every tick causes unbounded acceleration.
+                float target=f.move.x*(Crouched?tuning.crawlSpeed:f.run?tuning.runSpeed:tuning.walkSpeed)*speedFactor*(Carried? .8f:1f)+beltSpeed;
                 v.x=Mathf.MoveTowards(v.x,target,(Grounded?(Mathf.Abs(target)<.1f?tuning.braking:tuning.acceleration):tuning.airAcceleration)*dt);
                 State=!Grounded?MotionState.Air:Crouched?(Mathf.Abs(f.move.x)>.1f?MotionState.Crawl:MotionState.Crouch):Mathf.Abs(v.x)<.2f?MotionState.Idle:f.run?MotionState.Run:MotionState.Walk;
             }
@@ -196,7 +200,7 @@ namespace GloomBean.Foundation
             {
                 // Match the slope tangent, avoiding the uphill-stall of horizontal-only controllers.
                 v.y=-GroundNormal.x/Mathf.Max(.4f,GroundNormal.y)*v.x-1.0f;
-                if(GroundCollider){var conveyor=GroundCollider.GetComponent<Conveyor>();if(conveyor)v.x+=conveyor.speed;}
+                
             }
             else v.y=Mathf.Max(-tuning.terminalSpeed,v.y-tuning.gravity*gravityFactor*dt);
             if(!f.jumpHeld&&jumpWasHeld&&v.y>0)v.y*=tuning.jumpCut;
