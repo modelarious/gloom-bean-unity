@@ -49,6 +49,11 @@ namespace GloomBean.Foundation
             data.cleared.Add("b");C("progress.all-course-clears-open-boss",CampaignProgression.BossOpen(first,data)&&!CampaignProgression.WorldOpen(new[]{first,next},1,data));
             data.cleared.Add("boss1");C("progress.boss-opens-next-world",CampaignProgression.WorldOpen(new[]{first,next},1,data));
             C("progress.invalid-indices-stay-closed",!CampaignProgression.LevelOpen(first,-1,data,true)&&!CampaignProgression.WorldOpen(new[]{first,next},2,data,true));
+            input.frame=default;actor.SetStandingSize(new Vector2(1.5f,.32f));yield return Steps(5);
+            C("body.wide-capsule-physical-footprint",actor.Shape.direction==CapsuleDirection2D.Horizontal&&actor.Shape.bounds.size.y<.36f&&actor.Shape.bounds.size.x>1.45f,actor.Shape.bounds.size.ToString());
+            actor.RestoreShape();yield return Steps(5);C("body.restore-vertical-capsule",actor.Shape.direction==CapsuleDirection2D.Vertical&&actor.Shape.bounds.size.y>1.45f);
+            yield return Steps(75);actor.Hit(new HitInfo(null,Vector2.left,1));int damaged=actor.Health;actor.Reposition(new Vector2(702,3));
+            C("body.reposition-preserves-damage",damaged<actor.tuning.maximumHealth&&actor.Health==damaged);
             Destroy(fixture);yield return null;
         }
     }

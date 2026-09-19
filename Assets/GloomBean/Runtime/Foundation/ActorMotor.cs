@@ -119,6 +119,7 @@ namespace GloomBean.Foundation
                 int n=Physics2D.OverlapBoxNonAlloc(feet+Vector2.up*(size.y*.5f+.04f),size-new Vector2(.08f,.08f),0,overlaps,collisionMask);
                 for(int i=0;i<n;i++) if(overlaps[i]&&!overlaps[i].isTrigger&&overlaps[i]!=Shape)return false;
             }
+            Shape.direction=size.x>size.y?CapsuleDirection2D.Horizontal:CapsuleDirection2D.Vertical;
             Shape.size=size; Shape.offset=baseOffset;
             Body.position=feet-Shape.offset+Vector2.up*size.y*.5f;
             return true;
@@ -287,7 +288,9 @@ namespace GloomBean.Foundation
             RuntimeEvents.Emit("damage",Health.ToString());
             if(Health<=0){State=MotionState.Dead;Died?.Invoke();}
         }
-        public void Revive(Vector2 point){Health=tuning.maximumHealth;Invulnerability=1;hurtTime=0;disabled=false;State=MotionState.Idle;CancelActions();Body.position=point;Body.linearVelocity=Vector2.zero;previousSupport=null;coyote=buffer=runUp=0;groundIgnore=0;}
+        public void Revive(Vector2 point){Health=tuning.maximumHealth;Invulnerability=1;Reposition(point);}
+        // Authored arena transitions reset motion, not the player's accumulated damage.
+        public void Reposition(Vector2 point){hurtTime=0;disabled=false;State=MotionState.Idle;CancelActions();Body.position=point;Body.linearVelocity=Vector2.zero;previousSupport=null;coyote=buffer=runUp=0;groundIgnore=0;}
         void OnCollisionEnter2D(Collision2D c)
         {
             foreach(var contact in c.contacts)
