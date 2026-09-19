@@ -38,8 +38,14 @@ namespace GloomBean.Campaign
             if(Session){var ban=Session.GetComponentInChildren<HostEmbargo>();if(ban&&ban.Blocks(kind)){Session.Notice("That tenant is still held by the Host of Hosts.");return false;}}
             if(Has(kind)){focus=Forms.FindIndex(f=>f.Kind==kind);return true;}
             HostForm form=Make(kind); if(form==null)return false;
-            if(!combine||Forms.Count>=2||form.Locomotion&&Forms.Exists(f=>f.Locomotion))
-            { if(!Cure())return false; }
+            if(!combine){if(!Cure())return false;}
+            else
+            {
+                // Replace the incompatible locomotion tenant, not its compatible partner.
+                // Wax -> Root must not silently regurgitate a Gullet-carried structural tile.
+                if(form.Locomotion){var previous=Forms.Find(f=>f.Locomotion);if(previous!=null&&!Cure(previous.Kind))return false;}
+                if(Forms.Count>=2&&!Cure(Forms[0].Kind))return false;
+            }
             Source=source; Actor.CancelActions(); Actor.DropCarried();form.host=this;Forms.Add(form);focus=Forms.Count-1;form.Enter();
             Acquired?.Invoke(kind);RuntimeEvents.Emit("possession",kind.ToString());
             Session?.Notice(Display(kind)+" HOST: "+form.Help,6);return true;

@@ -1,7 +1,7 @@
 param(
     [string]$ProjectPath=(Split-Path $PSScriptRoot -Parent),
     [ValidateSet('Mechanics','OpeningRoute','Parish','Campaign')][string]$Suite='Mechanics',
-    [ValidatePattern('^(W[12]|GB-L0[1-8]|GB-B[12])$')][string]$Route='W1',
+    [ValidatePattern('^(W[12]|GB-L0[1-8]|GB-B[12])$')][string]$Route='W2',
     [switch]$WithSecrets,
     [switch]$Practice,
     [ValidateRange(30,540)][int]$TimeoutSeconds=540
@@ -13,7 +13,7 @@ if(-not (Test-Path $player)){throw 'Build the Windows player first with Build-Wi
 function Q([string]$s){if($s.Contains('"')){throw 'Quotes are not valid in these arguments.'};return '"'+$s+'"'}
 $report=Join-Path $ProjectPath ('Reports\'+$Suite+'-'+(Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
 New-Item -ItemType Directory -Force $report | Out-Null
-$flag=switch($Suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Parish'{'-gb-parish-verify -gb-route-id '+$Route} 'Campaign'{'-gb-orchard-verify -gb-route-id '+$Route}}
+$flag=switch($Suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Parish'{'-gb-parish-verify -gb-route-id '+$Route} 'Campaign'{$chapterFlag=if($Route -match '^(W1|GB-L0[1-4]|GB-B1)$'){'-gb-parish-verify'}else{'-gb-orchard-verify'};$chapterFlag+' -gb-route-id '+$Route}}
 if($WithSecrets){$flag+=' -gb-with-secrets'}
 if($Practice){$flag+=' -gb-practice-witness'}
 $log=Join-Path $report 'player.log'
@@ -27,7 +27,7 @@ if(-not $process.WaitForExit($TimeoutSeconds*1000)){
 }
 $process.Refresh();$code=$process.ExitCode
 [IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),[string]$code)
-$file=switch($Suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Parish'{'parish-result.json'} 'Campaign'{'orchard-result.json'}}
+$file=switch($Suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Parish'{'parish-result.json'} 'Campaign'{if($Route -match '^(W1|GB-L0[1-4]|GB-B1)$'){'parish-result.json'}else{'orchard-result.json'}}}
 $resultPath=Join-Path $report $file
 if(-not (Test-Path $resultPath)){throw "No verification receipt: $log"}
 $result=Get-Content $resultPath -Raw | ConvertFrom-Json

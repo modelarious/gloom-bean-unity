@@ -135,6 +135,13 @@ namespace GloomBean.Campaign
             for(int i=0;i<9;i++)ink.Add(new Vector2(600+i*3,5),new Vector2(603+i*3,5));yield return Steps(3);C("ink.finite-length-budget",ink.Length<=18.01f,ink.Length.ToString());
 
             yield return Arena();host.Acquire(HostKind.Echo);host.Acquire(HostKind.Ink,null,true);C("composition.compatible-pair-retained",host.Has(HostKind.Echo)&&host.Has(HostKind.Ink));host.Cure(HostKind.None,true);C("cure.restores-base-controller",host.Forms.Count==0&&actor.Shape.enabled&&actor.Shape.excludeLayers==0&&actor.Height>1.3f);
+            yield return Arena();host.Acquire(HostKind.Gullet);var carried=a.Chunk(new Vector2(601.1f,.7f),Vector2.one);var pairGullet=host.Form<GulletForm>();bool swallowed=pairGullet.Bite(Vector2.right);
+            host.Acquire(HostKind.Wax,null,true);host.Acquire(HostKind.Root,null,true);
+            C("composition.locomotion-swap-preserves-stored-terrain",swallowed&&host.Has(HostKind.Root)&&host.Has(HostKind.Gullet)&&!host.Has(HostKind.Wax)&&pairGullet.Stored==carried&&!carried.gameObject.activeSelf);
+            yield return Arena();var drainCover=a.Chunk(new Vector2(601,.5f),Vector2.one);var drainSoil=a.Soil(new Vector2(603,1),new Vector2(609,1));
+            var materialCircuit=fixture.AddComponent<MaterialSluice>();materialCircuit.cover=drainCover;materialCircuit.channel=new[]{drainSoil};yield return Steps(3);
+            C("sluice.cover-retains-local-moisture",drainSoil.wet);drainCover.gameObject.SetActive(false);yield return Steps(3);C("sluice.removed-terrain-dries-actual-soil",!drainSoil.wet);materialCircuit.reversed=true;yield return Steps(3);C("sluice.reverse-restores-actual-soil",drainSoil.wet);
+            yield return Arena();yield return Steps(75);actor.Hit(new HitInfo(null,Vector2.left,1));int hurtHealth=actor.Health;actor.Reposition(new Vector2(601,1));C("arena.reposition-does-not-heal",actor.Health==hurtHealth&&hurtHealth<actor.tuning.maximumHealth);
             Destroy(fixture);fixture=null;yield return null;
             game.SelectSource(1);var worlds=game.AvailableWorlds;C("catalog.five-worlds-four-levels-five-bosses",worlds.Length==5&&worlds.All(w=>w.levels.Length==4&&w.boss!=null));
             var all=new HashSet<string>();var seen=new HashSet<HostKind>();

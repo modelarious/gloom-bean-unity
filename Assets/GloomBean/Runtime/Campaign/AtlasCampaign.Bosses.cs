@@ -41,7 +41,7 @@ namespace GloomBean.Campaign
             boss.Configure(boss.title,p=>{if(p==0){balanced=scale.Mass>.65f&&scale.Mass<.86f?balanced+Time.deltaTime:0;return balanced>1;}if(p==1)return weight.position.y< -2;return a.Player.Body.position.x>38;},p=>{
                 if(p==0)boss.objective="Balance a living body between 0.65 and 0.86 mass. Leave excess wax elsewhere.";
                 if(p==1){a.host.Cure(HostKind.None,true);gullet.gameObject.SetActive(true);weight.bodyType=RigidbodyType2D.Dynamic;weight.gravityScale=2;boss.objective="Remove the support beneath the Judge. The floor is actual edible terrain.";}
-                if(p==2){a.host.Cure(HostKind.None,true);gullet.gameObject.SetActive(false);rootFloor.SetActive(true);wall.SetActive(true);root.gameObject.SetActive(true);a.Player.Revive(new Vector2(22,1));boss.objective="Grow around the scale's sealed back; surface behind its support.";}
+                if(p==2){a.host.Cure(HostKind.None,true);gullet.gameObject.SetActive(false);rootFloor.SetActive(true);wall.SetActive(true);root.gameObject.SetActive(true);a.Player.Reposition(new Vector2(22,1));boss.objective="Grow around the scale's sealed back; surface behind its support.";}
             });
         }
         void Surveyor(AtlasBuilder a)

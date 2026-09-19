@@ -288,7 +288,9 @@ namespace GloomBean.Foundation
             RuntimeEvents.Emit("damage",Health.ToString());
             if(Health<=0){State=MotionState.Dead;Died?.Invoke();}
         }
-        public void Revive(Vector2 point){Health=tuning.maximumHealth;Invulnerability=1;hurtTime=0;disabled=false;State=MotionState.Idle;CancelActions();Body.position=point;Body.linearVelocity=Vector2.zero;previousSupport=null;coyote=buffer=runUp=0;groundIgnore=0;}
+        public void Revive(Vector2 point){Health=tuning.maximumHealth;Invulnerability=1;Reposition(point);}
+        // Authored arena transitions reset motion, not the player's accumulated damage.
+        public void Reposition(Vector2 point){hurtTime=0;disabled=false;State=MotionState.Idle;CancelActions();Body.position=point;Body.linearVelocity=Vector2.zero;previousSupport=null;coyote=buffer=runUp=0;groundIgnore=0;}
         void OnCollisionEnter2D(Collision2D c)
         {
             foreach(var contact in c.contacts)
