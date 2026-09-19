@@ -9,12 +9,18 @@ namespace GloomBean.Campaign
         public override string Help=>"U melts/reforms. I leaves wax; Up+I absorbs nearby plugs. Liquid flows downhill and cannot jump.";
         public override string Status=>"Body volume "+host.waxVolume.ToString("0.00")+" / 1.00";
         public override void Enter(){host.waxVolume=1;host.Plugs.RemoveAll(p=>!p);foreach(var p in host.Plugs)host.waxVolume-=p.volume;Size();}
-        public void Toggle(){if(Liquid){Vector2 s=new Vector2(.88f,1.5f)*Mathf.Sqrt(Mathf.Max(.25f,host.waxVolume));if(!Actor.SetSize(s)){Notice("The wax cannot reform under this ceiling.");return;}}Liquid=!Liquid;Size();}
+        public void Toggle()
+        {
+            bool next=!Liquid;float v=Mathf.Max(.25f,host.waxVolume);
+            Vector2 target=next?new Vector2(1.5f*v,.32f):new Vector2(.88f,1.5f)*Mathf.Sqrt(v);
+            if(!Actor.SetSize(target)){Notice(next?"The puddle needs lateral clearance.":"The wax cannot reform under this ceiling.");return;}
+            Liquid=next;Size();
+        }
         void Size(){float v=Mathf.Max(.25f,host.waxVolume);Actor.Body.mass=v;Actor.SetStandingSize(Liquid?new Vector2(1.5f*v,.32f):new Vector2(.88f,1.5f)*Mathf.Sqrt(v));Actor.chargeDisabled=Liquid;}
         public bool Deposit()
         {
             if(host.waxVolume<.47f)return false;
-            Vector2 p=Actor.Feet+new Vector2(-Actor.Facing*.85f,.25f);
+            Vector2 p=Actor.Feet+new Vector2(-Actor.Facing*1.35f,.25f);
             if(Physics2D.OverlapBox(p,new Vector2(.5f,.38f),0,1<<Layers.Terrain))return false;
             var g=PrimitiveArt.Shape("Conserved wax plug",Root,p,Vector2.one,new Color(.92f,.82f,.45f),PrimitiveArt.Icon.Round,7);g.layer=Layers.Prop;
             var c=g.AddComponent<BoxCollider2D>();c.size=new Vector2(.62f,.5f);var sr=g.GetComponent<SpriteRenderer>();sr.drawMode=SpriteDrawMode.Sliced;sr.size=c.size;

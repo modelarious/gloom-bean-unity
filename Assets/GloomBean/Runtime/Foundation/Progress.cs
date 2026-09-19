@@ -46,7 +46,15 @@ namespace GloomBean.Foundation
             foreach(var m in mercies)if(!Data.mercies.Contains(m))Data.mercies.Add(m);
             Data.totalCoins+=coins;Write();
         }
-        public bool RestoredEnding=>Data.mercies.FindAll(m=>m.StartsWith("GB-L",StringComparison.Ordinal)).Count>=20;
+        public bool RestoredEnding
+        {
+            get
+            {
+                var found=new HashSet<string>(Data.mercies,StringComparer.Ordinal);
+                for(int i=1;i<=20;i++)if(!found.Contains("GB-L"+i.ToString("00")+"-MERCY"))return false;
+                return true;
+            }
+        }
     }
 
 

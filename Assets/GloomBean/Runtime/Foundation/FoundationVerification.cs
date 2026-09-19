@@ -113,6 +113,11 @@ namespace GloomBean.Foundation
             Check("carousel.four-upright-arms",four);
             foreach(var arm in carousel.arms)if(arm)Destroy(arm.gameObject);Destroy(carousel.gameObject);
 
+            var belt=b.Solid("Conveyor regression",new Vector2(615,2),new Vector2(10,.5f));belt.AddComponent<Conveyor>().speed=2;
+            yield return Place(new Vector2(612,3.1f));input.frame=default;yield return Steps(15);float bx=actor.Body.position.x,peakBelt=0;
+            for(int i=0;i<120;i++){yield return tick;peakBelt=Mathf.Max(peakBelt,Mathf.Abs(actor.Body.linearVelocity.x));}
+            Check("conveyor.bounded-support-relative-speed",peakBelt<=2.1f&&actor.Body.position.x>bx+2,"peak="+peakBelt+" dx="+(actor.Body.position.x-bx));Destroy(belt);
+
             var plate=b.Plate(new Vector2(630,.14f));var gate=b.Door(new Vector2(632,1),new Vector2(1,2),plate);
             yield return Place(new Vector2(630,.8f));yield return Steps(10);Check("plate.actor-mass-opens-gate",plate.Pressed&&gate.opened);
             yield return Place(new Vector2(626,.8f));yield return Steps(10);Check("plate.release-closes-gate",!plate.Pressed&&!gate.opened);

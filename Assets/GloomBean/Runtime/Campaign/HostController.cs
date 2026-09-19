@@ -96,6 +96,8 @@ namespace GloomBean.Campaign
         {
             var go=new GameObject("Corporeal secondary Host");go.transform.SetParent(transform.parent);go.transform.position=p;
             var a=go.AddComponent<ActorMotor>();a.replica=true;a.pickupDisabled=true;a.manual=true;
+            // A replay collides with the world, not with the Host it initially overlaps.
+            Physics2D.IgnoreCollision(a.Shape,Actor.Shape,true);
             var view=go.AddComponent<ActorView>();view.corrupted=true;view.ghost=true;view.tint=color;
             return a;
         }

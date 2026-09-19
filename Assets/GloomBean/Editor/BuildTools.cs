@@ -25,6 +25,11 @@ namespace GloomBean.Editor
             if(!AssetDatabase.LoadAssetAtPath<MovementTuning>("Assets/GloomBean/Resources/MovementTuning.asset"))
                 AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<MovementTuning>(),"Assets/GloomBean/Resources/MovementTuning.asset");
             EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(Boot,true)};
+            var tags=new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
+            var layers=tags.FindProperty("layers");
+            string[] names={"Terrain","Moving surface","Physics prop","Host","Enemy","Sensor","Inside-out","Shadow","Reserved","Far plane","Middle plane","Near plane"};
+            for(int i=0;i<names.Length;i++)layers.GetArrayElementAtIndex(8+i).stringValue=names[i];
+            tags.ApplyModifiedPropertiesWithoutUndo();
             PlayerSettings.companyName="Oddworks";PlayerSettings.productName="Gloom Bean";
             PlayerSettings.defaultScreenWidth=1280;PlayerSettings.defaultScreenHeight=800;
             PlayerSettings.fullScreenMode=FullScreenMode.Windowed;PlayerSettings.resizableWindow=true;PlayerSettings.runInBackground=true;

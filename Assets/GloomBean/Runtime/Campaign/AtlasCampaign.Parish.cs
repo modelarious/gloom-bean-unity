@@ -19,7 +19,9 @@ namespace GloomBean.Campaign
             var backs=new List<GameObject>();for(int i=0;i<9;i++){var g=a.Ledge(28+i*7,5.3f,6);g.name="Backstage return brace";g.SetActive(false);backs.Add(g);}
             b.session.Turned+=()=>{foreach(var g in backs)g.SetActive(true);foreach(var g in pretty)g.SetActive(false);horror.SetActive(true);};
             var jawPlate=b.Plate(new Vector2(27,5.45f));var jaw=b.Door(new Vector2(22,8.9f),new Vector2(.4f,3),jawPlate);jaw.holdSeconds=.6f;a.Ledge(23,6.7f,3);a.Mercy(18,8.4f);
-            a.Ledge(10,3.2f,4);a.Ledge(17,4.7f,4);a.Cure(HostKind.Echo,5,1);
+            // Return-only shelves must not create a 1.2 m headroom trap over the opening 1.5 m Host.
+            var returnStepA=a.Ledge(10,3.2f,4);returnStepA.SetActive(false);backs.Add(returnStepA);
+            var returnStepB=a.Ledge(17,4.7f,4);returnStepB.SetActive(false);backs.Add(returnStepB);a.Cure(HostKind.Echo,5,1);
             var rhythm=b.Trigger("Parade jump-rope rhythm",new Vector2(11,3.3f),new Vector2(6,7),Color.clear).AddComponent<RhythmMemory>();rhythm.teaching=true;
         }
         void Belfry(AtlasBuilder a)
