@@ -107,6 +107,7 @@ namespace GloomBean.Foundation
             for(int i=0;i<n;i++)
             {
                 var h=groundHits[i]; if(!h.collider||h.collider.isTrigger||h.collider==Shape||h.normal.y<.4f)continue;
+                if(h.collider.GetComponent<OneWaySurface>()&&Feet.y<h.collider.bounds.max.y-.12f)continue;
                 if(h.distance<closest){closest=h.distance;Grounded=true;GroundCollider=h.collider;GroundNormal=h.normal;}
             }
         }
@@ -257,6 +258,16 @@ namespace GloomBean.Foundation
             IInteractable best=null;float dist=999;
             for(int i=0;i<n;i++)foreach(var b in overlaps[i].GetComponents<MonoBehaviour>())if(b is IInteractable v){float d=((Vector2)b.transform.position-Body.position).sqrMagnitude;if(d<dist){dist=d;best=v;}}
             best?.Interact(this);
+        }
+        // A temporal replica starts from the actual movement state, not a stationary approximation.
+        // World geometry still acts independently on it after the replay begins.
+        public void CopyLocomotionFrom(ActorMotor original)
+        {
+            if(!replica)throw new InvalidOperationException("Only a replica may copy initial locomotion.");
+            tuning=original.tuning;Body.linearVelocity=original.Body.linearVelocity;Facing=original.Facing;
+            coyote=original.coyote;buffer=original.buffer;runUp=original.runUp;
+            groundIgnore=original.groundIgnore;jumpWasHeld=original.jumpWasHeld;
+            State=original.State;Water=original.Water;gravityFactor=original.gravityFactor;speedFactor=original.speedFactor;
         }
         public void EnterWater(WaterVolume water){Water=water;}
         public void AddVelocity(Vector2 impulse){Body.linearVelocity+=impulse;}

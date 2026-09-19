@@ -6,7 +6,7 @@ namespace GloomBean.Campaign
 {
     public sealed class EchoForm : HostForm
     {
-        struct Recorded {public float time;public InputFrame frame;}
+        struct Recorded {public float time;public InputFrame frame;public Vector2 p,v;}
         public bool Leading;
         public ActorMotor Echo {get;private set;} readonly Queue<Recorded> history=new Queue<Recorded>();float clock;bool alive;
         public override HostKind Kind=>HostKind.Echo;
@@ -16,7 +16,7 @@ namespace GloomBean.Campaign
         public void Synchronize()
         {
             if(Echo)UnityEngine.Object.Destroy(Echo.gameObject);history.Clear();clock=0;
-            Echo=host.Replica(Actor.Body.position,new Color(.53f,.8f,.9f));
+            Echo=host.Replica(Actor.Body.position,new Color(.53f,.8f,.9f));Echo.CopyLocomotionFrom(Actor);
             // Only temporal echoes ignore their initially overlapping original. Mirror twins remain physical obstacles.
             Physics2D.IgnoreCollision(Echo.Shape,Actor.Shape,true);Echo.Body.simulated=false;alive=true;
             Echo.Died+=()=>{alive=false;};
@@ -26,16 +26,21 @@ namespace GloomBean.Campaign
             if(Leading)return;
             if(f.action){Synchronize();return;}clock+=dt;
             // Store input, not world positions: walls change the replay's eventual location.
-            f.action=f.alternate=false;history.Enqueue(new Recorded{time=clock,frame=f});
+            f.action=f.alternate=false;history.Enqueue(new Recorded{time=clock,frame=f,p=Actor.Body.position,v=Actor.Body.linearVelocity});
             if(!Echo||!alive)return;
             if(history.Count>0&&history.Peek().time<=clock-2f+.0001f)
-            {Echo.Body.simulated=true;var past=history.Dequeue();Echo.Step(past.frame,dt);}
+            {if(!Echo.Body.simulated)Echo.Body.simulated=true;var past=history.Dequeue();
+                if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-echo-trace")>=0 && (past.time<.7f||past.frame.jump||past.frame.interact))
+                    RuntimeEvents.Emit("echo-witness","t="+past.time.ToString("0.000")+" expected="+past.p+" actual="+Echo.Body.position+" before="+Echo.Body.linearVelocity+" f="+past.frame.move+" j="+past.frame.jump+" E="+past.frame.interact);
+                Echo.Step(past.frame,dt);
+                if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-echo-trace")>=0 && past.time<.7f)RuntimeEvents.Emit("echo-velocity","expected="+past.v+" actual="+Echo.Body.linearVelocity+" ground="+Echo.Grounded);
+            }
             else if(clock>2)Echo.Step(default,dt);
         }
         public InputFrame FilterLeading(InputFrame f,float dt)
         {
             if(f.action)Synchronize();clock+=dt;InputFrame original=f;f.action=f.alternate=false;
-            if(Echo){Echo.Body.simulated=true;Echo.Step(f,dt);}
+            if(Echo){if(!Echo.Body.simulated)Echo.Body.simulated=true;Echo.Step(f,dt);}
             history.Enqueue(new Recorded{time=clock,frame=original});
             if(history.Count>0&&history.Peek().time<=clock-2+.0001f)return history.Dequeue().frame;
             return default;

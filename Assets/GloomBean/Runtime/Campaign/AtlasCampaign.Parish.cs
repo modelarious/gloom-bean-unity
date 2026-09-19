@@ -31,12 +31,12 @@ namespace GloomBean.Campaign
             a.Begin(new Rect(-7,-7,60,53),new Vector2(2,1));var b=a.b;a.Floor(-5,46);a.Exit(2,1.15f);a.Source(HostKind.Echo,5);
             a.Steps(9,2,4,4,2,3.5f);a.Ledge(26,8,6);
             var r1=a.Receiver(new Vector2(23,10));var r2=a.Receiver(new Vector2(29,10));r1.hold=r2.hold=2;
-            a.Bell(new Vector2(8,1),new[]{new Vector2(8,1),new Vector2(8,14),new Vector2(23,14),new Vector2(23,10)},r1);
-            a.Bell(new Vector2(19,7),new[]{new Vector2(19,7),new Vector2(19,15),new Vector2(29,15),new Vector2(29,10)},r2);
-            var lift=b.Slider(new Vector2(28,8),new Vector2(28,20),new Vector2(4,.5f),3.4f);lift.paused=true;var dual=lift.gameObject.AddComponent<DualPulseLift>();dual.a=r1;dual.b=r2;dual.lift=lift;
-            a.Ledge(34,20,5);a.Steps(37,22,5,-4,2,4);a.Ledge(18,32,10);a.Key(20,33.4f);a.Nail(15,32.4f);
-            var upper=b.Slider(new Vector2(38,23),new Vector2(38,31),new Vector2(3,.4f),2);upper.SetClock(2);
-            var returnGate=b.Door(new Vector2(11,24),new Vector2(.7f,8));var strong=a.Receiver(new Vector2(11,28));strong.gate=returnGate;strong.minimumStrength=2;strong.hold=12;
+            a.Bell(new Vector2(8,1),new[]{new Vector2(8,1),new Vector2(8,14),new Vector2(23,14),new Vector2(23,10)},r1).name="Lower clapper";r1.name="Left brake";r2.name="Right brake";
+            a.Bell(new Vector2(19,7),new[]{new Vector2(19,7),new Vector2(19,15),new Vector2(29,15),new Vector2(29,10)},r2).name="Upper clapper";
+            var lift=b.Slider(new Vector2(28,7.75f),new Vector2(28,19.75f),new Vector2(4,.5f),3.4f);lift.paused=true;var dual=lift.gameObject.AddComponent<DualPulseLift>();dual.a=r1;dual.b=r2;dual.lift=lift;
+            a.Ledge(34,20,5);for(int stair=0;stair<5;stair++){var landing=a.Ledge(37-stair*4,22+stair*2,4);landing.AddComponent<OneWaySurface>();landing.name="Thin belfry landing";}a.Ledge(16,32,8).AddComponent<OneWaySurface>();a.Key(20,33.4f);a.Nail(15,32.4f);
+            var upper=b.Slider(new Vector2(43,23),new Vector2(43,31),new Vector2(3,.4f),2);upper.SetClock(2);
+            var returnGate=b.Door(new Vector2(11,28),new Vector2(.7f,18));var strong=a.Receiver(new Vector2(11,28));strong.gate=returnGate;strong.minimumStrength=2;strong.hold=12;
             a.Bell(new Vector2(13,31.7f),new[]{new Vector2(13,31.7f),new Vector2(10,32),new Vector2(10,28),new Vector2(11,28)},strong);
             a.Ledge(6,27,8);a.Ledge(5,20,6);a.Ledge(7,13,5);a.Ledge(5,6,6);
             var secretPlate=b.Plate(new Vector2(18,8.15f));var secretDoor=b.Door(new Vector2(16,17),new Vector2(.5f,4),secretPlate);secretDoor.holdSeconds=9;
@@ -50,7 +50,7 @@ namespace GloomBean.Campaign
             var rail1=a.Rail(new Vector2(7,12),new Vector2(53,12),1.3f);var rail2=a.Rail(new Vector2(53,12),new Vector2(102,14),.7f);var side=a.Rail(new Vector2(43,12),new Vector2(43,23));
             a.Source(HostKind.Marionette,8).rail=rail1;a.Source(HostKind.Marionette,96,3).rail=rail2;
             b.Solid("Heavy hanging sheet",new Vector2(24,9.5f),new Vector2(2,8));b.Solid("Second hanging sheet",new Vector2(49,8),new Vector2(2,8));b.Solid("Upper laundry shelf",new Vector2(70,6.5f),new Vector2(8,1));
-            a.Ledge(43,19,7);a.Mercy(43,20.2f);a.Ledge(96,6,13);a.Key(89,7.3f);a.Nail(100,6.45f);
+            a.Ledge(38.5f,19,3);a.Ledge(48,19,4);a.Rail(new Vector2(43,23),new Vector2(49,23));a.Mercy(47.5f,20.2f);a.Ledge(96,6,13);a.Key(89,7.3f);a.Nail(100,6.45f);
             var fan=b.Trigger("Laundry crosswind",new Vector2(30,3),new Vector2(7,8),new Color(.65f,.79f,.88f,.08f)).AddComponent<AirJet>();fan.always=true;fan.force=new Vector2(12,0);
             var low=b.Slider(new Vector2(37,2),new Vector2(37,7),new Vector2(5,.5f),1.4f);var high=b.Slider(new Vector2(60,7),new Vector2(60,2),new Vector2(5,.5f),1.4f);
             var weights=b.root.gameObject.AddComponent<CounterweightPair>();weights.left=low;weights.right=high;
@@ -67,7 +67,7 @@ namespace GloomBean.Campaign
             var rail=a.Rail(new Vector2(42,13),new Vector2(78,13));a.Source(HostKind.Marionette,43,3,true).rail=rail;a.Source(HostKind.Echo,68,3,true);
             var hide=b.Solid("Returning room-skin",new Vector2(79,4),new Vector2(1,4),new Color(.67f,.35f,.4f),Layers.Moving).AddComponent<SkinReturn>();hide.home=new Vector2(64,4);
             a.Ledge(84,4,5);a.Ledge(91,6,6);a.Ledge(100,8,9);a.Key(93,7.5f);a.Nail(103,8.4f);
-            a.Ledge(30,5,4);a.Ledge(34,7,4);a.Ledge(39,7,5);b.Solid("Fine decorative seam roof",new Vector2(38,8.25f),new Vector2(10,.75f));a.Mercy(41,7.65f);
+            a.Ledge(26,3.6f,3);a.Ledge(30,5,4);a.Ledge(34,7,4);a.Ledge(39,7,5);b.Solid("Fine decorative seam roof",new Vector2(38,7.92f),new Vector2(10,.8f));a.Mercy(41,7.25f);
             b.session.Turned+=()=>{hide.crawling=true;rail.loose=true;};a.Health(67,3.2f);a.Cure(HostKind.None,4,1,true);
             b.Tip(new Vector2(9,2),"Shed a real skin on the scale. The smaller body can move through the wardrobe's throat; the body you leave behind still matters.");
         }
