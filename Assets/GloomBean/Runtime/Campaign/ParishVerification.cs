@@ -37,7 +37,7 @@ namespace GloomBean.Campaign
             if(stopped||!Live)yield break;float end=Time.time+5;bool launched=false;float peak=actor.Feet.y;int trace=0;
             // Leaving crouch is a real input transition, and may fail under a low ceiling.
             if(actor.Crouched)yield return Pause(.15f);
-            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;peak=Mathf.Max(peak,actor.Feet.y);if(session.definition.course==4&&Mathf.Abs(floor-7)<.01f&&trace++<60)Note("TRACE seam x="+actor.Body.position.x.ToString("0.000")+" feet="+actor.Feet.y.ToString("0.000")+" shape="+actor.Shape.size+" vy="+actor.Body.linearVelocity.y.ToString("0.00"));bool edge=!launched&&actor.Grounded;if(edge)launched=true;
+            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;peak=Mathf.Max(peak,actor.Feet.y);if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-echo-trace")>=0&&session.definition.course==4&&Mathf.Abs(floor-7)<.01f&&trace++<60)Note("TRACE seam x="+actor.Body.position.x.ToString("0.000")+" feet="+actor.Feet.y.ToString("0.000")+" shape="+actor.Shape.size+" vy="+actor.Body.linearVelocity.y.ToString("0.00"));bool edge=!launched&&actor.Grounded;if(edge)launched=true;
                 input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*.8f-actor.Body.linearVelocity.x*.08f,-1,1),0),jump=edge,jumpHeld=true};
                 if(launched&&!edge&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.25f&&Mathf.Abs(dx)<.22f)break;yield return NextPhysics();}
             input.frame=default;yield return null;Check("jump "+x+" / "+floor+" peak "+peak.ToString("0.00"),actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);if(stopped)Snapshot("failed-jump");
@@ -96,7 +96,7 @@ namespace GloomBean.Campaign
             yield return Walk(81);yield return Jump(84,4);yield return Walk(85.6f);yield return Jump(89,6);yield return Walk(90.6f);yield return Jump(94,8);yield return Walk(97);yield return Jump(97,8);Check("wardrobe key",session.HasKey);yield return Walk(101.6f);yield return Press(new InputFrame{interact=true});Check("discarded skins crawl home",session.Phase==RunPhase.Returning);Snapshot("turn");
             yield return Walk(83);yield return Await("return spider catches the host",()=>host.Has(HostKind.Marionette),8);
             yield return Thread(78,3);yield return Thread(60,3);yield return Thread(43,9.7f,acceptCure:true);yield return Await("shore shears",()=>!host.Has(HostKind.Marionette),8,()=>new InputFrame{move=new Vector2(-.3f,0)});
-            yield return Walk(45.5f);yield return Await("drop below the wardrobe roof",()=>actor.Grounded&&actor.Feet.y<2.2f,5);yield return Walk(30,false,true);yield return Walk(13,false,true);yield return Walk(2);
+            yield return Walk(45.5f);yield return Await("drop below the wardrobe roof",()=>actor.Grounded&&actor.Feet.y<2.2f,5);yield return Walk(30,false,true);yield return Walk(13,false,true);yield return Press(new InputFrame{interact=true});Check("reclaim abandoned body before leaving",host.Husks.Count==(secret?1:0));yield return Walk(2);
         }
         IEnumerator Usher(){
             var boss=session.GetComponentInChildren<AtlasBoss>();yield return Walk(12);yield return Pause(.85f);yield return Walk(23,true);yield return Await("Usher act I: overlap two scales",()=>boss.phase>=1,4);

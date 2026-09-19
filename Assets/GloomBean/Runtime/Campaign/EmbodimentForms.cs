@@ -102,7 +102,7 @@ namespace GloomBean.Campaign
     public sealed class MoltForm : HostForm
     {
         public override HostKind Kind=>HostKind.Molt;
-        public override string Help=>"U leaves a solid husk (maximum two). I reclaims the nearest skin. Smaller cores cannot tackle.";
+        public override string Help=>"U leaves a solid husk (maximum two). I or E reclaims a nearby skin. Smaller cores cannot tackle.";
         public override string Status=>"Shed skins "+host.Husks.Count+" / 2";
         public override void Enter(){Refresh();}
         public override bool Move(InputFrame f,float dt){if(f.action)Shed();if(f.alternate)Reclaim();return false;}
@@ -119,7 +119,7 @@ namespace GloomBean.Campaign
         public bool Reclaim()
         {
             for(int i=host.Husks.Count-1;i>=0;i--){var h=host.Husks[i];if(!h){host.Husks.RemoveAt(i);continue;}if(Vector2.Distance(h.transform.position,Actor.Body.position)>2)continue;
-                h.GetComponent<Collider2D>().enabled=false;UnityEngine.Object.Destroy(h.gameObject);host.Husks.RemoveAt(i);Refresh();return true;}
+                return host.TryReclaim(h);}
             Notice("Your last skin is out of reach.");return false;
         }
         public void Refresh(){float s=host.Husks.Count==0?1:host.Husks.Count==1?.73f:.48f;Actor.SetStandingSize(new Vector2(.88f,1.5f)*s);Actor.Body.mass=s*s;Actor.chargeDisabled=host.Husks.Count>0;}

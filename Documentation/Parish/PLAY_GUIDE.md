@@ -10,7 +10,7 @@ The opening teaches ordinary traversal before the scenery opens at the corruptio
 ## Belfry of Late Voices
 Ring the lower clapper, climb to the higher one and ring it. Visible light travels along the ropes. The replay rings the lower clapper later, allowing the two lift brakes to hear within the required window. Ride the lift, ascend the thin belfry landings, recover the Keyling and remove the Nail. On return, the cracked bell emits a weak note and a delayed strong note; the strong note releases the high return gate.
 
-**Mercy:** the lift carries the living body but leaves the echo below. From the balcony above the cabinet, move left until the echo is stopped by the cabinet. Make a short leftward jump and wait: the delayed jump puts the echo on the high clapper while the living body can enter the shrine above.
+**Mercy:** the lift carries the living body but leaves the echo below. From the balcony above the cabinet, move left until the echo is stopped by the cabinet. Make a short leftward jump and wait: the delayed jump puts the echo on the high clapper while the living body can enter the shrine above. Unhook the shutter from inside so stopping to read or explore cannot trap you when the echo moves on.
 
 ## The Puppet Laundry
 The spider ties you to an overhead rail. Left/right moves the hook; up/down reels the thread. The thread can pull but does not act as a rigid pole. Lower under hanging sheets before hauling yourself upward. U at a junction transfers to the adjacent rail. On return the rails sag and sway, and the crosswind reverses. Reach the shears beside the entrance to return to ordinary movement.
@@ -18,7 +18,7 @@ The spider ties you to an overhead rail. Left/right moves the hook; up/down reel
 **Mercy:** take the vertical side rail to the drying cabinet, transfer onto its short top rail, and enter the cabinet sideways. On the way down, lower the body beneath the sheet before moving the hook across it; an empty hook path is not an empty body path.
 
 ## House of Borrowed Skins
-Leave a real skin on the throat scale, cross the low wardrobe passage and peel the room seam. Its skin folds into a bridge. Combine the moth's smaller body with the spider's indirect movement, then let shore-side shears cut only the thread. The upper clothes racks lead to the Keyling and Nail. The discarded room-skin crawls back on the return, so the overhead rail offers a way over the closing passage.
+Leave a real skin on the throat scale, cross the low wardrobe passage and peel the room seam. Its skin folds into a bridge. Combine the moth's smaller body with the spider's indirect movement, then let shore-side shears cut only the thread. The upper clothes racks lead to the Keyling and Nail. The discarded room-skin crawls back on the return, so the overhead rail offers a way over the closing passage. Drop below the wardrobe roof before crawling back through; use E beside your original abandoned skin to reclaim it rather than pushing it into the entrance.
 
 **Mercy:** reach the exposed top of the wardrobe, leave a second skin behind and use the fine seam as a tiny crouched core. The floor is continuous; the low ceiling still excludes larger bodies. Both discarded skins remain physical level objects.
 

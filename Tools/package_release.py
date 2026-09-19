@@ -16,6 +16,10 @@ def main()->None:
     args=ap.parse_args();
     if not args.prefix or "/" in args.prefix or "\\" in args.prefix or args.prefix in (".",".."):raise ValueError("Unsafe package prefix")
     root=args.project.resolve();entries:dict[str,bytes]={}
+    if args.out.exists():raise FileExistsError("Use a new versioned output filename: "+str(args.out))
+    if args.kind=="source":
+        dirty=git(root,"status","--porcelain","--untracked-files=no").decode().strip()
+        if dirty:raise RuntimeError("Commit or reconcile tracked changes before packaging source: "+dirty)
     if args.kind=="source":
         for raw in git(root,"ls-files","-z").decode().split("\0"):
             if not raw:continue
@@ -36,7 +40,7 @@ def main()->None:
             if not f.is_file() or f.suffix.lower() in (".pdb",".mdb",".log"):continue
             if any("DoNotShip" in part or "dontship" in part.lower() for part in f.parts):continue
             entries[str(PurePosixPath("GloomBeanWindows")/PurePosixPath(f.relative_to(base).as_posix()))]=f.read_bytes()
-        entries["GloomBeanWindows/START_HERE.txt"]=b"Run GloomBean.exe. Keep the Data, DLL and MonoBleedingEdge folders together. FOUNDATION is the mechanics playground; HOST CYCLE is the experimental atlas campaign. Escape pauses; F1 shows controls. Full campaign completion and human controller feel are not certified."
+        entries["GloomBeanWindows/START_HERE.txt"]=b"Run GloomBean.exe. Keep the Data, DLL and MonoBleedingEdge folders together. FOUNDATION is the mechanics playground; HOST CYCLE is the experimental atlas campaign. Escape pauses; F1 controls; F2 design notes; F4 toggles original action sounds. Read the included release status for first-chapter route evidence and remaining campaign limits."
     manifest={"schema":1,"kind":args.kind,"source_commit":git(root,"rev-parse","HEAD").decode().strip(),"files":{k:{"bytes":len(v),"sha256":digest(v)} for k,v in sorted(entries.items())}}
     entries["PAYLOAD_SHA256.json"]=json.dumps(manifest,indent=2).encode()
     args.out.parent.mkdir(parents=True,exist_ok=True)

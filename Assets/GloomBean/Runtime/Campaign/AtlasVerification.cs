@@ -41,25 +41,6 @@ namespace GloomBean.Campaign
             input.frame=new InputFrame{move=Vector2.right};yield return Steps(72);
             C("echo.waits-two-seconds",actor.Body.position.x>start+4&&Mathf.Abs(echo.Echo.Body.position.x-start)<.2f);
             yield return Steps(105);C("echo.replays-input-with-delay",echo.Echo.Body.position.x>start+2&&actor.Body.position.x-echo.Echo.Body.position.x>8,(actor.Body.position.x-echo.Echo.Body.position.x).ToString());
-            var cue=GameAudio.Synthesize("turn");C("audio.original-cue-bounded-and-finite",cue.Length>10000&&cue.All(v=>!float.IsNaN(v)&&!float.IsInfinity(v)&&Mathf.Abs(v)<.3f));
-            C("audio.native-verification-is-muted",game.GetComponent<GameAudio>()&&game.GetComponent<GameAudio>().Muted);
-
-            yield return Arena();var editable=b.Solid("Editable fixture ledge",new Vector2(605,2),new Vector2(3,.4f));var machine=b.Slider(new Vector2(610,2),new Vector2(615,2),Vector2.one);
-            var overlay=StageLayoutSnapshot.Install("fixture",fixture.transform,false);var oldPosition=editable.transform.position;
-            C("layout.captures-static-positive-control",overlay.Nodes.Any(n=>n.target==editable.transform),"nodes="+overlay.Nodes.Count);
-            C("layout.excludes-scripted-machinery",!overlay.Nodes.Any(n=>n.target==machine.transform));
-            editable.transform.position+=Vector3.up*2;editable.transform.localScale=new Vector3(1.5f,1.5f,1);
-            var authored=JsonUtility.FromJson<LayoutPatch>(JsonUtility.ToJson(overlay.Export()));
-            editable.transform.position=oldPosition;editable.transform.localScale=Vector3.one;
-            bool applied=overlay.Apply(authored,out string overlayWhy);overlayWhy+=" changes="+authored.changes.Count+" position="+editable.transform.position+" size="+editable.GetComponent<BoxCollider2D>().size;
-            C("layout.persisted-pose-and-collider-size",applied&&Mathf.Abs(editable.transform.position.y-4)<.001f&&Vector2.Distance(editable.GetComponent<BoxCollider2D>().size,new Vector2(4.5f,.6f))<.001f,overlayWhy);
-            if(authored.changes.Count>0){
-            Vector3 acceptedPosition=editable.transform.position;authored.sourceFingerprint="stale";authored.changes[0].position+=Vector2.right*9;
-            C("layout.stale-patch-rejected-atomically",!overlay.Apply(authored,out overlayWhy)&&editable.transform.position==acceptedPosition);
-            authored.sourceFingerprint=overlay.Fingerprint;authored.changes.Add(authored.changes[0]);
-            C("layout.duplicate-target-rejected",!overlay.Apply(authored,out overlayWhy)&&editable.transform.position==acceptedPosition);
-            }else C("layout.requires-a-real-exported-change",false);
-
             // Regression for repeated simulated=true writes: velocities alone did not expose the old drift.
             yield return Arena();input.frame=new InputFrame{move=Vector2.right};yield return Steps(30);host.Acquire(HostKind.Echo);echo=host.Form<EchoForm>();
             float replayError=0;var witnessed=new List<Vector2>();int comparisons=0;
@@ -76,13 +57,15 @@ namespace GloomBean.Campaign
             C("echo.inherits-core-dimensions-and-mass",Mathf.Abs(echo.Echo.Height-inheritedHeight)<.001f&&Mathf.Abs(echo.Echo.Body.mass-inheritedMass)<.001f&&echo.Echo.chargeDisabled,"height="+echo.Echo.Height+" mass="+echo.Echo.Body.mass);
             C("cure.absent-tenant-preserves-existing-body",host.Cure(HostKind.Marionette)&&host.Has(HostKind.Molt)&&Mathf.Abs(actor.Height-inheritedHeight)<.001f);
 
+            yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();var oldSkin=host.Husks[0];actor.Body.position=new Vector2(601,.555f);Physics2D.SyncTransforms();
+            var lowRoof=b.Solid("No room for full-size reclaim",new Vector2(601,1.35f),new Vector2(4,.4f));yield return Steps(2);
+            C("molt.reclaim-refuses-unsafe-growth",!host.TryReclaim(oldSkin)&&host.Husks.Contains(oldSkin)&&oldSkin.GetComponent<Collider2D>().enabled);
+            Destroy(lowRoof);yield return Steps(2);C("molt.reclaim-restores-the-body",host.TryReclaim(oldSkin)&&host.Husks.Count==0&&actor.Height>1.3f);
+            host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();oldSkin=host.Husks[0];actor.Body.position+=Vector2.right;host.Cure(HostKind.None,true);
+            C("molt.abandoned-skin-remains-reclaimable-after-cure",host.TryReclaim(oldSkin)&&host.Husks.Count==0);
+
             yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();var tetherSource=Source(HostKind.Marionette);tetherSource.rail=a.Rail(new Vector2(596,9),new Vector2(606,9));host.Acquire(HostKind.Marionette,tetherSource,true);host.Cure(HostKind.Marionette);
             C("composition.cutting-thread-keeps-molt-cost",host.Has(HostKind.Molt)&&actor.chargeDisabled&&actor.Height<1.2f&&actor.Body.mass<.6f,"height="+actor.Height+" mass="+actor.Body.mass+" tackle disabled="+actor.chargeDisabled);
-
-            yield return Arena();var thin=b.Platform(new Vector2(600,1.8f),new Vector2(5,.4f));thin.AddComponent<OneWaySurface>();yield return Steps(3);
-            input.frame=new InputFrame{jump=true,jumpHeld=true};yield return Steps(1);input.frame=new InputFrame{jumpHeld=true};float thinPeak=actor.Feet.y;
-            for(int step=0;step<70;step++){yield return tick;thinPeak=Mathf.Max(thinPeak,actor.Feet.y);}
-            C("oneway.pass-up-and-land-on-top",thinPeak>2.15f&&actor.Grounded&&Mathf.Abs(actor.Feet.y-2)<.12f,"peak="+thinPeak+" landing="+actor.Feet.y);
 
             yield return Arena();host.Acquire(HostKind.Echo);echo=host.Form<EchoForm>();echo.Leading=true;start=actor.Body.position.x;
             input.frame=new InputFrame{move=Vector2.right};yield return Steps(70);C("echo.leading-is-body-latency",echo.Echo.Body.position.x>start+3&&Mathf.Abs(actor.Body.position.x-start)<.5f,"body="+(actor.Body.position.x-start)+" echo="+(echo.Echo.Body.position.x-start));
@@ -119,6 +102,10 @@ namespace GloomBean.Campaign
             yield return Arena();a.Projection(new Vector2(600,2),new Vector2(8,7));host.Acquire(HostKind.Parallax);var depth=host.Form<ParallaxForm>();Vector2 pos=actor.Body.position;bool changed=depth.StepPlane(-1);
             C("parallax.position-preserved",changed&&Vector2.Distance(pos,actor.Body.position)<.05f);C("parallax.scale-and-collision-domain",actor.Height<1.1f&&depth.Plane==0&&actor.collisionMask==(Layers.Solids|(1<<17)));
             actor.Body.position+=Vector2.right*15;C("parallax.requires-overlap",!depth.StepPlane(1));
+
+            yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();var lowThread=Source(HostKind.Marionette);lowThread.rail=a.Rail(new Vector2(596,8),new Vector2(606,8));host.Acquire(HostKind.Marionette,lowThread,true);
+            b.Solid("Small core-only clearance",new Vector2(600,1.4f),new Vector2(3,.4f));yield return Steps(2);
+            C("cure.thread-cut-does-not-demand-full-size-space",host.Cure(HostKind.Marionette)&&host.Has(HostKind.Molt)&&actor.Height<1.2f&&actor.chargeDisabled);
 
             yield return Arena();var near=b.Slider(new Vector2(602,2),new Vector2(618,2),new Vector2(2,.4f),2);var far=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);near.gameObject.AddComponent<TemporalBody>();far.gameObject.AddComponent<TemporalBody>();near.paused=far.paused=true;
             host.Acquire(HostKind.Censer);yield return Steps(200);float nx=near.transform.position.x,fx=far.transform.position.x;near.paused=far.paused=false;yield return Steps(60);

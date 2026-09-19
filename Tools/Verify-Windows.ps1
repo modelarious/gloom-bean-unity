@@ -1,6 +1,9 @@
 param(
     [string]$ProjectPath=(Split-Path $PSScriptRoot -Parent),
-    [ValidateSet('Mechanics','OpeningRoute')][string]$Suite='Mechanics',
+    [ValidateSet('Mechanics','OpeningRoute','Parish')][string]$Suite='Mechanics',
+    [ValidatePattern('^(W1|GB-L0[1-4]|GB-B1)$')][string]$Route='W1',
+    [switch]$WithSecrets,
+    [switch]$Practice,
     [ValidateRange(30,540)][int]$TimeoutSeconds=540
 )
 $ErrorActionPreference='Stop'
@@ -10,10 +13,12 @@ if(-not (Test-Path $player)){throw 'Build the Windows player first with Build-Wi
 function Q([string]$s){if($s.Contains('"')){throw 'Quotes are not valid in these arguments.'};return '"'+$s+'"'}
 $report=Join-Path $ProjectPath ('Reports\'+$Suite+'-'+(Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
 New-Item -ItemType Directory -Force $report | Out-Null
-$flag=if($Suite -eq 'Mechanics'){'-gb-verify'}else{'-gb-route-verify'}
+$flag=switch($Suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Parish'{'-gb-parish-verify -gb-route-id '+$Route}}
+if($WithSecrets){$flag+=' -gb-with-secrets'}
+if($Practice){$flag+=' -gb-practice-witness'}
 $log=Join-Path $report 'player.log'
 $arguments=$flag+' -gb-reports '+(Q $report)+' -logFile '+(Q $log)+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
-# Both suites force an isolated test save below $report; the player's real save is untouched.
+# All suites force an isolated test save below $report; the player's real save is untouched.
 $process=Start-Process -FilePath $player -ArgumentList $arguments -PassThru
 if(-not $process.WaitForExit($TimeoutSeconds*1000)){
     Stop-Process -Id $process.Id -Force
@@ -22,7 +27,7 @@ if(-not $process.WaitForExit($TimeoutSeconds*1000)){
 }
 $process.Refresh();$code=$process.ExitCode
 [IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),[string]$code)
-$file=if($Suite -eq 'Mechanics'){'verification.json'}else{'route-result.json'}
+$file=switch($Suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Parish'{'parish-result.json'}}
 $resultPath=Join-Path $report $file
 if(-not (Test-Path $resultPath)){throw "No verification receipt: $log"}
 $result=Get-Content $resultPath -Raw | ConvertFrom-Json

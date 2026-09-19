@@ -49,7 +49,7 @@ namespace GloomBean.Editor
         {
             GUILayout.Label("GLOOM BEAN / ITERATION WORKBENCH",EditorStyles.boldLabel);
             EditorGUILayout.HelpBox("Practice does not write progress. Edit layout pauses a rebuilt course before play: move or scale eligible static boxes in Scene view, save their ordinary JSON overlay, then reload. Moving mechanisms, gates and possession rules remain authored in code.",MessageType.Info);
-            source=GUILayout.Toolbar(source,new[]{"Foundation","Host Cycle"});
+            if(Type.GetType("GloomBean.Campaign.AtlasCampaign, Assembly-CSharp")!=null)source=GUILayout.Toolbar(source,new[]{"Foundation","Host Cycle"});else{source=0;GUILayout.Label("Foundation-only edition",EditorStyles.miniBoldLabel);}
             if(GUILayout.Button("Inspect movement-tuning asset")){BuildTools.Bootstrap();Selection.activeObject=AssetDatabase.LoadAssetAtPath<MovementTuning>("Assets/GloomBean/Resources/MovementTuning.asset");}
             var game=GameRoot.Instance;var session=game?game.Session:null;var snapshot=session?session.GetComponent<StageLayoutSnapshot>():null;
             if(EditorApplication.isPlaying&&snapshot){

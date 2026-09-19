@@ -52,11 +52,26 @@ namespace GloomBean.Campaign
         {
             if(Forms.Count==0||(only!=HostKind.None&&!Has(only)))return true;
             // Restoration is rejected, not clipped through a ceiling or a still-solid wall.
-            if(!force&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
+            // Removing only the thread from a Molt body does not enlarge its collider
+            // or change its terrain collision domain. Requiring full-size clearance here
+            // falsely traps the small core beneath its own one-way landing.
+            bool unchangedMoltCollider=only==HostKind.Marionette&&Has(HostKind.Molt);
+            if(!force&&!unchangedMoltCollider&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
             for(int i=Forms.Count-1;i>=0;i--)if(only==HostKind.None||Forms[i].Kind==only)
             {var f=Forms[i];f.Leave();Forms.RemoveAt(i);Cured?.Invoke(f.Kind);RuntimeEvents.Emit("cure",f.Kind.ToString());}
             focus=Mathf.Clamp(focus,0,Mathf.Max(0,Forms.Count-1));
             if(Forms.Count==0)ResetBody();else Form<MoltForm>()?.Refresh();return true;
+        }
+        public bool TryReclaim(HuskBody husk)
+        {
+            if(!husk||husk.owner!=this||!Husks.Contains(husk)||Vector2.Distance(husk.transform.position,Actor.Body.position)>2)return false;
+            var shape=husk.GetComponent<Collider2D>();bool enabled=shape.enabled;shape.enabled=false;
+            var molt=Form<MoltForm>();
+            if(molt!=null){float scale=Husks.Count<=1?1:.73f;var size=new Vector2(.88f,1.5f)*scale;if(Actor.Crouched)size.y*=.53f;
+                if(!Actor.SetSize(size)){shape.enabled=enabled;Session?.Notice("There is not enough room to re-enter that skin safely.");return false;}}
+            Husks.Remove(husk);Destroy(husk.gameObject);molt?.Refresh();
+            if(molt!=null&&Husks.Count==0)Cure(HostKind.Molt);
+            RuntimeEvents.Emit("molt-reclaim",Husks.Count.ToString());return true;
         }
         public bool CanStand(Vector2 p)
         {
