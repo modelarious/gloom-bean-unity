@@ -1,0 +1,193 @@
+BEGIN GB-L01 Sunday Best
+PASS GB-L01 selection policy permits the next earned stage | (2.00, 0.75) feet=0.00 hp=6
+PASS GB-L01 walk 6.7 | (6.48, 0.75) feet=0.00 hp=6
+PASS GB-L01 jump 9.5 / 1.6 peak 2.37 | (9.29, 2.35) feet=1.60 hp=6
+PASS GB-L01 walk 11.6 | (11.41, 2.36) feet=1.61 hp=6
+PASS GB-L01 jump 14.9 / 2.6 peak 3.97 | (14.69, 3.35) feet=2.60 hp=6
+PASS GB-L01 walk 20.4 | (20.18, 3.08) feet=2.33 hp=6
+PASS GB-L01 walk 22 | (21.80, 0.75) feet=0.00 hp=6
+PASS GB-L01 jump 24.7 / 1.5 peak 2.37 | (24.49, 2.25) feet=1.50 hp=6
+PASS GB-L01 walk 43 | (42.79, -3.25) feet=-4.00 hp=6
+PASS GB-L01 corruption and Echo contact | (42.79, -3.25) feet=-4.00 hp=6
+PASS GB-L01 walk 58.2 | (57.99, -3.25) feet=-4.00 hp=6
+PASS GB-L01 jump 61 / -2.2 peak -1.44 | (60.79, -1.44) feet=-2.19 hp=6
+PASS GB-L01 walk 62.5 | (62.29, -1.44) feet=-2.19 hp=6
+PASS GB-L01 jump 65.6 / -0.7 peak 0.17 | (65.39, 0.05) feet=-0.70 hp=6
+PASS GB-L01 walk 67.5 | (67.28, 0.05) feet=-0.70 hp=6
+PASS GB-L01 jump 70.6 / 0.8 peak 1.67 | (70.39, 1.55) feet=0.80 hp=6
+PASS GB-L01 walk 72.5 | (72.28, 1.56) feet=0.80 hp=6
+PASS GB-L01 jump 75.6 / 2.3 peak 3.17 | (75.39, 3.05) feet=2.30 hp=6
+PASS GB-L01 walk 77.5 | (77.28, 3.05) feet=2.30 hp=6
+PASS GB-L01 jump 80.6 / 3.8 peak 4.67 | (80.39, 4.55) feet=3.80 hp=6
+PASS GB-L01 walk 82.5 | (82.28, 4.55) feet=3.80 hp=6
+PASS GB-L01 jump 85.6 / 5.3 peak 6.17 | (85.39, 6.05) feet=5.30 hp=6
+PASS GB-L01 physical key | (85.39, 6.05) feet=5.30 hp=6
+PASS GB-L01 walk 94.9 | (94.69, 6.05) feet=5.30 hp=6
+PASS GB-L01 World Nail | (94.70, 6.05) feet=5.30 hp=6
+PASS GB-L01 walk 27 | (27.20, 6.06) feet=5.31 hp=6
+PASS GB-L01 walk 25 | (25.21, 6.06) feet=5.31 hp=6
+PASS GB-L01 jump 22.8 / 7.4 peak 7.67 | (23.02, 8.16) feet=7.41 hp=6
+PASS GB-L01 jump 18 / 7.7 peak 9.77 | (18.21, 8.45) feet=7.70 hp=6
+PASS GB-L01 Mercy collected | (18.21, 8.45) feet=7.70 hp=6
+PASS GB-L01 walk 2 | (3.13, 0.75) feet=0.00 hp=6
+PASS GB-L01 critical path returns to entrance | (3.13, 0.75) feet=0.00 hp=6
+PASS GB-L01 normal clear is persisted | (3.13, 0.75) feet=0.00 hp=6
+PASS GB-L01 Mercy persists on successful clear | (3.13, 0.75) feet=0.00 hp=6
+BEGIN GB-L02 Belfry of Late Voices
+PASS GB-L02 selection policy permits the next earned stage | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L02 walk 6.8 | (6.61, 0.76) feet=0.01 hp=6
+PASS GB-L02 bell-wisp contact | (6.61, 0.76) feet=0.01 hp=6
+EVENT t=44.53 bell Lower clapper
+PASS GB-L02 jump 9 / 2 peak 2.37 | (8.79, 2.75) feet=2.00 hp=6
+EVENT t=46.53 bell Lower clapper
+PASS GB-L02 jump 13 / 4 peak 4.37 | (12.79, 4.75) feet=4.00 hp=6
+PASS GB-L02 jump 17 / 6 peak 6.37 | (16.79, 6.75) feet=6.00 hp=6
+PASS GB-L02 walk 17.8 | (17.58, 6.75) feet=6.00 hp=6
+EVENT t=48.23 bell Upper clapper
+PASS GB-L02 jump 21 / 8 peak 8.37 | (20.78, 8.75) feet=8.00 hp=6
+EVENT t=49.87 pulse-arrived Left brake:1
+EVENT t=50.23 bell Upper clapper
+PASS GB-L02 walk 26 | (25.79, 8.75) feet=8.00 hp=6
+EVENT t=51.87 pulse-arrived Left brake:1
+EVENT t=52.06 pulse-arrived Right brake:1
+PASS GB-L02 two traveling signals release lift | (25.80, 8.75) feet=8.00 hp=6
+PASS GB-L02 walk 28 | (27.80, 10.68) feet=9.93 hp=6
+EVENT t=54.06 pulse-arrived Right brake:1
+PASS GB-L02 ride physical lower lift | (27.81, 20.20) feet=19.45 hp=6
+PASS GB-L02 walk 18.2 | (18.40, 15.76) feet=15.01 hp=6
+PASS GB-L02 upper shrine balcony | (18.40, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 16.65 | (16.86, 15.76) feet=15.01 hp=6
+PASS GB-L02 cabinet physically desynchronizes echo | (16.84, 15.76) feet=15.01 hp=6
+PASS GB-L02 delayed jump rings high clapper | (16.70, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 14 | (14.19, 15.76) feet=15.01 hp=6
+PASS GB-L02 Belfry Mercy | (14.19, 15.76) feet=15.01 hp=6
+EVENT t=66.95 bell Upper clapper
+EVENT t=70.78 pulse-arrived Right brake:1
+PASS GB-L02 far-side shrine release prevents a reading-time softlock | (14.18, 15.76) feet=15.01 hp=6
+PASS GB-L02 walk 20.8 | (20.58, 15.76) feet=15.01 hp=6
+PASS GB-L02 jump 22 / 17 peak 17.37 | (21.78, 17.75) feet=17.00 hp=6
+PASS GB-L02 jump 25 / 19 peak 19.36 | (24.79, 19.76) feet=19.01 hp=6
+PASS GB-L02 jump 29 / 20 peak 21.37 | (28.79, 20.75) feet=20.00 hp=6
+PASS GB-L02 walk 29.1 | (28.88, 20.76) feet=20.01 hp=6
+PASS GB-L02 jump 33 / 20 peak 22.37 | (32.79, 20.76) feet=20.01 hp=6
+PASS GB-L02 jump 37 / 22 peak 22.37 | (36.79, 22.76) feet=22.01 hp=6
+PASS GB-L02 jump 33 / 24 peak 24.37 | (33.22, 24.76) feet=24.01 hp=6
+PASS GB-L02 jump 29 / 26 peak 26.37 | (29.21, 26.76) feet=26.01 hp=6
+PASS GB-L02 jump 25 / 28 peak 28.37 | (25.21, 28.76) feet=28.01 hp=6
+PASS GB-L02 jump 21 / 30 peak 30.37 | (21.21, 30.76) feet=30.01 hp=6
+PASS GB-L02 jump 18 / 32 peak 32.37 | (18.21, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 20 | (19.82, 32.75) feet=32.00 hp=6
+PASS GB-L02 upper key | (19.82, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 16.2 | (16.39, 32.75) feet=32.00 hp=6
+PASS GB-L02 crack the main bell | (16.38, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 14.4 | (14.60, 32.75) feet=32.00 hp=6
+EVENT t=88.42 bell Signal bell
+EVENT t=90.45 pulse-arrived Bell brake:2
+PASS GB-L02 jump 12 / 32 peak 34.37 | (12.21, 32.86) feet=32.11 hp=6
+PASS GB-L02 walk 6 | (6.20, 27.75) feet=27.00 hp=6
+PASS GB-L02 left balcony landing | (6.20, 27.75) feet=27.00 hp=6
+PASS GB-L02 walk 0 | (0.21, 25.98) feet=25.23 hp=6
+PASS GB-L02 return descent reaches ground | (0.04, 0.85) feet=0.10 hp=6
+PASS GB-L02 walk 2 | (0.85, 0.75) feet=0.00 hp=6
+PASS GB-L02 critical path returns to entrance | (0.85, 0.75) feet=0.00 hp=6
+PASS GB-L02 normal clear is persisted | (0.85, 0.75) feet=0.00 hp=6
+PASS GB-L02 Mercy persists on successful clear | (0.85, 0.75) feet=0.00 hp=6
+BEGIN GB-L03 The Puppet Laundry
+PASS GB-L03 selection policy permits the next earned stage | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L03 walk 8 | (7.85, 0.76) feet=0.01 hp=6
+PASS GB-L03 spider strings Host | (7.85, 0.76) feet=0.01 hp=6
+PASS GB-L03 thread 29 length 9.5 | (35.03, 2.96) feet=2.21 hp=6
+PASS GB-L03 thread 43 length 9.5 | (45.89, 1.66) feet=0.91 hp=6
+PASS GB-L03 thread 43 length 2 | (44.48, 9.17) feet=8.42 hp=6
+PASS GB-L03 thread 23 length 2 | (42.91, 20.27) feet=19.52 hp=6
+PASS GB-L03 thread 47 length 2 | (48.70, 21.65) feet=20.90 hp=6
+PASS GB-L03 cabinet Mercy | (48.70, 21.65) feet=20.90 hp=6
+PASS GB-L03 thread 43 length 2 | (41.65, 21.13) feet=20.38 hp=6
+PASS GB-L03 thread 12 length 2 | (44.22, 10.03) feet=9.28 hp=6
+PASS GB-L03 thread 43 length 11.5 | (43.06, -0.71) feet=-1.46 hp=6
+PASS GB-L03 lower body before the hanging sheet | (43.06, -0.71) feet=-1.46 hp=6
+PASS GB-L03 thread 53 length 11.5 | (58.59, 1.51) feet=0.76 hp=6
+PASS GB-L03 thread 76 length 10.5 | (81.56, 2.90) feet=2.15 hp=6
+PASS GB-L03 thread 89 length 5.5 | (93.95, 10.28) feet=9.53 hp=6
+PASS GB-L03 physical laundry key | (86.48, 7.50) feet=6.75 hp=6
+PASS GB-L03 thread 99 length 6.4 | (98.88, 6.83) feet=6.08 hp=6
+PASS GB-L03 lines cut on Turn | (98.88, 6.83) feet=6.08 hp=6
+PASS GB-L03 thread 77 length 5.5 | (74.44, 6.54) feet=5.79 hp=6
+PASS GB-L03 thread 62 length 10.5 | (62.41, 1.03) feet=0.28 hp=6
+PASS GB-L03 thread 53 length 9.5 | (50.31, 2.45) feet=1.70 hp=6
+PASS GB-L03 thread 40 length 9.5 | (40.44, 0.05) feet=-0.70 hp=6
+PASS GB-L03 thread 7 length 10.5 | (12.25, 2.67) feet=1.92 hp=6
+PASS GB-L03 shears release the body | (4.63, 1.59) feet=0.84 hp=6
+PASS GB-L03 walk 2 | (3.11, 0.81) feet=0.06 hp=6
+PASS GB-L03 critical path returns to entrance | (3.11, 0.81) feet=0.06 hp=6
+PASS GB-L03 normal clear is persisted | (3.11, 0.81) feet=0.06 hp=6
+PASS GB-L03 Mercy persists on successful clear | (3.11, 0.81) feet=0.06 hp=6
+BEGIN GB-L04 House of Borrowed Skins
+PASS GB-L04 selection policy permits the next earned stage | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L04 walk 13 | (12.79, 0.76) feet=0.01 hp=6
+PASS GB-L04 wardrobe moth contact | (12.79, 0.76) feet=0.01 hp=6
+PASS GB-L04 first persistent skin | (12.81, 0.56) feet=0.01 hp=6
+PASS GB-L04 walk 20.3 | (20.10, 0.56) feet=0.01 hp=6
+PASS GB-L04 jump 23 / 1.6 peak 2.21 | (22.78, 2.15) feet=1.60 hp=6
+PASS GB-L04 jump 27 / 2 peak 3.97 | (26.79, 2.55) feet=2.01 hp=6
+PASS GB-L04 walk 30 | (29.78, 2.55) feet=2.01 hp=6
+PASS GB-L04 walk 41 | (40.79, 2.33) feet=2.04 hp=6
+PASS GB-L04 jump 43 / 3.3 peak 4.37 | (42.78, 3.86) feet=3.31 hp=6
+PASS GB-L04 walk 41.8 | (42.00, 3.86) feet=3.31 hp=6
+PASS GB-L04 jump 39 / 4.35 peak 5.50 | (39.21, 4.90) feet=4.35 hp=6
+PASS GB-L04 walk 33 | (33.21, 4.90) feet=4.35 hp=6
+PASS GB-L04 jump 30 / 5 peak 6.72 | (30.21, 5.55) feet=5.00 hp=6
+PASS GB-L04 two shed skins | (30.21, 5.36) feet=5.00 hp=6
+PASS GB-L04 jump 32.4 / 7 peak 7.53 | (32.19, 7.36) feet=7.00 hp=6
+PASS GB-L04 walk 41 | (40.79, 7.22) feet=7.03 hp=6
+PASS GB-L04 seam Mercy | (40.79, 7.22) feet=7.03 hp=6
+PASS GB-L04 walk 44 | (43.81, 6.51) feet=6.15 hp=6
+PASS GB-L04 walk 52 | (51.84, 2.37) feet=2.01 hp=6
+PASS GB-L04 spider at peeled bridge | (51.84, 2.37) feet=2.01 hp=6
+PASS GB-L04 bridge shears preserve the molt | (63.56, 2.80) feet=2.44 hp=6
+PASS GB-L04 walk 81 | (80.79, 2.37) feet=2.01 hp=6
+PASS GB-L04 jump 84 / 4 peak 4.37 | (83.79, 4.36) feet=4.00 hp=6
+PASS GB-L04 walk 85.6 | (85.39, 4.36) feet=4.00 hp=6
+PASS GB-L04 jump 89 / 6 peak 6.37 | (88.78, 6.36) feet=6.00 hp=6
+PASS GB-L04 walk 90.6 | (90.39, 6.36) feet=6.00 hp=6
+PASS GB-L04 jump 94 / 8 peak 8.37 | (93.78, 8.36) feet=8.00 hp=6
+PASS GB-L04 walk 97 | (96.78, 8.37) feet=8.01 hp=6
+PASS GB-L04 jump 97 / 8 peak 10.37 | (96.98, 8.36) feet=8.00 hp=6
+PASS GB-L04 wardrobe key | (96.98, 8.36) feet=8.00 hp=6
+PASS GB-L04 walk 101.6 | (101.38, 8.36) feet=8.00 hp=6
+PASS GB-L04 discarded skins crawl home | (101.40, 8.36) feet=8.00 hp=6
+PASS GB-L04 walk 83 | (83.17, 4.75) feet=4.00 hp=6
+PASS GB-L04 return spider catches the host | (83.17, 4.75) feet=4.00 hp=6
+PASS GB-L04 thread 78 length 3 | (79.75, 10.16) feet=9.41 hp=6
+PASS GB-L04 thread 60 length 3 | (58.43, 9.42) feet=8.67 hp=6
+PASS GB-L04 shore shears | (43.65, 4.41) feet=3.66 hp=6
+PASS GB-L04 walk 45.5 | (45.28, 3.77) feet=3.02 hp=6
+PASS GB-L04 drop below the wardrobe roof | (45.50, 2.75) feet=2.00 hp=6
+PASS GB-L04 walk 30 | (30.21, 2.45) feet=2.05 hp=6
+PASS GB-L04 walk 13 | (13.21, 0.45) feet=0.05 hp=6
+PASS GB-L04 reclaim abandoned body before leaving | (13.21, 0.76) feet=0.01 hp=6
+PASS GB-L04 walk 2 | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L04 critical path returns to entrance | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L04 normal clear is persisted | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L04 Mercy persists on successful clear | (3.15, 0.75) feet=0.00 hp=6
+BEGIN GB-B1 The Kindly Usher
+PASS GB-B1 selection policy permits the next earned stage | (3.00, 0.76) feet=0.01 hp=6
+PASS GB-B1 walk 12 | (11.79, 0.76) feet=0.01 hp=6
+PASS GB-B1 walk 23 | (22.81, 0.76) feet=0.01 hp=6
+EVENT t=230.65 boss-phase The Kindly Usher:1
+PASS GB-B1 Usher act I: overlap two scales | (23.13, 0.76) feet=0.01 hp=6
+PASS GB-B1 walk 7 | (7.13, 2.51) feet=1.76 hp=5
+PASS GB-B1 Usher strings Host | (7.13, 2.51) feet=1.76 hp=5
+PASS GB-B1 thread 17 length 4.3 | (20.70, 12.09) feet=11.34 hp=5
+EVENT t=238.64 boss-phase The Kindly Usher:2
+PASS GB-B1 Usher act II: real chandelier impact | (24.69, 3.47) feet=2.72 hp=5
+PASS GB-B1 walk 7 | (7.14, 0.75) feet=0.00 hp=5
+PASS GB-B1 coat-check moth | (7.14, 0.75) feet=0.00 hp=5
+PASS GB-B1 walk 19 | (18.79, 0.75) feet=0.00 hp=5
+EVENT t=252.94 boss-phase The Kindly Usher:3
+PASS GB-B1 walk 42 | (40.00, 0.33) feet=0.04 hp=5
+PASS GB-B1 Usher defeated by backstage route | (40.00, 0.33) feet=0.04 hp=5
+PASS GB-B1 normal clear is persisted | (40.00, 0.33) feet=0.04 hp=5
+PASS GB-B1 Parish clear unlocks the Orchard in the real selection policy | (40.00, 0.33) feet=0.04 hp=5
+PASS GB-B1 four Mercies do not restore the normal ending | (40.00, 0.33) feet=0.04 hp=5
+PASS GB-B1 all five chapter stages survive save reload | (40.00, 0.33) feet=0.04 hp=5

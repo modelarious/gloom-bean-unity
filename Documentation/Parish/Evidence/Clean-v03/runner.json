@@ -1,0 +1,49 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  138,
+                        "case":  "W1-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  173,
+                        "case":  "W1-all-mercies",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  32,
+                        "case":  "Practice-isolation",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  189,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  87,
+                        "case":  "Legacy-opening",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Clean-v03",
+    "started":  "2026-09-19T15:24:32.4874592-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-19T15:29:34.7013427-06:00"
+}
