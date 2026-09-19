@@ -50,7 +50,7 @@ namespace GloomBean.Foundation
             if(atlasType!=null&&typeof(ICampaignSource).IsAssignableFrom(atlasType))sources.Add((ICampaignSource)Activator.CreateInstance(atlasType));
             Source=sources[0];worlds=Source.Worlds();screen=ScreenMode.Home;
             string[] args=Environment.GetCommandLineArgs();
-            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0;
+            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0;
             reportDirectory=Argument(args,"-gb-reports",Path.Combine(Application.persistentDataPath,"Reports"));
             string savePath=Argument(args,"-gb-save",Path.Combine(Application.persistentDataPath,"host-cycle-save.json"));
             if(testMode)savePath=Path.Combine(reportDirectory,"test-save.json");
@@ -65,6 +65,12 @@ namespace GloomBean.Foundation
         IEnumerator BeginVerification()
         {
             yield return null;
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-orchard-verify")>=0)
+            {
+                var orchard=Type.GetType("GloomBean.Campaign.OrchardVerification, Assembly-CSharp");
+                if(orchard==null)throw new InvalidOperationException("Orchard witness is not installed.");
+                orchard.GetMethod("Begin").Invoke(gameObject.AddComponent(orchard),new object[]{this});yield break;
+            }
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-parish-verify")>=0)
             {
                 var parish=Type.GetType("GloomBean.Campaign.ParishVerification, Assembly-CSharp");

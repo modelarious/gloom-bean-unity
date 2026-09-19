@@ -80,7 +80,7 @@ namespace GloomBean.Campaign
             actor.Body.position+=Vector2.right*3;C("molt.second-skin-small-core",molt.Shed()&&host.Husks.Count==2&&actor.Height<.8f&&actor.chargeDisabled);C("molt.bounded-budget",!molt.Shed());C("molt.reclaims-nearby",molt.Reclaim()&&host.Husks.Count==1);
 
             yield return Arena();host.Acquire(HostKind.Wax);var wax=host.Form<WaxForm>();C("wax.conserves-volume",wax.Deposit()&&Mathf.Abs(host.waxVolume+host.Plugs.Sum(p=>p.volume)-1)<.001f);
-            wax.Toggle();yield return Steps(4);C("wax.liquid-changes-collider",wax.Liquid&&actor.Height<.4f,"liquid="+wax.Liquid+" height="+actor.Height);
+            wax.Toggle();yield return Steps(4);C("wax.liquid-changes-collider",wax.Liquid&&actor.Height<.4f,"liquid="+wax.Liquid+" height="+actor.Height);yield return Steps(8);C("wax.physical-capsule-matches-puddle",actor.Shape.direction==CapsuleDirection2D.Horizontal&&actor.Shape.bounds.size.y<.4f,actor.Shape.bounds.size.ToString());
             var roof=b.Solid("Constrained reform space",new Vector2(600,.85f),new Vector2(4,.7f));yield return Steps(3);wax.Toggle();C("wax.cannot-reform-through-ceiling",wax.Liquid,"liquid="+wax.Liquid+" height="+actor.Height);Destroy(roof);yield return Steps(2);wax.Toggle();C("wax.reforms-in-clear-space",!wax.Liquid&&actor.Height>1);
 
             yield return Arena();host.Acquire(HostKind.Gullet);var gullet=host.Form<GulletForm>();var chunk=a.Chunk(new Vector2(602,1),new Vector2(2,2));EdibleChunk identity=chunk;yield return Steps(2);

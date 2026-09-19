@@ -37,6 +37,7 @@ namespace GloomBean.Campaign
             if(f.action)Toggle();if(f.alternate){if(f.move.y>.3f)Absorb();else Deposit();}
             if(!Liquid)return false;
             Vector2 v=Actor.Body.linearVelocity;
+            if(WaxChannel.Flow(Actor,f.move,dt,ref v)){Actor.Body.linearVelocity=v;return true;}
             if(Actor.Grounded){var t=new Vector2(Actor.GroundNormal.y,-Actor.GroundNormal.x);float along=Vector2.Dot(v,t)+Vector2.Dot(Vector2.down*22,t)*dt+f.move.x*8*dt;along=Mathf.MoveTowards(along,0,1.5f*dt);v=t*Mathf.Clamp(along,-8,8)-Actor.GroundNormal*.8f;}
             else {v.x=Mathf.MoveTowards(v.x,f.move.x*2,4*dt);v.y=Mathf.Max(-9,v.y-18*dt);}
             Actor.Body.linearVelocity=v;return true;
@@ -65,7 +66,7 @@ namespace GloomBean.Campaign
         public bool PlaceAt(Vector2 p)
         {
             if(!Stored)return false;Vector2 size=Stored.Size;
-            foreach(var c in Physics2D.OverlapBoxAll(p,size-Vector2.one*.08f,0,Layers.Solids|(1<<Layers.Actor)))if(c&&!c.isTrigger)return false;
+            foreach(var c in Physics2D.OverlapBoxAll(p,size-Vector2.one*.08f,0,Layers.Solids|(1<<Layers.Actor)))if(c&&!c.isTrigger&&!c.GetComponent<IngredientDrop>())return false;
             Stored.transform.position=p;Stored.gameObject.SetActive(true);RuntimeEvents.Emit("terrain-rehomed",Stored.stableId);Stored=null;return true;
         }
         bool Spit(Vector2 dir)
@@ -74,7 +75,12 @@ namespace GloomBean.Campaign
             foreach(var s in UnityEngine.Object.FindObjectsByType<TerrainSocket>(FindObjectsSortMode.None)){float dist=Vector2.Distance(s.transform.position,Actor.Body.position);if(dist<best&&Vector2.Dot(((Vector2)s.transform.position-Actor.Body.position).normalized,dir)>.25f&&s.Accepts(Stored)){closest=s;best=dist;}}
             if(closest&&PlaceAt(closest.transform.position))return true;
             // Empty unit-grid cells are also sockets; there is no color-key gate check.
-            Vector2 target=Actor.Body.position+dir*1.8f;target=new Vector2(Mathf.Round(target.x),Mathf.Round(target.y));
+            Vector2 extent=Stored.Size*.5f;
+            Vector2 target;
+            if(Mathf.Abs(dir.x)>=Mathf.Abs(dir.y))
+                target=new Vector2(Actor.Body.position.x+Mathf.Sign(dir.x)*(extent.x+Actor.Shape.size.x*.5f+.35f),Actor.Feet.y+extent.y+.03f);
+            else target=Actor.Body.position+Vector2.up*Mathf.Sign(dir.y)*(extent.y+Actor.Height*.5f+.35f);
+            target=new Vector2(Mathf.Round(target.x*2)*.5f,Mathf.Round(target.y*2)*.5f);
             if(PlaceAt(target))return true;Notice("There is no unoccupied footprint for that chunk.");return false;
         }
         public void Return(){if(!Stored)return;var chunk=Stored;Stored=null;chunk.transform.position=chunk.Original;chunk.gameObject.SetActive(true);chunk.GetComponent<Collider2D>().enabled=false;chunk.returnPending=true;}

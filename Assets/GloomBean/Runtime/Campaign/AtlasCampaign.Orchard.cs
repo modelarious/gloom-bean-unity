@@ -6,35 +6,54 @@ namespace GloomBean.Campaign
     {
         void Pears(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-13,125,43),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(34,46);a.Floor(59,72);a.Floor(88,111,3);a.Exit(2,1.1f);a.Source(HostKind.Wax,8);a.Ledge(13,1.7f,4);
-            var branch1=a.Hinge(new Vector2(18,3.2f),16,-5,"bough");var mass1=branch1.gameObject.AddComponent<MassBranch>();mass1.body=branch1.body;mass1.rest=-5;mass1.stiffness=1.5f;
-            var branch2=a.Hinge(new Vector2(43,3.5f),17,8,"bough");var mass2=branch2.gameObject.AddComponent<MassBranch>();mass2.body=branch2.body;mass2.rest=8;mass2.stiffness=1;
-            var branch3=a.Hinge(new Vector2(72,5),18,-2,"bough");var mass3=branch3.gameObject.AddComponent<MassBranch>();mass3.body=branch3.body;mass3.rest=-2;mass3.stiffness=1;
-            for(int i=0;i<3;i++){float x=new[]{27f,51f,81f}[i],y=new[]{7f,9f,9f}[i];var g=b.Solid("Pear counterweight",new Vector2(x,y),new Vector2(1.3f,1.8f),new Color(.53f,.65f,.27f),Layers.Prop);var rb=g.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;var fruit=g.AddComponent<RipeningFruit>();fruit.ripeAfter=10+i*3;fruit.rotAfter=22+i*3;g.AddComponent<TemporalBody>();}
-            a.Ledge(65,1.8f,5);a.Ledge(70,3.6f,4);a.Ledge(97,5,8);a.Key(95,6.2f);a.Nail(103,5.4f);
-            var water=b.Water(new Vector2(26,1.5f),new Vector2(10,1),new Vector2(-3,0));var drain=b.Trigger("Pear cage drain",new Vector2(25,2),new Vector2(1.2f,.5f),Color.black).AddComponent<WaxDrain>();drain.channel=water;
-            var flow=b.Trigger("Sloping wax runnel",new Vector2(29,2.2f),new Vector2(8,.8f),new Color(.82f,.71f,.38f,.18f)).AddComponent<WaxChannel>();flow.drain=drain;flow.normal=new Vector2(-5,0);flow.diverted=new Vector2(3,6);
-            a.Ledge(31,6,4);a.Ledge(36,7.8f,4);var glass=b.Door(new Vector2(38.5f,8.6f),new Vector2(.45f,2));var scale=b.Plate(new Vector2(35.8f,7.94f),.1f);var window=glass.gameObject.AddComponent<MassWindow>();window.plate=scale;window.gate=glass;window.minimum=.65f;window.maximum=.85f;a.Ledge(41,7.8f,4);a.Mercy(41,8.8f);
-            b.Solid("Low wax gutter",new Vector2(14,.95f),new Vector2(5,1.05f));a.Health(65,1.1f);
-            b.session.Turned+=()=>{mass1.rest=-14;mass2.rest=-10;mass3.rest=-12;var chain=b.root.gameObject.AddComponent<BoughCollapse>();chain.branches=new[]{branch3,branch2};};
-            b.Tip(new Vector2(8,2),"The angel seals you in wax. Melt to follow a runnel; leave part of yourself to block its drain. Pears bend the wood when they gain mass.");a.Cure(HostKind.Wax,4,1);
+            a.Begin(new Rect(-8,-12,120,38),new Vector2(2,1));var b=a.b;
+            a.Floor(-5,20);a.Floor(20,30,-2);a.Floor(83,102,3.2f);a.Exit(2,1.1f);a.Source(HostKind.Wax,7);
+            b.Solid("Tall capillary canopy",new Vector2(13.5f,3.5f),new Vector2(7,6.2f));
+            var drain=b.Trigger("Pear cage drain",new Vector2(22,-1.75f),new Vector2(1.2f,.5f),Color.black).AddComponent<WaxDrain>();
+            var channel=b.Trigger("Pear cage rising runnel",new Vector2(26,.5f),new Vector2(5,7),new Color(.82f,.71f,.38f,.2f)).AddComponent<WaxChannel>();channel.drain=drain;channel.normal=new Vector2(0,-3);channel.diverted=new Vector2(0,5);
+            PrimitiveArt.Label("OPEN DRAIN / LOW BASIN",b.root,new Vector2(23,-3),.08f);
+            a.Ledge(31,3.3f,6);
+            var branches=new FoldPanel[3];var masses=new MassBranch[3];
+            for(int i=0;i<3;i++){
+                branches[i]=a.Hinge(new Vector2(34+i*17,3.1f),14,3,"bough");branches[i].name="Living pear bough "+i;
+                masses[i]=branches[i].gameObject.AddComponent<MassBranch>();masses[i].body=branches[i].body;masses[i].rest=3;masses[i].stiffness=.7f;masses[i].maxDeflection=8;
+                var fruit=b.Solid("Ripening pear counterweight",new Vector2(42+i*17,7.4f),new Vector2(1.2f,1.7f),new Color(.53f,.65f,.27f),Layers.Prop);
+                var rb=fruit.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;var pear=fruit.AddComponent<RipeningFruit>();pear.ripeAfter=18+i*3;pear.rotAfter=45+i*4;fruit.AddComponent<TemporalBody>();
+            }
+            a.Key(92,4.4f);a.Nail(98,3.65f);a.Health(88,4.4f);
+            var returned=a.Floor(18,88,0);returned.name="Collapsed orchard maintenance path";returned.SetActive(false);
+            b.session.Turned+=()=>{returned.SetActive(true);foreach(var m in masses)m.rest=-3;var collapse=b.root.gameObject.AddComponent<BoughCollapse>();collapse.branches=new[]{branches[2],branches[1]};};
+            // Optional fine balance: one plug is needed for flow; a second makes a short, 0.56-mass body.
+            a.Ledge(35,4.8f,4).AddComponent<OneWaySurface>();a.Ledge(39,6.3f,5).AddComponent<OneWaySurface>();a.Ledge(44,6.3f,6).AddComponent<OneWaySurface>();
+            b.Solid("Glass fruit bell roof",new Vector2(43,8.2f),new Vector2(8,1.4f));
+            var gate=b.Door(new Vector2(41,7),new Vector2(.4f,1.4f));gate.name="Glass fruit balance shutter";
+            var scale=b.Plate(new Vector2(39,6.44f),.1f);var window=gate.gameObject.AddComponent<MassWindow>();window.plate=scale;window.gate=gate;window.minimum=.50f;window.maximum=.62f;window.holdSeconds=4;
+            var release=b.Switch(new Vector2(44,7.05f),"UNHOOK GLASS BELL");release.Changed+=v=>{if(v){gate.latched=true;gate.SetOpen(true);}};a.Mercy(44,7.15f);
+            b.Tip(new Vector2(8,2),"The wax enters the capillary below the canopy. Leave some of your body over the basin drain; the stopped outflow rises into the pear cage.");
+            b.Tip(new Vector2(23,-1),"I leaves wax behind your heels. Stand one body-width right of the drain; U reforms only where there is headroom.");
+            a.Cure(HostKind.Wax,4,1);
         }
         void Kitchen(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-12,133,46),new Vector2(2,1));var b=a.b;a.Floor(-5,54);a.Floor(64,91);a.Floor(98,119,3);a.Exit(2,1.1f);a.Source(HostKind.Gullet,8);
-            a.Chunk(new Vector2(24,2.5f),new Vector2(2,5));a.Socket(new Vector2(59,-.5f),new Vector2(6,2));
-            var loose=a.Chunk(new Vector2(36,3),new Vector2(5,1));a.Ledge(32,1.8f,4);a.Ledge(43,4.8f,4);
-            var jet=b.Trigger("Dish steam plume",new Vector2(49,4),new Vector2(4,10),new Color(.83f,.84f,.8f,.12f)).AddComponent<AirJet>();jet.force=new Vector2(0,47);
-            var dish=b.Solid("The steaming dish",new Vector2(39,.45f),new Vector2(5,.9f),new Color(.76f,.72f,.53f)).AddComponent<FeastDish>();dish.steam=jet;
-            var emitterObject=new GameObject("Grease hatch");emitterObject.transform.SetParent(b.root);emitterObject.transform.position=new Vector2(31,8);var emitter=emitterObject.AddComponent<FlowEmitter>();emitter.normalVelocity=new Vector2(4.3f,0);emitter.divertedVelocity=new Vector2(8,2);
-            // The stream and dish occupy actual physics space: moving the tile changes where drops land.
-            a.Ledge(53,9,5);a.Ledge(63,9,5);a.Ledge(71,7.5f,6);a.Source(HostKind.Wax,74,1,true);
-            var drain=b.Trigger("Service sink",new Vector2(78,.35f),new Vector2(1.4f,.6f),Color.black).AddComponent<WaxDrain>();drain.emitter=emitter;
-            a.Chunk(new Vector2(86,2.5f),new Vector2(2,5));a.Socket(new Vector2(94,-.5f),new Vector2(6,2));a.Ledge(84,5.2f,6);a.Ledge(92,7,5);a.Ledge(101,9,8);a.Ledge(110,11,9);a.Key(102,10.2f);a.Nail(113,11.4f);
-            a.Ledge(32,7,4);a.Ledge(39,9,4);a.Mercy(42,10.2f);a.Health(69,1.2f);
-            var returnJet=b.Trigger("Return service draft",new Vector2(61,4),new Vector2(6,10),new Color(.7f,.76f,.78f,.08f)).AddComponent<AirJet>();returnJet.force=new Vector2(-10,44);
-            b.session.Turned+=()=>{emitter.reversed=true;returnJet.always=true;jet.always=true;jet.force=new Vector2(-5,43);};
-            b.Tip(new Vector2(8,2),"The communion snail lends you its gullet. Swallow one real piece of the room. Its old support is gone until you spit it somewhere else.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-8,-12,108,43),new Vector2(2,3));var b=a.b;
+            a.Floor(-5,14,2);a.Floor(18,24,2);a.Floor(10,30,-2);a.Floor(42,60,3);a.Floor(60,90,0);a.Exit(2,3.1f);a.Source(HostKind.Gullet,8,3);
+            a.Chunk(new Vector2(16,1.5f),new Vector2(4,1));a.Socket(new Vector2(28,-1.5f),new Vector2(4.1f,1.1f));
+            var jet=b.Trigger("Dish steam plume",new Vector2(37,2),new Vector2(4,11),new Color(.83f,.84f,.8f,.17f)).AddComponent<AirJet>();jet.force=new Vector2(0,70);
+            var dish=b.Solid("Ingredient serving dish",new Vector2(33,-1.15f),new Vector2(3,.3f),new Color(.76f,.72f,.53f)).AddComponent<FeastDish>();dish.steam=jet;
+            var hatch=new GameObject("Grease hatch");hatch.transform.SetParent(b.root);hatch.transform.position=new Vector2(26,3);var emitter=hatch.AddComponent<FlowEmitter>();emitter.normalVelocity=new Vector2(3,0);emitter.divertedVelocity=new Vector2(-3,0);emitter.interval=.65f;
+            a.Ledge(37,-1,3);a.Ledge(42,7,7);a.Ledge(46,5,4);a.Source(HostKind.Wax,46,4,true);
+            b.Solid("Kitchen wax service roof",new Vector2(52,6.3f),new Vector2(7,5.8f));
+            a.Ledge(67,1.8f,4);a.Ledge(72,3.6f,4);a.Ledge(77,5.4f,4);a.Ledge(83,7.2f,8);a.Key(80,8.35f);a.Nail(85,7.65f);a.Health(64,1.2f);
+            // Plate a real chunk on the high serving tray; it remains the floor of its destination.
+            var garnish=a.Chunk(new Vector2(42,7.5f),new Vector2(3,1));garnish.name="Edible garnish of architecture";
+            var tray=b.Solid("Freight serving platter",new Vector2(47,6.6f),new Vector2(4,.4f),new Color(.8f,.72f,.52f),Layers.Moving);var rb=tray.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
+            var freight=tray.AddComponent<TerrainServingLift>();freight.lower=new Vector2(47,6.6f);freight.upper=new Vector2(47,12);a.Socket(new Vector2(47,7.3f),new Vector2(3.2f,1.1f));a.Ledge(52,13,5);a.Mercy(52,14.1f);
+            var back=a.Floor(-1,90,10.8f);back.name="Reversed kitchen service gallery";back.SetActive(false);
+            // The overhead gallery opens only after the first circuit has been physically routed.
+            a.Ledge(88,9,4);var drop=b.Switch(new Vector2(88,10),"UNLATCH SERVICE WALK");drop.Changed+=v=>{if(v&&b.session.Phase==RunPhase.Returning)back.SetActive(true);};
+            b.session.Turned+=()=>{emitter.reversed=true;jet.always=true;jet.force=new Vector2(-4,65);freight.returning=true;};
+            b.Tip(new Vector2(15,3),"The floor can be a serving runway somewhere else. Swallow its four-unit tile, descend into the pantry and place that SAME piece below the falling grease.");
+            b.Tip(new Vector2(28,-1),"A raised tile carries grease to the high dish. Grease heats its steam pipe; missing support sends the ingredient to waste.");a.Cure(HostKind.None,4,3,true);
         }
         void Ditch(AtlasBuilder a)
         {
@@ -51,12 +70,12 @@ namespace GloomBean.Campaign
         }
         void Seasons(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-13,135,43),new Vector2(2,1));var b=a.b;a.Floor(-5,31);a.Floor(38,63);a.Floor(73,94);a.Floor(100,122,2);a.Exit(2,1.1f);
-            var wheel=b.Trigger("Season wheel",new Vector2(20,1.4f),Vector2.one*1.5f,new Color(.87f,.71f,.43f),PrimitiveArt.Icon.Arch).AddComponent<SeasonWheel>();wheel.width=24;wheel.speed=1.2f;
+            a.Begin(new Rect(-8,-13,135,43),new Vector2(2,1));var b=a.b;a.Floor(-5,31);a.Floor(38,42);a.Floor(47,63);a.Floor(40,49,-2);a.Floor(73,99);a.Floor(100,122,2);a.Exit(2,1.1f);
+            var wheel=b.Trigger("Season wheel",new Vector2(20,1.4f),Vector2.one*1.5f,new Color(.87f,.71f,.43f),PrimitiveArt.Icon.Arch).AddComponent<SeasonWheel>();wheel.width=24;wheel.speed=6;a.Source(HostKind.Wax,19,1,true);
             var bands=new Transform[4];Color[] colors={new Color(.36f,.71f,.45f,.1f),new Color(.9f,.47f,.27f,.1f),new Color(.55f,.32f,.65f,.1f),new Color(.51f,.76f,.92f,.1f)};for(int i=0;i<4;i++)bands[i]=PrimitiveArt.Shape("Moving climate band",b.root,new Vector2(i*24+20,10),new Vector2(24,45),colors[i],PrimitiveArt.Icon.Block,-6).transform;wheel.bands=bands;
             a.Source(HostKind.Wax,9);b.Solid("Wax capillary roof",new Vector2(15,.9f),new Vector2(5,1.1f));
-            a.Source(HostKind.Gullet,41,1,true);a.Chunk(new Vector2(48,2.8f),new Vector2(2,5.6f));a.Socket(new Vector2(68,-.5f),new Vector2(7,2));
-            a.Source(HostKind.Root,54,1,true);b.Solid("Climate earth",new Vector2(61,1),new Vector2(6,11));a.SoilPath(new Vector2(55,1),new Vector2(55,-4),new Vector2(65,-4),new Vector2(65,1),new Vector2(70,1));
+            a.Source(HostKind.Gullet,40,1,true);a.Chunk(new Vector2(44.5f,-.5f),new Vector2(5,1));a.Ledge(48,-.7f,3);a.Socket(new Vector2(69,.5f),new Vector2(5.2f,1.1f));a.Ledge(34,.6f,2.5f);a.Ledge(65.5f,0,2);
+            a.Source(HostKind.Root,54,1,true);b.Solid("Climate earth",new Vector2(61,1),new Vector2(6,11));a.SoilPath(new Vector2(55,1),new Vector2(55,-4),new Vector2(65,-4),new Vector2(65,1),new Vector2(65.5f,1));
             for(int i=0;i<4;i++){var g=b.Solid("Seasonal growing step",new Vector2(78+i*6,1),new Vector2(4,2),new Color(.42f,.58f,.36f),Layers.Moving);var growth=g.AddComponent<SeasonGrowth>();growth.wheel=wheel;growth.size=new Vector2(4,3+i*.4f);growth.floor=0;}
             a.Ledge(105,4,5);a.Ledge(113,6,8);a.Key(108,5.4f);a.Nail(117,6.45f);
             a.SoilPath(new Vector2(55,1),new Vector2(55,7),new Vector2(63,7),new Vector2(63,10));a.Ledge(63,9,5);a.Mercy(63,10.2f);a.Health(42,1.2f);
