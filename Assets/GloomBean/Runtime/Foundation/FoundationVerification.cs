@@ -142,6 +142,7 @@ namespace GloomBean.Foundation
                 Capture(game.Session.Camera.GetComponent<UnityEngine.Camera>(),Path.Combine(game.reportDirectory,d.id+".png"));
             }
             yield return game.Load(catalog[0].boss,true);yield return Steps(5);Check("boss.foundation-constructed",FindFirstObjectByType<ForemanBoss>()!=null);
+            yield return game.gameObject.AddComponent<FoundationIterationVerification>().Run(game,this);
             var extension=Type.GetType("GloomBean.Campaign.AtlasVerification, Assembly-CSharp");
             if(extension!=null)
             {
