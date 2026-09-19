@@ -1,0 +1,14 @@
+BEGIN GB-L04 House of Borrowed Skins
+PASS GB-L04 walk 13 | (12.79, 0.76) feet=0.01 hp=6
+PASS GB-L04 wardrobe moth contact | (12.79, 0.76) feet=0.01 hp=6
+PASS GB-L04 first persistent skin | (12.81, 0.56) feet=0.01 hp=6
+PASS GB-L04 walk 20.3 | (20.10, 0.56) feet=0.01 hp=6
+PASS GB-L04 jump 23 / 1.6 peak 2.21 | (22.78, 2.15) feet=1.60 hp=6
+PASS GB-L04 jump 27 / 2 peak 3.97 | (26.79, 2.55) feet=2.01 hp=6
+PASS GB-L04 walk 30 | (29.78, 2.55) feet=2.01 hp=6
+PASS GB-L04 walk 41 | (40.79, 2.33) feet=2.04 hp=6
+FAIL GB-L04 walk 52 | (41.20, 2.55) feet=2.00 hp=6
+FAIL GB-L04 spider at peeled bridge | (41.20, 2.55) feet=2.00 hp=6
+FAIL GB-L04 wardrobe key | (41.20, 2.55) feet=2.00 hp=6
+FAIL GB-L04 discarded skins crawl home | (41.20, 2.55) feet=2.00 hp=6
+FAIL GB-L04 critical path returns to entrance | (41.20, 2.55) feet=2.00 hp=6

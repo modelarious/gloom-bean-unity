@@ -1,0 +1,58 @@
+BEGIN GB-L02 Belfry of Late Voices
+TRACE t=0.50 body=(2.08, 0.76) echo=none
+TRACE t=1.01 body=(4.73, 0.76) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+PASS GB-L02 walk 6.8 | (6.61, 0.76) feet=0.01 hp=6
+PASS GB-L02 bell-wisp contact | (6.61, 0.76) feet=0.01 hp=6
+EVENT t=1.42 bell Lower clapper
+TRACE t=1.51 body=(6.71, 1.53) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+TRACE t=2.01 body=(8.10, 2.78) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+PASS GB-L02 jump 9 / 2 peak 2.37 | (8.79, 2.75) feet=2.00 hp=6
+TRACE t=2.52 body=(8.84, 3.16) echo=(4.00, 0.76) velocity=(5.50, 0.00) live=False
+TRACE t=3.02 body=(11.42, 4.80) echo=(4.83, 0.76) velocity=(5.50, 0.00) live=True
+EVENT t=3.42 bell Lower clapper
+TRACE t=3.52 body=(12.66, 4.75) echo=(6.75, 1.70) velocity=(2.35, 10.13) live=True
+PASS GB-L02 jump 13 / 4 peak 4.37 | (12.79, 4.75) feet=4.00 hp=6
+TRACE t=4.03 body=(14.33, 7.11) echo=(8.14, 2.77) velocity=(2.71, -1.00) live=True
+TRACE t=4.53 body=(16.37, 6.75) echo=(8.88, 3.35) velocity=(2.23, 11.27) live=True
+PASS GB-L02 jump 17 / 6 peak 6.37 | (16.79, 6.75) feet=6.00 hp=6
+TRACE t=5.03 body=(17.41, 6.75) echo=(11.50, 4.78) velocity=(4.76, -1.00) live=True
+PASS GB-L02 walk 17.8 | (17.58, 6.75) feet=6.00 hp=6
+EVENT t=5.12 bell Upper clapper
+TRACE t=5.54 body=(19.29, 9.11) echo=(12.68, 4.75) velocity=(1.02, 0.00) live=True
+TRACE t=6.04 body=(20.63, 8.75) echo=(14.42, 7.12) velocity=(5.50, 0.50) live=True
+PASS GB-L02 jump 21 / 8 peak 8.37 | (20.78, 8.75) feet=8.00 hp=6
+TRACE t=6.55 body=(22.40, 8.75) echo=(16.41, 6.75) velocity=(1.88, 0.00) live=True
+EVENT t=6.75 pulse-arrived Left brake:1
+TRACE t=7.05 body=(25.14, 8.75) echo=(17.41, 6.75) velocity=(3.55, 0.00) live=True
+EVENT t=7.12 bell Upper clapper
+PASS GB-L02 walk 26 | (25.78, 8.75) feet=8.00 hp=6
+TRACE t=7.55 body=(25.80, 8.75) echo=(19.37, 9.09) velocity=(5.12, -1.20) live=True
+TRACE t=8.06 body=(25.80, 8.75) echo=(20.65, 8.75) velocity=(1.10, 0.00) live=True
+TRACE t=8.56 body=(25.80, 8.75) echo=(22.49, 8.75) velocity=(5.50, 0.00) live=True
+EVENT t=8.75 pulse-arrived Left brake:1
+EVENT t=8.95 pulse-arrived Right brake:1
+PASS GB-L02 two traveling signals release lift | (25.80, 8.75) feet=8.00 hp=6
+TRACE t=9.06 body=(25.86, 9.07) echo=(25.23, 8.75) velocity=(5.50, 0.00) live=True
+PASS GB-L02 walk 28 | (27.80, 10.68) feet=9.93 hp=6
+TRACE t=9.57 body=(27.81, 10.80) echo=(25.56, 8.75) velocity=(0.00, 0.00) live=True
+TRACE t=10.07 body=(27.81, 12.55) echo=(25.56, 8.75) velocity=(0.00, 0.00) live=True
+TRACE t=10.57 body=(27.81, 14.25) echo=(25.56, 8.75) velocity=(0.00, 0.00) live=True
+EVENT t=10.95 pulse-arrived Right brake:1
+PASS GB-L02 ride physical lower lift | (27.81, 20.20) feet=19.45 hp=6
+PASS GB-L02 walk 29.1 | (28.89, 20.29) feet=19.54 hp=6
+PASS GB-L02 jump 33 / 20 peak 21.84 | (32.79, 20.76) feet=20.01 hp=6
+PASS GB-L02 jump 37 / 22 peak 22.37 | (36.79, 22.76) feet=22.01 hp=6
+PASS GB-L02 jump 33 / 24 peak 24.37 | (33.22, 24.76) feet=24.01 hp=6
+PASS GB-L02 jump 29 / 26 peak 26.37 | (29.21, 26.76) feet=26.01 hp=6
+PASS GB-L02 jump 25 / 28 peak 28.37 | (25.21, 28.76) feet=28.01 hp=6
+PASS GB-L02 jump 21 / 30 peak 30.37 | (21.21, 30.76) feet=30.01 hp=6
+PASS GB-L02 jump 18 / 32 peak 32.37 | (18.21, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 20 | (19.81, 32.75) feet=32.00 hp=6
+PASS GB-L02 upper key | (19.81, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 16.2 | (16.41, 32.75) feet=32.00 hp=6
+PASS GB-L02 crack the main bell | (16.39, 32.75) feet=32.00 hp=6
+PASS GB-L02 walk 14.4 | (14.60, 32.75) feet=32.00 hp=6
+EVENT t=22.42 bell Signal bell
+EVENT t=24.45 pulse-arrived Bell brake:2
+FAIL GB-L02 jump 9.5 / 27 peak 34.37 | (9.50, 13.76) feet=13.01 hp=6
+FAIL GB-L02 critical path returns to entrance | (9.50, 13.76) feet=13.01 hp=6

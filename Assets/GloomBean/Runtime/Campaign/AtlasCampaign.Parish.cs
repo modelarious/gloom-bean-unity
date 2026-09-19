@@ -64,11 +64,12 @@ namespace GloomBean.Campaign
             var plate=b.Plate(new Vector2(13,.14f),.7f);var throat=b.Door(new Vector2(25,3.5f),new Vector2(.6f,7),plate);throat.holdSeconds=.5f;
             b.Solid("Borrowed skin low ceiling",new Vector2(34,3.85f),new Vector2(12,1));a.Ledge(23,1.6f,5);
             var bridge=a.Hinge(new Vector2(46,2),16,82);var seam=b.Switch(new Vector2(42,3),"PEEL SEAM");seam.Changed+=v=>{bridge.targetAngle=v?0:82;bridge.folding=true;};
-            var rail=a.Rail(new Vector2(42,13),new Vector2(78,13));a.Source(HostKind.Marionette,43,3,true).rail=rail;a.Source(HostKind.Echo,68,3,true);
-            var hide=b.Solid("Returning room-skin",new Vector2(79,4),new Vector2(1,4),new Color(.67f,.35f,.4f),Layers.Moving).AddComponent<SkinReturn>();hide.home=new Vector2(64,4);
+            var rail=a.Rail(new Vector2(42,13),new Vector2(78,13));a.Source(HostKind.Marionette,52,3,true).rail=rail;a.Cure(HostKind.Marionette,64,3);a.Cure(HostKind.Marionette,43,3);a.Source(HostKind.Echo,68,3,true);
+            var hide=b.Solid("Returning room-skin",new Vector2(79,4),new Vector2(1,4),new Color(.67f,.35f,.4f),Layers.Moving).AddComponent<SkinReturn>();hide.home=new Vector2(64,4);seam.Changed+=v=>hide.gameObject.SetActive(!v);
+            var returnSpider=a.Source(HostKind.Marionette,83,5,true);returnSpider.rail=rail;returnSpider.gameObject.SetActive(false);
             a.Ledge(84,4,5);a.Ledge(91,6,6);a.Ledge(100,8,9);a.Key(93,7.5f);a.Nail(103,8.4f);
-            a.Ledge(26,3.6f,3);a.Ledge(30,5,4);a.Ledge(34,7,4);a.Ledge(39,7,5);b.Solid("Fine decorative seam roof",new Vector2(38,7.92f),new Vector2(10,.8f));a.Mercy(41,7.25f);
-            b.session.Turned+=()=>{hide.crawling=true;rail.loose=true;};a.Health(67,3.2f);a.Cure(HostKind.None,4,1,true);
+            a.Ledge(43,3.3f,3);a.Ledge(30,5,4);a.Ledge(34,7,4);a.Ledge(39,7,5);b.Solid("Fine decorative seam roof",new Vector2(38,7.92f),new Vector2(10,.8f));a.Mercy(41,7.25f);
+            b.session.Turned+=()=>{hide.gameObject.SetActive(true);hide.crawling=true;rail.loose=true;returnSpider.gameObject.SetActive(true);};a.Health(67,3.2f);a.Cure(HostKind.None,4,1,true);
             b.Tip(new Vector2(9,2),"Shed a real skin on the scale. The smaller body can move through the wardrobe's throat; the body you leave behind still matters.");
         }
     }

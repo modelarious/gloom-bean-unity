@@ -60,7 +60,7 @@ namespace GloomBean.Campaign
         }
         public void Mercy(float x,float y){b.Collect(PickupKind.Mercy,new Vector2(x,y),d.id+"-MERCY");}
         public void Key(float x,float y){b.Collect(PickupKind.Key,new Vector2(x,y),d.id+"-KEY");}
-        public TurnSwitch Nail(float x,float y){var n=b.Nail(new Vector2(x,y));n.name="World Nail";n.GetComponent<SpriteRenderer>().color=new Color(.91f,.71f,.38f);return n;}
+        public TurnSwitch Nail(float x,float y){var n=b.Nail(new Vector2(x,y));n.name="World Nail";n.GetComponent<SpriteRenderer>().color=new Color(.91f,.71f,.38f);b.session.Turned+=()=>{var shape=n.GetComponent<Collider2D>();if(shape)shape.enabled=false;var sr=n.GetComponent<SpriteRenderer>();if(sr)sr.color=new Color(.91f,.71f,.38f,.35f);};return n;}
         public ExitPortal Exit(float x,float y){return b.Exit(new Vector2(x,y));}
         public void Health(float x,float y){b.Collect(PickupKind.Health,new Vector2(x,y),amount:2);}
         public RailPath Rail(Vector2 a,Vector2 z,float sag=0){var g=new GameObject("Overhead laundry line");g.transform.SetParent(b.root);var rail=g.AddComponent<RailPath>();rail.a=a;rail.b=z;rail.sag=sag;return rail;}

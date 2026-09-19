@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "status":  "FAIL",
+                        "failed":  2,
+                        "checks":  26,
+                        "route":  "GB-L02"
+                    },
+                    {
+                        "status":  "PASS",
+                        "failed":  0,
+                        "checks":  17,
+                        "route":  "GB-L03"
+                    },
+                    {
+                        "status":  "FAIL",
+                        "failed":  5,
+                        "checks":  13,
+                        "route":  "GB-L04"
+                    },
+                    {
+                        "status":  "PASS",
+                        "failed":  0,
+                        "checks":  12,
+                        "route":  "GB-B1"
+                    }
+                ],
+    "id":  "R11-parish-completion",
+    "started":  "2026-09-19T14:42:27.1887246-06:00",
+    "phase":  "input-only-routes",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T14:43:21.2208613-06:00"
+}

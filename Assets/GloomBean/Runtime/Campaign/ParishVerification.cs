@@ -13,7 +13,8 @@ namespace GloomBean.Campaign
     {
         GameRoot game; StageSession session; ActorMotor actor; HostController host; ScriptedInput input;
         string dir; readonly List<string> log=new List<string>(); int failures,assertions; bool stopped,finished;
-        float began,lastTrace; readonly WaitForFixedUpdate tick=new WaitForFixedUpdate();
+        float began,lastTrace; int physicsTicks;
+        IEnumerator NextPhysics(){int before=physicsTicks;while(Live&&physicsTicks==before)yield return null;}
         bool Live=>session && session.Phase!=RunPhase.Failed && session.Phase!=RunPhase.Cleared;
         string Arg(string key,string fallback){var args=Environment.GetCommandLineArgs();int n=Array.IndexOf(args,key);return n>=0&&n+1<args.Length?args[n+1]:fallback;}
         public void Begin(GameRoot root){game=root;dir=root.reportDirectory;Directory.CreateDirectory(dir);began=Time.realtimeSinceStartup;Application.logMessageReceived+=OnLog;RuntimeEvents.Event+=TraceEvent;StartCoroutine(Run());}
@@ -23,11 +24,11 @@ namespace GloomBean.Campaign
         void Note(string text){log.Add(text);File.WriteAllLines(Path.Combine(dir,"parish-observations.txt"),log);}
         void Check(string name,bool pass,bool stop=true){assertions++;if(!pass){failures++;if(stop)stopped=true;}Note((pass?"PASS ":"FAIL ")+session.definition.id+" "+name+" | "+actor.Body.position+" feet="+actor.Feet.y.ToString("0.00")+" hp="+actor.Health);}
         void Snapshot(string label){if(session&&session.Camera)FoundationVerification.Capture(session.Camera.GetComponent<UnityEngine.Camera>(),Path.Combine(dir,session.definition.id+"-"+label+".png"));}
-        IEnumerator Pause(float seconds){input.frame=default;float end=Time.time+seconds;while(Live&&Time.time<end)yield return tick;}
-        IEnumerator Press(InputFrame value){if(stopped||!Live)yield break;input.frame=value;yield return tick;input.frame=default;yield return tick;}
+        IEnumerator Pause(float seconds){input.frame=default;float end=Time.time+seconds;while(Live&&Time.time<end)yield return NextPhysics();}
+        IEnumerator Press(InputFrame value){if(stopped||!Live)yield break;input.frame=value;yield return NextPhysics();input.frame=default;yield return NextPhysics();}
         IEnumerator Walk(float x,bool run=false,bool crouch=false,float seconds=14){
             if(stopped||!Live)yield break;float end=Time.time+seconds;
-            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;if(Mathf.Abs(dx)<.22f)break;input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*2-actor.Body.linearVelocity.x*.06f,-1,1),crouch?-1:0),run=run};yield return tick;}
+            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;if(Mathf.Abs(dx)<.22f)break;input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*2-actor.Body.linearVelocity.x*.06f,-1,1),crouch?-1:0),run=run};yield return NextPhysics();}
             input.frame=default;yield return null;Check("walk "+x,(session.Phase==RunPhase.Cleared)||Mathf.Abs(actor.Body.position.x-x)<.5f);
         }
         IEnumerator Jump(float x,float floor,bool crouch=false){
@@ -36,22 +37,22 @@ namespace GloomBean.Campaign
             if(actor.Crouched)yield return Pause(.15f);
             while(Live&&Time.time<end){float dx=x-actor.Body.position.x;peak=Mathf.Max(peak,actor.Feet.y);bool edge=!launched&&actor.Grounded;if(edge)launched=true;
                 input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*.8f-actor.Body.linearVelocity.x*.08f,-1,1),0),jump=edge,jumpHeld=true};
-                if(launched&&!edge&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.25f&&Mathf.Abs(dx)<.22f)break;yield return tick;}
+                if(launched&&!edge&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.25f&&Mathf.Abs(dx)<.22f)break;yield return NextPhysics();}
             input.frame=default;yield return null;Check("jump "+x+" / "+floor+" peak "+peak.ToString("0.00"),actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);if(stopped)Snapshot("failed-jump");
         }
         IEnumerator Await(string label,Func<bool> predicate,float seconds,Func<InputFrame> command=null){
-            if(stopped||!Live)yield break;float end=Time.time+seconds;while(Live&&Time.time<end&&!predicate()){input.frame=command==null?default:command();yield return tick;}input.frame=default;Check(label,predicate());
+            if(stopped||!Live)yield break;float end=Time.time+seconds;while(Live&&Time.time<end&&!predicate()){input.frame=command==null?default:command();yield return NextPhysics();}input.frame=default;Check(label,predicate());
         }
-        IEnumerator Thread(float anchor,float length,bool vertical=false,float seconds=16){
+        IEnumerator Thread(float anchor,float length,bool vertical=false,float seconds=16,bool acceptCure=false){
             if(stopped||!Live)yield break;var form=host.Form<MarionetteForm>();if(form==null){Check("Marionette acquired before rail route",false);yield break;}
             float end=Time.time+seconds;
-            while(Live&&Time.time<end){var j=form.Joint;if(!j){if(session.definition.boss&&session.GetComponentInChildren<AtlasBoss>().phase>=2){Note("PASS Usher chandelier collision ended suspension during the swing");yield break;}Check("rope unexpectedly absent",false);yield break;}float along=vertical?j.connectedAnchor.y:j.connectedAnchor.x;float error=anchor-along;
+            while(Live&&Time.time<end){var j=form.Joint;if(!j){if(acceptCure&&!host.Has(HostKind.Marionette))yield break;if(session.definition.boss&&session.GetComponentInChildren<AtlasBoss>().phase>=2){Note("PASS Usher chandelier collision ended suspension during the swing");yield break;}Check("rope unexpectedly absent",false);yield break;}float along=vertical?j.connectedAnchor.y:j.connectedAnchor.x;float error=anchor-along;
                 float reel=Mathf.Clamp((j.distance-length)*2,-1,1);input.frame=new InputFrame{move=vertical?new Vector2(0,Mathf.Clamp(error*2,-1,1)):new Vector2(Mathf.Clamp(error*2,-1,1),reel)};
-                if(Mathf.Abs(error)<.12f&&(vertical||Mathf.Abs(j.distance-length)<.12f))break;yield return tick;}
-            input.frame=default;yield return Pause(.7f);if(!form.Joint&&session.definition.boss&&session.GetComponentInChildren<AtlasBoss>().phase>=2)yield break;Check("thread "+anchor+" length "+length,form.Joint&&Mathf.Abs((vertical?form.Joint.connectedAnchor.y:form.Joint.connectedAnchor.x)-anchor)<.3f);
+                if(Mathf.Abs(error)<.12f&&(vertical||Mathf.Abs(j.distance-length)<.12f))break;yield return NextPhysics();}
+            input.frame=default;yield return Pause(.7f);if(!form.Joint&&acceptCure&&!host.Has(HostKind.Marionette))yield break;if(!form.Joint&&session.definition.boss&&session.GetComponentInChildren<AtlasBoss>().phase>=2)yield break;Check("thread "+anchor+" length "+length,form.Joint&&Mathf.Abs((vertical?form.Joint.connectedAnchor.y:form.Joint.connectedAnchor.x)-anchor)<.3f);
         }
         IEnumerator Load(StageDefinition def){
-            stopped=false;game.SelectSource(1);yield return game.Load(def,false);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new ScriptedInput();actor.input=input;
+            stopped=false;game.SelectSource(1);yield return game.Load(def,false);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new ScriptedInput();actor.input=input;physicsTicks=0;actor.Stepped+=(f,dt)=>physicsTicks++;
             Note("BEGIN "+def.id+" "+def.title);yield return Pause(.35f);
         }
         IEnumerator Sunday(bool secret){
@@ -66,22 +67,26 @@ namespace GloomBean.Campaign
             yield return Walk(6.8f);Check("bell-wisp contact",host.Has(HostKind.Echo));yield return Press(new InputFrame{interact=true});yield return Jump(9,2);yield return Jump(13,4);yield return Jump(17,6);yield return Walk(17.8f);yield return Press(new InputFrame{interact=true});yield return Jump(21,8);yield return Walk(26);
             var dual=session.GetComponentInChildren<DualPulseLift>();yield return Await("two traveling signals release lift",()=>dual.latched,12);yield return Walk(28);
             yield return Await("ride physical lower lift",()=>actor.Feet.y>19.4f&&actor.Grounded,12);yield return Walk(29.1f);yield return Jump(33,20);yield return Jump(37,22);yield return Jump(33,24);yield return Jump(29,26);yield return Jump(25,28);yield return Jump(21,30);yield return Jump(18,32);
-            yield return Walk(20);Check("upper key",session.HasKey);yield return Walk(16.2f);yield return Press(new InputFrame{interact=true});Check("crack the main bell",session.Phase==RunPhase.Returning);Snapshot("turn");yield return Walk(12.9f);yield return Press(new InputFrame{interact=true});
-            yield return Pause(2.3f);yield return Walk(6);yield return Await("left balcony landing",()=>actor.Grounded&&actor.Feet.y<28,6);
+            yield return Walk(20);Check("upper key",session.HasKey);yield return Walk(16.2f);yield return Press(new InputFrame{interact=true});Check("crack the main bell",session.Phase==RunPhase.Returning);Snapshot("turn");yield return Walk(14.4f);yield return Press(new InputFrame{interact=true});
+            yield return Pause(2.3f);yield return Jump(9.5f,27);yield return Walk(6);yield return Await("left balcony landing",()=>actor.Grounded&&actor.Feet.y<28,6);
             if(secret&&!stopped){yield return Jump(14,15);Check("Mercy collected",session.Mercies.Count==1);}
-            yield return Walk(2,false,false,18);
+            yield return Walk(0);yield return Await("return descent reaches ground",()=>actor.Grounded&&actor.Feet.y<.3f,8);yield return Walk(2);
         }
         IEnumerator Laundry(bool secret){
             yield return Walk(8);Check("spider strings Host",host.Has(HostKind.Marionette));yield return Thread(29,9.5f);yield return Thread(43,9.5f);
             if(secret&&!stopped){yield return Thread(43,2);yield return Press(new InputFrame{action=true});yield return Thread(23,2,true);yield return Press(new InputFrame{action=true});yield return Thread(47,2);Check("cabinet Mercy",session.Mercies.Count==1);yield return Thread(43,2);yield return Press(new InputFrame{action=true});yield return Thread(12,2,true);yield return Press(new InputFrame{action=true});}
-            yield return Thread(53,9.5f);yield return Press(new InputFrame{action=true});yield return Thread(76,10.5f);yield return Thread(89,5.5f);yield return Pause(1);Check("physical laundry key",session.HasKey);yield return Thread(99,6.4f);yield return Await("lines cut on Turn",()=>session.Phase==RunPhase.Returning,12,()=>new InputFrame{interact=true});Snapshot("turn");yield return Thread(77,5.5f);yield return Thread(62,10.5f);yield return Thread(53,9.5f);yield return Press(new InputFrame{action=true});yield return Thread(40,9.5f);yield return Thread(7,10.5f);yield return Walk(4,false,false,5);yield return Walk(2);
+            yield return Thread(53,9.5f);yield return Press(new InputFrame{action=true});yield return Thread(76,10.5f);yield return Thread(89,5.5f);yield return Pause(1);Check("physical laundry key",session.HasKey);yield return Thread(99,6.4f);yield return Await("lines cut on Turn",()=>session.Phase==RunPhase.Returning,12,()=>new InputFrame{interact=true});Snapshot("turn");yield return Thread(77,5.5f);yield return Thread(62,10.5f);yield return Thread(53,9.5f);yield return Press(new InputFrame{action=true});yield return Thread(40,9.5f);yield return Thread(7,10.5f,acceptCure:true);yield return Await("shears release the body",()=>!host.Has(HostKind.Marionette),8,()=>new InputFrame{move=new Vector2(-1,0)});yield return Walk(2);
         }
         IEnumerator Skins(bool secret){
             yield return Walk(13);Check("wardrobe moth contact",host.Has(HostKind.Molt));yield return Press(new InputFrame{action=true});Check("first persistent skin",host.Husks.Count==1);yield return Walk(20.3f);yield return Jump(23,1.6f);yield return Jump(27,2);yield return Walk(30);
-            if(secret&&!stopped){yield return Jump(26,3.6f);yield return Jump(30,5);yield return Jump(34,7);yield return Press(new InputFrame{action=true});yield return Walk(41,false,true);Check("seam Mercy",session.Mercies.Count==1);yield return Walk(30,false,true);yield return Walk(27);yield return Walk(30);}
-            yield return Walk(41,false,true);yield return Press(new InputFrame{interact=true});yield return Walk(44);var f=host.Form<MarionetteForm>();
-            if(f!=null){yield return Thread(66,9.7f);}else{yield return Walk(66);}
-            yield return Walk(78);yield return Walk(81);yield return Jump(84,4);yield return Jump(91,6);yield return Jump(100,8);Check("wardrobe key",session.HasKey);yield return Walk(101.6f);yield return Press(new InputFrame{interact=true});Check("discarded skins crawl home",session.Phase==RunPhase.Returning);Snapshot("turn");yield return Walk(85);yield return Jump(76,6);yield return Walk(66);yield return Walk(43);yield return Walk(30,false,true);yield return Walk(13,false,true);yield return Walk(2);
+            yield return Walk(41,false,true);yield return Press(new InputFrame{interact=true});
+            if(secret&&!stopped){yield return Jump(43,3.3f);yield return Jump(39,4.35f);yield return Walk(33);yield return Jump(30,5);yield return Press(new InputFrame{action=true});Check("two shed skins",host.Husks.Count==2);yield return Jump(32.4f,7);yield return Walk(41,false,true);Check("seam Mercy",session.Mercies.Count==1);yield return Walk(44,false,true);}
+            yield return Walk(52);var f=host.Form<MarionetteForm>();Check("spider at peeled bridge",f!=null);
+            yield return Thread(66,9.7f,acceptCure:true);yield return Await("bridge shears preserve the molt",()=>!host.Has(HostKind.Marionette)&&host.Has(HostKind.Molt),5,()=>new InputFrame{move=new Vector2(-.2f,0)});
+            yield return Walk(81);yield return Jump(84,4);yield return Walk(85.3f);yield return Jump(89,6);yield return Walk(92.5f);yield return Jump(97,8);Check("wardrobe key",session.HasKey);yield return Walk(101.6f);yield return Press(new InputFrame{interact=true});Check("discarded skins crawl home",session.Phase==RunPhase.Returning);Snapshot("turn");
+            yield return Walk(83);yield return Await("return spider catches the host",()=>host.Has(HostKind.Marionette),8);
+            yield return Thread(78,3);yield return Thread(60,3);yield return Thread(43,9.7f,acceptCure:true);yield return Await("shore shears",()=>!host.Has(HostKind.Marionette),8,()=>new InputFrame{move=new Vector2(-.3f,0)});
+            yield return Walk(30,false,true);yield return Walk(13,false,true);yield return Walk(2);
         }
         IEnumerator Usher(){
             var boss=session.GetComponentInChildren<AtlasBoss>();yield return Walk(12);yield return Pause(.85f);yield return Walk(23,true);yield return Await("Usher act I: overlap two scales",()=>boss.phase>=1,4);
