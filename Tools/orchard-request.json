@@ -1,9 +1,9 @@
 {
-  "id": "Completion-K08-wet-ink-patience",
+  "id": "Completion-L01-ink-footing",
   "build": true,
   "cases": [
     {
-      "name": "L19-practice-secret",
+      "name": "L19-practice-60",
       "suite": "Empyrean",
       "route": "GB-L19",
       "secrets": true,
@@ -11,18 +11,27 @@
       "renderFps": 60
     },
     {
-      "name": "L19-secret",
+      "name": "L19-practice-30",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true,
+      "practice": true,
+      "renderFps": 30
+    },
+    {
+      "name": "L19-secret-60",
       "suite": "Empyrean",
       "route": "GB-L19",
       "secrets": true,
       "renderFps": 60
     },
     {
-      "name": "L19-secret-30fps",
+      "name": "L19-secret-delay",
       "suite": "Empyrean",
       "route": "GB-L19",
       "secrets": true,
-      "renderFps": 30
+      "renderFps": 60,
+      "startDelay": 1.2
     }
   ]
 }

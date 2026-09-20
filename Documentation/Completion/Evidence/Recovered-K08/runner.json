@@ -1,0 +1,37 @@
+{
+    "started":  "2026-09-20T12:04:18.7349970-06:00",
+    "id":  "Completion-K08-wet-ink-patience",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  41,
+                        "case":  "L19-practice-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  94,
+                        "case":  "L19-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  94,
+                        "case":  "L19-secret-30fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "cac6ba8b685951c55ad9fc11b993a87a153e7db53dda32b794f65e4c9f16a359",
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "06d3b855f8128575543154f8ef47de9f20c6039a23edc0b38d44f25cd715728c",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "030bba359d407e37f011fe19b657d9ac99c98201",
+    "finished":  "2026-09-20T12:05:34.9757777-06:00"
+}

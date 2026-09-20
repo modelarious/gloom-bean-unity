@@ -113,6 +113,8 @@ namespace GloomBean.Campaign
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
             if(!secret){yield return Walk(42,true);yield return RunArc(50.5f,3.3f);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,6);
+            // Use the right side of the real refuge; the secret can drop us at its far left.
+            yield return Walk(50.8f);
             for(int k=0;k<9;k++){yield return Jump(55+k*5,k==0?3:2+k*.7f);if(stopped)yield break;}
             yield return Walk(95.9f);yield return Jump(100,9.2f);if(stopped)yield break;yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
             yield return CorrectingReturn();

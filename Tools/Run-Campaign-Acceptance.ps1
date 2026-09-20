@@ -1,5 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$ConfigPath)
 $ErrorActionPreference='Stop'
+. "$PSScriptRoot\CampaignGraph.ps1"
 $config=Get-Content (Resolve-Path $ConfigPath).Path -Raw | ConvertFrom-Json
 if(-not $config.cases -or -not $config.atlas -or -not $config.reports){throw 'Missing acceptance configuration'}
 $dir=[IO.Path]::GetFullPath($config.reports)
@@ -19,7 +20,7 @@ foreach($c in $config.cases){
  if($c.suite -notin @('Foundation','Mechanics') -and $c.route -notmatch '^(W[1-5]|GB-L[0-2][0-9]|GB-B[1-5])$'){throw 'Invalid native route'}
  $j=@{name=$c.name;case=$c;state='PENDING'};$jobs+=$j;$names[$c.name]=$j
 }
-foreach($j in $jobs){if($j.case.parent -and (-not $names.ContainsKey($j.case.parent) -or $j.case.parent -eq $j.name)){throw 'Unknown or self parent'} }
+Assert-CampaignGraph $jobs $names
 $status=@{status='RUNNING';phase='source-check';started=(Get-Date).ToString('o');cases=@()}
 function Receipt {
  $status.cases=@($jobs|ForEach-Object {@{name=$_.name;status=$_.state;assertions=$_.assertions;failed=$_.failed;exceptions=$_.exceptions;exit=$_.exit;expected_denial=[bool]$_.case.expectedDenial;parent=$_.case.parent;suite=$_.case.suite;route=$_.case.route}})
@@ -86,7 +87,7 @@ try {
    }
   }
   Receipt
-  if(@($jobs|Where-Object {$_.state -eq 'RUNNING'}).Count -eq 0 -and @($jobs|Where-Object {$_.state -eq 'PENDING'}).Count -gt 0){throw 'Blocked or cyclic parent-save graph'}
+  if(@($jobs|Where-Object {$_.state -eq 'RUNNING'}).Count -eq 0 -and @($jobs|Where-Object {$_.state -eq 'PENDING'}).Count -gt 0 -and -not(Test-CampaignCanAdvance $jobs $names)){throw 'Blocked parent-save graph: no actionable pending case'}
   Start-Sleep -Milliseconds 350
  }
  $null=Source $config.atlas $config.atlas_commit

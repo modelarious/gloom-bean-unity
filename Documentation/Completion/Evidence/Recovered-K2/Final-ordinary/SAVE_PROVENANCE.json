@@ -1,0 +1,5 @@
+﻿{
+    "parent":  "L20-ordinary",
+    "sha256":  "49cba446c28efb760905a111aacfd814caaed7049fefe7e1048cb4551948d57f",
+    "policy":  "Exact unmodified save from prior real-input completion"
+}

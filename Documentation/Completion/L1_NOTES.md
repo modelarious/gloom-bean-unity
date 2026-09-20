@@ -1,0 +1,5 @@
+# Recovered completion blockers and fixes
+
+Recovered clean HEAD 030bba3. K2 completed all twenty ordinary and secret levels, ordinary and nineteen-secret endings, but reported a false dependency deadlock before Final-restored. The earlier-positioned GUI job was skipped while a later GUI job was running; that later job finished during the same scan. Zero running jobs at end-of-pass was incorrectly treated as a cycle even though the earlier job was now ready. The scheduler now evaluates pending readiness and validates the graph before execution. Terminal failed parents propagate without turning into cycles. Ten actual PowerShell tests exercise these cases.
+
+K08 obeys real Ink hardening and reaches the optional dot. Its practice return lands at x48.98 on the real refuge [48,52], then attempts a six-metre non-running jump to55. The previous successful normal run landed farther right. L1 adds the real Walk(50.8) input before that jump; no level geometry, physics, health, pickups or support is changed. Original K2/K08 evidence is retained.
