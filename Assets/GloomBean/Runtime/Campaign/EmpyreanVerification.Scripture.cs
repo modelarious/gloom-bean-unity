@@ -11,20 +11,20 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;float end=Time.time+6;bool jumped=false;
             input.rule=()=>{bool edge=!jumped&&actor.Grounded;if(edge)jumped=true;return new InputFrame{jump=edge,jumpHeld=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.35f,-1,1),0)};};
-            while(Live&&Time.time<end&&!(jumped&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&actor.Feet.y>=low&&actor.Feet.y<=high))yield return Tick();
+            while(Live&&Time.time<end&&!(jumped&&actor.Body.linearVelocity.y<=.2f&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&actor.Feet.y>=low&&actor.Feet.y<=high))yield return Tick();
             input.rule=null;input.frame=default;Note("INK SUPPORT "+(actor.GroundCollider?actor.GroundCollider.name:"none"));
-            Check("land on own hardened falling stroke",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&actor.Feet.y>=low&&actor.Feet.y<=high);Snapshot("own-ink-landing");
+            Check("land on own hardened falling stroke",actor.Body.linearVelocity.y<=.2f&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&actor.Feet.y>=low&&actor.Feet.y<=high);Snapshot("own-ink-landing");
         }
         IEnumerator RunArc(float x,float floor)
         {
             if(stopped||!Live)yield break;bool sent=false;float end=Time.time+6;
-            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,run=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.4f,-1,1),0)};};
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,run=true,move=new Vector2((!actor.Grounded&&actor.Feet.y>floor+.8f?Mathf.Sign(x-actor.Body.position.x):Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.4f,-1,1)),0)};};
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
             input.rule=null;input.frame=default;Check("record a running arc to "+x,actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
         }
         IEnumerator SemicolonMercy()
         {
-            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(50,1);if(stopped)yield break;yield return Pause(1.05f);
+            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(52,1);if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
             while(Live&&!stopped&&actor.Feet.y<6.3f&&attempts++<5){
                 var candidates=ink.Strokes.Where(x=>x&&x.Solid&&x.age<6.2f&&x.Midpoint.y>actor.Feet.y+.4f&&x.Midpoint.y<actor.Feet.y+2.15f&&Mathf.Abs(x.Midpoint.x-actor.Body.position.x)<3.1f).OrderByDescending(x=>x.Midpoint.y).ToArray();
@@ -46,9 +46,9 @@ namespace GloomBean.Campaign
             if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return Jump(31,9.4f);yield return Jump(35,9.4f);yield return Jump(40,7.2f);
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
-            if(!secret){yield return Walk(42,true);yield return RunArc(50,1);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,6);
+            if(!secret){yield return Walk(42,true);yield return RunArc(52,1);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,6);
             for(int k=0;k<9;k++){yield return Jump(55+k*5,2+k*.7f);if(stopped)yield break;}
-            yield return Jump(100,9.2f);yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
+            yield return Walk(95.9f);yield return Jump(100,9.2f);if(stopped)yield break;yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
             yield return Jump(98,10.8f);for(int k=13;k>=0;k--){yield return Jump(14+k*6,10.8f);if(stopped)yield break;}yield return Jump(10,8);yield return Walk(2);
         }
     }
