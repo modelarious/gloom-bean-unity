@@ -1,0 +1,82 @@
+{
+  "tested_source": "567ceba87e7df2a026d5f801f98b58fb8785420e",
+  "runtime_scope": "Production-input Pears practice/main/secret, unchanged production gameplay, 198 mechanics assertions",
+  "files": [
+    {
+      "path": "runner.json",
+      "sha256": "77f595568bfeedc3a1621e14323aad71615a74adc21767d4af20e17a8e6d3cd7"
+    },
+    {
+      "path": "Mechanics/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Mechanics/save-roundtrip.json",
+      "sha256": "7ccfa1fbf3940e6f0c0375d87c0f9235a50514e14cb427bdfaf5077987b26ccf"
+    },
+    {
+      "path": "Mechanics/verification.json",
+      "sha256": "a40ce60bca91e89d8bc80ea91e35f8b851b3911b7e9301569d0b802de850626a"
+    },
+    {
+      "path": "Pears-critical/orchard-observations.txt",
+      "sha256": "f80e5ee4309490ff68ccd6e9ed49e91e8e734d0517557b3ccadcf897c3effddc"
+    },
+    {
+      "path": "Pears-critical/orchard-result.json",
+      "sha256": "8d40b73f8682286ca88ac68a430c491aa7aa9e9ac3c880b53d3f27c4c49e8fee"
+    },
+    {
+      "path": "Pears-critical/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Pears-critical/saved-progress.json",
+      "sha256": "52364f2e7010ad15555d1ecde463a60404b9a265090a3ddad937dfe67702c611"
+    },
+    {
+      "path": "Pears-critical/test-save.json",
+      "sha256": "52364f2e7010ad15555d1ecde463a60404b9a265090a3ddad937dfe67702c611"
+    },
+    {
+      "path": "Pears-secrets/orchard-observations.txt",
+      "sha256": "631b006cea5dcde2ee05443105fa5a3e5a2a292b9c27321b06cca86ac434abc6"
+    },
+    {
+      "path": "Pears-secrets/orchard-result.json",
+      "sha256": "17ee47590d20d490269660aeaa54733e409fcc9f90ac38dbefb9c548b43358df"
+    },
+    {
+      "path": "Pears-secrets/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Pears-secrets/saved-progress.json",
+      "sha256": "222743795592e8b2b60c72e7d7d0b9f85d1e73d7d3b89d463fc4e2c4b1ea990d"
+    },
+    {
+      "path": "Pears-secrets/test-save.json",
+      "sha256": "222743795592e8b2b60c72e7d7d0b9f85d1e73d7d3b89d463fc4e2c4b1ea990d"
+    },
+    {
+      "path": "Practice-isolation/orchard-observations.txt",
+      "sha256": "b3445f5a7908d549f66267e5d03c54f8576c6d69c01783cc8d30e3f8ac07c779"
+    },
+    {
+      "path": "Practice-isolation/orchard-result.json",
+      "sha256": "59d97a753da71f26373014294ea436a397fee5126bc6cf2b9712ebbfdd2fe2dd"
+    },
+    {
+      "path": "Practice-isolation/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Practice-isolation/saved-progress.json",
+      "sha256": "5f63d0457298227e760452ebf4491d4bf15778a3d9d297789ecc317ba7cd6070"
+    },
+    {
+      "path": "Mechanics/Atlas/progress.json",
+      "sha256": "a40ce60bca91e89d8bc80ea91e35f8b851b3911b7e9301569d0b802de850626a"
+    }
+  ]
+}

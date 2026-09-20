@@ -1,0 +1,53 @@
+BEGIN GB-L05 Pear Tree Gallows
+PASS GB-L05 walk 8 | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 melt through changed body footprint | (7.86, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 19 | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 23.35 | (23.17, -1.84) feet=-2.00 hp=6
+PASS GB-L05 conserved plug seals actual drain | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 flow costs body volume | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 walk 26 | (25.78, 4.19) feet=4.03 hp=6
+PASS GB-L05 diverted wax physically rises | (25.78, 4.19) feet=4.03 hp=6
+PASS GB-L05 walk 30 | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 Wax source acquired | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 reform with conserved volume | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 land in pear cage | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 walk 32 | (31.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 jump 35 / 4.8 peak 5.67 | (34.79, 5.47) feet=4.80 hp=6
+PASS GB-L05 second partition changes scale mass | (34.82, 5.37) feet=4.80 hp=6
+PASS GB-L05 jump 38 / 6.3 peak 7.17 | (37.78, 6.87) feet=6.30 hp=6
+PASS GB-L05 walk 39 | (38.80, 6.87) feet=6.30 hp=6
+PASS GB-L05 fine mass balance opens glass bell | (38.80, 6.87) feet=6.30 hp=6
+PASS GB-L05 walk 44 | (43.80, 6.87) feet=6.30 hp=6
+PASS GB-L05 Glass bell Mercy collected | (43.80, 6.87) feet=6.30 hp=6
+PASS GB-L05 walk 32 | (32.20, 4.95) feet=4.39 hp=6
+PASS GB-L05 leave secret on main bough | (32.03, 3.93) feet=3.37 hp=6
+PASS GB-L05 walk 46.5 | (46.28, 3.86) feet=3.30 hp=6
+PASS GB-L05 jump onto dynamic support 53 | (52.77, 3.96) feet=3.40 hp=6
+PASS GB-L05 walk 63 | (62.81, 3.86) feet=3.30 hp=6
+PASS GB-L05 jump onto dynamic support 70 | (69.76, 3.96) feet=3.40 hp=6
+PASS GB-L05 walk 80 | (79.81, 3.86) feet=3.30 hp=6
+PASS GB-L05 jump onto dynamic support 87 | (86.75, 3.77) feet=3.20 hp=6
+PASS GB-L05 walk 93 | (92.80, 3.77) feet=3.20 hp=6
+PASS GB-L05 physical pear key | (92.80, 3.77) feet=3.20 hp=6
+PASS GB-L05 walk 96.6 | (96.40, 3.77) feet=3.20 hp=6
+PASS GB-L05 ripening Turn | (96.41, 3.77) feet=3.20 hp=6
+PASS GB-L05 walk 66 | (66.19, 1.76) feet=1.20 hp=6
+PASS GB-L05 drop between boughs to the maintenance return | (66.09, 0.57) feet=0.00 hp=6
+PASS GB-L05 Wax source acquired | (66.09, 0.57) feet=0.00 hp=6
+PASS GB-L05 melt through changed body footprint | (66.09, 0.16) feet=0.00 hp=6
+EVENT t=41.70 fruit-burst Ripening pear counterweight
+EVENT t=41.70 fruit-burst Ripening pear counterweight
+EVENT t=41.70 fruit-burst Ripening pear counterweight
+PASS GB-L05 walk 30 | (30.11, 0.17) feet=0.01 hp=6
+PASS GB-L05 liquid return passes beneath the sagging bough | (30.11, 0.17) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (30.11, 0.17) feet=0.01 hp=6
+PASS GB-L05 reform with conserved volume | (30.11, 0.57) feet=0.01 hp=6
+PASS GB-L05 walk 20 | (20.19, 0.57) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (17.33, 0.57) feet=0.01 hp=6
+PASS GB-L05 melt through changed body footprint | (17.33, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 5 | (4.81, 0.75) feet=0.00 hp=6
+PASS GB-L05 walk 2 | (3.11, 0.75) feet=0.00 hp=6
+PASS GB-L05 complete actual stage | (3.11, 0.75) feet=0.00 hp=6
+PASS GB-L05 clear persists | (3.11, 0.75) feet=0.00 hp=6
+PASS GB-L05 Mercy saved after real return | (3.11, 0.75) feet=0.00 hp=6

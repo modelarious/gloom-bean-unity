@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  38,
+                        "case":  "Practice-isolation",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  39,
+                        "case":  "Pears-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  49,
+                        "case":  "Pears-secrets",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  198,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "R12-continuity-practice",
+    "started":  "2026-09-19T18:38:49.7253882-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-19T18:40:16.7987093-06:00"
+}

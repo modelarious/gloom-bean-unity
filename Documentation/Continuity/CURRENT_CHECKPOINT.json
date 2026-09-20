@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "tested_commit": "b47386ce1adf46fab87b65a44cca49c83e2db02f",
+  "tested_commit": "567ceba87e7df2a026d5f801f98b58fb8785420e",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Read R12-continuity-practice result for WIP Wax return witness, preserve outcome, then City W3 full-input implementation. Previous clean run failed practice.",
+  "next_gate": "Recheck full earned W1/W2 chapter and secrets in fresh atlas clone, including formerly failing practice and expected empty-save denial. Then City W3/L09 critical route and Surveyor.",
   "active_job": {
-    "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/R12-continuity-practice/runner.json",
-    "source_commit": "567ceba87e7df2a026d5f801f98b58fb8785420e"
+    "task": "GloomBean-Orchard-Clean-v04",
+    "receipt": "Reports/Orchard-v04/Clean-continuity-e1/runner.json",
+    "status": "PREPARING"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
@@ -18,16 +18,20 @@
   },
   "evidence_refs": [
     {
-      "name": "Recovered clean batch including failed practice",
+      "name": "Current focused native repair",
+      "path": "Documentation/Evidence/Continuity-R12/runner.json"
+    },
+    {
+      "name": "Historical clean batch (retained FAIL)",
       "path": "Documentation/Evidence/OrchardRecovery/runner.json"
-    },
-    {
-      "name": "Original practice failure",
-      "path": "Documentation/Evidence/OrchardRecovery/Practice-isolation/orchard-result.json"
-    },
-    {
-      "name": "Current retry",
-      "path": "Reports/Orchard-v04/R12-continuity-practice/runner.json"
     }
-  ]
+  ],
+  "repair_outcome": {
+    "practice_checks": 38,
+    "ordinary_checks": 39,
+    "secret_checks": 49,
+    "mechanics_passed": 198,
+    "failed": 0,
+    "scope": "Focused tests; not whole atlas completion"
+  }
 }
