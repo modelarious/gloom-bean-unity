@@ -1,32 +1,9 @@
 {
-  "id": "Completion-J01-recovered-focus-apex",
+  "id": "Completion-J02-board-real-fresco-flap",
   "build": true,
   "cases": [
     {
-      "name": "L19-critical",
-      "suite": "Empyrean",
-      "route": "GB-L19"
-    },
-    {
-      "name": "L19-secret",
-      "suite": "Empyrean",
-      "route": "GB-L19",
-      "secrets": true
-    },
-    {
-      "name": "L19-secret-30fps",
-      "suite": "Empyrean",
-      "route": "GB-L19",
-      "secrets": true,
-      "renderFps": 30,
-      "startDelay": 0.47
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
-    },
-    {
-      "name": "L20-third-sanctum",
+      "name": "L20-sanctums",
       "suite": "Empyrean",
       "route": "GB-L20"
     }

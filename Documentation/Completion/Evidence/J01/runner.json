@@ -1,0 +1,52 @@
+{
+    "started":  "2026-09-20T09:18:28.2668269-06:00",
+    "id":  "Completion-J01-recovered-focus-apex",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  77,
+                        "case":  "L19-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  94,
+                        "case":  "L19-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  93,
+                        "case":  "L19-secret-30fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  252,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  40,
+                        "case":  "L20-third-sanctum",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "b95328bacc041629d98fd48c0dac2758c0a0de39ef042c2eb7eed4778c81aa52",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "bd5e50725cbcb9b0ec12eb8d48de4d4ab428a91f",
+    "finished":  "2026-09-20T09:20:35.4035684-06:00"
+}

@@ -61,7 +61,10 @@ namespace GloomBean.Campaign
         {
             yield return Walk(72);yield return SanctuaryPlane(0);yield return Walk(72.7f);yield return SanctuaryPlaneJump(77,2.1625f,0);
             yield return Walk(78.2f);yield return SanctuaryPlaneJump(83,3.65f,2);yield return Walk(86);yield return Wait("spool nests alongside depth",()=>host.Has(HostKind.Stitch),3);if(stopped)yield break;
-            yield return SanctuaryFold("depth",Vector2.right,45);if(stopped)yield break;yield return BoardFoldedRamp();yield return Walk(97);
+            // The seam is out of reach from the near-plane balcony. Board the real
+            // horizontal flap before stitching it; do not enlarge interaction range.
+            yield return BoardFoldedRamp();if(stopped)yield break;
+            yield return SanctuaryFold("depth",Vector2.right,45);if(stopped)yield break;yield return Walk(97);
             yield return Wait("flat sign restores the normal footprint before the painted threshold",()=>!host.Has(HostKind.Parallax),4);yield return Walk(101);Check("enter the folded fresco from its actual threshold",host.Has(HostKind.InsideOut));if(stopped)yield break;
             yield return Jump(104,11);yield return Jump(106,12);yield return Jump(108.2f,13);yield return Jump(109.6f,15);yield return Jump(111.5f,16);yield return Walk(114.25f);
             yield return Jump(116.2f,17);yield return Jump(118.2f,18);yield return Jump(119.6f,20);yield return Jump(121.5f,21);yield return Walk(126.4f);yield return Wait("empty frame returns ordinary collision",()=>!host.Has(HostKind.InsideOut),3);Snapshot("third-sanctum-exit");
