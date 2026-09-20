@@ -2,13 +2,8 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "H26 ordinary/secret L17 including bell-screen and L18 own-body shadow pass. Fresh 25-case full earned W1\u2192L18 chain is now staged, including cadence, practice, world/stage denial. Read its receipt, not old H14 notes. L19 modules are groundwork only; L19/L20/B5 still unfinished.",
-  "active_job": {
-    "task": "GloomBean-Campaign-Acceptance",
-    "receipt": "Reports/Empyrean-Clean-v07-h1/runner.json",
-    "status": "READY_NOT_STARTED",
-    "tested_source": "ff6bb3da47362e3a79bf78da55f91774bc7d7283"
-  },
+  "next_gate": "L17 and L18 critical/signature/secret/Turn routes passed clean 25-case earned chain. Implement original atlas L19 Ink/punctuation/Shadow secret/erasing return, then L20 and B5. No job running.",
+  "active_job": null,
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -18,6 +13,10 @@
     "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
   },
   "evidence_refs": [
+    {
+      "name": "Earned eighteen-level current clean acceptance",
+      "path": "Documentation/Empyrean/Evidence/Clean-v07-h1/runner.json"
+    },
     {
       "name": "Current completed first-four-world clean acceptance",
       "path": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json"
@@ -38,9 +37,9 @@
   },
   "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
   "latest_finished_job": {
-    "receipt": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json",
+    "receipt": "Documentation/Empyrean/Evidence/Clean-v07-h1/runner.json",
     "status": "PASS",
-    "cases": 16
+    "cases": 25
   },
   "continuity_tool_tests": {
     "passed": 18,
@@ -49,8 +48,6 @@
   },
   "remaining_game": {
     "unverified_full_levels": [
-      "GB-L17",
-      "GB-L18",
       "GB-L19",
       "GB-L20"
     ],
