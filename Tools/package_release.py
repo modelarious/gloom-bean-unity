@@ -37,10 +37,10 @@ def main()->None:
         base=root/"Builds/Windows"
         if not (base/"GloomBean.exe").is_file():raise FileNotFoundError("Build the Windows player first")
         for f in sorted(base.rglob("*")):
-            if not f.is_file() or f.suffix.lower() in (".pdb",".mdb",".log"):continue
+            if not f.is_file() or f.suffix.lower() in (".pdb",".mdb",".log",".ttf",".otf"):continue
             if any("DoNotShip" in part or "dontship" in part.lower() for part in f.parts):continue
             entries[str(PurePosixPath("GloomBeanWindows")/PurePosixPath(f.relative_to(base).as_posix()))]=f.read_bytes()
-        entries["GloomBeanWindows/START_HERE.txt"]=b"Run GloomBean.exe. Keep the Data, DLL and MonoBleedingEdge folders together. FOUNDATION is the mechanics playground; HOST CYCLE is the experimental atlas campaign. Escape pauses; F1 controls; F2 design notes; F4 toggles original action sounds. Read the included release status for first-chapter route evidence and remaining campaign limits."
+        entries["GloomBeanWindows/START_HERE.txt"]=b"Run GloomBean.exe after extracting the whole ZIP. Keep the Data, DLL and MonoBleedingEdge folders together. BEGIN / CONTINUE HOST CYCLE starts the twenty-level campaign; PLATFORMER FOUNDATION is the separate mechanics playground. PRACTICE grants no earned progress. Escape pauses; F1 controls; F2 designer notes; F4 sound; F5 music. Read PLAY_GUIDE.md and RELEASE_STATUS.md beside this package for controls, current evidence and explicit manual/publication boundaries."
     manifest={"schema":1,"kind":args.kind,"source_commit":git(root,"rev-parse","HEAD").decode().strip(),"files":{k:{"bytes":len(v),"sha256":digest(v)} for k,v in sorted(entries.items())}}
     entries["PAYLOAD_SHA256.json"]=json.dumps(manifest,indent=2).encode()
     args.out.parent.mkdir(parents=True,exist_ok=True)
