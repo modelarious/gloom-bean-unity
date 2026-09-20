@@ -2,10 +2,10 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "L19 ordinary/secret/30fps passes; L20 first four sanctums now physically traversed. Finish S5 luminous topology, rhythm secret and collapse, then alternate solution families, Host of Hosts and all earned endings. Do not restart the held-focus or fresco repair.",
+  "next_gate": "J08: L20 completes all sanctums and return ledges; fix physical last-ledge exit and inertia in secret chamber. B5 choice/theft/adaptation proven; finish five physical circuits. Then actual alternatives and earned all-20 endings/presentation.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Completion-J04-readable-light-landings/runner.json",
+    "receipt": "Reports/Orchard-v04/Completion-J08-exit-footprint-and-free-cargo/runner.json",
     "status": "READY_TO_DISPATCH"
   },
   "publication": {

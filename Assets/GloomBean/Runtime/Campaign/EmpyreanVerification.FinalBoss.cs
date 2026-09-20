@@ -41,17 +41,17 @@ namespace GloomBean.Campaign
         }
         IEnumerator FinalEchoInkRoute()
         {
-            yield return Walk(147);yield return Jump(150,2);yield return Jump(152,4);yield return Walk(155);Check("two footsteps share the actual writing tenant",host.Has(HostKind.Echo)&&host.Has(HostKind.Ink));if(stopped)yield break;
+            yield return Walk(147,true);yield return Jump(150,2);yield return Jump(152,4);yield return Walk(155);Check("two footsteps share the actual writing tenant",host.Has(HostKind.Echo)&&host.Has(HostKind.Ink));if(stopped)yield break;
             yield return Walk(156.5f,true);yield return ShortArc(152.5f,4);yield return InkLanding(154,5,6.9f);if(stopped)yield break;yield return Jump(158,7.6f);yield return Pause(2.2f);
             yield return Walk(162);yield return Walk(172);yield return Wait("ink access and delayed twin jointly hold the separated scales",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,4);Snapshot("final-echo-ink");
         }
         IEnumerator FinalWaxGulletRoute()
         {
-            yield return Walk(185);yield return Jump(188.5f,2);yield return Walk(191);Check("the structural morsel is approached with a real Gullet",host.Has(HostKind.Gullet));if(stopped)yield break;
+            yield return Walk(185,true);yield return Jump(187,2);yield return Jump(188.5f,4);yield return Walk(191);Check("the structural morsel is approached with a real Gullet",host.Has(HostKind.Gullet));if(stopped)yield break;
             yield return Press(new InputFrame{action=true,move=Vector2.down});var gullet=host.Form<GulletForm>();Check("the cargo was removed from the actual entry floor",gullet!=null&&gullet.Stored);if(stopped)yield break;var tile=gullet.Stored;
             yield return Wait("removing the floor changes support",()=>actor.Grounded&&actor.Feet.y<.3f,4);yield return Walk(196);Check("wax joins the terrain-carrying Gullet",host.Has(HostKind.Wax)&&host.Has(HostKind.Gullet));yield return Focus(HostKind.Wax);yield return Press(new InputFrame{alternate=true});Check("excess wax remains outside the cargo tray",Mathf.Abs(actor.Body.mass-.78f)<.02f&&host.Plugs.Count>0);
-            yield return Walk(199.5f);yield return Focus(HostKind.Gullet);yield return Press(new InputFrame{action=true,move=Vector2.right});Check("the same terrain becomes the lift's actual floor",gullet.Stored==null&&tile.gameObject.activeInHierarchy&&Mathf.Abs(tile.transform.position.x-202)<.1f);if(stopped)yield break;
-            yield return Jump(202,1.5f);var lift=session.GetComponentInChildren<FinalCargoHoist>();yield return Wait("conserved living load and structural cargo raise the physical lift",()=>lift.Delivered&&actor.Feet.y>9.1f,10);if(stopped)yield break;
+            yield return Jump(199,1.8f);yield return Walk(199.5f);yield return Focus(HostKind.Gullet);yield return Press(new InputFrame{action=true,move=Vector2.right});Check("the same terrain becomes the lift's actual floor",gullet.Stored==null&&tile.gameObject.activeInHierarchy&&Mathf.Abs(tile.transform.position.x-202)<.1f);if(stopped)yield break;
+            yield return Jump(202,3.5f);var lift=session.GetComponentInChildren<FinalCargoHoist>();yield return Wait("conserved living load and structural cargo raise the physical lift",()=>lift.Delivered&&actor.Feet.y>9.1f,10);if(stopped)yield break;
             Check("lift carries the same tile rather than an inventory key",lift.Cargo==tile);yield return Jump(207,11.5f);yield return Walk(210);yield return Wait("the balanced cargo route reaches the real tendon",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,3);Snapshot("final-wax-gullet");
         }
         IEnumerator FinalCoffinTravel(float target)
@@ -61,7 +61,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator FinalStitchCoffinRoute()
         {
-            yield return Walk(223);yield return Jump(228,2);yield return Walk(231);Check("the seamstress shares a real rigid body",host.Has(HostKind.Stitch)&&host.Has(HostKind.Coffin));if(stopped)yield break;
+            yield return Walk(223,true);yield return Jump(228,2);yield return Walk(231);Check("the seamstress shares a real rigid body",host.Has(HostKind.Stitch)&&host.Has(HostKind.Coffin));if(stopped)yield break;
             yield return FinalCoffinTravel(236.5f);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal){yield return Press(new InputFrame{move=Vector2.right});yield return Wait("finish the load-bearing horizontal orientation",()=>coffin.Horizontal&&!coffin.IsFlipping,2);yield return Pause(.2f);}
             yield return Focus(HostKind.Stitch);yield return Press(new InputFrame{action=true,move=new Vector2(1,1)});var stitch=host.Form<StitchForm>();Check("catch the actual load beam seam",stitch.First&&stitch.First.group=="heart-brace");if(stopped)yield break;
             yield return Press(new InputFrame{action=true,move=new Vector2(1,-.2f)});Check("join the beam to its physical lower abutment",stitch.Active!=null);if(stopped)yield break;yield return Press(new InputFrame{action=true});
@@ -69,7 +69,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator FinalMirrorParallaxRoute()
         {
-            yield return Walk(261);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
+            yield return Walk(261,true);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
             yield return SanctuaryPlane(0);yield return SanctuaryPlaneJump(266,3.5625f,0);if(stopped)yield break;var twin=host.Form<MirrorForm>().Twin;
             yield return Walk(271);yield return Walk(268);yield return Wait("asymmetric calipers align bodies in different physical planes",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,5);Check("the other collision body participates in the near plane",twin&&twin.Shape.includeLayers==(1<<19));Snapshot("final-mirror-parallax");
         }

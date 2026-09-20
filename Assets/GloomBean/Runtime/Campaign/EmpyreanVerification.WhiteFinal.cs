@@ -45,7 +45,8 @@ namespace GloomBean.Campaign
             float start=Time.fixedTime+.08f,end=Time.time+4;int tapped=0;float heldUntil=0;float[] offsets={0,.5f,1,2};
             input.rule=()=>{bool jump=tapped<offsets.Length&&Time.fixedTime>=start+offsets[tapped];if(jump){tapped++;heldUntil=Time.fixedTime+.12f;}return new InputFrame{jump=jump,jumpHeld=Time.fixedTime<heldUntil,move=new Vector2(Mathf.Clamp((184.5f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*1.2f,-1,1),0)};};
             while(Live&&Time.time<end&&!gate.opened)yield return Tick();input.rule=null;input.frame=default;Check("the Sunday Best jump rhythm opens real terrain",gate.opened&&tapped==4);if(stopped)yield break;
-            yield return Walk(186.7f);yield return Wait("descend through the opened rhyme lid",()=>actor.Grounded&&actor.Feet.y<20.4f,6);yield return Walk(188.3f);yield return Wait("drop through the remembered rhyme into the twentieth Mercy",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-18.5f)<.3f&&session.Mercies.Count==1,6);if(stopped)yield break;
+            yield return Wait("descend through the opened rhyme lid",()=>actor.Grounded&&actor.Feet.y<20.4f&&Mathf.Abs(actor.Body.position.x-186.8f)<.25f,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp((186.8f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*1.2f,-1,1),0)});
+            yield return Wait("drop through the remembered rhyme into the twentieth Mercy",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-18.5f)<.3f&&session.Mercies.Count==1,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp((188.45f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*1.2f,-1,1),0)});if(stopped)yield break;
             yield return Jump(186.9f,20.1f);yield return Jump(188.8f,21.7f);yield return Jump(193,23);Snapshot("remembered-tutorial-rhythm");
         }
         IEnumerator CollapseJump(float x,float top,DescentController collapse)
@@ -62,7 +63,7 @@ namespace GloomBean.Campaign
             yield return CollapseJump(194,25,collapse);yield return CollapseJump(193,27,collapse);yield return CollapseJump(190,29,collapse);if(stopped)yield break;
             Check("ceramic and eclipse thresholds restore only the corrupted base",host.Forms.Count==0&&game.IsCorrupted);Snapshot("false-heaven-collapses");
             for(int x=182;x>=6;x-=8){yield return Walk(x+5.7f,true);yield return CollapseJump(x,29,collapse);if(stopped)yield break;}
-            yield return Walk(2);yield return Wait("controlled collapse returns to the real exit",()=>session.Phase==RunPhase.Cleared,9);Check("normal return never restores the cute body",game.IsCorrupted);
+            yield return Walk(0);yield return Wait("drop clear of the last collapsed ledge",()=>actor.Feet.y-collapse.Offset.y<24.4f,5);yield return Walk(2);yield return Wait("controlled collapse returns to the real exit",()=>session.Phase==RunPhase.Cleared,5);Check("normal return never restores the cute body",game.IsCorrupted);
         }
     }
 }

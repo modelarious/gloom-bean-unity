@@ -63,10 +63,10 @@ namespace GloomBean.Campaign
         {heart.cables.Add(PrimitiveArt.Line(label,a.b.root,at,new Vector2(311,22),.07f,new Color(.59f,.23f,.38f,.45f),-4));}
         void FinalMagnetShadow(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+2,1,3);a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Lodestone,x+4,3);a.Source(HostKind.Shadow,x+7,3,true);
+            var b=a.b;a.Ledge(x+2,1,3).AddComponent<OneWaySurface>();a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Lodestone,x+4,3);a.Source(HostKind.Shadow,x+7,3,true);
             var screen=a.Metal(new Vector2(x+10,8),new Vector2(12,.65f),2,false,-1);screen.name="Final suspended iron screen";screen.strength=100;
             var rb=screen.GetComponent<Rigidbody2D>();rb.gravityScale=0;rb.constraints=RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;rb.linearDamping=1.2f;
-            b.Solid("Opaque heart partition",new Vector2(x+18.5f,6),new Vector2(1,8));
+            b.Solid("Opaque heart partition",new Vector2(x+18.5f,4.5f),new Vector2(1,5));
             var sg=new GameObject("Final noon witness");sg.transform.SetParent(b.root);sg.transform.position=new Vector2(x+15,18);var sun=sg.AddComponent<ShadowSun>();sun.directional=true;sun.noon=true;sun.reach=16;sun.renderFilled=true;
             var dg=new GameObject("Final screen shadow domain");dg.transform.SetParent(b.root);var domain=dg.AddComponent<ShadowDomain>();domain.area=new Rect(x,1.8f,31,18);domain.onlySun=sun;
             var hand=b.Trigger("Final shadow tendon",new Vector2(x+19.5f,2.35f),Vector2.one*.6f,new Color(.78f,.65f,.38f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();hand.requiredSun=sun;hand.requiredCaster=screen.GetComponent<Collider2D>();
@@ -83,10 +83,10 @@ namespace GloomBean.Campaign
         }
         void FinalWaxGullet(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+1,1,3);a.Ledge(x+2.5f,2,2);a.Ledge(x+7.5f,2,2);
-            var tile=a.Chunk(new Vector2(x+5,1.5f),new Vector2(3,1));tile.name="Final reusable structural morsel";a.Source(HostKind.Gullet,x+4.5f,3);a.Source(HostKind.Wax,x+10,1,true);
-            var tray=b.Solid("Conserved body cargo lift",new Vector2(x+16,.3f),new Vector2(4,.4f),new Color(.73f,.58f,.4f),Layers.Moving);tray.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
-            var lift=tray.AddComponent<FinalCargoHoist>();lift.lower=new Vector2(x+16,.3f);lift.upper=new Vector2(x+16,8.3f);a.Socket(new Vector2(x+16,1),new Vector2(3,1));
+            var b=a.b;a.Ledge(x+1,2,3).AddComponent<OneWaySurface>();a.Ledge(x+2.5f,4,2).AddComponent<OneWaySurface>();a.Ledge(x+7.5f,4,2).AddComponent<OneWaySurface>();
+            var tile=a.Chunk(new Vector2(x+5,3.5f),new Vector2(3,1));tile.name="Final reusable structural morsel";a.Source(HostKind.Gullet,x+4.5f,5);a.Source(HostKind.Wax,x+10,1,true);
+            var tray=b.Solid("Conserved body cargo lift",new Vector2(x+16,2.3f),new Vector2(4,.4f),new Color(.73f,.58f,.4f),Layers.Moving);tray.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
+            var lift=tray.AddComponent<FinalCargoHoist>();lift.lower=new Vector2(x+16,2.3f);lift.upper=new Vector2(x+16,8.3f);a.Socket(new Vector2(x+16,3),new Vector2(3,1));a.Ledge(x+13,1.8f,3).AddComponent<OneWaySurface>();
             var counter=b.Solid("Cargo scale counterweight",new Vector2(x+20,12),Vector2.one,new Color(.58f,.44f,.31f),Layers.Moving);lift.counterweight=counter.AddComponent<Rigidbody2D>();lift.counterweight.bodyType=RigidbodyType2D.Kinematic;
             a.Ledge(x+23,11.5f,10).AddComponent<OneWaySurface>();var scale=b.Plate(new Vector2(x+24,11.64f),.2f);
             FinalSignal(a,boss,"wax-gullet",scale.transform.position,()=>lift.Delivered&&scale.Pressed,()=>heart.Release("wax-gullet"));Cable(a,heart,scale.transform.position,"The conserved hunger tendon");
@@ -94,14 +94,14 @@ namespace GloomBean.Campaign
         }
         void FinalStitchCoffin(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+1,1,3);a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Stitch,x+4,3);a.Source(HostKind.Coffin,x+7,3,true);
+            var b=a.b;a.Ledge(x+1,1,3).AddComponent<OneWaySurface>();a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Stitch,x+4,3);a.Source(HostKind.Coffin,x+7,3,true);
             var hinge=a.Hinge(new Vector2(x+4,4),16,30,"heart-brace");hinge.name="Final stitched load";a.Seam(new Vector2(x+20,.8f),"heart-brace");
             FinalSignal(a,boss,"stitch-coffin",new Vector2(x+13,3),()=>hinge.HeldLoad&&hinge.BracedSeconds>.8f,()=>heart.Release("stitch-coffin"));Cable(a,heart,new Vector2(x+13,5),"The bearing tendon");
             b.Tip(new Vector2(x+6,4),"Fold the beam toward its lower seam. A horizontal body can bear the load; an upright body cannot hold the same sweep.");
         }
         void FinalMirrorParallax(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+1,1,3);a.Ledge(x+5,2,10);a.Ledge(x+20,2,9);
+            var b=a.b;a.Ledge(x+1,1,3).AddComponent<OneWaySurface>();a.Ledge(x+5,2,10);a.Ledge(x+20,2,9);
             var mirror=a.Source(HostKind.Mirror,x+2,3);mirror.explicitAxis=true;mirror.mirrorAxis=x+11;a.Source(HostKind.Parallax,x+5,3,true);
             var left=a.Depth(new Vector2(x+6,3.4f),new Vector2(10,.5f),0);left.gameObject.AddComponent<OneWaySurface>();var right=a.Depth(new Vector2(x+20,3.4f),new Vector2(10,.5f),2);right.gameObject.AddComponent<OneWaySurface>();
             a.Projection(new Vector2(x+8,5),new Vector2(20,10));var stamp=b.Trigger("The reflected near-plane stamp",new Vector2(x+19,6),new Vector2(12,9),Color.clear).AddComponent<ReplicaDepthStamp>();stamp.plane=2;

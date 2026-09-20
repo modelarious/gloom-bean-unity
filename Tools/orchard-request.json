@@ -1,5 +1,5 @@
 {
-  "id": "Completion-J07-final-encounter-and-return",
+  "id": "Completion-J08-exit-footprint-and-free-cargo",
   "build": true,
   "cases": [
     {
@@ -32,8 +32,16 @@
       "finalPair": "stitch-coffin"
     },
     {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "name": "B5-echo-ink",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "echo-ink"
+    },
+    {
+      "name": "B5-mirror-parallax",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "mirror-parallax"
     }
   ]
 }
