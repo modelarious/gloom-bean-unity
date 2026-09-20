@@ -1,0 +1,1 @@
+Native production-component fixtures; 20 outward/return scene construction checks; five boss initializers. This is NOT 20 complete playthroughs, 20 secret solutions, five boss victories or human gamepad acceptance. Camera captures show actual Unity rendering, not concept art.

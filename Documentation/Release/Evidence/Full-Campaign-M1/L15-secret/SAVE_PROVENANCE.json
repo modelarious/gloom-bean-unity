@@ -1,0 +1,5 @@
+﻿{
+    "parent":  "L14-secret",
+    "sha256":  "942a044c7b8864b17c72445cdae72f85bbacd8f9c1f09c2181bb3a1060ce2a93",
+    "policy":  "Exact unmodified save from prior real-input completion"
+}

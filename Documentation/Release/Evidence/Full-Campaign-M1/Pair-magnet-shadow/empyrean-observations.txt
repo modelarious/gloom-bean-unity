@@ -1,0 +1,50 @@
+BEGIN GB-B5 The Host of Hosts
+PASS GB-B5 final witness selects a real authored route body=(3.00, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 8 body=(7.79, 0.76) velocity=(1.63, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 12 body=(11.80, 0.76) velocity=(1.57, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 23 body=(22.80, 0.76) velocity=(1.55, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 two delayed bodies release the first arch body=(22.80, 0.76) velocity=(1.55, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 first act tenant follows the player's actual route body=(22.81, 0.76) velocity=(0.47, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 38 body=(37.80, 0.76) velocity=(1.50, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 the opponent steals the chosen tenant without relocating the player body=(37.80, 0.76) velocity=(1.50, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 theft removes and embargoes exactly the chosen tenant body=(37.81, 0.76) velocity=(0.42, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 theft does not refill player health body=(37.81, 0.76) velocity=(0.42, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 8 body=(8.22, 0.76) velocity=(-1.67, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 real contact cannot reacquire the stolen tenant body=(8.21, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 38 body=(37.80, 0.76) velocity=(1.53, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 60 body=(59.79, 0.76) velocity=(1.64, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 a different tenant is acquired from the vault body=(59.79, 0.76) velocity=(1.64, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 65.8 body=(65.60, 0.76) velocity=(1.51, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 swallow the actual vault wall body=(65.66, 0.76) velocity=(1.18, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 walk 70.5 body=(70.28, -5.17) velocity=(1.95, -1.00) feet=-5.923334 hp=6
+PASS GB-B5 fall into the opened vault body=(70.28, -5.17) velocity=(1.95, -1.00) feet=-5.923334 hp=6
+PASS GB-B5 jump to 73 / -4 body=(72.71, -3.24) velocity=(0.89, 0.00) feet=-3.990495 hp=6
+PASS GB-B5 walk 74.15 body=(73.93, -3.24) velocity=(1.66, 0.00) feet=-3.990495 hp=6
+PASS GB-B5 the same removed wall becomes a bridge in the pit body=(74.00, -3.24) velocity=(1.32, 0.00) feet=-3.990495 hp=6
+PASS GB-B5 jump to 77 / -2 body=(76.70, -1.25) velocity=(0.90, 0.00) feet=-1.995108 hp=6
+PASS GB-B5 walk 77.7 body=(77.48, -1.25) velocity=(1.65, 0.00) feet=-1.995004 hp=6
+PASS GB-B5 jump to 80.5 / 0 body=(80.21, 0.75) velocity=(0.90, 0.00) feet=0.004765332 hp=6
+PASS GB-B5 walk 88 body=(87.80, 0.75) velocity=(1.52, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 new physical solution earns the final act body=(87.80, 0.75) velocity=(1.52, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 stolen rule was actually used against the Host body=(87.81, 0.75) velocity=(0.44, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 walk 104 body=(103.80, 0.75) velocity=(1.54, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 the gallery threshold clears the temporary adaptation body=(103.81, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 walk 109 body=(108.78, 0.75) velocity=(1.66, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 jump to 114 / 2 body=(113.71, 2.75) velocity=(3.56, 0.00) feet=2.004984 hp=6
+PASS GB-B5 walk 117 body=(116.88, 2.75) velocity=(7.59, 0.00) feet=2.004999 hp=6
+PASS GB-B5 iron and shadow coexist in the chosen circuit body=(116.88, 2.75) velocity=(7.59, 0.00) feet=2.004999 hp=6
+PASS GB-B5 walk 126.3 body=(126.15, 2.75) velocity=(8.05, 0.00) feet=2.004999 hp=6
+PASS GB-B5 reciprocal force moves the suspended screen into alignment body=(126.18, 2.75) velocity=(0.07, 0.00) feet=2.004999 hp=5
+PASS GB-B5 tenant acquired Shadow body=(126.18, 2.75) velocity=(0.07, 0.00) feet=2.004999 hp=5
+PASS GB-B5 focus Shadow body=(126.18, 2.75) velocity=(0.07, 0.00) feet=2.004999 hp=5
+PASS GB-B5 traverse connected silhouette to (129.50, 2.35) body=(127.00, 2.76) velocity=(-1.51, 0.00) feet=2.006069 hp=4
+PASS GB-B5 the manufactured cast silhouette severs its tendon body=(126.90, 2.76) velocity=(-1.57, 0.00) feet=2.006069 hp=4
+PASS GB-B5 released heart falls through actual geometry to the bottom body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 the chosen pair caused the physical victory body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 the first corruption remains recorded after victory body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 physical return completed body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 clear is persistent body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 boss victory enters the real ending screen body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+PASS GB-B5 ending presentation never erases permanent gameplay corruption body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3
+ENDING DISPLAY batch=False actual=Ending normal=False
+PASS GB-B5 ending artwork obeys the real save and practice boundary body=(126.12, 2.76) velocity=(-7.00, 7.00) feet=2.006069 hp=3

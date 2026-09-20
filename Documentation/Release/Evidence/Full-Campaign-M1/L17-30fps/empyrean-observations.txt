@@ -1,0 +1,82 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.83, 0.76) velocity=(1.45, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.83, 0.76) velocity=(1.45, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 11.8 body=(11.61, 0.76) velocity=(1.52, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(11.61, 0.76) velocity=(1.52, 0.00) feet=0.008333325 hp=6
+MAGNET t=2.498296 body=(11.69, 1.16) velocity=(2.38, 11.83) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=2.999278 body=(13.66, 2.82) velocity=(5.50, -1.00) pole=1 target=(16.00, 2.75) reversals=0
+SUPPORT Platform
+PASS GB-L17 magnetic landing at (16.00, 2.75) body=(15.28, 2.75) velocity=(1.40, 0.00) feet=2.00497 hp=6
+PASS GB-L17 visible coil launch stance 16 body=(16.97, 2.75) velocity=(0.38, 0.00) feet=2.004999 hp=6
+FLIGHT body=(17.02, 3.21) v=(1.81, 14.02) pole=1 target=(27.00, 4.75)
+FLIGHT body=(19.95, 9.22) v=(7.94, 6.60) pole=1 target=(27.00, 4.75)
+FLIGHT body=(24.42, 8.41) v=(9.53, -9.77) pole=1 target=(27.00, 4.75)
+FLIGHT body=(27.66, 4.75) v=(1.31, 0.00) pole=-1 target=(27.00, 4.75)
+PASS GB-L17 coil flight lands on physical support (27.00, 4.75) body=(27.66, 4.75) velocity=(1.31, 0.00) feet=4.004869 hp=6
+PASS GB-L17 visible coil launch stance 27 body=(27.97, 4.75) velocity=(0.38, 0.00) feet=4.004999 hp=6
+FLIGHT body=(28.02, 5.21) v=(1.81, 14.02) pole=1 target=(38.00, 6.75)
+FLIGHT body=(31.09, 11.32) v=(8.04, 6.13) pole=1 target=(38.00, 6.75)
+FLIGHT body=(35.58, 10.24) v=(9.49, -10.34) pole=1 target=(38.00, 6.75)
+PASS GB-L17 coil flight lands on physical support (38.00, 6.75) body=(38.64, 6.75) velocity=(1.96, 0.00) feet=6.004833 hp=6
+PASS GB-L17 visible coil launch stance 38 body=(38.96, 6.75) velocity=(-0.38, 0.00) feet=6.004999 hp=6
+FLIGHT body=(38.99, 7.21) v=(1.07, 14.03) pole=1 target=(49.00, 8.75)
+FLIGHT body=(41.54, 13.29) v=(7.21, 6.83) pole=1 target=(49.00, 8.75)
+FLIGHT body=(45.72, 12.68) v=(9.08, -9.34) pole=1 target=(49.00, 8.75)
+FLIGHT body=(49.61, 8.75) v=(4.84, 0.00) pole=-1 target=(49.00, 8.75)
+PASS GB-L17 coil flight lands on physical support (49.00, 8.75) body=(49.85, 8.75) velocity=(0.55, 0.00) feet=8.004992 hp=6
+PASS GB-L17 visible coil launch stance 49 body=(49.87, 8.75) velocity=(-0.05, 0.00) feet=8.004998 hp=6
+FLIGHT body=(49.90, 9.22) v=(1.32, 14.13) pole=1 target=(60.00, 10.75)
+FLIGHT body=(52.50, 15.39) v=(7.25, 7.01) pole=1 target=(60.00, 10.75)
+FLIGHT body=(56.68, 14.83) v=(9.07, -9.25) pole=1 target=(60.00, 10.75)
+FLIGHT body=(60.61, 10.75) v=(5.07, 0.00) pole=-1 target=(60.00, 10.75)
+PASS GB-L17 coil flight lands on physical support (60.00, 10.75) body=(60.87, 10.75) velocity=(0.74, 0.00) feet=10.0049 hp=6
+PASS GB-L17 visible coil launch stance 60 body=(60.87, 10.75) velocity=(0.00, 0.00) feet=10.00496 hp=6
+FLIGHT body=(60.90, 11.22) v=(1.37, 14.13) pole=1 target=(71.00, 12.75)
+FLIGHT body=(63.65, 17.50) v=(7.40, 6.54) pole=1 target=(71.00, 12.75)
+FLIGHT body=(67.87, 16.66) v=(9.14, -9.83) pole=1 target=(71.00, 12.75)
+FLIGHT body=(71.68, 12.76) v=(4.17, 0.00) pole=-1 target=(71.00, 12.75)
+PASS GB-L17 coil flight lands on physical support (71.00, 12.75) body=(71.84, 12.76) velocity=(1.29, 0.00) feet=12.00571 hp=6
+PASS GB-L17 visible coil launch stance 71 body=(71.86, 12.76) velocity=(0.00, 0.00) feet=12.00571 hp=6
+FLIGHT body=(71.90, 13.22) v=(1.37, 14.14) pole=1 target=(83.00, 12.90)
+FLIGHT body=(74.52, 19.39) v=(7.28, 7.01) pole=1 target=(83.00, 12.90)
+FLIGHT body=(78.69, 18.86) v=(8.90, -8.82) pole=1 target=(83.00, 12.90)
+FLIGHT body=(83.48, 12.85) v=(6.81, -1.14) pole=-1 target=(83.00, 12.87)
+FLIGHT body=(83.07, 12.86) v=(-4.66, -0.06) pole=-1 target=(83.00, 12.86)
+PASS GB-L17 coil flight lands on physical support (83.00, 12.85) body=(82.64, 12.86) velocity=(1.92, -0.01) feet=12.10535 hp=6
+PASS GB-L17 catch the actual hanging screen body=(82.64, 12.86) velocity=(1.92, -0.01) feet=12.10535 hp=6
+CABLE deck=(83.00, 11.79) bell=(78.09, 14.82) tension=60.97593 body=(82.68, 12.86)
+CABLE deck=(83.00, 11.82) bell=(78.09, 14.82) tension=33.02713 body=(81.02, 13.10)
+CABLE deck=(83.00, 11.85) bell=(78.68, 14.82) tension=27.56889 body=(80.89, 12.91)
+CABLE deck=(83.00, 13.17) bell=(79.64, 13.50) tension=73.9543 body=(80.89, 14.23)
+CABLE deck=(83.00, 14.44) bell=(79.64, 12.19) tension=72.21267 body=(81.33, 15.50)
+CABLE deck=(83.00, 14.87) bell=(79.56, 11.78) tension=62.39105 body=(83.77, 15.92)
+CABLE deck=(83.00, 16.27) bell=(79.19, 10.35) tension=62.32082 body=(82.66, 17.33)
+CABLE deck=(83.00, 18.72) bell=(78.63, 7.88) tension=62.15583 body=(83.04, 19.78)
+PASS GB-L17 loose bell physically leaves its saddle body=(83.04, 19.78) velocity=(-0.23, 5.88) feet=19.0262 hp=6
+PASS GB-L17 falling bell lifts screen and Host through the cable body=(83.04, 19.78) velocity=(-0.23, 5.88) feet=19.0262 hp=6
+PASS GB-L17 jump to 89 / 19.4 body=(89.21, 20.16) velocity=(-3.06, 0.00) feet=19.40595 hp=6
+PASS GB-L17 walk 91 body=(90.80, 20.16) velocity=(5.61, 0.00) feet=19.40595 hp=6
+PASS GB-L17 Keyling lies beyond the physical screen mechanism body=(90.80, 20.16) velocity=(5.61, 0.00) feet=19.40595 hp=6
+PASS GB-L17 walk 94.5 body=(94.30, 20.16) velocity=(1.70, 0.00) feet=19.40595 hp=6
+PASS GB-L17 Nail desynchronizes actual choir body=(94.31, 20.16) velocity=(0.00, 0.00) feet=19.40595 hp=6
+PASS GB-L17 walk 88 body=(88.09, 20.16) velocity=(-5.62, 0.00) feet=19.40595 hp=6
+PASS GB-L17 return catches the same physical hanging screen body=(82.72, 19.99) velocity=(-5.85, -0.94) feet=19.243 hp=6
+FLIGHT body=(82.51, 20.43) v=(-6.36, 13.16) pole=1 target=(71.00, 12.75)
+FLIGHT body=(78.31, 24.21) v=(-9.07, -0.35) pole=-1 target=(71.00, 12.75)
+FLIGHT body=(73.77, 19.39) v=(-9.16, -18.39) pole=-1 target=(71.00, 12.75)
+PASS GB-L17 coil flight lands on physical support (71.00, 12.75) body=(70.58, 12.75) velocity=(-0.53, 0.00) feet=12.00344 hp=6
+PASS GB-L17 walk 71 body=(70.79, 12.75) velocity=(1.55, 0.00) feet=12.00474 hp=6
+PASS GB-L17 walk 68.65 body=(68.69, 12.76) velocity=(-5.92, 0.00) feet=12.005 hp=6
+PASS GB-L17 jump to 60 / 10 body=(59.93, 10.75) velocity=(-15.23, 0.00) feet=10.0048 hp=6
+PASS GB-L17 walk 57.65 body=(57.83, 10.75) velocity=(-6.68, 0.00) feet=10.00499 hp=6
+PASS GB-L17 jump to 49 / 8 body=(49.14, 8.75) velocity=(-14.84, 0.00) feet=8.004375 hp=6
+PASS GB-L17 walk 46.65 body=(46.76, 8.75) velocity=(-5.39, 0.00) feet=8.00464 hp=6
+PASS GB-L17 jump to 38 / 6 body=(37.80, 6.75) velocity=(-15.69, 0.00) feet=6.004869 hp=6
+PASS GB-L17 walk 35.65 body=(35.79, 6.75) velocity=(-7.71, 0.00) feet=6.004991 hp=6
+PASS GB-L17 jump to 27 / 4 body=(27.03, 4.75) velocity=(-13.79, 0.00) feet=4.0046 hp=6
+PASS GB-L17 walk 24.65 body=(24.86, 4.75) velocity=(-5.72, 0.00) feet=4.004993 hp=6
+PASS GB-L17 jump to 16 / 2 body=(16.23, 2.75) velocity=(-15.87, 0.00) feet=2.004949 hp=6
+PASS GB-L17 walk 2 body=(2.92, 0.76) velocity=(-10.00, 0.00) feet=0.006665766 hp=6
+PASS GB-L17 physical return completed body=(2.92, 0.76) velocity=(-10.00, 0.00) feet=0.006665766 hp=6
+PASS GB-L17 clear is persistent body=(2.92, 0.76) velocity=(-10.00, 0.00) feet=0.006665766 hp=6
+PASS GB-L17 Mercy was optional body=(2.92, 0.76) velocity=(-10.00, 0.00) feet=0.006665766 hp=6
