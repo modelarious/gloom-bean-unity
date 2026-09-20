@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H06-force-legible-docks",
+  "id": "Empyrean-H07-separated-orbit-lane",
   "build": true,
   "cases": [
     {
@@ -19,6 +19,10 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "startDelay": 2.1
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

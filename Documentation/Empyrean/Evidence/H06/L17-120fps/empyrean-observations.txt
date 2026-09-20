@@ -1,0 +1,26 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 11.8 body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+MAGNET t=2.433482 body=(11.64, 0.97) velocity=(2.29, 12.40) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=2.937164 body=(13.56, 2.83) velocity=(5.50, -1.00) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=3.441157 body=(15.33, 2.75) velocity=(1.71, 0.00) pole=1 target=(16.00, 2.75) reversals=0
+SUPPORT Platform
+PASS GB-L17 magnetic landing at (16.00, 2.75) body=(15.38, 2.75) velocity=(1.27, 0.00) feet=2.004988 hp=6
+PASS GB-L17 walk 16.9 body=(16.70, 2.75) velocity=(1.56, 0.00) feet=2.004999 hp=6
+PASS GB-L17 visible reversible coil is energized at 16 body=(16.68, 2.75) velocity=(-1.06, 0.00) feet=2.004999 hp=6
+FLIGHT body=(16.67, 2.98) v=(-0.40, 13.71) pole=1 target=(27.00, 4.75)
+FLIGHT body=(18.49, 9.69) v=(5.62, 7.73) pole=1 target=(27.00, 4.75)
+FLIGHT body=(22.21, 10.87) v=(8.47, 2.29) pole=1 target=(27.00, 4.75)
+FLIGHT body=(26.07, 9.16) v=(6.80, -11.65) pole=1 target=(27.00, 4.75)
+PASS GB-L17 coil flight lands on physical support (27.00, 4.75) body=(27.58, 4.75) velocity=(1.90, 0.00) feet=4.003891 hp=6
+PASS GB-L17 walk 27.9 body=(27.69, 4.75) velocity=(1.39, 0.00) feet=4.004709 hp=6
+PASS GB-L17 visible reversible coil is energized at 27 body=(27.71, 4.75) velocity=(0.30, 0.00) feet=4.004814 hp=6
+FLIGHT body=(27.73, 4.98) v=(0.97, 13.69) pole=1 target=(38.00, 6.75)
+FLIGHT body=(30.31, 11.56) v=(7.10, 7.36) pole=1 target=(38.00, 6.75)
+FLIGHT body=(31.99, 15.56) v=(-2.15, 2.29) pole=1 target=(38.00, 6.75)
+FLIGHT body=(32.23, 13.58) v=(-1.70, -11.60) pole=1 target=(38.00, 6.75)
+FLIGHT body=(30.05, 13.23) v=(-1.49, 3.17) pole=1 target=(38.00, 6.75)
+FLIGHT body=(25.27, 9.73) v=(-10.59, -15.20) pole=1 target=(38.00, 6.75)
+FAIL GB-L17 coil flight lands on physical support (38.00, 6.75) body=(21.28, 1.14) velocity=(-8.03, -24.04) feet=0.3938227 hp=6

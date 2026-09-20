@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  11,
+                        "case":  "L17-120fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  14,
+                        "case":  "L17-30fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  11,
+                        "case":  "L17-delayed",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H06-force-legible-docks",
+    "started":  "2026-09-20T04:54:17.4593593-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T04:54:36.4696182-06:00"
+}

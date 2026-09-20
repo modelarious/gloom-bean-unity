@@ -198,11 +198,25 @@ namespace GloomBean.Campaign
             C("lodestone.reciprocal-motion",actor.Body.position.x>start+.3f&&metal.transform.position.x<metalX-.1f,actor.Body.position.x+" / "+metal.transform.position.x);
             Vector2 pull=LodestoneForm.Force(Vector2.zero,Vector2.right*3,1,-1);Vector2 push=LodestoneForm.Force(Vector2.zero,Vector2.right*3,1,1);C("lodestone.polarity-reverses-force",pull.x>0&&push.x<0);
 
+            metal.fieldRadius=3.5f;Vector2 mp=metal.Position;
+            C("lodestone.local-field-is-bounded",metal.Influence(mp+Vector2.right*4,10)==0&&metal.Influence(mp+Vector2.right*2,10)>0);
+            Vector2 localPull=metal.ForceOn(mp+Vector2.right*2,1,10),localPush=metal.ForceOn(mp+Vector2.right*2,-1,10);
+            C("lodestone.bounded-field-retains-reciprocity",(localPull+localPush).sqrMagnitude<.0001f&&localPull.sqrMagnitude>1);
+            yield return Arena();host.Acquire(HostKind.Lodestone);actor.Body.position+=Vector2.up*12;actor.Body.linearVelocity=new Vector2(18,2);yield return Steps(5);
+            C("lodestone.leaving-field-retains-air-momentum",actor.Body.linearVelocity.x>15&&actor.Body.position.y>10,actor.Body.linearVelocity.ToString());
+            yield return Arena();var diagonal=b.Solid("Diagonal silhouette fixture",new Vector2(605,6),new Vector2(6,1));diagonal.transform.rotation=Quaternion.Euler(0,0,45);Physics2D.SyncTransforms();var diagShape=diagonal.GetComponent<Collider2D>();var silhouette=ShadowGeometry.Outline(diagShape);
+            C("shadow.rotated-outline-is-not-aabb",silhouette.Length==4&&!ShadowSun.Inside(new Vector2(602.7f,8.3f),silhouette));
+            var noonSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.down,12);var sideSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.right,12);
+            C("shadow.noon-erases-sideways-bridge",!ShadowSun.Inside(new Vector2(612,6),noonSilhouette)&&ShadowSun.Inside(new Vector2(612,6),sideSilhouette));
             yield return Arena();var sunObj=new GameObject("Fixture sun");sunObj.transform.SetParent(fixture.transform);sunObj.transform.position=new Vector2(590,10);var sun=sunObj.AddComponent<ShadowSun>();sun.reach=25;var occluder=b.Solid("Shadow screen",new Vector2(600,3),new Vector2(2,6));occluder.AddComponent<ShadowCaster>();host.Acquire(HostKind.Shadow);var shadow=host.Form<ShadowForm>();yield return Steps(4);sun.Rebuild();shadow.Toggle();Vector2 shadowStart=shadow.Position;bool walked=true;for(int i=0;i<8;i++)walked&=shadow.Advance(Vector2.right*.3f);
             C("shadow.follows-projected-silhouette",walked&&shadow.Position.x>shadowStart.x+2);C("shadow.cannot-cross-empty-light",!shadow.Advance(Vector2.up*15));C("shadow.primary-body-remains",actor.Shape.enabled&&actor.Body.simulated&&Vector2.Distance(actor.Body.position,shadow.Position)>1);
 
-            yield return Arena();host.Acquire(HostKind.Shadow);shadow=host.Form<ShadowForm>();start=actor.Body.position.x;input.frame=new InputFrame{move=Vector2.left};yield return Steps(240);
-            C("shadow.tether-constrains-physical-body",Vector2.Distance(actor.Body.position,shadow.Position)<=14.2f&&actor.Body.position.x<start-12,actor.Body.position+" shadow="+shadow.Position);
+            yield return Arena();host.Acquire(HostKind.Shadow);shadow=host.Form<ShadowForm>();start=actor.Body.position.x;input.frame=new InputFrame{move=Vector2.left};yield return Steps(60);input.frame=default;
+            C("shadow.attached-form-follows-ordinary-body",shadow.Attached&&Vector2.Distance(shadow.Position,actor.Feet)<.2f);
+            var shadowDomainObject=new GameObject("Connected shadow fixture");shadowDomainObject.transform.SetParent(fixture.transform);var shadowDomain=shadowDomainObject.AddComponent<ShadowDomain>();shadowDomain.area=new Rect(570,-4,65,14);var shadowPath=b.Trigger("Fixture silhouette",new Vector2(600,1),new Vector2(60,8),Color.clear).GetComponent<Collider2D>();shadowDomain.lightPaths=new[]{shadowPath};
+            shadow.Toggle();bool detachedStep=shadow.Advance(Vector2.right*3);shadow.Toggle();C("shadow.explicitly-detached-anchor",detachedStep&&!shadow.Attached&&!shadow.Controlling);
+            start=actor.Body.position.x;input.frame=new InputFrame{move=Vector2.left};yield return Steps(240);
+            C("shadow.tether-constrains-physical-body",Vector2.Distance(actor.Body.position,shadow.Position)<=14.2f&&actor.Body.position.x<start-9,actor.Body.position+" shadow="+shadow.Position);
 
             yield return Arena();host.Acquire(HostKind.Ink);var ink=host.Form<InkForm>();var stroke=ink.Add(new Vector2(600,3),new Vector2(603,3));yield return Steps(35);C("ink.not-solid-immediately",stroke&&!stroke.Solid);yield return Steps(40);C("ink.hardens-after-delay",stroke&&stroke.Solid);yield return Steps(450);C("ink.expires",!stroke);
             for(int i=0;i<9;i++)ink.Add(new Vector2(600+i*3,5),new Vector2(603+i*3,5));yield return Steps(3);C("ink.finite-length-budget",ink.Length<=18.01f,ink.Length.ToString());

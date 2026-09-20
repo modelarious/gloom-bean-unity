@@ -19,7 +19,7 @@ namespace GloomBean.Campaign
                 PrimitiveArt.Line("Copper circuit",b.root,d+Vector2.down*.6f,d+Vector2.up*.9f,.08f,new Color(.87f,.62f,.31f),2);
                 // Clearly separated overhead orbital lanes. They are obstacles and force sources,
                 // not invisible room-wide fields affecting every previous launch.
-                if(i<5){var m=a.Metal(d+new Vector2(5.5f,10),Vector2.one*1.4f,4,true,1);m.name="Orbiting iron halo "+i;m.strength=170;m.fieldRadius=3.5f;
+                if(i<5){var m=a.Metal(d+new Vector2(5.5f,14),Vector2.one*1.4f,4,true,1);m.name="Orbiting iron halo "+i;m.strength=170;m.fieldRadius=3.5f;
                     m.GetComponent<BoxCollider2D>().enabled=false;var rim=m.gameObject.AddComponent<CircleCollider2D>();rim.radius=.7f;rim.sharedMaterial=new PhysicsMaterial2D("Iron rim"){friction=0};
                     var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=1.4f;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             }
