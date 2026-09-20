@@ -134,12 +134,18 @@ namespace GloomBean.Campaign
             a.Begin(new Rect(-12,-25,215,86),new Vector2(2,1));var b=a.b;a.Floor(-6,73);a.Floor(127,158);a.Floor(158,195);var whiteExit=a.Exit(2,1.1f);b.session.Camera.bounds=new Rect(-10,-10,212,70);
             // Five distinct reinterpretations are live from entry, before the final Nail.
             a.Source(HostKind.Echo,8);var leading=b.Trigger("The first footsteps are not yours",new Vector2(8,1),new Vector2(4,6),Color.clear).AddComponent<LeadingEchoZone>();
-            a.Source(HostKind.Molt,12,1,true);var p1=b.Plate(new Vector2(18,.14f),.6f);var p2=b.Plate(new Vector2(28,.14f),.35f);var gate=b.Door(new Vector2(33,4),new Vector2(.7f,8),p1,p2);gate.latched=true;
-            a.Source(HostKind.Mirror,9,7);a.Source(HostKind.Ink,13,7,true);a.Steps(7,2,3,2,2,3);a.Ledge(12,6,8);a.Ledge(29,6,7); // Mirror + Ink is the upper alternative.
+            a.Source(HostKind.Molt,12,1,true);var p1=b.Plate(new Vector2(18,.14f),.6f);var p2=b.Plate(new Vector2(28,.14f),.35f);var gate=b.Door(new Vector2(33,6.5f),new Vector2(.7f,13),p1,p2);gate.latched=true;
+            var reflected=a.Source(HostKind.Mirror,9,7);reflected.explicitAxis=true;reflected.mirrorAxis=18.5f;a.Source(HostKind.Ink,13,7,true);
+            for(int i=0;i<3;i++)a.Ledge(7+i*2,2+i*2,3).AddComponent<OneWaySurface>();a.Ledge(12,6,8).AddComponent<OneWaySurface>();a.Ledge(20,5.5f,3);a.Ledge(26,8.6f,4).AddComponent<OneWaySurface>();
+            b.Solid("Off-register skipping statue",new Vector2(17,2.05f),new Vector2(1,2.3f));
+            b.Tip(new Vector2(11,8),"One body can wait beneath the statue while the other writes a higher route. The same scales accept either pair.");
             a.Cure(HostKind.None,37,1,true);a.Source(HostKind.Root,40);a.Source(HostKind.Gullet,43,1,true);a.Source(HostKind.Wax,46,1,true);
             var seasonObject=b.Trigger("Oblique season",new Vector2(49,1),Vector2.one,new Color(.7f,.74f,.42f),PrimitiveArt.Icon.Arch);var season=seasonObject.AddComponent<SeasonWheel>();season.width=10;season.drifting=true;season.speed=.6f;season.bandAngle=45;
             b.Solid("Diagonal seasonal buttress",new Vector2(54,3),new Vector2(8,12));a.SoilPath(new Vector2(47,1),new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,2));a.Source(HostKind.Root,48,1,true);
-            a.Source(HostKind.Stitch,41,1);var seasonalHinge=a.Hinge(new Vector2(45,7),19,-25,"season");a.Seam(new Vector2(62,15.5f),"season");a.Steps(41,2,4,2,2,3);a.Ledge(63,15,6);a.Source(HostKind.Marionette,61,16).rail=a.Rail(new Vector2(60,24),new Vector2(83,24));
+            a.Source(HostKind.Stitch,41,1);var seasonalHinge=a.Hinge(new Vector2(46,7),12,0,"season");a.Seam(new Vector2(55.2f,14.7f),"season");
+            for(int i=0;i<4;i++)a.Ledge(41+i*2,2+i*2,3).AddComponent<OneWaySurface>();a.Ledge(62,15,6).AddComponent<OneWaySurface>();
+            a.Ledge(63,16.6f,2).AddComponent<OneWaySurface>();a.Ledge(65,18,2).AddComponent<OneWaySurface>();a.Source(HostKind.Marionette,65,19).rail=a.Rail(new Vector2(60,24),new Vector2(83,24));
+            b.Tip(new Vector2(42,2),"Root through the changing earth, or stitch a route over it. Neither answer needs the other.");
             a.Cure(HostKind.None,69,1,true);a.Source(HostKind.Parallax,71);a.Projection(new Vector2(75,4),new Vector2(10,10));a.Depth(new Vector2(77,2),new Vector2(7,.5f),0).gameObject.AddComponent<OneWaySurface>();a.Depth(new Vector2(83,3.3f),new Vector2(7,.5f),2).gameObject.AddComponent<OneWaySurface>();a.Projection(new Vector2(83,5),new Vector2(10,8));
             var folded=a.Hinge(new Vector2(90,3),10,0,"depth");a.Seam(new Vector2(97,10),"depth");a.Source(HostKind.Stitch,86,4.5f,true);a.Ledge(97,10,5).AddComponent<OneWaySurface>();a.Cure(HostKind.Parallax,97,10.8f);a.Source(HostKind.InsideOut,101,10.8f);var fresco=PaintedPassage(a,new Vector2(99,10));b.Solid("Closed foundation below the fresco",new Vector2(113,4.9f),new Vector2(28,9.8f));a.Cure(HostKind.InsideOut,126.4f,22);a.Ledge(126,20,6);
             // The fourth sanctum rises. Stillness can delay one real nave while its

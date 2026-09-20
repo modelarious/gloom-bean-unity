@@ -8,10 +8,10 @@ namespace GloomBean.Campaign
     public sealed partial class EmpyreanVerification
     {
         ActorMotor LeadingControl(){var e=host.Form<EchoForm>();return e!=null&&e.Leading&&e.Echo?e.Echo:actor;}
-        IEnumerator LeadWalk(float x)
+        IEnumerator LeadWalk(float x,bool crouch=false)
         {
             if(stopped||!Live)yield break;float deadline=Time.time+18;
-            input.rule=()=>{var control=LeadingControl();return new InputFrame{move=new Vector2(Mathf.Clamp((x-control.Body.position.x)*2-control.Body.linearVelocity.x*.2f,-1,1),0)};};
+            input.rule=()=>{var control=LeadingControl();return new InputFrame{move=new Vector2(Mathf.Clamp((x-control.Body.position.x)*2-control.Body.linearVelocity.x*.2f,-1,1),crouch?-1:0)};};
             while(Live&&Time.time<deadline&&(Mathf.Abs(actor.Body.position.x-x)>.5f||Mathf.Abs(LeadingControl().Body.position.x-x)>.2f||Mathf.Abs(LeadingControl().Body.linearVelocity.x)>.25f))yield return Tick();
             input.rule=null;input.frame=default;yield return Pause(2.3f);Check("follow the leading body to "+x,Mathf.Abs(actor.Body.position.x-x)<.8f);
         }
@@ -71,15 +71,20 @@ namespace GloomBean.Campaign
         }
         IEnumerator WhiteGateRoute(bool secret)
         {
+            bool alternate=Arg("-gb-white-alternatives","0")=="1";
+            if(alternate){yield return MirrorInkSanctum();if(stopped)yield break;yield return StitchSeasonSanctum();}
+            else {
             yield return Walk(5);yield return LeadWalk(12);
             Check("sanctum starts with a leading Echo, not a prediction",host.Form<EchoForm>()!=null&&host.Form<EchoForm>().Leading);
             Check("Molt is acquired physically beside the leading echo",host.Has(HostKind.Molt));if(stopped)yield break;
-            yield return LeadWalk(18);yield return LeadFocus(HostKind.Molt);yield return Press(new InputFrame{action=true});yield return Pause(2.3f);
+            yield return LeadWalk(18.5f,true);yield return LeadFocus(HostKind.Molt);yield return Press(new InputFrame{action=true});yield return Pause(2.3f);
             Check("leave an actual skin on the first sanctum scale",host.Husks.Count==1);yield return LeadWalk(28);
             var gate=session.GetComponentsInChildren<Gate>().First(g=>g.plates.Length==2);yield return Wait("two simultaneous bodies release the first sanctum",()=>gate.opened,4);
             yield return LeadWalk(36);if(stopped)yield break;Check("first sanctum is traversed without granting its result",actor.Body.position.x>34);
             yield return LeadWalk(40);if(stopped)yield break;yield return Walk(48);yield return Walk(47);Check("root is available after the material sanctuary sources",host.Has(HostKind.Root));
             yield return SanctumRoot(new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,1.5f));if(stopped)yield break;yield return Walk(68);Check("seasonal wall was traversed through actual material",actor.Body.position.x>62);
+            }
+            if(stopped)yield break;
             yield return FoldedSanctum();if(stopped)yield break;yield return RisingSanctum();if(stopped)yield break;yield return BrightSanctum();if(stopped)yield break;if(secret){yield return RememberedMercy();if(stopped)yield break;}yield return WhiteCollapse();
         }
     }

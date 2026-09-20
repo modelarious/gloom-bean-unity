@@ -25,6 +25,7 @@ try {
   if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
   if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}
   if($c.railProbe){$flags+=' -gb-rail-probe 1'}
+  if($c.whiteAlternatives){$flags+=' -gb-white-alternatives 1'}
   if($c.noInkControl){$flags+=' -gb-scripture-no-ink 1'}
   if($c.finalPair){if($c.finalPair -notmatch '^(magnet-shadow|echo-ink|wax-gullet|stitch-coffin|mirror-parallax)$'){throw 'Invalid final pair'};$flags+=' -gb-final-pair '+$c.finalPair}
   if($c.finalChoice){if($c.finalChoice -notmatch '^(Echo|Wax|Parallax)$'){throw 'Invalid final choice'};$flags+=' -gb-final-choice '+$c.finalChoice}
