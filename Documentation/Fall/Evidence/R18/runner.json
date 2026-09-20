@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  100,
+                        "case":  "B4",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Fall-R18-upper-load-route",
+    "started":  "2026-09-20T03:03:47.2472159-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T03:04:59.3498489-06:00"
+}

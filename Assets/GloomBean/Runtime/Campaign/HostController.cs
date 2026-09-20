@@ -105,7 +105,14 @@ namespace GloomBean.Campaign
         {
             if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;}
             bool custom=false;
-            for(int i=0;i<Forms.Count;i++){var f=input;if(i!=focus){f.action=f.actionHeld=f.alternate=false;}custom|=Forms[i].Move(f,dt);}
+            // A held Stitch action uses the stick as an architectural aiming vector.
+            // Do not also queue a Coffin flip or reel a Marionette with that same aim.
+            bool aimingStitch=Primary==HostKind.Stitch&&(input.action||input.actionHeld);
+            for(int i=0;i<Forms.Count;i++){
+                var f=input;
+                if(i!=focus){f.action=f.actionHeld=f.alternate=false;if(aimingStitch&&Forms[i].Locomotion)f.move=Vector2.zero;}
+                custom|=Forms[i].Move(f,dt);
+            }
             return custom;
         }
         public void AfterMovement(ActorMotor a,InputFrame input,float dt)

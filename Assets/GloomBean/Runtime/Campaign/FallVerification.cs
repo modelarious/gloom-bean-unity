@@ -29,7 +29,7 @@ namespace GloomBean.Campaign
         void Snapshot(string label){if(session&&session.Camera)FoundationVerification.Capture(session.Camera.GetComponent<UnityEngine.Camera>(),Path.Combine(dir,session.definition.id+"-"+label+".png"));}
         IEnumerator Pause(float seconds){input.frame=default;float end=Time.time+seconds;while(Live&&Time.time<end)yield return NextPhysics();}
         IEnumerator Hold(InputFrame value,float seconds){if(stopped||!Live)yield break;float end=Time.time+seconds;while(Live&&Time.time<end){input.frame=value;yield return NextPhysics();}input.frame=default;}
-        IEnumerator Press(InputFrame value){if(stopped||!Live)yield break;input.frame=value;yield return NextPhysics();input.frame=default;yield return NextPhysics();}
+        IEnumerator Press(InputFrame value){if(stopped||!Live)yield break;if(value.action)value.actionHeld=true;input.frame=value;yield return NextPhysics();input.frame=default;yield return NextPhysics();}
         IEnumerator Walk(float x,bool run=false,bool crouch=false,float seconds=14){
             if(stopped||!Live)yield break;float end=Time.time+seconds;
             while(Live&&Time.time<end){float dx=x-actor.Body.position.x;bool liquid=host.Form<WaxForm>()?.Liquid??false;if(Mathf.Abs(dx)<.22f&&(!liquid||Mathf.Abs(actor.Body.linearVelocity.x)<.6f))break;input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*(liquid?1.5f:2)-actor.Body.linearVelocity.x*(liquid?.65f:.06f),-1,1),crouch?-1:0),run=run};yield return NextPhysics();}

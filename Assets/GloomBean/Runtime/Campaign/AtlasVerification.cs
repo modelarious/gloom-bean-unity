@@ -182,6 +182,18 @@ namespace GloomBean.Campaign
             C("coffin.partial-cure-restores-capsule",host.Has(HostKind.Censer)&&!host.Has(HostKind.Coffin)&&actor.Shape.enabled&&actor.Height>1.3f&&actor.Height<1.6f&&actor.Body.bodyType==RigidbodyType2D.Dynamic);
 
 
+            yield return Arena();host.Acquire(HostKind.Stitch);host.Acquire(HostKind.Coffin,null,true);
+            var aimingCoffin=host.Form<CoffinForm>();yield return Steps(10);aimingCoffin.BeginFlip(1);yield return Steps(30);
+            input.frame=new InputFrame{move=Vector2.down,alternate=true};yield return Steps(2);input.frame=default;yield return Steps(12);
+            var aimPanel=a.Hinge(new Vector2(604,3),4,0,"aim-fixture");a.Seam(new Vector2(604,7),"aim-fixture");
+            Vector2 bracePosition=actor.Body.position;float braceAngle=actor.Body.rotation;
+            input.frame=new InputFrame{action=true,actionHeld=true,move=new Vector2(1,.4f)};yield return Steps(35);input.frame=default;
+            C("composition.stitch-aim-selects-real-edge",host.Primary==HostKind.Stitch&&host.Form<StitchForm>().First);
+            C("composition.stitch-aim-preserves-coffin-brace",aimingCoffin.Horizontal&&!aimingCoffin.IsFlipping&&Vector2.Distance(actor.Body.position,bracePosition)<.08f&&Mathf.Abs(Mathf.DeltaAngle(braceAngle,actor.Body.rotation))<.2f,
+                "position="+actor.Body.position+" angle="+actor.Body.rotation);
+            input.frame=new InputFrame{move=Vector2.right};yield return Steps(1);input.frame=default;yield return Steps(32);
+            C("composition.stitch-release-restores-coffin-motion",actor.Body.position.x>bracePosition.x+1&&!aimingCoffin.Horizontal);
+
             yield return Arena();var metal=a.Metal(new Vector2(605,2),new Vector2(1,2),4,false,-1);metal.strength=140;host.Acquire(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();float metalX=metal.transform.position.x;start=actor.Body.position.x;yield return Steps(24);
             C("lodestone.reciprocal-motion",actor.Body.position.x>start+.3f&&metal.transform.position.x<metalX-.1f,actor.Body.position.x+" / "+metal.transform.position.x);
             Vector2 pull=LodestoneForm.Force(Vector2.zero,Vector2.right*3,1,-1);Vector2 push=LodestoneForm.Force(Vector2.zero,Vector2.right*3,1,1);C("lodestone.polarity-reverses-force",pull.x>0&&push.x<0);
