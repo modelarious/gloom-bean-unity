@@ -14,7 +14,7 @@ namespace GloomBean.Campaign
         readonly List<Vector2Int> supplementFloors=new List<Vector2Int>();
         public float cell=1;public bool closed=true;public readonly List<Collider2D> Inverse=new List<Collider2D>();
         public bool SupplementClosed {get;private set;}public int SupplementCount=>supplement.Count;
-        StageBuilder builder;Vector2 origin;
+        StageBuilder builder;Vector2 origin;bool facadeSolid=true;
         Collider2D Geometry(Vector2Int at,bool ordinary)
         {
             var g=builder.Solid(ordinary?"Fresco stone":"Complement boundary",origin+(new Vector2(at.x,at.y)+Vector2.one*.5f)*cell,Vector2.one*cell,
@@ -27,7 +27,7 @@ namespace GloomBean.Campaign
             bool solid=c.material=='#';
             if(solid&&!c.ordinary)c.ordinary=Geometry(at,true);
             if(!solid&&!c.inverse)c.inverse=Geometry(at,false);
-            if(c.ordinary)c.ordinary.gameObject.SetActive(solid);
+            if(c.ordinary)c.ordinary.gameObject.SetActive(solid&&facadeSolid);
             if(c.inverse){c.inverse.gameObject.SetActive(!solid);c.inverse.enabled=!solid&&closed;}
         }
         public void Build(string[] rows,StageBuilder b,Vector2 bottomLeft)
@@ -49,6 +49,7 @@ namespace GloomBean.Campaign
         {
             foreach(var p in supplement)Paint(p.x,p.y,value);foreach(var p in supplementFloors)Paint(p.x,p.y,!value);SupplementClosed=value;Physics2D.SyncTransforms();RuntimeEvents.Emit("paint-loop",value?"moon contour closed":"moon contour erased");
         }
+        public void SetFacadeSolid(bool value){facadeSolid=value;foreach(var pair in cells)Refresh(pair.Key,pair.Value);RuntimeEvents.Emit("facade",value?"front":"back");}
         public void SetClosed(bool value){closed=value;foreach(var pair in cells)Refresh(pair.Key,pair.Value);RuntimeEvents.Emit("paint-loop",value?"closed":"open");}
     }
 }

@@ -113,6 +113,12 @@ namespace GloomBean.Campaign
             bool cutEchoThread=host.Cure(HostKind.Marionette);
             C("cure.echo-thread-cut-preserves-unchanged-footprint",cutEchoThread&&host.Has(HostKind.Echo)&&!host.Has(HostKind.Marionette)&&Mathf.Abs(actor.Height-beforeCutHeight)<.001f);
 
+            yield return Arena();a.Projection(new Vector2(600,3),new Vector2(9,9));host.Acquire(HostKind.Parallax);var retained=host.Form<ParallaxForm>();retained.StepPlane(-1);yield return Steps(15);host.Acquire(HostKind.Mirror,null,true);
+            b.Solid("Ceiling over unchanged far body",new Vector2(600,1.3f),new Vector2(3,.4f));Physics2D.SyncTransforms();
+            bool baseBlocked=!host.CanStand(actor.Feet+Vector2.up*.75f);bool removed=host.Cure(HostKind.Mirror);
+            C("composition.mirror-cure-keeps-far-body-under-low-roof",baseBlocked&&removed&&!host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax)&&actor.Height<1&&retained.Plane==0);
+            C("composition.full-restoration-still-rejects-occupied-roof",!host.Cure()&&host.Has(HostKind.Parallax));
+
             yield return Arena();var overlap=a.Projection(new Vector2(600,4),new Vector2(8,12));host.Acquire(HostKind.Parallax);var planeForm=host.Form<ParallaxForm>();planeForm.StepPlane(-1);
             var wrong=a.Depth(new Vector2(600,2),new Vector2(4,.4f),1);wrong.gameObject.AddComponent<OneWaySurface>();actor.Body.position=new Vector2(600,4);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(80);
             C("parallax.foreign-one-way-floor-is-not-solid",actor.Feet.y<.2f&&actor.Grounded,actor.Body.position+" effectorMask="+wrong.GetComponent<PlatformEffector2D>().useColliderMask);

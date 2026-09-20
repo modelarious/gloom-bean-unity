@@ -114,7 +114,7 @@ namespace GloomBean.Campaign
             var stamp=b.Trigger("Perspective clerk's stamp",new Vector2(53,10.5f),Vector2.one,new Color(.8f,.66f,.36f),PrimitiveArt.Icon.Arch).AddComponent<PerspectiveStamp>();stamp.geometry=new[]{stampShelf};
             a.Cure(HostKind.Parallax,60,10.5f);
             var passage=PaintedPassage(a,new Vector2(58,0));passage.name="Interior of the enlarged filing cabinet";a.Source(HostKind.InsideOut,60,.8f);a.Cure(HostKind.InsideOut,57.2f,.8f);a.Cure(HostKind.InsideOut,85.4f,12);Sill(85,10,6);
-            a.Source(HostKind.Parallax,89,10.8f);Sill(89,10,5);a.Projection(new Vector2(93,12),new Vector2(10,7));Shelf(97,11,9,0);a.Projection(new Vector2(102,13.5f),new Vector2(11,8));Shelf(106,12.5f,10,2);
+            a.Source(HostKind.Parallax,89,10.8f);Sill(89,10,5);a.Projection(new Vector2(93,12),new Vector2(10,7));Shelf(97,11,11,0);a.Projection(new Vector2(102,13.5f),new Vector2(11,8));Shelf(106,12.5f,10,2);
             Sill(118,14,10);a.Projection(new Vector2(115,16),new Vector2(11,8));a.Key(109,14.2f);a.Nail(121,14.4f);
 
             // Middle-size registration is a physical two-contact fit: the far body
@@ -142,7 +142,7 @@ namespace GloomBean.Campaign
             GameObject Part(string name,Vector2 at,Vector2 size,bool thin=false,int layer=Layers.Moving){var g=b.Solid(name,p+at,size,b.stone,layer);g.transform.SetParent(parent.transform,true);if(thin)g.AddComponent<OneWaySurface>();return g;}
             Part("Room "+index+" floor",new Vector2(0,-.2f),new Vector2(10,.4f),true);
             Part("Room "+index+" roof",new Vector2(0,5.2f),new Vector2(10,.4f),true);
-            for(int sign=-1;sign<=1;sign+=2){Part("Open doorway sill",new Vector2(sign*5,.2f),new Vector2(.5f,.4f));Part("Doorway upper lintel",new Vector2(sign*5,4.35f),new Vector2(.5f,1.9f));}
+            for(int sign=-1;sign<=1;sign+=2){Part("Open doorway sill",new Vector2(sign*5,-.2f),new Vector2(.5f,.4f));Part("Doorway upper lintel",new Vector2(sign*5,4.35f),new Vector2(.5f,1.9f));}
             PrimitiveArt.Label("ROOM "+(101+index),parent.transform,p+new Vector2(0,4.3f),.11f);
             var orbit=parent.AddComponent<RoomOrbit>();orbit.center=center;orbit.radius=radius;orbit.phase=phase;orbit.roomSize=new Vector2(10,6);orbit.drivenByDepth=true;return orbit;
         }
@@ -195,7 +195,7 @@ namespace GloomBean.Campaign
             var dock=b.root.gameObject.AddComponent<DockedTenant>();dock.lift=winch;dock.tenant=chandelierTenant;
             a.Cure(HostKind.InsideOut,30.8f,35.6f);a.Mercy(38,36);
             foreach(var g in returnObjects)g.SetActive(false);
-            b.session.Turned+=()=>{foreach(var room in rooms)room.running=true;brake.released=true;foreach(var g in returnObjects)g.SetActive(true);};
+            b.session.Turned+=()=>{interior.SetFacadeSolid(false);foreach(var room in rooms)room.running=true;brake.released=true;foreach(var g in returnObjects)g.SetActive(true);};
             a.Health(46,29.4f);a.Cure(HostKind.None,4,1,true);
             b.Tip(new Vector2(68,34),"The facade is gone. Reach the lobby chandelier from behind, then land on the roof of a room that is still orbiting below you.");
         }

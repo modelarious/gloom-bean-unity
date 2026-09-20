@@ -64,7 +64,7 @@ namespace GloomBean.Campaign
             // The same is true for a retained Echo: cutting only a thread changes no
             // body footprint or collision domain. A one-way shelf may overlap the
             // standing probe from below without making this unchanged-size cure unsafe.
-            bool unchangedPartialCollider=only==HostKind.Marionette&&Forms.Count>1;
+            bool unchangedPartialCollider=Forms.Count>1&&(only==HostKind.Marionette||only==HostKind.Mirror||only==HostKind.Echo);
             if(!force&&!unchangedPartialCollider&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
             for(int i=Forms.Count-1;i>=0;i--)if(only==HostKind.None||Forms[i].Kind==only)
             {var f=Forms[i];f.Leave();Forms.RemoveAt(i);Cured?.Invoke(f.Kind);RuntimeEvents.Emit("cure",f.Kind.ToString());}

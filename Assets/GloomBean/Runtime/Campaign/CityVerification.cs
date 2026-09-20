@@ -131,7 +131,7 @@ namespace GloomBean.Campaign
             if(stopped)yield break;if(host.Form<ParallaxForm>().Plane!=2)yield return PlaneJump(51,9.72f,2);yield return Walk(53);yield return Press(new InputFrame{interact=true});
             var stamp=session.GetComponentInChildren<PerspectiveStamp>();Check("clerk relocates furniture into matching plane",stamp.geometry[0].plane==2);yield return Walk(60);yield return Await("flat sign removes depth before cabinet",()=>!host.Has(HostKind.Parallax),4);yield return Walk(60.5f);yield return Await("drop to filing-cabinet interior entrance",()=>actor.Grounded&&actor.Feet.y<1,7);Check("flensing clerk exposes cabinet interior",host.Has(HostKind.InsideOut));
             yield return Jump(63,1);yield return Jump(65,2);yield return Jump(67.2f,3);yield return Jump(68.6f,5);yield return Jump(70.5f,6);yield return Walk(73.25f);yield return Jump(75.2f,7);yield return Jump(77.2f,8);yield return Jump(78.6f,10);yield return Jump(80.5f,11);yield return Walk(85.4f);yield return Await("cabinet frame returns ordinary body",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(89);
-            yield return Walk(91);yield return PlaneJump(97,11.195f,0);yield return Walk(99);yield return PlaneJump(106,12.92f,2);yield return Walk(110.5f);yield return PlaneJump(118,14,2);yield return Walk(119.6f);if(stopped)yield break;
+            yield return Walk(91.4f);yield return PlaneJump(97,11.195f,0);yield return Walk(99);yield return PlaneJump(106,12.92f,2);yield return Walk(110.5f);yield return PlaneJump(118,14,2);yield return Walk(119.6f);if(stopped)yield break;
             Check("office key physically collected",session.HasKey);yield return Press(new InputFrame{interact=true});Check("office counters retract during closure",session.Phase==RunPhase.Returning&&stamp.reversed);Snapshot("office-closure");
             yield return Walk(116);yield return PlaneJump(111,16.195f,0);yield return Walk(108.5f);yield return PlaneJump(102,16.3f,1);yield return Walk(98.5f);yield return PlaneJump(92,15.42f,2);yield return Walk(84);yield return Await("monochrome sign restores body for fire escape",()=>!host.Has(HostKind.Parallax),3);yield return Walk(40);yield return Walk(2);
         }
@@ -143,14 +143,14 @@ namespace GloomBean.Campaign
         }
         IEnumerator Hotel(bool secret)
         {
-            yield return Walk(9);Check("perspective fly acquired in hotel lobby",host.Has(HostKind.Parallax));yield return Walk(10);yield return Jump(12,2);yield return Jump(17,4);yield return Jump(22,6);yield return Walk(38);
-            var room=session.GetComponentsInChildren<RoomOrbit>().First(r=>r.name=="Orbiting room 0");yield return Plane(0);yield return RideRoom(room,new Vector2(22,14));
+            yield return Walk(9);Check("perspective fly acquired in hotel lobby",host.Has(HostKind.Parallax));yield return Walk(10);yield return Jump(12,2);yield return Walk(13.4f);yield return Jump(17,4);yield return Walk(18.4f);yield return Jump(22,6);yield return Walk(38);if(stopped)yield break;
+            var room=session.GetComponentsInChildren<RoomOrbit>().First(r=>r.name=="Orbiting room 0");yield return Plane(0);yield return RideRoom(room,new Vector2(22,14));if(stopped)yield break;
             yield return Walk(18.5f);Check("vanity reflection composes with perspective",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));
             yield return Jump(17,15.395f);var stamp=room.GetComponentInChildren<ReplicaDepthStamp>();var brake=session.GetComponentInChildren<OrbitBrake>();
             yield return Await("reflection receives a distinct depth footprint",()=>stamp.Stamped,4);
             yield return Align(17);yield return Await("two depths hold the same room brake",()=>brake.released,5);Snapshot("split-depth-room-brake");
-            yield return RideRoom(room,new Vector2(38,22));yield return Walk(33);yield return Await("roof velvet releases the reflected tenant",()=>!host.Has(HostKind.Mirror),4);
-            yield return Walk(35.5f);Check("formerly exterior wall becomes inside-out corridor",host.Has(HostKind.InsideOut));
+            yield return RideRoom(room,new Vector2(38,22));if(stopped)yield break;yield return Walk(33);yield return Await("roof velvet releases the reflected tenant",()=>!host.Has(HostKind.Mirror),4);
+            yield return Jump(34,23.4f);yield return Walk(35.5f);Check("formerly exterior wall becomes inside-out corridor",host.Has(HostKind.InsideOut));
             yield return Jump(37.5f,24.4f);yield return Jump(39,25.4f);yield return Jump(41,26.4f);yield return Jump(43,28.4f);yield return Walk(47);yield return Await("wall frame returns normal collision",()=>!host.Has(HostKind.InsideOut),3);
             yield return Walk(50);Check("depth transfer remains available past wall",host.Has(HostKind.Parallax));yield return Walk(52);yield return PlaneJump(57,29.995f,0);yield return Walk(59);yield return PlaneJump(65,31.72f,2);yield return Walk(68);yield return PlaneJump(73,33.2f,2);yield return Walk(73.6f);if(stopped)yield break;
             Check("hotel Keyling collected physically",session.HasKey);yield return Press(new InputFrame{interact=true});Check("facade removal releases orbiting rooms",session.Phase==RunPhase.Returning&&room.running);yield return Walk(71.5f);yield return Await("flat hotel sign restores normal body",()=>!host.Has(HostKind.Parallax),4);Snapshot("hotel-return-orbit");
