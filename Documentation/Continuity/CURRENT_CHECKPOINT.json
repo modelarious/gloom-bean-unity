@@ -2,12 +2,12 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Full-Campaign-K2:50 fresh-source cases. K1 ordinary final chain continues separately; K1 Fall secret aggregate watchdog failure preserved, now split at actual saved level boundaries with no rule changes. K07 HUD/B4/final/media passed. Inspect K2 three exact ending boundaries and actual backbuffer images, then package exact tested source/player.",
+  "next_gate": "Finish Full-Campaign-L1:53 cases, exact earned 0/19/20 Mercy endings and every final pair. L1 repairs false GUI scheduler deadlock and L19 practice takeoff. Preserve source and receipts; then package the exact tested binary/source and inspect both endings.",
   "active_job": {
-    "task": "GloomBean-Campaign-Acceptance-K2",
-    "receipt": "Reports/Full-Campaign-K2/runner.json",
-    "config": "Tools/campaign-acceptance-k2.json",
-    "source": "fbf951924d3295b194fda40bae4d274f0dbb5309",
+    "task": "GloomBean-Campaign-Acceptance-L1",
+    "receipt": "Reports/Full-Campaign-L1/runner.json",
+    "config": "Tools/campaign-acceptance-l1.json",
+    "source": "7e3456582477a63fa11dfb07976afedc72309b97",
     "status": "READY_NOT_STARTED"
   },
   "publication": {
@@ -53,17 +53,12 @@
     "log": "Documentation/Continuity/DISPATCH_PROBE_TESTS.txt"
   },
   "remaining_game": {
-    "unverified_full_levels": [
-      "GB-L19",
-      "GB-L20"
-    ],
-    "unverified_full_bosses": [
-      "GB-B5"
-    ],
+    "unverified_full_levels": [],
+    "unverified_full_bosses": [],
     "other": [
-      "Remaining atlas choreography and fidelity",
-      "Production art/animation/audio/dialogue/cinematics",
-      "Blind readability and physical controller acceptance"
+      "Full common-source acceptance, including restored ending and isolated practice",
+      "Final source/package/presentation and fidelity audit",
+      "Physical-controller and uncoached human acceptance"
     ],
     "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
   },
