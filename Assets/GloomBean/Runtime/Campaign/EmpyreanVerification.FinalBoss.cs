@@ -26,11 +26,19 @@ namespace GloomBean.Campaign
         }
         IEnumerator AdaptToFinalTheft()
         {
-            if(stopped||!Live)yield break;yield return Walk(60);Check("a different tenant is acquired from the vault",host.Has(HostKind.Gullet));yield return Walk(65.8f);
+            if(stopped||!Live)yield break;
+            if(session.GetComponentInChildren<HostEmbargo>().stolen==HostKind.Wax){
+                yield return Walk(60);yield return Jump(63,2);yield return Walk(65.8f);yield return Wait("leave the Root source ledge onto wet substrate",()=>actor.Grounded&&actor.Feet.y<.3f,5);
+                Check("stolen wax forces a different root solution",host.Has(HostKind.Root));if(stopped)yield break;
+                yield return SanctumRoot(new Vector2(65,-4),new Vector2(80,-4),new Vector2(80,1));if(stopped)yield break;
+                Check("root adaptation does not remove the vault's wall",session.GetComponentsInChildren<EdibleChunk>().Any(c=>c.name=="Second act removable support"&&c.gameObject.activeInHierarchy));
+            }else{
+            yield return Walk(60);Check("a different tenant is acquired from the vault",host.Has(HostKind.Gullet));yield return Walk(65.8f);
             yield return Press(new InputFrame{action=true,move=Vector2.right});var gullet=host.Form<GulletForm>();Check("swallow the actual vault wall",gullet!=null&&gullet.Stored&&gullet.Stored.name=="Second act removable support");if(stopped)yield break;var tile=gullet.Stored;
             yield return Walk(70.5f);yield return Wait("fall into the opened vault",()=>actor.Grounded&&actor.Feet.y< -5.5f,7);yield return Jump(73,-4);yield return Walk(74.15f);
             yield return Press(new InputFrame{action=true,move=Vector2.right});Check("the same removed wall becomes a bridge in the pit",gullet.Stored==null&&tile.gameObject.activeInHierarchy&&Vector2.Distance(tile.transform.position,new Vector2(77,-4))<.15f);if(stopped)yield break;
-            yield return Jump(77,-2);yield return Walk(77.7f);yield return Jump(80.5f,0);yield return Walk(88);yield return Wait("new physical solution earns the final act",()=>session.GetComponentInChildren<AtlasBoss>().phase==2,3);
+            yield return Jump(77,-2);yield return Walk(77.7f);yield return Jump(80.5f,0);}
+            yield return Walk(88);yield return Wait("new physical solution earns the final act",()=>session.GetComponentInChildren<AtlasBoss>().phase==2,3);
             Check("stolen rule was actually used against the Host",session.GetComponentInChildren<StolenAttack>().Shots>0);yield return Walk(104);yield return Pause(.1f);Check("the gallery threshold clears the temporary adaptation",host.Forms.Count==0);Snapshot("adapted-to-theft");
         }
         IEnumerator FinalMagnetShadowRoute()
@@ -51,7 +59,9 @@ namespace GloomBean.Campaign
             yield return Press(new InputFrame{action=true,move=Vector2.down});var gullet=host.Form<GulletForm>();Check("the cargo was removed from the actual entry floor",gullet!=null&&gullet.Stored);if(stopped)yield break;var tile=gullet.Stored;
             yield return Wait("removing the floor changes support",()=>actor.Grounded&&actor.Feet.y<.3f,4);yield return Walk(196);Check("wax joins the terrain-carrying Gullet",host.Has(HostKind.Wax)&&host.Has(HostKind.Gullet));yield return Focus(HostKind.Wax);yield return Press(new InputFrame{alternate=true});Check("excess wax remains outside the cargo tray",Mathf.Abs(actor.Body.mass-.78f)<.02f&&host.Plugs.Count>0);
             yield return Jump(199,1.8f);yield return Walk(199.5f);yield return Focus(HostKind.Gullet);yield return Press(new InputFrame{action=true,move=Vector2.right});Check("the same terrain becomes the lift's actual floor",gullet.Stored==null&&tile.gameObject.activeInHierarchy&&Mathf.Abs(tile.transform.position.x-202)<.1f);if(stopped)yield break;
-            yield return Jump(202,3.5f);var lift=session.GetComponentInChildren<FinalCargoHoist>();yield return Wait("conserved living load and structural cargo raise the physical lift",()=>lift.Delivered&&actor.Feet.y>9.1f,10);if(stopped)yield break;
+            bool launched=false;float boardUntil=Time.time+7;input.rule=()=>{bool jump=!launched&&actor.Grounded;if(jump)launched=true;return new InputFrame{jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp((202-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.3f,-1,1),0)};};
+            while(Live&&Time.time<boardUntil&&!(launched&&actor.Grounded&&actor.GroundCollider==tile.GetComponent<Collider2D>()))yield return Tick();input.rule=null;input.frame=default;
+            Check("land on the same terrain while its cargo tray begins moving",actor.Grounded&&actor.GroundCollider==tile.GetComponent<Collider2D>());if(stopped)yield break;var lift=session.GetComponentInChildren<FinalCargoHoist>();yield return Wait("conserved living load and structural cargo raise the physical lift",()=>lift.Delivered&&actor.Feet.y>9.1f,10);if(stopped)yield break;
             Check("lift carries the same tile rather than an inventory key",lift.Cargo==tile);yield return Jump(207,11.5f);yield return Walk(210);yield return Wait("the balanced cargo route reaches the real tendon",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,3);Snapshot("final-wax-gullet");
         }
         IEnumerator FinalCoffinTravel(float target)
@@ -79,7 +89,7 @@ namespace GloomBean.Campaign
             Check("final witness selects a real authored route",Enum.TryParse(desired,out kind)&&(kind==HostKind.Echo||kind==HostKind.Wax||kind==HostKind.Parallax));if(stopped)yield break;
             yield return ChooseFinalTenant(kind);if(stopped)yield break;yield return AdaptToFinalTheft();if(stopped)yield break;
             switch(pair){case "magnet-shadow":yield return FinalMagnetShadowRoute();break;case "echo-ink":yield return FinalEchoInkRoute();break;case "wax-gullet":yield return FinalWaxGulletRoute();break;case "stitch-coffin":yield return FinalStitchCoffinRoute();break;case "mirror-parallax":yield return FinalMirrorParallaxRoute();break;default:Check("known physical circuit",false);break;}
-            if(stopped)yield break;var anchor=session.GetComponentInChildren<FinalHeartAnchor>();yield return Wait("released heart falls through actual geometry to the bottom",()=>session.Phase==RunPhase.Cleared&&anchor.LowestHeight< -10,8);
+            if(stopped)yield break;var anchor=session.GetComponentInChildren<FinalHeartAnchor>();yield return Wait("released heart falls through actual geometry to the bottom",()=>session.Phase==RunPhase.Cleared&&anchor.heart.position.y< -10,8);
             Check("the chosen pair caused the physical victory",anchor.ReleasedBy==pair&&session.GetComponentInChildren<AtlasBoss>().defeated);Check("the first corruption remains recorded after victory",game.Save.Data.corrupted||Practice);Snapshot("physical-final-victory");
         }
     }
