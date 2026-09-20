@@ -1,26 +1,11 @@
 {
-  "id": "Fall-R19-stitch-coffin-input-composition",
+  "id": "Fall-R20-clear-load-chute",
   "build": true,
   "cases": [
     {
       "name": "B4",
       "suite": "Fall",
       "route": "GB-B4"
-    },
-    {
-      "name": "L15-critical",
-      "suite": "Fall",
-      "route": "GB-L15"
-    },
-    {
-      "name": "L16-secrets",
-      "suite": "Fall",
-      "route": "GB-L16",
-      "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

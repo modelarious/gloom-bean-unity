@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  101,
+                        "case":  "B4",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  45,
+                        "case":  "L15-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  43,
+                        "case":  "L16-secrets",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  230,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Fall-R19-stitch-coffin-input-composition",
+    "started":  "2026-09-20T03:05:57.9154973-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T03:07:51.5603358-06:00"
+}

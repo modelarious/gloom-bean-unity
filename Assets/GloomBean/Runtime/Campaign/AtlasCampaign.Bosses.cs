@@ -83,7 +83,9 @@ namespace GloomBean.Campaign
             if(boss.body)Object.Destroy(boss.body.gameObject);
             var limbs=new List<KneelingFigure>();for(int i=0;i<7;i++){float y=1+1.7f*i;var limb=a.Figure(12+i*4,y+9,y,.8f+i*.15f);limb.name="Falling congregation limb "+i;limb.hold=6;limb.speed=8;limb.safeUpperSurface=true;limb.respondsToWitness=false;limbs.Add(limb);}
             a.Ledge(9,1,3);a.Ledge(22,4.9f,3).AddComponent<OneWaySurface>();a.Ledge(30,8.3f,3).AddComponent<OneWaySurface>();
-            a.Ledge(39,13.2f,4);a.Ledge(43,15,5);var stitchSource=a.Source(HostKind.Stitch,43,16,true);stitchSource.gameObject.SetActive(false);
+            var lowerStair=a.Ledge(39,13.2f,4);lowerStair.name="Retractable lower work stair";
+            var upperStair=a.Ledge(43,15,5);upperStair.name="Retractable upper work stair";
+            var stitchSource=a.Source(HostKind.Stitch,43,16,true);stitchSource.gameObject.SetActive(false);
             var upper=a.Hinge(new Vector2(43,19.74f),10,0,"avalanche");upper.name="Upper load-bearing slab";a.Seam(new Vector2(51.66f,23.74f),"avalanche");
             var catchFloor=a.Hinge(new Vector2(32,12.8f),12,90,"catch");catchFloor.name="Lower load-bearing slab";a.Seam(new Vector2(39.7f,3.6f),"catch");
             var leftStop=b.Solid("Left catch abutment",new Vector2(30.5f,16),new Vector2(1,7));
@@ -95,7 +97,7 @@ namespace GloomBean.Campaign
             for(int i=0;i<6;i++){float theta=i*Mathf.PI/3;var face=PrimitiveArt.Shape("Congregation face "+i,bodyArt.transform,new Vector2(48,23)+new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.15f,new Vector2(.5f,.7f),new Color(.82f,.73f,.65f),PrimitiveArt.Icon.Eye,8);}
             var braceFloor=a.Floor(28,40,10);braceFloor.SetActive(false);var accessFloor=a.Floor(40,53,8);accessFloor.SetActive(false);
             var coffinSource=a.Source(HostKind.Coffin,32,11,true);coffinSource.gameObject.SetActive(false);
-            var lowerLatch=b.Switch(new Vector2(34,11.1f),"RELEASE LOWER ABUTMENT");lowerLatch.gameObject.SetActive(false);lowerLatch.Changed+=v=>{rightStop.SetActive(!v);accessFloor.SetActive(!v);};
+            var lowerLatch=b.Switch(new Vector2(34,11.1f),"RELEASE LOWER ABUTMENT");lowerLatch.gameObject.SetActive(false);lowerLatch.Changed+=v=>{rightStop.SetActive(!v);accessFloor.SetActive(!v);lowerStair.SetActive(!v);upperStair.SetActive(!v);};
             a.Health(43,16.3f);a.Cure(HostKind.Coffin,29,11);
             boss.Configure(boss.title,phase=>phase==0?a.Player.Feet.y>14.7f:phase==1?rb.position.x<41&&rb.position.y<18:mass.AtBottom,phase=>{
                 if(phase==0)boss.objective="Slow the falling limbs and climb the congregation. The mass above is real, not a health bar.";
