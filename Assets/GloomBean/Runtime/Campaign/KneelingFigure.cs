@@ -16,7 +16,7 @@ namespace GloomBean.Campaign
             else if(pose==Pose.Kneeling){if(clock>=hold)SetPose(Pose.Sinking);}
             else {body.MovePosition(body.position+Vector2.down*dt*2);if(clock>2.5f){if(repeating){body.position=top;SetPose(Pose.Warning);}else Destroy(gameObject);}}
         }
-        void LateUpdate(){if(showLandingTell)PrimitiveArt.Line("Landing tell",transform.parent,new Vector2(top.x-1.8f,floor+.04f),new Vector2(top.x+1.8f,floor+.04f),.06f,pose==Pose.Warning?new Color(.94f,.53f,.31f):new Color(.6f,.61f,.71f,.3f),3);}
+        void LateUpdate(){if(showLandingTell)PrimitiveArt.Line("Landing tell",transform,new Vector2(top.x-1.8f,floor+.04f),new Vector2(top.x+1.8f,floor+.04f),.06f,pose==Pose.Warning?new Color(.94f,.53f,.31f):new Color(.6f,.61f,.71f,.3f),3);}
         void OnCollisionEnter2D(Collision2D c){if(pose!=Pose.Falling)return;var a=c.collider.GetComponent<ActorMotor>();if(a&&(!safeUpperSurface||a.Feet.y<body.position.y+.9f))a.Hit(new HitInfo(null,Vector2.right*(a.transform.position.x<transform.position.x?-1:1),1));}
     }
 }

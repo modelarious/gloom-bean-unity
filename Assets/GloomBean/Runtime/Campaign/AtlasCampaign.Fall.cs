@@ -19,7 +19,7 @@ namespace GloomBean.Campaign
             // actual kneeling slope; the reward moves with that body, not a switch flag.
             Sill(38,11,4);Sill(34,12.8f,4);Sill(29,14.6f,5);
             var witness=a.Figure(24,24,16.1f,1.7f);witness.name="Penitent bearing the Mercy";witness.respondsToWitness=witness.showLandingTell=witness.safeUpperSurface=true;witness.hold=7;witness.speed=8;
-            Sill(20,16.7f,4);var mercy=a.Mercy(24,20);mercy.transform.SetParent(witness.transform,true);mercy.transform.localPosition=new Vector2(.7f,3.8f);
+            Sill(20,16.7f,4);a.Mercy(24,20);Pickup mercy=null;foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)mercy=item;mercy.transform.SetParent(witness.transform,true);mercy.transform.localPosition=new Vector2(.7f,3.8f);
             b.session.Turned+=()=>{foreach(var f in onward){f.delay=.35f;f.hold=3.5f;}foreach(var f in returns)f.gameObject.SetActive(true);foreach(var g in landings)g.SetActive(true);};
             a.Health(42.5f,10.8f);b.Enemy(new Vector2(37,-5.8f),true);a.Cure(HostKind.Censer,3,1);
             b.Tip(new Vector2(8,2),"Be still. Incense slows the falling congregation, but not you. Read each landing tell; the kneeling back is only temporary.");
