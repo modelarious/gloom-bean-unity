@@ -80,7 +80,7 @@ namespace GloomBean.Campaign
             yield return Jump(76,8.2f);yield return Walk(77.5f);yield return Jump(81,10);yield return Walk(82.5f);yield return Jump(86,11.8f);yield return Walk(87.5f);yield return Jump(91,13.6f);
             if(stopped)yield break;Check("roof key collected by contact",session.HasKey);yield return Jump(96,13.6f);yield return Walk(97.6f);yield return Press(new InputFrame{interact=true});
             Check("one sun extinguishes at the Turn",session.Phase==RunPhase.Returning);yield return Pause(.1f);Check("only eastern shadow bridges disappear",session.GetComponentsInChildren<SunShutter>().All(s=>s.GetComponent<Collider2D>().enabled==(s.phase==0)));Snapshot("turn");
-            yield return Walk(77.8f);yield return Await("return vanity creates a new paired route",()=>host.Has(HostKind.Mirror),4);yield return Walk(75);yield return Jump(70,7.5f);yield return Walk(68);
+            yield return Walk(77.8f);yield return Await("return vanity creates a new paired route",()=>host.Has(HostKind.Mirror),4);yield return Walk(75);yield return Jump(70,7.5f);yield return Walk(67.5f);
             if(stopped)yield break;var returnGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Return apartment interlock");yield return Await("changed furniture solved by both return bodies",()=>returnGate.opened,4);Snapshot("return-mirror");
             yield return Walk(61.5f);yield return Await("return velvet releases both-body constraint",()=>!host.Has(HostKind.Mirror),4);yield return Walk(43);yield return Await("return reaches old street",()=>actor.Grounded&&actor.Feet.y<1,6);yield return Walk(2);
         }

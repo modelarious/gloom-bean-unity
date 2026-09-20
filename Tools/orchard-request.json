@@ -1,5 +1,5 @@
 {
-  "id": "City-R04-courtyard-release",
+  "id": "City-R05-fresco-and-return",
   "build": true,
   "cases": [
     {
@@ -11,6 +11,17 @@
       "name": "L09-secrets",
       "suite": "City",
       "route": "GB-L09",
+      "secrets": true
+    },
+    {
+      "name": "L10-critical",
+      "suite": "City",
+      "route": "GB-L10"
+    },
+    {
+      "name": "L10-secrets",
+      "suite": "City",
+      "route": "GB-L10",
       "secrets": true
     }
   ]
