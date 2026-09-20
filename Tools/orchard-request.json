@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H18-local-bell-capture",
+  "id": "Empyrean-H19-physical-landing-capture",
   "build": true,
   "cases": [
     {
@@ -12,6 +12,16 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "secrets": true
+    },
+    {
+      "name": "L18-secret",
+      "suite": "Empyrean",
+      "route": "GB-L18",
+      "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

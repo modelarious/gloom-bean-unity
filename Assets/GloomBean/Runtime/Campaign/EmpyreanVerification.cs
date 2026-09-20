@@ -88,7 +88,7 @@ namespace GloomBean.Campaign
                 Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=m.ForceOn(pos,1,magnet.range);
                 bool orbitalContact=false;foreach(var m in MagneticBody.All)if(m&&m.fieldRadius>0&&m.Influence(pos,magnet.range)>.05f){orbitalContact=true;break;}
-                int pole=orbitalContact?(Vector2.Dot(north,wanted)>=0?1:-1):1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
+                int pole=landingBody&&pos.y>landingBody.position.y+.7f&&Mathf.Abs(dx)<5?-1:orbitalContact?(Vector2.Dot(north,wanted)>=0?1:-1):1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
                 bool jump=!jumped&&actor.Grounded;if(jump)jumped=true;
                 float steer=launch?direction:Mathf.Clamp(dx*2-v.x*.5f,-1,1);
                 bool activate=!activated;activated=true;
@@ -97,7 +97,7 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<deadline){
                 if(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Grounded&&actor.Body.position.x<18&&actor.Feet.y<.25f)break;
                 if(landingBody)destination=landingBody.position+Vector2.up*1.05f;
-                if(landed&&actor.Grounded&&(landingBody?actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody:Vector2.Distance(actor.Body.position,destination)<1.1f&&Mathf.Abs(actor.Body.linearVelocity.x)<2))break;
+                if(landed&&actor.Grounded&&(landingBody?actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody&&Mathf.Abs(actor.Body.linearVelocity.x-landingBody.linearVelocity.x)<2&&Mathf.Abs(actor.Body.position.x-landingBody.position.x)<1.3f:Vector2.Distance(actor.Body.position,destination)<1.1f&&Mathf.Abs(actor.Body.linearVelocity.x)<2))break;
                 if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
             }
