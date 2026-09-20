@@ -2,11 +2,12 @@
   "schema_version": 1,
   "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Fall boss upper seam selection at x43; diagnostic R17 plus matched near/far Censer deferred-activation test. City and L13-L16 routes already exist. W4 earned-chain acceptance remains pending.",
+  "next_gate": "Fresh earned W1-W4 clean ordinary/secret chain on ce58671e62086e00d1a2e06d3ee67a8494197905. B4 passed R22; W5 L17 first magnetic input probe pending. Read current runner and request, not older City/W1-W2 summaries.",
   "active_job": {
-    "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Fall-R17-seam-selection-and-clock-control/runner.json",
-    "status": "READY_NOT_STARTED"
+    "task": "GloomBean-Campaign-Acceptance",
+    "receipt": "Reports/Fall-Clean-v06-g1/runner.json",
+    "status": "READY_NOT_STARTED",
+    "source": "ce58671e62086e00d1a2e06d3ee67a8494197905"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
@@ -42,7 +43,7 @@
     "failed": 0,
     "scope": "Focused tests; not whole atlas completion"
   },
-  "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db",
+  "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
   "latest_finished_job": {
     "receipt": "Documentation/Evidence/CityClean-v05/runner.json",
     "status": "PASS",

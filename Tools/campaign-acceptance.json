@@ -1,10 +1,10 @@
 {
-  "id": "City-Clean-v05",
-  "atlas": "C:\\Users\\micha\\Projects\\GloomBean City Clean v05",
-  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean v014",
-  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\City-Clean-v05",
-  "atlas_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
-  "foundation_commit": "d3cea4cda3e5748ba5866c332b9f6994bd308643",
+  "id": "Fall-Clean-v06-g1",
+  "atlas": "C:\\Users\\micha\\Projects\\GloomBean Fall Clean v06g1",
+  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean v015g1",
+  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Fall-Clean-v06-g1",
+  "atlas_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
+  "foundation_commit": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
   "cases": [
     {
       "name": "Foundation",
@@ -70,6 +70,38 @@
       "name": "City-unearned-denied",
       "suite": "City",
       "route": "W3",
+      "expectedDenial": true
+    },
+    {
+      "name": "W4-critical",
+      "suite": "Fall",
+      "route": "W4",
+      "parent": "W3-critical",
+      "requireEarned": true
+    },
+    {
+      "name": "W4-secrets",
+      "suite": "Fall",
+      "route": "W4",
+      "parent": "W3-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "Weight-of-Everyone",
+      "suite": "Fall",
+      "route": "GB-B4"
+    },
+    {
+      "name": "Fall-practice",
+      "suite": "Fall",
+      "route": "GB-L15",
+      "practice": true
+    },
+    {
+      "name": "Fall-unearned-denied",
+      "suite": "Fall",
+      "route": "W4",
       "expectedDenial": true
     }
   ]
