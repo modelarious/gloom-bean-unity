@@ -18,6 +18,8 @@ try {
   if($c.secrets){$flags+=' -gb-with-secrets'}
   if($c.practice){$flags+=' -gb-practice-witness'}
   if($r.trace){$flags+=' -gb-echo-trace'}
+  if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
+  if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}
   $proc=Start-Process "$p\Builds\Windows\GloomBean.exe" -ArgumentList $flags -PassThru
   $jobs+=@{process=$proc;directory=$out;case=$c;started=Get-Date}
  }

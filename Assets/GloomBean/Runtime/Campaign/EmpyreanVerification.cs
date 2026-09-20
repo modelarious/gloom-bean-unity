@@ -11,12 +11,17 @@ namespace GloomBean.Campaign
     // changes physical state, or awards progress. Not a human-readability certificate.
     public sealed class EmpyreanVerification:MonoBehaviour
     {
-        GameRoot game;StageSession session;ActorMotor actor;HostController host;ScriptedInput input;
+        GameRoot game;StageSession session;ActorMotor actor;HostController host;WitnessInput input;
+        sealed class WitnessInput:IActorInput
+        {
+            public InputFrame frame;public Func<InputFrame> rule;
+            public InputFrame Consume(){if(rule!=null)return rule();var value=frame;frame=frame.WithoutEdges();return value;}
+        }
         string dir;readonly List<string> log=new List<string>();int failures,checks,ticks;bool stopped,finished;float began;
         bool Practice=>Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-practice-witness")>=0;
         bool Live=>session&&session.Phase!=RunPhase.Failed&&session.Phase!=RunPhase.Cleared;
         string Arg(string key,string fallback){var a=Environment.GetCommandLineArgs();int i=Array.IndexOf(a,key);return i>=0&&i+1<a.Length?a[i+1]:fallback;}
-        public void Begin(GameRoot root){game=root;dir=root.reportDirectory;Directory.CreateDirectory(dir);began=Time.realtimeSinceStartup;Application.logMessageReceived+=Error;StartCoroutine(Run());}
+        public void Begin(GameRoot root){int fps;if(int.TryParse(Arg("-gb-render-fps","120"),out fps)){QualitySettings.vSyncCount=0;Application.targetFrameRate=Mathf.Clamp(fps,15,240);}game=root;dir=root.reportDirectory;Directory.CreateDirectory(dir);began=Time.realtimeSinceStartup;Application.logMessageReceived+=Error;StartCoroutine(Run());}
         void Error(string m,string trace,LogType t){if(t==LogType.Error||t==LogType.Exception){failures++;Note("ERROR "+m);Finish();}}
         void Update(){if(!finished&&Time.realtimeSinceStartup-began>510){failures++;Note("FAIL witness watchdog");Finish();}}
         void Note(string s){log.Add(s);File.WriteAllLines(Path.Combine(dir,"empyrean-observations.txt"),log);}
@@ -36,18 +41,25 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;var magnet=host.Form<LodestoneForm>();Check("Lodestone acquired by actual source",magnet!=null);if(stopped)yield break;
             float end=Time.time+timeout,nextToggle=0,lastJump=-1,trace=0;int reversals=0;
-            while(Live&&Time.time<end){Vector2 error=target-actor.Body.position;var velocity=actor.Body.linearVelocity;
-                if(error.magnitude<(landing?.8f:1.1f)&&(!landing||actor.Grounded&&Mathf.Abs(velocity.x)<1.5f))break;
+            input.rule=()=>{
+                if(!Live)return default;
+                Vector2 error=target-actor.Body.position;var velocity=actor.Body.linearVelocity;
                 Vector2 northForce=Vector2.zero;
-                foreach(var metal in MagneticBody.All)if(metal&&metal.enabled&&Vector2.Distance(actor.Body.position,metal.Position)<magnet.range)
+                foreach(var metal in MagneticBody.All)if(metal&&metal.isActiveAndEnabled&&Vector2.Distance(actor.Body.position,metal.Position)<magnet.range)
                     northForce+=LodestoneForm.Force(actor.Body.position,metal.Position,1,metal.polarity,metal.strength);
                 Vector2 desired=new Vector2(error.x*6-velocity.x*3,error.y*9-velocity.y*4+actor.tuning.gravity);
-                int pole=fixedPole!=0&&(!landing||error.magnitude<3.5f)?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);bool reverse=pole!=magnet.Polarity&&Time.time>=nextToggle;
-                if(reverse){nextToggle=Time.time+.18f;reversals++;}
-                bool jump=actor.Grounded&&error.y>.35f&&Time.time-lastJump>.5f;if(jump)lastJump=Time.time;
-                input.frame=new InputFrame{action=reverse,actionHeld=reverse,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp(error.x*2-velocity.x*.6f,-1,1),0)};
+                int pole=fixedPole!=0&&(!landing||error.magnitude<3.5f)?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);
+                bool reverse=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;
+                if(reverse){nextToggle=Time.fixedTime+.18f;reversals++;}
+                bool jump=actor.Grounded&&error.y>.35f&&Time.fixedTime-lastJump>.5f;if(jump)lastJump=Time.fixedTime;
+                return new InputFrame{action=reverse,actionHeld=reverse,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp(error.x*2-velocity.x*.6f,-1,1),0)};
+            };
+            while(Live&&Time.time<end){
+                Vector2 error=target-actor.Body.position;
+                if(error.magnitude<(landing?.8f:1.1f)&&(!landing||actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<1.5f))break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("MAGNET t="+Time.time+" body="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+target+" reversals="+reversals);}
             }
+            input.rule=null;
             input.frame=default;Note("SUPPORT "+(actor.GroundCollider?actor.GroundCollider.name:"none"));Check((landing?"magnetic landing at ":"magnetic transit through ")+target,(!landing||actor.Grounded)&&Vector2.Distance(actor.Body.position,target)<(landing?.9f:1.2f));Snapshot("magnet-"+target.x);
         }
         IEnumerator PowerAltar(float x)
@@ -85,8 +97,8 @@ namespace GloomBean.Campaign
             string route=Arg("-gb-route-id","GB-L17");bool secrets=Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-with-secrets")>=0;
             var definition=world.levels.FirstOrDefault(d=>d.id==route);
             if(definition==null||definition.course!=17){failures++;Note("FAIL No complete input witness authored for "+route+". This is not a campaign success.");Finish();yield break;}
-            yield return game.Load(definition,Practice);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new ScriptedInput();actor.input=input;actor.Stepped+=(f,dt)=>ticks++;
-            Note("BEGIN "+definition.id+" "+definition.title);yield return Pause(.35f);yield return Halos(secrets);
+            yield return game.Load(definition,Practice);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new WitnessInput();actor.input=input;actor.Stepped+=(f,dt)=>ticks++;
+            Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));yield return Halos(secrets);
             if(!stopped){Check("physical return completed",session.Phase==RunPhase.Cleared);if(!stopped){Check(Practice?"practice does not award progress":"clear is persistent",Practice?!game.Save.Data.cleared.Contains(route):game.Save.Data.cleared.Contains(route));if(!Practice)Check(secrets?"Mercy is saved":"Mercy was optional",secrets?game.Save.Data.mercies.Contains(route+"-MERCY"):session.Mercies.Count==0);}}
             Finish();
         }
