@@ -1,11 +1,17 @@
 {
-  "id": "City-R15-support-trace",
+  "id": "City-R16-measured-room-motion",
   "build": true,
   "cases": [
     {
       "name": "L12-critical",
       "suite": "City",
       "route": "GB-L12"
+    },
+    {
+      "name": "L12-secrets",
+      "suite": "City",
+      "route": "GB-L12",
+      "secrets": true
     },
     {
       "name": "Mechanics",
