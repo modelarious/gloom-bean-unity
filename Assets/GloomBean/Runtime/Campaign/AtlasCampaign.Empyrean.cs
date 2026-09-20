@@ -131,7 +131,9 @@ namespace GloomBean.Campaign
         }
         void WhiteGate(AtlasBuilder a)
         {
-            a.Begin(new Rect(-12,-25,215,86),new Vector2(2,1));var b=a.b;a.Floor(-6,73);a.Floor(127,158);a.Floor(158,195);var whiteExit=a.Exit(2,1.1f);b.session.Camera.bounds=new Rect(-10,-10,212,70);
+            a.Begin(new Rect(-12,-25,215,86),new Vector2(2,1));var b=a.b;a.Floor(-6,73);a.Floor(127,158);a.Floor(158,195);var whiteExit=a.Exit(2,1.1f);
+            var sill=b.Platform(new Vector2(2,-.2f),new Vector2(4,.4f));sill.name="The actual rising exit threshold";sill.transform.SetParent(whiteExit.transform,true);sill.AddComponent<OneWaySurface>();
+            b.session.Camera.bounds=new Rect(-10,-10,212,70);
             // Five distinct reinterpretations are live from entry, before the final Nail.
             a.Source(HostKind.Echo,8);var leading=b.Trigger("The first footsteps are not yours",new Vector2(8,1),new Vector2(4,6),Color.clear).AddComponent<LeadingEchoZone>();
             a.Source(HostKind.Molt,12,1,true);var p1=b.Plate(new Vector2(18,.14f),.6f);var p2=b.Plate(new Vector2(28,.14f),.35f);var gate=b.Door(new Vector2(33,6.5f),new Vector2(.7f,13),p1,p2);gate.latched=true;
@@ -170,6 +172,7 @@ namespace GloomBean.Campaign
             b.Tip(new Vector2(172,23),"Even your shadow needs light now. The dark outside these bright shapes has no path.");
             var retreat=new List<GameObject>();for(int i=0;i<24;i++){var g=a.Ledge(6+i*8,29,7);g.name="Collapsing sanctum return "+i;g.AddComponent<OneWaySurface>();g.SetActive(false);retreat.Add(g);}a.Ledge(194,25,4).AddComponent<OneWaySurface>();a.Ledge(193,27,4).AddComponent<OneWaySurface>();
             var collapseObject=new GameObject("Final controlled collapse");collapseObject.transform.SetParent(b.root);var collapse=collapseObject.AddComponent<DescentController>();collapse.altitude=500;collapse.speed=.8f;collapse.exit=whiteExit.transform;collapse.Capture(b);
+            var townObject=new GameObject("Sunday Best far below the false heaven");townObject.transform.SetParent(b.root);var town=townObject.AddComponent<EmpyreanTownReveal>();townObject.SetActive(false);b.session.Turned+=()=>townObject.SetActive(true);
             b.session.Turned+=()=>{collapse.falling=true;foreach(var g in retreat)g.SetActive(true);foreach(var r in risers){var old=r.origin;r.origin=r.end;r.end=old;}finalGate.SetOpen(true);};
             a.Health(70,1.2f);a.Health(130,1.2f);b.Tip(new Vector2(8,2),"Here your echo receives each command first. Your body executes it two seconds later. Four more sanctums bend familiar rules. The final Nail still does not heal you.");
         }

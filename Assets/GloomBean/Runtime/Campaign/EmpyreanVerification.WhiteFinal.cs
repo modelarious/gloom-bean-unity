@@ -47,7 +47,7 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end&&!gate.opened)yield return Tick();input.rule=null;input.frame=default;Check("the Sunday Best jump rhythm opens real terrain",gate.opened&&tapped==4);if(stopped)yield break;
             yield return Wait("descend through the opened rhyme lid",()=>actor.Grounded&&actor.Feet.y<20.4f&&Mathf.Abs(actor.Body.position.x-186.8f)<.25f,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp((186.8f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*1.2f,-1,1),0)});
             yield return Wait("drop through the remembered rhyme into the twentieth Mercy",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-18.5f)<.3f&&session.Mercies.Count==1,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp((188.45f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*1.2f,-1,1),0)});if(stopped)yield break;
-            yield return Jump(186.9f,20.1f);yield return Jump(188.8f,21.7f);yield return Jump(193,23);Snapshot("remembered-tutorial-rhythm");
+            yield return Jump(186.9f,20.1f);yield return Jump(188.8f,21.7f);if(!session.HasKey){yield return Jump(188.4f,21.7f);Check("take the Keyling over the open rhyme chamber",session.HasKey);}yield return Jump(193,23);Snapshot("remembered-tutorial-rhythm");
         }
         IEnumerator CollapseJump(float x,float top,DescentController collapse)
         {
