@@ -302,3 +302,9 @@ Write-Output "PASS $Suite : $resultPath"
 }
 
 ```
+
+## 15. Portable source/history packaging
+
+After committing reviewed changes, run `python Tools/package_checkpoint.py --label <unique-checkpoint-id>`. It packages only committed source, a complete verified Git bundle, this guide, current state, restoration instructions and SHA256 manifests. It refuses tracked edits or an existing label; it never stages or pushes files. Retrieve the returned ZIP through SentinelX.sentinel_read_media and verify its receipt. A fresh bundle clone plus `git fsck --full` is the independent recovery test. Do not replace a newer source checkpoint with an older delivered ZIP.
+
+Newly solved gameplay blocker: partial Marionette removal with ANY retained form leaves the body footprint unchanged. The one-way shore shelf can overlap a hypothetical full-restoration probe without making thread removal unsafe. The narrow exemption preserves full-cure clearance checks. R13 tests both the blocked-restoration negative control and the actual unchanged-body cure.

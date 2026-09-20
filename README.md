@@ -1,5 +1,7 @@
 # Gloom Bean - native Unity platformer
 
+**Continuing this project? Read [START_HERE.md](START_HERE.md) before using older release summaries. The current tested revision, persistent job and next unmet gate are in [CURRENT_CHECKPOINT.json](Documentation/Continuity/CURRENT_CHECKPOINT.json).**
+
 ## Start here
 The current increment hardens the first chapter and reusable editing tools. See `Documentation/Parish/ITERATING.md`, `PLAY_GUIDE.md`, and the latest acceptance receipt before interpreting broader campaign completeness.
 

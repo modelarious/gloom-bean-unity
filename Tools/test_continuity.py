@@ -42,4 +42,14 @@ class ContinuityTests(unittest.TestCase):
  def test_expected_denial_has_explicit_oracle(self):
   (self.root/'r.json').write_text(json.dumps({'status':'PASS','cases':[{'name':'deny','status':'PASS','failed':1,'exit':1,'expected_denial':True}]}))
   self.assertEqual(status.evidence(self.root,{'name':'r','path':'r.json'})['status'],'PASS')
+ def test_packager_uses_committed_tree_and_refuses_overwrite(self):
+  import zipfile
+  pack=module('package_checkpoint');d=self.root/'Documentation/Continuity';d.mkdir(parents=True);(d/'AGENT_CHECKPOINT.md').write_text('Guide');(d/'CURRENT_CHECKPOINT.json').write_text('{}');self.git('add','Documentation');self.git('commit','-m','Checkpoint guide')
+  (self.root/'untracked-note.txt').write_text('must not be silently included');r=pack.package(self.root,self.root/'deliveries','owned')
+  with zipfile.ZipFile(r['path']) as z:
+   self.assertIn('GitHistory/history.bundle',z.namelist());self.assertNotIn('GloomBeanUnity/untracked-note.txt',z.namelist());self.assertEqual(z.read('GloomBean_Agent_Checkpoint.md'),b'Guide')
+  with self.assertRaises(FileExistsError):pack.package(self.root,self.root/'deliveries','owned')
+ def test_packager_refuses_uncommitted_runtime(self):
+  pack=module('package_checkpoint');(self.root/'Assets/test.cs').write_text('uncommitted change')
+  with self.assertRaises(RuntimeError):pack.package(self.root,self.root/'deliveries','dirty')
 if __name__=='__main__':unittest.main(verbosity=2)

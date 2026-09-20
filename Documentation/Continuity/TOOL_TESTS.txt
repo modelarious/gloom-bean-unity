@@ -4,6 +4,8 @@ test_expected_denial_has_explicit_oracle (__main__.ContinuityTests.test_expected
 test_expected_head_mismatch_does_not_stage (__main__.ContinuityTests.test_expected_head_mismatch_does_not_stage) ... ok
 test_failed_child_never_passes (__main__.ContinuityTests.test_failed_child_never_passes) ... ok
 test_missing_receipt_is_not_pass (__main__.ContinuityTests.test_missing_receipt_is_not_pass) ... ok
+test_packager_refuses_uncommitted_runtime (__main__.ContinuityTests.test_packager_refuses_uncommitted_runtime) ... ok
+test_packager_uses_committed_tree_and_refuses_overwrite (__main__.ContinuityTests.test_packager_uses_committed_tree_and_refuses_overwrite) ... ok
 test_read_and_write_probe_are_bounded (__main__.ContinuityTests.test_read_and_write_probe_are_bounded) ... ok
 test_runner_cannot_hide_failed_case (__main__.ContinuityTests.test_runner_cannot_hide_failed_case) ... ok
 test_source_match_distinguishes_doc_only_change (__main__.ContinuityTests.test_source_match_distinguishes_doc_only_change) ... ok
@@ -12,6 +14,6 @@ test_unsafe_scope_refused (__main__.ContinuityTests.test_unsafe_scope_refused) .
 test_valid_child_requires_exit_receipt (__main__.ContinuityTests.test_valid_child_requires_exit_receipt) ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 3.295s
+Ran 14 tests in 3.880s
 
 OK
