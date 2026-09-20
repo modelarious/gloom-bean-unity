@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H21-correct-physical-rail-limits",
+  "id": "Empyrean-H22-separated-counterweight-shaft",
   "build": true,
   "cases": [
     {
@@ -12,10 +12,6 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

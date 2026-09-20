@@ -77,11 +77,12 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;
             var magnet=host.Form<LodestoneForm>();Vector2 start=actor.Body.position;int direction=destination.x>start.x?1:-1;
-            float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false,landed=false,landingInteract=false,activated=false;
+            float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false,landed=false,landingInteract=false,activated=false;float stableSupport=0;
             // Only genuine controls: launch, adjust pole in the observed field, steer, land.
             input.rule=()=>{
                 if(landingBody)destination=landingBody.position+Vector2.up*1.05f;
                 Vector2 pos=actor.Body.position,v=actor.Body.linearVelocity;float dx=destination.x-pos.x;
+                if(landingBody)stableSupport=actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody&&Mathf.Abs(v.x-landingBody.linearVelocity.x)<2?stableSupport+Time.fixedDeltaTime:0;
                 bool launch=direction*(pos.x-start.x)<5;
                 if(jumped&&actor.Grounded&&(Vector2.Distance(pos,destination)<1.65f||(landingBody&&actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody))){landed=true;bool interact=!landingInteract;landingInteract=true;return new InputFrame{action=magnet.Polarity!=-1,interact=interact,move=new Vector2(Mathf.Clamp(dx*3-v.x*1.1f,-1,1),0)};}
                 float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
@@ -97,7 +98,7 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<deadline){
                 if(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Grounded&&actor.Body.position.x<18&&actor.Feet.y<.25f)break;
                 if(landingBody)destination=landingBody.position+Vector2.up*1.05f;
-                if(landed&&actor.Grounded&&(landingBody?actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody&&Mathf.Abs(actor.Body.linearVelocity.x-landingBody.linearVelocity.x)<2&&Mathf.Abs(actor.Body.position.x-landingBody.position.x)<1.3f:Vector2.Distance(actor.Body.position,destination)<1.1f&&Mathf.Abs(actor.Body.linearVelocity.x)<2))break;
+                if(landed&&actor.Grounded&&(landingBody?stableSupport>.18f:Vector2.Distance(actor.Body.position,destination)<1.1f&&Mathf.Abs(actor.Body.linearVelocity.x)<2))break;
                 if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
             }
@@ -143,7 +144,7 @@ namespace GloomBean.Campaign
                 };
                 while(Live&&Time.time<end&&cable.deck.position.y<18.6f){yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("CABLE deck="+cable.deck.position+" bell="+cable.bell.position+" tension="+cable.Tension+" body="+actor.Body.position);}}
                 input.rule=null;input.frame=default;
-                Check("loose bell physically leaves its saddle",cable.bell.position.x>79.5f&&cable.bell.position.y<12);
+                Check("loose bell physically leaves its saddle",cable.bell.position.y<12&&cable.LowestBell<12);
                 Check("falling bell lifts screen and Host through the cable",cable.deck.position.y>18.6f&&actor.Feet.y>18&&cable.PeakTension>10);Snapshot("bell-screen-exchange");
                 if(stopped)yield break;if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Jump(89,19.4f);yield return Walk(91);Check("Keyling lies beyond the physical screen mechanism",session.HasKey);
             }else{

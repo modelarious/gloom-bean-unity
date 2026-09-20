@@ -40,15 +40,16 @@ namespace GloomBean.Campaign
         void BellScreen(AtlasBuilder a)
         {
             var b=a.b;
-            var screen=a.Metal(new Vector2(83,11.7f),new Vector2(6.5f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=60;screen.gameObject.layer=Layers.Moving;
+            var screen=a.Metal(new Vector2(83,11.7f),new Vector2(4.4f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=60;screen.gameObject.layer=Layers.Moving;
             var deck=screen.GetComponent<Rigidbody2D>();deck.gravityScale=2;deck.constraints=RigidbodyConstraints2D.FreezeRotation;
             var rail=screen.gameObject.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=deck.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=-8,max=0};rail.enableCollision=true;
-            var bell=a.Metal(new Vector2(78.5f,15),new Vector2(1.2f,1.4f),4,false,1);bell.name="Loose bell counterweight";bell.strength=170;bell.fieldRadius=4.5f;
+            var bell=a.Metal(new Vector2(78.2f,15),new Vector2(1.2f,1.4f),4,false,1);bell.name="Loose bell counterweight";bell.strength=170;bell.fieldRadius=4.5f;
             var weight=bell.GetComponent<Rigidbody2D>();weight.gravityScale=2;weight.linearDamping=.08f;
-            var saddle=b.Solid("Greased bell saddle",new Vector2(78.5f,13.9f),new Vector2(2,.4f));var slick=new PhysicsMaterial2D("Greased iron"){friction=0};saddle.GetComponent<Collider2D>().sharedMaterial=slick;bell.GetComponent<Collider2D>().sharedMaterial=slick;
-            b.Solid("Bell saddle backstop",new Vector2(77.3f,15.4f),new Vector2(.4f,3));
+            var saddle=b.Solid("Greased bell saddle",new Vector2(78.2f,13.9f),new Vector2(1,.4f));var slick=new PhysicsMaterial2D("Greased iron"){friction=0};saddle.GetComponent<Collider2D>().sharedMaterial=slick;bell.GetComponent<Collider2D>().sharedMaterial=slick;
+            b.Solid("Bell saddle backstop",new Vector2(77.2f,15.4f),new Vector2(.4f,3));
+            b.Solid("Separate counterweight chute",new Vector2(80.35f,11.6f),new Vector2(.2f,8.2f),new Color(.57f,.60f,.64f));
             a.Ledge(81,7,10);a.Ledge(92,19.4f,10);a.Key(91,20.7f);a.Nail(96,19.8f);
-            var pulleyObject=new GameObject("Loose-bell hanging-screen cable");pulleyObject.transform.SetParent(b.root);var cable=pulleyObject.AddComponent<CablePulley>();cable.Configure(deck,weight,new Vector2(83,28),new Vector2(78,28));
+            var pulleyObject=new GameObject("Loose-bell hanging-screen cable");pulleyObject.transform.SetParent(b.root);var cable=pulleyObject.AddComponent<CablePulley>();cable.Configure(deck,weight,new Vector2(83,28),new Vector2(78.2f,28));
             b.Tip(new Vector2(71,13),"Repel from the final coil and catch the suspended screen. SOUTH pulls the loose bell off its saddle; its falling mass tensions the cable and lifts your real platform.");
             PrimitiveArt.Line("Screen guide",b.root,new Vector2(83,11),new Vector2(83,21),.04f,new Color(.66f,.68f,.72f),-1);
         }
