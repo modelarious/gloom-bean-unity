@@ -232,6 +232,16 @@ namespace GloomBean.Campaign
             yield return Arena();host.Acquire(HostKind.Ink);var ink=host.Form<InkForm>();var stroke=ink.Add(new Vector2(600,3),new Vector2(603,3));yield return Steps(35);C("ink.not-solid-immediately",stroke&&!stroke.Solid);yield return Steps(40);C("ink.hardens-after-delay",stroke&&stroke.Solid);yield return Steps(450);C("ink.expires",!stroke);
             for(int i=0;i<9;i++)ink.Add(new Vector2(600+i*3,5),new Vector2(603+i*3,5));yield return Steps(3);C("ink.finite-length-budget",ink.Length<=18.01f,ink.Length.ToString());
 
+            yield return Arena();var comma=b.Prop(new Vector2(603,.5f),Vector2.one,1);comma.GetComponent<Collider2D>().sharedMaterial=new PhysicsMaterial2D("Frictionless punctuation fixture"){friction=0};var punctuation=comma.AddComponent<PunctuationCart>();punctuation.firstSlot=603;
+            var sentence=fixture.AddComponent<ScriptureLayout>();sentence.punctuation=punctuation;sentence.origin=new Vector2(620,20);sentence.rowHeight=-2.1f;sentence.words=new Transform[6];
+            for(int word=0;word<6;word++){var piece=b.Solid("Test word "+word,sentence.origin+new Vector2(word%5*sentence.spacing,word/5*sentence.rowHeight),new Vector2(3,.4f));piece.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;sentence.words[word]=piece.transform;}
+            var fourth=sentence.words[3];Vector2 beforeWrap=fourth.position;punctuation.Body.AddForce(Vector2.right*5,ForceMode2D.Impulse);for(int i=0;i<100&&punctuation.Slot==0;i++)yield return tick;
+            C("scripture.physical-comma-selects-line-break",punctuation.Body.position.x>604&&sentence.wrap==punctuation.Columns&&sentence.Reflows>0,"x="+punctuation.Body.position.x+" wrap="+sentence.wrap);
+            yield return Steps(60);C("scripture.same-word-moves-between-rows",fourth&&fourth.position.y<beforeWrap.y-1&&fourth.position.x<beforeWrap.x-2,fourth.position.ToString());
+            yield return Arena();var corrector=fixture.AddComponent<ScriptureCorrector>();yield return Steps(4);Vector2 priorFeet=actor.Feet;host.Acquire(HostKind.Ink);var writing=host.Form<InkForm>();corrector.imperative=true;
+            var repeatedStroke=writing.Add(priorFeet-Vector2.right*.15f,priorFeet+Vector2.right*.15f);var freshStroke=writing.Add(priorFeet+new Vector2(6,4),priorFeet+new Vector2(7,4));yield return Steps(25);
+            C("scripture.erases-repeated-route-not-fresh-ink",!repeatedStroke&&freshStroke&&corrector.ErasedStrokes>0,"erased="+corrector.ErasedStrokes);
+
             yield return Arena();host.Acquire(HostKind.Echo);host.Acquire(HostKind.Ink,null,true);C("composition.compatible-pair-retained",host.Has(HostKind.Echo)&&host.Has(HostKind.Ink));host.Cure(HostKind.None,true);C("cure.restores-base-controller",host.Forms.Count==0&&actor.Shape.enabled&&actor.Shape.excludeLayers==0&&actor.Height>1.3f);
             yield return Arena();host.Acquire(HostKind.Gullet);var carried=a.Chunk(new Vector2(601.1f,.7f),Vector2.one);var pairGullet=host.Form<GulletForm>();bool swallowed=pairGullet.Bite(Vector2.right);
             host.Acquire(HostKind.Wax,null,true);host.Acquire(HostKind.Root,null,true);

@@ -1,3 +1,5 @@
 # Scripture mechanics — source groundwork
 
 The original atlas p39 requires Ink and Shadow, not Gullet. Punctuation is therefore an ordinary force-driven cart moved with grip/release and locomotion; its actual slot changes line length rather than acting as a consumable door key. ScriptureLayout can derive wrapping from that physical comma and moves word bodies through the engine. The manuscript remembers outward footpath cells and, after becoming imperative, erases new ink that retraces them; fresh paths survive. ShadowMercy is a real collectible reachable by the controlled, geometrically valid detached shadow, with the body still subject to normal physics/tether. These modules are not yet a complete level or a passing witness; preserve that distinction.
+
+Added native production-component checks: a physically impulsed punctuation cart changes the layout's line length and relocates the same word object between rows; an imperative corrector erases a stroke on the actually recorded outbound path while retaining a fresh-path control. These are bounded component oracles, not L19 route completion.
