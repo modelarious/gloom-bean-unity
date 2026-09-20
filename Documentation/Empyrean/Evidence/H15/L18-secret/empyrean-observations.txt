@@ -1,0 +1,42 @@
+BEGIN GB-L18 Noon Without Shadows
+PASS GB-L18 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 noon lamp tears off an available shadow body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 16.3 body=(16.10, 0.76) velocity=(1.55, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (20.50, 0.35) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (16.11, 0.01) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 28 body=(27.78, 0.76) velocity=(1.68, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 48.3 body=(48.11, 0.76) velocity=(6.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 1 body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (52.50, 0.35) body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 1 body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (46.12, 0.01) body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 60 body=(59.84, 0.76) velocity=(9.69, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 61.5 body=(61.34, 0.76) velocity=(9.91, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 jump to 65 / 1.6 body=(64.71, 2.36) velocity=(0.89, 0.00) feet=1.605099 hp=6
+PASS GB-L18 walk 67 body=(66.80, 2.36) velocity=(1.52, 0.00) feet=1.605099 hp=6
+PASS GB-L18 jump to 71 / 3.2 body=(70.70, 3.95) velocity=(0.91, 0.00) feet=3.204999 hp=6
+PASS GB-L18 walk 73.35 body=(73.15, 3.95) velocity=(1.50, 0.00) feet=3.204999 hp=6
+PASS GB-L18 jump to 78 / 4.8 body=(77.70, 5.55) velocity=(0.92, 0.00) feet=4.804999 hp=6
+PASS GB-L18 Noon Keyling reached body=(77.70, 5.55) velocity=(0.92, 0.00) feet=4.804999 hp=6
+PASS GB-L18 jump to 74.8 / 6.5 body=(75.09, 7.25) velocity=(-0.91, 0.00) feet=6.504999 hp=6
+PASS GB-L18 walk 72 body=(72.22, 7.25) velocity=(-1.67, 0.00) feet=6.504999 hp=6
+PASS GB-L18 tenant acquired Lodestone body=(72.22, 7.25) velocity=(-1.67, 0.00) feet=6.504999 hp=6
+PASS GB-L18 focus Lodestone body=(72.21, 7.25) velocity=(0.00, 0.00) feet=6.504999 hp=6
+PASS GB-L18 energize suspension near the real jump apex body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.887888 hp=6
+PASS GB-L18 two actual magnetic screens suspend the body body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.887888 hp=6
+PASS GB-L18 tenant acquired Shadow body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.887888 hp=6
+PASS GB-L18 focus Shadow body=(72.04, 9.66) velocity=(-0.32, 0.59) feet=8.907323 hp=6
+PASS GB-L18 traverse connected silhouette to (72.00, 5.60) body=(71.79, 10.14) velocity=(-0.90, 0.51) feet=9.394989 hp=6
+PASS GB-L18 the suspended Host casts the missing bridge body=(71.67, 10.19) velocity=(-1.39, 0.34) feet=9.43586 hp=6
+FAIL GB-L18 traverse connected silhouette to (71.67, 9.44) body=(68.16, 10.75) velocity=(-2.07, 0.00) feet=9.995002 hp=6
+FAIL GB-L18 suspension ends on the actual chamber floor body=(68.04, 10.75) velocity=(-0.21, 0.00) feet=9.995002 hp=6
+FAIL GB-L18 own-body Mercy collected by the physical Host body=(68.03, 10.75) velocity=(-0.40, 0.00) feet=9.995002 hp=6
+FAIL GB-L18 Nail fixes the sun overhead rather than accelerating it body=(68.00, 10.75) velocity=(0.12, 0.00) feet=9.995002 hp=6

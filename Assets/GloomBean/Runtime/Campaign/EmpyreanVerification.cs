@@ -116,7 +116,14 @@ namespace GloomBean.Campaign
             };
             while(Live&&Time.time<end&&session.Mercies.Count==0){yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("ORBIT body="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" ring="+ring.GetComponent<Rigidbody2D>().position+" pole="+magnet.Polarity);}}input.rule=null;input.frame=default;
             Check("collect Mercy inside the actual orbiting rim",session.Mercies.Count==1);Snapshot("orbiting-mercy");if(stopped)yield break;
-            end=Time.time+10;input.rule=()=>{float x=actor.Body.position.y>14?ring.GetComponent<Rigidbody2D>().position.x:44.5f;return new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.8f,-1,1),0)};};
+            end=Time.time+16;next=0;input.rule=()=>{
+                var position=actor.Body.position;var velocity=actor.Body.linearVelocity;Vector2 opening=ring.GetComponent<Rigidbody2D>().position+Vector2.down*2;
+                if(position.y<13)opening=new Vector2(44.5f,8.75f);
+                Vector2 force=Vector2.zero;foreach(var m in MagneticBody.All)if(m)force+=m.ForceOn(position,1,magnet.range);
+                Vector2 desired=new Vector2((opening.x-position.x)*10-velocity.x*5,(opening.y-position.y)*10-velocity.y*5+actor.tuning.gravity);
+                int pole=Vector2.Dot(force,desired)>=0?1:-1;bool toggle=magnet.Polarity!=pole&&Time.fixedTime>=next;if(toggle)next=Time.fixedTime+.1f;
+                return new InputFrame{action=toggle,move=new Vector2(Mathf.Clamp((opening.x-position.x)*3-velocity.x,-1,1),0)};
+            };
             while(Live&&Time.time<end&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f))yield return Tick();input.rule=null;input.frame=default;
             Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);yield return Press(new InputFrame{interact=true});if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Walk(49);
         }

@@ -28,7 +28,7 @@ namespace GloomBean.Campaign
             a.Ledge(44.5f,8,6);var secretCoil=a.Metal(new Vector2(44.5f,7.05f),new Vector2(2,.7f),20,true,1);secretCoil.name="Orbital entry coil";secretCoil.strength=170;secretCoil.enabled=false;
             var secretLever=b.Switch(new Vector2(44.5f,8.9f),"ORBITAL ENTRY");secretLever.Changed+=on=>secretCoil.enabled=on;
             var ring=new GameObject("Orbiting Mercy halo");ring.transform.SetParent(b.root);ring.transform.position=new Vector2(45,17.2f);ring.layer=Layers.Moving;
-            var edge=ring.AddComponent<EdgeCollider2D>();var arc=new Vector2[42];for(int i=0;i<arc.Length;i++){float theta=Mathf.Lerp(-55,235,i/(float)(arc.Length-1))*Mathf.Deg2Rad;arc[i]=new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.65f;}edge.points=arc;edge.edgeRadius=.07f;
+            var edge=ring.AddComponent<EdgeCollider2D>();var arc=new Vector2[42];for(int i=0;i<arc.Length;i++){float theta=Mathf.Lerp(-30,210,i/(float)(arc.Length-1))*Mathf.Deg2Rad;arc[i]=new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.65f;}edge.points=arc;edge.edgeRadius=.07f;
             var rimLine=PrimitiveArt.Line("Open iron rim",ring.transform,Vector2.zero,Vector2.zero,.13f,new Color(.9f,.75f,.35f),8);rimLine.transform.localPosition=Vector3.zero;rimLine.useWorldSpace=false;rimLine.positionCount=arc.Length;for(int i=0;i<arc.Length;i++)rimLine.SetPosition(i,arc[i]);
             var ringMotion=ring.AddComponent<MotionPlatform>();ringMotion.pattern=MotionPlatform.Pattern.Orbit;ringMotion.origin=new Vector2(45,17.2f);ringMotion.radius=.9f;ringMotion.speed=.65f;
             var mercy=b.Collect(PickupKind.Mercy,new Vector2(45,17.2f),"GB-L17-MERCY");mercy.transform.SetParent(ring.transform,true);mercy.transform.localPosition=Vector3.zero;
@@ -62,6 +62,8 @@ namespace GloomBean.Campaign
             var chamberSun=Sun(a,new Vector2(72,18),20);chamberSun.name="Single lamp of the perfectly lit chamber";chamberSun.renderFilled=true;
             var chamberObject=new GameObject("Opaque chamber lighting boundary");chamberObject.transform.SetParent(b.root);var chamber=chamberObject.AddComponent<ShadowDomain>();chamber.area=new Rect(66,4,12,12);chamber.onlySun=chamberSun;
             var suspension=new List<MagneticBody>();foreach(float x in new[]{68f,76f}){var m=a.Metal(new Vector2(x,12),Vector2.one,20,true,1);m.name="Suspension screen "+x;m.strength=260;m.fieldRadius=7;m.enabled=false;suspension.Add(m);}
+            // Transparent physical guides constrain drift without casting an opaque bridge.
+            foreach(float x in new[]{71.2f,72.8f})b.Solid("Clear glass suspension guide",new Vector2(x,10.5f),new Vector2(.18f,4),new Color(.62f,.8f,.82f,.28f));
             var power=b.Switch(new Vector2(72,8.4f),"SUSPENSION COILS");power.name="Suspension coils switch";power.Changed+=on=>{foreach(var m in suspension)m.enabled=on;};
             var own=b.Trigger("Only your body can cast this bridge",new Vector2(72,5.6f),Vector2.one*.55f,new Color(.32f,.27f,.46f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();own.gate=mercyShutter;own.radius=.55f;own.requiredSun=chamberSun;own.requiredCaster=a.Player.Shape;
             b.Tip(new Vector2(74,7.5f),"The two screens hold a SOUTH Host between them. Detach your shadow while your real body remains suspended: nothing else casts the central bridge.");a.Health(63,1.2f);
