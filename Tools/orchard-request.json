@@ -1,45 +1,11 @@
 {
-  "id": "Empyrean-H26-complete-signatures-regression",
+  "id": "Empyrean-I01-scripture-ink-reflow",
   "build": true,
   "cases": [
     {
-      "name": "L17-120fps",
+      "name": "L19-critical",
       "suite": "Empyrean",
-      "route": "GB-L17",
-      "renderFps": 120
-    },
-    {
-      "name": "L17-30fps",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "renderFps": 30
-    },
-    {
-      "name": "L17-delayed",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "startDelay": 2.1
-    },
-    {
-      "name": "L17-secret",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "secrets": true
-    },
-    {
-      "name": "L18-critical",
-      "suite": "Empyrean",
-      "route": "GB-L18"
-    },
-    {
-      "name": "L18-secret",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "route": "GB-L19"
     }
   ]
 }

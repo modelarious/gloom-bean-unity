@@ -90,14 +90,41 @@ namespace GloomBean.Campaign
         }
         void Scripture(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-13,119,53),new Vector2(2,1));var b=a.b;a.Floor(-5,17);a.Floor(17,102,-6);a.Exit(2,1.1f);a.Source(HostKind.Ink,8);a.Ledge(15,2,5);
-            var words=new List<Transform>();for(int i=0;i<18;i++){Vector2 p=new Vector2(21+i%5*5,i/5*2.2f+2);var g=a.Ledge(p.x,p.y,3.2f);g.name="Word "+i;PrimitiveArt.Label(new[]{"WE","WERE","HERE","BEFORE","YOU"}[i%5],g.transform,p+Vector2.up*.55f,.08f);words.Add(g.transform);}
-            var punctuation=b.Trigger("Comma that rewraps the sentence",new Vector2(16,2.9f),Vector2.one,new Color(.8f,.65f,.89f),PrimitiveArt.Icon.Key).AddComponent<ScriptureLayout>();punctuation.words=words.ToArray();punctuation.origin=new Vector2(21,1.8f);punctuation.spacing=5;punctuation.rowHeight=2.2f;
-            a.Ledge(52,10,6);a.Source(HostKind.Shadow,53,11,true);var sun=Sun(a,new Vector2(58,21),21);a.Metal(new Vector2(62,10),new Vector2(2,5),4,true);
-            a.Ledge(63,12,5);a.Ledge(73,14,5);a.Ledge(83,16,5);a.Ledge(95,18,12);a.Key(93,19.3f);a.Nail(100,18.4f);
-            var secretGate=b.Door(new Vector2(63,14),new Vector2(.6f,4));var semicolon=b.Trigger("Semicolon's footnote",new Vector2(62,11),Vector2.one*.6f,new Color(.4f,.3f,.58f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();semicolon.gate=secretGate;a.Ledge(67,12,4);a.Mercy(67,13.3f);
-            var returnComma=b.Switch(new Vector2(97,19),"WRAP THE RETURN");returnComma.Changed+=v=>punctuation.wrap=v?3:5;
-            b.session.Turned+=()=>punctuation.erasing=true;a.Health(52,11.4f);b.Tip(new Vector2(8,2),"A footstep is wet ink. One second later it becomes a one-way platform; eight seconds later it is gone. U lifts the pen. Land on a permanent word before your sentence expires.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-8,-12,130,48),new Vector2(2,9.1f));var b=a.b;
+            a.Floor(-5,12,8);a.Floor(12,110,-8);a.Exit(2,9.1f);a.Source(HostKind.Ink,8,9);
+            a.Ledge(17,1,4).name="Margin landing alcove";a.Ledge(20.5f,5,8).name="Punctuation desk";
+            var comma=b.Prop(new Vector2(19.5f,5.6f),new Vector2(.7f,1.1f),.65f);comma.name="Movable line-break comma";
+            var cart=comma.AddComponent<PunctuationCart>();cart.firstSlot=19.5f;cart.slotWidth=3;cart.lineLengths=new[]{5,3};
+            comma.GetComponent<Rigidbody2D>().constraints=RigidbodyConstraints2D.FreezeRotation;comma.GetComponent<Rigidbody2D>().linearDamping=2;
+            b.Solid("Left comma stop",new Vector2(18.8f,5.4f),new Vector2(.25f,.8f));b.Solid("Right comma stop",new Vector2(23.3f,5.4f),new Vector2(.25f,.8f));
+            for(int k=0;k<2;k++)PrimitiveArt.Label(k==0?"FIVE WORDS":"THREE WORDS",b.root,new Vector2(19.5f+k*3,4.3f),.06f);
+            var words=new List<Transform>();for(int k=0;k<6;k++){
+                var word=a.Ledge(27+k%5*4,9.4f-k/5*2.2f,3);word.name="Scrolling word "+k;word.AddComponent<OneWaySurface>();word.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
+                PrimitiveArt.Label(new[]{"WE","WERE","HERE","BEFORE","YOU","RETURN"}[k],word.transform,(Vector2)word.transform.position+Vector2.up*.6f,.07f);words.Add(word.transform);
+            }
+            var layout=b.root.gameObject.AddComponent<ScriptureLayout>();layout.words=words.ToArray();layout.punctuation=cart;layout.origin=new Vector2(27,9.2f);layout.spacing=4;layout.rowHeight=-2.2f;layout.wrap=5;layout.scrollAmplitude=.25f;
+            var corrector=b.root.gameObject.AddComponent<ScriptureCorrector>();
+            a.Ledge(40,7.2f,5).name="Last permanent margin before the semicolon";a.Source(HostKind.Shadow,40,8.2f,true);
+            // The upper dot is a collectible in shadow space, beyond the tether from the safe margin.
+            var sun=Sun(a,new Vector2(50,25),24);sun.directional=true;sun.direction=new Vector2(-.65f,-1);sun.renderFilled=true;
+            var stroke=b.Solid("Giant semicolon curved stem",new Vector2(58,15),new Vector2(3,7),new Color(.28f,.19f,.39f));stroke.AddComponent<ShadowCaster>();
+            var dot=b.Collect(PickupKind.Mercy,new Vector2(56.5f,14.1f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
+            a.Ledge(50,1,4).name="Lower line-break refuge";
+            var lowerWords=new List<GameObject>();for(int k=0;k<9;k++){
+                var word=a.Ledge(55+k*5,2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);
+                PrimitiveArt.Label(new[]{"DO","NOT","REPEAT","THE","PATH","YOU","TOOK","TO","ME"}[k],word.transform,(Vector2)word.transform.position+Vector2.up*.5f,.075f);
+            }
+            a.Ledge(103,9.2f,10);a.Key(101,10.5f);a.Nail(106,9.6f);
+            // Independent upper editing margin appears when the text changes tense. The lower
+            // outward line stays physical until it has actually carried the returning Host.
+            var returnLetters=new List<GameObject>();for(int k=0;k<14;k++){
+                var g=a.Ledge(14+k*6,10.8f,2.5f);g.name="Fresh return margin "+k;g.AddComponent<OneWaySurface>();g.SetActive(false);returnLetters.Add(g);
+            }
+            a.Ledge(98,10.8f,3).AddComponent<OneWaySurface>();
+            b.session.Turned+=()=>{layout.erasing=true;corrector.imperative=true;foreach(var g in returnLetters)g.SetActive(true);};
+            b.Tip(new Vector2(9,10),"Your falling path is wet for one second. Land in the margin, then climb your drying ink back to the comma. E grips punctuation; move it one slot and release.");
+            b.Tip(new Vector2(40,9),"The dot is too far from safe paper. Let an ink arc hold your body closer while your shadow travels across the letter's cast silhouette.");
+            a.Cure(HostKind.None,4,9,true);a.Health(50,2.3f);
         }
         void WhiteGate(AtlasBuilder a)
         {
