@@ -47,7 +47,7 @@ namespace GloomBean.Campaign
                 PrimitiveArt.Line("Screen rail "+i,b.root,new Vector2(14+dx,7.2f),new Vector2(26.4f+dx,7.2f),.06f,new Color(.76f,.59f,.26f),0);
             }
             a.Source(HostKind.Lodestone,28,1,true);a.Source(HostKind.Shadow,34,1,true);
-            a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(78,4.8f,12);a.Key(78,6.1f);a.Nail(82,5.2f);
+            a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(80,4.8f,8);a.Key(78,6.1f);a.Nail(82,5.2f);
             a.Ledge(72,9,5);a.Mercy(72,10.3f);a.Health(63,1.2f);
             b.session.Turned+=()=>{sun.LockNoon();for(int i=0;i<latches.Count;i++){latches[i].active=false;latches[i].gate.SetOpen(false);latches[i].requiredSun=sun;latches[i].requiredCaster=screens[i].GetComponent<Collider2D>();}};
             b.Tip(new Vector2(8,2),"I detaches your shadow. The moving sunlight makes a bridge under each hanging saint. Return the shadow to your feet before walking on.");

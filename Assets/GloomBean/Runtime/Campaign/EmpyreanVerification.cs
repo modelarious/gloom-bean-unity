@@ -86,7 +86,8 @@ namespace GloomBean.Campaign
                 float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
                 Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=m.ForceOn(pos,1,magnet.range);
-                int pole=1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
+                bool orbitalContact=false;foreach(var m in MagneticBody.All)if(m&&m.fieldRadius>0&&m.Influence(pos,magnet.range)>.05f){orbitalContact=true;break;}
+                int pole=orbitalContact?(Vector2.Dot(north,wanted)>=0?1:-1):1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
                 bool jump=!jumped&&actor.Grounded;if(jump)jumped=true;
                 float steer=launch?direction:Mathf.Clamp(dx*2-v.x*.5f,-1,1);
                 bool activate=!activated;activated=true;

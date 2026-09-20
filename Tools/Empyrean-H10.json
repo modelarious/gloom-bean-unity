@@ -1,0 +1,29 @@
+{
+  "id": "Empyrean-H10-orbital-return-and-noon-headroom",
+  "build": true,
+  "cases": [
+    {
+      "name": "L17-120fps",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "renderFps": 120
+    },
+    {
+      "name": "L17-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "renderFps": 30
+    },
+    {
+      "name": "L17-delayed",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "startDelay": 2.1
+    },
+    {
+      "name": "L18-critical",
+      "suite": "Empyrean",
+      "route": "GB-L18"
+    }
+  ]
+}
