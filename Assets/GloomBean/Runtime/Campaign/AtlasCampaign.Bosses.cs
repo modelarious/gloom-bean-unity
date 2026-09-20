@@ -97,7 +97,7 @@ namespace GloomBean.Campaign
             for(int i=0;i<6;i++){float theta=i*Mathf.PI/3;var face=PrimitiveArt.Shape("Congregation face "+i,bodyArt.transform,new Vector2(48,23)+new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.15f,new Vector2(.5f,.7f),new Color(.82f,.73f,.65f),PrimitiveArt.Icon.Eye,8);}
             var braceFloor=a.Floor(28,40,10);braceFloor.SetActive(false);var accessFloor=a.Floor(40,53,8);accessFloor.SetActive(false);
             var coffinSource=a.Source(HostKind.Coffin,32,11,true);coffinSource.gameObject.SetActive(false);
-            var lowerLatch=b.Switch(new Vector2(34,11.1f),"RELEASE LOWER ABUTMENT");lowerLatch.gameObject.SetActive(false);lowerLatch.Changed+=v=>{rightStop.SetActive(!v);accessFloor.SetActive(!v);lowerStair.SetActive(!v);upperStair.SetActive(!v);};
+            var lowerLatch=b.Switch(new Vector2(34,11.1f),"RELEASE LOWER ABUTMENT");lowerLatch.name="Lower catch release lever";lowerLatch.gameObject.SetActive(false);lowerLatch.Changed+=v=>{rightStop.SetActive(!v);accessFloor.SetActive(!v);lowerStair.SetActive(!v);upperStair.SetActive(!v);};
             a.Health(43,16.3f);a.Cure(HostKind.Coffin,29,11);
             boss.Configure(boss.title,phase=>phase==0?a.Player.Feet.y>14.7f:phase==1?rb.position.x<41&&rb.position.y<18:mass.AtBottom,phase=>{
                 if(phase==0)boss.objective="Slow the falling limbs and climb the congregation. The mass above is real, not a health bar.";

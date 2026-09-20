@@ -220,7 +220,7 @@ namespace GloomBean.Campaign
             // Step away from the nearby infection source before choosing the lever.
             // Nearest-interactable selection is a player rule, not a test bypass.
             yield return CoffinTo(34);yield return Press(new InputFrame{interact=true});
-            var release=session.GetComponentsInChildren<Lever>().First(l=>l.name=="RELEASE LOWER ABUTMENT");
+            var release=session.GetComponentsInChildren<Lever>().Single(l=>l.name=="Lower catch release lever");
             Check("lower release lever actually retracts its abutment",release.state&&!session.GetComponentsInChildren<Transform>().Any(t=>t.name=="Retractable lower work stair"));
             if(stopped)yield break;
             yield return CoffinTo(36);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(1);
