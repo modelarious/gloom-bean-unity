@@ -1,5 +1,18 @@
 # Gloom Bean: agent execution checkpoint
 
+## Current execution position — 2026-09-19, after both repairs
+
+**Read CURRENT_CHECKPOINT.json for the live successor of this checkpoint.** The latest complete clean suite is PASS: independent foundation61, combined mechanics200, W1 ordinary138, W1 secrets173, W2 ordinary318, W2 secrets374, Judge29, practice38, and the explicit expected empty-save denial. W2 resumed the actual earned W1 saves. No verification job remains pending at this checkpoint. The tested atlas source is 747f8ebcebb3a6769f684e8686649142730b971e; later documentation/tool changes do not change its runtime.
+
+Both earlier failures are preserved as history: the Pears witness needed the actual Wax movement mode, and partial Marionette removal with retained Echo must not demand a different hypothetical standing footprint. Do not restart those repaired tasks from the historical sections below.
+
+**Next content:** City (World3), beginning with GB-L09 / Tenement of Two Suns, its Mirror controller, critical route, Turn and Mercy, followed by the remaining City levels and Surveyor. Fall is World4, Empyrean World5. Twelve remaining stages, three bosses, production presentation and human acceptance are not finished.
+
+Canonical registry now includes the explicit slug `gloom-bean-unity` with its own complete hash-verified user requirements and project state. Generic `my game` aliases remain with the parent DungeonForge project; do not load unrelated top-down V2 requirements as Gloom Bean's implementation instructions. Read `Context/projects/gloom-bean-unity/PROJECT_STATE.md` and `REQUIREMENTS.md`, then the linked first-read guide/execution JSON.
+
+The source tree is committed and full history bundles are verified; public standalone source publication remains the narrow recorded administration blocker. Ordinary Git read/write to existing canonical context on Mac is verified. That does not create or push the missing public game repository.
+
+
 Read this before broad searches, tool-access claims, new repository requests or implementation. This is the project-specific companion to modelarious/obsidian-notes main, Context/projects/game/GLOOMBEAN_START_HERE.md. The canonical guide is linked from Context/HOME.md and the current global/cloud-context procedure in modelarious/chatgpt-skills. Current machine state is in CURRENT_CHECKPOINT.json next to this file.
 
 ## 1. First-read procedure: one bounded orientation, then content
@@ -308,3 +321,6 @@ Write-Output "PASS $Suite : $resultPath"
 After committing reviewed changes, run `python Tools/package_checkpoint.py --label <unique-checkpoint-id>`. It packages only committed source, a complete verified Git bundle, this guide, current state, restoration instructions and SHA256 manifests. It refuses tracked edits or an existing label; it never stages or pushes files. Retrieve the returned ZIP through SentinelX.sentinel_read_media and verify its receipt. A fresh bundle clone plus `git fsck --full` is the independent recovery test. Do not replace a newer source checkpoint with an older delivered ZIP.
 
 Newly solved gameplay blocker: partial Marionette removal with ANY retained form leaves the body footprint unchanged. The one-way shore shelf can overlap a hypothetical full-restoration probe without making thread removal unsafe. The narrow exemption preserves full-cure clearance checks. R13 tests both the blocked-restoration negative control and the actual unchanged-body cure.
+
+### Recovery-origin pitfall
+A clone made from history.bundle may set origin to that local bundle path. It is a recovery transport, not a writable GitHub repository. Inspect and deliberately configure the approved actual source remote after it exists; do not repeatedly try pushing back into a bundle.

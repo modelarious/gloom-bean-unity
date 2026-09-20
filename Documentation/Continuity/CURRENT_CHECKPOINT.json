@@ -1,13 +1,9 @@
 {
   "schema_version": 1,
-  "tested_commit": "a61e7846f047f44162dad206236a33562458a618",
+  "tested_commit": "747f8ebcebb3a6769f684e8686649142730b971e",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Full fresh-clone earned W1/W2 ordinary and secret regression including shore cure, practice isolation and expected empty-save denial; then City W3/L09 input route.",
-  "active_job": {
-    "task": "GloomBean-Orchard-Clean-v04",
-    "receipt": "Reports/Orchard-v04/Clean-continuity-e2/runner.json",
-    "status": "PREPARING"
-  },
+  "next_gate": "Implement and validate City W3/L09 Tenement of Two Suns through actual Mirror inputs, return and Mercy; continue W3/L10-L12 and Surveyor, then Fall and Empyrean. W1/W2 clean regression is now PASS, not the old failed practice or shore gate.",
+  "active_job": null,
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -18,16 +14,16 @@
   },
   "evidence_refs": [
     {
-      "name": "Native shore-cure fix",
-      "path": "Documentation/Evidence/Continuity-R13/runner.json"
+      "name": "Latest full earned chapter regression",
+      "path": "Documentation/Evidence/Continuity-Clean-e2/runner.json"
     },
     {
-      "name": "Native Wax return fix",
-      "path": "Documentation/Evidence/Continuity-R12/runner.json"
-    },
-    {
-      "name": "Historical clean failure retained",
+      "name": "Historical failing clean run retained",
       "path": "Documentation/Evidence/Continuity-Clean-e1/runner.json"
+    },
+    {
+      "name": "Focused shore cure repair",
+      "path": "Documentation/Evidence/Continuity-R13/runner.json"
     }
   ],
   "repair_outcome": {
@@ -38,5 +34,44 @@
     "failed": 0,
     "scope": "Focused tests; not whole atlas completion"
   },
-  "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db"
+  "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db",
+  "latest_finished_job": {
+    "task": "GloomBean-Orchard-Clean-v04",
+    "receipt": "Documentation/Evidence/Continuity-Clean-e2/runner.json",
+    "raw_receipt": "Reports/Orchard-v04/Clean-continuity-e2/runner.json",
+    "status": "PASS",
+    "finished": "2026-09-19T19:06:35.8180573-06:00"
+  },
+  "continuity_tool_tests": {
+    "passed": 14,
+    "failed": 0,
+    "log": "Documentation/Continuity/TOOL_TESTS.txt"
+  },
+  "remaining_game": {
+    "unverified_full_levels": [
+      "GB-L09",
+      "GB-L10",
+      "GB-L11",
+      "GB-L12",
+      "GB-L13",
+      "GB-L14",
+      "GB-L15",
+      "GB-L16",
+      "GB-L17",
+      "GB-L18",
+      "GB-L19",
+      "GB-L20"
+    ],
+    "unverified_full_bosses": [
+      "GB-B3",
+      "GB-B4",
+      "GB-B5"
+    ],
+    "other": [
+      "Remaining atlas choreography and fidelity",
+      "Production art/animation/audio/dialogue/cinematics",
+      "Blind readability and physical controller acceptance"
+    ],
+    "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
+  }
 }

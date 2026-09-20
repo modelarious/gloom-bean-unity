@@ -1,0 +1,189 @@
+{
+  "tested_atlas_commit": "747f8ebcebb3a6769f684e8686649142730b971e",
+  "tested_foundation_commit": "cfd65bff6cf5024459cb300beb02863c6fd24c59",
+  "native_unity": "6000.5.9f1",
+  "scope": "Fresh source clone; full W1 and W2 normal/secret input witnesses with actual earned-save chaining, Judge, practice, expected denial, and mechanics. Not the remaining 12 levels/3 bosses or human acceptance.",
+  "source_diff_from_current": "MATCH",
+  "files": [
+    {
+      "path": "atlas-build.json",
+      "sha256": "1d813b25cffc92d9b7d40cbd86afb9be7e7b943ce62cbca1b306388335d51abb"
+    },
+    {
+      "path": "foundation-build.json",
+      "sha256": "cf91d70e38618d3f59e3a21ae1749041c068b4120c62f934930e759d2ce3e2aa"
+    },
+    {
+      "path": "runner.json",
+      "sha256": "387fa1d815b25923c104f52a072cc14ddb1e382687e0c52d40ac1987aa88c181"
+    },
+    {
+      "path": "Foundation/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Foundation/save-roundtrip.json",
+      "sha256": "7ccfa1fbf3940e6f0c0375d87c0f9235a50514e14cb427bdfaf5077987b26ccf"
+    },
+    {
+      "path": "Foundation/verification.json",
+      "sha256": "2d20a5ae153607ef306fe836be3fd1e7fc3df9c471f9a4621156cd38b7b4100d"
+    },
+    {
+      "path": "Judge/orchard-observations.txt",
+      "sha256": "92d614b0a8965e32565948c1cb6aa3d896f8476a3e09d46cf356f5ee2f93cd36"
+    },
+    {
+      "path": "Judge/orchard-result.json",
+      "sha256": "43601b10117b70d21bdf09786bc61db6c975239a5074d4c48fc1a0dfc5eb146e"
+    },
+    {
+      "path": "Judge/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Judge/saved-progress.json",
+      "sha256": "58423bda1130b1764e5fc0b1ce25e05518d4c8d481011afdab210b58f0853f0a"
+    },
+    {
+      "path": "Judge/test-save.json",
+      "sha256": "58423bda1130b1764e5fc0b1ce25e05518d4c8d481011afdab210b58f0853f0a"
+    },
+    {
+      "path": "Mechanics/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Mechanics/save-roundtrip.json",
+      "sha256": "7ccfa1fbf3940e6f0c0375d87c0f9235a50514e14cb427bdfaf5077987b26ccf"
+    },
+    {
+      "path": "Mechanics/verification.json",
+      "sha256": "f94fb181312b2f7c91175c1a005bde4ee699aa3e83ef862ad7bd188b2bed13af"
+    },
+    {
+      "path": "Practice-isolation/orchard-observations.txt",
+      "sha256": "d13a182013e39a0a42633c5290ec3831cf3f2fc4250ad373932e8490ebdac6be"
+    },
+    {
+      "path": "Practice-isolation/orchard-result.json",
+      "sha256": "59d97a753da71f26373014294ea436a397fee5126bc6cf2b9712ebbfdd2fe2dd"
+    },
+    {
+      "path": "Practice-isolation/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "Practice-isolation/saved-progress.json",
+      "sha256": "5f63d0457298227e760452ebf4491d4bf15778a3d9d297789ecc317ba7cd6070"
+    },
+    {
+      "path": "Unearned-world-denied/orchard-observations.txt",
+      "sha256": "c56c9ecd11a48b31bb0bfef7800a901ec895b5aba0f166cb02de34f63559cc87"
+    },
+    {
+      "path": "Unearned-world-denied/orchard-result.json",
+      "sha256": "2d20e94dc0cdf01fcb2f2df711bcb46d7529ee75877aba52a472622494ca22ae"
+    },
+    {
+      "path": "Unearned-world-denied/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "Unearned-world-denied/saved-progress.json",
+      "sha256": "5f63d0457298227e760452ebf4491d4bf15778a3d9d297789ecc317ba7cd6070"
+    },
+    {
+      "path": "W1-critical/parish-observations.txt",
+      "sha256": "4d0d60db545aa91c318dfc5b9eef9496df29966c600a5ca4c636a1054f6daf60"
+    },
+    {
+      "path": "W1-critical/parish-result.json",
+      "sha256": "ae5d588013a60034cbad490d2fd397a6eab6e02564bca29da499c1dd7311c60c"
+    },
+    {
+      "path": "W1-critical/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "W1-critical/test-save.json",
+      "sha256": "b029901029876591b1c9bc633da192a99149d87aa622d0bedcde6e404dadb5d1"
+    },
+    {
+      "path": "W1-secrets/parish-observations.txt",
+      "sha256": "b0e2b22a0d4cefb145dc4d65a70568a290636e2c421ca0f607e17bd64379ec2a"
+    },
+    {
+      "path": "W1-secrets/parish-result.json",
+      "sha256": "0d69b3c52d9e837a59add5b630362e01dc440f73f171783de1ce5d43ea92c5bb"
+    },
+    {
+      "path": "W1-secrets/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "W1-secrets/test-save.json",
+      "sha256": "324a8b91868f5fe89b913ac4e981c6dd1985cd52eb0889289e26b88e558aad64"
+    },
+    {
+      "path": "W2-critical/earned-parent-save.json",
+      "sha256": "b029901029876591b1c9bc633da192a99149d87aa622d0bedcde6e404dadb5d1"
+    },
+    {
+      "path": "W2-critical/orchard-observations.txt",
+      "sha256": "e7ffed28289feae6163fd286780923a26a2b16fb170bd87180bbc6143b16521b"
+    },
+    {
+      "path": "W2-critical/orchard-result.json",
+      "sha256": "664350cc03fecd63a0fd45f7519cd6eaf0ee55f612541a3a0df71599040daaaa"
+    },
+    {
+      "path": "W2-critical/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "W2-critical/saved-progress.json",
+      "sha256": "4bca432f3c20e74e4ff729195f11a0a49a60008191a4b280b2edff26fbfa698f"
+    },
+    {
+      "path": "W2-critical/SAVE_PROVENANCE.json",
+      "sha256": "126d3b0c0e60d0f887dddac724face8cf25896cc593e5a9ab8481d11179b21db"
+    },
+    {
+      "path": "W2-critical/test-save.json",
+      "sha256": "4bca432f3c20e74e4ff729195f11a0a49a60008191a4b280b2edff26fbfa698f"
+    },
+    {
+      "path": "W2-secrets/earned-parent-save.json",
+      "sha256": "324a8b91868f5fe89b913ac4e981c6dd1985cd52eb0889289e26b88e558aad64"
+    },
+    {
+      "path": "W2-secrets/orchard-observations.txt",
+      "sha256": "365186b36dee793f61319eb1b703fb7608f8e25db7a049c788d6b2fa19c486c6"
+    },
+    {
+      "path": "W2-secrets/orchard-result.json",
+      "sha256": "07767943f9ae1eef85e04470866a23fe3320064cc264d4f735c0560d6b7dbaff"
+    },
+    {
+      "path": "W2-secrets/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "W2-secrets/saved-progress.json",
+      "sha256": "ccbe2fbe4c10c9b10a833d359fc4ec8d783c415cbfd13a9dc9a8ee79d0d4c484"
+    },
+    {
+      "path": "W2-secrets/SAVE_PROVENANCE.json",
+      "sha256": "693d34faf8e63ad4aba5cd34e67ba886b8fd1bad191e96df0cc825e7ea49a428"
+    },
+    {
+      "path": "W2-secrets/test-save.json",
+      "sha256": "ccbe2fbe4c10c9b10a833d359fc4ec8d783c415cbfd13a9dc9a8ee79d0d4c484"
+    },
+    {
+      "path": "Mechanics/Atlas/progress.json",
+      "sha256": "f94fb181312b2f7c91175c1a005bde4ee699aa3e83ef862ad7bd188b2bed13af"
+    }
+  ]
+}
