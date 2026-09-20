@@ -104,9 +104,10 @@ namespace GloomBean.Campaign
         IEnumerator OrbitMercy()
         {
             if(stopped||!Live)yield break;var ring=session.GetComponentsInChildren<MotionPlatform>().Single(x=>x.name=="Orbiting Mercy halo");var magnet=host.Form<LodestoneForm>();var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(x=>x.name=="Launch coil 49");
-            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(44.5f);bool powered=false;float next=0,end=Time.time+18,trace=0;bool interacted=false;int exchanges=0;
+            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(44.5f);float steady=Time.time+4;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((44.5f-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
+            while(Live&&Time.time<steady&&(Mathf.Abs(actor.Body.position.x-44.5f)>.08f||Mathf.Abs(actor.Body.linearVelocity.x)>.15f))yield return Tick();input.rule=null;input.frame=default;bool powered=false;float next=0,end=Time.time+18,trace=0;bool interacted=false;int exchanges=0;
             input.rule=()=>{
-                Vector2 target=ring.GetComponent<Rigidbody2D>().position, pos=actor.Body.position,v=actor.Body.linearVelocity;bool low=pos.y<12;
+                Vector2 target=ring.GetComponent<Rigidbody2D>().position, pos=actor.Body.position,v=actor.Body.linearVelocity;bool low=pos.y<ring.GetComponent<Rigidbody2D>().position.y-.5f;
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m)north+=m.ForceOn(pos,1,magnet.range);
                 Vector2 desired=new Vector2((target.x-pos.x)*5-v.x*3,(target.y-pos.y)*7-v.y*3+actor.tuning.gravity);
                 int pole=low?1:Vector2.Dot(north,desired)>=0?1:-1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=next;if(toggle){next=Time.fixedTime+.14f;exchanges++;}
@@ -131,7 +132,7 @@ namespace GloomBean.Campaign
                 var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name=="Launch coil "+docks[i].x);if(coil.enabled)yield return Press(new InputFrame{interact=true});
                 if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
                 yield return Walk(docks[i].x-2.35f);yield return Jump(docks[i-1].x,docks[i-1].y-.75f);if(stopped)yield break;}
-            yield return Walk(2,true);
+            yield return Press(new InputFrame{interact=true});yield return Walk(2,true);
         }
         IEnumerator Focus(HostKind kind)
         {
@@ -162,11 +163,28 @@ namespace GloomBean.Campaign
             yield return Pause(.08f);Check("controlled valid shadow operates latch "+index,latch.active);
             yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});Check("shadow rejoins without teleporting through light",host.Form<ShadowForm>().Attached);yield return Walk((returning?18:28)+dx);
         }
+        IEnumerator OwnBodyMercy()
+        {
+            if(stopped||!Live)yield break;yield return Jump(74.8f,6.5f);yield return Walk(72);yield return Focus(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();
+            if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});yield return Press(new InputFrame{interact=true});yield return Press(new InputFrame{jump=true,jumpHeld=true});
+            float deadline=Time.time+10;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*5-actor.Body.linearVelocity.x*1.2f,-1,1),0)};
+            while(Live&&Time.time<deadline&&!(actor.Body.position.y>9&&actor.Body.position.y<11.5f&&Mathf.Abs(actor.Body.linearVelocity.y)<1.3f))yield return Tick();input.rule=null;input.frame=default;
+            Check("two actual magnetic screens suspend the body",!actor.Grounded&&actor.Body.position.y>9&&actor.Body.position.y<11.5f);if(stopped)yield break;
+            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(72,5.6f));
+            var own=session.GetComponentsInChildren<ShadowReceiver>().Single(x=>x.name=="Only your body can cast this bridge");yield return Pause(.1f);
+            bool foreign=false;for(int i=0;i<own.requiredSun.Polygons.Count;i++)if(own.requiredSun.Casters[i].shape!=actor.Shape&&ShadowSun.Inside(own.transform.position,own.requiredSun.Polygons[i]))foreign=true;
+            Check("the suspended Host casts the missing bridge",!actor.Grounded&&own.requiredSun.CastBy(own.transform.position,actor.Shape)&&!foreign&&own.active);Snapshot("own-body-shadow");
+            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});yield return Focus(HostKind.Lodestone);if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});
+            deadline=Time.time+8;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
+            while(Live&&Time.time<deadline&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-6.5f)<.3f))yield return Tick();input.rule=null;input.frame=default;
+            Check("suspension ends on the actual chamber floor",actor.Grounded&&Mathf.Abs(actor.Feet.y-6.5f)<.3f);yield return Press(new InputFrame{interact=true});yield return Walk(68.4f);
+            Check("own-body Mercy collected by the physical Host",session.Mercies.Count==1);yield return Walk(78);deadline=Time.time+5;while(Live&&Time.time<deadline&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-4.8f)<.3f))yield return Tick();
+        }
         IEnumerator NoShadows(bool secret)
         {
             yield return Walk(8);Check("noon lamp tears off an available shadow",host.Has(HostKind.Shadow));yield return ShadowWindow(0,false);yield return ShadowWindow(1,false);
             yield return Walk(61.5f);yield return Jump(65,1.6f);yield return Walk(67);yield return Jump(71,3.2f);yield return Walk(73.35f);yield return Jump(78,4.8f);Check("Noon Keyling reached",session.HasKey);
-            if(secret){Check("suspended own-body Mercy remains an unverified gate",false);yield break;}
+            if(secret)yield return OwnBodyMercy();
             yield return Walk(80.5f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
             yield return ShadowWindow(1,true);yield return ShadowWindow(0,true);yield return Walk(2,true);
         }

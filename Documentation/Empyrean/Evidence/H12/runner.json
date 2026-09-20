@@ -1,0 +1,49 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  30,
+                        "case":  "L17-120fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  30,
+                        "case":  "L17-30fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  30,
+                        "case":  "L17-delayed",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  55,
+                        "case":  "L18-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  13,
+                        "case":  "L17-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H12-gravity-return-and-clear-rails",
+    "started":  "2026-09-20T05:07:38.2920913-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:08:39.7412903-06:00"
+}

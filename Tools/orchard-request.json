@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H12-gravity-return-and-clear-rails",
+  "id": "Empyrean-H13-suspended-body-and-orbit",
   "build": true,
   "cases": [
     {
@@ -29,6 +29,12 @@
       "name": "L17-secret",
       "suite": "Empyrean",
       "route": "GB-L17",
+      "secrets": true
+    },
+    {
+      "name": "L18-secret",
+      "suite": "Empyrean",
+      "route": "GB-L18",
       "secrets": true
     }
   ]

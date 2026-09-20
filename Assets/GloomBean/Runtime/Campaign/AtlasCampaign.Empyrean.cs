@@ -57,7 +57,14 @@ namespace GloomBean.Campaign
             }
             a.Source(HostKind.Lodestone,28,1,true);a.Source(HostKind.Shadow,34,1,true);
             a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(80,4.8f,9);a.Key(78,6.1f);a.Nail(82,5.2f);
-            a.Ledge(72,9,5);a.Mercy(72,10.3f);a.Health(63,1.2f);
+            var chamberFloor=a.Ledge(72,6.5f,9);chamberFloor.name="Suspension chamber floor";chamberFloor.AddComponent<OneWaySurface>();
+            var mercyShutter=b.Door(new Vector2(70,10.5f),new Vector2(.55f,8));mercyShutter.name="Own-body shadow shutter";a.Mercy(68.4f,7.8f);
+            var chamberSun=Sun(a,new Vector2(72,18),20);chamberSun.name="Single lamp of the perfectly lit chamber";chamberSun.renderFilled=true;
+            var chamberObject=new GameObject("Opaque chamber lighting boundary");chamberObject.transform.SetParent(b.root);var chamber=chamberObject.AddComponent<ShadowDomain>();chamber.area=new Rect(66,4,12,12);chamber.onlySun=chamberSun;
+            var suspension=new List<MagneticBody>();foreach(float x in new[]{68f,76f}){var m=a.Metal(new Vector2(x,12),Vector2.one,20,true,1);m.name="Suspension screen "+x;m.strength=260;m.fieldRadius=7;m.enabled=false;suspension.Add(m);}
+            var power=b.Switch(new Vector2(72,8),"SUSPENSION COILS");power.name="Suspension coils switch";power.Changed+=on=>{foreach(var m in suspension)m.enabled=on;};
+            var own=b.Trigger("Only your body can cast this bridge",new Vector2(72,5.6f),Vector2.one*.55f,new Color(.32f,.27f,.46f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();own.gate=mercyShutter;own.radius=.55f;own.requiredSun=chamberSun;own.requiredCaster=a.Player.Shape;
+            b.Tip(new Vector2(74,7.5f),"The two screens hold a SOUTH Host between them. Detach your shadow while your real body remains suspended: nothing else casts the central bridge.");a.Health(63,1.2f);
             b.session.Turned+=()=>{sun.LockNoon();for(int i=0;i<latches.Count;i++){latches[i].active=false;latches[i].gate.SetOpen(false);latches[i].requiredSun=sun;latches[i].requiredCaster=screens[i].GetComponent<Collider2D>();}};
             b.Tip(new Vector2(8,2),"I detaches your shadow. The moving sunlight makes a bridge under each hanging saint. Return the shadow to your feet before walking on.");
             b.Tip(new Vector2(60,2),"At noon a vertical ray cannot make a sideways bridge. Pull the iron screen along its visible rail; its real shadow must connect your feet to the latch.");
