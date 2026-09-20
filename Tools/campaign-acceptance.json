@@ -1,0 +1,76 @@
+{
+  "id": "City-Clean-v05",
+  "atlas": "C:\\Users\\micha\\Projects\\GloomBean City Clean v05",
+  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean v014",
+  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\City-Clean-v05",
+  "atlas_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
+  "foundation_commit": "d3cea4cda3e5748ba5866c332b9f6994bd308643",
+  "cases": [
+    {
+      "name": "Foundation",
+      "suite": "Foundation"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
+    },
+    {
+      "name": "W1-critical",
+      "suite": "Parish",
+      "route": "W1"
+    },
+    {
+      "name": "W1-secrets",
+      "suite": "Parish",
+      "route": "W1",
+      "secrets": true
+    },
+    {
+      "name": "W2-critical",
+      "suite": "Orchard",
+      "route": "W2",
+      "parent": "W1-critical",
+      "requireEarned": true
+    },
+    {
+      "name": "W2-secrets",
+      "suite": "Orchard",
+      "route": "W2",
+      "parent": "W1-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "W3-critical",
+      "suite": "City",
+      "route": "W3",
+      "parent": "W2-critical",
+      "requireEarned": true
+    },
+    {
+      "name": "W3-secrets",
+      "suite": "City",
+      "route": "W3",
+      "parent": "W2-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "Surveyor",
+      "suite": "City",
+      "route": "GB-B3"
+    },
+    {
+      "name": "City-practice",
+      "suite": "City",
+      "route": "GB-L09",
+      "practice": true
+    },
+    {
+      "name": "City-unearned-denied",
+      "suite": "City",
+      "route": "W3",
+      "expectedDenial": true
+    }
+  ]
+}
