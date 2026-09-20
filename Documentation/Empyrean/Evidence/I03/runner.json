@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  20,
+                        "case":  "L19-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  23,
+                        "case":  "L19-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-I03-word-rows-and-shadow-dot",
+    "started":  "2026-09-20T08:18:20.2197052-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T08:18:49.2241914-06:00"
+}

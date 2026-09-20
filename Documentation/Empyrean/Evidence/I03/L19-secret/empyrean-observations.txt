@@ -1,0 +1,26 @@
+BEGIN GB-L19 Scripture That Writes Back
+PASS GB-L19 walk 8 body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 scribe leech supplies actual Ink body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+PASS GB-L19 land in the bottom margin body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(15.48, 3.93) velocity=(0.33, -0.96) feet=3.178571 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(14.51, 6.45) velocity=(-1.45, 3.03) feet=5.70128 hp=6
+PASS GB-L19 jump to 17.6 / 5 body=(17.31, 5.81) velocity=(0.88, -1.00) feet=5.057389 hp=6
+PASS GB-L19 reach punctuation desk through authored ink body=(17.31, 5.81) velocity=(0.88, -1.00) feet=5.057389 hp=6
+PASS GB-L19 walk 18.2 body=(17.99, 5.76) velocity=(1.62, 0.00) feet=5.007389 hp=6
+PASS GB-L19 grip physical comma body=(18.00, 5.76) velocity=(0.02, 0.00) feet=5.007389 hp=6
+PASS GB-L19 walk 21.5 body=(21.29, 5.76) velocity=(1.60, 0.00) feet=5.007389 hp=6
+PASS GB-L19 moved comma reflows actual words body=(21.29, 5.76) velocity=(0.00, 0.00) feet=5.007389 hp=6
+PASS GB-L19 jump to 24 / 5 body=(23.90, 5.80) velocity=(0.26, -1.00) feet=5.049495 hp=6
+PASS GB-L19 jump to 27 / 7.2 body=(26.71, 8.05) velocity=(0.89, -1.00) feet=7.297829 hp=6
+PASS GB-L19 jump to 31 / 9.4 body=(30.71, 10.15) velocity=(0.92, 0.00) feet=9.404705 hp=6
+PASS GB-L19 jump to 35 / 9.4 body=(34.71, 10.15) velocity=(0.89, 0.00) feet=9.4045 hp=6
+PASS GB-L19 jump to 40 / 7.2 body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 shadow source composes with Ink body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 tenant acquired Ink body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 focus Ink body=(39.71, 7.95) velocity=(0.00, 0.00) feet=7.204998 hp=6
+PASS GB-L19 walk 42 body=(41.80, 7.95) velocity=(5.98, 0.00) feet=7.204999 hp=6
+PASS GB-L19 record a running arc to 50 body=(49.73, 1.75) velocity=(0.51, 0.00) feet=1.004826 hp=6
+FAIL GB-L19 a reachable hardened arc exists body=(49.73, 1.76) velocity=(0.00, 0.00) feet=1.005 hp=6
