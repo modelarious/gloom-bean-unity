@@ -7,6 +7,7 @@ namespace GloomBean.Campaign
     /// <summary>IMGUI presentation and an original offline score. No UI scene system or gameplay side effects.</summary>
     public sealed class CampaignPresentation:MonoBehaviour
     {
+        public string LastPaintedScreen {get;private set;}="";public bool LastFigureWasNormal {get;private set;}
         GameRoot game;CampaignScore score;GUIStyle caption,kicker;string lastScreen="";float entered;
         void Start(){game=GetComponent<GameRoot>();game.PresentationBackground=Draw;score=gameObject.AddComponent<CampaignScore>();score.Initialize(game);}
         void Update(){if(!game)return;if(lastScreen!=game.CurrentScreen){lastScreen=game.CurrentScreen;entered=Time.unscaledTime;}}
@@ -15,7 +16,7 @@ namespace GloomBean.Campaign
         void Draw(string screen)
         {
             if(caption==null){caption=new GUIStyle(GUI.skin.label){fontSize=17,wordWrap=true,alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.95f,.88f,.70f)}};kicker=new GUIStyle(caption){fontSize=11,alignment=TextAnchor.MiddleLeft};}
-            bool ending=screen=="Ending",restored=ending&&game.ShowingRestoredEnding;
+            LastPaintedScreen=screen;bool ending=screen=="Ending",restored=ending&&game.ShowingRestoredEnding;
             int world=screen=="Home"?(game.IsCorrupted?1:0):ending?0:game.SelectedWorldNumber;
             var art=SceneryArt.Get(world);Texture(new Rect(0,0,960,600),art,ending?new Color(.60f,.52f,.58f):new Color(.34f,.30f,.39f));
             Fill(new Rect(0,0,960,600),new Color(.025f,.02f,.04f,ending?.24f:.58f));
@@ -26,7 +27,7 @@ namespace GloomBean.Campaign
                 GUI.Label(new Rect(704,475,216,45),game.IsCorrupted?"SAME BEAN.\nDIFFERENT HOST.":"YOUR SUNDAY BEST.",caption);
                 GUI.Label(new Rect(61,557,790,25),"Original Host Cycle campaign  /  Editable native Unity project",kicker);
             }else if(ending){
-                float age=Time.unscaledTime-entered;bool showNormal=restored&&age>=5;
+                float age=Time.unscaledTime-entered;bool showNormal=restored&&age>=5;LastFigureWasNormal=showNormal;
                 float wobble=showNormal?0:Mathf.Sin(age*1.4f)*5;
                 Texture(new Rect(374+wobble,245,216,218),HostPixelArt.Host(HostKind.None,!showNormal,(int)(age*3)%4),Color.white);
                 if(restored){for(int i=0;i<20;i++){float angle=i*Mathf.PI*2/20+age*.18f;Vector2 p=new Vector2(480+Mathf.Cos(angle)*(age<5?143:165),344+Mathf.Sin(angle)*99);Fill(new Rect(p.x-3,p.y-3,6,6),new Color(1,.87f,.52f,Mathf.Clamp01(age/2)));}}

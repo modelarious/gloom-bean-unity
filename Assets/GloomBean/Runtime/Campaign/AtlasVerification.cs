@@ -278,6 +278,7 @@ namespace GloomBean.Campaign
                 foreach(var level in world.levels)
                 {
                     yield return game.Load(level,true);yield return Steps(5);var session=game.Session;session.player.disabled=true;session.player.Body.simulated=false;
+                    C("course."+level.id+".pixel-views-attached",session.player.GetComponent<HostPixelView>()&&session.GetComponent<CampaignScenery>()&&session.GetComponentsInChildren<HostSource>(true).All(x=>x.GetComponent<TenantPixelView>()),"Actual constructed scene, not only source presence");
                     var pickups=session.GetComponentsInChildren<Pickup>();var mercy=pickups.Where(p=>p.kind==PickupKind.Mercy).ToArray();
                     C("course."+level.id+".construction-and-one-mercy",session.player&&mercy.Length==1&&all.Add(mercy[0].stableId)&&pickups.Count(p=>p.kind==PickupKind.Key)==1&&session.GetComponentsInChildren<TurnSwitch>().Length==1&&session.GetComponentsInChildren<ExitPortal>().Length==1);
                     var sourceKinds=session.GetComponentsInChildren<HostSource>(true).Select(s=>s.kind).ToHashSet();foreach(var k in sourceKinds)seen.Add(k);
@@ -295,6 +296,7 @@ namespace GloomBean.Campaign
                 }
 
             }
+            yield return NativePresentationChecks.Run(game,C);
             C("coverage.all-fifteen-sources",seen.Count==15,string.Join(",",seen));C("coverage.twenty-unique-mercy-secrets",all.Count==20);
             C("permanent-corruption.retained",game.IsCorrupted);
             var ending=new SaveStore(Path.Combine(dir,"ending-boundary.json"));ending.Data.mercies.Clear();

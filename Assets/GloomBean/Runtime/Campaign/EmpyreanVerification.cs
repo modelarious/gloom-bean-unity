@@ -262,6 +262,15 @@ input.rule=null;input.frame=default;
                 Check(secrets?"all eighteen reached Mercies persist":"ordinary eighteen-level route needs no Mercy",secrets?Enumerable.Range(1,18).All(i=>reloaded.Data.mercies.Contains("GB-L"+i.ToString("00")+"-MERCY")):reloaded.Data.mercies.Count==0);
                 Check("eighteen secrets do not restore the ending",!reloaded.RestoredEnding&&reloaded.Data.corrupted);
             }
+            if(!stopped&&definition.boss){
+                var reloaded=new SaveStore(Path.Combine(dir,"test-save.json"));bool complete=Enumerable.Range(1,20).All(i=>reloaded.Data.cleared.Contains("GB-L"+i.ToString("00")))&&Enumerable.Range(1,5).All(i=>reloaded.Data.cleared.Contains("GB-B"+i));
+                if(requireEarned){Check("all twenty levels and five bosses survived the genuinely earned chain",complete);int expected;int.TryParse(Arg("-gb-expected-mercies",secrets?"20":"0"),out expected);Check("exact earned Mercy boundary "+expected,reloaded.Data.mercies.Distinct().Count()==expected);Check("all twenty actual Mercy IDs are required for restoration",reloaded.RestoredEnding==(expected==20));}
+                Check("boss victory enters the real ending screen",game.CurrentScreen=="Ending");Check("ending presentation never erases permanent gameplay corruption",Practice||reloaded.Data.corrupted);
+                float until=Time.unscaledTime+6.2f;while(Time.unscaledTime<until)yield return null;
+                var presentation=game.GetComponent<CampaignPresentation>();Check("ending artwork obeys the real save and practice boundary",presentation&&presentation.LastPaintedScreen=="Ending"&&presentation.LastFigureWasNormal==(!Practice&&reloaded.RestoredEnding));
+                yield return NativePresentationChecks.Screen(Path.Combine(dir,"ending-screen.png"));
+                File.WriteAllText(Path.Combine(dir,"ENDING.json"),"{\"earned_campaign\":"+complete.ToString().ToLowerInvariant()+",\"mercies\":"+reloaded.Data.mercies.Distinct().Count()+",\"restored_ending\":"+game.ShowingRestoredEnding.ToString().ToLowerInvariant()+",\"normal_figure_drawn\":"+presentation.LastFigureWasNormal.ToString().ToLowerInvariant()+",\"gameplay_corruption_retained\":"+reloaded.Data.corrupted.ToString().ToLowerInvariant()+"}");
+            }
             Snapshot("finish");Finish();
         }
         void Finish(){if(finished)return;finished=true;Application.logMessageReceived-=Error;
