@@ -1,10 +1,10 @@
 {
-  "id": "Empyrean-Clean-v07-h1",
-  "atlas": "C:\\Users\\micha\\Projects\\GloomBean Empyrean Clean v07h1",
-  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean v015h1",
-  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Empyrean-Clean-v07-h1",
-  "atlas_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
-  "foundation_commit": "1b450786f425c0ca325be8ff9b09cafdaeb0cfb8",
+  "id": "Fall-Clean-v06-g1",
+  "atlas": "C:\\Users\\micha\\Projects\\GloomBean Fall Clean v06g1",
+  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean v015g1",
+  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Fall-Clean-v06-g1",
+  "atlas_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
+  "foundation_commit": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
   "cases": [
     {
       "name": "Foundation",
@@ -103,74 +103,6 @@
       "suite": "Fall",
       "route": "W4",
       "expectedDenial": true
-    },
-    {
-      "name": "L17-ordinary",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "parent": "W4-critical",
-      "requireEarned": true
-    },
-    {
-      "name": "L17-secret",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "parent": "W4-secrets",
-      "requireEarned": true,
-      "secrets": true
-    },
-    {
-      "name": "L18-ordinary",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "parent": "L17-ordinary",
-      "requireEarned": true
-    },
-    {
-      "name": "L18-secret",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "parent": "L17-secret",
-      "requireEarned": true,
-      "secrets": true
-    },
-    {
-      "name": "Empyrean-practice",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "practice": true,
-      "secrets": true
-    },
-    {
-      "name": "Empyrean-unearned-world",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "expectedDenial": true
-    },
-    {
-      "name": "Empyrean-unearned-stage",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "parent": "W4-critical",
-      "expectedDenial": true,
-      "expectedStageDenial": true
-    },
-    {
-      "name": "L17-30fps",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "parent": "W4-critical",
-      "requireEarned": true,
-      "renderFps": 30
-    },
-    {
-      "name": "L18-secret-30fps",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "parent": "L17-secret",
-      "requireEarned": true,
-      "secrets": true,
-      "renderFps": 30
     }
   ]
 }

@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "tested_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
+  "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "H13 L17 ordinary passed120fps,30fps,delayed33checks each; L18 ordinary55passes including physical-screen noon return. H14 tests actual orbit entry stance and records suspension force/coil activity to diagnose remaining optional secrets. L17 screen/bell signature and rest of W5 still unfinished.",
+  "next_gate": "H26 ordinary/secret L17 including bell-screen and L18 own-body shadow pass. Fresh 25-case full earned W1\u2192L18 chain is now staged, including cadence, practice, world/stage denial. Read its receipt, not old H14 notes. L19 modules are groundwork only; L19/L20/B5 still unfinished.",
   "active_job": {
-    "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Empyrean-H14-real-secret-stance-diagnostics/runner.json",
-    "status": "READY_NOT_STARTED"
+    "task": "GloomBean-Campaign-Acceptance",
+    "receipt": "Reports/Empyrean-Clean-v07-h1/runner.json",
+    "status": "READY_NOT_STARTED",
+    "tested_source": "ff6bb3da47362e3a79bf78da55f91774bc7d7283"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
