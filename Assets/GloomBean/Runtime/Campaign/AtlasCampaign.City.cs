@@ -53,9 +53,9 @@ namespace GloomBean.Campaign
         }
         TopologyRegion PaintedPassage(AtlasBuilder a,Vector2 origin,bool secret=false)
         {
-            const int w=28,h=15;var grid=new char[h][];for(int y=0;y<h;y++){grid[y]=new char[w];for(int x=0;x<w;x++)grid[y][x]='.';}
+            const int w=28;int h=secret?20:15;var grid=new char[h][];for(int y=0;y<h;y++){grid[y]=new char[w];for(int x=0;x<w;x++)grid[y][x]='.';}
             void Fill(int x0,int y0,int x1,int y1,char c){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)grid[y][x]=c;}
-            Fill(0,1,3,4,'A');Fill(4,1,11,4,'#');Fill(9,4,12,8,'#');Fill(12,6,21,9,'#');Fill(19,9,23,12,'#');Fill(24,10,27,13,'A');
+            Fill(0,0,3,4,'A');Fill(4,1,11,4,'#');Fill(9,4,12,8,'#');Fill(12,6,21,9,'#');Fill(19,9,23,12,'#');Fill(24,10,27,13,'A');
             // The two domains share only their framed entry and exit. The staircase consists
             // of empty tiles in normal space, so it becomes solid ONLY inside the fresco.
             Fill(6,1,8,1,'.');Fill(8,1,10,2,'.');Fill(10,1,11,4,'.');Fill(11,4,12,5,'.');
@@ -63,21 +63,43 @@ namespace GloomBean.Campaign
             var rows=new string[h];for(int y=0;y<h;y++)rows[h-1-y]=new string(grid[y]);
             var go=new GameObject("Closed fresco complement");go.transform.SetParent(a.b.root);var r=go.AddComponent<TopologyRegion>();r.Build(rows,a.b,origin);
             // Both-sided thresholds make acquisition and curing safe in either collision domain.
-            a.b.Solid("Shared threshold",origin+new Vector2(1.8f,.8f),new Vector2(3.6f,.4f),a.b.accent,Layers.Interior);
+            a.b.Solid("Shared threshold",origin+new Vector2(1.8f,-.2f),new Vector2(3.6f,.4f),a.b.accent,Layers.Interior);
             a.b.Solid("Shared exit sill",origin+new Vector2(26,10),new Vector2(4,.4f),a.b.accent,Layers.Interior);
+            if(secret){
+                var extras=new List<Vector2Int>();
+                void Region(int x0,int y0,int x1,int y1){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)extras.Add(new Vector2Int(x,y));}
+                Region(3,14,14,17);Region(12,11,15,15);Region(14,11,22,14);
+                extras.RemoveAll(v=>v.x>=12&&v.x<=13&&v.y>=11&&v.y<=12);r.DefineSupplement(extras);
+                PrimitiveArt.Line("Unfinished moon contour",a.b.root,origin+new Vector2(3,18),origin+new Vector2(15,18),.07f,new Color(.89f,.82f,.56f),-1);
+            }
             return r;
         }
         void Fresco(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-11,115,47),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(46,106);a.Exit(2,1.1f);
-            var passage=PaintedPassage(a,new Vector2(15,0));a.Source(HostKind.InsideOut,17,1.8f);a.Cure(HostKind.InsideOut,41,12);a.Ledge(42,10,6);
-            a.Ledge(48,8,6);a.Ledge(55,6,6);var source=a.Source(HostKind.Mirror,59,1);source.explicitAxis=true;source.mirrorAxis=67;
-            var p=b.Plate(new Vector2(62,.14f));var q=b.Plate(new Vector2(72,.14f));var gate=b.Door(new Vector2(79,4),new Vector2(.7f,8),p,q);gate.latched=true;b.Solid("Paint pot",new Vector2(72,1),new Vector2(1,2));
-            a.Steps(84,2,4,5,1.8f,4);a.Key(95,7);a.Nail(103,7.8f);
-            a.Ledge(26,13,8);a.Mercy(27,14.2f);var moon=b.Switch(new Vector2(41,11.2f),"COMPLETE MOON OUTLINE");var moonFloor=b.Solid("Moon's newly closed interior",new Vector2(33,11),new Vector2(9,.4f),new Color(.71f,.84f,.85f),Layers.Interior);moonFloor.SetActive(false);moon.Changed+=v=>moonFloor.SetActive(v);
-            var peeling=a.Ledge(65,11,40);peeling.name="Peeling fresco return";peeling.SetActive(false);b.session.Turned+=()=>{peeling.SetActive(true);moonFloor.SetActive(true);};
+            a.Begin(new Rect(-8,-11,120,49),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(46,110);a.Exit(2,1.1f);
+            GameObject Sill(float x,float y,float w=4){var g=a.Ledge(x,y,w);g.AddComponent<OneWaySurface>();return g;}
+            var passage=PaintedPassage(a,new Vector2(15,0),true);
+            a.Source(HostKind.InsideOut,17,.8f);a.Cure(HostKind.InsideOut,14.5f,.8f);
+            a.Cure(HostKind.InsideOut,42.4f,12);a.Source(HostKind.InsideOut,39.6f,11.1f);Sill(42,10,6);
+            var scaffoldObj=b.Solid("Painter's traveling scaffold",new Vector2(36,19),new Vector2(3,.4f),b.accent,Layers.Moving);
+            var painter=scaffoldObj.AddComponent<OutlinePainter>();painter.region=passage;painter.start=new Vector2(36,19);painter.end=new Vector2(30,19);
+            var handle=b.Switch(new Vector2(41,11.1f),"CLOSE THE MOON'S CONTOUR");handle.Changed+=painter.Draw;
+            a.Mercy(21,15.1f);
+            Sill(48,8,6);Sill(55,6,6);
+            var mirror=a.Source(HostKind.Mirror,59,1);mirror.explicitAxis=true;mirror.mirrorAxis=67;
+            var left=b.Plate(new Vector2(62,.14f));var right=b.Plate(new Vector2(75,.14f));
+            var gate=b.Door(new Vector2(79,4),new Vector2(.7f,8),left,right);gate.latched=true;gate.name="Fresco paired lift brake";
+            b.Solid("Unreflected paint pot",new Vector2(72,1),new Vector2(1,2));
+            var velvet=a.Cure(HostKind.Mirror,65,1);velvet.gameObject.SetActive(false);
+            var release=b.Switch(new Vector2(62,1),"DRAW MATTE CURTAIN");release.Changed+=v=>{if(gate.opened)velvet.gameObject.SetActive(v);};
+            for(int i=0;i<4;i++)Sill(84+i*5,2+i*1.8f);Sill(104,7.4f,10);a.Key(95,7);a.Nail(107,7.8f);
+            var peeling=Sill(65,11,44);peeling.name="Peeling fresco return";peeling.SetActive(false);
+            var riser=Sill(103,9.2f,5);riser.SetActive(false);var high=Sill(98,11,5);high.SetActive(false);var across=Sill(91,11,10);across.SetActive(false);
+            b.session.Turned+=()=>{peeling.SetActive(true);riser.SetActive(true);high.SetActive(true);across.SetActive(true);};
             a.Cure(HostKind.Mirror,81,1);a.Cure(HostKind.None,4,1,true);a.Health(51,1.2f);
-            b.Tip(new Vector2(17,3),"The fresco's stone is now your corridor; its former air holds you in. Follow the pale interior ledges. Empty frames let you leave without clipping into masonry.");
+            b.Tip(new Vector2(17,3),"Walk inside painted stone. Pale boundaries are solid only to the inside-out body. Empty frames join the two spaces.");
+            b.Tip(new Vector2(41,12),"The moon has an unfinished edge. Move the painter's scaffold before trying to enter its outline.");
+            b.Tip(new Vector2(61,2),"The paint pot pins only one body. Walk beyond your scale, then reverse to align the reflected tenant.");
         }
         void Tax(AtlasBuilder a)
         {

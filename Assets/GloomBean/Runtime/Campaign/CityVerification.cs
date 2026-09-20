@@ -84,6 +84,22 @@ namespace GloomBean.Campaign
             if(stopped)yield break;var returnGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Return apartment interlock");yield return Await("changed furniture solved by both return bodies",()=>returnGate.opened,4);Snapshot("return-mirror");
             yield return Walk(61.5f);yield return Await("return velvet releases both-body constraint",()=>!host.Has(HostKind.Mirror),4);yield return Walk(43);yield return Await("return reaches old street",()=>actor.Grounded&&actor.Feet.y<1,6);yield return Walk(2);
         }
+        IEnumerator Fresco(bool secret)
+        {
+            yield return Walk(17);Check("cherub opens the stone interior",host.Has(HostKind.InsideOut));
+            yield return Jump(20,1);yield return Jump(22,2);yield return Jump(24.2f,3);yield return Jump(25.6f,5);yield return Jump(27.5f,6);yield return Walk(30.25f);
+            yield return Jump(32.2f,7);yield return Jump(34.2f,8);yield return Jump(35.6f,10);yield return Jump(37.5f,11);if(stopped)yield break;
+            Snapshot("inside-painted-arch");yield return Walk(42.4f);yield return Await("empty frame restores ordinary collision",()=>!host.Has(HostKind.InsideOut),3);
+            if(secret&&!stopped){yield return Walk(41.1f);yield return Press(new InputFrame{interact=true});var region=session.GetComponentInChildren<TopologyRegion>();
+                yield return Await("scaffold finishes actual moon topology",()=>region.SupplementClosed,5);yield return Walk(39.6f);Check("re-enter changed fresco",host.Has(HostKind.InsideOut));
+                yield return Jump(37.5f,11);yield return Walk(29.5f);yield return Jump(27.5f,13);yield return Jump(25.5f,14);yield return Walk(21);Check("Mercy inside closed moon",session.Mercies.Count==1);Snapshot("moon-interior");
+                yield return Walk(30);yield return Walk(37);yield return Walk(42.4f);yield return Await("leave moon through the same frame",()=>!host.Has(HostKind.InsideOut),3);}
+            if(stopped)yield break;yield return Walk(59);Check("Mirror acquired in second court",host.Has(HostKind.Mirror));yield return Walk(64);yield return Walk(62);
+            var gate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Fresco paired lift brake");yield return Await("paint-pot desynchronization aligns both scales",()=>gate.opened,4);yield return Press(new InputFrame{interact=true});yield return Walk(66);yield return Await("drawn curtain removes the twin",()=>!host.Has(HostKind.Mirror),3);
+            yield return Walk(70);yield return Jump(74,0);yield return Walk(82);yield return Jump(84,2);yield return Walk(85.3f);yield return Jump(89,3.8f);yield return Walk(90.3f);yield return Jump(94,5.6f);yield return Walk(95.3f);yield return Jump(99,7.4f);yield return Walk(105.6f);if(stopped)yield break;
+            Check("fresco roof key",session.HasKey);yield return Press(new InputFrame{interact=true});Check("fresco peels into return gallery",session.Phase==RunPhase.Returning);yield return Jump(103,9.2f);yield return Jump(98,11);yield return Walk(42.4f);yield return Walk(39.6f);Check("return uses physical interior again",host.Has(HostKind.InsideOut));
+            yield return Walk(37.5f);yield return Walk(34.2f);yield return Walk(32.2f);yield return Walk(29);yield return Walk(27.5f);yield return Walk(25.6f);yield return Walk(24.2f);yield return Walk(22);yield return Walk(20);yield return Walk(17);yield return Walk(14.3f);yield return Await("street-side empty frame cures",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(2);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[2];
@@ -95,7 +111,7 @@ namespace GloomBean.Campaign
             {
                 if(stage==null){failures++;Note("FAIL unknown City stage "+selected);break;}yield return Load(stage);
                 if(selected=="W3")Check("earned intra-world selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                switch(stage.course){case 9:yield return Suns(secrets);break;default:Check("route not implemented yet",false);break;}
+                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;default:Check("route not implemented yet",false);break;}
                 Check("stage cleared by actual return or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("stage clear persisted",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy saved after physical collection and return":"ordinary route requires no Mercy",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}
                 Snapshot("finish");if(stopped)break;
