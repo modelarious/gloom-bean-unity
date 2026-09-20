@@ -165,7 +165,7 @@ namespace GloomBean.Campaign
             var brake=b.root.gameObject.AddComponent<OrbitBrake>();brake.left=lp;brake.right=rp;brake.rooms=rooms.ToArray();brake.stepOnRelease=true;brake.requiresCall=true;
             var call=b.Switch(c+new Vector2(-5,2.15f),"CALL TWO-DEPTH LIFT");call.transform.SetParent(carriage.transform,true);call.Changed+=v=>brake.Call();
             var reflection=a.Source(HostKind.Mirror,18.5f,14.8f,true);reflection.explicitAxis=true;reflection.mirrorAxis=22;
-            a.Cure(HostKind.Mirror,33,24.2f);
+            var roofVelvet=a.Cure(HostKind.Mirror,33,24.2f);roofVelvet.GetComponent<BoxCollider2D>().size=new Vector2(1.8f,2.5f);
             var luggage=b.Prop(c+new Vector2(2,1),new Vector2(.7f,.9f),1.2f);luggage.name="Room 101's traveling luggage";
             b.Tip(new Vector2(35,7),"Change depth aboard the room. Its floor, doorways and furniture move around the same courtyard; you are not teleported.");
             b.Tip(new Vector2(19,15),"Both balcony scales share one lift brake, but the hotel's stamp enlarges only your reflection. Use its furniture to align the mismatched bodies.");
@@ -180,7 +180,7 @@ namespace GloomBean.Campaign
             var wall=new GameObject("The hotel's inside-out back wall");wall.transform.SetParent(b.root);var interior=wall.AddComponent<TopologyRegion>();interior.Build(rows,b,new Vector2(34,23.4f));
             b.Solid("Shared wall entry",new Vector2(35,23.2f),new Vector2(4,.4f),b.accent,Layers.Interior);
             b.Solid("Shared wall exit",new Vector2(46,28.2f),new Vector2(4,.4f),b.accent,Layers.Interior);
-            Sill(34,23.4f,5);Sill(46,28.4f,5);a.Source(HostKind.InsideOut,35.5f,24.2f);a.Cure(HostKind.InsideOut,47,29.2f);
+            Sill(36.5f,23.4f,2);Sill(46,28.4f,5);a.Source(HostKind.InsideOut,35.5f,24.2f);a.Cure(HostKind.InsideOut,47,29.2f);
             Sill(50,28.4f,5);a.Source(HostKind.Parallax,50,29.2f);a.Projection(new Vector2(54,30),new Vector2(12,8));Shelf(57,29.8f,10,0);a.Projection(new Vector2(61,32),new Vector2(13,9));Shelf(65,31.3f,10,2);
             Sill(73,33.2f,9);a.Projection(new Vector2(70,34),new Vector2(13,8));a.Key(68,33);a.Nail(75,33.6f);
 
