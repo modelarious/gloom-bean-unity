@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H08-input-edge-launch",
+  "id": "Empyrean-H09-return-and-real-shadows",
   "build": true,
   "cases": [
     {
@@ -19,6 +19,15 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "startDelay": 2.1
+    },
+    {
+      "name": "L18-critical",
+      "suite": "Empyrean",
+      "route": "GB-L18"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

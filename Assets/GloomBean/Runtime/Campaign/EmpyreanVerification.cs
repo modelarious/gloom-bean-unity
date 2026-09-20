@@ -106,7 +106,7 @@ namespace GloomBean.Campaign
             for(int i=0;i<docks.Length-1;i++){yield return PowerAltar(docks[i].x);yield return Flight(docks[i+1]);if(stopped)yield break;}
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret){Check("Orbiting Mercy route not yet certified",false);yield break;}
-            yield return Press(new InputFrame{interact=true});yield return Walk(75.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
+            yield return Press(new InputFrame{interact=true});yield return Walk(74.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
             yield return Walk(71);for(int i=docks.Length-1;i>0;i--){yield return PowerAltar(docks[i].x,-1);yield return Flight(docks[i-1]);if(stopped)yield break;}
             yield return Walk(2,true);
         }
@@ -144,7 +144,7 @@ namespace GloomBean.Campaign
             yield return Walk(8);Check("noon lamp tears off an available shadow",host.Has(HostKind.Shadow));yield return ShadowWindow(0,false);yield return ShadowWindow(1,false);
             yield return Walk(61.5f);yield return Jump(65,1.6f);yield return Walk(67);yield return Jump(71,3.2f);yield return Walk(73);yield return Jump(78,4.8f);Check("Noon Keyling reached",session.HasKey);
             if(secret){Check("suspended own-body Mercy remains an unverified gate",false);yield break;}
-            yield return Walk(81.6f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
+            yield return Walk(80.5f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
             yield return ShadowWindow(1,true);yield return ShadowWindow(0,true);yield return Walk(2,true);
         }
         IEnumerator Run()

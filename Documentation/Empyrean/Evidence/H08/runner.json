@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  18,
+                        "case":  "L17-120fps",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  18,
+                        "case":  "L17-30fps",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  18,
+                        "case":  "L17-delayed",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H08-input-edge-launch",
+    "started":  "2026-09-20T04:58:23.9072695-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T04:59:05.8144922-06:00"
+}
