@@ -99,7 +99,7 @@ namespace GloomBean.Campaign
             yield return Jump(17.6f,5);Check("reach punctuation desk through authored ink",actor.Feet.y>4.7f);if(stopped)yield break;
             yield return Walk(18.2f);var comma=session.GetComponentInChildren<PunctuationCart>();var beforeWords=session.GetComponentInChildren<ScriptureLayout>();Check("unmoved comma leaves every word above the desk jump",beforeWords.wrap==5&&beforeWords.words.All(w=>w.GetComponent<Collider2D>().bounds.max.y>9));yield return Press(new InputFrame{interact=true});Check("grip physical comma",comma.Holder==actor);yield return Walk(21.5f);yield return Pause(.4f);yield return Press(new InputFrame{interact=true});
             var layout=session.GetComponentInChildren<ScriptureLayout>();yield return Wait("moved comma reflows actual words",()=>comma.Slot==1&&layout.wrap==3&&layout.Reflows>0,3);Snapshot("physical-line-wrap");
-            if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return WordStep(31);yield return WordStep(35);yield return Jump(40,7.2f);
+            if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return WordStep(31);if(!stopped&&actor.Feet.y<8)yield return Walk(32,true);yield return WordStep(35);yield return Jump(40,7.2f);
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
             if(!secret){yield return Walk(42,true);yield return RunArc(50.5f,3.3f);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,6);

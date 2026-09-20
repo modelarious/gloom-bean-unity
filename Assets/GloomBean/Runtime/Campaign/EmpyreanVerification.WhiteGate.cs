@@ -28,7 +28,7 @@ namespace GloomBean.Campaign
             input.frame=new InputFrame{action=true,actionHeld=true};yield return Tick();input.frame=new InputFrame{actionHeld=true};Check("extend root through actual seasonal substrate",root.Growing);if(stopped)yield break;
             foreach(var target in points){float end=Time.time+24;input.rule=()=>new InputFrame{actionHeld=true,move=Vector2.ClampMagnitude((target-root.Tip)*3,1)};
                 while(Live&&Time.time<end&&Vector2.Distance(root.Tip,target)>.13f)yield return Tick();input.rule=null;input.frame=new InputFrame{actionHeld=true};Check("steer seasonal root to "+target,Vector2.Distance(root.Tip,target)<.2f);if(stopped)yield break;}
-            Vector2 endpoint=points[points.Length-1];input.frame=default;yield return Tick();yield return Wait("body follows the curved seasonal root",()=>!root.Retracting&&Vector2.Distance(actor.Body.position,endpoint)<.5f,7);Snapshot("seasonal-root");
+            Vector2 endpoint=points[points.Length-1];Note("ROOT EXIT tip="+root.Tip+" clear="+host.CanStand(root.Tip));if(!host.CanStand(root.Tip))foreach(var c in Physics2D.OverlapBoxAll(root.Tip,new Vector2(.78f,1.36f),0,Layers.Solids))if(!c.isTrigger&&c.attachedRigidbody!=actor.Body)Note("ROOT EXIT BLOCKER "+c.name+" "+c.bounds);input.frame=default;yield return Tick();yield return Wait("body follows the curved seasonal root",()=>!root.Retracting&&Vector2.Distance(actor.Body.position,endpoint)<.5f,7);Snapshot("seasonal-root");
         }
         IEnumerator WhiteGateRoute(bool secret)
         {
@@ -40,7 +40,7 @@ namespace GloomBean.Campaign
             var gate=session.GetComponentsInChildren<Gate>().First(g=>g.plates.Length==2);yield return Wait("two simultaneous bodies release the first sanctum",()=>gate.opened,4);
             yield return LeadWalk(36);if(stopped)yield break;Check("first sanctum is traversed without granting its result",actor.Body.position.x>34);
             yield return LeadWalk(40);if(stopped)yield break;yield return Walk(48);yield return Walk(47);Check("root is available after the material sanctuary sources",host.Has(HostKind.Root));
-            yield return SanctumRoot(new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,1));if(stopped)yield break;yield return Walk(68);Check("seasonal wall was traversed through actual material",actor.Body.position.x>62);
+            yield return SanctumRoot(new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,1.5f));if(stopped)yield break;yield return Walk(68);Check("seasonal wall was traversed through actual material",actor.Body.position.x>62);
             Check("remaining White Gate spatial sanctums require further authored input proof",false);
         }
     }

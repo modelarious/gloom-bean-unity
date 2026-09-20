@@ -3,12 +3,16 @@ $p=Split-Path $PSScriptRoot -Parent
 $r=Get-Content "$p\Tools\orchard-request.json" -Raw | ConvertFrom-Json
 $dir=Join-Path $p ('Reports\Orchard-v04\'+$r.id)
 New-Item -ItemType Directory -Force $dir | Out-Null
-$status=@{id=$r.id;status='RUNNING';phase='build';started=(Get-Date).ToString('o')}
+$source=(& git -C $p rev-parse HEAD).Trim()
+$status=@{id=$r.id;status='RUNNING';phase='build';started=(Get-Date).ToString('o');source_commit=$source;request_sha256=(Get-FileHash "$p\Tools\orchard-request.json" -Algorithm SHA256).Hash.ToLower()}
 function Receipt {$status | ConvertTo-Json -Depth 8 | Set-Content "$dir\runner.json"}
 function Q([string]$s){'"'+$s+'"'}
 $jobs=@();Receipt
 try {
+ if((& git -C $p diff --name-only HEAD -- Assets Packages ProjectSettings)){throw 'Uncommitted runtime source: checkpoint before building'}
  if($r.build){& "$p\Tools\Build-Windows.ps1" -ProjectPath $p | Out-File "$dir\build-output.txt"}
+ if((& git -C $p diff --name-only $source -- Assets Packages ProjectSettings)){throw 'Runtime source changed during build; this binary is not certified'}
+ $status.player_sha256=(Get-FileHash "$p\Builds\Windows\GloomBean.exe" -Algorithm SHA256).Hash.ToLower()
  $cases=if($r.cases){@($r.cases)}else{@($r.routes | ForEach-Object {@{name=$_;route=$_;suite='Parish';secrets=$r.secrets}})}
  $status.phase='native-acceptance';Receipt
  foreach($c in $cases){
