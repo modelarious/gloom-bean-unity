@@ -128,7 +128,7 @@ namespace GloomBean.Campaign
                 yield return Leap(58.2f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
-            yield return Walk(57.5f);yield return Fold("span-c",Vector2.up,14.04f);yield return Walk(43);yield return Calm();
+            yield return Walk(57.5f);var farTower=session.GetComponentsInChildren<FoldPanel>().First(x=>x.name=="Far folding tower");yield return Await("far tower completes its physical Turn",()=>Mathf.Abs(Mathf.DeltaAngle(farTower.angle,80))<2,9);yield return Fold("span-c",new Vector2(-1,.45f),14.04f);yield return Walk(43);yield return Calm();
             Check("incense slows the moving bridge half",session.GetComponentsInChildren<StructuralDrift>().Any(x=>x.released&&x.TimeScale<.55f));
             yield return Walk(38);yield return Fold("span-b",Vector2.left,7.13f);yield return Walk(24);
             yield return Fold("span-a",Vector2.left,9.46f);yield return Walk(2);

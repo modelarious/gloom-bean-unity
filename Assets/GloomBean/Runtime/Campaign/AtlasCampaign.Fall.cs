@@ -100,7 +100,7 @@ namespace GloomBean.Campaign
             var transept=b.Slider(new Vector2(73,1.8f),new Vector2(60.5f,5.8f),new Vector2(5,.4f),3);transept.name="Collapsing transept";transept.gameObject.SetActive(false);transept.respectBraces=false;
             var dock=a.Ledge(62,6,6);dock.name="Still-attached tower";
             var bridge=a.Hinge(new Vector2(59,5.74f),10,180,"transept");bridge.name="Transept structural joint";a.Seam(new Vector2(50.340f,10.74f),"transept");a.Ledge(47.95f,11,3.9f);
-            a.Source(HostKind.Coffin,46,12,true);
+            var returnCoffin=a.Source(HostKind.Coffin,46,12,true);returnCoffin.gameObject.SetActive(false);
             var platform=b.Solid("Impact return hoist",new Vector2(42,10.8f),new Vector2(8,.4f),b.accent,Layers.Moving);var platformBody=platform.AddComponent<Rigidbody2D>();platformBody.bodyType=RigidbodyType2D.Kinematic;
             var hoist=platform.AddComponent<ImpactHoist>();hoist.frame=frame;hoist.rise=14;hoist.speed=6;
             var bellReceiver=a.Receiver(new Vector2(42,14));var toll=a.Bell(new Vector2(42,13.1f),new[]{new Vector2(42,13.1f),new Vector2(42,14)},bellReceiver);toll.GetComponent<Collider2D>().isTrigger=true;toll.splitOnTurn=false;
@@ -109,10 +109,10 @@ namespace GloomBean.Campaign
             var cure=a.Cure(HostKind.Coffin,45.2f,12);cure.transform.SetParent(platform.transform,true);cure.gameObject.SetActive(false);hoist.releaseCure=cure.gameObject;
             var incense=a.Source(HostKind.Censer,44,12,true);incense.transform.SetParent(platform.transform,true);incense.gameObject.SetActive(false);hoist.arrivalObjects=new[]{incense.gameObject};
             var returnA=a.Ledge(35,26.6f,5);var returnB=a.Ledge(29,28.2f,6);var gallery=a.Ledge(11,28.2f,32);returnA.SetActive(false);returnB.SetActive(false);gallery.SetActive(false);
-            var chapel=b.Slider(new Vector2(49,26.8f),new Vector2(58,26.8f),new Vector2(5,.4f),2.1f);chapel.name="Passing Mercy chapel";chapel.gameObject.SetActive(false);a.Mercy(49,28.2f);
+            var chapel=b.Slider(new Vector2(49,26.8f),new Vector2(58,26.8f),new Vector2(5,.4f),2.1f);chapel.name="Passing Mercy chapel";chapel.paused=true;chapel.GetComponent<Collider2D>().enabled=false;a.Mercy(49,28.2f);
             foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(chapel.transform,true);
             a.Health(77,1.2f);a.Cure(HostKind.None,4,29.2f,true);
-            b.session.Turned+=()=>{frame.falling=true;transept.gameObject.SetActive(true);chapel.gameObject.SetActive(true);returnA.SetActive(true);returnB.SetActive(true);gallery.SetActive(true);};
+            b.session.Turned+=()=>{frame.falling=true;returnCoffin.gameObject.SetActive(true);transept.gameObject.SetActive(true);chapel.paused=false;chapel.GetComponent<Collider2D>().enabled=true;returnA.SetActive(true);returnB.SetActive(true);gallery.SetActive(true);};
             b.Tip(new Vector2(7,22),"The descent is still quiet. Learn the ledges: the way out will rise above them.");
             b.Tip(new Vector2(74,2),"The Nail releases the whole building. Slow the moving transept, then cross to the still-attached tower.");
             b.Tip(new Vector2(60,7),"Join the loose transept edge to its tower seam. The piece itself swings into a rising return route.");

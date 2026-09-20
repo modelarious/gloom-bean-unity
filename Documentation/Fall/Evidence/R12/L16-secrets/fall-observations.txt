@@ -1,0 +1,12 @@
+BEGIN GB-L16 The Cathedral in Freefall
+PASS GB-L16 walk 10 | (9.78, 20.76) feet=20.01 hp=6 twin=none
+PASS GB-L16 opening incense tenant | (9.78, 20.76) feet=20.01 hp=6 twin=none
+PASS GB-L16 walk 28 | (27.80, 14.75) feet=14.00 hp=6 twin=none
+PASS GB-L16 transept stitch source | (27.80, 14.75) feet=14.00 hp=6 twin=none
+COFFIN blocker=Platform Center: (52.00, 5.80, 0.00), Extents: (2.50, 0.20, 0.00) candidate=(51.14, 7.04) angle=-367.5 hull=Center: (51.01, 6.99, 0.00), Extents: (0.50, 1.00, 0.00) angle=-360 ground=Platform (UnityEngine.BoxCollider2D)
+PHYSICAL shape=Center: (51.01, 6.99, 0.00), Extents: (0.00, 0.00, 0.00) axis=Vertical forms=Stitch,Coffin
+CONTACT Host Center: (51.01, 6.99, 0.00), Extents: (0.50, 1.00, 0.00)
+FAIL GB-L16 walk 80.5 | (51.01, 6.99) feet=5.99 hp=6 twin=none
+FAIL GB-L16 cathedral Keyling | (51.01, 6.99) feet=5.99 hp=6 twin=none
+FAIL GB-L16 Nail releases actual cathedral | (51.01, 6.99) feet=5.99 hp=6 twin=none
+FAIL GB-L16 stage completes through physical exit or boss solution | (51.01, 6.99) feet=5.99 hp=6 twin=none

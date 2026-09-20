@@ -1,22 +1,16 @@
 {
-  "id": "Fall-R12-buffered-parity-and-nave",
+  "id": "Fall-R13-return-order-and-visible-chapel",
   "build": true,
   "cases": [
+    {
+      "name": "L14-critical",
+      "suite": "Fall",
+      "route": "GB-L14"
+    },
     {
       "name": "L14-secrets",
       "suite": "Fall",
       "route": "GB-L14",
-      "secrets": true
-    },
-    {
-      "name": "L15-critical",
-      "suite": "Fall",
-      "route": "GB-L15"
-    },
-    {
-      "name": "L15-secrets",
-      "suite": "Fall",
-      "route": "GB-L15",
       "secrets": true
     },
     {
