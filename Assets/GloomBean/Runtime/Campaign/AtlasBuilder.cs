@@ -89,6 +89,6 @@ namespace GloomBean.Campaign
         {var g=b.Solid("A falling witness",new Vector2(x,top),new Vector2(.9f,2.4f),new Color(.6f,.62f,.66f),Layers.Moving);g.AddComponent<Rigidbody2D>();var f=g.AddComponent<KneelingFigure>();f.floor=floor;f.delay=delay;f.height=top-floor;return f;}
         public PulseBell Bell(Vector2 p,Vector2[] rope,PulseReceiver receiver){var g=b.Solid("Signal bell",p,Vector2.one,new Color(.85f,.71f,.39f));var bell=g.AddComponent<PulseBell>();bell.rope=rope;bell.receiver=receiver;return bell;}
         public PulseReceiver Receiver(Vector2 p){var g=b.Trigger("Bell brake",p,Vector2.one*.5f,new Color(.86f,.68f,.4f));return g.AddComponent<PulseReceiver>();}
-        public void Finish(){foreach(var m in b.root.GetComponentsInChildren<MotionPlatform>(true))if(!m.GetComponent<TemporalBody>())m.gameObject.AddComponent<TemporalBody>();foreach(var e in b.root.GetComponentsInChildren<CarryableEnemy>(true))if(!e.GetComponent<TemporalBody>())e.gameObject.AddComponent<TemporalBody>();}
+        public void Finish(){b.root.gameObject.AddComponent<CampaignScenery>().Initialize(d);foreach(var m in b.root.GetComponentsInChildren<MotionPlatform>(true))if(!m.GetComponent<TemporalBody>())m.gameObject.AddComponent<TemporalBody>();foreach(var e in b.root.GetComponentsInChildren<CarryableEnemy>(true))if(!e.GetComponent<TemporalBody>())e.gameObject.AddComponent<TemporalBody>();}
     }
 }

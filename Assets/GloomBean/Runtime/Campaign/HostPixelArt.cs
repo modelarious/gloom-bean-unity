@@ -61,6 +61,70 @@ namespace GloomBean.Campaign
             }
             if(pose==3){p.Line(7,51,4,59,1,Cream);p.Line(57,48,60,57,1,Cream);}var sprite=p.Finish(key);bank[key]=sprite;return sprite;
         }
+
+        public static Sprite Tenant(HostKind kind,int frame=0)
+        {
+            frame&=3;string key="tenant-"+kind+"-"+frame;if(bank.TryGetValue(key,out var cached))return cached;
+            var p=new Pixel(64);int bob=frame==1||frame==3?1:0;
+            void Body(int x,int y,int rx,int ry,Color32 c){p.Ellipse(x,y,rx+2,ry+2,Ink);p.Ellipse(x,y,rx,ry,c);}
+            switch(kind){
+                case HostKind.Echo:
+                    Body(32,31,16,18,Hex(0x779db7));p.Rect(13,14,39,5,Ink);p.Rect(15,17,35,4,Gold);p.Ring(32,48,6,7,2,Gold);Eye(p,33,33,6,9,1);p.Line(9,36,4,36,1,Lavender);p.Line(57,27,61,27,1,Lavender);break;
+                case HostKind.Marionette:
+                    for(int k=0;k<4;k++){int y=18+k*8;for(int d=-1;d<=1;d+=2){p.Line(32,y,32+d*24,y+7-k*3,2,Ink);p.Line(32+d*24,y+7-k*3,32+d*27,y-5+bob,1,High);}}
+                    Body(32,33,13,17,Purple);p.Line(32,46,32,63,1,Cream);p.Ring(32,44,7,7,2,Gold);Eye(p,28,33,4,6,0);Eye(p,38,33,4,6,0);break;
+                case HostKind.Molt:
+                    Body(16,34,13,21,Hex(0xa56c87));Body(48,34,13,21,Hex(0xa56c87));p.Ring(15,37,8,12,2,Cream);p.Ring(48,37,8,12,2,Cream);Body(32,27,6,18,Dark);p.Line(29,41,23,57,1,Gold);p.Line(35,41,42,57,1,Gold);Eye(p,30,42,3,4,0);Eye(p,36,42,3,4,0);break;
+                case HostKind.Wax:
+                    for(int d=-1;d<=1;d+=2){Body(32+d*14,35,12,16,Cream);p.Line(32+d*12,27,32+d*23,39,1,Gold);}
+                    p.Rect(24,12,20,33,Ink);p.Rect(27,14,14,30,Hex(0xb89b74));Body(33,46,10,10,Cream);Eye(p,34,46,4,5,1);p.Ring(33,59,12,3,1,Gold);p.Line(44,32,53,30,2,Gold);p.Rect(49,27,7,16,Cream);p.Ellipse(54,48+bob,3,5,Rose);p.Line(51,27,51,16,2,Gold);break;
+                case HostKind.Gullet:
+                    Body(23,28,20,21,Hex(0x81946c));p.Ring(22,29,15,15,2,Gold);p.Ring(22,29,9,9,2,Dark);p.Ring(22,29,3,4,1,Cream);Body(39,14,20,8,Hex(0xbfa781));p.Line(44,22,43,43,2,Ink);p.Line(56,22,58,45,2,Ink);Eye(p,43,44,4,6,0);Eye(p,57,45,4,6,0);p.Ellipse(51,20,10,8,Ink);for(int x=44;x<=59;x+=4)p.Rect(x,22,2,4,Cream);break;
+                case HostKind.Root:
+                    for(int i=0;i<12;i++){float a=i*Mathf.PI/6;p.Line(32,31,32+(int)(Mathf.Cos(a)*27),31+(int)(Mathf.Sin(a)*27),2,Hex(0x647d45));}
+                    Body(32,31,18,18,Hex(0x445a32));for(int i=0;i<8;i++)p.Ellipse(23+(i%3)*9,18+(i/3)*10,3,3,Gold);Eye(p,32,34,7,10,0);break;
+                case HostKind.Mirror:
+                    p.Rect(13,7,38,42,Ink);p.Ellipse(32,42,20,18,Ink);p.Ellipse(32,45,10,11,Hex(0xb297a7));p.Line(17,10,25,48,1,High);p.Line(46,10,41,46,1,High);Eye(p,30,47,4,5,0);Body(36,29,14,19,Gold);p.Ellipse(36,30,11,16,Hex(0x698bab));p.Line(29,27,42,42,1,White);p.Line(33,17,44,30,1,Lavender);break;
+                case HostKind.InsideOut:
+                    Body(14,38,11,15,White);Body(50,38,11,15,White);Body(32,36,12,16,Pink);p.Ring(32,55,12,4,1,Gold);p.Ellipse(32,38,8,11,Cream);p.Line(22,37,38,25,2,Ink);p.Line(21,34,11,16,2,Pink);p.Line(42,34,56,13,2,Pink);p.Line(11,16,19,8,1,White);Eye(p,31,41,4,5,0);break;
+                case HostKind.Parallax:
+                    Body(17,41+bob,14,14,Lavender);Body(47,41-bob,14,14,Lavender);Body(32,26,13,16,Dark);Eye(p,23,35,8,10,1);Eye(p,42,38,8,11,-1);p.Line(27,15,20,5,1,Gold);p.Line(38,15,43,5,1,Gold);p.Ellipse(26,37,2,4,Hex(0x739fbb));break;
+                case HostKind.Censer:
+                    p.Line(32,59,12,24,1,Gold);p.Line(32,59,52,24,1,Gold);p.Ring(32,60,4,4,1,Cream);Body(32,23,22,13,Hex(0x55747e));p.Rect(12,26,40,3,Gold);for(int x=16;x<=49;x+=8)p.Rect(x,14,2,12,Gold);for(int k=0;k<3;k++)p.Ring(20+k*12,40+(k+frame)%3*4,6,7,1,Hex(0xa5c3c6));Eye(p,32,23,5,7,0);break;
+                case HostKind.Stitch:
+                    for(int k=0;k<3;k++){p.Line(30,20+k*8,7,12+k*15,1,Gold);p.Line(35,20+k*8,51,12+k*15,1,Gold);}
+                    Body(30,28,12,18,Hex(0x985571));p.Ring(29,22,8,7,3,Cream);Eye(p,30,40,5,7,1);p.Line(54,5,57,57,2,Ink);p.Line(55,6,58,57,1,White);p.Ring(57,58,3,4,1,Gold);p.Line(55,60,34,58,1,Pink);break;
+                case HostKind.Coffin:
+                    for(int d=-1;d<=1;d+=2){p.Line(32,23,32+d*25,14,2,Ink);p.Line(32+d*25,14,32+d*28,7+bob,1,Rose);Body(32+d*22,29,7,10,Hex(0xa05a60));}
+                    p.Rect(14,15,35,31,Ink);p.Rect(18,12,27,38,Ink);p.Rect(20,16,23,30,Hex(0x85545f));p.Rect(24,22,15,2,Gold);p.Rect(30,19,2,10,Gold);Eye(p,26,48,4,6,0);Eye(p,38,48,4,6,0);break;
+                case HostKind.Lodestone:
+                    p.Rect(13,5,38,8,Ink);p.Rect(16,10,32,5,Gold);p.Rect(22,14,22,23,Hex(0x87969c));Body(33,41,12,13,Hex(0xa5b2b6));Eye(p,34,41,4,6,1);p.Ring(32,40,27,20,3,Ink);p.Ring(32,40,25,18,2,Gold);p.Rect(6,32,6,12,Hex(0xcf616c));p.Rect(52,32,6,12,Hex(0x6596c4));break;
+                case HostKind.Shadow:
+                    p.Rect(29,5,6,28,Ink);p.Rect(18,4,29,4,Gold);p.Line(32,32,32,59,2,Gold);Body(32,40,20,19,Gold);p.Ellipse(32,40,16,15,Cream);p.Ellipse(34,39,8,11,Ink);p.Line(5,41,13,41,1,White);p.Line(52,41,60,41,1,White);p.Line(32,59,32,63,1,White);break;
+                default:
+                    for(int i=0;i<6;i++){int x=12+i*7,y=20+(int)(Mathf.Sin(i*.65f+frame*.35f)*9);Body(x,y,8,10,Dark);p.Line(x-3,y-3,x+3,y+3,1,Mid);}
+                    Body(51,36,10,15,Hex(0x6f5486));Eye(p,51,41,4,6,0);p.Line(53,23,57,12,3,Ink);p.Line(55,20,57,12,1,Cream);p.Ellipse(57,6,3,3,Mid);break;
+            }
+            var sprite=p.Finish(key);bank[key]=sprite;return sprite;
+        }
+        public static Sprite Boss(int world,int act=0)
+        {
+            string key="boss-"+world+"-"+act;if(bank.TryGetValue(key,out var old))return old;
+            var p=new Pixel(128);Color32 flesh=world==2?Hex(0x9d9b60):world==3?Hex(0x8ca6ac):world==5?Hex(0xd9bd9f):Hex(0x927084);
+            p.Ellipse(64,57,46,54,Ink);p.Ellipse(64,57,42,49,Dark);
+            for(int d=-1;d<=1;d+=2){p.Line(64+d*31,49,64+d*54,10,5,Ink);p.Line(64+d*31,49,64+d*54,10,3,flesh);}
+            p.Ellipse(64,81,36,36,Ink);p.Ellipse(64,81,32,32,flesh);p.Ellipse(57,85,25,28,Hex(0xb99c99));
+            for(int y=15;y<65;y+=8){p.Line(40,y,58,y+4,1,flesh);p.Line(70,y+4,90,y,1,flesh);}
+            Eye(p,49,85,9,13,act==1?-2:1,true);Eye(p,79,88,9,13,act==1?2:-1,true);
+            p.Ellipse(65,58,18,act==2?17:10,Ink);for(int x=53;x<=79;x+=6)p.Rect(x,act==2?68:62,3,5,Cream);
+            if(world==1){p.Rect(23,110,81,5,Ink);p.Rect(34,116,57,8,Gold);p.Line(33,105,27,74,2,Gold);p.Line(97,105,101,74,2,Gold);}
+            if(world==2){for(int x=18;x<115;x+=18){p.Line(64,109,x,122,2,Hex(0x69804c));p.Ellipse(x,116,7,9,Gold);Eye(p,x,117,2,3,0);}}
+            if(world==3){p.Rect(26,115,74,4,Gold);p.Line(29,120,10,62,1,Lavender);p.Line(99,120,117,62,1,Lavender);p.Ring(65,88,31,31,1,Cream);}
+            if(world==4){for(int i=0;i<4;i++){Eye(p,25+i*25,37+(i%2)*12,5,7,0);p.Line(22+i*25,25,18+i*26,5,2,flesh);}}
+            if(world==5){p.Ring(64,88,49,35,2,Gold);for(int i=0;i<5;i++)Eye(p,26+i*19,115-(i%2)*10,4,6,0);p.Line(60,59,59,19,3,Pink);p.Line(72,53,80,12,2,Rose);}
+            old=p.Finish(key,128);bank[key]=old;return old;
+        }
+
         public static Sprite Terrain(int world)
         {
             string key="terrain-"+world;if(bank.TryGetValue(key,out var s))return s;var p=new Pixel(32);var shade=Hex(0xcbbfd1);p.Rect(0,0,32,32,shade);p.Rect(0,29,32,3,White);p.Rect(0,0,32,3,Hex(0x796b84));

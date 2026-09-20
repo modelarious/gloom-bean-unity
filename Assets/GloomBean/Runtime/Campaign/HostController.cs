@@ -31,7 +31,7 @@ namespace GloomBean.Campaign
         public bool Has(HostKind kind)=>Forms.Exists(f=>f.Kind==kind);
         public T Form<T>() where T:HostForm=>Forms.Find(f=>f is T) as T;
         public static string Display(HostKind k)=>k==HostKind.InsideOut?"INSIDE-OUT":k.ToString().ToUpperInvariant();
-        void Awake(){Actor=GetComponent<ActorMotor>();Actor.modifier=this;gameObject.AddComponent<HostView>();}
+        void Awake(){Actor=GetComponent<ActorMotor>();Actor.modifier=this;gameObject.AddComponent<HostView>();gameObject.AddComponent<HostPixelView>();}
         public bool Acquire(HostKind kind,HostSource source=null,bool combine=false)
         {
             if(kind==HostKind.None)return Cure();
@@ -137,7 +137,7 @@ namespace GloomBean.Campaign
         {
             var go=new GameObject("Corporeal secondary Host");go.transform.SetParent(transform.parent);go.transform.position=p;
             var a=go.AddComponent<ActorMotor>();a.replica=true;a.pickupDisabled=true;a.manual=true;
-            var view=go.AddComponent<ActorView>();view.corrupted=true;view.ghost=true;view.tint=color;
+            var view=go.AddComponent<ActorView>();view.corrupted=true;view.ghost=true;view.tint=color;go.AddComponent<HostPixelView>();
             return a;
         }
     }
