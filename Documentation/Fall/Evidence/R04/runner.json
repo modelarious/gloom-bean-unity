@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  178,
+                        "case":  "L13-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  203,
+                        "case":  "L13-secrets",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Fall-R04-stable-kneeling",
+    "started":  "2026-09-19T22:18:05.0768997-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-19T22:21:55.6444407-06:00"
+}

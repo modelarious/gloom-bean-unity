@@ -2,8 +2,12 @@
   "schema_version": 1,
   "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Continue preserved Fall work from 7b0fd1d: read latest Rain native failure and FallVerification.cs; finish L13 ordinary/secret return, then L14/L15/L16 and B4. City clean earned progression has passed; do not repeat City from stale context.",
-  "active_job": null,
+  "next_gate": "L13 actual input normal (178) and Mercy (203) pass. Now build/test authored L14 folds, island and drifting return (R05), then L15/L16/B4. City clean regression already preserved.",
+  "active_job": {
+    "task": "GloomBean-Orchard-v04",
+    "receipt": "Reports/Orchard-v04/Fall-R05-folded-bridge/runner.json",
+    "state": "READY_NOT_STARTED"
+  },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",

@@ -1,17 +1,21 @@
 {
-  "id": "Fall-R04-stable-kneeling",
+  "id": "Fall-R05-folded-bridge",
   "build": true,
   "cases": [
     {
-      "name": "L13-critical",
+      "name": "L14-critical",
       "suite": "Fall",
-      "route": "GB-L13"
+      "route": "GB-L14"
     },
     {
-      "name": "L13-secrets",
+      "name": "L14-secrets",
       "suite": "Fall",
-      "route": "GB-L13",
+      "route": "GB-L14",
       "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }
