@@ -1,0 +1,89 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 11.8 body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+MAGNET t=2.433774 body=(11.64, 0.97) velocity=(2.29, 12.40) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=2.938509 body=(13.56, 2.83) velocity=(5.50, -1.00) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=3.451262 body=(15.36, 2.75) velocity=(1.76, 0.00) pole=1 target=(16.00, 2.75) reversals=0
+SUPPORT Platform
+PASS GB-L17 magnetic landing at (16.00, 2.75) body=(15.38, 2.75) velocity=(1.27, 0.00) feet=2.004988 hp=6
+PASS GB-L17 visible coil launch stance 16 body=(16.97, 2.75) velocity=(0.38, 0.00) feet=2.004999 hp=6
+FLIGHT body=(16.99, 2.98) v=(1.15, 13.54) pole=1 target=(27.00, 4.75)
+FLIGHT body=(19.95, 9.22) v=(7.94, 6.60) pole=1 target=(27.00, 4.75)
+FLIGHT body=(24.42, 8.41) v=(9.53, -9.77) pole=1 target=(27.00, 4.75)
+PASS GB-L17 coil flight lands on physical support (27.00, 4.75) body=(27.64, 4.75) velocity=(1.96, 0.00) feet=4.004835 hp=6
+PASS GB-L17 visible coil launch stance 27 body=(27.87, 4.75) velocity=(-0.09, 0.00) feet=4.004999 hp=6
+FLIGHT body=(27.88, 4.98) v=(0.65, 13.60) pole=1 target=(38.00, 6.75)
+FLIGHT body=(30.36, 11.28) v=(7.10, 7.49) pole=1 target=(38.00, 6.75)
+FLIGHT body=(34.64, 10.84) v=(9.03, -9.24) pole=1 target=(38.00, 6.75)
+FLIGHT body=(38.60, 6.75) v=(5.31, 0.00) pole=-1 target=(38.00, 6.75)
+PASS GB-L17 coil flight lands on physical support (38.00, 6.75) body=(38.87, 6.75) velocity=(1.71, 0.00) feet=6.004982 hp=6
+PASS GB-L17 visible coil launch stance 38 body=(38.88, 6.75) velocity=(0.00, 0.00) feet=6.004989 hp=6
+FLIGHT body=(38.89, 6.98) v=(0.75, 13.60) pole=1 target=(49.00, 8.75)
+FLIGHT body=(41.56, 13.37) v=(7.33, 6.97) pole=1 target=(49.00, 8.75)
+FLIGHT body=(45.77, 12.79) v=(9.13, -9.30) pole=1 target=(49.00, 8.75)
+FLIGHT body=(49.67, 8.75) v=(3.89, 0.00) pole=-1 target=(49.00, 8.75)
+PASS GB-L17 coil flight lands on physical support (49.00, 8.75) body=(49.80, 8.75) velocity=(1.77, 0.00) feet=8.004987 hp=6
+PASS GB-L17 visible coil launch stance 49 body=(49.87, 8.75) velocity=(-0.08, 0.00) feet=8.004998 hp=6
+FLIGHT body=(49.88, 8.98) v=(0.67, 13.60) pole=1 target=(60.00, 10.75)
+FLIGHT body=(52.37, 15.28) v=(7.12, 7.48) pole=1 target=(60.00, 10.75)
+FLIGHT body=(56.65, 14.84) v=(9.05, -9.24) pole=1 target=(60.00, 10.75)
+FLIGHT body=(60.60, 10.76) v=(5.22, 0.00) pole=-1 target=(60.00, 10.75)
+PASS GB-L17 coil flight lands on physical support (60.00, 10.75) body=(60.86, 10.76) velocity=(1.64, 0.00) feet=10.00679 hp=6
+PASS GB-L17 visible coil launch stance 60 body=(60.87, 10.76) velocity=(0.00, 0.00) feet=10.00679 hp=6
+FLIGHT body=(60.89, 10.98) v=(0.75, 13.60) pole=1 target=(71.00, 12.75)
+FLIGHT body=(63.41, 17.26) v=(7.20, 7.44) pole=1 target=(71.00, 12.75)
+FLIGHT body=(67.74, 16.80) v=(9.11, -9.29) pole=1 target=(71.00, 12.75)
+FLIGHT body=(71.61, 12.75) v=(4.72, 0.00) pole=-1 target=(71.00, 12.75)
+PASS GB-L17 coil flight lands on physical support (71.00, 12.75) body=(71.81, 12.75) velocity=(1.92, 0.00) feet=12.00499 hp=6
+PASS GB-L17 visible coil launch stance 71 body=(71.87, 12.76) velocity=(-0.09, 0.00) feet=12.005 hp=6
+FLIGHT body=(71.88, 12.98) v=(0.66, 13.60) pole=1 target=(83.00, 12.90)
+FLIGHT body=(74.48, 19.39) v=(7.21, 7.02) pole=1 target=(83.00, 12.90)
+FLIGHT body=(78.63, 18.87) v=(8.85, -8.81) pole=1 target=(83.00, 12.90)
+FLIGHT body=(83.71, 13.04) v=(6.99, -1.09) pole=-1 target=(83.00, 12.96)
+FLIGHT body=(83.32, 14.17) v=(-5.31, -1.15) pole=-1 target=(83.00, 14.10)
+PASS GB-L17 coil flight lands on physical support (83.00, 15.53) body=(82.54, 15.55) velocity=(2.12, -1.13) feet=14.80179 hp=6
+PASS GB-L17 catch the actual hanging screen body=(82.54, 15.55) velocity=(2.12, -1.13) feet=14.80179 hp=6
+CABLE deck=(83.00, 14.50) bell=(78.03, 14.82) tension=0 body=(82.57, 15.62)
+CABLE deck=(83.00, 11.76) bell=(78.09, 14.90) tension=7.127505 body=(82.01, 12.83)
+CABLE deck=(83.00, 11.81) bell=(78.28, 14.82) tension=50.19476 body=(81.62, 12.87)
+CABLE deck=(83.00, 11.81) bell=(78.48, 14.82) tension=42.04187 body=(81.70, 12.86)
+CABLE deck=(83.00, 11.82) bell=(78.69, 14.82) tension=33.20832 body=(81.70, 12.88)
+CABLE deck=(83.00, 11.81) bell=(78.73, 14.82) tension=59.93707 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.82) bell=(78.70, 14.82) tension=34.73468 body=(81.71, 12.87)
+CABLE deck=(83.00, 11.81) bell=(78.56, 14.82) tension=54.37144 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.28, 14.82) tension=46.41166 body=(81.69, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.03, 14.82) tension=49.37594 body=(81.71, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.07, 14.82) tension=52.41904 body=(81.69, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.18, 14.82) tension=46.22749 body=(81.67, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.33, 14.82) tension=42.61061 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.45, 14.82) tension=56.78298 body=(81.70, 12.85)
+CABLE deck=(83.00, 11.81) bell=(78.47, 14.82) tension=38.62921 body=(81.70, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.47, 14.82) tension=54.50734 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.38, 14.82) tension=56.13927 body=(81.69, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.24, 14.82) tension=44.32396 body=(81.72, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.14, 14.82) tension=52.76712 body=(81.71, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.07, 14.82) tension=53.32531 body=(81.65, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.06, 14.82) tension=49.20509 body=(81.72, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.13, 14.82) tension=52.99741 body=(81.69, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.23, 14.82) tension=47.62989 body=(81.66, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.34, 14.82) tension=52.07317 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.43, 14.82) tension=56.57731 body=(81.70, 12.85)
+CABLE deck=(83.00, 11.81) bell=(78.45, 14.82) tension=40.06484 body=(81.70, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.41, 14.82) tension=54.65254 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.34, 14.82) tension=42.7236 body=(81.69, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.26, 14.82) tension=53.67907 body=(81.70, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.17, 14.82) tension=46.07592 body=(81.69, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.12, 14.82) tension=52.99729 body=(81.69, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.12, 14.82) tension=47.45756 body=(81.70, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.15, 14.82) tension=53.93336 body=(81.67, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.23, 14.82) tension=44.86678 body=(81.70, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.31, 14.82) tension=46.82872 body=(81.68, 12.85)
+CABLE deck=(83.00, 11.80) bell=(78.38, 14.82) tension=51.5877 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.39, 14.82) tension=43.28199 body=(81.69, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.38, 14.82) tension=53.94354 body=(81.71, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.31, 14.82) tension=43.32173 body=(81.69, 12.86)
+CABLE deck=(83.00, 11.80) bell=(78.24, 14.82) tension=53.9785 body=(81.69, 12.85)
+FAIL GB-L17 loose bell physically leaves its saddle body=(81.71, 12.85) velocity=(0.06, -0.08) feet=12.10495 hp=6
+FAIL GB-L17 falling bell lifts screen and Host through the cable body=(81.71, 12.85) velocity=(0.06, -0.08) feet=12.10495 hp=6

@@ -50,7 +50,7 @@ namespace GloomBean.Campaign
             b.Solid("Separate counterweight chute",new Vector2(80.35f,11.6f),new Vector2(.2f,8.2f),new Color(.57f,.60f,.64f));
             a.Ledge(81,7,10);a.Ledge(92,19.4f,10);a.Key(91,20.7f);a.Nail(96,19.8f);
             var pulleyObject=new GameObject("Loose-bell hanging-screen cable");pulleyObject.transform.SetParent(b.root);var cable=pulleyObject.AddComponent<CablePulley>();cable.Configure(deck,weight,new Vector2(83,28),new Vector2(78.2f,28));
-            b.Tip(new Vector2(71,13),"Repel from the final coil and catch the suspended screen. SOUTH pulls the loose bell off its saddle; its falling mass tensions the cable and lifts your real platform.");
+            b.Tip(new Vector2(71,13),"Repel from the final coil and catch the suspended screen. Brace against the left guide: SOUTH pulls the loose bell off its saddle; its falling mass tensions the cable and lifts your real platform.");
             PrimitiveArt.Line("Screen guide",b.root,new Vector2(83,11),new Vector2(83,21),.04f,new Color(.66f,.68f,.72f),-1);
         }
         ShadowSun Sun(AtlasBuilder a,Vector2 p,float reach=22)
