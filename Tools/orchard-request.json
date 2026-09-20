@@ -1,11 +1,15 @@
 {
-  "id": "Empyrean-R09-direct-orbital-launch",
+  "id": "Empyrean-H01-fixed-pose-clock",
   "build": true,
   "cases": [
     {
       "name": "L17-critical",
       "suite": "Empyrean",
       "route": "GB-L17"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

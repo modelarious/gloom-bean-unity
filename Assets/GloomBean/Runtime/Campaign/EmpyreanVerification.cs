@@ -39,8 +39,8 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end){Vector2 error=target-actor.Body.position;var velocity=actor.Body.linearVelocity;
                 if(error.magnitude<(landing?.8f:1.1f)&&(!landing||actor.Grounded&&Mathf.Abs(velocity.x)<1.5f))break;
                 Vector2 northForce=Vector2.zero;
-                foreach(var metal in MagneticBody.All)if(metal&&metal.enabled&&Vector2.Distance(actor.Body.position,metal.transform.position)<magnet.range)
-                    northForce+=LodestoneForm.Force(actor.Body.position,metal.transform.position,1,metal.polarity,metal.strength);
+                foreach(var metal in MagneticBody.All)if(metal&&metal.enabled&&Vector2.Distance(actor.Body.position,metal.Position)<magnet.range)
+                    northForce+=LodestoneForm.Force(actor.Body.position,metal.Position,1,metal.polarity,metal.strength);
                 Vector2 desired=new Vector2(error.x*6-velocity.x*3,error.y*9-velocity.y*4+actor.tuning.gravity);
                 int pole=fixedPole!=0&&(!landing||error.magnitude<3.5f)?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);bool reverse=pole!=magnet.Polarity&&Time.time>=nextToggle;
                 if(reverse){nextToggle=Time.time+.18f;reversals++;}
