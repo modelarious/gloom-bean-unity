@@ -237,7 +237,7 @@ namespace GloomBean.Foundation
         {
             pounding=false;State=MotionState.Idle;RuntimeEvents.Emit("pound-impact",power.ToString());LandedPound?.Invoke(power);
             int n=Physics2D.OverlapBoxNonAlloc(Feet+Vector2.down*.15f,new Vector2(power==3?4f:1.5f,.7f),0,overlaps);
-            for(int i=0;i<n;i++) if(overlaps[i]&&overlaps[i]!=Shape)RuntimeEvents.Hittable(overlaps[i])?.Hit(new HitInfo(this,Vector2.down,power,true));
+            for(int i=0;i<n;i++) if(overlaps[i]&&overlaps[i]!=Shape&&(Shape.contactMask.value&(1<<overlaps[i].gameObject.layer))!=0)RuntimeEvents.Hittable(overlaps[i])?.Hit(new HitInfo(this,Vector2.down,power,true));
             StageSession.Current?.Camera?.Kick(power==3? .18f:.08f);
         }
         void AttackContact()
@@ -246,7 +246,7 @@ namespace GloomBean.Foundation
             int n=Physics2D.OverlapBoxNonAlloc(center,pounding?new Vector2(.8f,.45f):new Vector2(.65f,Height*.72f),0,overlaps);
             for(int i=0;i<n;i++)
             {
-                var c=overlaps[i]; if(!c||c==Shape||c.isTrigger||c.GetComponentInParent<ActorMotor>())continue;
+                var c=overlaps[i]; if(!c||c==Shape||c.isTrigger||c.GetComponentInParent<ActorMotor>()||(Shape.contactMask.value&(1<<c.gameObject.layer))==0)continue;
                 var h=RuntimeEvents.Hittable(c); if(h==null||!struck.Add(c))continue;
                 h.Hit(new HitInfo(this,pounding?Vector2.down:Vector2.right*Facing,AttackPower,pounding));
             }

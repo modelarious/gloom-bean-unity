@@ -141,6 +141,12 @@ namespace GloomBean.Foundation
             yield return Steps(70);actor.Hit(new HitInfo(null,Vector2.up,99));Check("damage.lethal-hit-clamps-health-to-zero",actor.Health==0&&actor.State==MotionState.Dead);yield return Place(new Vector2(626,.8f));
 
 
+            yield return Place(new Vector2(600,.8f));var excludedTarget=b.Break(new Vector2(601,.8f),new Vector2(.6f,1.3f),1);excludedTarget.gameObject.layer=17;
+            actor.Shape.excludeLayers=1<<17;actor.Shape.layerOverridePriority=20;input.frame=new InputFrame{move=Vector2.right,attack=true};yield return Steps(8);
+            Check("attack.cannot-hit-geometry-in-excluded-domain",excludedTarget&&excludedTarget.gameObject.activeSelf);
+            yield return Place(new Vector2(600,.8f));actor.Shape.excludeLayers=0;actor.Shape.includeLayers=1<<17;input.frame=new InputFrame{move=Vector2.right,attack=true};yield return Steps(8);
+            Check("attack.can-hit-same-target-in-contact-domain",!excludedTarget||!excludedTarget.gameObject.activeSelf);actor.Shape.includeLayers=0;actor.Shape.layerOverridePriority=0;yield return Place(new Vector2(626,.8f));
+
             var session=game.Session;float remaining=session.Remaining;session.TickClock(20);Check("escape.no-clock-before-turn",Mathf.Abs(remaining-session.Remaining)<.01f);
             Check("escape.cannot-clear-before-switch",!session.TryClear());int turns=0;session.Turned+=()=>turns++;session.Turn();session.Turn();Check("escape.switch-one-shot",turns==1);
             Check("escape.required-items-enforced",!session.TryClear());
