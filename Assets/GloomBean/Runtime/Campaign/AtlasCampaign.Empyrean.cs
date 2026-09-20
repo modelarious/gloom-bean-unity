@@ -142,14 +142,27 @@ namespace GloomBean.Campaign
             a.Source(HostKind.Stitch,41,1);var seasonalHinge=a.Hinge(new Vector2(45,7),19,-25,"season");a.Seam(new Vector2(62,15.5f),"season");a.Steps(41,2,4,2,2,3);a.Ledge(63,15,6);a.Source(HostKind.Marionette,61,16).rail=a.Rail(new Vector2(60,24),new Vector2(83,24));
             a.Cure(HostKind.None,69,1,true);a.Source(HostKind.Parallax,71);a.Projection(new Vector2(75,4),new Vector2(10,10));a.Depth(new Vector2(77,2),new Vector2(7,.5f),0).gameObject.AddComponent<OneWaySurface>();a.Depth(new Vector2(83,3.3f),new Vector2(7,.5f),2).gameObject.AddComponent<OneWaySurface>();a.Projection(new Vector2(83,5),new Vector2(10,8));
             var folded=a.Hinge(new Vector2(90,3),10,0,"depth");a.Seam(new Vector2(97,10),"depth");a.Source(HostKind.Stitch,86,4.5f,true);a.Ledge(97,10,5).AddComponent<OneWaySurface>();a.Cure(HostKind.Parallax,97,10.8f);a.Source(HostKind.InsideOut,101,10.8f);var fresco=PaintedPassage(a,new Vector2(99,10));b.Solid("Closed foundation below the fresco",new Vector2(113,4.9f),new Vector2(28,9.8f));a.Cure(HostKind.InsideOut,126.4f,22);a.Ledge(126,20,6);
-            a.Source(HostKind.Censer,130,1);a.Ledge(130,2,3);a.Ledge(131,4,3);a.Source(HostKind.Coffin,131,4.8f,true);var risers=new List<MotionPlatform>();for(int i=0;i<4;i++)risers.Add(b.Slider(new Vector2(135+i*6,1),new Vector2(135+i*6,15+i*2),new Vector2(5,.5f),1.3f+i*.2f));a.Ledge(158,20,7);
-            a.Source(HostKind.Lodestone,160,21);a.Source(HostKind.Shadow,164,21,true);a.Ledge(172,21,8);a.Ledge(184,23,13);
+            // The fourth sanctum rises. Stillness can delay one real nave while its
+            // neighbour keeps climbing. A missed transfer drops to the lower approach.
+            a.Ledge(130,20,5);a.Source(HostKind.Censer,130,21);a.Ledge(130,2,3);a.Ledge(131,4,3);a.Source(HostKind.Coffin,131,4.8f,true);
+            var risers=new List<MotionPlatform>();for(int i=0;i<4;i++){
+                var r=b.Slider(new Vector2(135+i*6,14+i*2),new Vector2(135+i*6,23+i*2),new Vector2(5,.5f),1.4f+i*.13f);
+                r.name="Ascending nave "+i;r.phase=i*.17f;r.gameObject.AddComponent<OneWaySurface>();risers.Add(r);
+            }a.Ledge(158,20,7);b.Tip(new Vector2(130,22),"The Fall climbs here. Stand still to hold the nearest nave back; its neighbours keep their own time.");
+            a.Source(HostKind.Lodestone,160,21);a.Source(HostKind.Shadow,170,22,true);a.Ledge(172,21,8);a.Ledge(181.75f,23,8.5f);a.Ledge(193,23,6);
             var domainObject=new GameObject("The bright side of shadow");domainObject.transform.SetParent(b.root);var domain=domainObject.AddComponent<ShadowDomain>();domain.area=new Rect(158,15,40,18);var lightPaths=new List<Collider2D>();
             foreach(var pair in new[]{new Vector2(165,20),new Vector2(171,22),new Vector2(179,24)})lightPaths.Add(b.Trigger("Luminous path",pair,new Vector2(8,4),new Color(.98f,.95f,.77f,.18f)).GetComponent<Collider2D>());domain.lightPaths=lightPaths.ToArray();
             a.Metal(new Vector2(175,24),Vector2.one*2,3,false,-1);var finalGate=b.Door(new Vector2(181,25),new Vector2(.65f,5));var hand=b.Trigger("Hand inside the light",new Vector2(178,24),Vector2.one*.6f,new Color(.5f,.4f,.7f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();hand.gate=finalGate;
             a.Key(188,24.3f);a.Nail(194,23.45f);
-            var rhythmGate=b.Door(new Vector2(188,28),new Vector2(.6f,3));a.Ledge(190,26.5f,5);a.Mercy(192,27.8f);var rhyme=b.Trigger("The old parade remembered",new Vector2(185,24),new Vector2(5,7),Color.clear).AddComponent<RhythmMemory>();rhyme.gate=rhythmGate;
-            var retreat=new List<GameObject>();for(int i=0;i<23;i++){var g=a.Ledge(6+i*8,29,7);g.SetActive(false);retreat.Add(g);}a.Ledge(194,25,4);a.Ledge(193,27,4);
+            // The remembered rhythm opens a real trapdoor, not a collectible flag.
+            // The ordinary closed lid is a walkable part of the critical route.
+            var rhythmGate=b.Door(new Vector2(188,22.75f),new Vector2(4,.5f));rhythmGate.name="Remembered skipping-rhyme trapdoor";
+            a.Ledge(188,18.5f,5);b.Solid("Rhyme chamber left wall",new Vector2(185.75f,20.5f),new Vector2(.5f,4));b.Solid("Rhyme chamber right wall",new Vector2(190.25f,20.5f),new Vector2(.5f,4));
+            a.Ledge(186.9f,20.1f,1.5f).AddComponent<OneWaySurface>();a.Ledge(188.8f,21.7f,1.5f).AddComponent<OneWaySurface>();a.Mercy(188,19.7f);
+            var rhyme=b.Trigger("The old parade remembered",new Vector2(185,24),new Vector2(5,7),Color.clear).AddComponent<RhythmMemory>();rhyme.gate=rhythmGate;
+            a.Cure(HostKind.Lodestone,194,25.8f);a.Cure(HostKind.Shadow,193,27.8f);
+            b.Tip(new Vector2(172,23),"Even your shadow needs light now. The dark outside these bright shapes has no path.");
+            var retreat=new List<GameObject>();for(int i=0;i<24;i++){var g=a.Ledge(6+i*8,29,7);g.name="Collapsing sanctum return "+i;g.AddComponent<OneWaySurface>();g.SetActive(false);retreat.Add(g);}a.Ledge(194,25,4);a.Ledge(193,27,4);
             var collapseObject=new GameObject("Final controlled collapse");collapseObject.transform.SetParent(b.root);var collapse=collapseObject.AddComponent<DescentController>();collapse.altitude=500;collapse.speed=.8f;collapse.exit=whiteExit.transform;collapse.Capture(b);
             b.session.Turned+=()=>{collapse.falling=true;foreach(var g in retreat)g.SetActive(true);foreach(var r in risers){var old=r.origin;r.origin=r.end;r.end=old;}finalGate.SetOpen(true);};
             a.Health(70,1.2f);a.Health(130,1.2f);b.Tip(new Vector2(8,2),"Here your echo receives each command first. Your body executes it two seconds later. Four more sanctums bend familiar rules. The final Nail still does not heal you.");

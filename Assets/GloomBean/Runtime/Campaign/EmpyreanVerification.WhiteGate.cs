@@ -80,7 +80,7 @@ namespace GloomBean.Campaign
             yield return LeadWalk(36);if(stopped)yield break;Check("first sanctum is traversed without granting its result",actor.Body.position.x>34);
             yield return LeadWalk(40);if(stopped)yield break;yield return Walk(48);yield return Walk(47);Check("root is available after the material sanctuary sources",host.Has(HostKind.Root));
             yield return SanctumRoot(new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,1.5f));if(stopped)yield break;yield return Walk(68);Check("seasonal wall was traversed through actual material",actor.Body.position.x>62);
-            yield return FoldedSanctum();if(stopped)yield break;Check("remaining White Gate rising and light sanctums require further authored input proof",false);
+            yield return FoldedSanctum();if(stopped)yield break;yield return RisingSanctum();if(stopped)yield break;yield return BrightSanctum();if(stopped)yield break;if(secret){yield return RememberedMercy();if(stopped)yield break;}yield return WhiteCollapse();
         }
     }
 }

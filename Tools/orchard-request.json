@@ -1,11 +1,17 @@
 {
-  "id": "Completion-J02-board-real-fresco-flap",
+  "id": "Completion-J03-rising-light-rhyme-collapse",
   "build": true,
   "cases": [
     {
-      "name": "L20-sanctums",
+      "name": "L20-critical",
       "suite": "Empyrean",
       "route": "GB-L20"
+    },
+    {
+      "name": "L20-secret",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "secrets": true
     }
   ]
 }
