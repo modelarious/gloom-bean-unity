@@ -1,0 +1,4 @@
+{
+  "tested_source": "77f39d82f6846e46ab335e9dc17be1e941b7ad9b",
+  "scope": "237 components pass, L17 ordinary120fps and delayed33assertions each,30fps return fails; L18 two outbound latches pass, high stair fails. No full fidelity claim."
+}

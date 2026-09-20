@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H09-return-and-real-shadows",
+  "id": "Empyrean-H10-orbital-return-and-noon-headroom",
   "build": true,
   "cases": [
     {
@@ -24,10 +24,6 @@
       "name": "L18-critical",
       "suite": "Empyrean",
       "route": "GB-L18"
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

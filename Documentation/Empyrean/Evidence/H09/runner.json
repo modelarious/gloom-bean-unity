@@ -1,0 +1,49 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-120fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  21,
+                        "case":  "L17-30fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-delayed",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  27,
+                        "case":  "L18-critical",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  237,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Empyrean-H09-return-and-real-shadows",
+    "started":  "2026-09-20T04:59:55.2137865-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:01:50.6093170-06:00"
+}

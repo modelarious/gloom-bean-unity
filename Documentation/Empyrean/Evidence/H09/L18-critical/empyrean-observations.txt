@@ -1,0 +1,28 @@
+BEGIN GB-L18 Noon Without Shadows
+PASS GB-L18 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 noon lamp tears off an available shadow body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 16.3 body=(16.10, 0.76) velocity=(1.55, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (20.50, 0.35) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (16.11, 0.01) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 28 body=(27.78, 0.76) velocity=(1.68, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 48.3 body=(48.11, 0.76) velocity=(6.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 1 body=(55.23, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(55.23, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(55.23, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (52.50, 0.35) body=(55.25, 0.76) velocity=(0.32, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 1 body=(55.29, 0.76) velocity=(0.53, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (55.29, 0.01) body=(55.87, 0.76) velocity=(1.63, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(55.93, 0.76) velocity=(1.68, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 60 body=(59.79, 0.76) velocity=(1.62, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 61.5 body=(61.30, 0.76) velocity=(1.52, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 jump to 65 / 1.6 body=(64.71, 2.36) velocity=(0.91, 0.00) feet=1.605556 hp=6
+PASS GB-L18 walk 67 body=(66.80, 2.36) velocity=(1.52, 0.00) feet=1.605556 hp=6
+PASS GB-L18 jump to 71 / 3.2 body=(70.71, 3.95) velocity=(0.91, 0.00) feet=3.204999 hp=6
+FAIL GB-L18 walk 73 body=(71.58, 3.95) velocity=(0.00, 0.00) feet=3.204996 hp=6
+FAIL GB-L18 Noon Keyling reached body=(71.58, 3.95) velocity=(0.00, 0.00) feet=3.204996 hp=6
+FAIL GB-L18 Nail fixes the sun overhead rather than accelerating it body=(71.58, 3.95) velocity=(0.00, 0.00) feet=3.204996 hp=6
