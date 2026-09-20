@@ -54,4 +54,15 @@ class ContinuityTests(unittest.TestCase):
   with self.assertRaises(RuntimeError):pack.package(self.root,self.root/'deliveries','dirty')
  def test_explicit_idle_job_is_not_a_missing_access_error(self):
   d=self.root/'Documentation/Continuity';d.mkdir(parents=True);(d/'CURRENT_CHECKPOINT.json').write_text(json.dumps({'active_job':None,'tested_commit':self.head}));v=status.inspect(self.root,True);self.assertEqual(v['write_probe'],'PASS');self.assertEqual(v['source_vs_tested'],'MATCH');self.assertIsNone(v['active_job'])
+ def test_newer_dispatch_exposes_stale_checkpoint_pointer(self):
+  (self.root/'Tools').mkdir();(self.root/'Tools/orchard-request.json').write_text('{"id":"new-run"}')
+  d=self.root/'Reports/Orchard-v04/new-run';d.mkdir(parents=True);(d/'runner.json').write_text('{"status":"FAIL","results":[{"case":"boss","status":"FAIL","failed":2}]}')
+  r=status.dispatch_observation(self.root,{'active_job':{'receipt':'Reports/old/runner.json'}})
+  self.assertTrue(r['checkpoint_pointer_differs']);self.assertEqual(r['status'],'FAIL_OR_INCOMPLETE');self.assertEqual(r['request_id'],'new-run')
+ def test_dispatch_request_without_run_does_not_pass(self):
+  (self.root/'Tools').mkdir();(self.root/'Tools/orchard-request.json').write_text('{"id":"not-launched"}')
+  self.assertEqual(status.dispatch_observation(self.root,{})['status'],'MISSING')
+ def test_dispatch_path_traversal_refused(self):
+  (self.root/'Tools').mkdir();(self.root/'Tools/orchard-request.json').write_text('{"id":"../not-a-run"}')
+  self.assertEqual(status.dispatch_observation(self.root,{})['status'],'INVALID_REQUEST_ID')
 if __name__=='__main__':unittest.main(verbosity=2)

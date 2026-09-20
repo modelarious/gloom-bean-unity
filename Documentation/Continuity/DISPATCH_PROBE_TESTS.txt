@@ -1,0 +1,23 @@
+test_commits_owned_files_and_bundle_recovers (__main__.ContinuityTests.test_commits_owned_files_and_bundle_recovers) ... ok
+test_dispatch_path_traversal_refused (__main__.ContinuityTests.test_dispatch_path_traversal_refused) ... ok
+test_dispatch_request_without_run_does_not_pass (__main__.ContinuityTests.test_dispatch_request_without_run_does_not_pass) ... ok
+test_empty_runner_is_unknown (__main__.ContinuityTests.test_empty_runner_is_unknown) ... ok
+test_expected_denial_has_explicit_oracle (__main__.ContinuityTests.test_expected_denial_has_explicit_oracle) ... ok
+test_expected_head_mismatch_does_not_stage (__main__.ContinuityTests.test_expected_head_mismatch_does_not_stage) ... ok
+test_explicit_idle_job_is_not_a_missing_access_error (__main__.ContinuityTests.test_explicit_idle_job_is_not_a_missing_access_error) ... ok
+test_failed_child_never_passes (__main__.ContinuityTests.test_failed_child_never_passes) ... ok
+test_missing_receipt_is_not_pass (__main__.ContinuityTests.test_missing_receipt_is_not_pass) ... ok
+test_newer_dispatch_exposes_stale_checkpoint_pointer (__main__.ContinuityTests.test_newer_dispatch_exposes_stale_checkpoint_pointer) ... ok
+test_packager_refuses_uncommitted_runtime (__main__.ContinuityTests.test_packager_refuses_uncommitted_runtime) ... ok
+test_packager_uses_committed_tree_and_refuses_overwrite (__main__.ContinuityTests.test_packager_uses_committed_tree_and_refuses_overwrite) ... ok
+test_read_and_write_probe_are_bounded (__main__.ContinuityTests.test_read_and_write_probe_are_bounded) ... ok
+test_runner_cannot_hide_failed_case (__main__.ContinuityTests.test_runner_cannot_hide_failed_case) ... ok
+test_source_match_distinguishes_doc_only_change (__main__.ContinuityTests.test_source_match_distinguishes_doc_only_change) ... ok
+test_unowned_staged_changes_refused (__main__.ContinuityTests.test_unowned_staged_changes_refused) ... ok
+test_unsafe_scope_refused (__main__.ContinuityTests.test_unsafe_scope_refused) ... ok
+test_valid_child_requires_exit_receipt (__main__.ContinuityTests.test_valid_child_requires_exit_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 4.830s
+
+OK

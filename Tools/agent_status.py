@@ -49,12 +49,30 @@ def runtime_observation(state):
   return {'status':'OBSERVED','value':json.loads(z.stdout),'scope':'Read-only current task/process state; does not start or stop work'}
  except (OSError,ValueError,subprocess.TimeoutExpired) as e:return {'status':'UNKNOWN','error':str(e)}
 
+def dispatch_observation(root,state):
+ # A committed request is a separate observed fact from an older handoff's job pointer.
+ # Follow only the known runner's bounded local request path, not arbitrary supplied paths.
+ request=root/'Tools/orchard-request.json'
+ if not request.is_file():return {'status':'NO_REQUEST'}
+ try:
+  d=json.loads(request.read_text(encoding='utf-8-sig'));name=d.get('id','')
+  if not isinstance(name,str) or not name or len(name)>120 or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in name):return {'status':'INVALID_REQUEST_ID'}
+  rel='Reports/Orchard-v04/'+name+'/runner.json'
+  result=evidence(root,{'name':'Latest explicit campaign request','path':rel})
+  result['request_id']=name;result['request_path']='Tools/orchard-request.json'
+  checkpoint=(state.get('active_job') or {}).get('receipt')
+  result['checkpoint_pointer_differs']=checkpoint is not None and checkpoint!=rel
+  result['scope']='Request and result observation only; does not imply the request is still running or authorize launching it.'
+  return result
+ except (OSError,ValueError) as exc:return {'status':'UNREADABLE_REQUEST','error':str(exc)}
+
 def inspect(root,probe_write=False):
  root=Path(root).resolve();rc,head,error=git(root,'rev-parse','HEAD')
  if rc:raise RuntimeError('Not an accessible Git project: '+error)
  f=root/'Documentation/Continuity/CURRENT_CHECKPOINT.json';s=json.loads(f.read_text(encoding='utf-8-sig')) if f.exists() else {}
  dirty=git(root,'status','--short')[1].splitlines();tested=s.get('tested_commit')
  r={'project':str(root),'head':head,'branch':git(root,'branch','--show-current')[1],'changes':dirty[:60],'changes_truncated':len(dirty)>60,'recent_commits':git(root,'log','-8','--format=%h %s')[1].splitlines(),'remote_names':git(root,'remote')[1].splitlines(),'checkpoint_found':f.exists(),'next_gate':s.get('next_gate','UNKNOWN: read START_HERE.md'),'source_fingerprint':fingerprint(root),'tested_source':tested,'publication':s.get('publication',{'status':'UNKNOWN'}),'active_job':s.get('active_job'),'evidence':[evidence(root,i) for i in s.get('evidence_refs',[])],'scope':'Inspection only. No gameplay tests, builds or remote publication performed.'}
+ r['latest_dispatch_observation']=dispatch_observation(root,s)
  r['runtime_observation']=runtime_observation(s)
  active=s.get('active_job') or {}
  if active.get('receipt'):r['active_job_observation']=evidence(root,{'name':'Current persistent job receipt','path':active['receipt']})
