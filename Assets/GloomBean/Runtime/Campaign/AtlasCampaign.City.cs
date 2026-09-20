@@ -192,7 +192,7 @@ namespace GloomBean.Campaign
             var winchHandle=b.Switch(new Vector2(47,34.8f),"CHANDELIER WINCH");winchHandle.transform.SetParent(winchObj.transform,true);winchHandle.Changed+=v=>winch.upperRequested=v;returnObjects.Add(winchObj);
             var chandelier=b.Solid("Unreachable lobby chandelier seen from below",new Vector2(38,39),new Vector2(8,6),new Color(.73f,.63f,.39f));
             b.Solid("Chandelier inner sill",new Vector2(37,36.55f),new Vector2(12,.5f),new Color(.53f,.83f,.78f),Layers.Interior);
-            Sill(32,36.8f,4);var chandelierTenant=a.Source(HostKind.InsideOut,33.1f,37.5f);chandelierTenant.gameObject.SetActive(false);
+            Sill(33,36.8f,2);var chandelierTenant=a.Source(HostKind.InsideOut,33.1f,37.5f);chandelierTenant.gameObject.SetActive(false);
             var dock=b.root.gameObject.AddComponent<DockedTenant>();dock.lift=winch;dock.tenant=chandelierTenant;
             a.Cure(HostKind.InsideOut,30.8f,37.6f);a.Mercy(38,38);
             foreach(var g in returnObjects)g.SetActive(false);

@@ -1,17 +1,17 @@
 {
-  "id": "City-R18-chandelier-clearance",
+  "id": "City-R19-chandelier-reboarding",
   "build": true,
   "cases": [
-    {
-      "name": "L12-critical",
-      "suite": "City",
-      "route": "GB-L12"
-    },
     {
       "name": "L12-secrets",
       "suite": "City",
       "route": "GB-L12",
       "secrets": true
+    },
+    {
+      "name": "L12-critical",
+      "suite": "City",
+      "route": "GB-L12"
     }
   ]
 }
