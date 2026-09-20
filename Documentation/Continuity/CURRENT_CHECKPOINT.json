@@ -2,10 +2,10 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "K02: finish high Ink support and distant Mirror/Parallax circuit; L20 all three route families passed K01. Then full earned campaign/endings and presentation.",
+  "next_gate": "K05: all five final-boss families, actual ending rendering, media/physics fixtures and final secret with attached pixel art. All five families now have individual PASS witnesses; full earned20/5 chain remains pending.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Completion-K02-final-ink-and-mirror/runner.json",
+    "receipt": "Reports/Orchard-v04/Completion-K05-five-final-families-and-media/runner.json",
     "status": "READY_NOT_STARTED"
   },
   "publication": {
@@ -41,9 +41,9 @@
   },
   "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
   "latest_finished_job": {
-    "receipt": "Documentation/Empyrean/Evidence/Clean-v07-h1/runner.json",
+    "receipt": "Documentation/Completion/Evidence/K04/runner.json",
     "status": "PASS",
-    "cases": 25
+    "scope": "MirrorParallax48 and mechanics252; K01 L20 ordinary159/secret169/alternatives168; K02 EchoInk48"
   },
   "continuity_tool_tests": {
     "passed": 18,

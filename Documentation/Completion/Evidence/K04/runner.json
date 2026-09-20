@@ -1,0 +1,28 @@
+{
+    "started":  "2026-09-20T11:20:45.2209769-06:00",
+    "id":  "Completion-K04-presentation-and-mirror",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  252,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "c390591f4ce00b57b0038095a82b9ac66e9fd3c9e638701234eae5c4421ea3ce",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "b2a0a6359a27f0841360645d61fcfc5579550784",
+    "finished":  "2026-09-20T11:22:53.8655334-06:00"
+}

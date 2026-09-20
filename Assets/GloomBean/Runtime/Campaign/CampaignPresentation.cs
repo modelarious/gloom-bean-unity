@@ -73,7 +73,7 @@ namespace GloomBean.Campaign
                 }
             }
             // Peak limiting preserves headroom for separate movement and interaction cues.
-            for(int i=0;i<count;i++)data[i]=Mathf.Clamp(data[i],-.65f,.65f)*Mathf.Min(1,i/240f,(count-1-i)/240f);
+            for(int i=0;i<count;i++)data[i]=Mathf.Clamp(data[i],-.65f,.65f)*Mathf.Min(1,Mathf.Min(i/240f,(count-1-i)/240f));
             return data;
         }
         public void Initialize(GameRoot root){game=root;fx=GetComponent<GameAudio>();muted=PlayerPrefs.GetInt("GloomBean.MusicMuted",0)==1;voices=new AudioSource[2];for(int i=0;i<2;i++){voices[i]=gameObject.AddComponent<AudioSource>();voices[i].loop=true;voices[i].playOnAwake=false;voices[i].spatialBlend=0;voices[i].volume=0;}}
