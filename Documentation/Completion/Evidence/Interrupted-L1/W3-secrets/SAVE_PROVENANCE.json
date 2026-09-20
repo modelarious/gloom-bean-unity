@@ -1,0 +1,5 @@
+﻿{
+    "parent":  "W2-secrets",
+    "sha256":  "ccbe2fbe4c10c9b10a833d359fc4ec8d783c415cbfd13a9dc9a8ee79d0d4c484",
+    "policy":  "Exact unmodified save from prior real-input completion"
+}

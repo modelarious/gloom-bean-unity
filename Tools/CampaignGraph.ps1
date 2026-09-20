@@ -43,3 +43,20 @@ function Read-CampaignPredecessor {
   } catch {if([DateTime]::UtcNow -ge $until){throw 'Predecessor receipt unavailable after bounded retry; visible test not started'};Start-Sleep -Milliseconds 75}
  } while($true)
 }
+
+function Write-CampaignReceipt {
+ param([Parameter(Mandatory=$true)][string]$Path,[Parameter(Mandatory=$true)][object]$Value,[int]$TimeoutMilliseconds=5000)
+ $tmp=$Path+'.'+[Guid]::NewGuid().ToString('N')+'.pending'
+ $json=$Value|ConvertTo-Json -Depth 16
+ [IO.File]::WriteAllText($tmp,$json,(New-Object Text.UTF8Encoding($false)))
+ $until=[DateTime]::UtcNow.AddMilliseconds($TimeoutMilliseconds)
+ try {
+  do {
+   try {
+    if([IO.File]::Exists($Path)){[IO.File]::Replace($tmp,$Path,($tmp+'.previous'))}else{[IO.File]::Move($tmp,$Path)}
+    return
+   } catch [IO.IOException] {if([DateTime]::UtcNow -ge $until){throw};Start-Sleep -Milliseconds 50}
+     catch [UnauthorizedAccessException] {if([DateTime]::UtcNow -ge $until){throw};Start-Sleep -Milliseconds 50}
+  }while($true)
+ } finally {if([IO.File]::Exists($tmp)){[IO.File]::Delete($tmp)};if([IO.File]::Exists($tmp+'.previous')){[IO.File]::Delete($tmp+'.previous')}}
+}

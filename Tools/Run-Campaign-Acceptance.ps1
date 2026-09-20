@@ -24,7 +24,7 @@ Assert-CampaignGraph $jobs $names
 $status=@{status='RUNNING';phase='source-check';started=(Get-Date).ToString('o');cases=@()}
 function Receipt {
  $status.cases=@($jobs|ForEach-Object {@{name=$_.name;status=$_.state;assertions=$_.assertions;failed=$_.failed;exceptions=$_.exceptions;exit=$_.exit;expected_denial=[bool]$_.case.expectedDenial;parent=$_.case.parent;suite=$_.case.suite;route=$_.case.route}})
- $tmp=Join-Path $dir 'runner.pending.json';$status|ConvertTo-Json -Depth 12|Set-Content -Encoding UTF8 $tmp;Move-Item -Force $tmp (Join-Path $dir 'runner.json')
+ Write-CampaignReceipt -Path (Join-Path $dir 'runner.json') -Value $status
 }
 Receipt
 try {
@@ -99,7 +99,7 @@ try {
  $null=Source $config.atlas $config.atlas_commit
  if($config.foundation){$null=Source $config.foundation $config.foundation_commit}
  $status.status=if(@($jobs|Where-Object {$_.state -ne 'PASS'}).Count -eq 0){'PASS'}else{'FAIL'};$status.phase='finished'
-}catch{$status.status='FAIL';$status.error=$_.Exception.Message}
-finally{foreach($j in $jobs){if($j.process){$j.process.Refresh();if(-not $j.process.HasExited){Stop-Process -Id $j.process.Id -Force};$j.process.Dispose()}};$status.finished=(Get-Date).ToString('o');Receipt}
+}catch{$status.status='FAIL';$status.error=$_.Exception.Message;$status.error_detail=$_.Exception.ToString();$status.error_stack=$_.ScriptStackTrace}
+finally{foreach($j in $jobs){if($j.process){$j.process.Refresh();if(-not $j.process.HasExited){Stop-Process -Id $j.process.Id -Force;$j.state='ABORTED';if($j.out){[IO.File]::WriteAllText("$($j.out)\player.exit",'ABORTED')}};$j.process.Dispose()}};$status.finished=(Get-Date).ToString('o');Receipt}
 if($status.status -ne 'PASS'){exit 1}
 Write-Output "NATIVE_CAMPAIGN_ACCEPTANCE_PASS $dir"

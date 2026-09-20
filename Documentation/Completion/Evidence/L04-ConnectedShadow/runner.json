@@ -1,0 +1,61 @@
+{
+    "started":  "2026-09-20T16:03:14.2031808-06:00",
+    "id":  "Completion-L04-shadow-connectivity",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  96,
+                        "case":  "L19-practice-30-0",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-practice-30-1",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-practice-30-2",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  96,
+                        "case":  "L19-practice-60-0",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-practice-60-1",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  96,
+                        "case":  "L19-practice-120-0",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "5c031972ac572eaa1fd271e1664840894d01b9da1796a535894ac3a46c7bfd8b",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "aab2a3481885bbacdbb2477e676dc281360d4f49533264bf1406429dc442ad09",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "b7c4b20ea8f007653ee65a4f101ba660808804ab",
+    "finished":  "2026-09-20T16:04:35.7035955-06:00"
+}

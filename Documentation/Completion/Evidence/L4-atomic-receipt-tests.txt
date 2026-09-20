@@ -1,0 +1,10 @@
+PASS new receipt initialized
+{"reads":323,"first":"","missing":0,"invalid":0,"PSComputerName":"localhost","RunspaceId":"8e5e406b-b860-41c5-85f1-d5511a41c7ab","PSShowComputerName":false}
+PASS concurrent reader actually ran
+PASS no incomplete result escapes the bounded reader
+PASS no unresolved missing receipt after bounded retry
+PASS latest complete record retained
+PASS no temporary file leaked
+PASS terminal result safely published
+Concurrent reads 323
+ATOMIC_RECEIPT_TESTS_PASS 7

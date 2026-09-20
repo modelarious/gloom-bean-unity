@@ -1,0 +1,7 @@
+# Native result publication is not gameplay
+
+L1 completed49 cases with no gameplay failures, but PowerShell Move-Item -Force receipt replacement raised Cannot create a file when that file already exists. Actual completed route outputs remain preserved. The producer now writes UTF8 to a unique sibling and uses File.Replace for an existing destination or File.Move for initialization. A valid unique backup path avoids PowerShell binding null to an empty .NET path. Temporary files are cleaned, and contention retries are bounded to5seconds.
+
+A raw tight-loop reader stress probe observed transient sharing failures and missing-path windows on this Windows filesystem; it did NOT establish uninterrupted raw reads. The paired production reader retries for up to3seconds and only returns a real known-state JSON document. The final stress test performs150 concurrent replacements with that actual reader and checks no unresolved read failure, incomplete result, final-state loss or leaked temporary files. It does not falsely claim that uncoordinated raw reads never encounter a transient error. Aborted child jobs are now explicitly labeled, and orchestration errors retain stack context.
+
+All six revised actual-input L19 practice/secret routes passed at30/60/120fps and three entry delays. The witness now checks actual cast-shadow connectivity, not just tether reach. Gameplay rules and bounds are unchanged.

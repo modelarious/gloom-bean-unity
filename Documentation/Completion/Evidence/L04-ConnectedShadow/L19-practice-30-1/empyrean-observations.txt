@@ -1,0 +1,106 @@
+BEGIN GB-L19 Scripture That Writes Back
+PASS GB-L19 walk 8 body=(7.83, 8.75) velocity=(1.45, 0.00) feet=8.004998 hp=6
+PASS GB-L19 scribe leech supplies actual Ink body=(7.83, 8.75) velocity=(1.45, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.80, 1.75) velocity=(1.71, 0.00) feet=1.004633 hp=6
+PASS GB-L19 land in the bottom margin body=(16.80, 1.75) velocity=(1.71, 0.00) feet=1.004633 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(15.42, 3.93) velocity=(0.26, -0.76) feet=3.180089 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(14.03, 7.32) velocity=(-0.13, 0.18) feet=6.572358 hp=6
+PASS GB-L19 jump to 17.6 / 5 body=(17.31, 5.85) velocity=(0.93, -1.00) feet=5.102914 hp=6
+PASS GB-L19 reach punctuation desk through authored ink body=(17.31, 5.85) velocity=(0.93, -1.00) feet=5.102914 hp=6
+PASS GB-L19 walk 18.2 body=(18.01, 5.75) velocity=(1.50, 0.00) feet=5.00465 hp=6
+PASS GB-L19 unmoved comma leaves every word above the desk jump body=(18.01, 5.75) velocity=(1.50, 0.00) feet=5.00465 hp=6
+PASS GB-L19 grip physical comma body=(18.02, 5.75) velocity=(0.02, 0.00) feet=5.004857 hp=6
+PASS GB-L19 walk 21.5 body=(21.30, 5.75) velocity=(1.61, 0.00) feet=5.004999 hp=6
+PASS GB-L19 moved comma reflows actual words body=(21.31, 5.75) velocity=(0.00, 0.00) feet=5.004999 hp=6
+PASS GB-L19 jump to 24 / 5 body=(23.90, 5.79) velocity=(0.21, -1.00) feet=5.038143 hp=6
+PASS GB-L19 jump to 27 / 7.2 body=(26.72, 7.95) velocity=(0.88, 0.00) feet=7.203812 hp=6
+PASS GB-L19 cross the actual reflowed rows at 31 body=(30.70, 10.16) velocity=(1.13, 0.00) feet=9.408812 hp=6
+PASS GB-L19 cross the actual reflowed rows at 35 body=(34.69, 10.15) velocity=(1.60, 0.00) feet=9.4045 hp=6
+PASS GB-L19 jump to 40 / 7.2 body=(39.72, 7.95) velocity=(0.89, 0.00) feet=7.204997 hp=6
+PASS GB-L19 shadow source composes with Ink body=(39.72, 7.95) velocity=(0.89, 0.00) feet=7.204997 hp=6
+PASS GB-L19 tenant acquired Ink body=(39.72, 7.95) velocity=(0.89, 0.00) feet=7.204997 hp=6
+PASS GB-L19 focus Ink body=(39.72, 7.95) velocity=(0.00, 0.00) feet=7.204999 hp=6
+PASS GB-L19 walk 42 body=(41.85, 7.95) velocity=(6.42, 0.00) feet=7.204999 hp=6
+PASS GB-L19 record a running arc to 47 body=(46.85, 5.95) velocity=(0.08, 0.00) feet=5.2045 hp=6
+PASS GB-L19 walk 48 body=(47.94, 5.95) velocity=(4.58, 0.00) feet=5.204978 hp=6
+PASS GB-L19 a short running leap writes a shallow reusable arc body=(54.64, 3.80) velocity=(6.05, -1.00) feet=3.047701 hp=6
+PASS GB-L19 a reachable sloping hardened arc exists body=(54.87, 3.75) velocity=(0.00, 0.00) feet=3.004999 hp=6
+INK TARGET (53.17, 5.17)
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(53.54, 5.98) velocity=(-1.01, -0.05) feet=5.23013 hp=6
+PASS GB-L19 a reachable sloping hardened arc exists body=(53.54, 5.98) velocity=(-1.01, -0.05) feet=5.23013 hp=6
+INK TARGET (50.57, 6.83)
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(51.11, 7.60) velocity=(-2.19, 0.06) feet=6.845076 hp=6
+INK WAIT: the next jump's existing wet stroke must actually harden before it can support the body.
+PASS GB-L19 temporary ink brings body within the semicolon tether body=(50.87, 7.70) velocity=(-0.49, -0.59) feet=6.950251 hp=6
+PASS GB-L19 the letter's real cast silhouette connects the body to the dot body=(50.87, 7.70) velocity=(-0.49, -0.59) feet=6.950251 hp=6
+SHADOW DEPART body=(50.87, 7.70) inkAge=3.666664
+PASS GB-L19 tenant acquired Shadow body=(50.87, 7.70) velocity=(-0.49, -0.59) feet=6.950251 hp=6
+PASS GB-L19 focus Shadow body=(50.84, 7.66) velocity=(-0.49, -0.62) feet=6.910948 hp=6
+PASS GB-L19 traverse connected silhouette to (58.50, 18.10) body=(50.32, 7.63) velocity=(0.00, 0.00) feet=6.880733 hp=6
+PASS GB-L19 shadow takes the actual semicolon dot body=(50.32, 7.63) velocity=(0.00, 0.00) feet=6.880733 hp=6
+PASS GB-L19 body remains on its actual Ink while taking the dot body=(50.32, 7.63) velocity=(0.00, 0.00) feet=6.880733 hp=6
+PASS GB-L19 shadow rejoins the still-physical body body=(49.68, 4.05) velocity=(0.00, 0.00) feet=3.304999 hp=6
+PASS GB-L19 walk 50 body=(49.79, 4.05) velocity=(2.31, 0.00) feet=3.304999 hp=6
+PASS GB-L19 leave ink before it dries body=(49.79, 4.05) velocity=(2.31, 0.00) feet=3.304999 hp=6
+PASS GB-L19 lower sentence refuge body=(49.81, 4.05) velocity=(0.14, 0.00) feet=3.304999 hp=6
+PASS GB-L19 walk 50.8 body=(50.59, 4.05) velocity=(1.73, 0.00) feet=3.304999 hp=6
+PASS GB-L19 jump to 55 / 3 body=(54.73, 3.75) velocity=(0.89, 0.00) feet=3.004981 hp=6
+PASS GB-L19 jump to 60 / 2.7 body=(59.71, 3.45) velocity=(0.89, 0.00) feet=2.704998 hp=6
+PASS GB-L19 jump to 65 / 3.4 body=(64.71, 4.15) velocity=(0.89, 0.00) feet=3.404998 hp=6
+PASS GB-L19 jump to 70 / 4.1 body=(69.71, 4.85) velocity=(0.89, 0.00) feet=4.104998 hp=6
+PASS GB-L19 jump to 75 / 4.8 body=(74.71, 5.55) velocity=(0.89, 0.00) feet=4.804998 hp=6
+PASS GB-L19 jump to 80 / 5.5 body=(79.71, 6.25) velocity=(0.89, 0.00) feet=5.504998 hp=6
+PASS GB-L19 jump to 85 / 6.2 body=(84.71, 6.95) velocity=(0.89, 0.00) feet=6.204998 hp=6
+PASS GB-L19 jump to 90 / 6.9 body=(89.72, 7.65) velocity=(0.79, 0.00) feet=6.904999 hp=6
+PASS GB-L19 jump to 95 / 7.6 body=(94.71, 8.35) velocity=(0.89, 0.00) feet=7.604999 hp=6
+PASS GB-L19 walk 95.9 body=(95.71, 8.35) velocity=(1.57, 0.00) feet=7.604999 hp=6
+PASS GB-L19 jump to 100 / 9.2 body=(99.71, 9.95) velocity=(0.89, 0.00) feet=9.204996 hp=6
+PASS GB-L19 walk 102 body=(101.81, 9.95) velocity=(1.56, 0.00) feet=9.204998 hp=6
+PASS GB-L19 manuscript Keyling body=(101.81, 9.95) velocity=(1.56, 0.00) feet=9.204998 hp=6
+PASS GB-L19 walk 104.5 body=(104.32, 9.95) velocity=(1.50, 0.00) feet=9.204998 hp=6
+PASS GB-L19 imperative Turn changes path memory body=(104.32, 9.95) velocity=(0.00, 0.00) feet=9.204998 hp=6
+PASS GB-L19 walk 101 body=(101.20, 9.95) velocity=(-1.64, 0.00) feet=9.204998 hp=6
+PASS GB-L19 manuscript erases the actually repeated outbound path body=(101.19, 9.95) velocity=(0.00, 0.00) feet=9.204998 hp=6
+PASS GB-L19 jump to 100 / 10.8 body=(100.22, 11.55) velocity=(-0.72, -1.00) feet=10.80222 hp=6
+PASS GB-L19 tenant acquired Ink body=(100.22, 11.55) velocity=(-0.72, -1.00) feet=10.80222 hp=6
+PASS GB-L19 focus Ink body=(100.22, 11.55) velocity=(0.00, 0.00) feet=10.80386 hp=6
+PASS GB-L19 walk 98 body=(98.18, 11.55) velocity=(-5.50, 0.00) feet=10.80499 hp=6
+PASS GB-L19 short hop authors a revisitable arc body=(94.32, 11.55) velocity=(-1.09, 0.00) feet=10.8043 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(95.71, 13.16) velocity=(1.12, -0.82) feet=12.40949 hp=6
+PASS GB-L19 new return arc survives correction body=(95.71, 13.16) velocity=(1.12, -0.82) feet=12.40949 hp=6
+PASS GB-L19 jump to 92 / 14 body=(92.29, 14.76) velocity=(-0.93, 0.00) feet=14.00671 hp=6
+PASS GB-L19 jump to 86 / 9.6 body=(86.27, 10.36) velocity=(-0.89, 0.00) feet=9.606716 hp=6
+PASS GB-L19 walk 84.95 body=(85.02, 10.36) velocity=(-5.19, 0.00) feet=9.606716 hp=6
+PASS GB-L19 jump to 80 / 9.6 body=(80.28, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 78.95 body=(79.02, 10.36) velocity=(-5.32, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 74 / 9.6 body=(74.28, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 72.95 body=(73.02, 10.36) velocity=(-5.30, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 68 / 9.6 body=(68.29, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 63 / 9.6 body=(63.29, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 50 body=(50.19, 10.36) velocity=(-1.57, 0.00) feet=9.604999 hp=6
+PASS GB-L19 tenant acquired Ink body=(50.19, 10.36) velocity=(-1.57, 0.00) feet=9.604999 hp=6
+PASS GB-L19 focus Ink body=(50.19, 10.36) velocity=(-1.57, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 48 body=(48.14, 10.36) velocity=(-5.50, 0.00) feet=9.604999 hp=6
+PASS GB-L19 short hop authors a revisitable arc body=(44.32, 10.35) velocity=(-1.02, 0.00) feet=9.6043 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(45.76, 11.95) velocity=(0.89, -0.86) feet=11.20461 hp=6
+PASS GB-L19 new return arc survives correction body=(45.76, 11.95) velocity=(0.89, -0.86) feet=11.20461 hp=6
+PASS GB-L19 jump to 42 / 12.8 body=(42.29, 13.56) velocity=(-0.91, 0.00) feet=12.805 hp=6
+PASS GB-L19 jump to 36 / 9.6 body=(36.27, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 34.95 body=(35.02, 10.36) velocity=(-5.19, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 30 / 9.6 body=(30.28, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 28.95 body=(29.02, 10.36) velocity=(-5.32, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 24 / 9.6 body=(24.28, 10.36) velocity=(-0.89, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 22.95 body=(23.02, 10.36) velocity=(-5.30, 0.00) feet=9.604999 hp=6
+PASS GB-L19 jump to 18 / 9.6 body=(18.29, 10.36) velocity=(-0.92, 0.00) feet=9.604999 hp=6
+PASS GB-L19 walk 17 body=(17.10, 10.36) velocity=(-4.48, 0.00) feet=9.604999 hp=6
+PASS GB-L19 record a running arc to 10 body=(10.31, 8.75) velocity=(-1.74, 0.00) feet=8.003667 hp=6
+PASS GB-L19 walk 2 body=(3.10, 8.75) velocity=(-5.50, 0.00) feet=8.004998 hp=6
+PASS GB-L19 physical return completed body=(3.10, 8.75) velocity=(-5.50, 0.00) feet=8.004998 hp=6
+PASS GB-L19 practice does not award progress body=(3.10, 8.75) velocity=(-5.50, 0.00) feet=8.004998 hp=6
+PASS GB-L19 practice never saves its optional Mercy body=(3.10, 8.75) velocity=(-5.50, 0.00) feet=8.004998 hp=6
