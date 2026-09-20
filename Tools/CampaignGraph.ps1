@@ -30,3 +30,16 @@ function Test-CampaignCanAdvance {
  }
  return $false
 }
+
+function Read-CampaignPredecessor {
+ param([Parameter(Mandatory=$true)][string]$Path,[int]$TimeoutMilliseconds=3000)
+ $until=[DateTime]::UtcNow.AddMilliseconds($TimeoutMilliseconds)
+ do {
+  try {
+   # A writer replacing runner.json can briefly remove the old directory entry.
+   $value=[IO.File]::ReadAllText($Path)|ConvertFrom-Json
+   if($value.status -notin @('RUNNING','PASS','FAIL')){throw 'Unknown predecessor state'}
+   return $value
+  } catch {if([DateTime]::UtcNow -ge $until){throw 'Predecessor receipt unavailable after bounded retry; visible test not started'};Start-Sleep -Milliseconds 75}
+ } while($true)
+}

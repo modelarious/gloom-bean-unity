@@ -1,0 +1,418 @@
+{
+  "id": "Full-Campaign-L3",
+  "atlas": "C:\\Users\\micha\\Projects\\GloomBean Full Campaign Clean L2",
+  "foundation": "C:\\Users\\micha\\Projects\\GloomBean Foundation Clean L2",
+  "reports": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Full-Campaign-L3",
+  "atlas_commit": "a74e7eb4badace8a4ac463bcda092e3a1689350f",
+  "foundation_commit": "1b450786f425c0ca325be8ff9b09cafdaeb0cfb8",
+  "cases": [
+    {
+      "name": "Foundation",
+      "suite": "Foundation"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
+    },
+    {
+      "name": "W1-critical",
+      "suite": "Parish",
+      "route": "W1"
+    },
+    {
+      "name": "W1-secrets",
+      "suite": "Parish",
+      "route": "W1",
+      "secrets": true
+    },
+    {
+      "name": "W2-critical",
+      "suite": "Orchard",
+      "route": "W2",
+      "parent": "W1-critical",
+      "requireEarned": true
+    },
+    {
+      "name": "W2-secrets",
+      "suite": "Orchard",
+      "route": "W2",
+      "parent": "W1-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "W3-critical",
+      "suite": "City",
+      "route": "W3",
+      "parent": "W2-critical",
+      "requireEarned": true
+    },
+    {
+      "name": "W3-secrets",
+      "suite": "City",
+      "route": "W3",
+      "parent": "W2-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "Surveyor",
+      "suite": "City",
+      "route": "GB-B3"
+    },
+    {
+      "name": "City-practice",
+      "suite": "City",
+      "route": "GB-L09",
+      "practice": true
+    },
+    {
+      "name": "City-unearned-denied",
+      "suite": "City",
+      "route": "W3",
+      "expectedDenial": true
+    },
+    {
+      "name": "L13-ordinary",
+      "suite": "Fall",
+      "route": "GB-L13",
+      "parent": "W3-critical",
+      "requireEarned": true,
+      "secrets": false
+    },
+    {
+      "name": "L14-ordinary",
+      "suite": "Fall",
+      "route": "GB-L14",
+      "parent": "L13-ordinary",
+      "requireEarned": true,
+      "secrets": false
+    },
+    {
+      "name": "L15-ordinary",
+      "suite": "Fall",
+      "route": "GB-L15",
+      "parent": "L14-ordinary",
+      "requireEarned": true,
+      "secrets": false
+    },
+    {
+      "name": "L16-ordinary",
+      "suite": "Fall",
+      "route": "GB-L16",
+      "parent": "L15-ordinary",
+      "requireEarned": true,
+      "secrets": false
+    },
+    {
+      "name": "W4-critical",
+      "suite": "Fall",
+      "route": "GB-B4",
+      "parent": "L16-ordinary",
+      "requireEarned": true,
+      "secrets": false
+    },
+    {
+      "name": "L13-secret",
+      "suite": "Fall",
+      "route": "GB-L13",
+      "parent": "W3-secrets",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "L14-secret",
+      "suite": "Fall",
+      "route": "GB-L14",
+      "parent": "L13-secret",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "L15-secret",
+      "suite": "Fall",
+      "route": "GB-L15",
+      "parent": "L14-secret",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "L16-secret",
+      "suite": "Fall",
+      "route": "GB-L16",
+      "parent": "L15-secret",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "W4-secrets",
+      "suite": "Fall",
+      "route": "GB-B4",
+      "parent": "L16-secret",
+      "requireEarned": true,
+      "secrets": true
+    },
+    {
+      "name": "Weight-of-Everyone",
+      "suite": "Fall",
+      "route": "GB-B4"
+    },
+    {
+      "name": "Fall-practice",
+      "suite": "Fall",
+      "route": "GB-L15",
+      "practice": true
+    },
+    {
+      "name": "Fall-unearned-denied",
+      "suite": "Fall",
+      "route": "W4",
+      "expectedDenial": true
+    },
+    {
+      "name": "L17-ordinary",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "parent": "W4-critical",
+      "requireEarned": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L17-secret",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "parent": "W4-secrets",
+      "requireEarned": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L18-ordinary",
+      "suite": "Empyrean",
+      "route": "GB-L18",
+      "parent": "L17-ordinary",
+      "requireEarned": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L18-secret",
+      "suite": "Empyrean",
+      "route": "GB-L18",
+      "parent": "L17-secret",
+      "requireEarned": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Empyrean-practice",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Empyrean-unearned-world",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "expectedDenial": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Empyrean-unearned-stage",
+      "suite": "Empyrean",
+      "route": "GB-L18",
+      "parent": "W4-critical",
+      "expectedDenial": true,
+      "expectedStageDenial": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L17-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "parent": "W4-critical",
+      "requireEarned": true,
+      "renderFps": 30
+    },
+    {
+      "name": "L18-secret-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L18",
+      "parent": "L17-secret",
+      "requireEarned": true,
+      "secrets": true,
+      "renderFps": 30
+    },
+    {
+      "name": "L19-ordinary",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "parent": "L18-ordinary",
+      "requireEarned": true,
+      "secrets": false,
+      "renderFps": 60
+    },
+    {
+      "name": "L19-secret",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "parent": "L18-secret",
+      "requireEarned": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L20-ordinary",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "parent": "L19-ordinary",
+      "requireEarned": true,
+      "secrets": false,
+      "renderFps": 60
+    },
+    {
+      "name": "L20-secret",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "parent": "L19-secret",
+      "requireEarned": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Final-ordinary",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "parent": "L20-ordinary",
+      "requireEarned": true,
+      "expectedMercies": 0,
+      "finalPair": "magnet-shadow",
+      "renderFps": 60
+    },
+    {
+      "name": "Final-restored",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "parent": "L20-secret",
+      "requireEarned": true,
+      "secrets": true,
+      "expectedMercies": 20,
+      "finalPair": "stitch-coffin",
+      "renderFps": 60
+    },
+    {
+      "name": "L20-nineteen-Mercies",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "parent": "L19-secret",
+      "requireEarned": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Final-nineteen-not-restored",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "parent": "L20-nineteen-Mercies",
+      "requireEarned": true,
+      "expectedMercies": 19,
+      "finalPair": "echo-ink",
+      "renderFps": 60
+    },
+    {
+      "name": "L20-alternative-sanctums",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "parent": "L19-ordinary",
+      "requireEarned": true,
+      "whiteAlternatives": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Final-unearned-stage",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "parent": "L19-ordinary",
+      "expectedDenial": true,
+      "expectedStageDenial": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L19-practice-secret",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Final-practice",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "practice": true,
+      "finalPair": "magnet-shadow",
+      "renderFps": 60
+    },
+    {
+      "name": "Pair-magnet-shadow",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "magnet-shadow",
+      "renderFps": 60
+    },
+    {
+      "name": "Pair-echo-ink",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "echo-ink",
+      "renderFps": 60
+    },
+    {
+      "name": "Pair-wax-gullet",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "wax-gullet",
+      "renderFps": 60
+    },
+    {
+      "name": "Pair-stitch-coffin",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "stitch-coffin",
+      "renderFps": 60
+    },
+    {
+      "name": "Pair-mirror-parallax",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "mirror-parallax",
+      "renderFps": 60
+    },
+    {
+      "name": "L19-practice-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 30
+    },
+    {
+      "name": "L19-secret-delay",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true,
+      "parent": "L18-secret",
+      "requireEarned": true,
+      "startDelay": 1.2,
+      "renderFps": 60
+    },
+    {
+      "name": "Scripture-no-Ink-control",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "noInkControl": true,
+      "renderFps": 60
+    }
+  ],
+  "guiPredecessorReceipt": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Full-Campaign-L1\\runner.json"
+}
