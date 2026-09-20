@@ -1,0 +1,3 @@
+# The Weight of Everyone
+
+Replaced the initial boss-position/stopwatch sketch with a real dynamic congregation mass. Censer controls the falling-limb approach. Stitch tilts the upper support so gravity transfers the load into a lower catch. The player reaches its underside, releases a physical abutment, and uses Coffin's actual load-bearing collision to arrest the catch at a shallower angle while the mass continues toward the bottom chute. The displayed altitude is the mass's physical Y position. The victory predicate measures the mass at the bottom, not an ability name, elapsed timer, injected damage or player position beyond a door. Native input route and physical failure-mode tests remain pending.

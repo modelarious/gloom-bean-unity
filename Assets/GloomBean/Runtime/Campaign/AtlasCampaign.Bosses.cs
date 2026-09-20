@@ -78,13 +78,32 @@ namespace GloomBean.Campaign
         }
         void Everyone(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-15,78,69),new Vector2(3,1));var b=a.b;a.Floor(-5,65);var boss=Director(a,new Vector2(37,25),"The Weight of Everyone",new Color(.48f,.39f,.43f));boss.combat=false;
-            a.Source(HostKind.Censer,7);a.Ledge(10,1.5f,4);for(int i=0;i<5;i++){var f=a.Figure(14+i*5,32+i,2+i*2.1f,1+i*.35f);f.hold=7;}a.Ledge(37,12,8);a.Source(HostKind.Stitch,38,13,true);
-            var hinge=a.Hinge(new Vector2(41,13),12,-40,"mass");a.Seam(new Vector2(49.5f,21.5f),"mass");a.Ledge(43,16,4);a.Ledge(47,18,4);a.Ledge(51,21,6);
-            a.Source(HostKind.Coffin,50.2f,22,true);a.Ledge(57,21,12);var moving=b.Slider(new Vector2(55,23),new Vector2(55,21.7f),new Vector2(4,.8f),.7f);var finish=b.Door(new Vector2(59,24),new Vector2(.7f,6));var receiver=b.Trigger("Keystone bearing",new Vector2(53,22.2f),new Vector2(4,1.3f),new Color(.74f,.69f,.54f,.2f)).AddComponent<BraceReceiver>();receiver.gate=finish;receiver.holdRequired=1.8f;a.Ledge(63,21,7);
-            var release=moving.gameObject.AddComponent<BracedLiftRelease>();release.receiver=receiver;release.motion=moving;release.destination=new Vector2(55,27);a.Cure(HostKind.Coffin,59.5f,22);
-            float deadline=200;boss.Configure(boss.title,p=>p==0?a.Player.Feet.y>11.5f:p==1?hinge.angle>30&&a.Player.Feet.y>20:receiver.latched&&a.Player.Body.position.x>59,p=>boss.objective=p==0?"No health bar. Cross the falling congregation before the foundation gives way.":p==1?"Fold the hanging mass into a traversable incline.":"Brace the settling keystone with a horizontal lid, then reach the released arch.");
-            var budget=b.root.gameObject.AddComponent<EncounterBudget>();budget.boss=boss;budget.remaining=deadline;a.Health(37,13.2f);
+            a.Begin(new Rect(-9,-14,84,62),new Vector2(2,1));var b=a.b;a.Floor(-6,65,-8);a.Floor(-5,11);a.Source(HostKind.Censer,7);
+            var boss=Director(a,new Vector2(48,23),"The Weight of Everyone",new Color(.53f,.42f,.45f));boss.combat=false;
+            if(boss.body)Object.Destroy(boss.body.gameObject);
+            var limbs=new List<KneelingFigure>();for(int i=0;i<7;i++){float y=1+1.7f*i;var limb=a.Figure(12+i*4,y+9,y,.8f+i*.15f);limb.name="Falling congregation limb "+i;limb.hold=6;limb.speed=8;limb.safeUpperSurface=true;limb.respondsToWitness=false;limbs.Add(limb);}
+            a.Ledge(9,1,3);a.Ledge(22,4.9f,3).AddComponent<OneWaySurface>();a.Ledge(30,8.3f,3).AddComponent<OneWaySurface>();
+            a.Ledge(39,13.2f,4);a.Ledge(43,15,5);var stitchSource=a.Source(HostKind.Stitch,43,16,true);stitchSource.gameObject.SetActive(false);
+            var upper=a.Hinge(new Vector2(43,19.74f),10,0,"avalanche");upper.name="Upper load-bearing slab";a.Seam(new Vector2(51.66f,23.74f),"avalanche");
+            var catchFloor=a.Hinge(new Vector2(32,12.8f),12,0,"catch");catchFloor.name="Lower load-bearing slab";a.Seam(new Vector2(39.7f,3.6f),"catch");
+            var leftStop=b.Solid("Left catch abutment",new Vector2(30.5f,16),new Vector2(1,7));
+            var rightStop=b.Solid("Retractable catch abutment",new Vector2(45.5f,15),new Vector2(1,7));
+            var bodyArt=PrimitiveArt.Shape("The physical falling congregation",b.root,new Vector2(48,23),Vector2.one*4,new Color(.58f,.44f,.49f),PrimitiveArt.Icon.Round,7);bodyArt.layer=Layers.Prop;
+            var circle=bodyArt.AddComponent<CircleCollider2D>();circle.radius=2;bodyArt.transform.localScale=Vector3.one;bodyArt.GetComponent<SpriteRenderer>().drawMode=SpriteDrawMode.Sliced;bodyArt.GetComponent<SpriteRenderer>().size=Vector2.one*4;
+            circle.sharedMaterial=new PhysicsMaterial2D("Congregation slides under its own mass"){friction=.015f,bounciness=0};var rb=bodyArt.AddComponent<Rigidbody2D>();rb.mass=24;rb.gravityScale=3.4f;rb.freezeRotation=true;rb.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
+            var mass=bodyArt.AddComponent<ColossusMass>();boss.body=bodyArt.transform;
+            for(int i=0;i<6;i++){float theta=i*Mathf.PI/3;var face=PrimitiveArt.Shape("Congregation face "+i,bodyArt.transform,new Vector2(48,23)+new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.15f,new Vector2(.5f,.7f),new Color(.82f,.73f,.65f),PrimitiveArt.Icon.Eye,8);}
+            var braceFloor=a.Floor(28,40,10);braceFloor.SetActive(false);var accessFloor=a.Floor(40,53,8);accessFloor.SetActive(false);
+            var coffinSource=a.Source(HostKind.Coffin,32,11,true);coffinSource.gameObject.SetActive(false);
+            var lowerLatch=b.Switch(new Vector2(34,11.1f),"RELEASE LOWER ABUTMENT");lowerLatch.gameObject.SetActive(false);lowerLatch.Changed+=v=>{rightStop.SetActive(!v);accessFloor.SetActive(!v);};
+            a.Health(43,16.3f);a.Cure(HostKind.Coffin,29,11);
+            boss.Configure(boss.title,phase=>phase==0?a.Player.Feet.y>14.7f:phase==1?rb.position.x<41&&rb.position.y<18:mass.AtBottom,phase=>{
+                if(phase==0)boss.objective="Slow the falling limbs and climb the congregation. The mass above is real, not a health bar.";
+                if(phase==1){stitchSource.gameObject.SetActive(true);boss.objective="Tilt its supporting slab. Let its own weight carry it into the lower catch.";}
+                if(phase==2){foreach(var limb in limbs)limb.gameObject.SetActive(false);braceFloor.SetActive(true);accessFloor.SetActive(true);coffinSource.gameObject.SetActive(true);lowerLatch.gameObject.SetActive(true);boss.objective="Work beneath the load: release the right abutment, then brace the folding catch so the congregation rolls into the bottom chute.";}
+            });
+            b.Tip(new Vector2(42,16.8f),"Aim U at a loose architectural edge and its partner. Tilting a support moves everything resting on it.");
+            b.Tip(new Vector2(33,11.8f),"Choose a horizontal footing before tugging the lower catch. The slab stops against your physical brace; the load keeps moving.");
         }
         void Hosts(AtlasBuilder a)
         {

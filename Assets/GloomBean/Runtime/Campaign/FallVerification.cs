@@ -202,6 +202,23 @@ namespace GloomBean.Campaign
             yield return Walk(38.8f);yield return FrameJump(35,26.6f);yield return Walk(33);yield return FrameJump(29,28.2f);yield return Walk(2);
             Check("escape precedes altitude exhaustion",frame.RemainingAltitude>0&&frame.fallen>5);
         }
+        IEnumerator Everyone()
+        {
+            yield return Walk(8.4f);yield return Jump(9,1);
+            var limbs=session.GetComponentsInChildren<KneelingFigure>().OrderBy(x=>x.transform.position.x).ToArray();
+            foreach(var limb in limbs){yield return Back(limb);if(stopped)yield break;yield return Calm();yield return Walk(limb.body.position.x+.8f);}
+            yield return Jump(39,13.2f);yield return Walk(40);yield return Jump(43,15);
+            var boss=session.GetComponentInChildren<AtlasBoss>();var mass=session.GetComponentInChildren<ColossusMass>();var lower=session.GetComponentsInChildren<FoldPanel>().First(x=>x.name=="Lower load-bearing slab");
+            yield return Await("congregation reaches its structural second act",()=>boss.phase==1,3);Check("seamstress joins the incense",host.Has(HostKind.Stitch));
+            yield return Fold("avalanche",new Vector2(1,.7f),24.79f);yield return Await("real mass falls into lower catch",()=>boss.phase==2,15);Snapshot("mass-upper-catch");
+            yield return Walk(48);yield return Await("descend to lower work platform",()=>actor.Grounded&&actor.Feet.y<8.3f,7);yield return Walk(41.8f);yield return Jump(38,10);
+            yield return Walk(33.2f);yield return Await("undertaker closes the structural brace",()=>host.Has(HostKind.Coffin),3,()=>new InputFrame{move=Vector2.left});if(stopped)yield break;
+            yield return Press(new InputFrame{interact=true});yield return CoffinTo(36);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(1);
+            yield return Focus(HostKind.Stitch);yield return Press(new InputFrame{alternate=true});yield return Press(new InputFrame{action=true,move=new Vector2(1,.4f)});var stitch=host.Form<StitchForm>();Check("catch edge selected",stitch.First&&stitch.First.group=="catch");if(stopped)yield break;
+            yield return Press(new InputFrame{action=true});Check("lower catch edges joined",stitch.Active==lower);yield return Press(new InputFrame{action=true});
+            yield return Await("real horizontal body arrests the folding load",()=>lower.HeldLoad||lower.BracedSeconds>.2f,8);Snapshot("mass-braced-catch");
+            yield return Await("boss mass reaches the actual bottom",()=>boss.defeated,18);Check("environmental victory is a physical altitude result",mass.AtBottom&&mass.Altitude<.5f&&session.Phase==RunPhase.Cleared);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[3];
@@ -210,7 +227,7 @@ namespace GloomBean.Campaign
             var stages=new List<StageDefinition>();if(selected=="W4"){stages.AddRange(world.levels);stages.Add(world.boss);}else stages.Add(selected==world.boss.id?world.boss:Array.Find(world.levels,x=>x.id==selected));
             foreach(var stage in stages){if(stage==null){failures++;Note("FAIL unknown Fall stage "+selected);break;}yield return Load(stage);
                 if(selected=="W4")Check("earned intra-world stage selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else if(stage.course==15)yield return ClosedLids(secrets);else if(stage.course==16)yield return Freefall(secrets);else Check("route not implemented yet",false);
+                if(stage.boss)yield return Everyone();else if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else if(stage.course==15)yield return ClosedLids(secrets);else if(stage.course==16)yield return Freefall(secrets);else Check("route not implemented yet",false);
                 Check("stage completes through physical exit or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no earned progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("completion survives save",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy persists after real return":"Mercy remains optional",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}Snapshot("finish");if(stopped)break;}
             if(selected=="W4"&&!stopped){var save=new SaveStore(Path.Combine(dir,"test-save.json"));Check("Fall earns the False Empyrean",CampaignProgression.WorldOpen(game.AvailableWorlds,4,save.Data,PracticeWitness));Check("sixteen Mercies cannot restore the ending",!save.RestoredEnding);}
