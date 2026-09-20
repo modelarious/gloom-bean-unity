@@ -1,5 +1,5 @@
 {
-  "id": "Completion-J03-rising-light-rhyme-collapse",
+  "id": "Completion-J04-readable-light-landings",
   "build": true,
   "cases": [
     {
@@ -12,6 +12,13 @@
       "suite": "Empyrean",
       "route": "GB-L20",
       "secrets": true
+    },
+    {
+      "name": "L19-practice",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true,
+      "practice": true
     }
   ]
 }

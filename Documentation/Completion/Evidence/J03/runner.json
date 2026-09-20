@@ -1,0 +1,28 @@
+{
+    "started":  "2026-09-20T09:27:57.3190658-06:00",
+    "id":  "Completion-J03-rising-light-rhyme-collapse",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  83,
+                        "case":  "L20-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  83,
+                        "case":  "L20-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "e46fefb563d1bb5e7a935b7675748f6fdfab82b4bb0d8401dddbe5141f7d0a8e",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "bf33abe28604fa025ec6cf88fad066ad2e7c59b8",
+    "finished":  "2026-09-20T09:30:31.8928727-06:00"
+}

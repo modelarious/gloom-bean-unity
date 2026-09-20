@@ -26,7 +26,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator BrightSanctum()
         {
-            yield return Walk(160,true);yield return RunArc(171,21);if(stopped)yield break;Check("bright sanctum has both physical iron and detached-shadow tenants",host.Has(HostKind.Shadow)&&host.Has(HostKind.Lodestone));
+            yield return Walk(160,true);yield return RunArc(165,20.5f);yield return Walk(166.2f);yield return RunArc(171,21);if(stopped)yield break;Check("bright sanctum has both physical iron and detached-shadow tenants",host.Has(HostKind.Shadow)&&host.Has(HostKind.Lodestone));
             var domain=session.GetComponentsInChildren<ShadowDomain>().Single(x=>x.name=="The bright side of shadow");Check("dark space is forbidden while luminous matter admits the shadow",domain.Allows(new Vector2(171,22))&&!domain.Allows(new Vector2(171,28)));if(stopped)yield break;
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(178,24));yield return Pause(.1f);
             var receiver=session.GetComponentsInChildren<ShadowReceiver>().Single(x=>x.name=="Hand inside the light");Check("shadow inside actual luminous geometry releases the last sanctum",receiver.active);if(stopped)yield break;

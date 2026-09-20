@@ -149,7 +149,7 @@ namespace GloomBean.Campaign
                 var r=b.Slider(new Vector2(135+i*6,14+i*2),new Vector2(135+i*6,23+i*2),new Vector2(5,.5f),1.4f+i*.13f);
                 r.name="Ascending nave "+i;r.phase=i*.17f;r.gameObject.AddComponent<OneWaySurface>();risers.Add(r);
             }a.Ledge(158,20,7);b.Tip(new Vector2(130,22),"The Fall climbs here. Stand still to hold the nearest nave back; its neighbours keep their own time.");
-            a.Source(HostKind.Lodestone,160,21);a.Source(HostKind.Shadow,170,22,true);a.Ledge(172,21,8);a.Ledge(181.75f,23,8.5f);a.Ledge(193,23,6);
+            a.Source(HostKind.Lodestone,160,21);a.Ledge(165,20.5f,4).name="Physical stained-glass stepping edge";a.Source(HostKind.Shadow,170,22,true);a.Ledge(172,21,8);a.Ledge(181.75f,23,8.5f);a.Ledge(193,23,6);
             var domainObject=new GameObject("The bright side of shadow");domainObject.transform.SetParent(b.root);var domain=domainObject.AddComponent<ShadowDomain>();domain.area=new Rect(158,15,40,18);var lightPaths=new List<Collider2D>();
             foreach(var pair in new[]{new Vector2(165,20),new Vector2(171,22),new Vector2(179,24)})lightPaths.Add(b.Trigger("Luminous path",pair,new Vector2(8,4),new Color(.98f,.95f,.77f,.18f)).GetComponent<Collider2D>());domain.lightPaths=lightPaths.ToArray();
             a.Metal(new Vector2(175,24),Vector2.one*2,3,false,-1);var finalGate=b.Door(new Vector2(181,25),new Vector2(.65f,5));var hand=b.Trigger("Hand inside the light",new Vector2(178,24),Vector2.one*.6f,new Color(.5f,.4f,.7f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();hand.gate=finalGate;
