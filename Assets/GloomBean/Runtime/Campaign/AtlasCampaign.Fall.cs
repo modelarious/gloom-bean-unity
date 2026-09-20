@@ -32,7 +32,7 @@ namespace GloomBean.Campaign
             a.Floor(-6,14);a.Floor(14,73,-12);a.Exit(2,1.1f);a.Source(HostKind.Stitch,8);
             for(int k=0;k<6;k++){var step=a.Ledge(10+k%2*2,-10+k*2,4);step.AddComponent<OneWaySurface>();}
             var first=a.Hinge(new Vector2(14,0),8,100,"span-a");first.name="Entry folding tower";
-            var firstEnd=a.Seam(new Vector2(20.928f,4),"span-a");a.Ledge(25,4,8);
+            var firstEnd=a.Seam(new Vector2(20.928f,4),"span-a");a.Ledge(24.5f,4,7);
             var second=a.Hinge(new Vector2(28,4),10,85,"span-b");second.name="Middle folding tower";
             var secondEnd=a.Seam(new Vector2(36.660f,9),"span-b");
             var leftHalf=a.Ledge(40,9,8);leftHalf.name="Left drifting bridge half";var leftBody=leftHalf.AddComponent<Rigidbody2D>();leftBody.bodyType=RigidbodyType2D.Kinematic;

@@ -134,12 +134,17 @@ namespace GloomBean.Campaign
             wrong.SetPlane(0);actor.Body.position=new Vector2(600,4);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(80);
             C("parallax.selected-one-way-floor-supports-body",actor.Grounded&&actor.Feet.y>2&&actor.Feet.y<2.3f,actor.Body.position.ToString());
 
+            yield return Arena();Freeze();var kneeler=a.Figure(606,8,2,.15f);kneeler.speed=12;kneeler.hold=6;yield return Steps(50);
+            C("penitent.reaches-kneel",kneeler.pose==KneelingFigure.Pose.Kneeling);
+            Vector2 kneelingPosition=kneeler.body.position;yield return Steps(100);
+            C("penitent.stationary-kneel-does-not-retain-fall-velocity",kneeler.pose==KneelingFigure.Pose.Kneeling&&Vector2.Distance(kneeler.body.position,kneelingPosition)<.02f&&kneeler.body.linearVelocity.sqrMagnitude<.0001f,kneeler.body.position.ToString());
+
             yield return Arena();var near=b.Slider(new Vector2(602,2),new Vector2(618,2),new Vector2(2,.4f),2);var far=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);near.gameObject.AddComponent<TemporalBody>();far.gameObject.AddComponent<TemporalBody>();near.paused=far.paused=true;
             host.Acquire(HostKind.Censer);yield return Steps(200);float nx=near.transform.position.x,fx=far.transform.position.x;near.paused=far.paused=false;yield return Steps(60);
             C("censer.local-not-global-time",far.transform.position.x-fx>1.8f&&near.transform.position.x-nx<1.5f,"near="+(near.transform.position.x-nx)+" far="+(far.transform.position.x-fx));
 
             yield return Arena();var panel=a.Hinge(new Vector2(604,1),6,0);var end=panel.GetComponentInChildren<SeamNode>();var fixedSeam=a.Seam(new Vector2(604,7));host.Acquire(HostKind.Stitch);var stitch=host.Form<StitchForm>();bool joined=stitch.Select(end)&&stitch.Select(fixedSeam);stitch.Tug();yield return Steps(100);
-            C("stitch.rotates-real-architecture",joined&&panel.angle>70,panel.angle.ToString());stitch.Cut();C("stitch.cut-does-not-teleport-panel",stitch.Active==null&&panel.angle>70);
+            C("stitch.rotates-real-architecture",joined&&panel.angle>70,panel.angle.ToString());stitch.Cut();C("stitch.cut-does-not-teleport-panel",stitch.Active==null&&panel.angle>70);float settledRotation=panel.body.rotation;yield return Steps(90);C("stitch.finished-hinge-holds-angle",Mathf.Abs(Mathf.DeltaAngle(settledRotation,panel.body.rotation))<.1f);
 
             yield return Arena();host.Acquire(HostKind.Coffin);var coffin=host.Form<CoffinForm>();yield return Steps(8);start=actor.Body.position.x;bool flip=coffin.BeginFlip(1);yield return Steps(23);
             C("coffin.corner-pivot-not-jump",flip&&actor.Body.position.x>start+1&&coffin.Horizontal,actor.Body.position+" rot="+actor.Body.rotation);C("coffin.horizontal-brace",actor.GetComponent<LoadBearingBody>().bracing);
