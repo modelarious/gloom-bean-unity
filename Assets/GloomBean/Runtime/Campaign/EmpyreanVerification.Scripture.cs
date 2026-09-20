@@ -18,7 +18,7 @@ namespace GloomBean.Campaign
         IEnumerator RunArc(float x,float floor)
         {
             if(stopped||!Live)yield break;bool sent=false;float end=Time.time+6;
-            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,run=true,move=new Vector2((!actor.Grounded&&actor.Feet.y>floor+.8f?Mathf.Sign(x-actor.Body.position.x):Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.4f,-1,1)),0)};};
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,run=true,move=new Vector2((!actor.Grounded&&actor.Feet.y>floor+.8f&&Mathf.Abs(x-actor.Body.position.x)>2.5f?Mathf.Sign(x-actor.Body.position.x):Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.4f,-1,1)),0)};};
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
             input.rule=null;input.frame=default;Check("record a running arc to "+x,actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
         }
@@ -42,6 +42,28 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&actor.Body.linearVelocity.y<=.2f&&actor.Feet.y>=7&&actor.Feet.y<=10.6f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
             input.rule=null;input.frame=default;Check("cross the actual reflowed rows at "+x,actor.Grounded&&actor.Feet.y>=7&&actor.Feet.y<=10.6f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
         }
+        IEnumerator ShortArc(float x,float floor)
+        {
+            if(stopped||!Live)yield break;bool sent=false;float launch=-1,end=Time.time+5;
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge){sent=true;launch=Time.fixedTime;}return new InputFrame{jump=edge,jumpHeld=sent&&Time.fixedTime-launch<.12f,run=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.45f,-1,1),0)};};
+            while(Live&&Time.time<end&&!(sent&&Time.fixedTime-launch>.3f&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
+            input.rule=null;input.frame=default;Check("short hop authors a revisitable arc",actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);yield return Pause(1.1f);
+        }
+        IEnumerator FreshAscent(float pad,float floor,float upper)
+        {
+            yield return Focus(HostKind.Ink);yield return Walk(pad,true);yield return ShortArc(pad-4,floor);if(stopped)yield break;
+            yield return InkLanding(pad-2,floor+.5f,floor+2.8f);if(stopped)yield break;
+            var ink=actor.GroundCollider.GetComponent<InkStroke>();Check("new return arc survives correction",ink&&!session.GetComponentInChildren<ScriptureCorrector>().Repeated(ink.Midpoint));Snapshot("fresh-return-arc");
+            yield return Jump(pad-6,upper);
+        }
+        IEnumerator CorrectingReturn()
+        {
+            yield return Walk(101);yield return Pause(.7f);Check("manuscript erases the actually repeated outbound path",session.GetComponentInChildren<ScriptureCorrector>().ErasedStrokes>0);if(stopped)yield break;
+            yield return Jump(100,10.8f);yield return FreshAscent(98,10.8f,14);if(stopped)yield break;
+            yield return Jump(86,9.6f);yield return Jump(80,9.6f);yield return Jump(74,9.6f);yield return Jump(68,9.6f);yield return Jump(63,9.6f);yield return Walk(50);
+            yield return FreshAscent(48,9.6f,12.8f);if(stopped)yield break;
+            yield return Jump(36,9.6f);yield return Jump(30,9.6f);yield return Jump(24,9.6f);yield return Jump(18,9.6f);yield return Jump(10,8);yield return Walk(2);
+        }
         IEnumerator ScriptureRoute(bool secret)
         {
             yield return Walk(8);Check("scribe leech supplies actual Ink",host.Has(HostKind.Ink));yield return Walk(17);
@@ -56,7 +78,7 @@ namespace GloomBean.Campaign
             if(!secret){yield return Walk(42,true);yield return RunArc(52,1);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,6);
             for(int k=0;k<9;k++){yield return Jump(55+k*5,2+k*.7f);if(stopped)yield break;}
             yield return Walk(95.9f);yield return Jump(100,9.2f);if(stopped)yield break;yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
-            yield return Jump(98,10.8f);for(int k=13;k>=0;k--){yield return Jump(14+k*6,10.8f);if(stopped)yield break;}yield return Jump(10,8);yield return Walk(2);
+            yield return CorrectingReturn();
         }
     }
 }

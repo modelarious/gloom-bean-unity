@@ -109,19 +109,22 @@ namespace GloomBean.Campaign
             var sun=Sun(a,new Vector2(50,25),24);sun.directional=true;sun.direction=new Vector2(-1,-.8f);sun.renderFilled=true;
             var stroke=b.Solid("Giant semicolon curved stem",new Vector2(58,15),new Vector2(3,7),new Color(.28f,.19f,.39f));stroke.AddComponent<ShadowCaster>();
             var dot=b.Collect(PickupKind.Mercy,new Vector2(57.5f,14.5f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
-            a.Ledge(50,1,6).name="Lower line-break refuge";
+            a.Ledge(50,1,8).name="Lower line-break refuge";
             var lowerWords=new List<GameObject>();for(int k=0;k<9;k++){
                 var word=a.Ledge(55+k*5,2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);
                 PrimitiveArt.Label(new[]{"DO","NOT","REPEAT","THE","PATH","YOU","TOOK","TO","ME"}[k],word.transform,(Vector2)word.transform.position+Vector2.up*.5f,.075f);
             }
             a.Ledge(103,9.2f,10);a.Key(101,10.5f);a.Nail(106,9.6f);
-            // Independent upper editing margin appears when the text changes tense. The lower
-            // outward line stays physical until it has actually carried the returning Host.
-            var returnLetters=new List<GameObject>();for(int k=0;k<14;k++){
-                var g=a.Ledge(14+k*6,10.8f,2.5f);g.name="Fresh return margin "+k;g.AddComponent<OneWaySurface>();g.SetActive(false);returnLetters.Add(g);
+            // The correcting manuscript leaves two blank ascents. A short jump writes a
+            // low arc; a full jump can later stand on it, then reach the higher new margin.
+            var returnLetters=new List<GameObject>();
+            foreach(var point in new[]{new Vector2(98,10.8f),new Vector2(92,14),new Vector2(86,9.6f),new Vector2(80,9.6f),new Vector2(74,9.6f),new Vector2(68,9.6f),new Vector2(58,9.6f),new Vector2(48,9.6f),new Vector2(42,12.8f),new Vector2(36,9.6f),new Vector2(30,9.6f),new Vector2(24,9.6f),new Vector2(18,9.6f)}){
+                float width=point.x==98?10:point.x==48?10:point.x==58?15:3.5f;
+                var g=a.Ledge(point.x,point.y,width);g.name="Fresh return margin "+point.x;g.AddComponent<OneWaySurface>();g.SetActive(false);returnLetters.Add(g);
             }
-            a.Ledge(98,10.8f,3).AddComponent<OneWaySurface>();
+            foreach(var word in lowerWords)word.AddComponent<ReadOnceWord>();
             b.session.Turned+=()=>{layout.erasing=true;corrector.imperative=true;foreach(var g in returnLetters)g.SetActive(true);};
+            b.Tip(new Vector2(97,12),"Old footpaths are being erased. Sketch a short hop here, wait for it to dry solid, then use a full jump to revisit that arc and reach the blank line above.");
             b.Tip(new Vector2(9,10),"Your falling path is wet for one second. Land in the margin, then climb your drying ink back to the comma. E grips punctuation; move it one slot and release.");
             b.Tip(new Vector2(40,9),"The dot is too far from safe paper. Let an ink arc hold your body closer while your shadow travels across the letter's cast silhouette.");
             a.Cure(HostKind.None,4,9,true);a.Health(50,2.3f);
