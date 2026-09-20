@@ -9,7 +9,7 @@ namespace GloomBean.Campaign
         public Vector2 center;public Vector2 radius=new Vector2(10,7),roomSize=new Vector2(10,6);
         public float phase,speed=.13f,stepSpeed=.9f;public bool running,drivenByDepth;
         public bool Settled=>Mathf.Abs(target-phase)<.015f;float target;int observedDepth=1;Rigidbody2D body;bool ready;
-        void Awake(){body=GetComponent<Rigidbody2D>();if(!body)body=gameObject.AddComponent<Rigidbody2D>();body.bodyType=RigidbodyType2D.Kinematic;body.interpolation=RigidbodyInterpolation2D.Interpolate;}
+        void Awake(){body=GetComponent<Rigidbody2D>();if(!body)body=gameObject.AddComponent<Rigidbody2D>();body.bodyType=RigidbodyType2D.Kinematic;body.interpolation=RigidbodyInterpolation2D.Interpolate;var carriedFloor=new PhysicsMaterial2D("Room carry owns tangent motion"){friction=0,bounciness=0};foreach(var c in GetComponentsInChildren<Collider2D>())if(!c.isTrigger)c.sharedMaterial=carriedFloor;}
         void Start(){target=phase;ready=true;}
         public void RotateQuarter(int direction){if(!ready){target=phase;ready=true;}target+=Mathf.Sign(direction)*Mathf.PI*.5f;RuntimeEvents.Emit("hotel-rotation",target.ToString("0.00"));}
         void FixedUpdate()
