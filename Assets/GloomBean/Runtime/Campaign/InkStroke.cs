@@ -4,10 +4,10 @@ namespace GloomBean.Campaign
 {
     public sealed class InkStroke:MonoBehaviour
     {
-        public float length;public float age;public float harden=1,dry=8;EdgeCollider2D edge;LineRenderer line;public bool Solid=>edge&&edge.enabled;
+        public float length;public float age;public float harden=1,dry=8;EdgeCollider2D edge;LineRenderer line;public bool Solid=>edge&&edge.enabled;public Vector2 Midpoint {get;private set;}
         public void Initialize(Vector2 a,Vector2 b)
         {
-            transform.position=a;gameObject.layer=Layers.Moving;length=Vector2.Distance(a,b);
+            transform.position=a;Midpoint=(a+b)*.5f;gameObject.layer=Layers.Moving;length=Vector2.Distance(a,b);
             edge=gameObject.AddComponent<EdgeCollider2D>();edge.points=new[]{Vector2.zero,b-a};edge.edgeRadius=.035f;edge.enabled=false;
             var effect=gameObject.AddComponent<PlatformEffector2D>();effect.useOneWay=true;effect.surfaceArc=150;edge.usedByEffector=true;
             line=PrimitiveArt.Line("Visible stroke",transform,a,b,.07f,new Color(.46f,.5f,.8f,.5f),5);
