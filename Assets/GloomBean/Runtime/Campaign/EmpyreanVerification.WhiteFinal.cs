@@ -34,7 +34,7 @@ namespace GloomBean.Campaign
             // body's feet crosses darkness below the right-hand stained-glass pane.
             yield return ShadowTravel(new Vector2(174,23));if(stopped)yield break;
             yield return ShadowTravel(actor.Feet);if(stopped)yield break;
-            yield return Press(new InputFrame{alternate=true});Check("body and shadow reunite before physical exit",host.Form<ShadowForm>().Attached);yield return Walk(174.5f,true);yield return RunArc(179,23);yield return Walk(184.8f);Snapshot("bright-shadow-rule");
+            yield return Press(new InputFrame{alternate=true});Check("body and shadow reunite before physical exit",host.Form<ShadowForm>().Attached);yield return Jump(175.2f,23);if(stopped)yield break;yield return Walk(175.5f,true);yield return RunArc(179,23);yield return Walk(184.8f);Snapshot("bright-shadow-rule");
         }
         IEnumerator RememberedMercy()
         {
