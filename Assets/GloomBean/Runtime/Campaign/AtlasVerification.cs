@@ -107,6 +107,12 @@ namespace GloomBean.Campaign
             b.Solid("Small core-only clearance",new Vector2(600,1.4f),new Vector2(3,.4f));yield return Steps(2);
             C("cure.thread-cut-does-not-demand-full-size-space",host.Cure(HostKind.Marionette)&&host.Has(HostKind.Molt)&&actor.Height<1.2f&&actor.chargeDisabled);
 
+            yield return Arena();host.Acquire(HostKind.Echo);var echoThread=Source(HostKind.Marionette);echoThread.rail=a.Rail(new Vector2(596,8),new Vector2(606,8));host.Acquire(HostKind.Marionette,echoThread,true);
+            b.Solid("One-way shore shelf overlaps only the restoration probe",new Vector2(600,1.2f),new Vector2(3,.35f)).AddComponent<OneWaySurface>();Physics2D.SyncTransforms();float beforeCutHeight=actor.Height;
+            C("cure.echo-thread-fixture-blocks-full-restoration",!host.CanStand(actor.Feet+Vector2.up*.75f));
+            bool cutEchoThread=host.Cure(HostKind.Marionette);
+            C("cure.echo-thread-cut-preserves-unchanged-footprint",cutEchoThread&&host.Has(HostKind.Echo)&&!host.Has(HostKind.Marionette)&&Mathf.Abs(actor.Height-beforeCutHeight)<.001f);
+
             yield return Arena();var near=b.Slider(new Vector2(602,2),new Vector2(618,2),new Vector2(2,.4f),2);var far=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);near.gameObject.AddComponent<TemporalBody>();far.gameObject.AddComponent<TemporalBody>();near.paused=far.paused=true;
             host.Acquire(HostKind.Censer);yield return Steps(200);float nx=near.transform.position.x,fx=far.transform.position.x;near.paused=far.paused=false;yield return Steps(60);
             C("censer.local-not-global-time",far.transform.position.x-fx>1.8f&&near.transform.position.x-nx<1.5f,"near="+(near.transform.position.x-nx)+" far="+(far.transform.position.x-fx));

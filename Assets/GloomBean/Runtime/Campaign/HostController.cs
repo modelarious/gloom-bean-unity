@@ -61,8 +61,11 @@ namespace GloomBean.Campaign
             // Removing only the thread from a Molt body does not enlarge its collider
             // or change its terrain collision domain. Requiring full-size clearance here
             // falsely traps the small core beneath its own one-way landing.
-            bool unchangedMoltCollider=only==HostKind.Marionette&&Has(HostKind.Molt);
-            if(!force&&!unchangedMoltCollider&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
+            // The same is true for a retained Echo: cutting only a thread changes no
+            // body footprint or collision domain. A one-way shelf may overlap the
+            // standing probe from below without making this unchanged-size cure unsafe.
+            bool unchangedPartialCollider=only==HostKind.Marionette&&Forms.Count>1;
+            if(!force&&!unchangedPartialCollider&&!CanStand(Actor.Feet+Vector2.up*.75f)) {Session?.Notice("Find enough open space to return to your Open Host body.");return false;}
             for(int i=Forms.Count-1;i>=0;i--)if(only==HostKind.None||Forms[i].Kind==only)
             {var f=Forms[i];f.Leave();Forms.RemoveAt(i);Cured?.Invoke(f.Kind);RuntimeEvents.Emit("cure",f.Kind.ToString());}
             focus=Mathf.Clamp(focus,0,Mathf.Max(0,Forms.Count-1));

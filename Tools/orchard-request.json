@@ -1,22 +1,16 @@
 {
-  "id": "R12-continuity-practice",
+  "id": "R13-shore-cure",
   "build": true,
   "cases": [
     {
-      "name": "Practice-isolation",
-      "suite": "Orchard",
-      "route": "GB-L05",
-      "practice": true
+      "name": "Skins-critical",
+      "suite": "Parish",
+      "route": "GB-L04"
     },
     {
-      "name": "Pears-critical",
-      "suite": "Orchard",
-      "route": "GB-L05"
-    },
-    {
-      "name": "Pears-secrets",
-      "suite": "Orchard",
-      "route": "GB-L05",
+      "name": "Skins-secrets",
+      "suite": "Parish",
+      "route": "GB-L04",
       "secrets": true
     },
     {

@@ -1,0 +1,35 @@
+BEGIN GB-B2 The Orchard Judge
+PASS GB-B2 walk 9.5 | (9.29, 0.76) feet=0.01 hp=6
+PASS GB-B2 Judge wax source | (9.29, 0.76) feet=0.01 hp=6
+PASS GB-B2 walk 13 | (12.78, 0.67) feet=0.01 hp=6
+EVENT t=3.28 boss-phase The Orchard Judge:1
+PASS GB-B2 Judge act I: conserved mass balances the scale | (12.80, 0.75) feet=0.00 hp=6
+PASS GB-B2 walk 10 | (10.20, 0.75) feet=0.00 hp=6
+PASS GB-B2 Judge gullet source | (10.20, 0.75) feet=0.00 hp=6
+PASS GB-B2 walk 15.3 | (15.06, 0.75) feet=0.00 hp=3
+PASS GB-B2 jump 18 / 1.5 peak 2.34 | (17.79, 2.25) feet=1.50 hp=3
+PASS GB-B2 walk 20 | (19.81, 2.25) feet=1.50 hp=3
+PASS GB-B2 jump 23 / 0.6 peak 3.87 | (22.79, 1.35) feet=0.60 hp=3
+PASS GB-B2 required tenant present: Gullet | (22.79, 1.35) feet=0.60 hp=3
+PASS GB-B2 focus Gullet | (22.79, 1.35) feet=0.60 hp=3
+EVENT t=20.47 terrain-swallowed GB-B2-tile-26-0.1
+PASS GB-B2 swallow an actual structural tile | (22.79, 1.31) feet=0.56 hp=3
+EVENT t=21.09 boss-phase The Orchard Judge:2
+PASS GB-B2 Judge act II: unsupported mass falls | (22.00, 1.00) feet=0.25 hp=3
+PASS GB-B2 Judge arena transition does not refill health | (22.00, 1.00) feet=0.25 hp=3
+PASS GB-B2 walk 24 | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 required tenant present: Root | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 focus Root | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 Root acquired before soil route | (23.81, 0.76) feet=0.01 hp=3
+PASS GB-B2 grow from adjacent wet substrate | (23.81, 0.76) feet=0.01 hp=3
+PASS GB-B2 steer root to (24.00, -4.00) | (23.81, 0.76) feet=0.01 hp=3
+TRACE root tip=(31.06, -3.94) target=(37.00, -4.00)
+PASS GB-B2 steer root to (37.00, -4.00) | (25.56, 1.38) feet=0.63 hp=2
+PASS GB-B2 steer root to (37.00, 1.00) | (25.56, 1.38) feet=0.63 hp=2
+PASS GB-B2 body follows root route into exit pocket | (37.00, 0.89) feet=0.14 hp=2
+PASS GB-B2 root arrival has full body clearance | (37.00, 0.89) feet=0.14 hp=2
+EVENT t=29.81 boss-phase The Orchard Judge:3
+PASS GB-B2 walk 39 | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 Judge defeated through material systems | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 complete actual stage | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 clear persists | (38.00, 0.75) feet=0.00 hp=2

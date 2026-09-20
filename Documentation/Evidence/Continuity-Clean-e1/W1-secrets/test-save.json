@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "corrupted": true,
+    "cleared": [
+        "GB-L01",
+        "GB-L02",
+        "GB-L03"
+    ],
+    "mercies": [
+        "GB-L01-MERCY",
+        "GB-L02-MERCY",
+        "GB-L03-MERCY"
+    ],
+    "totalCoins": 7
+}
