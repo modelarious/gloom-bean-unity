@@ -1,0 +1,11 @@
+﻿{
+    "exit":  0,
+    "archive_sha256":  "57f5a7d40f26779991b139829146b1f5d612a4f051451cb7ac2a8c583f0dfc5c",
+    "failed":  0,
+    "tested_source":  "ce58671e62086e00d1a2e06d3ee67a8494197905",
+    "assertions":  104,
+    "started":  "2026-09-20T03:45:21.0679572-06:00",
+    "scope":  "Final extracted ZIP: actual-input B4 completion and isolated save",
+    "status":  "PASS",
+    "finished":  "2026-09-20T03:46:22.1644469-06:00"
+}
