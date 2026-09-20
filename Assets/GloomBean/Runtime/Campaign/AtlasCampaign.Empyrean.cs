@@ -7,34 +7,26 @@ namespace GloomBean.Campaign
     {
         void Halos(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-13,127,50),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(18,112,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
-            var poles=new List<MagneticBody>();for(int i=0;i<7;i++){var m=a.Metal(new Vector2(22+i*11,8+i*.6f),Vector2.one*1.5f,4,true,i%2==0?1:-1);m.name="Orbiting iron halo "+i;m.strength=170;m.fieldRadius=3.5f;
-                // A rounded moving hub preserves glancing/tangential motion. The old
-                // square stand-in stopped the Host dead against an invisible flat underside.
-                var box=m.GetComponent<BoxCollider2D>();if(box)box.enabled=false;
-                var rim=m.gameObject.AddComponent<CircleCollider2D>();rim.radius=.75f;rim.sharedMaterial=new PhysicsMaterial2D("Smooth iron"){friction=0,bounciness=0};
-                var view=m.GetComponent<SpriteRenderer>();view.sprite=PrimitiveArt.Sprite(PrimitiveArt.Icon.Round);view.drawMode=SpriteDrawMode.Sliced;view.size=Vector2.one*1.5f;
-                var caster=m.GetComponent<ShadowCaster>();if(caster)caster.shape=rim;
-                var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=2;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
-            var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
-            // The atlas's fixed-altar launch is distinct from the reversing orbital field:
-            // oppose this pole to settle, match it to exchange momentum with an anchored mass.
-            var launchAltar=a.Metal(new Vector2(29,3.05f),new Vector2(2.2f,.7f),20,true,1);launchAltar.name="Fixed north launch altar";launchAltar.strength=170;launchAltar.enabled=false;
-            var altarSwitch=b.Switch(new Vector2(29,4.9f),"ALTAR COIL");altarSwitch.name="Reversible altar coil switch";
-            altarSwitch.Changed+=powered=>{launchAltar.enabled=powered;launchAltar.GetComponent<SpriteRenderer>().color=powered?new Color(.86f,.46f,.48f):new Color(.35f,.32f,.34f);};
-            PrimitiveArt.Line("Altar copper circuit",b.root,new Vector2(29,3.4f),new Vector2(29,4.9f),.08f,new Color(.87f,.62f,.31f),2);
-            b.Tip(new Vector2(28,5),"E powers the fixed north altar. SOUTH holds you down; NORTH pushes you off. Switch the coil off to remove its force. The hanging halos still follow their own beat.");
-            a.Ledge(16,2,5);a.Ledge(29,4,4);a.Ledge(46,6,4);a.Ledge(65,8,4);a.Ledge(83,10,4);a.Ledge(99,12,13);a.Key(96,13.3f);a.Nail(104,12.4f);
-            // Independent reversible circuits expose real forces, not invisible jump boosts.
-            foreach(var dock in new[]{new Vector2(16,2),new Vector2(46,6),new Vector2(65,8),new Vector2(83,10),new Vector2(99,12)})
+            a.Begin(new Rect(-8,-12,96,48),new Vector2(2,1));var b=a.b;
+            a.Floor(-5,18);a.Floor(18,82,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
+            var docks=new[]{new Vector2(16,2),new Vector2(27,4),new Vector2(38,6),new Vector2(49,8),new Vector2(60,10),new Vector2(71,12)};
+            var poles=new List<MagneticBody>();
+            for(int i=0;i<docks.Length;i++)
             {
-                var coil=a.Metal(dock+Vector2.down*.95f,new Vector2(2.2f,.7f),20,true,1);coil.name="Launch coil "+dock.x;coil.strength=170;coil.enabled=false;
-                var lever=b.Switch(dock+Vector2.up*.9f,"COIL "+dock.x);lever.name="Coil lever "+dock.x;lever.Changed+=on=>coil.enabled=on;
-                PrimitiveArt.Line("Coil circuit "+dock.x,b.root,dock+Vector2.down*.6f,dock+Vector2.up*.9f,.08f,new Color(.87f,.62f,.31f),2);
+                var d=docks[i];a.Ledge(d.x,d.y,i==5?13:6);
+                var coil=a.Metal(d+Vector2.down*.95f,new Vector2(2.2f,.7f),20,true,1);coil.name="Launch coil "+d.x;coil.strength=170;coil.enabled=false;
+                var lever=b.Switch(d+Vector2.up*.9f,"COIL "+d.x);lever.name="Coil lever "+d.x;lever.Changed+=on=>coil.enabled=on;
+                PrimitiveArt.Line("Copper circuit",b.root,d+Vector2.down*.6f,d+Vector2.up*.9f,.08f,new Color(.87f,.62f,.31f),2);
+                // Clearly separated overhead orbital lanes. They are obstacles and force sources,
+                // not invisible room-wide fields affecting every previous launch.
+                if(i<5){var m=a.Metal(d+new Vector2(5.5f,10),Vector2.one*1.4f,4,true,1);m.name="Orbiting iron halo "+i;m.strength=170;m.fieldRadius=3.5f;
+                    m.GetComponent<BoxCollider2D>().enabled=false;var rim=m.gameObject.AddComponent<CircleCollider2D>();rim.radius=.7f;rim.sharedMaterial=new PhysicsMaterial2D("Iron rim"){friction=0};
+                    var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=1.4f;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             }
-            a.Metal(new Vector2(38,5),new Vector2(3,.65f),3,false,-1);a.Metal(new Vector2(74,7),new Vector2(3,.65f),3,false,1);
-            a.Ledge(64,23,6);a.Mercy(65,24.3f);var secret=a.Metal(new Vector2(62,24),Vector2.one*1.2f,4,true,-1);secret.strength=160;poles.Add(secret);choir.halos=poles.ToArray();
-            b.session.Turned+=()=>choir.desynchronized=true;a.Health(46,7.3f);b.Tip(new Vector2(8,2),"Equal poles repel; opposite poles attract. The anchored halo pulls you. The loose iron is pulled back just as hard. U changes your pole.");a.Cure(HostKind.Lodestone,4,1);
+            var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
+            a.Key(71,13.3f);a.Nail(76,12.4f);a.Ledge(53,24,6);a.Mercy(54,25.3f);
+            b.session.Turned+=()=>choir.desynchronized=true;a.Health(38,7.3f);a.Cure(HostKind.Lodestone,4,1);
+            b.Tip(new Vector2(8,2),"U changes your pole. E powers each visible north coil. South holds you; north pushes you away. The choir reverses the overhead iron. Start a launch from the forward edge, not directly over the coil.");
         }
         ShadowSun Sun(AtlasBuilder a,Vector2 p,float reach=22)
         {var g=PrimitiveArt.Shape("Noon lamp",a.b.root,p,Vector2.one*2,new Color(1,.94f,.68f),PrimitiveArt.Icon.Star,-1);var s=g.AddComponent<ShadowSun>();s.reach=reach;return s;}
