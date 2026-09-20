@@ -124,8 +124,8 @@ namespace GloomBean.Campaign
         {
             yield return Walk(11.8f);yield return Fold("span-a",Vector2.up,30);yield return Walk(26);
             yield return Walk(27);yield return Fold("span-b",Vector2.up,30);yield return Walk(38.8f);yield return Calm();
-            if(secret){yield return Fold("island",Vector2.up,35.6f);yield return Jump(39,10.6f);yield return Leap(41.6f,11.8f,13.6f,false);yield return Walk(49.5f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<17);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(51.2f,true);
-                yield return Leap(56.8f,13.8f,14.2f);}
+            if(secret){yield return Fold("island",Vector2.up,35.6f);yield return Jump(39,10.6f);yield return Leap(41.6f,11.8f,13.6f,false);yield return Walk(49.5f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<17);Check("suspended island Mercy",session.Mercies.Count==1);yield return Await("real run-up on the moved island",()=>actor.Body.position.x>=51.2f,2,()=>new InputFrame{move=Vector2.right,run=true});
+                yield return Leap(58.2f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
             yield return Walk(57.5f);yield return Fold("span-c",Vector2.up,14.04f);yield return Walk(43);yield return Calm();
@@ -137,7 +137,7 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;var coffin=host.Form<CoffinForm>();Check("rigid coffin acquired",coffin!=null);if(stopped)yield break;
             float x=actor.Body.position.x;bool orientation=coffin.Horizontal;
-            yield return Press(new InputFrame{move=new Vector2(sign,0)});yield return Await("quarter turn changes footprint",()=>coffin.Horizontal!=orientation&&Mathf.Abs(actor.Body.position.x-x)>1,.9f);
+            yield return Press(new InputFrame{move=new Vector2(sign,0)});yield return Await("quarter turn changes footprint",()=>!coffin.IsFlipping&&coffin.Horizontal!=orientation&&Mathf.Abs(actor.Body.position.x-x)>1,1.2f);
             yield return Pause(.2f);
         }
         IEnumerator CoffinTo(float x,float seconds=16)

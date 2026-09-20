@@ -1,0 +1,7 @@
+BEGIN GB-L15 Procession of Closed Lids
+PASS GB-L15 walk 7 | (6.80, 0.76) feet=0.01 hp=6 twin=none
+PHYSICAL shape=Center: (6.80, 0.76, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=
+CONTACT Floor Center: (4.00, -0.50, 0.00), Extents: (10.00, 0.50, 0.00)
+FAIL GB-L15 undertaker closes the coffin | (6.80, 0.76) feet=0.01 hp=6 twin=none
+FAIL GB-L15 seamstress can share the coffin | (6.82, 0.76) feet=0.01 hp=6 twin=none
+ERROR NullReferenceException: Object reference not set to an instance of an object

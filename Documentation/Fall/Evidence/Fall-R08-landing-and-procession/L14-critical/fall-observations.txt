@@ -1,0 +1,23 @@
+BEGIN GB-L14 The Seamstress Bridge
+PASS GB-L14 walk 11.8 | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 focus Stitch | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 catch visible span-a seam | (11.61, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (11.61, 0.76) feet=0.01 hp=6 twin=none
+EVENT t=2.45 stitch-tug Entry folding tower
+PASS GB-L14 physical fold reaches 30 | (11.61, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 walk 26 | (25.80, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 walk 27 | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 focus Stitch | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 catch visible span-b seam | (26.80, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (26.80, 4.75) feet=4.00 hp=6 twin=none
+EVENT t=6.88 stitch-tug Middle folding tower
+PASS GB-L14 physical fold reaches 30 | (26.80, 4.75) feet=4.00 hp=6 twin=none
+PHYSICAL shape=Center: (38.01, 9.75, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Stitch,Censer
+CONTACT Foldable cloth-stone Center: (37.43, 11.80, 0.00), Extents: (2.74, 3.21, 0.00)
+CONTACT Left drifting bridge half Center: (40.50, 8.80, 0.00), Extents: (3.50, 0.20, 0.00)
+FAIL GB-L14 walk 38.8 | (38.01, 9.75) feet=9.00 hp=6 twin=none
+FAIL GB-L14 bridge Keyling | (38.01, 9.75) feet=9.00 hp=6 twin=none
+FAIL GB-L14 Nail separates bridge halves | (38.01, 9.75) feet=9.00 hp=6 twin=none
+FAIL GB-L14 stage completes through physical exit or boss solution | (38.01, 9.75) feet=9.00 hp=6 twin=none

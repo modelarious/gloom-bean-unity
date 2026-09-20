@@ -1,3 +1,5 @@
 # Collision and input repairs
 
 L14 ordinary clear now passes. Its secret input witness was aiming diagonally at a nearer unrelated seam; aim upward at the visibly overhead island edge. Switching focused forms uses Down+I and exposed a reusable crouch bug: standing up beneath a one-way floor was incorrectly treated as growth through a solid ceiling. Size clearance now honors that floor's existing pass-from-below rule, with positive and solid-roof negative native checks. L15's recovery stair had one unnecessary step above the main floor which the nonjumping Coffin correctly refused to sweep through; keep all recovery steps below the entry plane.
+
+R11 measured a genuine input-window defect: a quarter-turn command arriving during the last cooldown tick was dropped. Coffin now buffers direction briefly, and its input witness asserts completion of the full turn rather than a mid-turn orientation threshold. The Nail is an interaction trigger in the non-jumping Coffin course, not an accidental 0.76 m wall. The island witness now retains a real run-up and targets the interior of the receiving platform, not a point outside its collision edge.

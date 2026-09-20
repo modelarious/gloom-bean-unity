@@ -82,7 +82,7 @@ namespace GloomBean.Campaign
             var head=b.Solid("Inspection bearing press",new Vector2(44,3.4f),new Vector2(4,.5f),b.accent,Layers.Moving);head.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
             var press=head.AddComponent<BearingPress>();press.low=new Vector2(44,.95f);press.speed=4;press.bell=pressBell;
             var balance=b.Solid("Load-linked counterweight",new Vector2(47,1.8f),new Vector2(.6f,3.6f),b.accent,Layers.Moving);press.counterweight=balance.AddComponent<Rigidbody2D>();press.counterweight.bodyType=RigidbodyType2D.Kinematic;press.counterweightRaised=new Vector2(47,6);
-            a.Key(76,1.2f);a.Nail(80,.5f);a.Health(66,1.2f);
+            a.Key(76,1.2f);a.Nail(80,.5f).GetComponent<Collider2D>().isTrigger=true;a.Health(66,1.2f);
             b.session.Turned+=()=>{ferryA.deaf=ferryB.deaf=true;ferryA.speed=2.8f;ferryB.speed=3.1f;ferryA.endPause=ferryB.endPause=0;command.minimumStrength=99;
                 foreach(var banner in new[]{bannerA,bannerB}){banner.targetAngle=40;banner.folding=true;}};
             a.Cure(HostKind.None,4,1,true);

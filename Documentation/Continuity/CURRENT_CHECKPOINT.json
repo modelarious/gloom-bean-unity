@@ -2,11 +2,11 @@
   "schema_version": 1,
   "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Rain L13 ordinary+secret and Seamstress L14 ordinary now pass. R11 investigates optional island transfer and Coffin pressure-lane collision; L16 physical falling-frame and impact-hoist course newly authored, awaiting native input route. Continue L14-secret/L15/L16/B4, then full earned W1..W4 regression.",
+  "next_gate": "R12: finish island secret actual run-up, test buffered Coffin parity and nonblocking Nail, execute new Cathedral impact-hoist routes. Then B4 and earned W4 regression. Do not repeat Rain/City setup.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Fall-R11-coffin-contact-probe/runner.json",
-    "source": "0389d1bbba1175b628c65ec09eb08373aa44de25"
+    "receipt": "Reports/Orchard-v04/Fall-R12-buffered-parity-and-nave/runner.json",
+    "status": "READY_NOT_STARTED"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",

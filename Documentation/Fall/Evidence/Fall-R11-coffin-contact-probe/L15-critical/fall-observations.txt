@@ -1,0 +1,32 @@
+BEGIN GB-L15 Procession of Closed Lids
+PASS GB-L15 walk 6.5 | (6.29, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L15 undertaker closes the coffin | (7.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 12.5 | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 pallbearer docks within a real flip | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 16.4 | (16.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin rides moving pallbearers | (23.52, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 28 | (28.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 30 | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 seamstress can share the coffin | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 41 | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (40.89, 0.99) feet=-0.01 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (40.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (41.56, 1.17) feet=0.67 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (43.11, 0.99) feet=-0.01 hp=6 twin=none
+PASS GB-L15 horizontal footprint beneath the bearing head | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 actual bracing releases the counterweight | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 counterweight physically retracts | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 47.2 | (48.27, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 pallbearer docks within a real flip | (48.28, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 50.4 | (51.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin rides moving pallbearers | (60.39, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 63 | (63.97, 1.06) feet=0.06 hp=6 twin=none
+COFFIN blocker=World Nail Center: (80.00, 0.50, 0.00), Extents: (0.65, 0.38, 0.00) candidate=(78.55, 1.17) angle=-3217.5 hull=Center: (77.47, 0.56, 0.00), Extents: (1.00, 0.50, 0.00) angle=-3150 ground=Floor (UnityEngine.BoxCollider2D)
+PHYSICAL shape=Center: (77.47, 0.56, 0.00), Extents: (0.00, 0.00, 0.00) axis=Vertical forms=Coffin,Stitch
+CONTACT Host Center: (77.47, 0.56, 0.00), Extents: (1.00, 0.50, 0.00)
+FAIL GB-L15 coffin crosses real ground to 78.8 | (77.47, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 procession Keyling | (77.47, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 return silences bells | (77.47, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 stage completes through physical exit or boss solution | (77.47, 0.56) feet=0.06 hp=6 twin=none

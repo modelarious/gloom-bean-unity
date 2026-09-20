@@ -1,0 +1,28 @@
+BEGIN GB-L15 Procession of Closed Lids
+PASS GB-L15 walk 6.5 | (6.29, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L15 undertaker closes the coffin | (7.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 12.5 | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 pallbearer docks within a real flip | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 16.4 | (16.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin rides moving pallbearers | (23.52, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 28 | (28.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 30 | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 seamstress can share the coffin | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 34 | (34.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 horizontal orientation selected before inspection | (34.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 grille physically lowers the body | (34.50, -2.21) feet=-2.71 hp=6 twin=none
+PASS GB-L15 low inspection passage grants Mercy | (40.70, -2.44) feet=-2.94 hp=6 twin=none
+PASS GB-L15 inspection trip brings the body back | (34.50, 0.53) feet=0.03 hp=6 twin=none
+PASS GB-L15 horizontal lid was not blocked by the ceiling | (34.50, 0.53) feet=0.03 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 41 | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (40.89, 0.99) feet=-0.01 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (40.50, 0.56) feet=0.06 hp=6 twin=none
+COFFIN blocker=none hull=Center: (40.50, 0.56, 0.00), Extents: (1.00, 0.50, 0.00) angle=-1530 ground=Floor (UnityEngine.BoxCollider2D)
+PHYSICAL shape=Center: (40.50, 0.56, 0.00), Extents: (0.00, 0.00, 0.00) axis=Vertical forms=Coffin,Stitch
+CONTACT Host Center: (40.50, 0.56, 0.00), Extents: (1.00, 0.50, 0.00)
+FAIL GB-L15 quarter turn changes footprint | (40.50, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 horizontal footprint beneath the bearing head | (40.50, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 procession Keyling | (40.50, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 return silences bells | (40.50, 0.56) feet=0.06 hp=6 twin=none
+FAIL GB-L15 stage completes through physical exit or boss solution | (40.50, 0.56) feet=0.06 hp=6 twin=none

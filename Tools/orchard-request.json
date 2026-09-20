@@ -1,12 +1,7 @@
 {
-  "id": "Fall-R11-coffin-contact-probe",
+  "id": "Fall-R12-buffered-parity-and-nave",
   "build": true,
   "cases": [
-    {
-      "name": "L14-critical",
-      "suite": "Fall",
-      "route": "GB-L14"
-    },
     {
       "name": "L14-secrets",
       "suite": "Fall",
@@ -23,6 +18,21 @@
       "suite": "Fall",
       "route": "GB-L15",
       "secrets": true
+    },
+    {
+      "name": "L16-critical",
+      "suite": "Fall",
+      "route": "GB-L16"
+    },
+    {
+      "name": "L16-secrets",
+      "suite": "Fall",
+      "route": "GB-L16",
+      "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }
