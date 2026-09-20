@@ -124,6 +124,17 @@ namespace GloomBean.Foundation
             Body.position=feet-Shape.offset+Vector2.up*size.y*.5f;
             return true;
         }
+        // Projection changes preserve the actor centre. Validate the exact destination
+        // capsule before mutating either its standing size or current collision shape.
+        public bool TrySetStandingSizeCentered(Vector2 size,int destinationMask)
+        {
+            if(size.x<.1f||size.y<.1f||float.IsNaN(size.x)||float.IsNaN(size.y)||float.IsInfinity(size.x)||float.IsInfinity(size.y))return false;
+            var direction=size.x>size.y?CapsuleDirection2D.Horizontal:CapsuleDirection2D.Vertical;
+            foreach(var c in Physics2D.OverlapCapsuleAll(Body.position+baseOffset,size-Vector2.one*.025f,direction,Body.rotation,destinationMask))
+                if(c&&!c.isTrigger&&c.attachedRigidbody!=Body)return false;
+            standingSize=size;Shape.direction=direction;Shape.size=size;Shape.offset=baseOffset;Crouched=false;
+            return true;
+        }
         public void SetStandingSize(Vector2 size)
         { standingSize=size; if(!Crouched)SetSize(size); }
         public void RestoreShape(){standingSize=new Vector2(.88f,1.5f); SetSize(standingSize);Crouched=false;}
