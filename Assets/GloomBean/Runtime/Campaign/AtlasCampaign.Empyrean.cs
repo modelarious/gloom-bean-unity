@@ -8,7 +8,14 @@ namespace GloomBean.Campaign
         void Halos(AtlasBuilder a)
         {
             a.Begin(new Rect(-8,-13,127,50),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(18,112,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
-            var poles=new List<MagneticBody>();for(int i=0;i<7;i++){var m=a.Metal(new Vector2(22+i*11,8+i*.6f),Vector2.one*1.5f,4,true,i%2==0?1:-1);m.strength=170;var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=2;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
+            var poles=new List<MagneticBody>();for(int i=0;i<7;i++){var m=a.Metal(new Vector2(22+i*11,8+i*.6f),Vector2.one*1.5f,4,true,i%2==0?1:-1);m.name="Orbiting iron halo "+i;m.strength=170;
+                // A rounded moving hub preserves glancing/tangential motion. The old
+                // square stand-in stopped the Host dead against an invisible flat underside.
+                var box=m.GetComponent<BoxCollider2D>();if(box)box.enabled=false;
+                var rim=m.gameObject.AddComponent<CircleCollider2D>();rim.radius=.75f;rim.sharedMaterial=new PhysicsMaterial2D("Smooth iron"){friction=0,bounciness=0};
+                var view=m.GetComponent<SpriteRenderer>();view.sprite=PrimitiveArt.Sprite(PrimitiveArt.Icon.Round);view.drawMode=SpriteDrawMode.Sliced;view.size=Vector2.one*1.5f;
+                var caster=m.GetComponent<ShadowCaster>();if(caster)caster.shape=rim;
+                var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=2;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
             a.Ledge(16,2,5);a.Ledge(29,4,4);a.Ledge(46,6,4);a.Ledge(65,8,4);a.Ledge(83,10,4);a.Ledge(99,12,13);a.Key(96,13.3f);a.Nail(104,12.4f);
             a.Metal(new Vector2(38,5),new Vector2(3,.65f),3,false,-1);a.Metal(new Vector2(74,7),new Vector2(3,.65f),3,false,1);
