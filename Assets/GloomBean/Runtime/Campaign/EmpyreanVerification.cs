@@ -59,7 +59,7 @@ namespace GloomBean.Campaign
             yield return Press(new InputFrame{interact=true});yield return Pause(.25f);
             Check("actual switch energizes the physical altar",session.GetComponentsInChildren<MagneticBody>().Single(m=>m.name=="Fixed north launch altar").enabled);
             Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
-            yield return MagnetTo(new Vector2(35,10),12,false,1);yield return MagnetTo(new Vector2(41,10),12,false);yield return MagnetTo(new Vector2(46,6.75f));
+            yield return MagnetTo(new Vector2(41,13),16,false);yield return MagnetTo(new Vector2(46,6.75f));
             yield return Walk(47.4f);yield return MagnetTo(new Vector2(53,12),12,false);yield return MagnetTo(new Vector2(60,12),12,false);yield return MagnetTo(new Vector2(65,8.75f));
             yield return Walk(66.4f);yield return MagnetTo(new Vector2(72,14),12,false);yield return MagnetTo(new Vector2(79,14),12,false);yield return MagnetTo(new Vector2(83,10.75f));
             yield return Walk(84.4f);yield return MagnetTo(new Vector2(90,16),12,false);yield return MagnetTo(new Vector2(96,16),12,false);yield return MagnetTo(new Vector2(99,12.75f));

@@ -1,0 +1,49 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 11.8 body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+MAGNET t=2.436583 body=(11.64, 0.97) velocity=(2.29, 12.40) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=2.939705 body=(14.17, 2.83) velocity=(4.32, -1.00) pole=1 target=(16.00, 2.75) reversals=0
+PASS GB-L17 magnetic landing at (16.00, 2.75) body=(15.41, 2.75) velocity=(1.07, 0.00) feet=2.004954 hp=6
+PASS GB-L17 walk 17.8 body=(17.60, 2.75) velocity=(4.77, 0.00) feet=2.004999 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(17.60, 2.75) velocity=(4.77, 0.00) feet=2.004999 hp=6
+MAGNET t=3.850063 body=(17.68, 2.96) velocity=(4.92, 12.50) pole=-1 target=(21.00, 7.00) reversals=1
+PASS GB-L17 magnetic transit through (21.00, 7.00) body=(20.65, 6.03) velocity=(6.43, 2.54) feet=5.284748 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(20.65, 6.03) velocity=(6.43, 2.54) feet=5.284748 hp=6
+MAGNET t=4.351806 body=(20.87, 6.11) velocity=(6.87, 2.25) pole=1 target=(29.00, 4.75) reversals=0
+MAGNET t=4.855315 body=(24.68, 7.01) velocity=(6.43, 1.05) pole=1 target=(29.00, 4.75) reversals=0
+MAGNET t=5.3686 body=(27.64, 5.35) velocity=(5.58, -7.77) pole=1 target=(29.00, 4.75) reversals=0
+PASS GB-L17 magnetic landing at (29.00, 4.75) body=(29.29, 4.76) velocity=(1.49, 0.00) feet=4.006654 hp=6
+PASS GB-L17 actual switch energizes the physical altar body=(28.98, 4.76) velocity=(-2.77, 0.00) feet=4.006654 hp=6
+PASS GB-L17 opposite pole anchors the Host on the fixed altar body=(28.98, 4.76) velocity=(-2.77, 0.00) feet=4.006654 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(28.98, 4.76) velocity=(-2.77, 0.00) feet=4.006654 hp=6
+MAGNET t=6.191475 body=(28.93, 4.99) velocity=(-2.60, 14.22) pole=1 target=(35.00, 10.00) reversals=1
+MAGNET t=6.706438 body=(31.59, 12.80) velocity=(11.73, 2.70) pole=1 target=(35.00, 10.00) reversals=1
+PASS GB-L17 magnetic transit through (35.00, 10.00) body=(34.02, 10.49) velocity=(4.08, -16.02) feet=9.742605 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(34.02, 10.49) velocity=(4.08, -16.02) feet=9.742605 hp=6
+MAGNET t=7.030717 body=(34.10, 10.22) velocity=(4.61, -16.37) pole=-1 target=(41.00, 10.00) reversals=1
+MAGNET t=7.53405 body=(38.69, -1.38) velocity=(9.66, -23.93) pole=-1 target=(41.00, 10.00) reversals=3
+MAGNET t=8.037663 body=(42.70, -2.78) velocity=(6.42, 3.05) pole=-1 target=(41.00, 10.00) reversals=3
+MAGNET t=8.539995 body=(44.80, -5.25) velocity=(2.12, 0.00) pole=1 target=(41.00, 10.00) reversals=4
+MAGNET t=9.053123 body=(44.77, -3.20) velocity=(-1.57, -4.39) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=9.556149 body=(43.44, -3.08) velocity=(-3.53, 4.65) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=10.06899 body=(41.58, -5.13) velocity=(-2.24, -12.00) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=10.57284 body=(41.20, -2.65) velocity=(-0.12, -2.01) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=11.08631 body=(41.32, -3.70) velocity=(0.42, 8.21) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=11.59063 body=(41.31, -3.57) velocity=(-0.17, -7.17) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=12.10416 body=(41.36, -2.76) velocity=(-0.08, 2.56) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=12.6082 body=(41.30, -5.25) velocity=(0.21, 0.00) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=13.1202 body=(41.32, -2.86) velocity=(-0.23, -3.08) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=13.62324 body=(41.35, -3.45) velocity=(0.20, 7.18) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=14.13459 body=(41.29, -3.98) velocity=(-0.08, -8.71) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=14.64065 body=(41.35, -2.70) velocity=(-0.12, 1.54) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=15.15351 body=(41.31, -4.65) velocity=(0.28, 11.34) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=15.65694 body=(41.31, -2.99) velocity=(-0.22, -4.10) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=16.16852 body=(41.35, -3.15) velocity=(0.11, 5.64) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=16.6719 body=(41.29, -4.30) velocity=(-0.02, -9.74) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=17.17491 body=(41.35, -2.67) velocity=(-0.16, 0.51) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=17.6892 body=(41.32, -4.30) velocity=(0.29, 10.28) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=18.20026 body=(41.30, -3.24) velocity=(-0.20, -5.64) pole=-1 target=(41.00, 10.00) reversals=5
+MAGNET t=18.70631 body=(41.36, -2.98) velocity=(0.05, 4.61) pole=-1 target=(41.00, 10.00) reversals=5
+FAIL GB-L17 magnetic transit through (41.00, 10.00) body=(41.31, -3.06) velocity=(-0.22, -4.61) feet=-3.811871 hp=6
