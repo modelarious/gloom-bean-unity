@@ -1,0 +1,41 @@
+BEGIN GB-L19 Scripture That Writes Back
+PASS GB-L19 walk 8 body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 scribe leech supplies actual Ink body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+PASS GB-L19 land in the bottom margin body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(15.48, 3.93) velocity=(0.33, -0.96) feet=3.178571 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(14.04, 7.39) velocity=(0.09, -0.12) feet=6.635576 hp=6
+PASS GB-L19 jump to 17.6 / 5 body=(17.31, 5.81) velocity=(0.89, -1.00) feet=5.062243 hp=6
+PASS GB-L19 reach punctuation desk through authored ink body=(17.31, 5.81) velocity=(0.89, -1.00) feet=5.062243 hp=6
+PASS GB-L19 walk 18.2 body=(17.99, 5.75) velocity=(1.63, 0.00) feet=5.004921 hp=6
+PASS GB-L19 grip physical comma body=(18.00, 5.75) velocity=(0.02, 0.00) feet=5.00495 hp=6
+PASS GB-L19 walk 21.5 body=(21.29, 5.76) velocity=(1.60, 0.00) feet=5.005 hp=6
+PASS GB-L19 moved comma reflows actual words body=(21.29, 5.76) velocity=(0.00, 0.00) feet=5.005 hp=6
+PASS GB-L19 jump to 24 / 5 body=(23.90, 5.76) velocity=(0.27, -1.00) feet=5.00774 hp=6
+PASS GB-L19 jump to 27 / 7.2 body=(26.71, 8.04) velocity=(0.91, -1.00) feet=7.294963 hp=6
+PASS GB-L19 cross the actual reflowed rows at 31 body=(30.67, 8.05) velocity=(1.87, -1.00) feet=7.303596 hp=6
+PASS GB-L19 cross the actual reflowed rows at 35 body=(34.66, 8.02) velocity=(1.04, -1.00) feet=7.272847 hp=6
+PASS GB-L19 jump to 40 / 7.2 body=(39.70, 7.95) velocity=(0.92, 0.00) feet=7.204999 hp=6
+PASS GB-L19 shadow source composes with Ink body=(39.70, 7.95) velocity=(0.92, 0.00) feet=7.204999 hp=6
+PASS GB-L19 tenant acquired Ink body=(39.70, 7.95) velocity=(0.92, 0.00) feet=7.204999 hp=6
+PASS GB-L19 focus Ink body=(39.70, 7.95) velocity=(0.00, 0.00) feet=7.204999 hp=6
+PASS GB-L19 walk 42 body=(41.80, 7.95) velocity=(6.09, 0.00) feet=7.204999 hp=6
+PASS GB-L19 record a running arc to 47 body=(46.83, 5.95) velocity=(0.96, 0.00) feet=5.2045 hp=6
+PASS GB-L19 walk 47.6 body=(47.41, 5.95) velocity=(2.24, 0.00) feet=5.204946 hp=6
+PASS GB-L19 record a running arc to 55 body=(54.67, 2.75) velocity=(1.43, 0.00) feet=2.004936 hp=6
+INK INVENTORY mid=(45.12, 9.49) age=2.683331 solid=True bounds=Center: (45.12, 9.49, 0.00), Extents: (0.55, 0.01, 0.00)
+INK INVENTORY mid=(46.00, 9.22) age=2.549998 solid=True bounds=Center: (46.00, 9.22, 0.00), Extents: (0.33, 0.29, 0.00)
+INK INVENTORY mid=(46.47, 8.34) age=2.416665 solid=True bounds=Center: (46.47, 8.34, 0.00), Extents: (0.14, 0.59, 0.00)
+INK INVENTORY mid=(46.70, 6.86) age=2.283332 solid=True bounds=Center: (46.70, 6.86, 0.00), Extents: (0.08, 0.89, 0.00)
+INK INVENTORY mid=(46.90, 5.59) age=2.149999 solid=True bounds=Center: (46.90, 5.59, 0.00), Extents: (0.12, 0.38, 0.00)
+INK INVENTORY mid=(47.27, 5.41) age=2.016665 solid=True bounds=Center: (47.27, 5.41, 0.00), Extents: (0.25, 0.20, 0.00)
+INK INVENTORY mid=(47.87, 6.23) age=1.883332 solid=True bounds=Center: (47.87, 6.23, 0.00), Extents: (0.35, 0.62, 0.00)
+INK INVENTORY mid=(48.77, 7.16) age=1.749999 solid=True bounds=Center: (48.77, 7.16, 0.00), Extents: (0.56, 0.32, 0.00)
+INK INVENTORY mid=(50.00, 7.49) age=1.616666 solid=True bounds=Center: (50.00, 7.49, 0.00), Extents: (0.67, 0.01, 0.00)
+INK INVENTORY mid=(51.33, 7.22) age=1.483333 solid=True bounds=Center: (51.33, 7.22, 0.00), Extents: (0.67, 0.29, 0.00)
+INK INVENTORY mid=(52.63, 6.34) age=1.349999 solid=True bounds=Center: (52.63, 6.34, 0.00), Extents: (0.63, 0.59, 0.00)
+INK INVENTORY mid=(53.70, 4.86) age=1.216666 solid=True bounds=Center: (53.70, 4.86, 0.00), Extents: (0.44, 0.89, 0.00)
+INK INVENTORY mid=(54.37, 2.99) age=1.083333 solid=True bounds=Center: (54.37, 2.99, 0.00), Extents: (0.22, 0.98, 0.00)
+FAIL GB-L19 a reachable sloping hardened arc exists body=(54.67, 2.75) velocity=(0.00, 0.00) feet=2.004999 hp=6

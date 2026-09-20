@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-I11-optional-writing-margin",
+  "id": "Empyrean-I12-diagonal-arc-and-seasonal-root",
   "build": true,
   "cases": [
     {
@@ -14,7 +14,7 @@
       "secrets": true
     },
     {
-      "name": "L20-leading-probe",
+      "name": "L20-root-probe",
       "suite": "Empyrean",
       "route": "GB-L20"
     }

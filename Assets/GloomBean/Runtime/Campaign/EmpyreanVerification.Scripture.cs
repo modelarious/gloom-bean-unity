@@ -24,7 +24,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator SemicolonMercy()
         {
-            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return Walk(47.6f,true);yield return RunArc(55,2);if(stopped)yield break;yield return Pause(1.05f);
+            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return Walk(47.6f,true);yield return RunArc(55,3);if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
             while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))>13.7f)&&attempts++<6){
                 var points=new System.Collections.Generic.List<Vector2>();
@@ -93,7 +93,7 @@ namespace GloomBean.Campaign
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
             if(!secret){yield return Walk(42,true);yield return RunArc(50.5f,3.3f);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,6);
-            for(int k=0;k<9;k++){yield return Jump(55+k*5,2+k*.7f);if(stopped)yield break;}
+            for(int k=0;k<9;k++){yield return Jump(55+k*5,k==0?3:2+k*.7f);if(stopped)yield break;}
             yield return Walk(95.9f);yield return Jump(100,9.2f);if(stopped)yield break;yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
             yield return CorrectingReturn();
         }

@@ -111,7 +111,7 @@ namespace GloomBean.Campaign
             var dot=b.Collect(PickupKind.Mercy,new Vector2(58.5f,17.5f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
             a.Ledge(47,5.2f,3).name="Optional suspended paper margin";a.Ledge(50,3.3f,4).name="Lower line-break refuge";
             var lowerWords=new List<GameObject>();for(int k=0;k<9;k++){
-                var word=a.Ledge(55+k*5,2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);
+                var word=a.Ledge(55+k*5,k==0?3:2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);
                 PrimitiveArt.Label(new[]{"DO","NOT","REPEAT","THE","PATH","YOU","TOOK","TO","ME"}[k],word.transform,(Vector2)word.transform.position+Vector2.up*.5f,.075f);
             }
             a.Ledge(103,9.2f,10);a.Key(101,10.5f);a.Nail(106,9.6f);
