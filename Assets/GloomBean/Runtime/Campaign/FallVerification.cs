@@ -97,6 +97,34 @@ namespace GloomBean.Campaign
             foreach(var f in returns){yield return Back(f);if(stopped)yield break;yield return Walk(f.transform.position.x-1.05f);}
             yield return Jump(14,30.2f);yield return Walk(8);yield return Walk(4);yield return Walk(-1);yield return Await("descend to the remembered entrance",()=>actor.Grounded&&actor.Feet.y<1,12);yield return Walk(2);
         }
+        IEnumerator Focus(HostKind kind)
+        {
+            if(stopped||!Live)yield break;Check("required tenant present: "+kind,host.Has(kind));
+            for(int i=0;i<3&&host.Primary!=kind;i++)yield return Press(new InputFrame{move=Vector2.down,alternate=true});
+            Check("focus "+kind,host.Primary==kind);
+        }
+        IEnumerator Fold(string group,Vector2 aim,float angle)
+        {
+            if(stopped||!Live)yield break;yield return Focus(HostKind.Stitch);yield return Press(new InputFrame{alternate=true});
+            yield return Press(new InputFrame{action=true,move=aim});var stitch=host.Form<StitchForm>();
+            Check("catch visible "+group+" seam",stitch.First&&stitch.First.group==group);if(stopped)yield break;
+            yield return Press(new InputFrame{action=true});Check("thread connects two real edges",stitch.Active&&stitch.Second);if(stopped)yield break;
+            yield return Press(new InputFrame{action=true});yield return Await("physical fold reaches "+angle,()=>Mathf.Abs(Mathf.DeltaAngle(stitch.Active.angle,angle))<2,12);
+            Snapshot("fold-"+group);yield return Press(new InputFrame{alternate=true});
+        }
+        IEnumerator SeamBridge(bool secret)
+        {
+            yield return Walk(11.8f);yield return Fold("span-a",Vector2.up,30);yield return Walk(26);
+            yield return Walk(27);yield return Fold("span-b",Vector2.up,30);yield return Walk(38.8f);yield return Calm();
+            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(48.4f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(49.8f);
+                yield return Jump(56.8f,14);}
+            else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
+            yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
+            yield return Walk(57.5f);yield return Fold("span-c",Vector2.up,14.04f);yield return Walk(43);yield return Calm();
+            Check("incense slows the moving bridge half",session.GetComponentsInChildren<StructuralDrift>().Any(x=>x.released&&x.TimeScale<.55f));
+            yield return Walk(38);yield return Fold("span-b",Vector2.left,7.13f);yield return Walk(24);
+            yield return Fold("span-a",Vector2.left,9.46f);yield return Walk(2);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[3];
@@ -105,7 +133,7 @@ namespace GloomBean.Campaign
             var stages=new List<StageDefinition>();if(selected=="W4"){stages.AddRange(world.levels);stages.Add(world.boss);}else stages.Add(selected==world.boss.id?world.boss:Array.Find(world.levels,x=>x.id==selected));
             foreach(var stage in stages){if(stage==null){failures++;Note("FAIL unknown Fall stage "+selected);break;}yield return Load(stage);
                 if(selected=="W4")Check("earned intra-world stage selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                if(stage.course==13)yield return Rain(secrets);else Check("route not implemented yet",false);
+                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else Check("route not implemented yet",false);
                 Check("stage completes through physical exit or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no earned progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("completion survives save",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy persists after real return":"Mercy remains optional",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}Snapshot("finish");if(stopped)break;}
             if(selected=="W4"&&!stopped){var save=new SaveStore(Path.Combine(dir,"test-save.json"));Check("Fall earns the False Empyrean",CampaignProgression.WorldOpen(game.AvailableWorlds,4,save.Data,PracticeWitness));Check("sixteen Mercies cannot restore the ending",!save.RestoredEnding);}

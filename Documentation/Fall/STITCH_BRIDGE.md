@@ -1,0 +1,3 @@
+# Folded architecture implementation
+
+L14 uses three actual hinge spans, a suspended island whose pose follows a folded support, and two independently drifting bridge halves after the Nail. Returning reuses different seam targets and lower angles; Censer slows the actual moving support clock. A lower recovery scaffold returns to the entry instead of creating an unrecoverable missed jump. Stitch aiming is now explicit movement + U within a bounded 12 m; the second edge must share the first edge structural group. The witness supplies production input only and asserts real fold angles, physical island movement, pickups and exit. Fresh validation pending.

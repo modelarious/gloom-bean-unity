@@ -36,7 +36,7 @@ namespace GloomBean.Campaign
     public sealed class StitchForm:HostForm
     {
         public override HostKind Kind=>HostKind.Stitch;public SeamNode First {get;private set;}public SeamNode Second {get;private set;}public FoldPanel Active {get;private set;}
-        public override string Help=>"U selects the nearest seam, then a second edge; U again tugs the real hinge. I cuts. Stay out of the fold.";
+        public override string Help=>"Aim with movement + U to catch a visible seam within 12 m; choose its partner, then U tugs the real hinge. I cuts. Stay clear of the fold.";
         public override string Status=>Active?"A live architectural stitch":First?"First seam selected":"Spool free";
         public bool Select(SeamNode n)
         {
@@ -50,7 +50,7 @@ namespace GloomBean.Campaign
         public void Cut(){First=Second=null;Active=null;var l=Actor.transform.Find("Architectural stitch");if(l)UnityEngine.Object.Destroy(l.gameObject);}
         public override bool Move(InputFrame f,float dt)
         {
-            if(f.alternate)Cut();if(f.action){if(Active)Tug();else{SeamNode best=null;float dist=2.5f;foreach(var n in UnityEngine.Object.FindObjectsByType<SeamNode>(FindObjectsSortMode.None)){float d=Vector2.Distance(Actor.Body.position,n.transform.position);if(d<dist&&n!=First){best=n;dist=d;}}Select(best);}}return false;
+            if(f.alternate)Cut();if(f.action){if(Active)Tug();else{SeamNode best=null;float score=999;Vector2 aim=f.move;foreach(var n in UnityEngine.Object.FindObjectsByType<SeamNode>(FindObjectsSortMode.None)){if(n==First||(First&&n.group!=First.group))continue;Vector2 delta=(Vector2)n.transform.position-Actor.Body.position;float d=delta.magnitude;if(d>12)continue;float alignment=aim.sqrMagnitude>.1f?Vector2.Dot(aim.normalized,delta.normalized):1;if(alignment<.25f)continue;float q=d+(1-alignment)*12;if(q<score){best=n;score=q;}}Select(best);}}return false;
         }
         public override void Draw(){if(First)PrimitiveArt.Line("Architectural stitch",Actor.transform,First.transform.position,Second?Second.transform.position:Actor.transform.position,.06f,new Color(.95f,.48f,.55f),18);}
         public override void Leave(){Cut();}

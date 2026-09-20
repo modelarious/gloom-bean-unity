@@ -28,19 +28,35 @@ namespace GloomBean.Campaign
         }
         void Seam(AtlasBuilder a)
         {
-            a.Begin(new Rect(-9,-13,119,52),new Vector2(2,1));var b=a.b;a.Floor(-6,18);a.Floor(18,103,-5);a.Exit(2,1.1f);a.Source(HostKind.Stitch,8);
-            var panels=new List<FoldPanel>();
-            // The low scaffold lets both edges be inspected first. Pulling the thread changes
-            // the actual route above it, rather than teleporting through a sewn 'door'.
-            var p1=a.Hinge(new Vector2(20,1),10,-25);panels.Add(p1);a.Seam(new Vector2(28.7f,6));a.Steps(17,-3,5,2.5f,1.9f,3.5f);
-            var p2=a.Hinge(new Vector2(40,7),12,-35);panels.Add(p2);a.Seam(new Vector2(50.4f,13));a.Steps(35,-3,8,2.1f,2,3.4f);
-            a.Source(HostKind.Censer,56,11,true);a.Ledge(57,11,8);
-            var p3=a.Hinge(new Vector2(64,11),13,-20);panels.Add(p3);a.Seam(new Vector2(75.3f,17.5f));a.Ledge(72,13.2f,4);a.Ledge(77,15.4f,4);
-            a.Ledge(86,18,6);a.Ledge(95,20,10);a.Key(91,21.3f);a.Nail(99,20.4f);
-            var moving=b.Slider(new Vector2(60,7),new Vector2(70,7),new Vector2(5,.5f),2.2f);a.Figure(80,31,14,2.2f);
-            var hidden=a.Hinge(new Vector2(52,18),8,95,"tower");a.Seam(new Vector2(59,21.9f),"tower");a.Ledge(55,17,4);a.Ledge(62,22,4);a.Mercy(63,23.2f);
-            b.session.Turned+=()=>{moving.origin+=Vector2.right*7;moving.end+=Vector2.left*7;foreach(var panel in panels){panel.speed=22;panel.targetAngle=-15;panel.folding=true;}hidden.targetAngle=20;hidden.folding=true;};
-            a.Health(56,12);b.Tip(new Vector2(8,2),"U catches a seam. Visit its partner, select again, then tug. The supporting wall rotates through physical space; do not stand in the crease.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-10,-17,88,50),new Vector2(2,1));var b=a.b;
+            a.Floor(-6,14);a.Floor(14,73,-12);a.Exit(2,1.1f);a.Source(HostKind.Stitch,8);
+            for(int k=0;k<6;k++){var step=a.Ledge(10+k%2*2,-10+k*2,4);step.AddComponent<OneWaySurface>();}
+            var first=a.Hinge(new Vector2(14,0),8,100,"span-a");first.name="Entry folding tower";
+            var firstEnd=a.Seam(new Vector2(20.928f,4),"span-a");a.Ledge(25,4,8);
+            var second=a.Hinge(new Vector2(28,4),10,85,"span-b");second.name="Middle folding tower";
+            var secondEnd=a.Seam(new Vector2(36.660f,9),"span-b");
+            var leftHalf=a.Ledge(40,9,8);leftHalf.name="Left drifting bridge half";var leftBody=leftHalf.AddComponent<Rigidbody2D>();leftBody.bodyType=RigidbodyType2D.Kinematic;
+            var leftDrift=leftHalf.AddComponent<StructuralDrift>();leftDrift.amplitude=.65f;leftDrift.period=14;
+            var rightHalf=a.Ledge(46,9,4);rightHalf.name="Right drifting bridge half";var rightBody=rightHalf.AddComponent<Rigidbody2D>();rightBody.bodyType=RigidbodyType2D.Kinematic;
+            var rightDrift=rightHalf.AddComponent<StructuralDrift>();rightDrift.direction=Vector2.left;rightDrift.amplitude=.65f;rightDrift.period=14;
+            a.Source(HostKind.Censer,38,10,true);
+            var third=a.Hinge(new Vector2(48,9),10,-90,"span-c");third.name="Far folding tower";
+            var thirdEnd=a.Seam(new Vector2(56.660f,14),"span-c");a.Ledge(63,14,14);a.Key(61,15.2f);a.Nail(67,14.4f);
+            // A support's movement carries an entire suspended island, not just an unlock token.
+            var secret=a.Hinge(new Vector2(40,9),8,130,"island");secret.name="Island support tower";
+            a.Seam(new Vector2(46.5f,13.65f),"island");
+            var island=a.Ledge(36.86f,15.58f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
+            var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(2,.45f);
+            a.Mercy(36.86f,16.78f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
+            var ret1=a.Seam(new Vector2(20,1),"span-a");ret1.gameObject.SetActive(false);
+            var ret2=a.Seam(new Vector2(36,5),"span-b");ret2.gameObject.SetActive(false);
+            var ret3=a.Seam(new Vector2(56,11),"span-c");ret3.gameObject.SetActive(false);
+            b.session.Turned+=()=>{leftDrift.released=rightDrift.released=true;foreach(var edge in new[]{firstEnd,secondEnd,thirdEnd})edge.gameObject.SetActive(false);
+                foreach(var edge in new[]{ret1,ret2,ret3})edge.gameObject.SetActive(true);
+                foreach(var panel in new[]{first,second,third}){panel.speed=32;panel.targetAngle=80;panel.folding=true;}};
+            a.Health(40,10.2f);a.Cure(HostKind.None,4,1,true);
+            b.Tip(new Vector2(8,2),"Aim + U catches a seam; U selects its partner, then U folds. I releases the stitch. Work from outside the sweep.");
+            b.Tip(new Vector2(38,10.7f),"The far-away island hangs from the tower. Moving the support moves the entire island. Incense slows the severed bridge halves.");
         }
         ProcessionCarrier Carrier(AtlasBuilder a,Vector2 from,Vector2 to,PulseReceiver bell,float speed=2)
         {
