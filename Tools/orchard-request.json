@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H17-bell-screen-signature",
+  "id": "Empyrean-H18-local-bell-capture",
   "build": true,
   "cases": [
     {
@@ -12,10 +12,6 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }
