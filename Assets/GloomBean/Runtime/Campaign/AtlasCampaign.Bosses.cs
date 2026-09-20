@@ -107,29 +107,7 @@ namespace GloomBean.Campaign
             b.Tip(new Vector2(42,16.8f),"Aim U at a loose architectural edge and its partner. Tilting a support moves everything resting on it.");
             b.Tip(new Vector2(33,11.8f),"Choose a horizontal footing before tugging the lower catch. The slab stops against your physical brace; the load keeps moving.");
         }
-        void Hosts(AtlasBuilder a)
-        {
-            a.Begin(new Rect(-8,-10,100,47),new Vector2(3,1));var b=a.b;a.Floor(-5,87);var boss=Director(a,new Vector2(49,10),"The Host of Hosts",new Color(.64f,.37f,.56f));boss.attackInterval=4.5f;
-            var embargo=boss.gameObject.AddComponent<HostEmbargo>();var stolen=boss.gameObject.AddComponent<StolenAttack>();stolen.embargo=embargo;stolen.boss=boss;
-            var sources=new List<HostSource>();sources.Add(a.Source(HostKind.Echo,8));sources.Add(a.Source(HostKind.Wax,8,5));sources.Add(a.Source(HostKind.Parallax,8,9));a.Ledge(8,4,7);a.Ledge(8,8,7);a.Ledge(3,2,4);a.Ledge(3,6,4);
-            var p1=b.Plate(new Vector2(17,.14f));var p2=b.Plate(new Vector2(27,.14f));var weigh=b.Plate(new Vector2(39,.14f),.1f);a.Projection(new Vector2(34,2),new Vector2(9,6));b.Solid("A physical far-scale slot",new Vector2(46,2),new Vector2(8,2));
-            HostKind chosen=HostKind.None;a.host.Acquired+=k=>{if(boss.phase==0)chosen=k;};
-            var stage2=new List<HostSource>{a.Source(HostKind.Gullet,56,1,true),a.Source(HostKind.Censer,61,1,true),a.Source(HostKind.Lodestone,66,1,true),a.Source(HostKind.Shadow,72,1,true),a.Source(HostKind.Ink,77,1,true)};foreach(var s in stage2)s.gameObject.SetActive(false);
-            var chunk=a.Chunk(new Vector2(59,2),new Vector2(3,4));var movable=a.Metal(new Vector2(68,2),new Vector2(1.4f,4),4,false,-1);Sun(a,new Vector2(62,13),23);var shadowGate=b.Door(new Vector2(82,3),new Vector2(.7f,6));var hand=b.Trigger("The other Host's shadow",new Vector2(77,.6f),Vector2.one*.7f,new Color(.4f,.3f,.56f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();hand.gate=shadowGate;
-            var pairSources=new[]{a.Source(HostKind.Stitch,18,1,true),a.Source(HostKind.Coffin,23,1,true),a.Source(HostKind.Echo,30,1,true),a.Source(HostKind.Ink,34,1,true),a.Source(HostKind.Wax,40,1,true),a.Source(HostKind.Gullet,44,1,true)};foreach(var s in pairSources)s.gameObject.SetActive(false);
-            var panel=a.Hinge(new Vector2(19,7),11,-15,"host");a.Seam(new Vector2(28,13.3f),"host");a.Steps(14,2,3,2,2,3);a.Ledge(32,14,7);
-            var brace=b.Trigger("Final load",new Vector2(32,14.7f),new Vector2(4,1.4f),Color.clear).AddComponent<BraceReceiver>();brace.holdRequired=1;
-            a.Ledge(72,9,7);a.Health(4,1.2f);a.Health(84,1.2f);float dwell=0;Vector2 metalOrigin=movable.transform.position;
-            boss.Configure(boss.title,p=>{
-                bool two=p1.Pressed&&p2.Pressed;bool light=weigh.Mass>.6f&&weigh.Mass<.85f;bool far=a.Player.Body.position.x>50&&a.Player.Height<1.1f;
-                if(p==0){dwell=chosen!=HostKind.None&&(two||light||far)?dwell+Time.deltaTime:0;return dwell>.8f;}
-                if(p==1)return !chunk.gameObject.activeSelf||hand.active||Vector2.Distance(movable.transform.position,metalOrigin)>4;
-                return panel.angle>20&&brace.latched || hand.active&&Vector2.Distance(movable.transform.position,metalOrigin)>3 || two&&a.Player.Feet.y>7 || light&&!chunk.gameObject.activeSelf;
-            },p=>{
-                if(p==0)boss.objective="Choose a tenant, then solve the scales or the physical caliper route.";
-                if(p==1){embargo.Steal(a.host,chosen);foreach(var s in sources)s.enabledSource=s.kind!=chosen;foreach(var s in stage2)s.gameObject.SetActive(true);a.Player.Revive(new Vector2(54,1));boss.objective="Your chosen tenant is now its weapon. Relocate terrain, rearrange the iron screen, or reach the shadow latch.";}
-                if(p==2){foreach(var s in pairSources){s.gameObject.SetActive(true);s.enabledSource=s.kind!=chosen;}a.Player.Revive(new Vector2(14,1));boss.objective="Use two systems together: fold and brace, iron and shadow, echo and ink, or wax and displaced terrain.";}
-            });
-        }
+        void Hosts(AtlasBuilder a){HostFinal(a);}
+
     }
 }
