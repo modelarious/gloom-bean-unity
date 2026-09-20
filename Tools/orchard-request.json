@@ -1,5 +1,5 @@
 {
-  "id": "Fall-R02-rain-build",
+  "id": "Fall-R03-fresh-landing",
   "build": true,
   "cases": [
     {
@@ -12,10 +12,6 @@
       "suite": "Fall",
       "route": "GB-L13",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

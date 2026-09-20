@@ -5,3 +5,5 @@ L13 now ascends through a readable ecology of falling figures. Stillness slows a
 An input-only witness tests actual support on each body, actual local time scale, acquisition, ordinary return and optional collected Mercy. First native results pending. This is a proposed executable interpretation of the atlas; no final art/human acceptance claim.
 
 R01 compilation caught an incorrect return-value assumption: AtlasBuilder.Mercy returns void. The physically attached pickup is now obtained from the actual created Mercy component. Each penitent owns its own landing tell instead of overwriting a single shared line.
+
+R02 first jump failed; the next witness waits for a fresh kneeling window rather than treating a nearly-expired platform as equivalent. Exact body/phase/time-scale traces accompany the jump. This changes player timing only, not figure state.

@@ -69,10 +69,10 @@ namespace GloomBean.Campaign
         IEnumerator Back(KneelingFigure f)
         {
             if(stopped||!Live)yield break;yield return Calm();if(stopped)yield break;
-            yield return Await("kneeling back becomes a physical landing",()=>f.pose==KneelingFigure.Pose.Kneeling,25);
-            if(stopped)yield break;float end=Time.time+6;bool sent=false;
+            yield return Await("kneeling back becomes a physical landing",()=>f.pose==KneelingFigure.Pose.Kneeling&&f.clock<f.hold-2,25);
+            if(stopped)yield break;float end=Time.time+6,nextTrace=0;bool sent=false;
             while(Live&&Time.time<end){float dx=f.transform.position.x-actor.Body.position.x;bool edge=!sent&&actor.Grounded;if(edge)sent=true;
-                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*1.4f-actor.Body.linearVelocity.x*.14f,-1,1),0),jump=edge,jumpHeld=true};yield return NextPhysics();
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*1.4f-actor.Body.linearVelocity.x*.14f,-1,1),0),jump=edge,jumpHeld=true};yield return NextPhysics();if(Time.time>=nextTrace){nextTrace=Time.time+.12f;Note("BACK t="+Time.time.ToString("0.00")+" body="+actor.Body.position+" feet="+actor.Feet.y+" velocity="+actor.Body.linearVelocity+" target="+f.body.position+" pose="+f.pose+" phaseTime="+f.clock+" scale="+f.CurrentTimeScale);}
                 if(sent&&!edge&&actor.Grounded&&actor.GroundCollider==f.GetComponent<Collider2D>()&&Mathf.Abs(dx)<.3f)break;}
             input.frame=default;Check("land on real back of "+f.name,actor.Grounded&&actor.GroundCollider==f.GetComponent<Collider2D>());
             if(stopped)yield break;yield return Calm();Check("incense changes this body's simulation rate",f.CurrentTimeScale<.55f);Snapshot("penitent-"+f.name.Replace(" ","-"));
