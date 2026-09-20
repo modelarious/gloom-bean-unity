@@ -188,13 +188,13 @@ namespace GloomBean.Campaign
             var finalFlat=a.Cure(HostKind.Parallax,72,34);returnObjects.Add(finalFlat.gameObject);
             // The optional lobby chandelier is entered from its inside only after its
             // actual winch aligns with the revealed return gallery.
-            var winchObj=b.Solid("Lobby chandelier maintenance winch",new Vector2(47,33),new Vector2(4,.4f),b.accent,Layers.Moving);var winch=winchObj.AddComponent<ApartmentLift>();winch.lower=new Vector2(47,33);winch.upper=new Vector2(31.5f,34.6f);winch.speed=4;
-            var winchHandle=b.Switch(new Vector2(47,34.1f),"CHANDLIER WINCH");winchHandle.transform.SetParent(winchObj.transform,true);winchHandle.Changed+=v=>winch.upperRequested=v;returnObjects.Add(winchObj);
-            var chandelier=b.Solid("Unreachable lobby chandelier seen from below",new Vector2(38,37),new Vector2(8,6),new Color(.73f,.63f,.39f));
-            b.Solid("Chandelier inner sill",new Vector2(37,34.55f),new Vector2(12,.5f),new Color(.53f,.83f,.78f),Layers.Interior);
-            Sill(32,34.8f,4);var chandelierTenant=a.Source(HostKind.InsideOut,33.1f,35.5f);chandelierTenant.gameObject.SetActive(false);
+            var winchObj=b.Solid("Lobby chandelier maintenance winch",new Vector2(47,33.7f),new Vector2(4,.4f),b.accent,Layers.Moving);var winch=winchObj.AddComponent<ApartmentLift>();winch.lower=new Vector2(47,33.7f);winch.upper=new Vector2(31.5f,36.6f);winch.via=new Vector2(31.5f,33.7f);winch.useVia=true;winch.speed=4;winchObj.AddComponent<OneWaySurface>();
+            var winchHandle=b.Switch(new Vector2(47,34.8f),"CHANDELIER WINCH");winchHandle.transform.SetParent(winchObj.transform,true);winchHandle.Changed+=v=>winch.upperRequested=v;returnObjects.Add(winchObj);
+            var chandelier=b.Solid("Unreachable lobby chandelier seen from below",new Vector2(38,39),new Vector2(8,6),new Color(.73f,.63f,.39f));
+            b.Solid("Chandelier inner sill",new Vector2(37,36.55f),new Vector2(12,.5f),new Color(.53f,.83f,.78f),Layers.Interior);
+            Sill(32,36.8f,4);var chandelierTenant=a.Source(HostKind.InsideOut,33.1f,37.5f);chandelierTenant.gameObject.SetActive(false);
             var dock=b.root.gameObject.AddComponent<DockedTenant>();dock.lift=winch;dock.tenant=chandelierTenant;
-            a.Cure(HostKind.InsideOut,30.8f,35.6f);a.Mercy(38,36);
+            a.Cure(HostKind.InsideOut,30.8f,37.6f);a.Mercy(38,38);
             foreach(var g in returnObjects)g.SetActive(false);
             b.session.Turned+=()=>{interior.SetFacadeSolid(false);foreach(var room in rooms)room.running=true;brake.released=true;foreach(var g in returnObjects)g.SetActive(true);};
             a.Health(46,29.4f);a.Cure(HostKind.None,4,1,true);
