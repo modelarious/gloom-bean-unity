@@ -2,12 +2,11 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "I15: verify revised L19 full-edge Ink sampling at both cadences and isolated practice; the complete ordinary/secret route has prior real-input proof, not yet a current clean earned-chain certificate. L20 first two sanctums now pass; execute real projected-gap/folded-fresco third sanctum, then rising/light/collapse/alternatives and B5/endings.",
+  "next_gate": "J01: validate the recovered held-focus fix and shallow Ink apex. Finish L19 secret/cadence, then remaining White Gate sanctums/alternatives/collapse/rhythm and B5/endings; original complete game remains the finish line.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Empyrean-I15-scripture-cadence-and-folded-sanctum/runner.json",
-    "source": "10a4c352d246c95de2d418b29fef67127c3dd5ff",
-    "status": "DISPATCHED_READ_ACTUAL_RECEIPT"
+    "receipt": "Reports/Orchard-v04/Completion-J01-recovered-focus-apex/runner.json",
+    "status": "READY_TO_DISPATCH"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
