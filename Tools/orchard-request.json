@@ -1,17 +1,11 @@
 {
-  "id": "City-R11-projection-and-moving-room",
+  "id": "City-R12-loaded-room-and-surveyor",
   "build": true,
   "cases": [
     {
       "name": "L11-critical",
       "suite": "City",
       "route": "GB-L11"
-    },
-    {
-      "name": "L11-secrets",
-      "suite": "City",
-      "route": "GB-L11",
-      "secrets": true
     },
     {
       "name": "L12-critical",
@@ -23,6 +17,11 @@
       "suite": "City",
       "route": "GB-L12",
       "secrets": true
+    },
+    {
+      "name": "Surveyor",
+      "suite": "City",
+      "route": "GB-B3"
     },
     {
       "name": "Mechanics",

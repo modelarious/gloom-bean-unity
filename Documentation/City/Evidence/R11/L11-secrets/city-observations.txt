@@ -1,0 +1,108 @@
+BEGIN GB-L11 The Perspective Tax Office
+EVENT t=1.43 depth 1
+PASS GB-L11 walk 11 | (10.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L11 perspective tenant exists | (10.79, 0.76) feet=0.01 hp=6 twin=none
+EVENT t=2.18 depth 0
+PASS GB-L11 project into plane 0 | (10.81, 0.75) feet=0.26 hp=6 twin=none
+PASS GB-L11 walk 12.2 | (11.99, 0.49) feet=0.01 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (11.99, 0.49) feet=0.01 hp=6 twin=none
+PASS GB-L11 land projected body 0 at 17 / 1.195 | (16.81, 1.69) feet=1.20 hp=6 twin=none
+PASS GB-L11 walk 18.5 | (18.30, 1.69) feet=1.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (18.30, 1.69) feet=1.20 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(18.33, 1.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.
+EVENT t=4.77 depth 1
+PASS GB-L11 land projected body 1 at 23 / 3 | (22.81, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L11 walk 25 | (24.80, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (24.80, 3.75) feet=3.00 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(24.85, 3.96) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Perspective platform:18 notice=Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.
+DEPTH target=2 actual=1 pos=(26.61, 6.12) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+EVENT t=6.55 depth 2
+PASS GB-L11 land projected body 2 at 29 / 4.72 | (28.82, 5.78) feet=4.73 hp=6 twin=none
+PASS GB-L11 walk 32 | (31.79, 5.78) feet=4.73 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (31.79, 5.78) feet=4.73 hp=6 twin=none
+DEPTH target=0 actual=2 pos=(31.87, 5.99) size=(1.23, 2.10) mask=526080 excluded=393216 ground=Perspective platform:19 notice=The destination silhouette is occupied.
+EVENT t=7.48 depth 1
+DEPTH target=0 actual=1 pos=(33.79, 8.15) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+EVENT t=7.82 depth 0
+PASS GB-L11 land projected body 0 at 35 / 6.195 | (34.80, 6.69) feet=6.20 hp=6 twin=none
+PASS GB-L11 walk 36.8 | (36.59, 6.69) feet=6.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (36.59, 6.69) feet=6.20 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(36.63, 6.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=The destination silhouette is occupied.
+DEPTH target=1 actual=0 pos=(37.84, 9.05) size=(0.57, 0.98) mask=132864 excluded=786432 ground=none notice=The destination silhouette is occupied.
+EVENT t=9.15 depth 1
+PASS GB-L11 land projected body 1 at 41 / 8 | (40.81, 8.75) feet=8.00 hp=6 twin=none
+PASS GB-L11 jump 38 / 10 peak 10.37 | (38.21, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-L11 jump 40.5 / 12 peak 12.37 | (40.29, 12.75) feet=12.00 hp=6 twin=none
+PASS GB-L11 align physical body at 42 | (41.96, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L11 body contacts both printed margins | (41.96, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L11 walk 48 | (47.80, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L11 registered tax-form Mercy | (47.80, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L11 walk 50 | (49.83, 12.40) feet=11.65 hp=6 twin=none
+PASS GB-L11 leave secret onto near counter | (50.01, 10.45) feet=9.70 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (50.01, 10.45) feet=9.70 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(50.02, 10.66) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Platform:9 notice=A small mercy. It will be kept when you clear the level.
+EVENT t=14.38 depth 2
+PASS GB-L11 land projected body 2 at 51 / 9.72 | (50.99, 10.80) feet=9.75 hp=6 twin=none
+PASS GB-L11 walk 53 | (52.78, 10.76) feet=9.71 hp=6 twin=none
+PASS GB-L11 clerk relocates furniture into matching plane | (52.88, 10.97) feet=9.92 hp=6 twin=none
+PASS GB-L11 walk 60 | (59.82, 10.83) feet=10.08 hp=6 twin=none
+PASS GB-L11 flat sign removes depth before cabinet | (59.82, 10.83) feet=10.08 hp=6 twin=none
+PASS GB-L11 walk 60.5 | (60.30, 10.24) feet=9.49 hp=6 twin=none
+PASS GB-L11 drop to filing-cabinet interior entrance | (60.45, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L11 flensing clerk exposes cabinet interior | (60.45, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L11 jump 63 / 1 peak 2.36 | (62.78, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-L11 jump 65 / 2 peak 3.37 | (64.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L11 jump 67.2 / 3 peak 3.50 | (66.99, 3.76) feet=3.01 hp=6 twin=none
+PASS GB-L11 jump 68.6 / 5 peak 5.37 | (68.38, 5.75) feet=5.00 hp=6 twin=none
+PASS GB-L11 jump 70.5 / 6 peak 7.37 | (70.29, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L11 walk 73.25 | (73.05, 6.76) feet=6.01 hp=6 twin=none
+PASS GB-L11 jump 75.2 / 7 peak 8.37 | (74.99, 7.76) feet=7.01 hp=6 twin=none
+PASS GB-L11 jump 77.2 / 8 peak 9.37 | (76.98, 8.76) feet=8.01 hp=6 twin=none
+PASS GB-L11 jump 78.6 / 10 peak 10.37 | (78.38, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-L11 jump 80.5 / 11 peak 12.37 | (80.29, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-L11 walk 85.4 | (85.20, 10.81) feet=10.06 hp=6 twin=none
+PASS GB-L11 cabinet frame returns ordinary body | (85.20, 10.81) feet=10.06 hp=6 twin=none
+EVENT t=26.50 depth 1
+PASS GB-L11 walk 89 | (88.78, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-L11 walk 91.4 | (91.20, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (91.20, 10.76) feet=10.01 hp=6 twin=none
+DEPTH target=0 actual=1 pos=(91.25, 10.97) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Platform:9 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=27.27 depth 0
+PASS GB-L11 land projected body 0 at 97 / 11.195 | (96.80, 11.69) feet=11.20 hp=6 twin=none
+PASS GB-L11 walk 99 | (98.79, 11.69) feet=11.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (98.79, 11.69) feet=11.20 hp=6 twin=none
+DEPTH target=2 actual=0 pos=(98.82, 11.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=29.60 depth 1
+DEPTH target=2 actual=1 pos=(100.54, 14.05) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=29.93 depth 2
+PASS GB-L11 land projected body 2 at 106 / 12.92 | (105.83, 13.98) feet=12.93 hp=6 twin=none
+PASS GB-L11 walk 110.5 | (110.34, 13.98) feet=12.93 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (110.34, 13.98) feet=12.93 hp=6 twin=none
+PASS GB-L11 land projected body 2 at 118 / 14 | (117.81, 15.06) feet=14.01 hp=6 twin=none
+PASS GB-L11 walk 119.6 | (119.43, 15.06) feet=14.01 hp=6 twin=none
+PASS GB-L11 office key physically collected | (119.43, 15.06) feet=14.01 hp=6 twin=none
+PASS GB-L11 office counters retract during closure | (119.51, 15.06) feet=14.01 hp=6 twin=none
+PASS GB-L11 walk 116 | (116.16, 15.06) feet=14.01 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (116.16, 15.06) feet=14.01 hp=6 twin=none
+DEPTH target=0 actual=2 pos=(116.09, 15.26) size=(1.23, 2.10) mask=526080 excluded=393216 ground=Platform:9 notice=THE TURN — return to the entrance!
+EVENT t=33.48 depth 1
+DEPTH target=0 actual=1 pos=(114.09, 17.42) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=THE TURN — return to the entrance!
+EVENT t=33.82 depth 0
+PASS GB-L11 land projected body 0 at 111 / 16.195 | (111.20, 16.69) feet=16.20 hp=6 twin=none
+PASS GB-L11 walk 108.5 | (108.70, 16.69) feet=16.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (108.70, 16.69) feet=16.20 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(108.67, 16.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=THE TURN — return to the entrance!
+EVENT t=35.57 depth 1
+PASS GB-L11 land projected body 1 at 102 / 16.3 | (102.19, 17.05) feet=16.30 hp=6 twin=none
+PASS GB-L11 walk 98.5 | (98.71, 17.05) feet=16.30 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (98.71, 17.05) feet=16.30 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(98.66, 17.26) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Perspective platform:18 notice=
+EVENT t=37.65 depth 2
+PASS GB-L11 land projected body 2 at 92 / 15.42 | (92.18, 16.48) feet=15.43 hp=6 twin=none
+PASS GB-L11 walk 84 | (84.20, 16.22) feet=15.47 hp=6 twin=none
+PASS GB-L11 monochrome sign restores body for fire escape | (84.20, 16.22) feet=15.47 hp=6 twin=none
+PASS GB-L11 walk 40 | (40.21, 15.26) feet=14.51 hp=6 twin=none
+PASS GB-L11 walk 2 | (3.20, 1.17) feet=0.42 hp=6 twin=none
+PASS GB-L11 stage cleared by actual return or boss solution | (3.20, 1.17) feet=0.42 hp=6 twin=none
+PASS GB-L11 stage clear persisted | (3.20, 1.17) feet=0.42 hp=6 twin=none
+PASS GB-L11 Mercy saved after physical collection and return | (3.20, 1.17) feet=0.42 hp=6 twin=none

@@ -65,6 +65,7 @@ namespace GloomBean.Campaign
                 var group=new GameObject("Surveyor moving caliper "+i);group.transform.SetParent(b.root);group.transform.position=new Vector2(x[i],y[i]);
                 var surface=a.Depth(new Vector2(x[i],y[i]),new Vector2(10,.6f),i);surface.gameObject.AddComponent<OneWaySurface>();surface.transform.SetParent(group.transform,true);
                 cores[i]=Core("Surveyor caliper "+i,new Vector2(x[i]+1.7f,y[i]+.3f*DepthGeometry.Factor(i)+.8f),17+i);cores[i].transform.SetParent(group.transform,true);
+                var jaw=b.Solid("Caliper end stop "+i,new Vector2(x[i]+5*DepthGeometry.Factor(i)-.25f,y[i]+.3f*DepthGeometry.Factor(i)+.7f),new Vector2(.4f,1.4f),b.accent,17+i);jaw.transform.SetParent(group.transform,true);
                 var motion=group.AddComponent<MotionPlatform>();motion.origin=new Vector2(x[i],y[i]);motion.end=motion.origin+Vector2.right*.8f;motion.speed=.65f;
             }
             var phaseThree=GroupSince(first,"Surveyor act III moving projected calipers");phaseThree.SetActive(false);

@@ -1,0 +1,22 @@
+BEGIN GB-L12 The Hotel That Is Its Own Courtyard
+EVENT t=1.62 depth 1
+PASS GB-L12 walk 9 | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 perspective fly acquired in hotel lobby | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 walk 10 | (9.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 jump 12 / 2 peak 2.37 | (11.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 walk 13.4 | (13.20, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 jump 17 / 4 peak 4.37 | (16.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 walk 18.4 | (18.19, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 jump 22 / 6 peak 6.37 | (21.78, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 walk 38 | (37.79, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 perspective tenant exists | (37.79, 6.75) feet=6.00 hp=6 twin=none
+EVENT t=8.75 depth 0
+PASS GB-L12 project into plane 0 | (37.81, 6.75) feet=6.26 hp=6 twin=none
+PASS GB-L12 room carries its actual occupant to (22.00, 14.00) | (25.00, 14.55) feet=14.06 hp=6 twin=none
+PASS GB-L12 support belongs to preserved moving room | (25.00, 14.55) feet=14.06 hp=6 twin=none
+PASS GB-L12 walk 18.5 | (18.72, 14.50) feet=14.01 hp=6 twin=(25.28, 14.50)
+PASS GB-L12 vanity reflection composes with perspective | (18.72, 14.50) feet=14.01 hp=6 twin=(25.28, 14.50)
+PHYSICAL shape=Center: (17.00, 4.49, 0.00), Extents: (0.29, 0.49, 0.00) axis=Vertical forms=Parallax,Mirror
+CONTACT Platform Center: (17.00, 3.80, 0.00), Extents: (2.00, 0.20, 0.00)
+FAIL GB-L12 jump 17 / 15.395 peak 20.16 | (17.00, 4.49) feet=4.01 hp=6 twin=(31.50, 7.05)
+FAIL GB-L12 stage cleared by actual return or boss solution | (17.00, 4.49) feet=4.01 hp=6 twin=(31.50, 7.05)

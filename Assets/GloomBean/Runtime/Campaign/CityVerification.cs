@@ -162,6 +162,28 @@ namespace GloomBean.Campaign
             yield return Await("land on an actual moving hotel roof",()=>actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponentInParent<RoomOrbit>(),10,()=>{var best=orbiting.OrderByDescending(r=>r.transform.position.y).First();return new InputFrame{move=new Vector2(Mathf.Clamp(best.transform.position.x-actor.Body.position.x,-1,1),0)};});
             yield return Walk(28);yield return Walk(23);yield return Walk(18);yield return Walk(13);yield return Walk(8);yield return Walk(3);yield return Walk(-2);yield return Await("lobby exit reached from rear of known rooms",()=>actor.Grounded&&actor.Feet.y<1,8);yield return Walk(2);
         }
+        IEnumerator Strike(SurveyorCore core)
+        {
+            if(stopped||!Live)yield break;Check("physical weak point exists",core!=null);if(stopped)yield break;float end=Time.time+5,nextAttack=0;
+            while(Live&&Time.time<end&&!core.struck){float dx=core.transform.position.x-actor.Body.position.x;bool hit=Mathf.Abs(dx)<2&&Time.time>=nextAttack;if(hit)nextAttack=Time.time+.55f;
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx,-1,1),0),attack=hit};yield return NextPhysics();}
+            input.frame=default;Check("actual tackle strikes "+core.name,core.struck);yield return Pause(.45f);
+        }
+        IEnumerator Surveyor()
+        {
+            var boss=session.GetComponentInChildren<AtlasBoss>();yield return Walk(7);Check("Surveyor creates real player reflection",host.Has(HostKind.Mirror));yield return Walk(12.1f);
+            var first=session.GetComponentsInChildren<SurveyorCore>().First(c=>c.name=="Surveyor exposed reflection");var twin=host.Form<MirrorForm>()?.Twin;
+            yield return Await("cabinet pins present body while twin reaches exposed reflection",()=>twin&&twin.Body.position.x<33.2f,5,()=>new InputFrame{move=Vector2.right});
+            int before=actor.Health;Vector2 position=actor.Body.position;yield return Press(new InputFrame{move=Vector2.right,attack=true});yield return Await("reflected tackle defeats Surveyor act I",()=>boss.phase>=1,3);
+            Check("first act transition preserves health and location",actor.Health<=before&&Vector2.Distance(position,actor.Body.position)<3);Snapshot("reflected-weak-point");if(stopped)yield break;
+            yield return Walk(14);Check("enter enclosed attack as inside-out body",host.Has(HostKind.InsideOut));
+            yield return Jump(17,1);yield return Jump(19,2);yield return Jump(21.2f,3);yield return Jump(22.6f,5);yield return Jump(24.5f,6);yield return Walk(27.25f);yield return Jump(29.2f,7);yield return Jump(31.2f,8);yield return Jump(32.6f,10);yield return Jump(34.5f,11);if(stopped)yield break;
+            var second=session.GetComponentsInChildren<SurveyorCore>().First(c=>c.name=="Surveyor internal outline");before=actor.Health;yield return Strike(second);yield return Await("internal hit opens moving calipers",()=>boss.phase>=2,3);Check("second act does not heal the player",actor.Health<=before);Snapshot("interior-weak-point");
+            yield return Walk(37);Check("perspective source acquired without a forced grant",host.Has(HostKind.Parallax));yield return Walk(38);yield return PlaneJump(42.4f,12.395f,0);if(stopped)yield break;
+            var cores=session.GetComponentsInChildren<SurveyorCore>();yield return Strike(cores.First(c=>c.name=="Surveyor caliper 0"));yield return Walk(44.5f);yield return PlaneJump(51.4f,14.2f,1);if(stopped)yield break;
+            yield return Strike(cores.First(c=>c.name=="Surveyor caliper 1"));yield return Walk(54.5f);yield return PlaneJump(60.4f,15.92f,2);if(stopped)yield break;
+            yield return Strike(cores.First(c=>c.name=="Surveyor caliper 2"));Check("three physical depth weak points defeat Surveyor",boss.defeated&&session.Phase==RunPhase.Cleared);Snapshot("surveyor-victory");
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[2];
@@ -173,7 +195,7 @@ namespace GloomBean.Campaign
             {
                 if(stage==null){failures++;Note("FAIL unknown City stage "+selected);break;}yield return Load(stage);
                 if(selected=="W3")Check("earned intra-world selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;case 11:yield return Tax(secrets);break;case 12:yield return Hotel(secrets);break;default:Check("route not implemented yet",false);break;}
+                if(stage.boss)yield return Surveyor();else switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;case 11:yield return Tax(secrets);break;case 12:yield return Hotel(secrets);break;default:Check("route not implemented yet",false);break;}
                 Check("stage cleared by actual return or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("stage clear persisted",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy saved after physical collection and return":"ordinary route requires no Mercy",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}
                 Snapshot("finish");if(stopped)break;
