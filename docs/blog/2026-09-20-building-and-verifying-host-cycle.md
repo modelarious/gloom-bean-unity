@@ -85,3 +85,9 @@ A complete witnessed campaign is not exhaustive model checking of every reachabl
 Physical controller mapping, enjoyment, horror effectiveness, puzzle discovery, pacing and audio mix still need human play. The useful next design evidence is uncoached observation of the opening corruption/Echo lesson and later unrelated rule families—not another claim based on how many files or assertions exist. The delivered source remains easy to revise when that evidence arrives.
 
 Finally, local commits, a verified history bundle, canonical context commits and a public game-repository push are different durability facts. The delivery receipt states which of those actually happened. A repository-administration failure must not be described as lost source-write access, and a context update must not be advertised as a code push.
+
+## Measured M1 delivery result
+
+The final fresh-source run passed all 54 configured scenarios, including 5 expected access denials. Independent native auditing verified every child result and unchanged earned-save edge. The base passed 72 component assertions and the combined suite 309. Final saves independently contain 20 level clears, 5 boss clears and exactly 0, 19 or 20 Mercies, with the correct ordinary/restored presentation and retained gameplay corruption.
+
+The exact final Windows archive was extracted and its native final-boss victories repeated at all three boundaries: 51/54/54 assertions, no failures and exit 0. The frozen archive hash is `37ed7162514e4901b58467ec6cfdd49f77597907d15b87936ab1bb330fb637aa`; its game assembly is unchanged from the common-source acceptance. This proves the delivered executable rather than merely an earlier worktree. The source/history restoration and payload audit are supplied alongside it. Human/controller judgement and standalone public repository publication remain separate.

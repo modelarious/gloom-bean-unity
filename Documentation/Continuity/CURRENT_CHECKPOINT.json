@@ -3,23 +3,20 @@
   "scope": "Current common-source full native release acceptance; manual judgement separate",
   "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
   "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "next_gate": "Read full M1 and queued packaged-ending receipts. On54/54PASS, run audit_release.py against exact config/source, preserve safe final evidence, inspect three packaged ending backbuffers, commit current release docs/state/journal, package full source+Git history, restore/hash-check externally, then publish canonical final record. All20stages/5bosses already exist; do not restart content.",
-  "active_job": {
-    "task": "GloomBean-Campaign-Acceptance-M1",
-    "receipt": "Reports/Full-Campaign-M1/runner.json",
-    "config": "Tools/campaign-acceptance-m1.json",
-    "source": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-    "status": "STARTED_CHECK_ACTUAL_RECEIPT"
-  },
+  "next_gate": "Native software and exact final Windows ending acceptance are PASS. Finish source/history packaging and external restoration/hash verification, then commit/read back canonical final delivery. Do not rebuild completed worlds. Human/controller judgement and standalone source publication remain separate.",
+  "active_job": null,
   "latest_focused": {
     "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
     "status": "PASS",
     "scope": "Three L19 actual-input support/cadence routes,96/97/96 assertions; no production geometry/physics change."
   },
   "latest_full": {
-    "receipt": "Documentation/Completion/Evidence/Recovered-L4/runner.json",
-    "status": "FAIL",
-    "scope": "53/54passed including ordinary/restored/19-Mercy endings; extra120fps witness had an unjustified0.65m body-lock assertion. Original failure retained."
+    "receipt": "Documentation/Release/NATIVE_AUDIT.json",
+    "status": "PASS",
+    "cases": 54,
+    "expected_negatives": 5,
+    "source": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
+    "scope": "Complete20-level/5-boss ordinary/secret earned campaign, all final pair families and exact0/19/20 endings"
   },
   "foundation_head": "1b450786f425c0ca325be8ff9b09cafdaeb0cfb8",
   "publication": {
@@ -29,28 +26,23 @@
     "boundary": "Editing/build/local commits work. Do not reattempt unchanged credential workarounds. No game-source remote push claimed."
   },
   "remaining": [
-    "Common-source acceptance and independent audit",
-    "Final source/player packaging and extracted-ending checks",
-    "Final native visual and atlas-fidelity review",
-    "Current guide and engineering journal",
-    "Manual uncoached/controller judgement"
+    "Final source/history packaging, external restore/hash audit and canonical delivery receipt",
+    "Manual uncoached human/physical-controller judgement",
+    "Standalone public game-source GitHub publication; not source-write/build access"
   ],
-  "queued_job": {
-    "task": "GloomBean-Packaged-Endings-M1",
-    "script": "Tools/Complete-M1-PackagedChecks.ps1",
-    "receipt": "Reports/Packaged-Endings-M1/runner.json",
-    "requires": "All54 Full-Campaign-M1 cases PASS and phasefinished",
-    "status": "STARTED_WAITING_FOR_PREDECESSOR_OR_EXECUTING_CHECK_RECEIPT",
-    "watchdog": "15-minute predecessor wait plus three bounded4-minute final-boss runs; own scheduled task30minute ceiling"
-  },
+  "queued_job": null,
   "packaged_player": {
-    "archive": "Delivery/Full-Campaign-M1/GloomBean_Windows_Full_Campaign.zip",
-    "sha256": "fe7241c2bc8b4786f2fee961865a287e4175f5dab52f63a67d1a2d289b8abc27",
-    "bytes": 62858688,
+    "archive": "Delivery/Full-Campaign-M1/Final/GloomBean_Windows_Full_Campaign.zip",
+    "sha256": "37ed7162514e4901b58467ec6cfdd49f77597907d15b87936ab1bb330fb637aa",
+    "bytes": 62861842,
+    "payload_files": 159,
     "assembly_sha256": "8ccc3b3ac2d8aba179e74333bd999190b8f8d0ac7a1f871fa268297389795e3e",
-    "payload_files": 158,
-    "container_payload_verification": "PASS",
-    "native_packaged_endings": "PENDING_ACTUAL_RECEIPT",
-    "warning": "Do not modify frozen ZIP after the extracted verification; regenerate and retest instead."
+    "native_packaged_endings": "PASS3_OF3",
+    "receipt": "Documentation/Release/PACKAGED_AUDIT.json",
+    "assertions": [
+      51,
+      54,
+      54
+    ]
   }
 }
