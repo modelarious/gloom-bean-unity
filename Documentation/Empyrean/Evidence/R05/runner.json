@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  11,
+                        "case":  "L17-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-R05-fixed-altar",
+    "started":  "2026-09-20T03:31:31.0718727-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T03:32:01.3338837-06:00"
+}

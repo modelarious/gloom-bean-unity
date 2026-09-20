@@ -42,7 +42,7 @@ namespace GloomBean.Campaign
                 foreach(var metal in MagneticBody.All)if(metal&&metal.enabled&&Vector2.Distance(actor.Body.position,metal.transform.position)<magnet.range)
                     northForce+=LodestoneForm.Force(actor.Body.position,metal.transform.position,1,metal.polarity,metal.strength);
                 Vector2 desired=new Vector2(error.x*6-velocity.x*3,error.y*9-velocity.y*4+actor.tuning.gravity);
-                int pole=fixedPole!=0?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);bool reverse=pole!=magnet.Polarity&&Time.time>=nextToggle;
+                int pole=fixedPole!=0&&(!landing||error.magnitude<3.5f)?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);bool reverse=pole!=magnet.Polarity&&Time.time>=nextToggle;
                 if(reverse){nextToggle=Time.time+.18f;reversals++;}
                 bool jump=actor.Grounded&&error.y>.35f&&Time.time-lastJump>.5f;if(jump)lastJump=Time.time;
                 input.frame=new InputFrame{action=reverse,actionHeld=reverse,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp(error.x*2-velocity.x*.6f,-1,1),0)};
@@ -56,7 +56,6 @@ namespace GloomBean.Campaign
             yield return MagnetTo(new Vector2(21,7),12,false);
             yield return MagnetTo(new Vector2(29,4.75f),18,true,-1);yield return Pause(.25f);
             Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
-            yield return Walk(30.2f);
             yield return MagnetTo(new Vector2(35,10),12,false,1);yield return MagnetTo(new Vector2(41,10),12,false);yield return MagnetTo(new Vector2(46,6.75f));
             yield return Walk(47.4f);yield return MagnetTo(new Vector2(53,12),12,false);yield return MagnetTo(new Vector2(60,12),12,false);yield return MagnetTo(new Vector2(65,8.75f));
             yield return Walk(66.4f);yield return MagnetTo(new Vector2(72,14),12,false);yield return MagnetTo(new Vector2(79,14),12,false);yield return MagnetTo(new Vector2(83,10.75f));
