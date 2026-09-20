@@ -71,7 +71,7 @@ namespace GloomBean.Campaign
             yield return Await("two bodies hold the balcony scales",()=>joint.opened,4);Snapshot("paired-balconies");if(stopped)yield break;
             if(secret&&!stopped){yield return Walk(14.1f);yield return Jump(10,6);yield return Press(new InputFrame{interact=true});
                 var shutter=session.GetComponentInChildren<WindowShutter>();var secretGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Off-register Mercy shutters");
-                yield return Await("physical shutter displaces the twin onto off-register scale",()=>secretGate.opened,6);Check("shutter completes an actual movement",shutter.IsClosed);Snapshot("shutter-desynchronization");yield return Walk(3);Check("Mercy inside the original apartment",session.Mercies.Count==1);yield return Walk(14);}
+                yield return Await("physical shutter displaces the twin onto off-register scale",()=>secretGate.opened,6);yield return Await("shutter completes an actual movement",()=>shutter.IsClosed,2);Snapshot("shutter-desynchronization");yield return Walk(3);Check("Mercy inside the original apartment",session.Mercies.Count==1);yield return Walk(14);}
             if(stopped)yield break;yield return Walk(44);yield return Await("matte velvet removes reflection",()=>!host.Has(HostKind.Mirror),4);yield return Press(new InputFrame{interact=true});
             yield return Await("released lift physically carries the Host",()=>actor.Grounded&&actor.Feet.y>3.9f,7,()=>new InputFrame{move=new Vector2(Mathf.Clamp(44-actor.Body.position.x,-1,1),0)});
             yield return Walk(45.2f);yield return Press(new InputFrame{interact=true});yield return Pause(.15f);

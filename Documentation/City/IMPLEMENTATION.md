@@ -7,3 +7,5 @@ L09 now contains the atlas's paired apartment lift, actual kinematic shutter dis
 Original failure kept under Evidence/R01. Native acceptance is pending this revision. No human-readability/final-art claim. Remaining L10-L12 and Surveyor are not certified.
 
 R02: 200 mechanics checks passed. Mirror initializes symmetrically; the real cabinet makes the reflected body land later. R03 waits for that physical landing before the next shared jump, and stops the witness before querying inactive return objects after a failure. No world state or body position injection.
+
+R03 established both mirror scales and physical shutter displacement. A matte courtyard curtain now allows the original body to leave after solving the two-body apartment; unlike disabling twin collision, this preserves the atlas collision cost and visible cure. Secret witness waits for the entire shutter motion instead of treating earlier plate overlap as completed movement.

@@ -1,0 +1,16 @@
+BEGIN GB-L09 Tenement of Two Suns
+PASS GB-L09 walk 7 | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 vanity nun creates independently colliding twin | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 jump 10.5 / 2 peak 2.37 | (10.28, 2.75) feet=2.00 hp=6 twin=(31.72, 2.75)
+PASS GB-L09 jump 13 / 2 peak 4.37 | (12.79, 2.75) feet=2.00 hp=6 twin=(29.14, 4.53)
+PASS GB-L09 reflection lands after its cabinet detour | (12.79, 2.75) feet=2.00 hp=6 twin=(29.14, 2.81)
+PASS GB-L09 jump 16 / 4 peak 4.37 | (15.78, 4.75) feet=4.00 hp=6 twin=(26.15, 4.76)
+PASS GB-L09 two bodies hold the balcony scales | (15.78, 4.75) feet=4.00 hp=6 twin=(26.15, 4.76)
+PASS GB-L09 walk 14.1 | (14.29, 4.75) feet=4.00 hp=6 twin=(27.64, 4.76)
+PASS GB-L09 jump 10 / 6 peak 6.37 | (10.21, 6.75) feet=6.00 hp=6 twin=(31.72, 6.75)
+PASS GB-L09 physical shutter displaces the twin onto off-register scale | (10.21, 6.75) feet=6.00 hp=6 twin=(33.69, 6.76)
+PHYSICAL shape=Center: (10.21, 6.75, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Mirror
+CONTACT Platform Center: (6.00, 5.80, 0.00), Extents: (7.00, 0.20, 0.00)
+FAIL GB-L09 shutter completes an actual movement | (10.21, 6.75) feet=6.00 hp=6 twin=(33.69, 6.76)
+FAIL GB-L09 Mercy inside the original apartment | (10.21, 6.75) feet=6.00 hp=6 twin=(33.84, 6.76)
+FAIL GB-L09 stage cleared by actual return or boss solution | (10.21, 6.75) feet=6.00 hp=6 twin=(33.84, 6.76)

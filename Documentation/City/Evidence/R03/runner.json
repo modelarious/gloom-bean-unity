@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  10,
+                        "case":  "L09-critical",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  13,
+                        "case":  "L09-secrets",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "City-R03-twin-landing",
+    "started":  "2026-09-19T19:31:54.7160325-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T19:32:21.0947686-06:00"
+}

@@ -17,6 +17,7 @@ namespace GloomBean.Campaign
             var liftObj=b.Solid("Cross-building lift",new Vector2(44,-.2f),new Vector2(3.5f,.4f),b.accent,Layers.Moving);
             var lift=liftObj.AddComponent<ApartmentLift>();lift.lower=new Vector2(44,-.2f);lift.upper=new Vector2(44,3.8f);lift.access=joined;
             a.Cure(HostKind.Mirror,42.3f,1);
+            var courtyardVelvet=a.Cure(HostKind.Mirror,18.8f,3);courtyardVelvet.GetComponent<BoxCollider2D>().size=new Vector2(1.4f,9);
             b.Tip(new Vector2(43,1),"The two balcony scales release the lift. E aboard it calls the upper floor.");
 
             // The Mercy is a physical desynchronization problem, not a form-name lock.
