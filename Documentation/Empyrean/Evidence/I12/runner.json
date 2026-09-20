@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  75,
+                        "case":  "L19-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  91,
+                        "case":  "L19-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  16,
+                        "case":  "L20-root-probe",
+                        "failed":  4,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-I12-diagonal-arc-and-seasonal-root",
+    "started":  "2026-09-20T08:39:00.1264156-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T08:40:18.8139013-06:00"
+}

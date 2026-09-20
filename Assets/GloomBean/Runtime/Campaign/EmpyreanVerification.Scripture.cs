@@ -26,18 +26,18 @@ namespace GloomBean.Campaign
         {
             yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return Walk(47.6f,true);yield return RunArc(55,3);if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
-            while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))>13.7f)&&attempts++<6){
+            while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))>13.7f)&&attempts++<6){
                 var points=new System.Collections.Generic.List<Vector2>();
                 foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
                     if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
                     for(int j=1;j<5;j++){var q=Vector2.Lerp(from,to,j*.2f);if(q.y>actor.Feet.y+.45f&&q.y<actor.Feet.y+2.05f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
                 if(points.Count==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);
                 Check("a reachable sloping hardened arc exists",points.Count>0);if(stopped)yield break;
-                var point=points.OrderBy(q=>Vector2.Distance(q+Vector2.up*.75f,new Vector2(58.5f,17.5f))).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
+                var point=points.OrderBy(q=>Vector2.Distance(q+Vector2.up*.75f,new Vector2(58.5f,18.1f))).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
             }
-            Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))<14f);if(stopped)yield break;
-            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,17.5f));yield return Pause(.08f);
-            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Snapshot("semicolon-dot");if(stopped)yield break;
+            Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))<14f);if(stopped)yield break;
+            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,18.1f));yield return Pause(.08f);
+            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Check("body remains on its actual Ink while taking the dot",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>());Snapshot("semicolon-dot");if(stopped)yield break;
             yield return ReattachWritingShadow();yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
         }
         IEnumerator ReattachWritingShadow()

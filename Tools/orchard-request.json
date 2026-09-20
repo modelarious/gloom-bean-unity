@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-I12-diagonal-arc-and-seasonal-root",
+  "id": "Empyrean-I13-causal-scripture-and-leading-cure",
   "build": true,
   "cases": [
     {
@@ -12,6 +12,16 @@
       "suite": "Empyrean",
       "route": "GB-L19",
       "secrets": true
+    },
+    {
+      "name": "No-Ink-control",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "noInkControl": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     },
     {
       "name": "L20-root-probe",

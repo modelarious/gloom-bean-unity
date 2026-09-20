@@ -108,7 +108,7 @@ namespace GloomBean.Campaign
             // The upper dot is a collectible in shadow space, beyond the tether from the safe margin.
             var sun=Sun(a,new Vector2(50,25),24);sun.directional=true;sun.direction=new Vector2(-1,-.8f);sun.renderFilled=true;
             var stroke=b.Solid("Giant semicolon curved stem",new Vector2(58,15),new Vector2(3,7),new Color(.28f,.19f,.39f));stroke.AddComponent<ShadowCaster>();
-            var dot=b.Collect(PickupKind.Mercy,new Vector2(58.5f,17.5f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
+            var dot=b.Collect(PickupKind.Mercy,new Vector2(58.5f,18.1f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
             a.Ledge(47,5.2f,3).name="Optional suspended paper margin";a.Ledge(50,3.3f,4).name="Lower line-break refuge";
             var lowerWords=new List<GameObject>();for(int k=0;k<9;k++){
                 var word=a.Ledge(55+k*5,k==0?3:2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);
