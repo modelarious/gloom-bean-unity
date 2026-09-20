@@ -1,0 +1,370 @@
+{
+    "unity": "6000.5.9f1",
+    "platform": "WindowsPlayer",
+    "scope": "Actual Unity physics and production components; not a human-feel or full-campaign solvability certificate.",
+    "passed": 72,
+    "failed": 0,
+    "exceptions": 0,
+    "tests": [
+        {
+            "name": "foundation.catalog.4-levels-and-boss",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "ground.contact",
+            "pass": true,
+            "observation": "(600.00, 0.00)"
+        },
+        {
+            "name": "shape.centered-shrink-preserves-position",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "shape.centered-growth-rejects-ground-overlap",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "shape.centered-resize-preserves-health",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "walk.acceleration",
+            "pass": true,
+            "observation": "2.458557 units / 0.5s"
+        },
+        {
+            "name": "walk.braking",
+            "pass": true,
+            "observation": "(0.00, 0.00)"
+        },
+        {
+            "name": "jump.variable-height",
+            "pass": true,
+            "observation": "full=3.1168 short=2.013"
+        },
+        {
+            "name": "jump.buffered-on-landing",
+            "pass": true,
+            "observation": "(600.00, 2.30) (0.00, 7.87)"
+        },
+        {
+            "name": "jump.coyote-after-edge",
+            "pass": true,
+            "observation": "(5.50, 11.83)"
+        },
+        {
+            "name": "crouch.reduces-collider",
+            "pass": true,
+            "observation": "0.795"
+        },
+        {
+            "name": "crouch.cannot-stand-through-roof",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.stands-when-clear",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crawl.speed-limited",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.stands-beneath-one-way-floor",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.one-way-exception-does-not-ignore-solid-roofs",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "tackle.normal-tier",
+            "pass": true,
+            "observation": "Tackle"
+        },
+        {
+            "name": "tackle.run-up-tier",
+            "pass": true,
+            "observation": "RunTackle"
+        },
+        {
+            "name": "tackle.running-jump-preserves-attack",
+            "pass": true,
+            "observation": "AirTackle (13.50, 11.27)"
+        },
+        {
+            "name": "pound.short-drop-normal",
+            "pass": true,
+            "observation": "2"
+        },
+        {
+            "name": "pound.long-drop-uber",
+            "pass": true,
+            "observation": "3"
+        },
+        {
+            "name": "break.rejects-weak-hit",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "break.accepts-uber",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "enemy.pick-up-stunned",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "enemy.throw-collides-with-enemy",
+            "pass": true,
+            "observation": "victim destroyed"
+        },
+        {
+            "name": "enemy.patrol-turns-at-wall",
+            "pass": true,
+            "observation": "direction=-1"
+        },
+        {
+            "name": "enemy.recovers-from-stun",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "water.swim-vertical",
+            "pass": true,
+            "observation": "Swim"
+        },
+        {
+            "name": "water.dash",
+            "pass": true,
+            "observation": "(10.00, 0.00)"
+        },
+        {
+            "name": "roll.slope-accelerates-without-forward-input",
+            "pass": true,
+            "observation": "Roll dx=3.445984"
+        },
+        {
+            "name": "platform.carries-standing-actor",
+            "pass": true,
+            "observation": "relative delta=0"
+        },
+        {
+            "name": "platform.carries-kinematic-support-in-another-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "carousel.four-upright-arms",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "conveyor.bounded-support-relative-speed",
+            "pass": true,
+            "observation": "peak=2 dx=3.999023"
+        },
+        {
+            "name": "plate.actor-mass-opens-gate",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.release-closes-gate",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.rejects-self-propelled-structural-shutter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.accepts-released-physical-counterweight",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "damage.lethal-hit-clamps-health-to-zero",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "attack.cannot-hit-geometry-in-excluded-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "attack.can-hit-same-target-in-contact-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.no-clock-before-turn",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.cannot-clear-before-switch",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.switch-one-shot",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.required-items-enforced",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "collect.stable-id-deduplication",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.optional-mercy-not-required",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "save.round-trip",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "save.corrupt-primary-recovers-backup",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.timeout-fails",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-1",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-2",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-3",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-4",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "boss.foundation-constructed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.oneway.rise-through-and-land",
+            "pass": true,
+            "observation": "peak=2.368362 feet=2.004999"
+        },
+        {
+            "name": "iteration.layout.captures-static-positive-control",
+            "pass": true,
+            "observation": "nodes=3"
+        },
+        {
+            "name": "iteration.layout.excludes-scripted-machinery",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.pose-collider-and-sprite-roundtrip",
+            "pass": true,
+            "observation": "changes=1 "
+        },
+        {
+            "name": "iteration.layout.stale-patch-rejected-atomically",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.duplicate-target-rejected",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.added-hierarchy-is-not-silently-lost",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.audio.bounded-finite-original-cue",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.audio.verification-forces-silence",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.later-stage-and-boss-initially-locked",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.first-clear-opens-only-next-stage",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.all-course-clears-open-boss",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.boss-opens-next-world",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.invalid-indices-stay-closed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.body.wide-capsule-physical-footprint",
+            "pass": true,
+            "observation": "(1.50, 0.32, 0.00)"
+        },
+        {
+            "name": "iteration.body.restore-vertical-capsule",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.body.reposition-preserves-damage",
+            "pass": true,
+            "observation": ""
+        }
+    ]
+}
