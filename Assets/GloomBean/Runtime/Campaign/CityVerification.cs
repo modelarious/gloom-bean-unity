@@ -98,7 +98,7 @@ namespace GloomBean.Campaign
             var gate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Fresco paired lift brake");yield return Await("paint-pot desynchronization aligns both scales",()=>gate.opened,4);yield return Press(new InputFrame{interact=true});yield return Walk(66);yield return Await("drawn curtain removes the twin",()=>!host.Has(HostKind.Mirror),3);
             yield return Walk(70);yield return Jump(74,0);yield return Walk(82);yield return Jump(84,2);yield return Walk(85.3f);yield return Jump(89,3.8f);yield return Walk(90.3f);yield return Jump(94,5.6f);yield return Walk(95.3f);yield return Jump(99,7.4f);yield return Walk(105.6f);if(stopped)yield break;
             Check("fresco roof key",session.HasKey);yield return Press(new InputFrame{interact=true});Check("fresco peels into return gallery",session.Phase==RunPhase.Returning);yield return Jump(103,9.2f);yield return Jump(98,11);yield return Walk(42.4f);yield return Walk(39.6f);Check("return uses physical interior again",host.Has(HostKind.InsideOut));
-            yield return Walk(37.5f);yield return Walk(34.2f);yield return Walk(32.2f);yield return Walk(29);yield return Walk(27.5f);yield return Walk(25.6f);yield return Walk(24.2f);yield return Walk(22);yield return Walk(20);yield return Walk(17);yield return Walk(14.3f);yield return Await("street-side empty frame cures",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(2);
+            yield return Jump(37.5f,11);yield return Walk(34.2f);yield return Walk(32.2f);yield return Walk(29);yield return Walk(27.5f);yield return Walk(25.6f);yield return Walk(24.2f);yield return Walk(22);yield return Walk(20);yield return Walk(17);yield return Walk(14.3f);yield return Await("street-side empty frame cures",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(2);
         }
         IEnumerator Align(float x)
         {
@@ -115,17 +115,18 @@ namespace GloomBean.Campaign
         IEnumerator PlaneJump(float x,float top,int target)
         {
             if(stopped||!Live)yield break;var form=host.Form<ParallaxForm>();Check("plane jump has perspective tenant",form!=null);if(stopped)yield break;
-            float end=Time.time+7,beginFoot=actor.Feet.y;bool sent=false;
+            float end=Time.time+7,beginFoot=actor.Feet.y,nextTrace=0;bool sent=false;
             while(Live&&Time.time<end){float dx=x-actor.Body.position.x;bool jump=!sent&&actor.Grounded;if(jump)sent=true;
                 float depth=sent&&actor.Feet.y>beginFoot+.45f&&form.Plane!=target?Mathf.Sign(target-form.Plane):0;
                 input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*2-actor.Body.linearVelocity.x*.15f,-1,1),depth),jump=jump,jumpHeld=true};yield return NextPhysics();
+                if(form.Plane!=target&&Time.time>=nextTrace){nextTrace=Time.time+.35f;Note("DEPTH target="+target+" actual="+form.Plane+" pos="+actor.Body.position+" size="+actor.Shape.size+" mask="+actor.collisionMask+" excluded="+actor.Shape.excludeLayers.value+" ground="+(actor.GroundCollider?actor.GroundCollider.name+":"+actor.GroundCollider.gameObject.layer:"none")+" notice="+session.Message);}
                 if(sent&&!jump&&actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.25f&&Mathf.Abs(dx)<.22f&&form.Plane==target)break;}
             input.frame=default;Check("land projected body "+target+" at "+x+" / "+top,actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f&&form.Plane==target);
         }
         IEnumerator Tax(bool secret)
         {
             yield return Walk(11);yield return Plane(0);yield return Walk(12.2f);yield return PlaneJump(17,1.195f,0);yield return Walk(18.5f);yield return PlaneJump(23,3,1);yield return Walk(25);yield return PlaneJump(29,4.72f,2);yield return Walk(32);yield return PlaneJump(35,6.195f,0);yield return Walk(36.8f);yield return PlaneJump(41,8,1);
-            if(secret&&!stopped){yield return Jump(38,10);yield return Jump(40.5f,12);yield return Align(42);var gate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Tax form registration clamp");yield return Await("body contacts both printed margins",()=>gate.opened,3);yield return Walk(48);Check("registered tax-form Mercy",session.Mercies.Count==1);Snapshot("middle-size-registration");yield return Walk(50);yield return Await("leave secret onto near counter",()=>actor.Grounded&&actor.Feet.y<11,6);}
+            if(secret&&!stopped){yield return Press(new InputFrame{interact=true});yield return Pause(.15f);yield return Jump(38,10);yield return Jump(40.5f,12);yield return Align(42);var gate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Tax form registration clamp");yield return Await("body contacts both printed margins",()=>gate.opened,3);yield return Walk(48);Check("registered tax-form Mercy",session.Mercies.Count==1);Snapshot("middle-size-registration");yield return Walk(50);yield return Await("leave secret onto near counter",()=>actor.Grounded&&actor.Feet.y<11,6);}
             else{yield return Walk(43.4f);yield return PlaneJump(47,9.72f,2);}
             if(stopped)yield break;if(host.Form<ParallaxForm>().Plane!=2)yield return PlaneJump(51,9.72f,2);yield return Walk(53);yield return Press(new InputFrame{interact=true});
             var stamp=session.GetComponentInChildren<PerspectiveStamp>();Check("clerk relocates furniture into matching plane",stamp.geometry[0].plane==2);yield return Walk(60);yield return Await("flat sign removes depth before cabinet",()=>!host.Has(HostKind.Parallax),4);yield return Walk(60.5f);yield return Await("drop to filing-cabinet interior entrance",()=>actor.Grounded&&actor.Feet.y<1,7);Check("flensing clerk exposes cabinet interior",host.Has(HostKind.InsideOut));

@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  41,
+                        "case":  "L10-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  57,
+                        "case":  "L10-secrets",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  19,
+                        "case":  "L11-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  19,
+                        "case":  "L11-secrets",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "City-R08-outlines-and-projection",
+    "started":  "2026-09-19T19:49:56.0027589-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T19:51:13.8774707-06:00"
+}

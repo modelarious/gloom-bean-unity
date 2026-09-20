@@ -119,7 +119,7 @@ namespace GloomBean.Campaign
 
             // Middle-size registration is a physical two-contact fit: the far body
             // is too narrow for both contacts; the near body cannot fit under the roof.
-            Sill(38,10,4);Sill(43,12,12);b.Solid("Registration frame upper jaw",new Vector2(43,14.2f),new Vector2(12,.6f));a.Projection(new Vector2(41,11.5f),new Vector2(10,7));
+            var registrationStep=Sill(38,10,4);registrationStep.SetActive(false);var registerDrawer=b.Switch(new Vector2(41,8.8f),"PULL OUT REGISTRATION STEP");registerDrawer.Changed+=registrationStep.SetActive;Sill(43,12,12);b.Solid("Registration frame upper jaw",new Vector2(43,14.2f),new Vector2(12,.6f));a.Projection(new Vector2(41,11.5f),new Vector2(10,7));
             var left=b.Plate(new Vector2(41.6f,12.8f),.1f);left.GetComponent<BoxCollider2D>().size=new Vector2(.2f,.6f);
             var right=b.Plate(new Vector2(42.4f,12.8f),.1f);right.GetComponent<BoxCollider2D>().size=new Vector2(.2f,.6f);
             var register=b.Door(new Vector2(46.7f,13),new Vector2(.4f,2),left,right);register.name="Tax form registration clamp";register.latched=true;a.Mercy(48,13.1f);

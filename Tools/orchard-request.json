@@ -1,7 +1,13 @@
 {
-  "id": "City-R08-outlines-and-projection",
+  "id": "City-R09-lips-and-registration",
   "build": true,
   "cases": [
+    {
+      "name": "L09-secrets",
+      "suite": "City",
+      "route": "GB-L09",
+      "secrets": true
+    },
     {
       "name": "L10-critical",
       "suite": "City",
@@ -23,6 +29,10 @@
       "suite": "City",
       "route": "GB-L11",
       "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }
