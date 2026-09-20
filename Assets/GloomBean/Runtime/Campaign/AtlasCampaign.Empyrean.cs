@@ -17,6 +17,10 @@ namespace GloomBean.Campaign
                 var caster=m.GetComponent<ShadowCaster>();if(caster)caster.shape=rim;
                 var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=2;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
+            // The atlas's fixed-altar launch is distinct from the reversing orbital field:
+            // oppose this pole to settle, match it to exchange momentum with an anchored mass.
+            var launchAltar=a.Metal(new Vector2(29,3.05f),new Vector2(2.2f,.7f),20,true,1);launchAltar.name="Fixed north launch altar";launchAltar.strength=170;
+            b.Tip(new Vector2(28,5),"A fixed north altar beneath your feet: SOUTH holds you down; NORTH pushes you off. The hanging halos still follow their own beat.");
             a.Ledge(16,2,5);a.Ledge(29,4,4);a.Ledge(46,6,4);a.Ledge(65,8,4);a.Ledge(83,10,4);a.Ledge(99,12,13);a.Key(96,13.3f);a.Nail(104,12.4f);
             a.Metal(new Vector2(38,5),new Vector2(3,.65f),3,false,-1);a.Metal(new Vector2(74,7),new Vector2(3,.65f),3,false,1);
             a.Ledge(60,18,6);a.Mercy(61,19.3f);var secret=a.Metal(new Vector2(57,17),Vector2.one*1.2f,4,true,-1);secret.strength=160;poles.Add(secret);choir.halos=poles.ToArray();
