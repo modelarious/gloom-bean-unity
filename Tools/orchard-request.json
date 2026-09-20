@@ -1,5 +1,5 @@
 {
-  "id": "Fall-R09-optional-clearance",
+  "id": "Fall-R10-oneway-and-coffin",
   "build": true,
   "cases": [
     {
@@ -23,6 +23,10 @@
       "suite": "Fall",
       "route": "GB-L15",
       "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

@@ -37,6 +37,12 @@ namespace GloomBean.Campaign
             C("extension.registered",game.SourceCount==2);game.SelectSource(0);yield return game.Load(game.AvailableWorlds[0].levels[0],true);
             game.Session.player.disabled=true;game.Session.player.Body.simulated=false;
 
+            yield return Arena();var overhead=b.Platform(new Vector2(600,1.25f),new Vector2(4,.3f));overhead.AddComponent<OneWaySurface>();
+            input.frame=new InputFrame{move=Vector2.down};yield return Steps(5);input.frame=default;yield return Steps(5);
+            C("crouch.can-stand-beneath-one-way-floor",!actor.Crouched&&actor.Height>1.4f);
+            Destroy(overhead);var solidRoof=b.Solid("Real crouch ceiling",new Vector2(600,1.25f),new Vector2(4,.3f));input.frame=new InputFrame{move=Vector2.down};yield return Steps(3);input.frame=default;yield return Steps(3);
+            C("crouch.still-respects-solid-ceiling",actor.Crouched&&actor.Height<1);
+
             yield return Arena();host.Acquire(HostKind.Echo);var echo=host.Form<EchoForm>();float start=actor.Body.position.x;
             input.frame=new InputFrame{move=Vector2.right};yield return Steps(72);
             C("echo.waits-two-seconds",actor.Body.position.x>start+4&&Mathf.Abs(echo.Echo.Body.position.x-start)<.2f);

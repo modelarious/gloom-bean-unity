@@ -1,0 +1,3 @@
+# Collision and input repairs
+
+L14 ordinary clear now passes. Its secret input witness was aiming diagonally at a nearer unrelated seam; aim upward at the visibly overhead island edge. Switching focused forms uses Down+I and exposed a reusable crouch bug: standing up beneath a one-way floor was incorrectly treated as growth through a solid ceiling. Size clearance now honors that floor's existing pass-from-below rule, with positive and solid-roof negative native checks. L15's recovery stair had one unnecessary step above the main floor which the nonjumping Coffin correctly refused to sweep through; keep all recovery steps below the entry plane.

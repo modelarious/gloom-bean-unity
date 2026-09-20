@@ -66,7 +66,7 @@ namespace GloomBean.Campaign
         void Procession(AtlasBuilder a)
         {
             a.Begin(new Rect(-10,-14,100,38),new Vector2(2,1));var b=a.b;a.Floor(-6,14);a.Floor(14,82,-9);a.Exit(2,1.1f);a.Source(HostKind.Coffin,8);
-            for(int i=0;i<5;i++)a.Ledge(11-i%2*3,-7+i*2,4).AddComponent<OneWaySurface>();a.Cure(HostKind.Coffin,16,-8);
+            for(int i=0;i<4;i++)a.Ledge(11-i%2*3,-7+i*2,4).AddComponent<OneWaySurface>();a.Cure(HostKind.Coffin,16,-8);
             var command=a.Receiver(new Vector2(12,3));var bell=a.Bell(new Vector2(12,2.3f),new[]{new Vector2(12,2.3f),new Vector2(12,3)},command);bell.GetComponent<Collider2D>().isTrigger=true;bell.splitOnTurn=false;
             var ferryA=Carrier(a,new Vector2(16,-.325f),new Vector2(24,-.325f),command,1.6f);ferryA.name="First pallbearer ferry";ferryA.endPause=2;
             a.Floor(25,32.5f);a.Floor(37.5f,48);a.Floor(61,83);a.Source(HostKind.Stitch,29,1,true);
