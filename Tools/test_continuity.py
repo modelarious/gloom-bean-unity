@@ -33,4 +33,13 @@ class ContinuityTests(unittest.TestCase):
   (self.root/'Assets/test.cs').write_text('class Test { int fixedBug; }\n');(self.root/'unowned.txt').write_text('leave this');r=work.checkpoint(self.root,self.head,'WIP owned chunk',['Assets/test.cs'],True);self.assertEqual(r['publication'],'BLOCKED_NO_ORIGIN');self.assertNotEqual(r['commit'],self.head);self.assertEqual(r['committed_paths'],['Assets/test.cs']);target=self.root/'restore';subprocess.run(['git','clone',r['bundle']['path'],str(target)],capture_output=True,check=True,timeout=20);self.assertEqual((target/'Assets/test.cs').read_text(),(self.root/'Assets/test.cs').read_text());self.assertFalse((target/'unowned.txt').exists());self.assertFalse((self.root/'.continuity/checkpoint.lock').exists())
  def test_source_match_distinguishes_doc_only_change(self):
   f=self.root/'Documentation/Continuity';f.mkdir(parents=True);(f/'CURRENT_CHECKPOINT.json').write_text(json.dumps({'tested_commit':self.head}));self.assertEqual(status.inspect(self.root)['source_vs_tested'],'MATCH');(self.root/'Assets/test.cs').write_text('different');self.assertEqual(status.inspect(self.root)['source_vs_tested'],'DIFF')
+ def test_runner_cannot_hide_failed_case(self):
+  (self.root/'r.json').write_text(json.dumps({'status':'PASS','results':[{'case':'bad','status':'PASS','failed':2}]}))
+  self.assertEqual(status.evidence(self.root,{'name':'r','path':'r.json'})['status'],'FAIL_OR_INCOMPLETE')
+ def test_empty_runner_is_unknown(self):
+  (self.root/'r.json').write_text('{"status":"PASS","cases":[]}')
+  self.assertEqual(status.evidence(self.root,{'name':'r','path':'r.json'})['status'],'UNKNOWN_EMPTY_CASES')
+ def test_expected_denial_has_explicit_oracle(self):
+  (self.root/'r.json').write_text(json.dumps({'status':'PASS','cases':[{'name':'deny','status':'PASS','failed':1,'exit':1,'expected_denial':True}]}))
+  self.assertEqual(status.evidence(self.root,{'name':'r','path':'r.json'})['status'],'PASS')
 if __name__=='__main__':unittest.main(verbosity=2)

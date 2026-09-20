@@ -23,19 +23,41 @@ def evidence(root,item):
  raw=f.read_bytes();r['sha256']=hashlib.sha256(raw).hexdigest()
  try:
   d=json.loads(raw.decode('utf-8-sig'))
-  if 'cases' in d or 'results' in d:r.update(status=d.get('status','UNKNOWN'),cases=d.get('cases',d.get('results')))
+  if 'cases' in d or 'results' in d:
+   cases=d.get('cases',d.get('results'));declared=d.get('status','UNKNOWN');bad=[]
+   for c in cases:
+    # Expected-denial cases are accepted only when the explicit runner oracle passed.
+    if c.get('status')!='PASS' or (not c.get('expected_denial',False) and (c.get('failed',0) not in (0,None) or c.get('exceptions',0) not in (0,None) or c.get('exit',0) not in (0,None))):bad.append(c.get('name',c.get('case','unknown')))
+   observed='FAIL_OR_INCOMPLETE' if bad else (declared if cases else 'UNKNOWN_EMPTY_CASES')
+   r.update(status=observed,declared_status=declared,cases=cases,inconsistent_cases=bad)
   else:
    e=f.parent/item.get('exit_file','player.exit');code=e.read_text(encoding='utf-8-sig').strip() if e.exists() else 'MISSING'
    r.update({k:d.get(k) for k in ['passed','checks','failed','exceptions']});r['exit']=code
    r['status']='PASS' if d.get('failed')==0 and d.get('exceptions',0)==0 and code=='0' else 'FAIL_OR_INCOMPLETE'
  except (ValueError,OSError) as e:r.update(status='UNREADABLE',error=str(e))
  return r
+def runtime_observation(state):
+ if os.name!='nt':return {'status':'NOT_WINDOWS','scope':'No runtime process or task claim'}
+ task=state.get('active_job',{}).get('task')
+ if task and any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in task):return {'status':'INVALID_TASK_NAME'}
+ command="$ErrorActionPreference='Stop'; $r=@{}; "
+ if task:command+="$t=Get-ScheduledTask -TaskName '"+task+"' -ErrorAction SilentlyContinue; if($t){$i=Get-ScheduledTaskInfo -TaskName $t.TaskName;$r.task=@{name=$t.TaskName;state=[string]$t.State;last_result=$i.LastTaskResult;last_run=[string]$i.LastRunTime;user=$t.Principal.UserId}}; "
+ command+="$r.processes=@(Get-Process Unity,GloomBean -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime); $r | ConvertTo-Json -Depth 4 -Compress"
+ try:
+  z=subprocess.run(['powershell','-NoProfile','-NonInteractive','-Command',command],capture_output=True,text=True,timeout=8)
+  if z.returncode:return {'status':'UNKNOWN','error':z.stderr[-500:]}
+  return {'status':'OBSERVED','value':json.loads(z.stdout),'scope':'Read-only current task/process state; does not start or stop work'}
+ except (OSError,ValueError,subprocess.TimeoutExpired) as e:return {'status':'UNKNOWN','error':str(e)}
+
 def inspect(root,probe_write=False):
  root=Path(root).resolve();rc,head,error=git(root,'rev-parse','HEAD')
  if rc:raise RuntimeError('Not an accessible Git project: '+error)
  f=root/'Documentation/Continuity/CURRENT_CHECKPOINT.json';s=json.loads(f.read_text(encoding='utf-8-sig')) if f.exists() else {}
  dirty=git(root,'status','--short')[1].splitlines();tested=s.get('tested_commit')
  r={'project':str(root),'head':head,'branch':git(root,'branch','--show-current')[1],'changes':dirty[:60],'changes_truncated':len(dirty)>60,'recent_commits':git(root,'log','-8','--format=%h %s')[1].splitlines(),'remote_names':git(root,'remote')[1].splitlines(),'checkpoint_found':f.exists(),'next_gate':s.get('next_gate','UNKNOWN: read START_HERE.md'),'source_fingerprint':fingerprint(root),'tested_source':tested,'publication':s.get('publication',{'status':'UNKNOWN'}),'active_job':s.get('active_job'),'evidence':[evidence(root,i) for i in s.get('evidence_refs',[])],'scope':'Inspection only. No gameplay tests, builds or remote publication performed.'}
+ r['runtime_observation']=runtime_observation(s)
+ active=s.get('active_job',{})
+ if active.get('receipt'):r['active_job_observation']=evidence(root,{'name':'Current persistent job receipt','path':active['receipt']})
  if tested:
   rc,_,_=git(root,'diff','--quiet',tested,'--','Assets','Packages','ProjectSettings');u=git(root,'ls-files','--others','--exclude-standard','--','Assets','Packages','ProjectSettings')[1]
   r['source_vs_tested']='MATCH' if rc==0 and not u else ('DIFF' if rc in (0,1) else 'UNKNOWN')
