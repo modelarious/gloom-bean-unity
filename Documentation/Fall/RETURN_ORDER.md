@@ -1,3 +1,5 @@
 # Return order is physical state
 
 L15 ordinary and Mercy routes pass 45/51 assertions at 03bcf6c. L14 island path bypasses the far tower, so that tower starts the Turn at -90 instead of 30 degrees. Its return witness now waits for the actual physical rotation before selecting its upper edge. L16's return Coffin source must not transform the player on the forward descent: it now emerges with the Nail. The distant Mercy chapel remains visibly present before the Turn, with its movement and collision only activated afterward; this also preserves the existing active collectible inventory rather than weakening it to count invisible data. R12 original results remain intact.
+
+R13 exposed an actual missing extension on inactive return platforms: AtlasBuilder.Finish used an active-only global search, so the transept never received TemporalBody and Censer could not affect it. Enumerate the owning stage including inactive authored movers/enemies. The island is suspended with a real small gap at its support tip: its route now jumps that gap rather than relying on sub-frame capsule-edge luck.

@@ -1,12 +1,7 @@
 {
-  "id": "Fall-R13-return-order-and-visible-chapel",
+  "id": "Fall-R14-kinetic-return-and-colossus",
   "build": true,
   "cases": [
-    {
-      "name": "L14-critical",
-      "suite": "Fall",
-      "route": "GB-L14"
-    },
     {
       "name": "L14-secrets",
       "suite": "Fall",
@@ -23,6 +18,11 @@
       "suite": "Fall",
       "route": "GB-L16",
       "secrets": true
+    },
+    {
+      "name": "B4",
+      "suite": "Fall",
+      "route": "GB-B4"
     },
     {
       "name": "Mechanics",
