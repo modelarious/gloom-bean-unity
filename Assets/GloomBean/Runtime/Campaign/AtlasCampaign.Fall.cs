@@ -7,14 +7,24 @@ namespace GloomBean.Campaign
     {
         void Rain(AtlasBuilder a)
         {
-            a.Begin(new Rect(-9,-11,105,58),new Vector2(2,1));var b=a.b;a.Floor(-6,17);a.Floor(17,87,-5);a.Exit(2,1.1f);a.Source(HostKind.Censer,9);
-            var figures=new List<KneelingFigure>();for(int i=0;i<9;i++){var fig=a.Figure(20+i*6,33+i%3*3,-2+i*2.2f,1.4f+i*.43f);fig.hold=6;fig.speed=8;figures.Add(fig);}
-            // Safe masonry gives the player somewhere to inspect the next falling cycle.
-            a.Ledge(33,1,4);a.Ledge(51,7.6f,4);a.Ledge(69,14.2f,4);a.Ledge(80,18.6f,12);a.Key(77,19.9f);a.Nail(84,19.05f);
-            var secret=a.Figure(47,36,14,3);secret.hold=3.5f;secret.speed=7;a.Ledge(43,12,4);a.Ledge(47,16.4f,4);a.Mercy(49,17.7f);
-            var returnShelf=a.Ledge(48,21.5f,68);returnShelf.SetActive(false);b.session.Turned+=()=>{foreach(var fig in figures){fig.delay=.5f;fig.hold=3.8f;}returnShelf.SetActive(true);};
-            a.Ledge(9,17,6);a.Ledge(8,11,5);a.Ledge(10,5,5);a.Health(33,2.3f);b.Enemy(new Vector2(56,-3.8f),true);
-            b.Tip(new Vector2(9,2),"A still censer thickens the air. Watch a falling witness kneel, then leave your slow field before its temporary back sinks away.");a.Cure(HostKind.Censer,4,1);
+            a.Begin(new Rect(-10,-12,88,65),new Vector2(2,1));var b=a.b;a.Floor(-6,12);a.Floor(12,70,-7);a.Exit(2,1.1f);a.Source(HostKind.Censer,7);
+            GameObject Sill(float x,float y,float width=4){var g=a.Ledge(x,y,width);g.AddComponent<OneWaySurface>();return g;}
+            var onward=new List<KneelingFigure>();
+            for(int i=0;i<10;i++){float floor=1+i*1.5f;var f=a.Figure(15+i*5,floor+9,floor,.6f+i*.17f);f.name="Outward penitent "+i;f.showLandingTell=f.safeUpperSurface=true;f.hold=5;f.speed=8;onward.Add(f);}
+            Sill(27.5f,5.1f,3);Sill(42.5f,9.6f,3);Sill(57.5f,14.1f,3);Sill(66,15,10);a.Key(64,16.2f);a.Nail(69,15.4f);
+            var returns=new List<KneelingFigure>();for(int i=0;i<10;i++){float floor=16.2f+i*1.5f;var f=a.Figure(63-i*5,floor+8,floor,.35f+i*.11f);f.name="Return penitent "+i;f.showLandingTell=f.safeUpperSurface=true;f.speed=10;f.hold=4.5f;f.gameObject.SetActive(false);returns.Add(f);}
+            var landings=new List<GameObject>{Sill(60.5f,16.5f,3),Sill(45.5f,21,3),Sill(30.5f,25.5f,3),Sill(14,30.2f,7)};
+            for(int i=0;i<9;i++)landings.Add(Sill(9-i%2*5,27.5f-i*3,6));foreach(var g in landings)g.SetActive(false);
+            // A side penitent carries its Mercy. Standing on the left changes its
+            // actual kneeling slope; the reward moves with that body, not a switch flag.
+            Sill(38,11,4);Sill(34,12.8f,4);Sill(29,14.6f,5);
+            var witness=a.Figure(24,24,16.1f,1.7f);witness.name="Penitent bearing the Mercy";witness.respondsToWitness=witness.showLandingTell=witness.safeUpperSurface=true;witness.hold=7;witness.speed=8;
+            Sill(20,16.7f,4);var mercy=a.Mercy(24,20);mercy.transform.SetParent(witness.transform,true);mercy.transform.localPosition=new Vector2(.7f,3.8f);
+            b.session.Turned+=()=>{foreach(var f in onward){f.delay=.35f;f.hold=3.5f;}foreach(var f in returns)f.gameObject.SetActive(true);foreach(var g in landings)g.SetActive(true);};
+            a.Health(42.5f,10.8f);b.Enemy(new Vector2(37,-5.8f),true);a.Cure(HostKind.Censer,3,1);
+            b.Tip(new Vector2(8,2),"Be still. Incense slows the falling congregation, but not you. Read each landing tell; the kneeling back is only temporary.");
+            b.Tip(new Vector2(28,16),"The witness looks toward the body beneath it. Approach from its left to make its back lean toward the carried Mercy.");
+            b.Tip(new Vector2(66,16),"The vault opens after the Nail. Your return goes UP through the denser rain, then down the old entrance shaft.");
         }
         void Seam(AtlasBuilder a)
         {

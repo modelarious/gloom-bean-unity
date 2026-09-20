@@ -1,17 +1,21 @@
 {
-  "id": "City-R19-chandelier-reboarding",
+  "id": "Fall-R01-rain-of-bodies",
   "build": true,
   "cases": [
     {
-      "name": "L12-secrets",
-      "suite": "City",
-      "route": "GB-L12",
+      "name": "L13-critical",
+      "suite": "Fall",
+      "route": "GB-L13"
+    },
+    {
+      "name": "L13-secrets",
+      "suite": "Fall",
+      "route": "GB-L13",
       "secrets": true
     },
     {
-      "name": "L12-critical",
-      "suite": "City",
-      "route": "GB-L12"
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

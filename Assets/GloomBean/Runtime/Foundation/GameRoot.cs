@@ -34,7 +34,7 @@ namespace GloomBean.Foundation
         static void Bootstrap()
         {
             if(FindFirstObjectByType<GameRoot>())return;
-            new GameObject("Gloom Bean — Boot").AddComponent<GameRoot>();
+            new GameObject("Gloom Bean â€” Boot").AddComponent<GameRoot>();
         }
         void Awake()
         {
@@ -50,7 +50,7 @@ namespace GloomBean.Foundation
             if(atlasType!=null&&typeof(ICampaignSource).IsAssignableFrom(atlasType))sources.Add((ICampaignSource)Activator.CreateInstance(atlasType));
             Source=sources[0];worlds=Source.Worlds();screen=ScreenMode.Home;
             string[] args=Environment.GetCommandLineArgs();
-            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0||Array.IndexOf(args,"-gb-city-verify")>=0;
+            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0||Array.IndexOf(args,"-gb-city-verify")>=0||Array.IndexOf(args,"-gb-fall-verify")>=0;
             reportDirectory=Argument(args,"-gb-reports",Path.Combine(Application.persistentDataPath,"Reports"));
             string savePath=Argument(args,"-gb-save",Path.Combine(Application.persistentDataPath,"host-cycle-save.json"));
             if(testMode)savePath=Path.Combine(reportDirectory,"test-save.json");
@@ -65,6 +65,7 @@ namespace GloomBean.Foundation
         IEnumerator BeginVerification()
         {
             yield return null;
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-fall-verify")>=0){var fall=Type.GetType("GloomBean.Campaign.FallVerification, Assembly-CSharp");if(fall==null)throw new InvalidOperationException("Fall witness is not installed.");fall.GetMethod("Begin").Invoke(gameObject.AddComponent(fall),new object[]{this});yield break;}
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-city-verify")>=0)
             {
                 var city=Type.GetType("GloomBean.Campaign.CityVerification, Assembly-CSharp");
@@ -111,7 +112,7 @@ namespace GloomBean.Foundation
             loading=true;Time.timeScale=1;Practice=practice;runCorrupted=false;PossessionDisplay=PossessionHelp="";ExtraHud=null;
             if(stageRoot){stageRoot.gameObject.SetActive(false);Destroy(stageRoot.gameObject);}Session=null;
             yield return null;
-            stageRoot=new GameObject("Stage "+d.id+" — "+d.title).transform;
+            stageRoot=new GameObject("Stage "+d.id+" â€” "+d.title).transform;
             Session=stageRoot.gameObject.AddComponent<StageSession>();Session.Configure(d,practice?null:Save);
             var cam=UnityEngine.Camera.main;var follow=cam.GetComponent<FollowCamera>();if(!follow)follow=cam.gameObject.AddComponent<FollowCamera>();Session.Camera=follow;
             var builder=new StageBuilder(stageRoot,Session);Source.Build(d,builder);
@@ -186,12 +187,12 @@ namespace GloomBean.Foundation
                 if(Session)
                 {
                     GUI.Label(new Rect(20,9,650,28),Session.definition.title,heading);
-                    string status="HEALTH "+Session.player.Health+"   COINS "+Session.Coins+"   "+(Session.definition.requiredShards>0?"SEALS "+Session.Shards+"/"+Session.definition.requiredShards+"   ":"")+(Session.definition.requiresKey?(Session.HasKey?"KEYLING ✓":"KEYLING —")+"   ":"")+"MERCY "+Session.Mercies.Count;
+                    string status="HEALTH "+Session.player.Health+"   COINS "+Session.Coins+"   "+(Session.definition.requiredShards>0?"SEALS "+Session.Shards+"/"+Session.definition.requiredShards+"   ":"")+(Session.definition.requiresKey?(Session.HasKey?"KEYLING âœ“":"KEYLING â€”")+"   ":"")+"MERCY "+Session.Mercies.Count;
                     GUI.Label(new Rect(20,42,780,24),status,small);
                     GUI.Label(new Rect(755,14,185,38),Session.Phase==RunPhase.Returning?(Session.definition.timed?TimeSpan.FromSeconds(Mathf.Max(0,Session.Remaining)).ToString(@"mm\:ss"):"THE TURN"):"EXPLORE",heading);
                     if(!string.IsNullOrEmpty(Session.Message)){Panel(new Rect(115,512,730,64),new Color(.07f,.05f,.1f,.93f));GUI.Label(new Rect(131,524,698,48),Session.Message,body);}
                     if(!string.IsNullOrEmpty(PossessionDisplay)){GUI.Label(new Rect(20,80,750,25),PossessionDisplay,heading);GUI.Label(new Rect(20,110,700,46),PossessionHelp,small);}
-                    GUI.Label(new Rect(20,577,720,22),(Practice?"PRACTICE — no completion or Mercy save    ":"")+"F1 controls  •  Esc pause",small);
+                    GUI.Label(new Rect(20,577,720,22),(Practice?"PRACTICE â€” no completion or Mercy save    ":"")+"F1 controls  â€¢  Esc pause",small);
                 }
                 ExtraHud?.Invoke();
             }
@@ -205,7 +206,7 @@ namespace GloomBean.Foundation
                 for(int i=0;i<sources.Count;i++)
                 {
                     int index=i;
-                    if(Button(new Rect(60,y,630,48),i==0?"PLATFORMER FOUNDATION":"GLOOM BEAN — HOST CYCLE")){SelectSource(index);screen=ScreenMode.Worlds;choice=0;Practice=false;}
+                    if(Button(new Rect(60,y,630,48),i==0?"PLATFORMER FOUNDATION":"GLOOM BEAN â€” HOST CYCLE")){SelectSource(index);screen=ScreenMode.Worlds;choice=0;Practice=false;}
                     y+=60;
                 }
                 if(Button(new Rect(60,y,630,48),"PRACTICE / direct level selection")){SelectSource(sources.Count-1);Practice=true;screen=ScreenMode.Worlds;choice=0;}
@@ -213,7 +214,7 @@ namespace GloomBean.Foundation
             }
             if(screen==ScreenMode.Worlds)
             {
-                Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));GUI.Label(new Rect(50,35,860,55),Practice?"CHOOSE A WORLD — PRACTICE":"CHOOSE A WORLD",heading);
+                Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));GUI.Label(new Rect(50,35,860,55),Practice?"CHOOSE A WORLD â€” PRACTICE":"CHOOSE A WORLD",heading);
                 for(int i=0;i<worlds.Length;i++)
                 {
                     bool open=CampaignProgression.WorldOpen(worlds,i,Save.Data,Practice);
@@ -231,7 +232,7 @@ namespace GloomBean.Foundation
                     bool unlocked=CampaignProgression.LevelOpen(world,i,Save.Data,Practice);
                     if(Button(new Rect(55,106+i*64,830,49),(i+1)+". "+stage.title+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
                 }
-                if(Button(new Rect(55,380,830,52),"BOSS — "+world.boss.title,CampaignProgression.BossOpen(world,Save.Data,Practice)))LoadStage(world.boss,Practice);
+                if(Button(new Rect(55,380,830,52),"BOSS â€” "+world.boss.title,CampaignProgression.BossOpen(world,Save.Data,Practice)))LoadStage(world.boss,Practice);
                 if(Button(new Rect(55,470,350,44),"World select")){screen=ScreenMode.Worlds;choice=0;}
             }
             if(screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
