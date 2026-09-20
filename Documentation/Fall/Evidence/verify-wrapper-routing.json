@@ -1,0 +1,92 @@
+{
+  "scope": "Real PowerShell wrapper dispatch only; no gameplay execution",
+  "cases": [
+    {
+      "route": "W1",
+      "status": "PASS",
+      "plan": {
+        "chapter": "Parish",
+        "suite": "Campaign",
+        "receipt": "parish-result.json",
+        "flags": "-gb-parish-verify -gb-route-id W1",
+        "route": "W1"
+      }
+    },
+    {
+      "route": "W2",
+      "status": "PASS",
+      "plan": {
+        "chapter": "Orchard",
+        "suite": "Campaign",
+        "receipt": "orchard-result.json",
+        "flags": "-gb-orchard-verify -gb-route-id W2",
+        "route": "W2"
+      }
+    },
+    {
+      "route": "W3",
+      "status": "PASS",
+      "plan": {
+        "chapter": "City",
+        "suite": "Campaign",
+        "receipt": "city-result.json",
+        "flags": "-gb-city-verify -gb-route-id W3",
+        "route": "W3"
+      }
+    },
+    {
+      "route": "W4",
+      "status": "PASS",
+      "plan": {
+        "chapter": "Fall",
+        "suite": "Campaign",
+        "receipt": "fall-result.json",
+        "flags": "-gb-fall-verify -gb-route-id W4",
+        "route": "W4"
+      }
+    },
+    {
+      "route": "GB-L09",
+      "status": "PASS",
+      "plan": {
+        "chapter": "City",
+        "suite": "Campaign",
+        "receipt": "city-result.json",
+        "flags": "-gb-city-verify -gb-route-id GB-L09",
+        "route": "GB-L09"
+      }
+    },
+    {
+      "route": "GB-L16",
+      "status": "PASS",
+      "plan": {
+        "chapter": "Fall",
+        "suite": "Campaign",
+        "receipt": "fall-result.json",
+        "flags": "-gb-fall-verify -gb-route-id GB-L16",
+        "route": "GB-L16"
+      }
+    },
+    {
+      "route": "GB-B4",
+      "status": "PASS",
+      "plan": {
+        "chapter": "Fall",
+        "suite": "Campaign",
+        "receipt": "fall-result.json",
+        "flags": "-gb-fall-verify -gb-route-id GB-B4",
+        "route": "GB-B4"
+      }
+    },
+    {
+      "suite": "Parish",
+      "route": "W4",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "suite": "Campaign",
+      "route": "GB-L17",
+      "status": "PASS_EXPECTED_REJECTION"
+    }
+  ]
+}
