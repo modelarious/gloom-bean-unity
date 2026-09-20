@@ -1,5 +1,5 @@
 {
-  "id": "Completion-K03-mirror-air-transfer",
+  "id": "Completion-K04-presentation-and-mirror",
   "build": true,
   "cases": [
     {
@@ -8,6 +8,10 @@
       "route": "GB-B5",
       "finalPair": "mirror-parallax",
       "renderFps": 60
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

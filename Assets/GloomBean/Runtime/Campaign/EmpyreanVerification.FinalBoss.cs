@@ -88,7 +88,9 @@ namespace GloomBean.Campaign
         }
         IEnumerator FinalMirrorParallaxRoute()
         {
-            yield return Walk(157,true);yield return Walk(209,true);yield return Walk(261,true);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
+            yield return Walk(157,true);yield return Walk(209,true);yield return Walk(261,true);
+            yield return Wait("recover actual footing after the gallery attack",()=>actor.Grounded&&actor.State!=MotionState.Hurt&&Mathf.Abs(actor.Body.linearVelocity.y)<.2f&&Mathf.Abs(actor.Body.position.x-260.5f)<.25f,5,()=>new InputFrame{move=new Vector2(Mathf.Clamp((260.5f-actor.Body.position.x)*3-actor.Body.linearVelocity.x*.4f,-1,1),0)});
+            yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
             yield return SanctuaryPlaneJump(266,3.5625f,0);if(stopped)yield break;var twin=host.Form<MirrorForm>().Twin;
             yield return Walk(271);yield return Walk(268);yield return Wait("asymmetric calipers align bodies in different physical planes",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,5);Check("the other collision body participates in the near plane",twin&&twin.Shape.includeLayers==(1<<19));Snapshot("final-mirror-parallax");
         }

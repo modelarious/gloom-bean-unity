@@ -1,0 +1,20 @@
+{
+    "started":  "2026-09-20T11:09:54.6756396-06:00",
+    "id":  "Completion-K03-mirror-air-transfer",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  35,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "26a69b03ca07970a65beca1ffdeacd85e224dc5a1a901601f5dc2b765a2e9424",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "f98b27189e23456ede1636535f2287f2394475b8",
+    "finished":  "2026-09-20T11:10:59.1250210-06:00"
+}
