@@ -30,7 +30,11 @@ namespace GloomBean.Campaign
             var domain=session.GetComponentsInChildren<ShadowDomain>().Single(x=>x.name=="The bright side of shadow");Check("dark space is forbidden while luminous matter admits the shadow",domain.Allows(new Vector2(171,22))&&!domain.Allows(new Vector2(171,28)));if(stopped)yield break;
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(178,24));yield return Pause(.1f);
             var receiver=session.GetComponentsInChildren<ShadowReceiver>().Single(x=>x.name=="Hand inside the light");Check("shadow inside actual luminous geometry releases the last sanctum",receiver.active);if(stopped)yield break;
-            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});Check("body and shadow reunite before physical exit",host.Form<ShadowForm>().Attached);yield return Walk(174.5f,true);yield return RunArc(179,23);yield return Walk(184.8f);Snapshot("bright-shadow-rule");
+            // Return around the luminous elbow. The straight diagonal to the drifting
+            // body's feet crosses darkness below the right-hand stained-glass pane.
+            yield return ShadowTravel(new Vector2(174,23));if(stopped)yield break;
+            yield return ShadowTravel(actor.Feet);if(stopped)yield break;
+            yield return Press(new InputFrame{alternate=true});Check("body and shadow reunite before physical exit",host.Form<ShadowForm>().Attached);yield return Walk(174.5f,true);yield return RunArc(179,23);yield return Walk(184.8f);Snapshot("bright-shadow-rule");
         }
         IEnumerator RememberedMercy()
         {
