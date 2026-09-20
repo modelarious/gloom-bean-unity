@@ -95,7 +95,12 @@ namespace GloomBean.Campaign
             Actor.collisionMask=Layers.Solids|(1<<18);Actor.gravityFactor=Actor.speedFactor=1;Actor.chargeDisabled=Actor.pickupDisabled=false;
             Actor.RestoreShape();Actor.CancelActions();gameObject.layer=Layers.Actor;
         }
-        public InputFrame Filter(InputFrame input,float dt){var e=Form<EchoForm>();return e!=null&&e.Leading?e.FilterLeading(input,dt):input;}
+        public InputFrame Filter(InputFrame input,float dt)
+        {
+            var e=Form<EchoForm>();if(e!=null&&e.Leading)input=e.FilterLeading(input,dt);
+            var depth=Form<ParallaxForm>();if(depth!=null){depth.ReadDepthInput(input.move.y,dt);input.move.y=0;}
+            return input;
+        }
         public bool BeforeMovement(ActorMotor a,InputFrame input,float dt)
         {
             if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;}

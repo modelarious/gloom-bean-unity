@@ -48,6 +48,16 @@ namespace GloomBean.Foundation
             host.AddComponent<Rigidbody2D>();host.AddComponent<CapsuleCollider2D>();actor=host.AddComponent<ActorMotor>();input=new ScriptedInput();actor.input=input;
             yield return Place(new Vector2(600,.8f));
             Check("ground.contact",actor.Grounded,actor.Feet.ToString());
+            Vector2 resizeCenter=actor.Body.position;int resizeHealth=actor.Health;
+            bool resizeSmall=actor.TrySetStandingSizeCentered(new Vector2(.572f,.975f),Layers.Solids);
+            Check("shape.centered-shrink-preserves-position",resizeSmall&&Vector2.Distance(resizeCenter,actor.Body.position)<.001f&&actor.Height<1);
+            Vector2 smallShape=actor.Shape.size;
+            bool rejected=actor.TrySetStandingSizeCentered(new Vector2(1.4f,3),Layers.Solids);
+            Check("shape.centered-growth-rejects-ground-overlap",!rejected&&actor.Shape.size==smallShape&&actor.Body.position==resizeCenter);
+            bool normalAgain=actor.TrySetStandingSizeCentered(new Vector2(.88f,1.5f),Layers.Solids);
+            Check("shape.centered-resize-preserves-health",normalAgain&&actor.Health==resizeHealth&&actor.Body.position==resizeCenter);
+            yield return Place(new Vector2(600,.8f));
+
             float start=actor.Body.position.x;input.frame=new InputFrame{move=Vector2.right};yield return Steps(30);
             Check("walk.acceleration",actor.Body.position.x-start>1.6f&&actor.Body.position.x-start<3.5f,actor.Body.position.x-start+" units / 0.5s");
             input.frame=default;yield return Steps(15);Check("walk.braking",Mathf.Abs(actor.Body.linearVelocity.x)<.2f,actor.Body.linearVelocity.ToString());

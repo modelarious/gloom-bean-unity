@@ -16,22 +16,21 @@ namespace GloomBean.Campaign
         public override string Help=>"Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.";
         public override string Status=>new[]{"FAR","MID","NEAR"}[Plane]+" / size x"+DepthGeometry.Factor(Plane).ToString("0.00");
         public override void Enter(){SetPlane(1);}
-        void SetPlane(int p)
+        bool SetPlane(int p)
         {
-            Plane=p;Vector2 at=Actor.Body.position;float s=DepthGeometry.Factor(p);Actor.SetStandingSize(new Vector2(.88f,1.5f)*s);Actor.Body.position=at;
-            Actor.speedFactor=s;Actor.Shape.excludeLayers=(7<<17)&~(1<<(17+p));Actor.Shape.includeLayers=1<<(17+p);Actor.Shape.layerOverridePriority=15;
-            Actor.collisionMask=Layers.Solids|(1<<(17+p));RuntimeEvents.Emit("depth",p.ToString());
+            float s=DepthGeometry.Factor(p);int mask=Layers.Solids|(1<<(17+p));
+            if(!Actor.TrySetStandingSizeCentered(new Vector2(.88f,1.5f)*s,mask)){Notice("The destination silhouette is occupied.");return false;}
+            Plane=p;Actor.speedFactor=s;Actor.Shape.excludeLayers=(7<<17)&~(1<<(17+p));Actor.Shape.includeLayers=1<<(17+p);Actor.Shape.layerOverridePriority=15;
+            Actor.collisionMask=mask;RuntimeEvents.Emit("depth",p.ToString());return true;
         }
         public bool StepPlane(int direction)
         {
             int next=Mathf.Clamp(Plane+direction,0,2);if(next==Plane)return false;bool overlap=false;
             foreach(var r in UnityEngine.Object.FindObjectsByType<ProjectionOverlap>(FindObjectsSortMode.None))if(r.Contains(Actor.Body.position)&&r.Allows(Plane,next)){overlap=true;break;}
             if(!overlap){Notice("Align the two platform silhouettes before changing depth.");return false;}
-            Vector2 size=new Vector2(.80f,1.38f)*DepthGeometry.Factor(next);
-            foreach(var c in Physics2D.OverlapBoxAll(Actor.Body.position,size,0,Layers.Solids|(1<<(17+next))))if(c&&!c.isTrigger){Notice("The destination silhouette is occupied.");return false;}
-            SetPlane(next);return true;
+            return SetPlane(next);
         }
-        public override bool Move(InputFrame f,float dt){cooldown-=dt;if(Mathf.Abs(f.move.y)>.6f&&cooldown<=0){StepPlane(f.move.y>0?1:-1);cooldown=.32f;}return false;}
+        public void ReadDepthInput(float vertical,float dt){cooldown-=dt;if(Mathf.Abs(vertical)>.6f&&cooldown<=0){StepPlane(vertical>0?1:-1);cooldown=.32f;}}
         public override void Leave(){Actor.Shape.excludeLayers=Actor.Shape.includeLayers=0;Actor.collisionMask=Layers.Solids|(1<<18);Actor.speedFactor=1;Actor.RestoreShape();}
     }
     public sealed class StitchForm:HostForm
