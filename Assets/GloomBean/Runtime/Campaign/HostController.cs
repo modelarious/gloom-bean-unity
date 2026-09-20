@@ -98,12 +98,15 @@ namespace GloomBean.Campaign
         public InputFrame Filter(InputFrame input,float dt)
         {
             var e=Form<EchoForm>();if(e!=null&&e.Leading)input=e.FilterLeading(input,dt);
+            // Focus is a command chord, not simultaneous crouch, roll, or depth change.
+            if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;input.move.y=0;}
+
             var depth=Form<ParallaxForm>();if(depth!=null){depth.ReadDepthInput(input.move.y,dt);input.move.y=0;}
             return input;
         }
         public bool BeforeMovement(ActorMotor a,InputFrame input,float dt)
         {
-            if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;}
+
             bool custom=false;
             // A held Stitch action uses the stick as an architectural aiming vector.
             // Do not also queue a Coffin flip or reel a Marionette with that same aim.
