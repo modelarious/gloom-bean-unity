@@ -1,0 +1,14 @@
+BEGIN GB-L09 Tenement of Two Suns
+PASS GB-L09 walk 7 | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 vanity nun creates independently colliding twin | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 jump 10.5 / 2 peak 2.37 | (10.28, 2.75) feet=2.00 hp=6 twin=(31.72, 2.75)
+PASS GB-L09 jump 13 / 2 peak 4.37 | (12.79, 2.75) feet=2.00 hp=6 twin=(29.14, 4.53)
+PASS GB-L09 jump 16 / 4 peak 4.37 | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+PHYSICAL shape=Center: (15.79, 4.75, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Mirror
+CONTACT Platform Center: (16.00, 3.80, 0.00), Extents: (2.50, 0.20, 0.00)
+FAIL GB-L09 two bodies hold the balcony scales | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+FAIL GB-L09 curtains create real cast-shadow bridge collision | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+FAIL GB-L09 roof key collected by contact | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+FAIL GB-L09 one sun extinguishes at the Turn | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+FAIL GB-L09 only eastern shadow bridges disappear | (15.79, 4.75) feet=4.00 hp=6 twin=(26.21, 0.76)
+ERROR InvalidOperationException: Sequence contains no matching element

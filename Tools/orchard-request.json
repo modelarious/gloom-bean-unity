@@ -1,5 +1,5 @@
 {
-  "id": "City-R02-suns-systems",
+  "id": "City-R03-twin-landing",
   "build": true,
   "cases": [
     {
@@ -12,10 +12,6 @@
       "suite": "City",
       "route": "GB-L09",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

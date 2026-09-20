@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  10,
+                        "case":  "L09-critical",
+                        "failed":  6,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  10,
+                        "case":  "L09-secrets",
+                        "failed":  6,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  200,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "City-R02-suns-systems",
+    "started":  "2026-09-19T19:28:54.8497910-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T19:30:23.7311067-06:00"
+}
