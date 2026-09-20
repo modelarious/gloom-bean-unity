@@ -24,16 +24,21 @@ namespace GloomBean.Campaign
         }
         IEnumerator SemicolonMercy()
         {
-            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(52,1);if(stopped)yield break;yield return Pause(1.05f);
+            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(50.5f,3.3f);if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
-            while(Live&&!stopped&&actor.Feet.y<6.3f&&attempts++<5){
-                var candidates=ink.Strokes.Where(x=>x&&x.Solid&&x.age<6.2f&&x.Midpoint.y>actor.Feet.y+.4f&&x.Midpoint.y<actor.Feet.y+2.15f&&Mathf.Abs(x.Midpoint.x-actor.Body.position.x)<3.1f).OrderByDescending(x=>x.Midpoint.y).ToArray();
-                if(candidates.Length==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);Check("a reachable hardened arc exists",candidates.Length>0);if(stopped)yield break;var point=candidates[0].Midpoint;Note("INK TARGET "+point+" age="+candidates[0].age);yield return InkLanding(point.x,point.y-.6f,point.y+1.0f);
+            while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))>13.7f)&&attempts++<6){
+                var points=new System.Collections.Generic.List<Vector2>();
+                foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
+                    if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
+                    for(int j=1;j<5;j++){var q=Vector2.Lerp(from,to,j*.2f);if(q.y>actor.Feet.y+.45f&&q.y<actor.Feet.y+2.05f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
+                if(points.Count==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);
+                Check("a reachable sloping hardened arc exists",points.Count>0);if(stopped)yield break;
+                var point=points.OrderBy(q=>Vector2.Distance(q+Vector2.up*.75f,new Vector2(58.5f,17.5f))).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
             }
-            Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(57.5f,14.5f))<13.5f);if(stopped)yield break;
-            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(57.5f,14.5f));yield return Pause(.08f);
+            Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))<14f);if(stopped)yield break;
+            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,17.5f));yield return Pause(.08f);
             Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Snapshot("semicolon-dot");if(stopped)yield break;
-            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,8);
+            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
         }
         IEnumerator WordStep(float x)
         {
@@ -56,18 +61,23 @@ namespace GloomBean.Campaign
             var ink=actor.GroundCollider.GetComponent<InkStroke>();Check("new return arc survives correction",ink&&!session.GetComponentInChildren<ScriptureCorrector>().Repeated(ink.Midpoint));Snapshot("fresh-return-arc");
             yield return Jump(pad-6,upper);
         }
+        IEnumerator ReturnGap(float x)
+        {
+            if(stopped||!Live)yield break;if(actor.GroundCollider)yield return Walk(actor.GroundCollider.bounds.min.x+.7f,true);
+            yield return Jump(x,9.6f);
+        }
         IEnumerator CorrectingReturn()
         {
             yield return Walk(101);yield return Pause(.7f);Check("manuscript erases the actually repeated outbound path",session.GetComponentInChildren<ScriptureCorrector>().ErasedStrokes>0);if(stopped)yield break;
             yield return Jump(100,10.8f);yield return FreshAscent(98,10.8f,14);if(stopped)yield break;
-            yield return Jump(86,9.6f);yield return Jump(80,9.6f);yield return Jump(74,9.6f);yield return Jump(68,9.6f);yield return Jump(63,9.6f);yield return Walk(50);
+            yield return Jump(86,9.6f);yield return ReturnGap(80);yield return ReturnGap(74);yield return ReturnGap(68);yield return Jump(63,9.6f);yield return Walk(50);
             yield return FreshAscent(48,9.6f,12.8f);if(stopped)yield break;
-            yield return Jump(36,9.6f);yield return Jump(30,9.6f);yield return Jump(24,9.6f);yield return Jump(18,9.6f);yield return Jump(10,8);yield return Walk(2);
+            yield return Jump(36,9.6f);yield return ReturnGap(30);yield return ReturnGap(24);yield return ReturnGap(18);yield return Walk(17,true);yield return Jump(10,8);yield return Walk(2);
         }
         IEnumerator ScriptureRoute(bool secret)
         {
             yield return Walk(8);Check("scribe leech supplies actual Ink",host.Has(HostKind.Ink));yield return Walk(17);
-            yield return Wait("land in the bottom margin",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,5);yield return Pause(1.15f);
+            yield return Wait("land in the bottom margin",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,5);yield return Pause(1.15f);
             yield return InkLanding(14.8f,2.5f,4.1f);if(stopped)yield break;yield return InkLanding(13.8f,4,7.8f);if(stopped)yield break;
             yield return Jump(17.6f,5);Check("reach punctuation desk through authored ink",actor.Feet.y>4.7f);if(stopped)yield break;
             yield return Walk(18.2f);var comma=session.GetComponentInChildren<PunctuationCart>();yield return Press(new InputFrame{interact=true});Check("grip physical comma",comma.Holder==actor);yield return Walk(21.5f);yield return Pause(.4f);yield return Press(new InputFrame{interact=true});
@@ -75,7 +85,7 @@ namespace GloomBean.Campaign
             if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return WordStep(31);yield return WordStep(35);yield return Jump(40,7.2f);
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
-            if(!secret){yield return Walk(42,true);yield return RunArc(52,1);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,6);
+            if(!secret){yield return Walk(42,true);yield return RunArc(50.5f,3.3f);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,6);
             for(int k=0;k<9;k++){yield return Jump(55+k*5,2+k*.7f);if(stopped)yield break;}
             yield return Walk(95.9f);yield return Jump(100,9.2f);if(stopped)yield break;yield return Walk(102);Check("manuscript Keyling",session.HasKey);yield return Walk(104.5f);yield return Press(new InputFrame{interact=true});Check("imperative Turn changes path memory",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ScriptureCorrector>().imperative);
             yield return CorrectingReturn();
