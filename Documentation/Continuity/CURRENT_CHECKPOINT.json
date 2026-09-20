@@ -55,5 +55,12 @@
     "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
   },
   "tested_runtime": "ce58671e62086e00d1a2e06d3ee67a8494197905",
-  "last_clean_evidence": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json"
+  "last_clean_evidence": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json",
+  "packaged_player": {
+    "path": "GloomBean_Windows_Fall_Milestone.zip",
+    "sha256": "57f5a7d40f26779991b139829146b1f5d612a4f051451cb7ac2a8c583f0dfc5c",
+    "input_smoke": "PASS",
+    "assertions": 104,
+    "receipt": "Documentation/Fall/Evidence/Packaged-v06-g1/runner.json"
+  }
 }
