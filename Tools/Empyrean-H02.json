@@ -1,0 +1,16 @@
+{
+  "id": "Empyrean-H02-authored-coil-launches",
+  "build": true,
+  "cases": [
+    {
+      "name": "L17-critical",
+      "suite": "Empyrean",
+      "route": "GB-L17"
+    },
+    {
+      "name": "L17-repeat",
+      "suite": "Empyrean",
+      "route": "GB-L17"
+    }
+  ]
+}

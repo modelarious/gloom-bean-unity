@@ -50,6 +50,14 @@ namespace GloomBean.Campaign
             }
             input.frame=default;Note("SUPPORT "+(actor.GroundCollider?actor.GroundCollider.name:"none"));Check((landing?"magnetic landing at ":"magnetic transit through ")+target,(!landing||actor.Grounded)&&Vector2.Distance(actor.Body.position,target)<(landing?.9f:1.2f));Snapshot("magnet-"+target.x);
         }
+        IEnumerator PowerAltar(float x)
+        {
+            if(stopped||!Live)yield break;
+            var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name=="Launch coil "+x);
+            if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
+            yield return Press(new InputFrame{interact=true});yield return Pause(.18f);
+            Check("visible reversible coil is energized at "+x,coil.enabled&&actor.Grounded&&Mathf.Abs(actor.Body.position.x-x)<1.6f);
+        }
         IEnumerator Halos(bool secret)
         {
             yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));yield return Walk(17.8f);
@@ -60,9 +68,9 @@ namespace GloomBean.Campaign
             Check("actual switch energizes the physical altar",session.GetComponentsInChildren<MagneticBody>().Single(m=>m.name=="Fixed north launch altar").enabled);
             Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
             yield return MagnetTo(new Vector2(41,13),16,false);yield return MagnetTo(new Vector2(46,6.75f));
-            yield return MagnetTo(new Vector2(58,15),16,false);yield return MagnetTo(new Vector2(65,8.75f));
-            yield return MagnetTo(new Vector2(77,17),16,false);yield return MagnetTo(new Vector2(83,10.75f));
-            yield return MagnetTo(new Vector2(94,19),16,false);yield return MagnetTo(new Vector2(99,12.75f));
+            yield return PowerAltar(46);yield return MagnetTo(new Vector2(58,15),16,false);yield return MagnetTo(new Vector2(65,8.75f));
+            yield return PowerAltar(65);yield return MagnetTo(new Vector2(77,17),16,false);yield return MagnetTo(new Vector2(83,10.75f));
+            yield return PowerAltar(83);yield return MagnetTo(new Vector2(94,19),16,false);yield return MagnetTo(new Vector2(99,12.75f));
             if(stopped)yield break;
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret){yield return MagnetTo(new Vector2(61,18.75f));Check("orbiting loft Mercy",session.Mercies.Count==1);yield return MagnetTo(new Vector2(99,12.75f));}
