@@ -52,4 +52,6 @@ class ContinuityTests(unittest.TestCase):
  def test_packager_refuses_uncommitted_runtime(self):
   pack=module('package_checkpoint');(self.root/'Assets/test.cs').write_text('uncommitted change')
   with self.assertRaises(RuntimeError):pack.package(self.root,self.root/'deliveries','dirty')
+ def test_explicit_idle_job_is_not_a_missing_access_error(self):
+  d=self.root/'Documentation/Continuity';d.mkdir(parents=True);(d/'CURRENT_CHECKPOINT.json').write_text(json.dumps({'active_job':None,'tested_commit':self.head}));v=status.inspect(self.root,True);self.assertEqual(v['write_probe'],'PASS');self.assertEqual(v['source_vs_tested'],'MATCH');self.assertIsNone(v['active_job'])
 if __name__=='__main__':unittest.main(verbosity=2)

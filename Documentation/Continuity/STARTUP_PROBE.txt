@@ -1,6 +1,6 @@
 {
   "project": "C:\\Users\\micha\\Projects\\GloomBeanUnity",
-  "head": "448dccdbc38d3eb5694c7da23495fd9674892d9d",
+  "head": "7bebcccdbac85d477ca934b6e2b1e7ce1acd2f53",
   "branch": "main",
   "changes": [
     "M Documentation/Continuity/TOOL_TESTS.txt",
@@ -9,23 +9,23 @@
   ],
   "changes_truncated": false,
   "recent_commits": [
+    "7bebccc Checkpoint full clean W1-W2 earned progression PASS and advance exact next work to City",
+    "260321d Add repeatable verified checkpoint packaging and README first-read entry",
+    "704b70c Pin full clean earned-save regression after both continuity-discovered repairs",
+    "747f8eb Preserve passing L04 shore-cure and 200 native mechanics assertions before clean chapter verification",
+    "a61e784 Fix unchanged-footprint partial thread cure; preserve newly exposed clean-run failure",
+    "bbd0475 Observe persistent jobs during startup and reject inconsistent green runner summaries",
     "448dccd Pin fresh-clone earned-chapter continuity acceptance before launch",
-    "eb265c5 Preserve passing native practice repair and retain original failed clean run",
-    "0e60dc8 Add first-read agent runbook, tested continuity helpers and explicit checkpoint state",
-    "567ceba WIP: use genuine Wax inputs for low-clearance Orchard return; retain failing witness",
-    "b2bf187 Preserve recovered Orchard clean-run evidence, failed practice witness and exact continuation configs",
-    "b47386c Extend reusable native verification for body shape and damage preservation",
-    "9f940d7 Resolve Orchard physical routes and preserve material-system invariants",
-    "7aa5aff Orchard iteration: physical wax flow, terrain serving circuit and genuine input witnesses"
+    "eb265c5 Preserve passing native practice repair and retain original failed clean run"
   ],
   "remote_names": [],
   "checkpoint_found": true,
-  "next_gate": "Recheck full earned W1/W2 chapter and secrets in fresh atlas clone, including formerly failing practice and expected empty-save denial. Then City W3/L09 critical route and Surveyor.",
+  "next_gate": "Implement and validate City W3/L09 Tenement of Two Suns through actual Mirror inputs, return and Mercy; continue W3/L10-L12 and Surveyor, then Fall and Empyrean. W1/W2 clean regression is now PASS, not the old failed practice or shore gate.",
   "source_fingerprint": {
     "files": 288,
-    "normalized_sha256": "f3e2780d813206bb92891c9df226dbd588dc130fe9cc7a1458715867a557d02a"
+    "normalized_sha256": "82a7df7e0fbb2cdd074649b1dff0b97c90046abf516b4fe4f335df4fcd4bfee7"
   },
-  "tested_source": "567ceba87e7df2a026d5f801f98b58fb8785420e",
+  "tested_source": "747f8ebcebb3a6769f684e8686649142730b971e",
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -34,60 +34,14 @@
     "last_probe": "404",
     "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
   },
-  "active_job": {
-    "task": "GloomBean-Orchard-Clean-v04",
-    "receipt": "Reports/Orchard-v04/Clean-continuity-e1/runner.json",
-    "status": "PREPARING"
-  },
+  "active_job": null,
   "evidence": [
     {
-      "name": "Current focused native repair",
-      "path": "Documentation/Evidence/Continuity-R12/runner.json",
-      "sha256": "77f595568bfeedc3a1621e14323aad71615a74adc21767d4af20e17a8e6d3cd7",
+      "name": "Latest full earned chapter regression",
+      "path": "Documentation/Evidence/Continuity-Clean-e2/runner.json",
+      "sha256": "387fa1d815b25923c104f52a072cc14ddb1e382687e0c52d40ac1987aa88c181",
       "status": "PASS",
       "declared_status": "PASS",
-      "cases": [
-        {
-          "passed": null,
-          "exceptions": null,
-          "checks": 38,
-          "case": "Practice-isolation",
-          "failed": 0,
-          "status": "PASS"
-        },
-        {
-          "passed": null,
-          "exceptions": null,
-          "checks": 39,
-          "case": "Pears-critical",
-          "failed": 0,
-          "status": "PASS"
-        },
-        {
-          "passed": null,
-          "exceptions": null,
-          "checks": 49,
-          "case": "Pears-secrets",
-          "failed": 0,
-          "status": "PASS"
-        },
-        {
-          "passed": 198,
-          "exceptions": 0,
-          "checks": null,
-          "case": "Mechanics",
-          "failed": 0,
-          "status": "PASS"
-        }
-      ],
-      "inconsistent_cases": []
-    },
-    {
-      "name": "Historical clean batch (retained FAIL)",
-      "path": "Documentation/Evidence/OrchardRecovery/runner.json",
-      "sha256": "454664fca066a66cfa439ec49ee3d793a5b023e63be3eeca8904bc21ddc23cba",
-      "status": "FAIL_OR_INCOMPLETE",
-      "declared_status": "FAIL",
       "cases": [
         {
           "name": "Foundation",
@@ -102,7 +56,7 @@
           "name": "Mechanics",
           "expected_denial": false,
           "failed": 0,
-          "assertions": 198,
+          "assertions": 200,
           "exceptions": 0,
           "exit": 0,
           "status": "PASS"
@@ -129,7 +83,7 @@
           "name": "W2-critical",
           "expected_denial": false,
           "failed": 0,
-          "assertions": 313,
+          "assertions": 318,
           "exceptions": null,
           "exit": 0,
           "status": "PASS"
@@ -138,7 +92,7 @@
           "name": "W2-secrets",
           "expected_denial": false,
           "failed": 0,
-          "assertions": 369,
+          "assertions": 374,
           "exceptions": null,
           "exit": 0,
           "status": "PASS"
@@ -155,11 +109,102 @@
         {
           "name": "Practice-isolation",
           "expected_denial": false,
-          "failed": 2,
-          "assertions": 28,
+          "failed": 0,
+          "assertions": 38,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Unearned-world-denied",
+          "expected_denial": true,
+          "failed": 1,
+          "assertions": 0,
+          "exceptions": null,
+          "exit": 1,
+          "status": "PASS"
+        }
+      ],
+      "inconsistent_cases": []
+    },
+    {
+      "name": "Historical failing clean run retained",
+      "path": "Documentation/Evidence/Continuity-Clean-e1/runner.json",
+      "sha256": "03d02e66bf9d7b53d3a8737d46f272c478b9f820c57ae1db23f5f3da1dbb9516",
+      "status": "FAIL_OR_INCOMPLETE",
+      "declared_status": "FAIL",
+      "cases": [
+        {
+          "name": "Foundation",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 61,
+          "exceptions": 0,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Mechanics",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 198,
+          "exceptions": 0,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "W1-critical",
+          "expected_denial": false,
+          "failed": 3,
+          "assertions": 115,
           "exceptions": null,
           "exit": 1,
           "status": "FAIL"
+        },
+        {
+          "name": "W1-secrets",
+          "expected_denial": false,
+          "failed": 3,
+          "assertions": 150,
+          "exceptions": null,
+          "exit": 1,
+          "status": "FAIL"
+        },
+        {
+          "name": "W2-critical",
+          "expected_denial": false,
+          "failed": null,
+          "assertions": null,
+          "exceptions": null,
+          "exit": null,
+          "status": "DEPENDENCY_FAILED"
+        },
+        {
+          "name": "W2-secrets",
+          "expected_denial": false,
+          "failed": null,
+          "assertions": null,
+          "exceptions": null,
+          "exit": null,
+          "status": "DEPENDENCY_FAILED"
+        },
+        {
+          "name": "Judge",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 29,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Practice-isolation",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 38,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
         },
         {
           "name": "Unearned-world-denied",
@@ -172,149 +217,54 @@
         }
       ],
       "inconsistent_cases": [
-        "Practice-isolation"
+        "W1-critical",
+        "W1-secrets",
+        "W2-critical",
+        "W2-secrets"
       ]
+    },
+    {
+      "name": "Focused shore cure repair",
+      "path": "Documentation/Evidence/Continuity-R13/runner.json",
+      "sha256": "41bbd5a1177c634a5665a7d5dccb3c7809ffe45591c1f3369603ef06d0033afa",
+      "status": "PASS",
+      "declared_status": "PASS",
+      "cases": [
+        {
+          "passed": null,
+          "exceptions": null,
+          "checks": 36,
+          "case": "Skins-critical",
+          "failed": 0,
+          "status": "PASS"
+        },
+        {
+          "passed": null,
+          "exceptions": null,
+          "checks": 46,
+          "case": "Skins-secrets",
+          "failed": 0,
+          "status": "PASS"
+        },
+        {
+          "passed": 200,
+          "exceptions": 0,
+          "checks": null,
+          "case": "Mechanics",
+          "failed": 0,
+          "status": "PASS"
+        }
+      ],
+      "inconsistent_cases": []
     }
   ],
   "scope": "Inspection only. No gameplay tests, builds or remote publication performed.",
   "runtime_observation": {
     "status": "OBSERVED",
     "value": {
-      "task": {
-        "last_run": "09/19/2026 18:43:43",
-        "last_result": 267009,
-        "name": "GloomBean-Orchard-Clean-v04",
-        "user": "micha",
-        "state": "Running"
-      },
-      "processes": [
-        {
-          "Id": 15080,
-          "ProcessName": "GloomBean",
-          "StartTime": "/Date(1789865050923)/"
-        },
-        {
-          "Id": 17652,
-          "ProcessName": "GloomBean",
-          "StartTime": "/Date(1789865051009)/"
-        },
-        {
-          "Id": 23628,
-          "ProcessName": "GloomBean",
-          "StartTime": "/Date(1789865050970)/"
-        },
-        {
-          "Id": 23844,
-          "ProcessName": "GloomBean",
-          "StartTime": "/Date(1789865050992)/"
-        },
-        {
-          "Id": 23956,
-          "ProcessName": "GloomBean",
-          "StartTime": "/Date(1789865050950)/"
-        }
-      ]
+      "processes": []
     },
     "scope": "Read-only current task/process state; does not start or stop work"
-  },
-  "active_job_observation": {
-    "name": "Current persistent job receipt",
-    "path": "Reports/Orchard-v04/Clean-continuity-e1/runner.json",
-    "sha256": "f40ef836f4ee69b740fa529741a769ae513896b5d1e226870a654e86b3a85ed7",
-    "status": "FAIL_OR_INCOMPLETE",
-    "declared_status": "RUNNING",
-    "cases": [
-      {
-        "name": "Foundation",
-        "expected_denial": false,
-        "failed": 0,
-        "assertions": 61,
-        "exceptions": 0,
-        "exit": 0,
-        "status": "PASS"
-      },
-      {
-        "name": "Mechanics",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "RUNNING"
-      },
-      {
-        "name": "W1-critical",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "RUNNING"
-      },
-      {
-        "name": "W1-secrets",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "RUNNING"
-      },
-      {
-        "name": "W2-critical",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "PENDING"
-      },
-      {
-        "name": "W2-secrets",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "PENDING"
-      },
-      {
-        "name": "Judge",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "RUNNING"
-      },
-      {
-        "name": "Practice-isolation",
-        "expected_denial": false,
-        "failed": null,
-        "assertions": null,
-        "exceptions": null,
-        "exit": null,
-        "status": "RUNNING"
-      },
-      {
-        "name": "Unearned-world-denied",
-        "expected_denial": true,
-        "failed": 1,
-        "assertions": 0,
-        "exceptions": null,
-        "exit": 1,
-        "status": "PASS"
-      }
-    ],
-    "inconsistent_cases": [
-      "Mechanics",
-      "W1-critical",
-      "W1-secrets",
-      "W2-critical",
-      "W2-secrets",
-      "Judge",
-      "Practice-isolation"
-    ]
   },
   "source_vs_tested": "MATCH",
   "write_probe": "PASS"

@@ -38,7 +38,7 @@ def evidence(root,item):
  return r
 def runtime_observation(state):
  if os.name!='nt':return {'status':'NOT_WINDOWS','scope':'No runtime process or task claim'}
- task=state.get('active_job',{}).get('task')
+ task=(state.get('active_job') or {}).get('task')
  if task and any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in task):return {'status':'INVALID_TASK_NAME'}
  command="$ErrorActionPreference='Stop'; $r=@{}; "
  if task:command+="$t=Get-ScheduledTask -TaskName '"+task+"' -ErrorAction SilentlyContinue; if($t){$i=Get-ScheduledTaskInfo -TaskName $t.TaskName;$r.task=@{name=$t.TaskName;state=[string]$t.State;last_result=$i.LastTaskResult;last_run=[string]$i.LastRunTime;user=$t.Principal.UserId}}; "
@@ -56,7 +56,7 @@ def inspect(root,probe_write=False):
  dirty=git(root,'status','--short')[1].splitlines();tested=s.get('tested_commit')
  r={'project':str(root),'head':head,'branch':git(root,'branch','--show-current')[1],'changes':dirty[:60],'changes_truncated':len(dirty)>60,'recent_commits':git(root,'log','-8','--format=%h %s')[1].splitlines(),'remote_names':git(root,'remote')[1].splitlines(),'checkpoint_found':f.exists(),'next_gate':s.get('next_gate','UNKNOWN: read START_HERE.md'),'source_fingerprint':fingerprint(root),'tested_source':tested,'publication':s.get('publication',{'status':'UNKNOWN'}),'active_job':s.get('active_job'),'evidence':[evidence(root,i) for i in s.get('evidence_refs',[])],'scope':'Inspection only. No gameplay tests, builds or remote publication performed.'}
  r['runtime_observation']=runtime_observation(s)
- active=s.get('active_job',{})
+ active=s.get('active_job') or {}
  if active.get('receipt'):r['active_job_observation']=evidence(root,{'name':'Current persistent job receipt','path':active['receipt']})
  if tested:
   rc,_,_=git(root,'diff','--quiet',tested,'--','Assets','Packages','ProjectSettings');u=git(root,'ls-files','--others','--exclude-standard','--','Assets','Packages','ProjectSettings')[1]
