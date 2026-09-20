@@ -7,3 +7,9 @@ All fourteen screens were inspected. The normal title/selection is visibly pleas
 The native ordinary, nineteen-Mercy and restored ending renders from the preceding L4 source were inspected as supporting evidence. Ordinary/nineteen retain the opened body; twenty restores the original Bean in the ending. The final release still requires the exact packaged-player ending reruns and their own images. M1 does not change production art or physics: its C# delta corrects a route witness's unjustified immobility oracle.
 
 This inspection addresses missing rendering, dominant text clipping/overlap and visible state. It is not a claim of human art-direction approval, uncoached comprehension, controller feel, audio mix, accessibility compliance or commercial polish.
+
+## Exact final downloadable player
+
+The final ZIP at SHA256 `37ed7162514e4901b58467ec6cfdd49f77597907d15b87936ab1bb330fb637aa` was extracted and played through all three earned final-boss boundaries. The untouched ordinary and restored backbuffers were inspected at full size. Ordinary/nineteen visibly retain the torn Open Host; the twenty-Mercy image visibly restores the intact original Bean. Both include their correct native narrative text and a readable Return to title action. The nineteen-Mercy image is correctly byte-identical to ordinary, while the restored image differs. Saved corruption remains true in all three cases. See PACKAGED_AUDIT.json and Evidence/Packaged-M1-Final.
+
+This closes the native visual delivery check, not human aesthetic or controller judgement. No runtime image was edited to manufacture this evidence.
