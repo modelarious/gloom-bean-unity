@@ -28,7 +28,7 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;
             if(session.GetComponentInChildren<HostEmbargo>().stolen==HostKind.Wax){
-                yield return Walk(60);yield return Jump(63,2);yield return Walk(65.8f);yield return Wait("leave the Root source ledge onto wet substrate",()=>actor.Grounded&&actor.Feet.y<.3f,5);
+                yield return Walk(60);yield return Jump(63,2);yield return Walk(65.8f);yield return Wait("the wet crack remains reachable above the stolen wax",()=>RootSoil.All.Any(x=>x&&x.wet&&x.Near(actor.Body.position,.85f)),5);
                 Check("stolen wax forces a different root solution",host.Has(HostKind.Root));if(stopped)yield break;
                 yield return SanctumRoot(new Vector2(65,-4),new Vector2(80,-4),new Vector2(80,1));if(stopped)yield break;
                 Check("root adaptation does not remove the vault's wall",session.GetComponentsInChildren<EdibleChunk>().Any(c=>c.name=="Second act removable support"&&c.gameObject.activeInHierarchy));

@@ -42,7 +42,7 @@ namespace GloomBean.Campaign
             var root=a.Source(HostKind.Root,63,3);second.Add(root.gameObject);a.Ledge(63,2,4);
             var tile=a.Chunk(new Vector2(68,2),new Vector2(2,4));tile.name="Second act removable support";
             b.Solid("Sealed digestion vault",new Vector2(69.5f,5.3f),new Vector2(15,1));
-            a.Ledge(73,-4,4);a.Socket(new Vector2(77,-4),new Vector2(2,4));a.SoilPath(new Vector2(65,1),new Vector2(65,-4),new Vector2(80,-4),new Vector2(80,1));
+            a.Ledge(73,-4,4);a.Socket(new Vector2(77,-4),new Vector2(2,4));a.SoilPath(new Vector2(65,3),new Vector2(65,-4),new Vector2(80,-4),new Vector2(80,1));
             a.Cure(HostKind.None,104,1,true);a.Health(98,1.3f);
             b.Tip(new Vector2(61,2),"It owns the old answer. Move the wall into the pit, or thread a root around the same structure.");
             foreach(var o in second)o.SetActive(false);
