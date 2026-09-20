@@ -1,11 +1,11 @@
 {
-  "id": "Fall-R22-inspectable-release",
+  "id": "Empyrean-R01-magnetic-trajectory",
   "build": true,
   "cases": [
     {
-      "name": "B4",
-      "suite": "Fall",
-      "route": "GB-B4"
+      "name": "L17-critical",
+      "suite": "Empyrean",
+      "route": "GB-L17"
     }
   ]
 }
