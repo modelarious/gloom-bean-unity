@@ -46,15 +46,33 @@ namespace GloomBean.Campaign
         }
         void Surveyor(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-9,74,42),new Vector2(3,1));var b=a.b;a.Floor(-5,57);var boss=Director(a,new Vector2(47,8),"The Surveyor",new Color(.31f,.43f,.62f));
-            var mirror=a.Source(HostKind.Mirror,7);mirror.explicitAxis=true;mirror.mirrorAxis=19;var p1=b.Plate(new Vector2(12,.14f));var p2=b.Plate(new Vector2(26,.14f));b.Solid("Off-register drafting cabinet",new Vector2(30,1),new Vector2(1.5f,2));
-            var inner=a.Source(HostKind.InsideOut,7);inner.gameObject.SetActive(false);var terrain=b.Solid("Solid attack outline",new Vector2(20,3),new Vector2(12,6));terrain.SetActive(false);var innerFloor=b.Solid("Interior of the attack line",new Vector2(20,-.2f),new Vector2(26,.4f),new Color(.62f,.81f,.83f),Layers.Interior);innerFloor.SetActive(false);
-            var depth=a.Source(HostKind.Parallax,31);depth.gameObject.SetActive(false);a.Projection(new Vector2(33,2),new Vector2(9,6));var caliper=b.Solid("Caliper upper jaw",new Vector2(39,2),new Vector2(10,2));a.Ledge(39,0,10); // 1 m gap admits the far silhouette, not the full body.
-            a.Ledge(51,2,5);a.Ledge(56,4,4);a.Health(4,1.2f);
-            boss.Configure(boss.title,p=>p==0?p1.Pressed&&p2.Pressed:p==1?a.Player.Body.position.x>25&&a.Player.Body.position.x<29:a.Player.Body.position.x>47&&a.Player.Height<1.1f,p=>{
-                if(p==0)boss.objective="Correct two independently colliding reflections against unmatched furniture.";
-                if(p==1){a.host.Cure(HostKind.None,true);mirror.gameObject.SetActive(false);inner.gameObject.SetActive(true);terrain.SetActive(true);innerFloor.SetActive(true);a.Player.Revive(new Vector2(7,1));boss.objective="Walk inside the Surveyor's supposedly solid attack shape.";}
-                if(p==2){terrain.SetActive(false);innerFloor.SetActive(false);a.host.Cure(HostKind.None,true);inner.gameObject.SetActive(false);depth.gameObject.SetActive(true);a.Player.Revive(new Vector2(30,1));boss.objective="Change projected scale at the registration mark; fit the calipers without changing your screen position.";}
+            a.Begin(new Rect(-8,-9,93,46),new Vector2(3,1));var b=a.b;a.Floor(-5,80);var boss=Director(a,new Vector2(45,9),"The Surveyor",new Color(.31f,.43f,.62f));boss.attackInterval=5;
+            GameObject GroupSince(int first,string name){var children=new List<Transform>();for(int i=first;i<b.root.childCount;i++)children.Add(b.root.GetChild(i));var group=new GameObject(name);group.transform.SetParent(b.root);foreach(var child in children)child.SetParent(group.transform,true);return group;}
+            SurveyorCore Core(string name,Vector2 at,int layer){var g=b.Solid(name,at,new Vector2(1,1.6f),new Color(.86f,.72f,.35f),layer);return g.AddComponent<SurveyorCore>();}
+            GameObject Sill(float x,float y,float width){var g=a.Ledge(x,y,width);g.AddComponent<OneWaySurface>();return g;}
+            int first=b.root.childCount;var mirror=a.Source(HostKind.Mirror,7);mirror.explicitAxis=true;mirror.mirrorAxis=22;
+            var anchor=b.Plate(new Vector2(12,.14f));b.Solid("The unreflected measuring cabinet",new Vector2(13,1),new Vector2(.5f,2));var shutter=b.Door(new Vector2(34,2),new Vector2(.6f,4),anchor);
+            PrimitiveArt.Shape("Surveyor's elevated reflection",b.root,new Vector2(12,4.5f),new Vector2(3,4),new Color(.31f,.43f,.62f),PrimitiveArt.Icon.Arch,-1);
+            var reflected=Core("Surveyor exposed reflection",new Vector2(32,1),Layers.Terrain);reflected.Exposed=()=>anchor.Pressed;
+            var phaseOne=GroupSince(first,"Surveyor act I mirrored apparatus");var counter=boss.gameObject.AddComponent<SurveyorCounterstroke>();counter.boss=boss;counter.actor=a.Player;
+
+            first=b.root.childCount;var interior=PaintedPassage(a,new Vector2(12,0));a.Source(HostKind.InsideOut,14,.8f);
+            var inside=Core("Surveyor internal outline",new Vector2(35.8f,11.8f),Layers.Interior);var phaseTwo=GroupSince(first,"Surveyor act II enclosed attack shape");phaseTwo.SetActive(false);
+
+            first=b.root.childCount;Sill(34.5f,11,9);a.Source(HostKind.Parallax,37,11.8f);a.Projection(new Vector2(39,13),new Vector2(12,9));a.Projection(new Vector2(47,15),new Vector2(14,10));a.Projection(new Vector2(57,17),new Vector2(14,10));
+            var cores=new SurveyorCore[3];float[] x={42,51,60},y={12.2f,13.9f,15.5f};
+            for(int i=0;i<3;i++){
+                var group=new GameObject("Surveyor moving caliper "+i);group.transform.SetParent(b.root);group.transform.position=new Vector2(x[i],y[i]);
+                var surface=a.Depth(new Vector2(x[i],y[i]),new Vector2(10,.6f),i);surface.gameObject.AddComponent<OneWaySurface>();surface.transform.SetParent(group.transform,true);
+                cores[i]=Core("Surveyor caliper "+i,new Vector2(x[i]+1.7f,y[i]+.3f*DepthGeometry.Factor(i)+.8f),17+i);cores[i].transform.SetParent(group.transform,true);
+                var motion=group.AddComponent<MotionPlatform>();motion.origin=new Vector2(x[i],y[i]);motion.end=motion.origin+Vector2.right*.8f;motion.speed=.65f;
+            }
+            var phaseThree=GroupSince(first,"Surveyor act III moving projected calipers");phaseThree.SetActive(false);
+            a.Health(4,1.2f);b.Tip(new Vector2(7,2),"Pin your present body against the measuring cabinet. The reflected attack can reach the other Surveyor while your own mass holds its shutter.");
+            boss.Configure(boss.title,phase=>phase==0?reflected.struck:phase==1?inside.struck:System.Array.TrueForAll(cores,c=>c.struck),phase=>{
+                if(phase==0)boss.objective="Make only the reflected Surveyor vulnerable, then strike it with the reflected body. Your attack is copied back.";
+                if(phase==1){phaseOne.SetActive(false);phaseTwo.SetActive(true);a.host.Cure();boss.objective="Enter the Surveyor's enclosed attack outline. Its core can only be reached from the physical interior.";}
+                if(phase==2){phaseTwo.SetActive(false);phaseThree.SetActive(true);a.host.Cure();boss.objective="Strike the three moving calipers. Their weak points occupy different projection planes; no one body configuration reaches them all.";}
             });
         }
         void Everyone(AtlasBuilder a)

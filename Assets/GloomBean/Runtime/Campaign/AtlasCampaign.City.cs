@@ -128,7 +128,7 @@ namespace GloomBean.Campaign
             var retreat=new List<GameObject>();
             var rf=Shelf(111,16,10,0);var rm=Shelf(102,16,10,1);var rn=Shelf(92,15,10,2);retreat.Add(rf.gameObject);retreat.Add(rm.gameObject);retreat.Add(rn.gameObject);
             a.Projection(new Vector2(107,18),new Vector2(11,8));a.Projection(new Vector2(97,18),new Vector2(11,8));
-            retreat.Add(Sill(66,15,44));for(int i=0;i<6;i++)retreat.Add(Sill(38-i*6,13-i*2,5));foreach(var g in retreat)g.SetActive(false);
+            retreat.Add(Sill(66,15,44));for(int i=0;i<6;i++)retreat.Add(Sill(38-i*6,13-i*2,9));foreach(var g in retreat)g.SetActive(false);
             var flat=a.Cure(HostKind.Parallax,84,15.8f);flat.gameObject.SetActive(false);
             b.session.Turned+=()=>{stamp.reversed=true;foreach(var d in architecture)d.SetPlane(0);foreach(var g in retreat)g.SetActive(true);flat.gameObject.SetActive(true);};
             b.Tip(new Vector2(10,2),"Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.");
@@ -162,7 +162,8 @@ namespace GloomBean.Campaign
             var rp=b.Plate(c+new Vector2(5,1.54f));rp.transform.SetParent(carriage.transform,true);
             var stop=b.Solid("Furniture that stops only the enlarged reflection",c+new Vector2(6.4f,2.5f),new Vector2(.7f,2.2f),b.accent,Layers.Moving);stop.transform.SetParent(carriage.transform,true);
             var stamp=b.Trigger("The reflected hotel's NEAR stamp",c+new Vector2(4.5f,2.8f),new Vector2(3,3.5f),new Color(.83f,.56f,.38f,.3f)).AddComponent<ReplicaDepthStamp>();stamp.transform.SetParent(carriage.transform,true);stamp.plane=2;
-            var brake=b.root.gameObject.AddComponent<OrbitBrake>();brake.left=lp;brake.right=rp;brake.rooms=rooms.ToArray();brake.stepOnRelease=true;
+            var brake=b.root.gameObject.AddComponent<OrbitBrake>();brake.left=lp;brake.right=rp;brake.rooms=rooms.ToArray();brake.stepOnRelease=true;brake.requiresCall=true;
+            var call=b.Switch(c+new Vector2(-5,2.15f),"CALL TWO-DEPTH LIFT");call.transform.SetParent(carriage.transform,true);call.Changed+=v=>brake.Call();
             var reflection=a.Source(HostKind.Mirror,18.5f,14.8f,true);reflection.explicitAxis=true;reflection.mirrorAxis=22;
             a.Cure(HostKind.Mirror,33,24.2f);
             var luggage=b.Prop(c+new Vector2(2,1),new Vector2(.7f,.9f),1.2f);luggage.name="Room 101's traveling luggage";

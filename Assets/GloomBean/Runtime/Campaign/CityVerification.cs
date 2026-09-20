@@ -148,7 +148,7 @@ namespace GloomBean.Campaign
             yield return Walk(18.5f);Check("vanity reflection composes with perspective",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));
             yield return Jump(17,15.395f);var stamp=room.GetComponentInChildren<ReplicaDepthStamp>();var brake=session.GetComponentInChildren<OrbitBrake>();
             yield return Await("reflection receives a distinct depth footprint",()=>stamp.Stamped,4);
-            yield return Align(17);yield return Await("two depths hold the same room brake",()=>brake.released,5);Snapshot("split-depth-room-brake");
+            yield return Align(17);yield return Await("two depths hold the same room brake",()=>brake.released,5);Snapshot("split-depth-room-brake");yield return Press(new InputFrame{interact=true});
             yield return RideRoom(room,new Vector2(38,22));if(stopped)yield break;yield return Walk(33);yield return Await("roof velvet releases the reflected tenant",()=>!host.Has(HostKind.Mirror),4);
             yield return Jump(34,23.4f);yield return Walk(35.5f);Check("formerly exterior wall becomes inside-out corridor",host.Has(HostKind.InsideOut));
             yield return Jump(37.5f,24.4f);yield return Jump(39,25.4f);yield return Jump(41,26.4f);yield return Jump(43,28.4f);yield return Walk(47);yield return Await("wall frame returns normal collision",()=>!host.Has(HostKind.InsideOut),3);
