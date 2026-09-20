@@ -44,6 +44,13 @@ try {
    $c=$j.case
    if($j.state -eq 'PENDING'){
     $gui=[bool]$c.windowed -or $c.route -eq 'GB-B5';if($gui -and @($jobs|Where-Object {$_.state -eq 'RUNNING' -and ($_.case.windowed -or $_.case.route -eq 'GB-B5')}).Count -gt 0){continue}
+    # Separate clones may test physics concurrently, but never overlap visible ending captures.
+    if($gui -and $config.guiPredecessorReceipt){
+     if(-not(Test-Path -LiteralPath $config.guiPredecessorReceipt)){throw 'Visible-test predecessor receipt missing'}
+     $previous=Get-Content -LiteralPath $config.guiPredecessorReceipt -Raw|ConvertFrom-Json
+     if($previous.status -eq 'RUNNING'){continue}
+     if($previous.status -notin @('PASS','FAIL')){throw 'Visible-test predecessor state is unknown'}
+    }
     if($c.parent){$parent=$names[$c.parent];if($parent.state -in @('PENDING','RUNNING')){continue};if($parent.state -ne 'PASS'){$j.state='DEPENDENCY_FAILED';continue}}
     $out=Join-Path $dir $j.name;New-Item -ItemType Directory $out | Out-Null;$j.out=$out
     if($c.parent){
