@@ -1,7 +1,12 @@
 {
-  "id": "Fall-R14-kinetic-return-and-colossus",
+  "id": "Fall-R15-physical-gaps-and-dock",
   "build": true,
   "cases": [
+    {
+      "name": "L14-critical",
+      "suite": "Fall",
+      "route": "GB-L14"
+    },
     {
       "name": "L14-secrets",
       "suite": "Fall",

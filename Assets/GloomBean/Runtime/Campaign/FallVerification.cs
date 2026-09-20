@@ -128,7 +128,7 @@ namespace GloomBean.Campaign
                 yield return Leap(58.2f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
-            yield return Walk(57.5f);var farTower=session.GetComponentsInChildren<FoldPanel>().First(x=>x.name=="Far folding tower");yield return Await("far tower completes its physical Turn",()=>Mathf.Abs(Mathf.DeltaAngle(farTower.angle,80))<2,9);yield return Fold("span-c",new Vector2(-1,.45f),14.04f);yield return Walk(43);yield return Calm();
+            yield return Walk(57.5f);var farTower=session.GetComponentsInChildren<FoldPanel>().First(x=>x.name=="Far folding tower");yield return Await("far tower completes its physical Turn",()=>Mathf.Abs(Mathf.DeltaAngle(farTower.angle,80))<2,9);yield return Fold("span-c",new Vector2(-1,.45f),14.04f);yield return Walk(45.6f);yield return Leap(40.5f,8.8f,9.2f,true);yield return Calm();
             Check("incense slows the moving bridge half",session.GetComponentsInChildren<StructuralDrift>().Any(x=>x.released&&x.TimeScale<.55f));
             yield return Walk(38);yield return Fold("span-b",Vector2.left,7.13f);yield return Walk(24);
             yield return Fold("span-a",Vector2.left,9.46f);yield return Walk(2);
@@ -191,7 +191,7 @@ namespace GloomBean.Campaign
             yield return Walk(80.5f);Check("cathedral Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail releases actual cathedral",session.Phase==RunPhase.Returning);if(stopped)yield break;
             var frame=session.GetComponentInChildren<DescentController>();var mover=session.GetComponentsInChildren<MotionPlatform>().First(x=>x.name=="Collapsing transept");
             yield return Walk(74.5f);yield return Await("transept aligns with its lower dock",()=>mover.transform.position.x>71.5f,15);yield return Board(mover);yield return Calm();
-            Check("Censer slows physical transept",mover.timeScale<.55f);yield return Await("ride transept toward attached tower",()=>mover.transform.position.x<62.7f,40);yield return FrameJump(61,6);
+            Check("Censer slows physical transept",mover.timeScale<.55f);yield return Await("ride transept toward attached tower",()=>mover.transform.position.x<62.7f,40);yield return FrameJump(61,6);yield return Walk(60);
             yield return Fold("transept",Vector2.left,150);yield return Walk(47.2f);yield return Await("coffin can bear the new joint",()=>host.Has(HostKind.Coffin),4,()=>new InputFrame{move=Vector2.left});if(stopped)yield break;
             yield return CoffinTo(43);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(-1);yield return Press(new InputFrame{interact=true});
             var load=session.GetComponentInChildren<FallingLoad>();var hoist=session.GetComponentInChildren<ImpactHoist>();yield return Await("falling nave strikes actual braced body",()=>load.impacted,8);Check("nave collision has real impact speed",load.impactSpeed>2.5f);
