@@ -238,7 +238,7 @@ input.rule=null;input.frame=default;
                 Note("RAIL mode="+mode+" forceDirection="+direction+" dy="+(rb.position.y-first)+" translation="+rail.jointTranslation+" state="+rail.limitState+" reaction="+rail.reactionForce);
                 Destroy(go);yield return null;
             }
-            Check("diagnostic completed without game-state mutation",session.Phase==RunPhase.Exploring&&!session.HasKey);
+            Check("diagnostic completed without game-state mutation",session.Phase==RunPhase.Explore&&!session.HasKey);
         }
         IEnumerator Run()
         {
