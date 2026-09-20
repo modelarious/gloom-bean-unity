@@ -2,8 +2,12 @@
   "schema_version": 1,
   "tested_commit": "747f8ebcebb3a6769f684e8686649142730b971e",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Implement and validate City W3/L09 Tenement of Two Suns through actual Mirror inputs, return and Mercy; continue W3/L10-L12 and Surveyor, then Fall and Empyrean. W1/W2 clean regression is now PASS, not the old failed practice or shore gate.",
-  "active_job": null,
+  "next_gate": "City R01: execute L09 actual Mirror critical route; fix first physical failure without weakening atlas requirements.",
+  "active_job": {
+    "task": "GloomBean-Orchard-v04",
+    "receipt": "Reports/Orchard-v04/City-R01-existing-layout/runner.json",
+    "state": "READY_NOT_STARTED"
+  },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",

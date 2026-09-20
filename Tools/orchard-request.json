@@ -1,21 +1,11 @@
 {
-  "id": "R13-shore-cure",
+  "id": "City-R01-existing-layout",
   "build": true,
   "cases": [
     {
-      "name": "Skins-critical",
-      "suite": "Parish",
-      "route": "GB-L04"
-    },
-    {
-      "name": "Skins-secrets",
-      "suite": "Parish",
-      "route": "GB-L04",
-      "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "name": "L09-critical",
+      "suite": "City",
+      "route": "GB-L09"
     }
   ]
 }
