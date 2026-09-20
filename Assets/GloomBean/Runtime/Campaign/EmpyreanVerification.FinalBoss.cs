@@ -89,7 +89,7 @@ namespace GloomBean.Campaign
         IEnumerator FinalMirrorParallaxRoute()
         {
             yield return Walk(157,true);yield return Walk(209,true);yield return Walk(261,true);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
-            yield return SanctuaryPlane(0);yield return SanctuaryPlaneJump(266,3.5625f,0);if(stopped)yield break;var twin=host.Form<MirrorForm>().Twin;
+            yield return SanctuaryPlaneJump(266,3.5625f,0);if(stopped)yield break;var twin=host.Form<MirrorForm>().Twin;
             yield return Walk(271);yield return Walk(268);yield return Wait("asymmetric calipers align bodies in different physical planes",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,5);Check("the other collision body participates in the near plane",twin&&twin.Shape.includeLayers==(1<<19));Snapshot("final-mirror-parallax");
         }
         IEnumerator HostBossRoute()

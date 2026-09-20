@@ -1,0 +1,28 @@
+{
+    "started":  "2026-09-20T11:07:01.2830051-06:00",
+    "id":  "Completion-K02-final-ink-and-mirror",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "B5-echo-ink",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  38,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "691d63215f8e1753f7e3a27dbd60aeadd5af82b244f353d942092a0d07b6e25c",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "9b9951128ba68e7b300fb6b61b43db5cf0562855",
+    "finished":  "2026-09-20T11:08:10.6539440-06:00"
+}

@@ -1,14 +1,7 @@
 {
-  "id": "Completion-K02-final-ink-and-mirror",
+  "id": "Completion-K03-mirror-air-transfer",
   "build": true,
   "cases": [
-    {
-      "name": "B5-echo-ink",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "echo-ink",
-      "renderFps": 60
-    },
     {
       "name": "B5-mirror-parallax",
       "suite": "Empyrean",
