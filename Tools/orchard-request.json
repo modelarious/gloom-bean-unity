@@ -1,5 +1,5 @@
 {
-  "id": "City-R16-measured-room-motion",
+  "id": "City-R17-room-docking",
   "build": true,
   "cases": [
     {
@@ -12,10 +12,6 @@
       "suite": "City",
       "route": "GB-L12",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }
