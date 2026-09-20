@@ -25,6 +25,8 @@ namespace GloomBean.Campaign
             }
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
             a.Key(71,13.3f);a.Nail(76,12.4f);
+            a.Ledge(44.5f,8,3);var secretCoil=a.Metal(new Vector2(44.5f,7.05f),new Vector2(2,.7f),20,true,1);secretCoil.name="Orbital entry coil";secretCoil.strength=170;secretCoil.enabled=false;
+            var secretLever=b.Switch(new Vector2(44.5f,8.9f),"ORBITAL ENTRY");secretLever.Changed+=on=>secretCoil.enabled=on;
             var ring=new GameObject("Orbiting Mercy halo");ring.transform.SetParent(b.root);ring.transform.position=new Vector2(45,17.2f);ring.layer=Layers.Moving;
             var edge=ring.AddComponent<EdgeCollider2D>();var arc=new Vector2[42];for(int i=0;i<arc.Length;i++){float theta=Mathf.Lerp(-55,235,i/(float)(arc.Length-1))*Mathf.Deg2Rad;arc[i]=new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.65f;}edge.points=arc;edge.edgeRadius=.07f;
             var rimLine=PrimitiveArt.Line("Open iron rim",ring.transform,Vector2.zero,Vector2.zero,.13f,new Color(.9f,.75f,.35f),8);rimLine.transform.localPosition=Vector3.zero;rimLine.useWorldSpace=false;rimLine.positionCount=arc.Length;for(int i=0;i<arc.Length;i++)rimLine.SetPosition(i,arc[i]);
@@ -46,7 +48,7 @@ namespace GloomBean.Campaign
             {
                 float dx=i*32;
                 var statue=b.Solid("Suspended saint "+i,new Vector2(13+dx,5),new Vector2(2,4),new Color(.8f,.77f,.66f));statue.AddComponent<ShadowCaster>();
-                var gate=b.Door(new Vector2(24+dx,4),new Vector2(.65f,8));gate.name="Noon shutter "+i;
+                var gate=b.Door(new Vector2(24+dx,3),new Vector2(.65f,6));gate.name="Noon shutter "+i;
                 var latch=b.Trigger("Shadow latch "+i,new Vector2(20.5f+dx,.35f),Vector2.one*.6f,new Color(.32f,.27f,.46f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();latch.gate=gate;latch.radius=.6f;latches.Add(latch);
                 var screen=a.Metal(new Vector2(18+dx,6.5f),new Vector2(8,.5f),.6f,false,1);screen.name="Manufactured shadow screen "+i;screen.strength=80;
                 var body=screen.GetComponent<Rigidbody2D>();body.gravityScale=0;body.constraints=RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;body.linearDamping=.15f;screen.gameObject.layer=Layers.Moving;screens.Add(screen);

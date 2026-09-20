@@ -104,7 +104,7 @@ namespace GloomBean.Campaign
         IEnumerator OrbitMercy()
         {
             if(stopped||!Live)yield break;var ring=session.GetComponentsInChildren<MotionPlatform>().Single(x=>x.name=="Orbiting Mercy halo");var magnet=host.Form<LodestoneForm>();var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(x=>x.name=="Launch coil 49");
-            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(48.7f);bool powered=false;float next=0,end=Time.time+18;bool interacted=false;int exchanges=0;
+            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(44.5f);bool powered=false;float next=0,end=Time.time+18,trace=0;bool interacted=false;int exchanges=0;
             input.rule=()=>{
                 Vector2 target=ring.GetComponent<Rigidbody2D>().position, pos=actor.Body.position,v=actor.Body.linearVelocity;bool low=pos.y<12;
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m)north+=m.ForceOn(pos,1,magnet.range);
@@ -113,11 +113,11 @@ namespace GloomBean.Campaign
                 bool engage=!interacted;interacted=true;bool jump=actor.Grounded&&!powered;if(jump)powered=true;
                 return new InputFrame{interact=engage,action=toggle,actionHeld=toggle,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp((target.x-pos.x)*2-v.x*.6f,-1,1),0)};
             };
-            while(Live&&Time.time<end&&session.Mercies.Count==0)yield return Tick();input.rule=null;input.frame=default;
+            while(Live&&Time.time<end&&session.Mercies.Count==0){yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("ORBIT body="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" ring="+ring.GetComponent<Rigidbody2D>().position+" pole="+magnet.Polarity);}}input.rule=null;input.frame=default;
             Check("collect Mercy inside the actual orbiting rim",session.Mercies.Count==1);Snapshot("orbiting-mercy");if(stopped)yield break;
-            end=Time.time+10;input.rule=()=>new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((49-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.8f,-1,1),0)};
+            end=Time.time+10;input.rule=()=>{float x=actor.Body.position.y>14?ring.GetComponent<Rigidbody2D>().position.x:44.5f;return new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.8f,-1,1),0)};};
             while(Live&&Time.time<end&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f))yield return Tick();input.rule=null;input.frame=default;
-            Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);
+            Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);yield return Press(new InputFrame{interact=true});yield return Walk(49);
         }
         IEnumerator Halos(bool secret)
         {
@@ -127,7 +127,10 @@ namespace GloomBean.Campaign
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret)Check("orbiting Mercy retained before return",session.Mercies.Count==1);
             yield return Press(new InputFrame{interact=true});yield return Walk(74.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
-            yield return Walk(71);for(int i=docks.Length-1;i>0;i--){yield return PowerAltar(docks[i].x,-1);yield return Flight(docks[i-1]);if(stopped)yield break;}
+            yield return Walk(71);for(int i=docks.Length-1;i>0;i--){
+                var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name=="Launch coil "+docks[i].x);if(coil.enabled)yield return Press(new InputFrame{interact=true});
+                if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
+                yield return Walk(docks[i].x-2.35f);yield return Jump(docks[i-1].x,docks[i-1].y-.75f);if(stopped)yield break;}
             yield return Walk(2,true);
         }
         IEnumerator Focus(HostKind kind)
