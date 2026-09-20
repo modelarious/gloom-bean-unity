@@ -217,7 +217,13 @@ namespace GloomBean.Campaign
             yield return Walk(44.8f);yield return Fold("avalanche",new Vector2(1,.3f),24.79f);yield return Await("real mass falls into lower catch",()=>boss.phase==2,15);Snapshot("mass-upper-catch");
             yield return Walk(48);yield return Await("descend to lower work platform",()=>actor.Grounded&&actor.Feet.y<8.3f,7);yield return Walk(41.8f);yield return Jump(38,10);
             yield return Walk(33.2f);yield return Await("undertaker closes the structural brace",()=>host.Has(HostKind.Coffin),3,()=>new InputFrame{move=Vector2.left});if(stopped)yield break;
-            yield return Press(new InputFrame{interact=true});yield return CoffinTo(36);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(1);
+            // Step away from the nearby infection source before choosing the lever.
+            // Nearest-interactable selection is a player rule, not a test bypass.
+            yield return CoffinTo(34);yield return Press(new InputFrame{interact=true});
+            var release=session.GetComponentsInChildren<Lever>().First(l=>l.name=="RELEASE LOWER ABUTMENT");
+            Check("lower release lever actually retracts its abutment",release.state&&!session.GetComponentsInChildren<Transform>().Any(t=>t.name=="Retractable lower work stair"));
+            if(stopped)yield break;
+            yield return CoffinTo(36);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(1);
             yield return Focus(HostKind.Stitch);yield return Press(new InputFrame{alternate=true});yield return Press(new InputFrame{action=true,move=new Vector2(1,.4f)});var stitch=host.Form<StitchForm>();Check("catch edge selected",stitch.First&&stitch.First.group=="catch");if(stopped)yield break;
             yield return Press(new InputFrame{action=true});Check("lower catch edges joined",stitch.Active==lower);yield return Press(new InputFrame{action=true});
             yield return Await("real horizontal body arrests the folding load",()=>lower.HeldLoad||lower.BracedSeconds>.2f,8);Snapshot("mass-braced-catch");
