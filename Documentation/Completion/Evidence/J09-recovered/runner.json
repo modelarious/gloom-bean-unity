@@ -1,0 +1,76 @@
+{
+    "started":  "2026-09-20T10:08:20.5790303-06:00",
+    "id":  "Completion-J09-choice-pairs-and-alternative-sanctums",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  46,
+                        "case":  "L20-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  46,
+                        "case":  "L20-secret",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  55,
+                        "case":  "L20-alternatives",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  45,
+                        "case":  "B5-magnet-shadow",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  16,
+                        "case":  "B5-echo-ink",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  59,
+                        "case":  "B5-wax-gullet",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "B5-stitch-coffin",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  16,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "1388be76287995680971e091a188ad11cf1a2e400fc811ae6c0a5692b8c34abb",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "fe014dec1fa2310132ec86b1605e96aae4e80d35",
+    "finished":  "2026-09-20T10:10:30.9558578-06:00"
+}

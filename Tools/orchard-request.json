@@ -1,5 +1,5 @@
 {
-  "id": "Completion-J09-choice-pairs-and-alternative-sanctums",
+  "id": "Completion-K01-recovered-final-corrections",
   "build": true,
   "cases": [
     {
@@ -23,31 +23,10 @@
       "renderFps": 60
     },
     {
-      "name": "B5-magnet-shadow",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "magnet-shadow",
-      "renderFps": 60
-    },
-    {
       "name": "B5-echo-ink",
       "suite": "Empyrean",
       "route": "GB-B5",
       "finalPair": "echo-ink",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-wax-gullet",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "wax-gullet",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-stitch-coffin",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "stitch-coffin",
       "renderFps": 60
     },
     {
@@ -56,6 +35,10 @@
       "route": "GB-B5",
       "finalPair": "mirror-parallax",
       "renderFps": 60
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

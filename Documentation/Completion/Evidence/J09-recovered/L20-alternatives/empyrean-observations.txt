@@ -1,0 +1,57 @@
+BEGIN GB-L20 The White Gate Is Below You
+PASS GB-L20 walk 5 body=(4.78, 0.76) velocity=(1.67, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 jump to 7 / 2 body=(6.71, 2.75) velocity=(0.91, 0.00) feet=2.003951 hp=6
+PASS GB-L20 jump to 9 / 4 body=(8.71, 4.75) velocity=(0.91, 0.00) feet=4.004902 hp=6
+PASS GB-L20 jump to 11 / 6 body=(10.71, 6.75) velocity=(0.91, 0.00) feet=6.004848 hp=6
+PASS GB-L20 walk 13 body=(12.80, 6.75) velocity=(1.53, 0.00) feet=6.004999 hp=6
+PASS GB-L20 the player chooses Mirror and Ink instead of Echo and Molt body=(12.80, 6.75) velocity=(1.53, 0.00) feet=6.004999 hp=6
+PASS GB-L20 walk 15 body=(14.81, 6.75) velocity=(5.50, 0.00) feet=6.004999 hp=6
+PASS GB-L20 record a running arc to 20 body=(19.77, 6.26) velocity=(0.52, 0.00) feet=5.508888 hp=6
+PASS GB-L20 walk 20.7 body=(20.49, 6.26) velocity=(1.59, 0.00) feet=5.508888 hp=6
+PASS GB-L20 short hop authors a revisitable arc body=(19.46, 6.31) velocity=(-0.64, -1.00) feet=5.555554 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L20 land on own hardened falling stroke body=(19.95, 7.97) velocity=(0.58, -1.00) feet=7.21722 hp=6
+PASS GB-L20 the alternate route stands on its own delayed ink body=(19.95, 7.97) velocity=(0.58, -1.00) feet=7.21722 hp=6
+PASS GB-L20 record a running arc to 26 body=(25.66, 9.36) velocity=(1.54, 0.00) feet=8.607222 hp=6
+PASS GB-L20 walk 28.85 body=(28.65, 8.91) velocity=(1.55, -4.97) feet=8.159445 hp=6
+PASS GB-L20 the unmatched statue holds the other physical body on a scale body=(28.69, 0.75) velocity=(0.00, 0.00) feet=0.004499972 hp=6
+PASS GB-L20 Mirror and Ink open the same first sanctum body=(28.69, 0.75) velocity=(0.00, 0.00) feet=0.004499972 hp=6
+PASS GB-L20 walk 40 body=(39.79, 0.75) velocity=(1.61, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 the first approach does not silently require Echo body=(39.79, 0.75) velocity=(1.61, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 walk 41 body=(40.79, 0.75) velocity=(1.45, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 seamstress is an independent seasonal choice body=(40.79, 0.75) velocity=(1.45, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 jump to 41 / 2 body=(40.95, 2.83) velocity=(0.14, -1.00) feet=2.08 hp=6
+PASS GB-L20 jump to 43 / 4 body=(42.71, 4.75) velocity=(0.89, 0.00) feet=4.004959 hp=6
+PASS GB-L20 jump to 45 / 6 body=(44.71, 6.75) velocity=(0.91, 0.00) feet=6.003876 hp=6
+PASS GB-L20 jump to 47 / 8 body=(46.71, 8.75) velocity=(0.91, 0.00) feet=8.004901 hp=6
+PASS GB-L20 tenant acquired Stitch body=(46.71, 8.75) velocity=(0.91, 0.00) feet=8.004901 hp=6
+PASS GB-L20 focus Stitch body=(46.71, 8.75) velocity=(0.91, 0.00) feet=8.004901 hp=6
+PASS GB-L20 catch physical season edge body=(46.72, 8.75) velocity=(0.00, 0.00) feet=8.00495 hp=6
+PASS GB-L20 connect two actual structural edges body=(46.73, 8.75) velocity=(0.00, 0.00) feet=8.004968 hp=6
+PASS GB-L20 folded ramp takes its physical angle body=(46.67, 8.76) velocity=(0.00, -1.00) feet=8.010444 hp=6
+PASS GB-L20 walk 54.5 body=(54.30, 15.13) velocity=(1.19, 1.00) feet=14.38008 hp=6
+PASS GB-L20 record a running arc to 61 body=(60.65, 15.76) velocity=(1.18, 0.00) feet=15.00897 hp=6
+PASS GB-L20 folded architecture crosses the seasonal wall without a root body=(60.65, 15.76) velocity=(1.18, 0.00) feet=15.00897 hp=6
+PASS GB-L20 walk 68 body=(67.79, 11.10) velocity=(1.90, -17.43) feet=10.35064 hp=6
+PASS GB-L20 leave the high route through ordinary gravity body=(67.85, 0.75) velocity=(0.00, 0.00) feet=0.004499972 hp=6
+PASS GB-L20 walk 69.5 body=(69.30, 0.75) velocity=(1.53, 0.00) feet=0.004997611 hp=6
+PASS GB-L20 walk 72 body=(71.80, 0.75) velocity=(1.50, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 perspective source is available body=(71.80, 0.75) velocity=(1.50, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 align the projected body to 0 body=(71.82, 0.75) velocity=(1.10, -0.57) feet=0.2580554 hp=6
+PASS GB-L20 walk 72.7 body=(72.49, 0.50) velocity=(1.19, 0.00) feet=0.009166539 hp=6
+PASS GB-L20 depth change has a real tenant body=(72.49, 0.50) velocity=(1.19, 0.00) feet=0.009166539 hp=6
+PASS GB-L20 real plane landing 0 at 77 body=(76.77, 2.65) velocity=(1.64, 0.00) feet=2.167478 hp=6
+PASS GB-L20 walk 78.2 body=(77.99, 2.65) velocity=(1.20, 0.00) feet=2.167499 hp=6
+PASS GB-L20 depth change has a real tenant body=(77.99, 2.65) velocity=(1.20, 0.00) feet=2.167499 hp=6
+PASS GB-L20 real plane landing 2 at 83 body=(82.77, 4.70) velocity=(1.42, 0.00) feet=3.654825 hp=6
+PASS GB-L20 walk 86 body=(85.79, 4.70) velocity=(1.88, 0.00) feet=3.654999 hp=6
+PASS GB-L20 spool nests alongside depth body=(85.79, 4.70) velocity=(1.88, 0.00) feet=3.654999 hp=6
+PASS GB-L20 walk 87 body=(86.85, 4.70) velocity=(4.21, 0.00) feet=3.654999 hp=6
+PASS GB-L20 land on the actual folded plane body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 tenant acquired Stitch body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 focus Stitch body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 catch physical depth edge body=(91.03, 4.28) velocity=(0.00, 0.00) feet=3.229744 hp=6
+PASS GB-L20 connect two actual structural edges body=(91.04, 4.28) velocity=(0.00, 0.00) feet=3.229836 hp=6
+PASS GB-L20 folded ramp takes its physical angle body=(90.24, 4.81) velocity=(-2.08, -0.42) feet=3.763819 hp=6
+FAIL GB-L20 walk 97 body=(96.32, 10.93) velocity=(-0.11, -0.11) feet=9.883257 hp=6
+FAIL GB-L20 enter the folded fresco from its actual threshold body=(96.30, 10.91) velocity=(-0.50, -0.50) feet=9.858332 hp=6
