@@ -35,6 +35,22 @@ namespace GloomBean.Campaign
             foreach(var p in sorted){while(hull.Count>=2&&Cross(hull[hull.Count-2],hull[hull.Count-1],p)<=0)hull.RemoveAt(hull.Count-1);hull.Add(p);}int lower=hull.Count;
             for(int i=sorted.Count-2;i>=0;i--){var p=sorted[i];while(hull.Count>lower&&Cross(hull[hull.Count-2],hull[hull.Count-1],p)<=0)hull.RemoveAt(hull.Count-1);hull.Add(p);}hull.RemoveAt(hull.Count-1);return hull.ToArray();
         }
+        static Vector2[] HalfPlane(Vector2[] input,int axis,float boundary,bool greater)
+        {
+            var output=new List<Vector2>();if(input.Length<3)return output.ToArray();
+            Vector2 previous=input[input.Length-1];float pd=((axis==0?previous.x:previous.y)-boundary)*(greater?1:-1);
+            foreach(var current in input){float cd=((axis==0?current.x:current.y)-boundary)*(greater?1:-1);bool pi=pd>=0,ci=cd>=0;
+                if(pi!=ci)output.Add(Vector2.LerpUnclamped(previous,current,pd/(pd-cd)));if(ci)output.Add(current);previous=current;pd=cd;}
+            return output.ToArray();
+        }
+        public static Vector2[] ClipRect(Vector2[] polygon,Rect r)
+        {polygon=HalfPlane(polygon,0,r.xMin,true);polygon=HalfPlane(polygon,0,r.xMax,false);polygon=HalfPlane(polygon,1,r.yMin,true);return HalfPlane(polygon,1,r.yMax,false);}
+        public static List<Vector2[]> SubtractRect(Vector2[] polygon,Rect r)
+        {
+            var result=new List<Vector2[]>();int[] axes={0,0,1,1};float[] bounds={r.xMin,r.xMax,r.yMin,r.yMax};bool[] sides={true,false,true,false};
+            for(int i=0;i<4&&polygon.Length>=3;i++){var outside=HalfPlane(polygon,axes[i],bounds[i],!sides[i]);if(outside.Length>=3)result.Add(outside);polygon=HalfPlane(polygon,axes[i],bounds[i],sides[i]);}
+            return result;
+        }
         public static Vector2[] Parallel(Vector2[] outline,Vector2 direction,float reach)
         {var points=new List<Vector2>(outline);foreach(var p in outline)points.Add(p+direction.normalized*reach);return Hull(points);}
         public static Vector2[] Point(Vector2[] outline,Vector2 light,float reach)

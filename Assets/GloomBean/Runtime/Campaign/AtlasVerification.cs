@@ -208,6 +208,11 @@ namespace GloomBean.Campaign
             C("shadow.rotated-outline-is-not-aabb",silhouette.Length==4&&!ShadowSun.Inside(new Vector2(602.7f,8.3f),silhouette));
             var noonSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.down,12);var sideSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.right,12);
             C("shadow.noon-erases-sideways-bridge",!ShadowSun.Inside(new Vector2(612,6),noonSilhouette)&&ShadowSun.Inside(new Vector2(612,6),sideSilhouette));
+            var square=new[]{new Vector2(0,0),new Vector2(10,0),new Vector2(10,10),new Vector2(0,10)};var chamberRect=new Rect(3,3,4,4);
+            var clippedSquare=ShadowGeometry.ClipRect(square,chamberRect);var outsideSquare=ShadowGeometry.SubtractRect(square,chamberRect);
+            C("shadow.isolated-room-retains-own-light",ShadowSun.Inside(new Vector2(5,5),clippedSquare)&&!ShadowSun.Inside(new Vector2(1,5),clippedSquare));
+            C("shadow.foreign-light-excludes-room",!outsideSquare.Any(q=>ShadowSun.Inside(new Vector2(5,5),q))&&outsideSquare.Any(q=>ShadowSun.Inside(new Vector2(1,5),q)));
+
             yield return Arena();var cableDeck=a.Metal(new Vector2(600,4),new Vector2(5,.6f),1,false,1);var cableBell=a.Metal(new Vector2(606,8),Vector2.one*1.2f,4,false,1);
             var deckBody=cableDeck.GetComponent<Rigidbody2D>();var bellBody=cableBell.GetComponent<Rigidbody2D>();deckBody.constraints=RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;deckBody.gravityScale=bellBody.gravityScale=2;
             var pulley=fixture.AddComponent<CablePulley>();pulley.Configure(deckBody,bellBody,new Vector2(600,16),new Vector2(606,16));yield return Steps(130);

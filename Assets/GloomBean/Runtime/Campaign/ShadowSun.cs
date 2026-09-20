@@ -25,7 +25,11 @@ namespace GloomBean.Campaign
                 if(!c||!c.isActiveAndEnabled||!c.shape||!c.shape.enabled||!c.shape.gameObject.activeInHierarchy||(!directional&&Vector2.Distance(c.shape.bounds.center,light)>25))continue;
                 var outline=ShadowGeometry.Outline(c.shape);if(outline.Length<3)continue;
                 var polygon=directional?ShadowGeometry.Parallel(outline,direction,reach):ShadowGeometry.Point(outline,light,reach);
-                Polygons.Add(polygon);Casters.Add(c);
+                var pieces=new List<Vector2[]>();bool ownsRoom=false;
+                foreach(var domain in ShadowDomain.All)if(domain&&domain.onlySun==this){ownsRoom=true;var clipped=ShadowGeometry.ClipRect(polygon,domain.area);if(clipped.Length>=3)pieces.Add(clipped);}
+                if(!ownsRoom)pieces.Add(polygon);
+                foreach(var domain in ShadowDomain.All)if(domain&&domain.onlySun&&domain.onlySun!=this){var next=new List<Vector2[]>();foreach(var piece in pieces)next.AddRange(ShadowGeometry.SubtractRect(piece,domain.area));pieces=next;}
+                foreach(var piece in pieces)if(piece.Length>=3){Polygons.Add(piece);Casters.Add(c);}
             }
             for(int i=0;i<Polygons.Count;i++)
             {
@@ -36,7 +40,7 @@ namespace GloomBean.Campaign
                     if(!fillMaterial)fillMaterial=new Material(Shader.Find("Sprites/Default"));
                     while(fills.Count<=i){var g=new GameObject("Cast silhouette");g.transform.SetParent(transform);var mesh=new Mesh();g.AddComponent<MeshFilter>().sharedMesh=mesh;var mr=g.AddComponent<MeshRenderer>();mr.sharedMaterial=fillMaterial;mr.sortingOrder=1;fills.Add(g);meshes.Add(mesh);}
                     fills[i].SetActive(true);var verts=new Vector3[poly.Length];var colors=new Color[poly.Length];var indices=new int[(poly.Length-2)*3];
-                    for(int j=0;j<poly.Length;j++){verts[j]=fills[i].transform.InverseTransformPoint(new Vector3(poly[j].x,poly[j].y,0));colors[j]=new Color(.12f,.10f,.22f,.32f);}
+                    for(int j=0;j<poly.Length;j++){verts[j]=fills[i].transform.InverseTransformPoint(new Vector3(poly[j].x,poly[j].y,0));colors[j]=new Color(.08f,.055f,.15f,.46f);}
                     for(int j=0;j<poly.Length-2;j++){indices[j*3]=0;indices[j*3+1]=j+1;indices[j*3+2]=j+2;}
                     var m=meshes[i];m.Clear();m.vertices=verts;m.colors=colors;m.triangles=indices;m.RecalculateBounds();
                 }
