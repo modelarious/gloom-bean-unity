@@ -29,11 +29,22 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-3)<.3f&&Mathf.Abs(actor.Body.position.x-54.3f)<.35f))yield return Tick();input.rule=null;input.frame=default;
             Check("a short running leap writes a shallow reusable arc",actor.Grounded&&Mathf.Abs(actor.Feet.y-3)<.3f&&Mathf.Abs(actor.Body.position.x-54.3f)<.5f);Snapshot("shallow-writing-arc");
         }
+        bool HasSemicolonShadowPath()
+        {
+            // Reach is not connectivity. Read the same cast polygons that the real shadow traverses.
+            Vector2 feet=actor.Feet,dot=new Vector2(58.5f,18.1f);
+            if(Vector2.Distance(actor.Body.position,dot)>13.7f)return false;
+            for(int i=0;i<=40;i++){
+                Vector2 q=Vector2.Lerp(feet,dot,i/40f);
+                if(Vector2.Distance(q,feet)>=.85f&&!ShadowSun.Contains(q))return false;
+            }
+            return true;
+        }
         IEnumerator SemicolonMercy()
         {
             yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return LowWritingArc();if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
-            while(Live&&!stopped&&(Mathf.Abs(actor.GroundNormal.x)>.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))>13.7f)&&attempts++<6){
+            while(Live&&!stopped&&(Mathf.Abs(actor.GroundNormal.x)>.4f||!HasSemicolonShadowPath())&&attempts++<6){
                 var points=new System.Collections.Generic.List<Vector2>();
                 foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
                     if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
@@ -46,8 +57,10 @@ namespace GloomBean.Campaign
                 var point=points.OrderByDescending(q=>q.y).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
             }
             Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))<14f);if(stopped)yield break;
-            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,18.1f));yield return Pause(.08f);
-            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Check("body remains on its actual Ink while taking the dot",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>());Snapshot("semicolon-dot");if(stopped)yield break;
+            Check("the letter's real cast silhouette connects the body to the dot",HasSemicolonShadowPath());if(stopped)yield break;
+            Vector2 anchoredBody=actor.Body.position;Note("SHADOW DEPART body="+anchoredBody+" inkAge="+actor.GroundCollider.GetComponent<InkStroke>().age);
+            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,18.1f));if(stopped)yield break;yield return Pause(.08f);
+            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Check("body remains on its actual Ink while taking the dot",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,anchoredBody)<.65f);Snapshot("semicolon-dot");if(stopped)yield break;
             yield return ReattachWritingShadow();yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
         }
         IEnumerator ReattachWritingShadow()

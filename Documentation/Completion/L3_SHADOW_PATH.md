@@ -1,0 +1,5 @@
+# Semicolon secret: reach is not connectivity
+
+A 30fps run landed on a lower part of the actual hardened Ink. The dot was within fourteen metres, but the straight path from the feet was outside the semicolon's cast silhouette. The earlier witness checked reach and slope, then tried to cross empty light. The real Shadow correctly refused; the eight-second timeout let the supporting Ink expire. A later assertion only checking any Ink incorrectly described the fall's newly written Ink as the original support, despite the already-failed route.
+
+The witness now reads the same actual cast polygons as the player, keeps making real jumps onto hardened Ink until the route is connected, and records the departure position. The support assertion requires the body to remain within0.65m of that position. An already failed Shadow traversal terminates the sequence instead of adding misleading checks. No geometry, shadow permission, tether, Ink lifetime or player state changes. This is a solver observation, not a secret-specific bypass in gameplay.
