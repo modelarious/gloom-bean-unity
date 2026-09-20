@@ -38,6 +38,9 @@ namespace GloomBean.Campaign
                 foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
                     if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
                     for(int j=1;j<20;j++){var q=Vector2.Lerp(from,to,j*.05f);if(q.y>actor.Feet.y+.12f&&q.y<actor.Feet.y+2.2f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
+                if(points.Count==0&&ink.Strokes.Any(st=>st&&!st.Solid&&st.Midpoint.y>actor.Feet.y+.12f&&st.Midpoint.y<actor.Feet.y+2.2f&&Mathf.Abs(st.Midpoint.x-actor.Body.position.x)<3)){
+                    Note("INK WAIT: the next jump's existing wet stroke must actually harden before it can support the body.");yield return Pause(1.08f);continue;
+                }
                 if(points.Count==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);
                 Check("a reachable sloping hardened arc exists",points.Count>0);if(stopped)yield break;
                 var point=points.OrderByDescending(q=>q.y).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);

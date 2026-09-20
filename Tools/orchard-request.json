@@ -1,22 +1,28 @@
 {
-  "id": "Completion-K07-readable-boss-hud",
+  "id": "Completion-K08-wet-ink-patience",
   "build": true,
   "cases": [
     {
-      "name": "Final-HUD",
+      "name": "L19-practice-secret",
       "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "stitch-coffin",
+      "route": "GB-L19",
+      "secrets": true,
+      "practice": true,
       "renderFps": 60
     },
     {
-      "name": "Fourth-boss",
-      "suite": "Fall",
-      "route": "GB-B4"
+      "name": "L19-secret",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true,
+      "renderFps": 60
     },
     {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "name": "L19-secret-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true,
+      "renderFps": 30
     }
   ]
 }
