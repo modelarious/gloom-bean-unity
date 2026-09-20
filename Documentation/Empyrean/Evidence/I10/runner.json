@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  71,
+                        "case":  "L19-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  23,
+                        "case":  "L19-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-I10-separate-margin-heights",
+    "started":  "2026-09-20T08:33:06.1810380-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T08:34:10.7707653-06:00"
+}

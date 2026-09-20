@@ -24,7 +24,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator SemicolonMercy()
         {
-            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(50.5f,3.3f);if(stopped)yield break;yield return Pause(1.05f);
+            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return Walk(47.6f,true);yield return RunArc(55,2);if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
             while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))>13.7f)&&attempts++<6){
                 var points=new System.Collections.Generic.List<Vector2>();
@@ -38,7 +38,14 @@ namespace GloomBean.Campaign
             Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,17.5f))<14f);if(stopped)yield break;
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,17.5f));yield return Pause(.08f);
             Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Snapshot("semicolon-dot");if(stopped)yield break;
-            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
+            yield return ReattachWritingShadow();yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
+        }
+        IEnumerator ReattachWritingShadow()
+        {
+            if(stopped||!Live)yield break;var shadow=host.Form<ShadowForm>();float end=Time.time+6;
+            input.rule=()=>new InputFrame{move=Vector2.ClampMagnitude((actor.Feet-shadow.Position)*3,1)};
+            while(Live&&Time.time<end&&shadow.Controlling&&Vector2.Distance(shadow.Position,actor.Feet)>.35f)yield return Tick();
+            input.rule=null;input.frame=default;if(shadow.Controlling)yield return Press(new InputFrame{alternate=true});Check("shadow rejoins the still-physical body",!shadow.Controlling&&shadow.Attached);
         }
         IEnumerator WordStep(float x)
         {
@@ -72,7 +79,7 @@ namespace GloomBean.Campaign
             yield return Jump(100,10.8f);yield return FreshAscent(98,10.8f,14);if(stopped)yield break;
             yield return Jump(86,9.6f);yield return ReturnGap(80);yield return ReturnGap(74);yield return ReturnGap(68);yield return Jump(63,9.6f);yield return Walk(50);
             yield return FreshAscent(48,9.6f,12.8f);if(stopped)yield break;
-            yield return Jump(36,9.6f);yield return ReturnGap(30);yield return ReturnGap(24);yield return ReturnGap(18);yield return Walk(17,true);yield return Jump(10,8);yield return Walk(2);
+            yield return Jump(36,9.6f);yield return ReturnGap(30);yield return ReturnGap(24);yield return ReturnGap(18);yield return Walk(17,true);yield return RunArc(10,8);yield return Walk(2);
         }
         IEnumerator ScriptureRoute(bool secret)
         {

@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-I10-separate-margin-heights",
+  "id": "Empyrean-I11-optional-writing-margin",
   "build": true,
   "cases": [
     {
@@ -12,6 +12,11 @@
       "suite": "Empyrean",
       "route": "GB-L19",
       "secrets": true
+    },
+    {
+      "name": "L20-leading-probe",
+      "suite": "Empyrean",
+      "route": "GB-L20"
     }
   ]
 }
