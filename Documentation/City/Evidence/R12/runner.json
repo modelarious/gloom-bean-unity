@@ -1,0 +1,49 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  69,
+                        "case":  "L11-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  22,
+                        "case":  "L12-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  22,
+                        "case":  "L12-secrets",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  42,
+                        "case":  "Surveyor",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  213,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "City-R12-loaded-room-and-surveyor",
+    "started":  "2026-09-19T20:07:47.1685897-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T20:09:22.0241696-06:00"
+}

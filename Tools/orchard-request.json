@@ -1,12 +1,7 @@
 {
-  "id": "City-R12-loaded-room-and-surveyor",
+  "id": "City-R13-neutral-room-carry",
   "build": true,
   "cases": [
-    {
-      "name": "L11-critical",
-      "suite": "City",
-      "route": "GB-L11"
-    },
     {
       "name": "L12-critical",
       "suite": "City",
@@ -17,11 +12,6 @@
       "suite": "City",
       "route": "GB-L12",
       "secrets": true
-    },
-    {
-      "name": "Surveyor",
-      "suite": "City",
-      "route": "GB-B3"
     },
     {
       "name": "Mechanics",

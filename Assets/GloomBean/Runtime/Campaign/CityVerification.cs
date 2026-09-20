@@ -138,7 +138,7 @@ namespace GloomBean.Campaign
         IEnumerator RideRoom(RoomOrbit room,Vector2 destination)
         {
             if(stopped||!Live)yield break;
-            yield return Await("room carries its actual occupant to "+destination,()=>room.Settled&&Vector2.Distance(room.transform.position,destination)<.2f&&actor.Grounded,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp(room.transform.position.x-actor.Body.position.x,-1,1),0)});
+            yield return Await("room carries its actual occupant to "+destination,()=>room.Settled&&Vector2.Distance(room.transform.position,destination)<.2f&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform),8);
             Check("support belongs to preserved moving room",actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform));
         }
         IEnumerator Hotel(bool secret)

@@ -119,6 +119,15 @@ namespace GloomBean.Campaign
             C("composition.mirror-cure-keeps-far-body-under-low-roof",baseBlocked&&removed&&!host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax)&&actor.Height<1&&retained.Plane==0);
             C("composition.full-restoration-still-rejects-occupied-roof",!host.Cure()&&host.Has(HostKind.Parallax));
 
+            yield return Arena();var roomObject=new GameObject("Physical orbital room fixture");roomObject.transform.SetParent(fixture.transform);roomObject.transform.position=new Vector2(600,4);
+            var roomFloor=b.Solid("Orbital room floor",new Vector2(600,3.8f),new Vector2(8,.4f),Color.gray,Layers.Moving);roomFloor.AddComponent<OneWaySurface>();roomFloor.transform.SetParent(roomObject.transform,true);
+            var physicalRoom=roomObject.AddComponent<RoomOrbit>();physicalRoom.center=new Vector2(600,10);physicalRoom.radius=new Vector2(6,6);physicalRoom.phase=-Mathf.PI*.5f;physicalRoom.drivenByDepth=true;
+            actor.Body.position=new Vector2(600,4.8f);actor.Body.linearVelocity=Vector2.zero;var luggage=b.Prop(new Vector2(602,4.6f),new Vector2(.7f,.9f),1);luggage.AddComponent<CircleCollider2D>().radius=.3f;
+            Physics2D.SyncTransforms();yield return Steps(12);float roomOffset=actor.Body.position.x-physicalRoom.transform.position.x;float luggageOffset=luggage.transform.position.x-physicalRoom.transform.position.x;
+            physicalRoom.RotateQuarter(-1);yield return Steps(130);
+            C("hotel.room-carries-neutral-occupant",physicalRoom.Settled&&actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(roomObject.transform)&&Mathf.Abs(actor.Body.position.x-physicalRoom.transform.position.x-roomOffset)<.2f,actor.Body.position+" room="+physicalRoom.transform.position);
+            C("hotel.compound-prop-carried-once",Mathf.Abs(luggage.transform.position.x-physicalRoom.transform.position.x-luggageOffset)<.25f,"relative error="+(luggage.transform.position.x-physicalRoom.transform.position.x-luggageOffset));
+
             yield return Arena();var overlap=a.Projection(new Vector2(600,4),new Vector2(8,12));host.Acquire(HostKind.Parallax);var planeForm=host.Form<ParallaxForm>();planeForm.StepPlane(-1);
             var wrong=a.Depth(new Vector2(600,2),new Vector2(4,.4f),1);wrong.gameObject.AddComponent<OneWaySurface>();actor.Body.position=new Vector2(600,4);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(80);
             C("parallax.foreign-one-way-floor-is-not-solid",actor.Feet.y<.2f&&actor.Grounded,actor.Body.position+" effectorMask="+wrong.GetComponent<PlatformEffector2D>().useColliderMask);
