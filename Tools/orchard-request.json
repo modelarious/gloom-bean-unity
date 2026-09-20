@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H07-separated-orbit-lane",
+  "id": "Empyrean-H08-input-edge-launch",
   "build": true,
   "cases": [
     {
@@ -19,10 +19,6 @@
       "suite": "Empyrean",
       "route": "GB-L17",
       "startDelay": 2.1
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }
