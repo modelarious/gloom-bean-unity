@@ -30,6 +30,35 @@ namespace GloomBean.Campaign
                 while(Live&&Time.time<end&&Vector2.Distance(root.Tip,target)>.13f)yield return Tick();input.rule=null;input.frame=new InputFrame{actionHeld=true};Check("steer seasonal root to "+target,Vector2.Distance(root.Tip,target)<.2f);if(stopped)yield break;}
             Vector2 endpoint=points[points.Length-1];Note("ROOT EXIT tip="+root.Tip+" clear="+host.CanStand(root.Tip));if(!host.CanStand(root.Tip))foreach(var c in Physics2D.OverlapBoxAll(root.Tip,new Vector2(.78f,1.36f),0,Layers.Solids))if(!c.isTrigger&&c.attachedRigidbody!=actor.Body)Note("ROOT EXIT BLOCKER "+c.name+" "+c.bounds);input.frame=default;yield return Tick();yield return Wait("body follows the curved seasonal root",()=>!root.Retracting&&Vector2.Distance(actor.Body.position,endpoint)<.5f,7);Snapshot("seasonal-root");
         }
+        IEnumerator SanctuaryPlane(int plane)
+        {
+            var form=host.Form<ParallaxForm>();Check("perspective source is available",form!=null);if(stopped)yield break;
+            float end=Time.time+4;input.rule=()=>new InputFrame{move=new Vector2(0,Mathf.Sign(plane-form.Plane))};while(Live&&Time.time<end&&form.Plane!=plane)yield return Tick();input.rule=null;input.frame=default;Check("align the projected body to "+plane,form.Plane==plane);
+        }
+        IEnumerator SanctuaryPlaneJump(float x,float top,int plane)
+        {
+            if(stopped||!Live)yield break;var form=host.Form<ParallaxForm>();Check("depth change has a real tenant",form!=null);if(stopped)yield break;
+            float end=Time.time+7,initial=actor.Feet.y;bool sent=false;
+            input.rule=()=>{bool jump=!sent&&actor.Grounded;if(jump)sent=true;return new InputFrame{jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.15f,-1,1),sent&&actor.Feet.y>initial+.45f&&form.Plane!=plane?Mathf.Sign(plane-form.Plane):0)};};
+            while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.25f&&Mathf.Abs(actor.Body.position.x-x)<.25f&&form.Plane==plane))yield return Tick();input.rule=null;input.frame=default;
+            Check("real plane landing "+plane+" at "+x,actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f&&form.Plane==plane);Snapshot("folded-perspective");
+        }
+        IEnumerator SanctuaryFold(string group,Vector2 aim,float angle)
+        {
+            yield return Focus(HostKind.Stitch);if(stopped)yield break;var f=host.Form<StitchForm>();if(f.First!=null)yield return Press(new InputFrame{alternate=true});
+            yield return Press(new InputFrame{action=true,move=aim});Check("catch physical "+group+" edge",f.First&&f.First.group==group);if(stopped)yield break;
+            yield return Press(new InputFrame{action=true,move=aim});Check("connect two actual structural edges",f.Active!=null);if(stopped)yield break;
+            yield return Press(new InputFrame{action=true});yield return Wait("folded ramp takes its physical angle",()=>Mathf.Abs(f.Active.angle-angle)<2,8);Snapshot("folded-ramp");
+        }
+        IEnumerator FoldedSanctum()
+        {
+            yield return Walk(72);yield return SanctuaryPlane(0);yield return Walk(72.7f);yield return SanctuaryPlaneJump(77,2.1625f,0);
+            yield return Walk(78.2f);yield return SanctuaryPlaneJump(83,3.65f,2);yield return Walk(86);yield return Wait("spool nests alongside depth",()=>host.Has(HostKind.Stitch),3);if(stopped)yield break;
+            yield return SanctuaryFold("depth",Vector2.right,45);if(stopped)yield break;yield return Walk(97);
+            yield return Wait("flat sign restores the normal footprint before the painted threshold",()=>!host.Has(HostKind.Parallax),4);yield return Walk(101);Check("enter the folded fresco from its actual threshold",host.Has(HostKind.InsideOut));if(stopped)yield break;
+            yield return Jump(104,11);yield return Jump(106,12);yield return Jump(108.2f,13);yield return Jump(109.6f,15);yield return Jump(111.5f,16);yield return Walk(114.25f);
+            yield return Jump(116.2f,17);yield return Jump(118.2f,18);yield return Jump(119.6f,20);yield return Jump(121.5f,21);yield return Walk(126.4f);yield return Wait("empty frame returns ordinary collision",()=>!host.Has(HostKind.InsideOut),3);Snapshot("third-sanctum-exit");
+        }
         IEnumerator WhiteGateRoute(bool secret)
         {
             yield return Walk(5);yield return LeadWalk(12);
@@ -41,7 +70,7 @@ namespace GloomBean.Campaign
             yield return LeadWalk(36);if(stopped)yield break;Check("first sanctum is traversed without granting its result",actor.Body.position.x>34);
             yield return LeadWalk(40);if(stopped)yield break;yield return Walk(48);yield return Walk(47);Check("root is available after the material sanctuary sources",host.Has(HostKind.Root));
             yield return SanctumRoot(new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,1.5f));if(stopped)yield break;yield return Walk(68);Check("seasonal wall was traversed through actual material",actor.Body.position.x>62);
-            Check("remaining White Gate spatial sanctums require further authored input proof",false);
+            yield return FoldedSanctum();if(stopped)yield break;Check("remaining White Gate rising and light sanctums require further authored input proof",false);
         }
     }
 }

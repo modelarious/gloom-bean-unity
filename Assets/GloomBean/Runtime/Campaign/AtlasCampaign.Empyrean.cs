@@ -131,7 +131,7 @@ namespace GloomBean.Campaign
         }
         void WhiteGate(AtlasBuilder a)
         {
-            a.Begin(new Rect(-12,-25,215,86),new Vector2(2,1));var b=a.b;a.Floor(-6,195);var whiteExit=a.Exit(2,1.1f);b.session.Camera.bounds=new Rect(-10,-10,212,70);
+            a.Begin(new Rect(-12,-25,215,86),new Vector2(2,1));var b=a.b;a.Floor(-6,73);a.Floor(127,158);a.Floor(158,195);var whiteExit=a.Exit(2,1.1f);b.session.Camera.bounds=new Rect(-10,-10,212,70);
             // Five distinct reinterpretations are live from entry, before the final Nail.
             a.Source(HostKind.Echo,8);var leading=b.Trigger("The first footsteps are not yours",new Vector2(8,1),new Vector2(4,6),Color.clear).AddComponent<LeadingEchoZone>();
             a.Source(HostKind.Molt,12,1,true);var p1=b.Plate(new Vector2(18,.14f),.6f);var p2=b.Plate(new Vector2(28,.14f),.35f);var gate=b.Door(new Vector2(33,4),new Vector2(.7f,8),p1,p2);gate.latched=true;
@@ -140,9 +140,9 @@ namespace GloomBean.Campaign
             var seasonObject=b.Trigger("Oblique season",new Vector2(49,1),Vector2.one,new Color(.7f,.74f,.42f),PrimitiveArt.Icon.Arch);var season=seasonObject.AddComponent<SeasonWheel>();season.width=10;season.drifting=true;season.speed=.6f;season.bandAngle=45;
             b.Solid("Diagonal seasonal buttress",new Vector2(54,3),new Vector2(8,12));a.SoilPath(new Vector2(47,1),new Vector2(47,-4),new Vector2(60,-4),new Vector2(60,2));a.Source(HostKind.Root,48,1,true);
             a.Source(HostKind.Stitch,41,1);var seasonalHinge=a.Hinge(new Vector2(45,7),19,-25,"season");a.Seam(new Vector2(62,15.5f),"season");a.Steps(41,2,4,2,2,3);a.Ledge(63,15,6);a.Source(HostKind.Marionette,61,16).rail=a.Rail(new Vector2(60,24),new Vector2(83,24));
-            a.Cure(HostKind.None,69,1,true);a.Source(HostKind.Parallax,71);a.Projection(new Vector2(75,4),new Vector2(10,10));a.Depth(new Vector2(77,2),new Vector2(7,.5f),0);a.Depth(new Vector2(83,4),new Vector2(7,.5f),2);a.Projection(new Vector2(83,5),new Vector2(10,8));
-            var folded=a.Hinge(new Vector2(90,3),10,0,"depth");a.Seam(new Vector2(97,10),"depth");a.Source(HostKind.Stitch,86,5,true);a.Ledge(97,10,5);a.Source(HostKind.InsideOut,101,1.8f);var fresco=PaintedPassage(a,new Vector2(99,0));a.Cure(HostKind.InsideOut,125,12);a.Ledge(125,10,6);
-            a.Source(HostKind.Censer,130,1);a.Source(HostKind.Coffin,134,1,true);var risers=new List<MotionPlatform>();for(int i=0;i<4;i++)risers.Add(b.Slider(new Vector2(135+i*6,1),new Vector2(135+i*6,15+i*2),new Vector2(5,.5f),1.3f+i*.2f));a.Ledge(158,20,7);
+            a.Cure(HostKind.None,69,1,true);a.Source(HostKind.Parallax,71);a.Projection(new Vector2(75,4),new Vector2(10,10));a.Depth(new Vector2(77,2),new Vector2(7,.5f),0).gameObject.AddComponent<OneWaySurface>();a.Depth(new Vector2(83,3.3f),new Vector2(7,.5f),2).gameObject.AddComponent<OneWaySurface>();a.Projection(new Vector2(83,5),new Vector2(10,8));
+            var folded=a.Hinge(new Vector2(90,3),10,0,"depth");a.Seam(new Vector2(97,10),"depth");a.Source(HostKind.Stitch,86,4.5f,true);a.Ledge(97,10,5);a.Cure(HostKind.Parallax,97,10.8f);a.Source(HostKind.InsideOut,101,10.8f);var fresco=PaintedPassage(a,new Vector2(99,10));b.Solid("Closed foundation below the fresco",new Vector2(113,4.9f),new Vector2(28,9.8f));a.Cure(HostKind.InsideOut,126.4f,22);a.Ledge(126,20,6);
+            a.Source(HostKind.Censer,130,1);a.Ledge(130,2,3);a.Ledge(131,4,3);a.Source(HostKind.Coffin,131,4.8f,true);var risers=new List<MotionPlatform>();for(int i=0;i<4;i++)risers.Add(b.Slider(new Vector2(135+i*6,1),new Vector2(135+i*6,15+i*2),new Vector2(5,.5f),1.3f+i*.2f));a.Ledge(158,20,7);
             a.Source(HostKind.Lodestone,160,21);a.Source(HostKind.Shadow,164,21,true);a.Ledge(172,21,8);a.Ledge(184,23,13);
             var domainObject=new GameObject("The bright side of shadow");domainObject.transform.SetParent(b.root);var domain=domainObject.AddComponent<ShadowDomain>();domain.area=new Rect(158,15,40,18);var lightPaths=new List<Collider2D>();
             foreach(var pair in new[]{new Vector2(165,20),new Vector2(171,22),new Vector2(179,24)})lightPaths.Add(b.Trigger("Luminous path",pair,new Vector2(8,4),new Color(.98f,.95f,.77f,.18f)).GetComponent<Collider2D>());domain.lightPaths=lightPaths.ToArray();

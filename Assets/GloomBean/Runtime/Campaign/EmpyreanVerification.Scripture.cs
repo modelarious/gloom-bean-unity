@@ -30,7 +30,7 @@ namespace GloomBean.Campaign
                 var points=new System.Collections.Generic.List<Vector2>();
                 foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
                     if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
-                    for(int j=1;j<5;j++){var q=Vector2.Lerp(from,to,j*.2f);if(q.y>actor.Feet.y+.45f&&q.y<actor.Feet.y+2.05f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
+                    for(int j=1;j<20;j++){var q=Vector2.Lerp(from,to,j*.05f);if(q.y>actor.Feet.y+.45f&&q.y<actor.Feet.y+2.05f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
                 if(points.Count==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);
                 Check("a reachable sloping hardened arc exists",points.Count>0);if(stopped)yield break;
                 var point=points.OrderBy(q=>Vector2.Distance(q+Vector2.up*.75f,new Vector2(58.5f,18.1f))).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
