@@ -1,61 +1,67 @@
-# Gloom Bean - native Unity platformer
+# Gloom Bean / Host Cycle — native Unity game
 
-**Continuing this project? Read [START_HERE.md](START_HERE.md) before using older release summaries. The current tested revision, persistent job and next unmet gate are in [CURRENT_CHECKPOINT.json](Documentation/Continuity/CURRENT_CHECKPOINT.json).**
+Twenty authored levels. Five worlds and bosses. Fifteen temporary possessions. One irreversible first corruption.
 
-## Start here
-The current increment hardens the first chapter and reusable editing tools. See `Documentation/Parish/ITERATING.md`, `PLAY_GUIDE.md`, and the latest acceptance receipt before interpreting broader campaign completeness.
+## Play
 
-**Unity project:** Open this folder with Unity **6000.5.9f1**, open `Assets/GloomBean/Scenes/Boot.unity`, and press Play. **Gloom Bean > Campaign workbench** lets you jump directly to any foundation course, atlas level or boss in practice mode. Its tuning button selects the movement configuration in the Inspector.
+The standalone Windows package requires no Unity installation: extract it completely and run **GloomBeanWindows/GloomBean.exe**. Keep its Data, DLL and MonoBleedingEdge folders together. Choose **BEGIN / CONTINUE HOST CYCLE** for the campaign, **PLATFORMER FOUNDATION** for the reusable movement playground, or **PRACTICE** to inspect any stage without earning progress. F1 opens the complete controls; Escape pauses. F4 toggles sound/master mute, F5 toggles the original music.
 
-**Windows player:** Run `GloomBean.exe` in the separately delivered Windows folder. Keep the executable, DLLs, MonoBleedingEdge and GloomBean_Data together. Select FOUNDATION for the reusable mechanics playground or HOST CYCLE for the atlas campaign. Normal progression is separate from practice, which neither grants clears nor banks Mercy secrets.
+Open this source directory in **Unity 6000.5.9f1**, open `Assets/GloomBean/Scenes/Boot.unity`, and press Play. **Gloom Bean > Campaign workbench** provides practice selection, movement tuning and static layout editing. No Asset Store purchase, Nintendo asset, ROM, model download or runtime AI service is required.
 
-## Two products, separate history
-`foundation-v0.1.0` is the original base commit, made before atlas implementation. The `foundation` branch contains an updated base-only project with no possession/campaign dependency. `main` adds the Host Cycle. A Git bundle travels with the delivery so both histories remain recoverable even while the GitHub creation request is blocked.
+**Release evidence:** [current release status](Documentation/RELEASE_STATUS.md), [full campaign acceptance](Documentation/Completion/L1_GATES.md), and the structured audit shipped with the release. A runnable complete campaign is different from commercial-quality polish or blind human acceptance. See the explicit scope in those records.
 
-The foundation has four authored mechanics courses plus a foreman boss. The atlas has five worlds with four levels plus one boss in each. Campaign sizes are data in ICampaignSource, not fixed assumptions in the save system.
+## The two editions
 
-## Implemented base
-Walking/running acceleration and braking; variable jump, coyote time and buffering; crouching, crawl clearance and slope rolling; standing/running/air tackle tiers; ordinary and height-powered ground pounds; patrol enemies with wall/optional ledge responses, stun/recovery, carry, aimed throws and thrown-enemy collisions; swimming and swim dash; moving surfaces, conveyors, sliders and four-arm orbital platforms; bounded camera; Keyling follower, pickups, World Nail/return timer, exit validation, world/level/boss selection and atomic save with backup recovery.
+The original `foundation-v0.1.0` checkpoint predates the campaign. The `foundation` branch remains an independent reusable project: four mechanics courses and a foreman boss, with movement, jump/run/tackle tiers, both pounds, stun/carry/throw, patrols, swimming, crouch/crawl/slope roll, moving platforms/carousels, camera, pickups, selection, escape and saves. The latest complete-history bundle preserves this branch as well as the full campaign; never move the original tag.
 
-Movement numbers are original tunable defaults, not measured frame-perfect Wario Land 4 values. No Nintendo assets, ROMs, paid assets or runtime AI services are needed.
+The campaign adds **Parish / Orchard / City / Fall / False Empyrean**, four levels and a boss per world. Ordinary progression and all-secret progression are distinct. One Mercy belongs to each level. All twenty exact secrets restore the original Bean for the ending only; the saved corruption and future normal gameplay are not reset.
 
 ## Controls
+
 | Action | Keyboard | Common Windows gamepad |
 |---|---|---|
-| Move, throw aim, swim | WASD / arrows | Left stick |
-| Variable jump | Space / Z | A |
+| Move, aim, swim | WASD / arrows | Left stick |
+| Variable-height jump | Space / Z | A |
 | Run | Shift | LB |
 | Tackle / swim dash | J / X | X |
-| Ground pound | L or airborne Down + J | Airborne Down + X |
-| Crouch, crawl, begin slope roll | Down | Stick down |
-| Pick up / throw | K / C | Y |
+| Ground pound | L, or Down + tackle in air | Down + X in air |
+| Crouch / crawl / start slope roll | Down | Stick down |
+| Pick up stunned enemy / throw | K / C | Y |
 | Interact / pull Nail | E | B |
-| Possession primary | U (hold for Root) | RB |
+| Possession primary | U | RB |
 | Possession secondary | I | Back |
-| Focus other possession in a pair | Down + I | Down + Back |
+| Focus other active possession | Down + I | Down + Back |
 | Pause | Escape | Start |
 | Controls / designer notes | F1 / F2 | Keyboard fallback |
-| Mute original action cues | F4 | Keyboard fallback |
+| Sound / music | F4 / F5 | Keyboard fallback |
 
-Physical-controller mapping and feel still require a human check. Not every generic controller shares XInput's button numbering.
+Physical controller mapping and subjective feel require an actual controller check; not every device follows XInput numbering. [The play guide](PLAY_GUIDE.md) explains the possession controls without revealing secret solutions.
 
-## Edit and extend
-- `Runtime/Foundation/ActorMotor.cs` and `Resources/MovementTuning.asset`: player movement and its numbers.
-- `Runtime/Foundation/CarryableEnemy.cs`: patrol, combat, stun, carry, throw and recovery.
-- `Runtime/Foundation/StageBuilder.cs`, `FoundationCampaign.cs`: reusable environment pieces and foundation courses.
-- `Runtime/Foundation/StageSession.cs`, `Progress.cs`: game/escape state and save data.
-- `Runtime/Campaign/HostController.cs` and the form files: possession lifecycle, control ownership, cures and interactions.
-- `Runtime/Campaign/AtlasCampaign.*.cs`: the 20 courses and five bosses; `ATLAS_COVERAGE.csv` maps them to the source PDF.
-- `Editor/CampaignWorkbench.cs`: direct practice navigation; no editor-only dependency in the player.
+## Iterate
 
-Geometry and components are ordinary inspectable Unity objects during Play. For static boxes, use **Campaign workbench > Edit layout**, modify position/rotation/scale in Scene view, then **Save static layout overrides**. These ordinary JSON files are reloaded by later play sessions and native builds; source fingerprints reject stale overlays atomically. Scripted machinery, source/cure placement and gameplay rules remain builder-authored. The scene-snapshot command is an inspection aid, not a production substitute for reconstructing runtime callbacks/textures. This release does not pretend to contain 20 hand-authored tilemap scenes.
+`Assets/GloomBean/Resources/MovementTuning.asset` exposes the controller numbers. `Runtime/Foundation/ActorMotor.cs` owns movement; `CarryableEnemy.cs` owns patrol/stun/carry/projectile behavior. `StageBuilder.cs` owns reusable objects, while `StageSession.cs` and `Progress.cs` own the level loop and save model. Campaign forms live in `HostController.cs`, `EmbodimentForms.cs`, `MaterialForms.cs`, `SpatialForms.cs`, `ForceAndTimeForms.cs` and `ShadowForm.cs`. `AtlasCampaign.*.cs` authors the levels; the boss builders are separate from the witnesses.
+
+Geometry and components are ordinary inspectable Unity objects during Play. Static box layout edits can be saved by **Campaign workbench > Edit layout > Save static layout overrides**. These ordinary JSON files survive later runs/builds and reject stale source fingerprints. Moving machinery, source/cure placement and callback rules remain builder-authored. A runtime scene snapshot is for inspection, not a self-contained replacement for callbacks and generated textures. The project does not falsely present twenty hand-authored tilemap scenes.
 
 ## Build and verify
-Run `Tools/Build-Windows.ps1` as your normal licensed Windows account. It discovers the pinned Hub editor or accepts `-UnityPath`. Then run `Tools/Verify-Windows.ps1 -Suite Mechanics`; use `-Suite OpeningRoute` for the original opening-level regression, `-Suite Parish -Route W1` for the first chapter and `-Suite Parish -Route W1 -WithSecrets` for its four Mercy routes. `-Suite Parish -Route GB-L01 -WithSecrets -Practice` verifies that a real practice clear never writes progress. Each process has a maximum nine-minute timeout, a unique report directory and an isolated verification save. No new credentials or licence changes are performed.
 
-The final receipts identify what passed. Mechanical tests, scene construction and screenshots are **not** a complete 20-level/5-boss playthrough or a human-fun certificate. Read `Documentation/ATLAS_IMPLEMENTATION.md` and `Documentation/RELEASE_STATUS.md` before interpreting the prototype as finished.
+Run under your normal licensed Windows account:
 
-## Save and recovery
-Normal saves live at Unity's `persistentDataPath/host-cycle-save.json`. `-gb-save <absolute path>` selects a separate save. Verification always forces its own test save. Permanent first corruption is retained. Restoration requires every exact `GB-L01-MERCY` through `GB-L20-MERCY` identifier; duplicate or unrelated identifiers cannot satisfy that ending.
+```powershell
+.\Tools\Build-Windows.ps1
+.\Tools\Verify-Windows.ps1 -Suite Mechanics
+.\Tools\Verify-Windows.ps1 -Suite Campaign -Route GB-L19 -WithSecrets -Practice
+.\Tools\Verify-Windows.ps1 -Suite Empyrean -Route GB-B5 -FinalPair mirror-parallax
+```
 
-The original user request is in `Documentation/Source/CURRENT_REQUEST.txt`; the PDF is bundled alongside the project with a SHA-256 reference. New code/tuning is an experimental implementation, not a silent amendment to the design atlas or DungeonForge requirements.
+All twenty levels and five bosses route to their real witnesses. `-Describe` explains the dispatch without launching anything. Every test uses a unique isolated report/save directory. `-SaveSeed <earned-test-save.json> -RequireEarned` copies an actual prior earned save unchanged and records its hash; it never writes the source save. `-ExpectedMercies 0`, `19` or `20` checks the final ending boundary rather than granting secrets. World5 is deliberately tested per stage; use the configured full acceptance graph for the complete earned sequence. See `Tools/campaign-acceptance-l1.json`; replace machine-local clone/report paths when running elsewhere.
+
+`Tools/Test-CampaignGraph.ps1`, `Tools/Test-VerifyRoutes.ps1` and `Tools/test_release_audit.py` test the testing/delivery infrastructure. `Tools/audit_release.py` independently verifies result/exit agreement, every parent-save hash, twenty-level/five-boss saves, exact ending states and source/assembly identity. Component fixtures and scripted-input playthroughs are not blind playtests or a proof of every possible player action.
+
+## Save safety and source continuity
+
+Normal saves use Unity's `persistentDataPath/host-cycle-save.json`, with backup recovery. `-gb-save <absolute-file>` selects another normal-play save. Verification always uses its report-local test save. Practice grants no earned clear, coins, Mercy or permanent corruption.
+
+For continuation read [START_HERE.md](START_HERE.md) and the current checkpoint, not older ZIP descriptions. `checkpoint_work.py` stages only owned paths and refuses unexpected HEAD or pre-existing staged changes; `package_checkpoint.py` bundles committed source and complete history. A clone restored from a bundle may have a file-path origin: that is not GitHub publication.
+
+The unmodified original atlas is included in the release Reference folder; its identity is in `Documentation/Source/ATLAS_REFERENCE.json`. The canonical context is GitHub `modelarious/obsidian-notes`. Standalone public game-repository publication is separately recorded; a local commit, downloadable bundle or context update is not a source-remote push.
