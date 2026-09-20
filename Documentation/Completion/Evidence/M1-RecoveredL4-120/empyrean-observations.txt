@@ -1,0 +1,44 @@
+BEGIN GB-L19 Scripture That Writes Back
+PASS GB-L19 walk 8 body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 scribe leech supplies actual Ink body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+PASS GB-L19 land in the bottom margin body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(15.48, 3.93) velocity=(0.33, -0.96) feet=3.178571 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(14.04, 7.39) velocity=(0.09, -0.12) feet=6.635576 hp=6
+PASS GB-L19 jump to 17.6 / 5 body=(17.31, 5.81) velocity=(0.89, -1.00) feet=5.062243 hp=6
+PASS GB-L19 reach punctuation desk through authored ink body=(17.31, 5.81) velocity=(0.89, -1.00) feet=5.062243 hp=6
+PASS GB-L19 walk 18.2 body=(17.99, 5.75) velocity=(1.63, 0.00) feet=5.004921 hp=6
+PASS GB-L19 unmoved comma leaves every word above the desk jump body=(17.99, 5.75) velocity=(1.63, 0.00) feet=5.004921 hp=6
+PASS GB-L19 grip physical comma body=(18.00, 5.75) velocity=(0.02, 0.00) feet=5.00495 hp=6
+PASS GB-L19 walk 21.5 body=(21.29, 5.76) velocity=(1.60, 0.00) feet=5.005 hp=6
+PASS GB-L19 moved comma reflows actual words body=(21.29, 5.76) velocity=(0.00, 0.00) feet=5.005 hp=6
+PASS GB-L19 jump to 24 / 5 body=(23.90, 5.76) velocity=(0.27, -1.00) feet=5.007693 hp=6
+PASS GB-L19 jump to 27 / 7.2 body=(26.70, 7.95) velocity=(0.91, 0.00) feet=7.204995 hp=6
+PASS GB-L19 cross the actual reflowed rows at 31 body=(30.68, 10.16) velocity=(1.79, 0.00) feet=9.409994 hp=6
+PASS GB-L19 cross the actual reflowed rows at 35 body=(34.65, 10.15) velocity=(1.21, 0.00) feet=9.4046 hp=6
+PASS GB-L19 jump to 40 / 7.2 body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 shadow source composes with Ink body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 tenant acquired Ink body=(39.71, 7.95) velocity=(0.90, 0.00) feet=7.204997 hp=6
+PASS GB-L19 focus Ink body=(39.71, 7.95) velocity=(0.00, 0.00) feet=7.204998 hp=6
+PASS GB-L19 walk 42 body=(41.80, 7.95) velocity=(6.01, 0.00) feet=7.204999 hp=6
+PASS GB-L19 record a running arc to 47 body=(46.84, 5.95) velocity=(1.32, 0.00) feet=5.2045 hp=6
+PASS GB-L19 walk 48 body=(47.81, 5.95) velocity=(2.79, 0.00) feet=5.204972 hp=6
+PASS GB-L19 a short running leap writes a shallow reusable arc body=(54.24, 3.80) velocity=(7.25, -1.00) feet=3.047695 hp=6
+PASS GB-L19 a reachable sloping hardened arc exists body=(54.59, 3.75) velocity=(0.00, 0.00) feet=3.004999 hp=6
+INK TARGET (52.65, 5.17)
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(53.04, 5.95) velocity=(-1.30, 0.15) feet=5.195287 hp=6
+PASS GB-L19 a reachable sloping hardened arc exists body=(53.04, 5.95) velocity=(-1.30, 0.15) feet=5.195287 hp=6
+INK TARGET (50.12, 6.83)
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(50.62, 7.55) velocity=(-1.63, -0.30) feet=6.804197 hp=6
+PASS GB-L19 temporary ink brings body within the semicolon tether body=(50.62, 7.55) velocity=(-1.63, -0.30) feet=6.804197 hp=6
+PASS GB-L19 the letter's real cast silhouette connects the body to the dot body=(50.62, 7.55) velocity=(-1.63, -0.30) feet=6.804197 hp=6
+SHADOW DEPART body=(50.62, 7.55) inkAge=2.466665
+PASS GB-L19 tenant acquired Shadow body=(50.62, 7.55) velocity=(-1.63, -0.30) feet=6.804197 hp=6
+PASS GB-L19 focus Shadow body=(50.61, 7.52) velocity=(0.00, -1.00) feet=6.774802 hp=6
+PASS GB-L19 traverse connected silhouette to (58.50, 18.10) body=(51.52, 7.06) velocity=(0.18, -0.08) feet=6.312893 hp=6
+PASS GB-L19 shadow takes the actual semicolon dot body=(51.56, 7.05) velocity=(0.23, -0.08) feet=6.299719 hp=6
+FAIL GB-L19 body remains on its actual Ink while taking the dot body=(51.56, 7.05) velocity=(0.23, -0.08) feet=6.299719 hp=6

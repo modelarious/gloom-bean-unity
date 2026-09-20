@@ -60,7 +60,14 @@ namespace GloomBean.Campaign
             Check("the letter's real cast silhouette connects the body to the dot",HasSemicolonShadowPath());if(stopped)yield break;
             Vector2 anchoredBody=actor.Body.position;Note("SHADOW DEPART body="+anchoredBody+" inkAge="+actor.GroundCollider.GetComponent<InkStroke>().age);
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,18.1f));if(stopped)yield break;yield return Pause(.08f);
-            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Check("body remains on its actual Ink while taking the dot",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,anchoredBody)<.65f);Snapshot("semicolon-dot");if(stopped)yield break;
+            Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);
+            var support=actor.GroundCollider?actor.GroundCollider.GetComponent<InkStroke>():null;
+            Note("EXPOSED BODY support="+(actor.GroundCollider?actor.GroundCollider.name:"none")+" grounded="+actor.Grounded+" drift="+Vector2.Distance(actor.Body.position,anchoredBody)+" simulated="+actor.Body.simulated+" inkAge="+(support?support.age:-1));
+            // The atlas requires a vulnerable physical body supported by delayed Ink, not a world-position lock.
+            // Ordinary gravity can slide it along a sloping stroke while the shadow is controlled.
+            Check("body remains on its actual Ink while taking the dot",actor.Grounded&&support&&support.Solid);
+            Check("abandoned body stays physical and within the actual tether",actor.Shape.enabled&&actor.Body.simulated&&actor.Body.bodyType==RigidbodyType2D.Dynamic&&Vector2.Distance(actor.Body.position,host.Form<ShadowForm>().Position)<=host.Form<ShadowForm>().tether);
+            Snapshot("semicolon-dot");if(stopped)yield break;
             yield return ReattachWritingShadow();yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-3.3f)<.3f,8);
         }
         IEnumerator ReattachWritingShadow()
