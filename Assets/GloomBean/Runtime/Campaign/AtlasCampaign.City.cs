@@ -56,7 +56,7 @@ namespace GloomBean.Campaign
             const int w=28;int h=secret?20:15;var grid=new char[h][];for(int y=0;y<h;y++){grid[y]=new char[w];for(int x=0;x<w;x++)grid[y][x]='.';}
             void Fill(int x0,int y0,int x1,int y1,char c){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)grid[y][x]=c;}
             Fill(0,0,3,4,'A');Fill(4,1,11,4,'#');Fill(9,4,12,8,'#');Fill(12,6,21,9,'#');Fill(19,9,23,12,'#');Fill(24,10,27,13,'A');
-            Fill(8,3,12,8,'#');Fill(17,7,23,12,'#'); // Room for a full jump before each ascending interior corner.
+            Fill(8,3,12,8,'#');Fill(17,7,23,12,'#');Fill(19,9,23,14,'#'); // Room for a full jump before each ascending interior corner.
             // The two domains share only their framed entry and exit. The staircase consists
             // of empty tiles in normal space, so it becomes solid ONLY inside the fresco.
             Fill(6,1,8,1,'.');Fill(8,1,10,2,'.');Fill(10,1,11,4,'.');Fill(11,4,12,5,'.');
@@ -104,16 +104,37 @@ namespace GloomBean.Campaign
         }
         void Tax(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-13,132,48),new Vector2(2,1));var b=a.b;a.Floor(-5,13);a.Floor(53,65);a.Floor(95,122,4);a.Exit(2,1.1f);a.Source(HostKind.Parallax,8);
-            var architecture=new List<DepthGeometry>();
-            for(int i=0;i<6;i++){float x=17+i*6.3f,y=1+i*.65f;int plane=i%3;architecture.Add(a.Depth(new Vector2(x,y),new Vector2(6,.5f),plane));a.Projection(new Vector2(x,y+1.6f),new Vector2(7,5));}
-            var stamp=b.Trigger("Perspective clerk's stamp",new Vector2(11,1),Vector2.one,new Color(.8f,.66f,.36f),PrimitiveArt.Icon.Arch).AddComponent<PerspectiveStamp>();stamp.geometry=architecture.ToArray();
-            a.Ledge(57,4,6);a.Cure(HostKind.Parallax,59,4.9f);var passage=PaintedPassage(a,new Vector2(64,0));a.Source(HostKind.InsideOut,66,1.8f);a.Cure(HostKind.InsideOut,90,12);a.Ledge(91,10,6);
-            a.Source(HostKind.Parallax,96,5);a.Projection(new Vector2(98,6),new Vector2(10,6));a.Depth(new Vector2(103,6),new Vector2(6,.5f),0);a.Depth(new Vector2(111,8),new Vector2(6,.5f),2);a.Projection(new Vector2(108,8),new Vector2(8,5));a.Ledge(119,10,6);a.Key(112,10.4f);a.Nail(121,10.4f);
-            var secretFloor=a.Ledge(29,8,8);b.Solid("Smallprint slot",new Vector2(29,9.1f),new Vector2(8,.5f));a.Projection(new Vector2(26,8.7f),new Vector2(6,3));a.Mercy(32,8.65f);
-            var lift=b.Slider(new Vector2(23,3),new Vector2(23,7.8f),new Vector2(4,.4f),1.8f);
-            var retreat=a.Ledge(80,14,45);retreat.SetActive(false);b.session.Turned+=()=>{stamp.reversed=true;retreat.SetActive(true);foreach(var g in architecture)g.SetPlane((g.plane+2)%3);};
-            b.Tip(new Vector2(9,2),"Up/down chooses far, mid, near only where projected outlines overlap. A smaller body fits the slot, but its legs and speed shrink as well.");a.Health(57,5);a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-8,-13,138,51),new Vector2(2,1));var b=a.b;a.Floor(-5,13);a.Floor(54,63);a.Floor(87,126,4);a.Exit(2,1.1f);a.Source(HostKind.Parallax,8);
+            GameObject Sill(float x,float y,float w=4){var g=a.Ledge(x,y,w);g.AddComponent<OneWaySurface>();return g;}
+            DepthGeometry Shelf(float x,float y,float w,int plane){var d=a.Depth(new Vector2(x,y),new Vector2(w,.6f),plane);d.gameObject.AddComponent<OneWaySurface>();return d;}
+            var architecture=new List<DepthGeometry>();float[] heights={1,2.7f,4.3f,6,7.7f,9.3f};
+            a.Projection(new Vector2(12,2.5f),new Vector2(8,6));
+            for(int i=0;i<6;i++){float x=17+i*6;architecture.Add(Shelf(x,heights[i],8,i%3));a.Projection(new Vector2(x+2,heights[i]+2),new Vector2(9,7));}
+            Sill(53,9.7f,6);var stampShelf=Shelf(57,9.5f,10,0);
+            var stamp=b.Trigger("Perspective clerk's stamp",new Vector2(53,10.5f),Vector2.one,new Color(.8f,.66f,.36f),PrimitiveArt.Icon.Arch).AddComponent<PerspectiveStamp>();stamp.geometry=new[]{stampShelf};
+            a.Cure(HostKind.Parallax,60,10.5f);
+            var passage=PaintedPassage(a,new Vector2(58,0));passage.name="Interior of the enlarged filing cabinet";a.Source(HostKind.InsideOut,60,.8f);a.Cure(HostKind.InsideOut,57.2f,.8f);a.Cure(HostKind.InsideOut,85.4f,12);Sill(85,10,6);
+            a.Source(HostKind.Parallax,89,10.8f);Sill(89,10,5);a.Projection(new Vector2(93,12),new Vector2(10,7));Shelf(97,11,9,0);a.Projection(new Vector2(102,13.5f),new Vector2(11,8));Shelf(106,12.5f,10,2);
+            Sill(118,14,10);a.Projection(new Vector2(115,16),new Vector2(11,8));a.Key(109,14.2f);a.Nail(121,14.4f);
+
+            // Middle-size registration is a physical two-contact fit: the far body
+            // is too narrow for both contacts; the near body cannot fit under the roof.
+            Sill(38,10,4);Sill(43,12,12);b.Solid("Registration frame upper jaw",new Vector2(43,14.2f),new Vector2(12,.6f));a.Projection(new Vector2(41,11.5f),new Vector2(10,7));
+            var left=b.Plate(new Vector2(41.6f,12.8f),.1f);left.GetComponent<BoxCollider2D>().size=new Vector2(.2f,.6f);
+            var right=b.Plate(new Vector2(42.4f,12.8f),.1f);right.GetComponent<BoxCollider2D>().size=new Vector2(.2f,.6f);
+            var register=b.Door(new Vector2(46.7f,13),new Vector2(.4f,2),left,right);register.name="Tax form registration clamp";register.latched=true;a.Mercy(48,13.1f);
+            PrimitiveArt.Label("ALIGN BOTH MARGINS",b.root,new Vector2(42,14.9f),.08f);
+
+            var retreat=new List<GameObject>();
+            var rf=Shelf(111,16,10,0);var rm=Shelf(102,16,10,1);var rn=Shelf(92,15,10,2);retreat.Add(rf.gameObject);retreat.Add(rm.gameObject);retreat.Add(rn.gameObject);
+            a.Projection(new Vector2(107,18),new Vector2(11,8));a.Projection(new Vector2(97,18),new Vector2(11,8));
+            retreat.Add(Sill(66,15,44));for(int i=0;i<6;i++)retreat.Add(Sill(38-i*6,13-i*2,5));foreach(var g in retreat)g.SetActive(false);
+            var flat=a.Cure(HostKind.Parallax,84,15.8f);flat.gameObject.SetActive(false);
+            b.session.Turned+=()=>{stamp.reversed=true;foreach(var d in architecture)d.SetPlane(0);foreach(var g in retreat)g.SetActive(true);flat.gameObject.SetActive(true);};
+            b.Tip(new Vector2(10,2),"Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.");
+            b.Tip(new Vector2(53,11),"The clerk stamps the counter itself. Your depth and its depth must agree before it can hold you.");
+            b.Tip(new Vector2(40,13),"Both registration contacts must touch at once. Too small misses a margin; too large does not fit the frame.");
+            a.Health(55,1.2f);b.Enemy(new Vector2(62,1),true);a.Cure(HostKind.None,4,1,true);
         }
         RoomOrbit OrbitRoom(AtlasBuilder a,Vector2 p,Vector2 center,Vector2 radius,float phase,int index)
         {

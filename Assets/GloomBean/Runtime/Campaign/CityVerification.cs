@@ -100,6 +100,40 @@ namespace GloomBean.Campaign
             Check("fresco roof key",session.HasKey);yield return Press(new InputFrame{interact=true});Check("fresco peels into return gallery",session.Phase==RunPhase.Returning);yield return Jump(103,9.2f);yield return Jump(98,11);yield return Walk(42.4f);yield return Walk(39.6f);Check("return uses physical interior again",host.Has(HostKind.InsideOut));
             yield return Walk(37.5f);yield return Walk(34.2f);yield return Walk(32.2f);yield return Walk(29);yield return Walk(27.5f);yield return Walk(25.6f);yield return Walk(24.2f);yield return Walk(22);yield return Walk(20);yield return Walk(17);yield return Walk(14.3f);yield return Await("street-side empty frame cures",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(2);
         }
+        IEnumerator Align(float x)
+        {
+            if(stopped||!Live)yield break;float end=Time.time+5;
+            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;if(Mathf.Abs(dx)<.05f&&Mathf.Abs(actor.Body.linearVelocity.x)<.12f)break;input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*6-actor.Body.linearVelocity.x*.7f,-1,1),0)};yield return NextPhysics();}
+            input.frame=default;Check("align physical body at "+x,Mathf.Abs(actor.Body.position.x-x)<.08f);
+        }
+        IEnumerator Plane(int target)
+        {
+            if(stopped||!Live)yield break;var form=host.Form<ParallaxForm>();Check("perspective tenant exists",form!=null);if(stopped)yield break;float end=Time.time+3;
+            while(Live&&Time.time<end&&form.Plane!=target){input.frame=new InputFrame{move=new Vector2(0,Mathf.Sign(target-form.Plane))};yield return NextPhysics();}
+            input.frame=default;Check("project into plane "+target,form.Plane==target);yield return Pause(.1f);
+        }
+        IEnumerator PlaneJump(float x,float top,int target)
+        {
+            if(stopped||!Live)yield break;var form=host.Form<ParallaxForm>();Check("plane jump has perspective tenant",form!=null);if(stopped)yield break;
+            float end=Time.time+7,beginFoot=actor.Feet.y;bool sent=false;
+            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;bool jump=!sent&&actor.Grounded;if(jump)sent=true;
+                float depth=sent&&actor.Feet.y>beginFoot+.45f&&form.Plane!=target?Mathf.Sign(target-form.Plane):0;
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*2-actor.Body.linearVelocity.x*.15f,-1,1),depth),jump=jump,jumpHeld=true};yield return NextPhysics();
+                if(sent&&!jump&&actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.25f&&Mathf.Abs(dx)<.22f&&form.Plane==target)break;}
+            input.frame=default;Check("land projected body "+target+" at "+x+" / "+top,actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f&&form.Plane==target);
+        }
+        IEnumerator Tax(bool secret)
+        {
+            yield return Walk(11);yield return Plane(0);yield return PlaneJump(17,1.195f,0);yield return Walk(18.5f);yield return PlaneJump(23,3,1);yield return Walk(25);yield return PlaneJump(29,4.72f,2);yield return Walk(32);yield return PlaneJump(35,6.195f,0);yield return Walk(36.8f);yield return PlaneJump(41,8,1);
+            if(secret&&!stopped){yield return Jump(38,10);yield return Jump(40.5f,12);yield return Align(42);var gate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Tax form registration clamp");yield return Await("body contacts both printed margins",()=>gate.opened,3);yield return Walk(48);Check("registered tax-form Mercy",session.Mercies.Count==1);Snapshot("middle-size-registration");yield return Walk(50);yield return Await("leave secret onto near counter",()=>actor.Grounded&&actor.Feet.y<11,6);}
+            else{yield return Walk(43.4f);yield return PlaneJump(47,9.72f,2);}
+            if(stopped)yield break;if(host.Form<ParallaxForm>().Plane!=2)yield return PlaneJump(51,9.72f,2);yield return Walk(53);yield return Press(new InputFrame{interact=true});
+            var stamp=session.GetComponentInChildren<PerspectiveStamp>();Check("clerk relocates furniture into matching plane",stamp.geometry[0].plane==2);yield return Walk(60);yield return Await("flat sign removes depth before cabinet",()=>!host.Has(HostKind.Parallax),4);yield return Walk(60.5f);yield return Await("drop to filing-cabinet interior entrance",()=>actor.Grounded&&actor.Feet.y<1,7);Check("flensing clerk exposes cabinet interior",host.Has(HostKind.InsideOut));
+            yield return Jump(63,1);yield return Jump(65,2);yield return Jump(67.2f,3);yield return Jump(68.6f,5);yield return Jump(70.5f,6);yield return Walk(73.25f);yield return Jump(75.2f,7);yield return Jump(77.2f,8);yield return Jump(78.6f,10);yield return Jump(80.5f,11);yield return Walk(85.4f);yield return Await("cabinet frame returns ordinary body",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(89);
+            yield return Walk(91);yield return PlaneJump(97,11.195f,0);yield return Walk(99);yield return PlaneJump(106,12.92f,2);yield return Walk(110.5f);yield return PlaneJump(118,14,2);yield return Walk(119.6f);if(stopped)yield break;
+            Check("office key physically collected",session.HasKey);yield return Press(new InputFrame{interact=true});Check("office counters retract during closure",session.Phase==RunPhase.Returning&&stamp.reversed);Snapshot("office-closure");
+            yield return Walk(116);yield return PlaneJump(111,16.195f,0);yield return Walk(108.5f);yield return PlaneJump(102,16.3f,1);yield return Walk(98.5f);yield return PlaneJump(92,15.42f,2);yield return Walk(84);yield return Await("monochrome sign restores body for fire escape",()=>!host.Has(HostKind.Parallax),3);yield return Walk(40);yield return Walk(2);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[2];
@@ -111,7 +145,7 @@ namespace GloomBean.Campaign
             {
                 if(stage==null){failures++;Note("FAIL unknown City stage "+selected);break;}yield return Load(stage);
                 if(selected=="W3")Check("earned intra-world selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;default:Check("route not implemented yet",false);break;}
+                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;case 11:yield return Tax(secrets);break;default:Check("route not implemented yet",false);break;}
                 Check("stage cleared by actual return or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("stage clear persisted",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy saved after physical collection and return":"ordinary route requires no Mercy",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}
                 Snapshot("finish");if(stopped)break;
