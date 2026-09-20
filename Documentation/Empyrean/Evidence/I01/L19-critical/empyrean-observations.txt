@@ -1,0 +1,15 @@
+BEGIN GB-L19 Scripture That Writes Back
+PASS GB-L19 walk 8 body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 scribe leech supplies actual Ink body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+PASS GB-L19 land in the bottom margin body=(16.78, 1.75) velocity=(1.68, 0.00) feet=1.004946 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(15.48, 3.93) velocity=(0.33, -0.96) feet=3.178571 hp=6
+INK SUPPORT Delayed ink stroke
+PASS GB-L19 land on own hardened falling stroke body=(14.51, 6.45) velocity=(-1.45, 3.03) feet=5.70128 hp=6
+PASS GB-L19 jump to 17.6 / 5 body=(17.31, 5.75) velocity=(0.88, 0.00) feet=5.004966 hp=6
+PASS GB-L19 reach punctuation desk through authored ink body=(17.31, 5.75) velocity=(0.88, 0.00) feet=5.004966 hp=6
+PASS GB-L19 walk 18.2 body=(17.99, 5.75) velocity=(1.62, 0.00) feet=5.004999 hp=6
+PASS GB-L19 grip physical comma body=(18.00, 5.75) velocity=(0.02, 0.00) feet=5.004999 hp=6
+FAIL GB-L19 walk 21.5 body=(18.23, 5.75) velocity=(0.00, 0.00) feet=5.004999 hp=6
+FAIL GB-L19 shadow source composes with Ink body=(18.22, 5.75) velocity=(-0.02, 0.00) feet=5.004999 hp=6

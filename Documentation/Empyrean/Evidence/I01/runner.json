@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  12,
+                        "case":  "L19-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-I01-scripture-ink-reflow",
+    "started":  "2026-09-20T08:14:39.7139654-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T08:15:11.9969532-06:00"
+}
