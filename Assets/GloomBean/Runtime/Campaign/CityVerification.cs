@@ -135,6 +135,33 @@ namespace GloomBean.Campaign
             Check("office key physically collected",session.HasKey);yield return Press(new InputFrame{interact=true});Check("office counters retract during closure",session.Phase==RunPhase.Returning&&stamp.reversed);Snapshot("office-closure");
             yield return Walk(116);yield return PlaneJump(111,16.195f,0);yield return Walk(108.5f);yield return PlaneJump(102,16.3f,1);yield return Walk(98.5f);yield return PlaneJump(92,15.42f,2);yield return Walk(84);yield return Await("monochrome sign restores body for fire escape",()=>!host.Has(HostKind.Parallax),3);yield return Walk(40);yield return Walk(2);
         }
+        IEnumerator RideRoom(RoomOrbit room,Vector2 destination)
+        {
+            if(stopped||!Live)yield break;
+            yield return Await("room carries its actual occupant to "+destination,()=>room.Settled&&Vector2.Distance(room.transform.position,destination)<.2f&&actor.Grounded,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp(room.transform.position.x-actor.Body.position.x,-1,1),0)});
+            Check("support belongs to preserved moving room",actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform));
+        }
+        IEnumerator Hotel(bool secret)
+        {
+            yield return Walk(9);Check("perspective fly acquired in hotel lobby",host.Has(HostKind.Parallax));yield return Walk(10);yield return Jump(12,2);yield return Jump(17,4);yield return Jump(22,6);yield return Walk(38);
+            var room=session.GetComponentsInChildren<RoomOrbit>().First(r=>r.name=="Orbiting room 0");yield return Plane(0);yield return RideRoom(room,new Vector2(22,14));
+            yield return Walk(18.5f);Check("vanity reflection composes with perspective",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));
+            yield return Jump(17,15.395f);var stamp=room.GetComponentInChildren<ReplicaDepthStamp>();var brake=session.GetComponentInChildren<OrbitBrake>();
+            yield return Await("reflection receives a distinct depth footprint",()=>stamp.Stamped,4);
+            yield return Align(17);yield return Await("two depths hold the same room brake",()=>brake.released,5);Snapshot("split-depth-room-brake");
+            yield return RideRoom(room,new Vector2(38,22));yield return Walk(33);yield return Await("roof velvet releases the reflected tenant",()=>!host.Has(HostKind.Mirror),4);
+            yield return Walk(35.5f);Check("formerly exterior wall becomes inside-out corridor",host.Has(HostKind.InsideOut));
+            yield return Jump(37.5f,24.4f);yield return Jump(39,25.4f);yield return Jump(41,26.4f);yield return Jump(43,28.4f);yield return Walk(47);yield return Await("wall frame returns normal collision",()=>!host.Has(HostKind.InsideOut),3);
+            yield return Walk(50);Check("depth transfer remains available past wall",host.Has(HostKind.Parallax));yield return Walk(52);yield return PlaneJump(57,29.995f,0);yield return Walk(59);yield return PlaneJump(65,31.72f,2);yield return Walk(68);yield return PlaneJump(73,33.2f,2);yield return Walk(73.6f);if(stopped)yield break;
+            Check("hotel Keyling collected physically",session.HasKey);yield return Press(new InputFrame{interact=true});Check("facade removal releases orbiting rooms",session.Phase==RunPhase.Returning&&room.running);yield return Walk(71.5f);yield return Await("flat hotel sign restores normal body",()=>!host.Has(HostKind.Parallax),4);Snapshot("hotel-return-orbit");
+            if(secret&&!stopped){yield return Walk(47);yield return Press(new InputFrame{interact=true});var lift=session.GetComponentsInChildren<ApartmentLift>().First();
+                yield return Await("chandelier winch physically docks at its back",()=>Vector2.Distance(lift.transform.position,lift.upper)<.1f&&actor.Grounded,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp(lift.transform.position.x-actor.Body.position.x,-1,1),0)});
+                yield return Walk(33.1f);Check("reveal inside of lobby chandelier",host.Has(HostKind.InsideOut));yield return Walk(38);Check("lobby chandelier Mercy collected",session.Mercies.Count==1);Snapshot("chandelier-interior");yield return Walk(30.8f);yield return Await("chandelier frame restores exterior body",()=>!host.Has(HostKind.InsideOut),3);yield return Walk(31.5f);yield return Press(new InputFrame{interact=true});
+                yield return Await("winch returns through same physical space",()=>Vector2.Distance(lift.transform.position,lift.lower)<.1f&&actor.Grounded,8,()=>new InputFrame{move=new Vector2(Mathf.Clamp(lift.transform.position.x-actor.Body.position.x,-1,1),0)});}
+            if(stopped)yield break;yield return Walk(41);var orbiting=session.GetComponentsInChildren<RoomOrbit>();
+            yield return Await("land on an actual moving hotel roof",()=>actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponentInParent<RoomOrbit>(),10,()=>{var best=orbiting.OrderByDescending(r=>r.transform.position.y).First();return new InputFrame{move=new Vector2(Mathf.Clamp(best.transform.position.x-actor.Body.position.x,-1,1),0)};});
+            yield return Walk(28);yield return Walk(23);yield return Walk(18);yield return Walk(13);yield return Walk(8);yield return Walk(3);yield return Walk(-2);yield return Await("lobby exit reached from rear of known rooms",()=>actor.Grounded&&actor.Feet.y<1,8);yield return Walk(2);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[2];
@@ -146,7 +173,7 @@ namespace GloomBean.Campaign
             {
                 if(stage==null){failures++;Note("FAIL unknown City stage "+selected);break;}yield return Load(stage);
                 if(selected=="W3")Check("earned intra-world selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;case 11:yield return Tax(secrets);break;default:Check("route not implemented yet",false);break;}
+                switch(stage.course){case 9:yield return Suns(secrets);break;case 10:yield return Fresco(secrets);break;case 11:yield return Tax(secrets);break;case 12:yield return Hotel(secrets);break;default:Check("route not implemented yet",false);break;}
                 Check("stage cleared by actual return or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("stage clear persisted",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy saved after physical collection and return":"ordinary route requires no Mercy",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}
                 Snapshot("finish");if(stopped)break;

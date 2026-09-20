@@ -138,24 +138,66 @@ namespace GloomBean.Campaign
         }
         RoomOrbit OrbitRoom(AtlasBuilder a,Vector2 p,Vector2 center,Vector2 radius,float phase,int index)
         {
-            var b=a.b;int begin=b.root.childCount;a.Ledge(p.x,p.y,9);b.Wall(p.x-4.5f,p.y+2,4);b.Wall(p.x+4.5f,p.y+2,4);a.Ledge(p.x,p.y+4.7f,9);
-            b.Solid("Rear doorway lintel",p+new Vector2(0,3.8f),new Vector2(2,.4f),b.accent);
-            var parent=new GameObject("Orbiting room "+index);parent.transform.SetParent(b.root);parent.transform.position=p;
-            var children=new List<Transform>();for(int i=begin;i<b.root.childCount-1;i++)children.Add(b.root.GetChild(i));foreach(var t in children)t.SetParent(parent.transform,true);
-            var orbit=parent.AddComponent<RoomOrbit>();orbit.center=center;orbit.radius=radius;orbit.phase=phase;orbit.roomSize=new Vector2(10,8);return orbit;
+            var b=a.b;var parent=new GameObject("Orbiting room "+index);parent.transform.SetParent(b.root);parent.transform.position=p;
+            GameObject Part(string name,Vector2 at,Vector2 size,bool thin=false,int layer=Layers.Moving){var g=b.Solid(name,p+at,size,b.stone,layer);g.transform.SetParent(parent.transform,true);if(thin)g.AddComponent<OneWaySurface>();return g;}
+            Part("Room "+index+" floor",new Vector2(0,-.2f),new Vector2(10,.4f),true);
+            Part("Room "+index+" roof",new Vector2(0,5.2f),new Vector2(10,.4f),true);
+            for(int sign=-1;sign<=1;sign+=2){Part("Open doorway sill",new Vector2(sign*5,.2f),new Vector2(.5f,.4f));Part("Doorway upper lintel",new Vector2(sign*5,4.35f),new Vector2(.5f,1.9f));}
+            PrimitiveArt.Label("ROOM "+(101+index),parent.transform,p+new Vector2(0,4.3f),.11f);
+            var orbit=parent.AddComponent<RoomOrbit>();orbit.center=center;orbit.radius=radius;orbit.phase=phase;orbit.roomSize=new Vector2(10,6);orbit.drivenByDepth=true;return orbit;
         }
         void Hotel(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-11,103,59),new Vector2(2,1));var b=a.b;a.Floor(-5,23);a.Floor(68,91);a.Exit(2,1.1f);a.Source(HostKind.Parallax,9);a.Projection(new Vector2(16,4),new Vector2(12,10));
-            a.Depth(new Vector2(17,2),new Vector2(6,.5f),0);a.Depth(new Vector2(23,4),new Vector2(6,.5f),1);a.Projection(new Vector2(24,5),new Vector2(8,7));
-            Vector2 center=new Vector2(44,17),radius=new Vector2(17,10);var rooms=new List<RoomOrbit>();for(int i=0;i<4;i++){float phase=Mathf.PI*.5f*i;Vector2 p=center+new Vector2(Mathf.Cos(phase)*radius.x,Mathf.Sin(phase)*radius.y);rooms.Add(OrbitRoom(a,p,center,radius,phase,i));}
-            a.Steps(28,6,5,3,2,4);a.Ledge(47,17,6);a.Steps(53,19,4,-3,2,4);a.Ledge(44,28,8);
-            var mir=a.Source(HostKind.Mirror,40,28.9f);mir.explicitAxis=true;mir.mirrorAxis=44;var p1=b.Plate(new Vector2(40,28.14f));var p2=b.Plate(new Vector2(48,28.14f));var brake=b.root.gameObject.AddComponent<OrbitBrake>();brake.left=p1;brake.right=p2;brake.rooms=rooms.ToArray();
-            a.Ledge(56,27,6);a.Ledge(65,25,6);a.Ledge(73,23,6);a.Cure(HostKind.Mirror,67,26);a.Key(71,25);a.Nail(78,23.4f);a.Ledge(78,23,9);
-            var hidden=a.Ledge(44,34,7);hidden.SetActive(false);a.Mercy(44,35.2f);var rear=b.Slider(new Vector2(62,29),new Vector2(45,32),new Vector2(5,.5f),1.5f);rear.paused=true;
-            b.session.Turned+=()=>{brake.released=true;foreach(var room in rooms)room.running=true;hidden.SetActive(true);rear.paused=false;};
-            PaintedPassage(a,new Vector2(68,0));a.Source(HostKind.InsideOut,70,1.8f);a.Cure(HostKind.InsideOut,94,12);a.Ledge(92,15,4);a.Ledge(87,17,4);a.Ledge(82,19,4);
-            a.Health(46,18);b.Tip(new Vector2(10,2),"Rooms keep their furniture when they orbit. Match the two roof scales, then use the backs of the rooms during the return.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-10,-12,109,72),new Vector2(2,1));var b=a.b;a.Floor(-5,24);a.Floor(64,90);a.Exit(2,1.1f);
+            GameObject Sill(float x,float y,float w=4){var g=a.Ledge(x,y,w);g.AddComponent<OneWaySurface>();return g;}
+            DepthGeometry Shelf(float x,float y,float w,int plane){var g=a.Depth(new Vector2(x,y),new Vector2(w,.6f),plane);g.gameObject.AddComponent<OneWaySurface>();return g;}
+            a.Source(HostKind.Parallax,9);a.Projection(new Vector2(16,5),new Vector2(18,12));Sill(12,2);Sill(17,4);Sill(22,6);Sill(29,6,12);
+            Vector2 center=new Vector2(38,14),radius=new Vector2(16,8);var rooms=new List<RoomOrbit>();
+            for(int i=0;i<4;i++){float phase=-Mathf.PI*.5f+i*Mathf.PI*.5f;Vector2 at=center+new Vector2(Mathf.Cos(phase)*radius.x,Mathf.Sin(phase)*radius.y);rooms.Add(OrbitRoom(a,at,center,radius,phase,i));}
+            var carriage=rooms[0];Vector2 c=(Vector2)carriage.transform.position;
+            var overlap=a.Projection(c+new Vector2(0,2.5f),new Vector2(12,7));overlap.transform.SetParent(carriage.transform,true);
+            var leftShelf=Shelf(c.x-5,c.y+1.2f,7,0);leftShelf.transform.SetParent(carriage.transform,true);
+            var rightShelf=Shelf(c.x+5,c.y+.975f,7,2);rightShelf.transform.SetParent(carriage.transform,true);
+            var lp=b.Plate(c+new Vector2(-5,1.54f));lp.transform.SetParent(carriage.transform,true);
+            var rp=b.Plate(c+new Vector2(5,1.54f));rp.transform.SetParent(carriage.transform,true);
+            var stop=b.Solid("Furniture that stops only the enlarged reflection",c+new Vector2(6.4f,2.5f),new Vector2(.7f,2.2f),b.accent,Layers.Moving);stop.transform.SetParent(carriage.transform,true);
+            var stamp=b.Trigger("The reflected hotel's NEAR stamp",c+new Vector2(4.5f,2.8f),new Vector2(3,3.5f),new Color(.83f,.56f,.38f,.3f)).AddComponent<ReplicaDepthStamp>();stamp.transform.SetParent(carriage.transform,true);stamp.plane=2;
+            var brake=b.root.gameObject.AddComponent<OrbitBrake>();brake.left=lp;brake.right=rp;brake.rooms=rooms.ToArray();brake.stepOnRelease=true;
+            var reflection=a.Source(HostKind.Mirror,18.5f,14.8f,true);reflection.explicitAxis=true;reflection.mirrorAxis=22;
+            a.Cure(HostKind.Mirror,33,24.2f);
+            var luggage=b.Prop(c+new Vector2(2,1),new Vector2(.7f,.9f),1.2f);luggage.name="Room 101's traveling luggage";
+            b.Tip(new Vector2(35,7),"Change depth aboard the room. Its floor, doorways and furniture move around the same courtyard; you are not teleported.");
+            b.Tip(new Vector2(19,15),"Both balcony scales share one lift brake, but the hotel's stamp enlarges only your reflection. Use its furniture to align the mismatched bodies.");
+
+            // A closed wall inside the orbiting hotel's former exterior is a real second
+            // collision route. The final aperture is common to normal and inverse space.
+            const int width=14,height=11;var grid=new char[height][];for(int y=0;y<height;y++){grid[y]=new char[width];for(int x=0;x<width;x++)grid[y][x]='.';}
+            void Fill(int x0,int y0,int x1,int y1,char v){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)grid[y][x]=v;}
+            Fill(0,0,2,5,'A');Fill(3,1,6,7,'#');Fill(5,3,9,9,'#');Fill(10,5,13,10,'A');
+            Fill(4,1,5,1,'.');Fill(6,1,7,2,'.');Fill(8,1,9,4,'.');
+            var rows=new string[height];for(int y=0;y<height;y++)rows[height-1-y]=new string(grid[y]);
+            var wall=new GameObject("The hotel's inside-out back wall");wall.transform.SetParent(b.root);var interior=wall.AddComponent<TopologyRegion>();interior.Build(rows,b,new Vector2(34,23.4f));
+            b.Solid("Shared wall entry",new Vector2(35,23.2f),new Vector2(4,.4f),b.accent,Layers.Interior);
+            b.Solid("Shared wall exit",new Vector2(46,28.2f),new Vector2(4,.4f),b.accent,Layers.Interior);
+            Sill(34,23.4f,5);Sill(46,28.4f,5);a.Source(HostKind.InsideOut,35.5f,24.2f);a.Cure(HostKind.InsideOut,47,29.2f);
+            Sill(50,28.4f,5);a.Source(HostKind.Parallax,50,29.2f);a.Projection(new Vector2(54,30),new Vector2(12,8));Shelf(57,29.8f,10,0);a.Projection(new Vector2(61,32),new Vector2(13,9));Shelf(65,31.3f,10,2);
+            Sill(73,33.2f,9);a.Projection(new Vector2(70,34),new Vector2(13,8));a.Key(68,33);a.Nail(75,33.6f);
+
+            var returnObjects=new List<GameObject>();returnObjects.Add(Sill(58,33.2f,32));for(int i=0;i<6;i++)returnObjects.Add(Sill(28-i*5,24-i*3,5));
+            var finalFlat=a.Cure(HostKind.Parallax,72,34);returnObjects.Add(finalFlat.gameObject);
+            // The optional lobby chandelier is entered from its inside only after its
+            // actual winch aligns with the revealed return gallery.
+            var winchObj=b.Solid("Lobby chandelier maintenance winch",new Vector2(47,33),new Vector2(4,.4f),b.accent,Layers.Moving);var winch=winchObj.AddComponent<ApartmentLift>();winch.lower=new Vector2(47,33);winch.upper=new Vector2(31.5f,34.6f);winch.speed=4;
+            var winchHandle=b.Switch(new Vector2(47,34.1f),"CHANDLIER WINCH");winchHandle.transform.SetParent(winchObj.transform,true);winchHandle.Changed+=v=>winch.upperRequested=v;returnObjects.Add(winchObj);
+            var chandelier=b.Solid("Unreachable lobby chandelier seen from below",new Vector2(38,37),new Vector2(8,6),new Color(.73f,.63f,.39f));
+            b.Solid("Chandelier inner sill",new Vector2(37,34.55f),new Vector2(12,.5f),new Color(.53f,.83f,.78f),Layers.Interior);
+            Sill(32,34.8f,4);var chandelierTenant=a.Source(HostKind.InsideOut,33.1f,35.5f);chandelierTenant.gameObject.SetActive(false);
+            var dock=b.root.gameObject.AddComponent<DockedTenant>();dock.lift=winch;dock.tenant=chandelierTenant;
+            a.Cure(HostKind.InsideOut,30.8f,35.6f);a.Mercy(38,36);
+            foreach(var g in returnObjects)g.SetActive(false);
+            b.session.Turned+=()=>{foreach(var room in rooms)room.running=true;brake.released=true;foreach(var g in returnObjects)g.SetActive(true);};
+            a.Health(46,29.4f);a.Cure(HostKind.None,4,1,true);
+            b.Tip(new Vector2(68,34),"The facade is gone. Reach the lobby chandelier from behind, then land on the roof of a room that is still orbiting below you.");
         }
     }
 }
