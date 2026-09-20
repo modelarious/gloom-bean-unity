@@ -1,0 +1,45 @@
+{
+    "started":  "2026-09-20T15:37:38.1374086-06:00",
+    "id":  "Completion-L01-ink-footing",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-practice-60",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-practice-30",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-secret-60",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  94,
+                        "case":  "L19-secret-delay",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "3bd2020d812aa7ff48d2b0085d185f2cf5a759f10d80cb471fafad44af72d8f4",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "a895e68b17d1bd87e4abf89963b67e53585f551c75236ff2e8a29cdfaa99afe0",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "7e3456582477a63fa11dfb07976afedc72309b97",
+    "finished":  "2026-09-20T15:39:00.1222301-06:00"
+}

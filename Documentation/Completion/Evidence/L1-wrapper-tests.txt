@@ -1,0 +1,35 @@
+PASS route GB-L01 -> Parish
+PASS route GB-L02 -> Parish
+PASS route GB-L03 -> Parish
+PASS route GB-L04 -> Parish
+PASS route GB-L05 -> Orchard
+PASS route GB-L06 -> Orchard
+PASS route GB-L07 -> Orchard
+PASS route GB-L08 -> Orchard
+PASS route GB-L09 -> City
+PASS route GB-L10 -> City
+PASS route GB-L11 -> City
+PASS route GB-L12 -> City
+PASS route GB-L13 -> Fall
+PASS route GB-L14 -> Fall
+PASS route GB-L15 -> Fall
+PASS route GB-L16 -> Fall
+PASS route GB-L17 -> Empyrean
+PASS route GB-L18 -> Empyrean
+PASS route GB-L19 -> Empyrean
+PASS route GB-L20 -> Empyrean
+PASS boss 1
+PASS boss 2
+PASS boss 3
+PASS boss 4
+PASS boss 5
+PASS zero-Mercy boundary is not omitted
+PASS practice secret cadence
+PASS invalid combination -Suite City -Route GB-L17
+PASS invalid combination -Suite Campaign -Route W5
+PASS invalid combination -Suite Empyrean -Route GB-L19 -FinalPair echo-ink
+PASS invalid combination -Suite Empyrean -Route GB-B5 -Practice -RequireEarned
+PASS invalid combination -Suite Empyrean -Route GB-L19 -Practice -SaveSeed unused.json
+PASS invalid combination -Suite Campaign -Route GB-L21
+PASS independent mechanics remains supported
+VERIFY_WRAPPER_TESTS_PASS 34
