@@ -113,6 +113,12 @@ namespace GloomBean.Campaign
             bool cutEchoThread=host.Cure(HostKind.Marionette);
             C("cure.echo-thread-cut-preserves-unchanged-footprint",cutEchoThread&&host.Has(HostKind.Echo)&&!host.Has(HostKind.Marionette)&&Mathf.Abs(actor.Height-beforeCutHeight)<.001f);
 
+            yield return Arena();var overlap=a.Projection(new Vector2(600,4),new Vector2(8,12));host.Acquire(HostKind.Parallax);var planeForm=host.Form<ParallaxForm>();planeForm.StepPlane(-1);
+            var wrong=a.Depth(new Vector2(600,2),new Vector2(4,.4f),1);wrong.gameObject.AddComponent<OneWaySurface>();actor.Body.position=new Vector2(600,4);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(80);
+            C("parallax.foreign-one-way-floor-is-not-solid",actor.Feet.y<.2f&&actor.Grounded,actor.Body.position+" effectorMask="+wrong.GetComponent<PlatformEffector2D>().useColliderMask);
+            wrong.SetPlane(0);actor.Body.position=new Vector2(600,4);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(80);
+            C("parallax.selected-one-way-floor-supports-body",actor.Grounded&&actor.Feet.y>2&&actor.Feet.y<2.3f,actor.Body.position.ToString());
+
             yield return Arena();var near=b.Slider(new Vector2(602,2),new Vector2(618,2),new Vector2(2,.4f),2);var far=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);near.gameObject.AddComponent<TemporalBody>();far.gameObject.AddComponent<TemporalBody>();near.paused=far.paused=true;
             host.Acquire(HostKind.Censer);yield return Steps(200);float nx=near.transform.position.x,fx=far.transform.position.x;near.paused=far.paused=false;yield return Steps(60);
             C("censer.local-not-global-time",far.transform.position.x-fx>1.8f&&near.transform.position.x-nx<1.5f,"near="+(near.transform.position.x-nx)+" far="+(far.transform.position.x-fx));
