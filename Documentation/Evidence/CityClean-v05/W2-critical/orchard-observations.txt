@@ -1,0 +1,356 @@
+BEGIN GB-L05 Pear Tree Gallows
+PASS GB-L05 earned intra-world stage selection | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L05 walk 8 | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 melt through changed body footprint | (7.86, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 19 | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 23.35 | (23.17, -1.84) feet=-2.00 hp=6
+PASS GB-L05 conserved plug seals actual drain | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 flow costs body volume | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 walk 26 | (25.79, 4.12) feet=3.96 hp=6
+PASS GB-L05 diverted wax physically rises | (25.79, 4.12) feet=3.96 hp=6
+PASS GB-L05 walk 30 | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 Wax source acquired | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 reform with conserved volume | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 land in pear cage | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 walk 46.5 | (46.31, 3.70) feet=3.04 hp=6
+PASS GB-L05 jump onto dynamic support 53 | (52.76, 4.05) feet=3.39 hp=6
+PASS GB-L05 walk 63 | (62.79, 3.71) feet=3.05 hp=6
+PASS GB-L05 jump onto dynamic support 70 | (69.75, 4.06) feet=3.39 hp=6
+PASS GB-L05 walk 80 | (79.79, 3.71) feet=3.05 hp=6
+PASS GB-L05 jump onto dynamic support 87 | (86.75, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 93 | (92.78, 3.87) feet=3.21 hp=6
+PASS GB-L05 physical pear key | (92.78, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 96.6 | (96.40, 3.87) feet=3.21 hp=6
+PASS GB-L05 ripening Turn | (96.41, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 66 | (66.21, 0.67) feet=0.01 hp=6
+PASS GB-L05 drop between boughs to the maintenance return | (66.21, 0.67) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (66.20, 0.66) feet=0.00 hp=6
+PASS GB-L05 melt through changed body footprint | (66.17, 0.16) feet=0.00 hp=6
+EVENT t=35.87 fruit-burst Ripening pear counterweight
+EVENT t=35.87 fruit-burst Ripening pear counterweight
+EVENT t=35.87 fruit-burst Ripening pear counterweight
+PASS GB-L05 walk 30 | (30.03, 0.17) feet=0.01 hp=6
+PASS GB-L05 liquid return passes beneath the sagging bough | (30.03, 0.17) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (30.03, 0.17) feet=0.01 hp=6
+PASS GB-L05 reform with conserved volume | (30.03, 0.67) feet=0.01 hp=6
+PASS GB-L05 walk 20 | (20.20, 0.67) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (17.39, 0.67) feet=0.01 hp=6
+PASS GB-L05 melt through changed body footprint | (17.39, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 5 | (4.90, 0.17) feet=-0.58 hp=6
+PASS GB-L05 walk 2 | (3.19, 0.75) feet=0.00 hp=6
+PASS GB-L05 complete actual stage | (3.19, 0.75) feet=0.00 hp=6
+PASS GB-L05 clear persists | (3.19, 0.75) feet=0.00 hp=6
+PASS GB-L05 Mercy remains optional | (3.19, 0.75) feet=0.00 hp=6
+BEGIN GB-L06 Kitchen of the Unfinished Feast
+PASS GB-L06 earned intra-world stage selection | (2.00, 2.76) feet=2.01 hp=6
+PASS GB-L06 walk 16 | (15.80, 2.76) feet=2.01 hp=6
+PASS GB-L06 required tenant present: Gullet | (15.80, 2.76) feet=2.01 hp=6
+PASS GB-L06 focus Gullet | (15.80, 2.76) feet=2.01 hp=6
+EVENT t=48.13 terrain-swallowed GB-L06-tile-16-1.5
+PASS GB-L06 swallow an actual structural tile | (15.81, 2.72) feet=1.97 hp=6
+PASS GB-L06 fall through actual removed floor | (15.81, -1.25) feet=-2.00 hp=6
+PASS GB-L06 walk 25.5 | (25.30, -1.25) feet=-2.00 hp=6
+PASS GB-L06 required tenant present: Gullet | (25.30, -1.25) feet=-2.00 hp=6
+PASS GB-L06 focus Gullet | (25.30, -1.25) feet=-2.00 hp=6
+EVENT t=50.47 terrain-rehomed GB-L06-tile-16-1.5
+PASS GB-L06 rehome the same structural tile | (25.34, -1.25) feet=-2.00 hp=6
+PASS GB-L06 real grease lands in relocated runway's dish | (25.34, -1.25) feet=-2.00 hp=6
+PASS GB-L06 jump 28 / -1 peak 0.37 | (27.78, -0.25) feet=-1.00 hp=6
+PASS GB-L06 jump onto dynamic support 33 | (32.75, -0.25) feet=-1.00 hp=6
+PASS GB-L06 jump into the steam column | (36.03, 3.34) feet=2.59 hp=6
+PASS GB-L06 steam carries the Host through the pantry shaft | (36.73, 8.32) feet=7.57 hp=6
+PASS GB-L06 walk 42 | (41.80, 8.75) feet=8.00 hp=6
+PASS GB-L06 land at high serving counter | (41.80, 8.75) feet=8.00 hp=6
+PASS GB-L06 walk 44.5 | (44.30, 8.40) feet=7.65 hp=6
+PASS GB-L06 reach kitchen lower counter | (44.48, 5.75) feet=5.00 hp=6
+PASS GB-L06 walk 43.3 | (43.50, 5.57) feet=4.82 hp=6
+PASS GB-L06 service floor | (43.45, 3.75) feet=3.00 hp=6
+PASS GB-L06 walk 46 | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 votive source combines Wax with Gullet | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 required tenant present: Wax | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 focus Wax | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 Wax source acquired | (45.81, 3.75) feet=3.00 hp=6
+PASS GB-L06 melt through changed body footprint | (45.83, 3.16) feet=3.00 hp=6
+PASS GB-L06 walk 57 | (57.22, 3.16) feet=3.00 hp=6
+PASS GB-L06 Wax source acquired | (57.22, 3.16) feet=3.00 hp=6
+PASS GB-L06 reform with conserved volume | (57.22, 3.75) feet=3.00 hp=6
+PASS GB-L06 walk 64 | (63.79, 0.75) feet=0.00 hp=6
+PASS GB-L06 jump 67 / 1.8 peak 2.37 | (66.79, 2.55) feet=1.80 hp=6
+PASS GB-L06 walk 68.2 | (68.00, 2.55) feet=1.80 hp=6
+PASS GB-L06 jump 72 / 3.6 peak 4.17 | (71.79, 4.35) feet=3.60 hp=6
+PASS GB-L06 walk 73.2 | (73.00, 4.35) feet=3.60 hp=6
+PASS GB-L06 jump 77 / 5.4 peak 5.97 | (76.79, 6.15) feet=5.40 hp=6
+PASS GB-L06 walk 78.2 | (78.00, 6.15) feet=5.40 hp=6
+PASS GB-L06 jump 82 / 7.2 peak 7.97 | (81.78, 7.95) feet=7.20 hp=6
+PASS GB-L06 physical kitchen key | (81.78, 7.95) feet=7.20 hp=6
+PASS GB-L06 walk 83.6 | (83.39, 7.95) feet=7.20 hp=6
+PASS GB-L06 hatches reverse | (83.40, 7.95) feet=7.20 hp=6
+PASS GB-L06 walk 85.2 | (85.00, 7.95) feet=7.20 hp=6
+PASS GB-L06 jump 88 / 9 peak 9.77 | (87.79, 9.75) feet=9.00 hp=6
+PASS GB-L06 jump 86 / 10.8 peak 11.37 | (86.21, 11.56) feet=10.81 hp=6
+PASS GB-L06 walk -2 | (-1.82, 11.42) feet=10.67 hp=6
+PASS GB-L06 return gallery descends to entry | (-3.15, 2.75) feet=2.00 hp=6
+PASS GB-L06 walk 2 | (0.86, 2.75) feet=2.00 hp=6
+PASS GB-L06 complete actual stage | (0.86, 2.75) feet=2.00 hp=6
+PASS GB-L06 clear persists | (0.86, 2.75) feet=2.00 hp=6
+PASS GB-L06 Mercy remains optional | (0.86, 2.75) feet=2.00 hp=6
+BEGIN GB-L07 The Saint's Irrigation Ditch
+PASS GB-L07 earned intra-world stage selection | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L07 walk 10 | (9.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 required tenant present: Root | (9.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 focus Root | (9.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 Root acquired before soil route | (9.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (9.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (10.00, -4.00) | (9.80, 0.76) feet=0.01 hp=6
+TRACE root tip=(18.06, -3.98) target=(20.00, -4.00)
+PASS GB-L07 steer root to (20.00, -4.00) | (9.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (20.00, 1.00) | (9.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (24.00, 1.00) | (9.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 body follows root route into exit pocket | (23.89, 1.00) feet=0.25 hp=6
+PASS GB-L07 root arrival has full body clearance | (23.89, 1.00) feet=0.25 hp=6
+PASS GB-L07 walk 34 | (33.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 required tenant present: Root | (33.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 focus Root | (33.78, 0.76) feet=0.01 hp=6
+PASS GB-L07 required tenant present: Root | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 focus Root | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 Root acquired before soil route | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (34.00, -4.80) | (33.80, 0.76) feet=0.01 hp=6
+TRACE root tip=(42.00, -4.78) target=(44.00, -4.80)
+PASS GB-L07 steer root to (44.00, -4.80) | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (44.00, 1.00) | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 steer root to (49.00, 1.00) | (33.80, 0.76) feet=0.01 hp=6
+PASS GB-L07 body follows root route into exit pocket | (48.83, 1.00) feet=0.25 hp=6
+PASS GB-L07 root arrival has full body clearance | (48.83, 1.00) feet=0.25 hp=6
+PASS GB-L07 walk 53 | (52.81, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (52.81, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (52.81, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (52.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (52.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (53.00, -4.00) | (52.82, 0.75) feet=0.00 hp=6
+TRACE root tip=(60.99, -3.97) target=(64.00, -4.00)
+PASS GB-L07 steer root to (64.00, -4.00) | (52.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (64.00, 1.00) | (52.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 body follows root route into exit pocket | (64.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 root arrival has full body clearance | (64.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 walk 65 | (64.80, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Gullet | (64.80, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Gullet | (64.81, 0.75) feet=0.00 hp=6
+EVENT t=108.78 terrain-swallowed GB-L07-tile-67-0.65
+PASS GB-L07 swallow an actual structural tile | (64.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 removing real drain terrain dries the used seam | (64.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 walk 70 | (69.80, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (69.80, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (69.80, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (69.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (69.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (70.00, -4.00) | (69.82, 0.75) feet=0.00 hp=6
+TRACE root tip=(78.00, -3.97) target=(81.00, -4.00)
+PASS GB-L07 steer root to (81.00, -4.00) | (69.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (81.00, 1.00) | (69.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (85.00, 1.00) | (69.82, 0.75) feet=0.00 hp=6
+PASS GB-L07 body follows root route into exit pocket | (84.83, 1.00) feet=0.25 hp=6
+PASS GB-L07 root arrival has full body clearance | (84.83, 1.00) feet=0.25 hp=6
+PASS GB-L07 jump 90 / 2 peak 2.45 | (89.79, 2.75) feet=2.00 hp=6
+PASS GB-L07 jump 94 / 4 peak 4.37 | (93.79, 4.75) feet=4.00 hp=6
+PASS GB-L07 jump onto dynamic support 99 | (98.76, 6.75) feet=6.00 hp=6
+PASS GB-L07 irrigation key | (98.76, 6.75) feet=6.00 hp=6
+PASS GB-L07 walk 105.6 | (105.39, 6.75) feet=6.00 hp=6
+PASS GB-L07 reverse local pump | (105.41, 6.75) feet=6.00 hp=6
+PASS GB-L07 reversed flow restores the drained return seam | (105.41, 6.75) feet=6.00 hp=6
+PASS GB-L07 walk 85 | (85.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (85.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (85.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (85.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (85.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (81.00, 1.00) | (85.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (81.00, -4.00) | (85.18, 0.75) feet=0.00 hp=6
+TRACE root tip=(72.94, -3.97) target=(70.00, -4.00)
+PASS GB-L07 steer root to (70.00, -4.00) | (85.18, 0.75) feet=0.00 hp=6
+EVENT t=133.00 pump 1
+PASS GB-L07 steer root to (70.00, 1.00) | (85.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 body follows root route into exit pocket | (70.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 root arrival has full body clearance | (70.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 walk 64 | (64.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (64.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (64.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (64.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (64.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (64.00, -4.00) | (64.18, 0.75) feet=0.00 hp=6
+TRACE root tip=(55.94, -3.97) target=(53.00, -4.00)
+PASS GB-L07 steer root to (53.00, -4.00) | (64.18, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (53.00, 1.00) | (64.18, 0.75) feet=0.00 hp=6
+EVENT t=143.01 pump 0
+PASS GB-L07 body follows root route into exit pocket | (53.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 root arrival has full body clearance | (53.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 walk 48.5 | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (44.00, 1.00) | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (44.00, -4.80) | (48.69, 0.75) feet=0.00 hp=6
+TRACE root tip=(35.94, -4.78) target=(34.00, -4.80)
+PASS GB-L07 steer root to (34.00, -4.80) | (48.69, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (34.00, 1.00) | (48.69, 0.75) feet=0.00 hp=6
+EVENT t=153.01 pump 1
+PASS GB-L07 body follows root route into exit pocket | (34.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 root arrival has full body clearance | (34.00, 0.89) feet=0.14 hp=6
+PASS GB-L07 walk 24 | (24.21, 0.75) feet=0.00 hp=6
+PASS GB-L07 required tenant present: Root | (24.21, 0.75) feet=0.00 hp=6
+PASS GB-L07 focus Root | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 Root acquired before soil route | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 grow from adjacent wet substrate | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (20.00, 1.00) | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (20.00, -4.00) | (24.19, 0.75) feet=0.00 hp=6
+TRACE root tip=(19.40, -3.90) target=(10.00, -4.00)
+TRACE root tip=(19.40, -3.90) target=(10.00, -4.00)
+EVENT t=163.02 pump 0
+TRACE root tip=(18.27, -3.91) target=(10.00, -4.00)
+TRACE root tip=(10.22, -4.00) target=(10.00, -4.00)
+PASS GB-L07 steer root to (10.00, -4.00) | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 steer root to (10.00, 1.00) | (24.19, 0.75) feet=0.00 hp=6
+PASS GB-L07 body follows root route into exit pocket | (10.00, 0.83) feet=0.08 hp=6
+PASS GB-L07 root arrival has full body clearance | (10.00, 0.83) feet=0.08 hp=6
+PASS GB-L07 walk 2 | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L07 complete actual stage | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L07 clear persists | (3.15, 0.75) feet=0.00 hp=6
+PASS GB-L07 Mercy remains optional | (3.15, 0.75) feet=0.00 hp=6
+BEGIN GB-L08 The Garden of No Seasons
+PASS GB-L08 earned intra-world stage selection | (2.00, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 9 | (8.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (8.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 melt through changed body footprint | (8.87, 0.17) feet=0.01 hp=6
+PASS GB-L08 walk 19 | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L08 reform with conserved volume | (19.22, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 20 | (19.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 30.2 | (29.98, 0.76) feet=0.01 hp=6
+PASS GB-L08 jump onto dynamic support 34 | (33.76, 1.35) feet=0.60 hp=6
+PASS GB-L08 walk 34.8 | (34.58, 1.35) feet=0.60 hp=6
+PASS GB-L08 jump onto dynamic support 39 | (38.77, 0.81) feet=0.06 hp=6
+PASS GB-L08 walk 43 | (42.79, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Gullet | (42.79, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Gullet | (42.79, 0.75) feet=0.00 hp=6
+EVENT t=179.03 terrain-swallowed GB-L08-tile-44.5--0.5
+PASS GB-L08 swallow an actual structural tile | (42.81, 0.71) feet=-0.04 hp=6
+PASS GB-L08 pantry catches the displaced floor | (42.81, -1.19) feet=-1.94 hp=6
+PASS GB-L08 jump 45.5 / -0.7 peak 0.42 | (45.29, 0.05) feet=-0.70 hp=6
+PASS GB-L08 jump onto dynamic support 49 | (48.76, 0.75) feet=0.00 hp=6
+PASS GB-L08 walk 55 | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Root | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Root | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Root | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Root | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 Root acquired before soil route | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 grow from adjacent wet substrate | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (55.00, -4.00) | (54.80, 0.75) feet=0.00 hp=6
+TRACE root tip=(63.06, -3.98) target=(65.00, -4.00)
+PASS GB-L08 steer root to (65.00, -4.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (65.00, 1.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (65.50, 1.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 body follows root route into exit pocket | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 root arrival has full body clearance | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 required tenant present: Gullet | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 focus Gullet | (65.30, 0.93) feet=0.18 hp=6
+PASS GB-L08 required tenant present: Gullet | (65.30, 0.93) feet=0.18 hp=6
+PASS GB-L08 focus Gullet | (65.30, 0.93) feet=0.18 hp=6
+EVENT t=189.37 terrain-rehomed GB-L08-tile-44.5--0.5
+PASS GB-L08 rehome the same structural tile | (65.31, 0.86) feet=0.11 hp=6
+PASS GB-L08 jump onto dynamic support 69 | (68.75, 1.75) feet=1.00 hp=6
+PASS GB-L08 jump onto dynamic support 74 | (73.75, 0.76) feet=0.01 hp=6
+PASS GB-L08 jump onto dynamic support 78 | (77.75, 2.40) feet=1.65 hp=6
+PASS GB-L08 walk 79.3 | (79.09, 2.40) feet=1.65 hp=6
+PASS GB-L08 jump onto dynamic support 84 | (83.77, 2.62) feet=1.87 hp=6
+PASS GB-L08 walk 85.3 | (85.09, 2.63) feet=1.88 hp=6
+PASS GB-L08 jump onto dynamic support 90 | (89.76, 2.84) feet=2.09 hp=6
+PASS GB-L08 walk 91.3 | (91.08, 2.84) feet=2.09 hp=6
+PASS GB-L08 jump onto dynamic support 96 | (95.77, 1.05) feet=0.30 hp=6
+PASS GB-L08 walk 97.3 | (97.10, 1.05) feet=0.30 hp=6
+PASS GB-L08 jump onto dynamic support 101 | (100.76, 2.75) feet=2.00 hp=6
+PASS GB-L08 jump 105 / 4 peak 4.37 | (104.78, 4.75) feet=4.00 hp=6
+PASS GB-L08 walk 106.8 | (106.58, 4.75) feet=4.00 hp=6
+PASS GB-L08 season key | (106.58, 4.75) feet=4.00 hp=6
+PASS GB-L08 jump onto dynamic support 113 | (112.76, 6.75) feet=6.00 hp=6
+PASS GB-L08 walk 115.6 | (115.41, 6.75) feet=6.00 hp=6
+PASS GB-L08 bands drift after the Turn | (115.42, 6.75) feet=6.00 hp=6
+PASS GB-L08 walk 104 | (104.20, 4.76) feet=4.01 hp=6
+PASS GB-L08 jump onto dynamic support 96 | (96.25, 3.06) feet=2.31 hp=6
+PASS GB-L08 jump onto dynamic support 90 | (90.23, 4.08) feet=3.33 hp=6
+PASS GB-L08 jump onto dynamic support 84 | (84.24, 4.15) feet=3.40 hp=6
+PASS GB-L08 jump onto dynamic support 78 | (78.25, 3.30) feet=2.55 hp=6
+PASS GB-L08 jump onto dynamic support 74 | (74.16, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 69 | (69.24, 1.75) feet=1.00 hp=6
+PASS GB-L08 jump onto dynamic support 65.5 | (65.53, 0.83) feet=0.08 hp=6
+PASS GB-L08 required tenant present: Root | (65.53, 0.83) feet=0.08 hp=6
+PASS GB-L08 focus Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 required tenant present: Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 focus Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 Root acquired before soil route | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 grow from adjacent wet substrate | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 steer root to (65.00, -4.00) | (65.53, 0.80) feet=0.05 hp=6
+TRACE root tip=(64.88, -3.88) target=(55.00, -4.00)
+TRACE root tip=(61.61, -3.92) target=(55.00, -4.00)
+PASS GB-L08 steer root to (55.00, -4.00) | (65.53, 0.80) feet=0.05 hp=6
+TRACE root tip=(55.05, -1.20) target=(55.00, 1.00)
+TRACE root tip=(55.05, -1.20) target=(55.00, 1.00)
+PASS GB-L08 steer root to (55.00, 1.00) | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 body follows root route into exit pocket | (55.00, 0.89) feet=0.14 hp=6
+PASS GB-L08 root arrival has full body clearance | (55.00, 0.89) feet=0.14 hp=6
+PASS GB-L08 walk 47.8 | (47.99, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 41 | (41.23, 0.75) feet=0.00 hp=6
+PASS GB-L08 walk 39 | (39.21, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 34 | (34.24, 1.35) feet=0.60 hp=6
+PASS GB-L08 jump onto dynamic support 29 | (29.23, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 20 | (20.22, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 18.5 | (18.70, 0.76) feet=0.01 hp=6
+PASS GB-L08 return path needs a wax source | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 required tenant present: Wax | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 focus Wax | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 melt through changed body footprint | (18.69, 0.17) feet=0.01 hp=6
+PASS GB-L08 walk 5 | (5.06, 0.17) feet=-0.58 hp=6
+PASS GB-L08 walk 2 | (3.12, 0.75) feet=0.00 hp=6
+PASS GB-L08 complete actual stage | (3.12, 0.75) feet=0.00 hp=6
+PASS GB-L08 clear persists | (3.12, 0.75) feet=0.00 hp=6
+PASS GB-L08 Mercy remains optional | (3.12, 0.75) feet=0.00 hp=6
+BEGIN GB-B2 The Orchard Judge
+PASS GB-B2 earned intra-world stage selection | (3.00, 0.76) feet=0.01 hp=6
+PASS GB-B2 walk 9.5 | (9.29, 0.76) feet=0.01 hp=6
+PASS GB-B2 Judge wax source | (9.29, 0.76) feet=0.01 hp=6
+PASS GB-B2 walk 13 | (12.78, 0.67) feet=0.01 hp=6
+EVENT t=238.07 boss-phase The Orchard Judge:1
+PASS GB-B2 Judge act I: conserved mass balances the scale | (12.80, 0.75) feet=0.00 hp=6
+PASS GB-B2 walk 10 | (10.20, 0.75) feet=0.00 hp=6
+PASS GB-B2 Judge gullet source | (10.20, 0.75) feet=0.00 hp=6
+PASS GB-B2 walk 15.3 | (15.06, 0.75) feet=0.00 hp=3
+PASS GB-B2 jump 18 / 1.5 peak 2.34 | (17.79, 2.25) feet=1.50 hp=3
+PASS GB-B2 walk 20 | (19.81, 2.25) feet=1.50 hp=3
+PASS GB-B2 jump 23 / 0.6 peak 3.87 | (22.79, 1.35) feet=0.60 hp=3
+PASS GB-B2 required tenant present: Gullet | (22.79, 1.35) feet=0.60 hp=3
+PASS GB-B2 focus Gullet | (22.79, 1.35) feet=0.60 hp=3
+EVENT t=255.25 terrain-swallowed GB-B2-tile-26-0.1
+PASS GB-B2 swallow an actual structural tile | (22.79, 1.31) feet=0.56 hp=3
+EVENT t=255.87 boss-phase The Orchard Judge:2
+PASS GB-B2 Judge act II: unsupported mass falls | (22.00, 1.00) feet=0.25 hp=3
+PASS GB-B2 Judge arena transition does not refill health | (22.00, 1.00) feet=0.25 hp=3
+PASS GB-B2 walk 24 | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 required tenant present: Root | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 focus Root | (23.80, 0.76) feet=0.01 hp=3
+PASS GB-B2 Root acquired before soil route | (23.81, 0.76) feet=0.01 hp=3
+PASS GB-B2 grow from adjacent wet substrate | (23.81, 0.76) feet=0.01 hp=3
+PASS GB-B2 steer root to (24.00, -4.00) | (23.81, 0.76) feet=0.01 hp=3
+TRACE root tip=(30.99, -3.94) target=(37.00, -4.00)
+PASS GB-B2 steer root to (37.00, -4.00) | (25.56, 1.38) feet=0.63 hp=2
+PASS GB-B2 steer root to (37.00, 1.00) | (25.56, 1.38) feet=0.63 hp=2
+PASS GB-B2 body follows root route into exit pocket | (37.00, 0.89) feet=0.14 hp=2
+PASS GB-B2 root arrival has full body clearance | (37.00, 0.89) feet=0.14 hp=2
+EVENT t=264.59 boss-phase The Orchard Judge:3
+PASS GB-B2 walk 39 | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 Judge defeated through material systems | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 complete actual stage | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 clear persists | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 Orchard unlocks City | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 four Mercies cannot restore the ending | (38.00, 0.75) feet=0.00 hp=2
+PASS GB-B2 all Orchard stage clears survive reload | (38.00, 0.75) feet=0.00 hp=2

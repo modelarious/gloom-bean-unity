@@ -1,13 +1,9 @@
 {
   "schema_version": 1,
-  "tested_commit": "747f8ebcebb3a6769f684e8686649142730b971e",
+  "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "All four City courses normal/secret and Surveyor are individually input-proven. Fresh clone now prepared for earned W1->W2->W3 normal and 12-Mercy progression plus foundation, full mechanics, practice and unearned denial. No clean City PASS claimed until Reports/City-Clean-v05/runner.json completes.",
-  "active_job": {
-    "task": "GloomBean-Campaign-Acceptance",
-    "receipt": "Reports/City-Clean-v05/runner.json",
-    "state": "READY_NOT_STARTED"
-  },
+  "next_gate": "Continue preserved Fall work from 7b0fd1d: read latest Rain native failure and FallVerification.cs; finish L13 ordinary/secret return, then L14/L15/L16 and B4. City clean earned progression has passed; do not repeat City from stale context.",
+  "active_job": null,
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -17,6 +13,10 @@
     "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
   },
   "evidence_refs": [
+    {
+      "name": "Earned first three worlds clean native acceptance",
+      "path": "Documentation/Evidence/CityClean-v05/runner.json"
+    },
     {
       "name": "Latest full earned chapter regression",
       "path": "Documentation/Evidence/Continuity-Clean-e2/runner.json"
@@ -40,11 +40,9 @@
   },
   "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db",
   "latest_finished_job": {
-    "task": "GloomBean-Orchard-Clean-v04",
-    "receipt": "Documentation/Evidence/Continuity-Clean-e2/runner.json",
-    "raw_receipt": "Reports/Orchard-v04/Clean-continuity-e2/runner.json",
+    "receipt": "Documentation/Evidence/CityClean-v05/runner.json",
     "status": "PASS",
-    "finished": "2026-09-19T19:06:35.8180573-06:00"
+    "cases": 11
   },
   "continuity_tool_tests": {
     "passed": 15,
@@ -53,10 +51,6 @@
   },
   "remaining_game": {
     "unverified_full_levels": [
-      "GB-L09",
-      "GB-L10",
-      "GB-L11",
-      "GB-L12",
       "GB-L13",
       "GB-L14",
       "GB-L15",
@@ -67,7 +61,6 @@
       "GB-L20"
     ],
     "unverified_full_bosses": [
-      "GB-B3",
       "GB-B4",
       "GB-B5"
     ],

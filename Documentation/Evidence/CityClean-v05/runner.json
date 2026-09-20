@@ -1,0 +1,152 @@
+﻿{
+    "started":  "2026-09-19T20:34:40.0142347-06:00",
+    "atlas_source":  {
+                         "settings":  "552a717f21e59d1d7c65bde3cda9507b45601e50",
+                         "head":  "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
+                         "assets":  "3cdd18293431a24535a65eb4c1006d6c85c73c9a",
+                         "packages":  "3d7201db080528e09addee6e2cbe2cac9ae5461d"
+                     },
+    "phase":  "finished",
+    "foundation_source":  {
+                              "settings":  "552a717f21e59d1d7c65bde3cda9507b45601e50",
+                              "head":  "d3cea4cda3e5748ba5866c332b9f6994bd308643",
+                              "assets":  "80696c8af99c4e84732510c8ad23279e583e5c1d",
+                              "packages":  "3d7201db080528e09addee6e2cbe2cac9ae5461d"
+                          },
+    "status":  "PASS",
+    "finished":  "2026-09-19T20:48:29.0440730-06:00",
+    "cases":  [
+                  {
+                      "failed":  0,
+                      "route":  null,
+                      "exceptions":  0,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  70,
+                      "name":  "Foundation",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Foundation"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  null,
+                      "exceptions":  0,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  215,
+                      "name":  "Mechanics",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Mechanics"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W1",
+                      "exceptions":  null,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  138,
+                      "name":  "W1-critical",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Parish"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W1",
+                      "exceptions":  null,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  173,
+                      "name":  "W1-secrets",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Parish"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W2",
+                      "exceptions":  null,
+                      "parent":  "W1-critical",
+                      "exit":  0,
+                      "assertions":  318,
+                      "name":  "W2-critical",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Orchard"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W2",
+                      "exceptions":  null,
+                      "parent":  "W1-secrets",
+                      "exit":  0,
+                      "assertions":  374,
+                      "name":  "W2-secrets",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "Orchard"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W3",
+                      "exceptions":  null,
+                      "parent":  "W2-critical",
+                      "exit":  0,
+                      "assertions":  284,
+                      "name":  "W3-critical",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "City"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "W3",
+                      "exceptions":  null,
+                      "parent":  "W2-secrets",
+                      "exit":  0,
+                      "assertions":  327,
+                      "name":  "W3-secrets",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "City"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "GB-B3",
+                      "exceptions":  null,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  42,
+                      "name":  "Surveyor",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "City"
+                  },
+                  {
+                      "failed":  0,
+                      "route":  "GB-L09",
+                      "exceptions":  null,
+                      "parent":  null,
+                      "exit":  0,
+                      "assertions":  47,
+                      "name":  "City-practice",
+                      "expected_denial":  false,
+                      "status":  "PASS",
+                      "suite":  "City"
+                  },
+                  {
+                      "failed":  1,
+                      "route":  "W3",
+                      "exceptions":  null,
+                      "parent":  null,
+                      "exit":  1,
+                      "assertions":  0,
+                      "name":  "City-unearned-denied",
+                      "expected_denial":  true,
+                      "status":  "PASS",
+                      "suite":  "City"
+                  }
+              ]
+}
