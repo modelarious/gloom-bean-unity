@@ -1,18 +1,7 @@
 {
-  "id": "City-R06-interior-clearance",
+  "id": "City-R07-fresco-projection",
   "build": true,
   "cases": [
-    {
-      "name": "L09-critical",
-      "suite": "City",
-      "route": "GB-L09"
-    },
-    {
-      "name": "L09-secrets",
-      "suite": "City",
-      "route": "GB-L09",
-      "secrets": true
-    },
     {
       "name": "L10-critical",
       "suite": "City",
@@ -22,6 +11,17 @@
       "name": "L10-secrets",
       "suite": "City",
       "route": "GB-L10",
+      "secrets": true
+    },
+    {
+      "name": "L11-critical",
+      "suite": "City",
+      "route": "GB-L11"
+    },
+    {
+      "name": "L11-secrets",
+      "suite": "City",
+      "route": "GB-L11",
       "secrets": true
     },
     {

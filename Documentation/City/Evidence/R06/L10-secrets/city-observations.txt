@@ -1,0 +1,21 @@
+BEGIN GB-L10 The Street Behind the Wall
+PASS GB-L10 walk 17 | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 cherub opens the stone interior | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 jump 20 / 1 peak 2.37 | (19.79, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-L10 jump 22 / 2 peak 3.37 | (21.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L10 jump 24.2 / 3 peak 3.50 | (23.99, 3.76) feet=3.01 hp=6 twin=none
+PASS GB-L10 jump 25.6 / 5 peak 5.37 | (25.38, 5.75) feet=5.00 hp=6 twin=none
+PASS GB-L10 jump 27.5 / 6 peak 7.37 | (27.29, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L10 walk 30.25 | (30.05, 6.76) feet=6.01 hp=6 twin=none
+PASS GB-L10 jump 32.2 / 7 peak 8.37 | (31.99, 7.76) feet=7.01 hp=6 twin=none
+PASS GB-L10 jump 34.2 / 8 peak 9.37 | (33.98, 8.76) feet=8.01 hp=6 twin=none
+PASS GB-L10 jump 35.6 / 10 peak 10.37 | (35.38, 10.75) feet=10.00 hp=6 twin=none
+PHYSICAL shape=Center: (36.56, 10.76, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=InsideOut
+CONTACT Fresco stone Center: (37.50, 11.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Fresco stone Center: (36.50, 11.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Fresco stone Center: (36.50, 10.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (36.50, 9.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (37.50, 9.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (37.50, 10.50, 0.00), Extents: (0.50, 0.50, 0.00)
+FAIL GB-L10 jump 37.5 / 11 peak 11.50 | (36.56, 10.76) feet=10.01 hp=6 twin=none
+FAIL GB-L10 stage cleared by actual return or boss solution | (36.56, 10.76) feet=10.01 hp=6 twin=none
