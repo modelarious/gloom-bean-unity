@@ -21,6 +21,7 @@ try {
   if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
   if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}
   if($c.railProbe){$flags+=' -gb-rail-probe 1'}
+  if($c.noInkControl){$flags+=' -gb-scripture-no-ink 1'}
   $proc=Start-Process "$p\Builds\Windows\GloomBean.exe" -ArgumentList $flags -PassThru
   $jobs+=@{process=$proc;directory=$out;case=$c;started=Get-Date}
  }

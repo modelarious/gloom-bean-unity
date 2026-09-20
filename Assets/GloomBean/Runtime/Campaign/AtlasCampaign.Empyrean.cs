@@ -98,7 +98,7 @@ namespace GloomBean.Campaign
             comma.GetComponent<Rigidbody2D>().constraints=RigidbodyConstraints2D.FreezeRotation;comma.GetComponent<Rigidbody2D>().linearDamping=2;
             b.Solid("Left comma stop",new Vector2(16.6f,5.4f),new Vector2(.25f,.8f));b.Solid("Right comma stop",new Vector2(23.3f,5.4f),new Vector2(.25f,.8f));
             for(int k=0;k<2;k++)PrimitiveArt.Label(k==0?"FIVE WORDS":"THREE WORDS",b.root,new Vector2(19.5f+k*3,4.3f),.06f);
-            var words=new List<Transform>();for(int k=0;k<6;k++){
+            var words=new List<Transform>();for(int k=0;k<5;k++){
                 var word=a.Ledge(27+k%5*4,9.4f-k/5*2.2f,3);word.name="Scrolling word "+k;word.AddComponent<OneWaySurface>();word.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
                 PrimitiveArt.Label(new[]{"WE","WERE","HERE","BEFORE","YOU","RETURN"}[k],word.transform,(Vector2)word.transform.position+Vector2.up*.6f,.07f);words.Add(word.transform);
             }

@@ -39,7 +39,7 @@ namespace GloomBean.Campaign
         }
         public InputFrame FilterLeading(InputFrame f,float dt)
         {
-            if(f.action)Synchronize();clock+=dt;InputFrame original=f;f.action=f.alternate=false;
+            if(f.action&&host.Primary==Kind)Synchronize();clock+=dt;InputFrame original=f;f.action=f.alternate=false;
             if(Echo){if(!Echo.Body.simulated)Echo.Body.simulated=true;Echo.Step(f,dt);}
             history.Enqueue(new Recorded{time=clock,frame=original});
             if(history.Count>0&&history.Peek().time<=clock-2+.0001f)return history.Dequeue().frame;

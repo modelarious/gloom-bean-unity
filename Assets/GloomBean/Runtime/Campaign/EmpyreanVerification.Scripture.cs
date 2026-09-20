@@ -81,13 +81,23 @@ namespace GloomBean.Campaign
             yield return FreshAscent(48,9.6f,12.8f);if(stopped)yield break;
             yield return Jump(36,9.6f);yield return ReturnGap(30);yield return ReturnGap(24);yield return ReturnGap(18);yield return Walk(17,true);yield return RunArc(10,8);yield return Walk(2);
         }
+        IEnumerator ScriptureNoInkControl()
+        {
+            Note("CAUSAL CONTROL ONLY: same physical opening, recording disabled with its real action button.");
+            yield return Walk(8);yield return Press(new InputFrame{action=true});var ink=host.Form<InkForm>();Check("real input stops recording",ink!=null&&!ink.Recording);
+            yield return Walk(17);yield return Wait("control reaches the original lower margin",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,5);if(stopped)yield break;
+            float peak=actor.Feet.y,end=Time.time+4,lastJump=-99;bool inkSupport=false;
+            input.rule=()=>{bool edge=actor.Grounded&&Time.fixedTime-lastJump>.8f;if(edge)lastJump=Time.fixedTime;return new InputFrame{jump=edge,jumpHeld=true,move=new Vector2(Mathf.Clamp((15.8f-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.2f,-1,1),0)};};
+            while(Live&&Time.time<end){yield return Tick();peak=Mathf.Max(peak,actor.Feet.y);inkSupport|=actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>();}
+            input.rule=null;input.frame=default;Check("without the recorded fall ordinary jumps do not reach the comma",peak<4.5f&&!inkSupport&&session.Phase==RunPhase.Explore&&!session.HasKey);Note("CONTROL max feet="+peak);Snapshot("no-ink-control");
+        }
         IEnumerator ScriptureRoute(bool secret)
         {
             yield return Walk(8);Check("scribe leech supplies actual Ink",host.Has(HostKind.Ink));yield return Walk(17);
             yield return Wait("land in the bottom margin",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,5);yield return Pause(1.15f);
             yield return InkLanding(14.8f,2.5f,4.1f);if(stopped)yield break;yield return InkLanding(13.8f,4,7.8f);if(stopped)yield break;
             yield return Jump(17.6f,5);Check("reach punctuation desk through authored ink",actor.Feet.y>4.7f);if(stopped)yield break;
-            yield return Walk(18.2f);var comma=session.GetComponentInChildren<PunctuationCart>();yield return Press(new InputFrame{interact=true});Check("grip physical comma",comma.Holder==actor);yield return Walk(21.5f);yield return Pause(.4f);yield return Press(new InputFrame{interact=true});
+            yield return Walk(18.2f);var comma=session.GetComponentInChildren<PunctuationCart>();var beforeWords=session.GetComponentInChildren<ScriptureLayout>();Check("unmoved comma leaves every word above the desk jump",beforeWords.wrap==5&&beforeWords.words.All(w=>w.GetComponent<Collider2D>().bounds.max.y>9));yield return Press(new InputFrame{interact=true});Check("grip physical comma",comma.Holder==actor);yield return Walk(21.5f);yield return Pause(.4f);yield return Press(new InputFrame{interact=true});
             var layout=session.GetComponentInChildren<ScriptureLayout>();yield return Wait("moved comma reflows actual words",()=>comma.Slot==1&&layout.wrap==3&&layout.Reflows>0,3);Snapshot("physical-line-wrap");
             if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return WordStep(31);yield return WordStep(35);yield return Jump(40,7.2f);
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));

@@ -58,6 +58,12 @@ namespace GloomBean.Campaign
             actor.Stepped+=observe;yield return Steps(220);actor.Stepped-=observe;
             C("echo.position-replay-not-just-velocity",comparisons>80&&replayError<.14f,"max error="+replayError+" over "+comparisons+" fixed-step comparisons");
 
+            yield return Arena();host.Acquire(HostKind.Echo);echo=host.Form<EchoForm>();echo.Leading=true;host.Acquire(HostKind.Molt,null,true);
+            input.frame=new InputFrame{move=Vector2.right};yield return Steps(40);var preservedLeadingBody=echo.Echo;
+            input.frame=new InputFrame{action=true,actionHeld=true};yield return Steps(1);input.frame=default;yield return Steps(2);
+            C("echo.leading-secondary-action-keeps-history-body",echo.Echo==preservedLeadingBody&&host.Husks.Count==0);
+            yield return Steps(130);C("echo.leading-secondary-action-is-delayed-not-lost",echo.Echo==preservedLeadingBody&&host.Husks.Count==1);
+
             yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();float inheritedMass=actor.Body.mass,inheritedHeight=actor.Height;
             host.Acquire(HostKind.Echo,null,true);echo=host.Form<EchoForm>();
             C("echo.inherits-core-dimensions-and-mass",Mathf.Abs(echo.Echo.Height-inheritedHeight)<.001f&&Mathf.Abs(echo.Echo.Body.mass-inheritedMass)<.001f&&echo.Echo.chargeDisabled,"height="+echo.Echo.Height+" mass="+echo.Echo.Body.mass);
