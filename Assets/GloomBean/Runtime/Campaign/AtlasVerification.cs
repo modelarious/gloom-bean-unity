@@ -66,14 +66,14 @@ namespace GloomBean.Campaign
 
             yield return Arena();b.Ramp(new Vector2(596,0),new Vector2(606,5));actor.Body.position=new Vector2(600,4);host.Acquire(HostKind.Ink);host.Acquire(HostKind.Shadow,null,true);yield return Steps(65);
             C("focus.fixture-is-an-actual-slope",actor.Grounded&&Mathf.Abs(actor.GroundNormal.x)>.12f);
-            input.frame=new InputFrame{alternate=true,move=Vector2.down};yield return Steps(1);input.frame=default;yield return Steps(3);
+            input.frame=new InputFrame{alternate=true,move=Vector2.down};yield return Steps(1);input.frame=new InputFrame{move=Vector2.down};yield return Steps(4);
             C("focus.chord-does-not-crouch-or-roll",host.Primary==HostKind.Ink&&!actor.Crouched&&actor.State!=MotionState.Roll&&actor.Height>1.4f);
-            input.frame=new InputFrame{move=Vector2.down};yield return Steps(5);C("focus.ordinary-down-still-rolls-positive-control",actor.Crouched&&actor.State==MotionState.Roll);
+            input.frame=default;yield return Steps(2);input.frame=new InputFrame{move=Vector2.down};yield return Steps(5);C("focus.ordinary-down-still-rolls-positive-control",actor.Crouched&&actor.State==MotionState.Roll);
 
             yield return Arena();a.Projection(new Vector2(600,3),new Vector2(8,8));host.Acquire(HostKind.Parallax);host.Acquire(HostKind.Ink,null,true);
-            input.frame=new InputFrame{alternate=true,move=Vector2.down};yield return Steps(1);input.frame=default;yield return Steps(4);
+            input.frame=new InputFrame{alternate=true,move=Vector2.down};yield return Steps(1);input.frame=new InputFrame{move=Vector2.down};yield return Steps(4);
             C("focus.chord-does-not-also-step-depth",host.Primary==HostKind.Parallax&&host.Form<ParallaxForm>().Plane==1&&!actor.Crouched);
-            input.frame=new InputFrame{move=Vector2.down};yield return Steps(30);C("focus.ordinary-down-still-steps-depth",host.Form<ParallaxForm>().Plane==0);
+            input.frame=default;yield return Steps(2);input.frame=new InputFrame{move=Vector2.down};yield return Steps(30);C("focus.ordinary-down-still-steps-depth",host.Form<ParallaxForm>().Plane==0);
 
             yield return Arena();host.Acquire(HostKind.Molt);host.Form<MoltForm>().Shed();float inheritedMass=actor.Body.mass,inheritedHeight=actor.Height;
             host.Acquire(HostKind.Echo,null,true);echo=host.Form<EchoForm>();

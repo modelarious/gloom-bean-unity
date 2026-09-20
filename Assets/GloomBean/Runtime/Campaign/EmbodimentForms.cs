@@ -8,7 +8,7 @@ namespace GloomBean.Campaign
     {
         struct Recorded {public float time;public InputFrame frame;public Vector2 p,v;}
         public bool Leading;
-        public ActorMotor Echo {get;private set;} readonly Queue<Recorded> history=new Queue<Recorded>();float clock;bool alive;
+        public ActorMotor Echo {get;private set;} readonly Queue<Recorded> history=new Queue<Recorded>();float clock;bool alive,focusChordHeld;
         public override HostKind Kind=>HostKind.Echo;
         public override string Help=>"Your corporeal echo replays inputs 2 seconds later. U re-synchronizes both timelines here.";
         public override string Status=>(Leading?"Body delay 2.00 s / ":"Echo delay 2.00 s / ")+history.Count+" recorded steps";
@@ -39,7 +39,7 @@ namespace GloomBean.Campaign
         }
         public InputFrame FilterLeading(InputFrame f,float dt)
         {
-            if(f.action&&host.Primary==Kind)Synchronize();clock+=dt;InputFrame original=f;if(host.Forms.Count>1&&f.alternate&&f.move.y<-.5f)f.move.y=0;f.action=f.alternate=false;
+            if(f.action&&host.Primary==Kind)Synchronize();clock+=dt;InputFrame original=f;if(f.move.y>=-.5f)focusChordHeld=false;if(host.Forms.Count>1&&f.alternate&&f.move.y<-.5f)focusChordHeld=true;if(focusChordHeld)f.move.y=0;f.action=f.alternate=false;
             if(Echo){if(!Echo.Body.simulated)Echo.Body.simulated=true;Echo.Step(f,dt);}
             history.Enqueue(new Recorded{time=clock,frame=original});
             if(history.Count>0&&history.Peek().time<=clock-2+.0001f)return history.Dequeue().frame;

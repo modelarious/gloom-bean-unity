@@ -22,18 +22,25 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
             input.rule=null;input.frame=default;Check("record a running arc to "+x,actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
         }
+        IEnumerator LowWritingArc()
+        {
+            if(stopped||!Live)yield break;yield return Walk(48,true);bool sent=false;float launch=0,end=Time.time+6;
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge){sent=true;launch=Time.fixedTime;}float dx=54.3f-actor.Body.position.x;return new InputFrame{jump=edge,jumpHeld=sent&&Time.fixedTime-launch<.14f,run=true,move=new Vector2(!actor.Grounded&&dx>1?1:Mathf.Clamp(dx*2-actor.Body.linearVelocity.x*.4f,-1,1),0)};};
+            while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-3)<.3f&&Mathf.Abs(actor.Body.position.x-54.3f)<.35f))yield return Tick();input.rule=null;input.frame=default;
+            Check("a short running leap writes a shallow reusable arc",actor.Grounded&&Mathf.Abs(actor.Feet.y-3)<.3f&&Mathf.Abs(actor.Body.position.x-54.3f)<.5f);Snapshot("shallow-writing-arc");
+        }
         IEnumerator SemicolonMercy()
         {
-            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return Walk(47.6f,true);yield return RunArc(55,3);if(stopped)yield break;yield return Pause(1.05f);
+            yield return Focus(HostKind.Ink);yield return Walk(42,true);yield return RunArc(47,5.2f);yield return LowWritingArc();if(stopped)yield break;yield return Pause(1.05f);
             var ink=host.Form<InkForm>();int attempts=0;
-            while(Live&&!stopped&&(actor.Feet.y<6.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))>13.7f)&&attempts++<6){
+            while(Live&&!stopped&&(Mathf.Abs(actor.GroundNormal.x)>.4f||Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))>13.7f)&&attempts++<6){
                 var points=new System.Collections.Generic.List<Vector2>();
                 foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<6.4f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 from=edge.transform.TransformPoint(edge.points[0]),to=edge.transform.TransformPoint(edge.points[1]);var tangent=to-from;
                     if(Mathf.Abs(tangent.x)<Mathf.Abs(tangent.y)*.44f)continue;
-                    for(int j=1;j<20;j++){var q=Vector2.Lerp(from,to,j*.05f);if(q.y>actor.Feet.y+.45f&&q.y<actor.Feet.y+2.05f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
+                    for(int j=1;j<20;j++){var q=Vector2.Lerp(from,to,j*.05f);if(q.y>actor.Feet.y+.12f&&q.y<actor.Feet.y+2.2f&&Mathf.Abs(q.x-actor.Body.position.x)<3)points.Add(q);}}
                 if(points.Count==0)foreach(var st in ink.Strokes)if(st)Note("INK INVENTORY mid="+st.Midpoint+" age="+st.age+" solid="+st.Solid+" bounds="+st.GetComponent<Collider2D>().bounds);
                 Check("a reachable sloping hardened arc exists",points.Count>0);if(stopped)yield break;
-                var point=points.OrderBy(q=>Vector2.Distance(q+Vector2.up*.75f,new Vector2(58.5f,18.1f))).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
+                var point=points.OrderByDescending(q=>q.y).First();Note("INK TARGET "+point);yield return InkLanding(point.x,point.y-.6f,point.y+1.6f);
             }
             Check("temporary ink brings body within the semicolon tether",actor.GroundCollider&&actor.GroundCollider.GetComponent<InkStroke>()&&Vector2.Distance(actor.Body.position,new Vector2(58.5f,18.1f))<14f);if(stopped)yield break;
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(58.5f,18.1f));yield return Pause(.08f);

@@ -25,7 +25,7 @@ namespace GloomBean.Campaign
         public readonly List<HostForm> Forms=new List<HostForm>();
         public readonly List<HuskBody> Husks=new List<HuskBody>();
         public readonly List<WaxPlug> Plugs=new List<WaxPlug>();
-        public float waxVolume=1; public int focus;
+        public float waxVolume=1; public int focus;bool focusChordHeld;
         public HostKind Primary=>Forms.Count==0?HostKind.None:Forms[Mathf.Clamp(focus,0,Forms.Count-1)].Kind;
         public event Action<HostKind> Acquired; public event Action<HostKind> Cured;
         public bool Has(HostKind kind)=>Forms.Exists(f=>f.Kind==kind);
@@ -99,7 +99,9 @@ namespace GloomBean.Campaign
         {
             var e=Form<EchoForm>();if(e!=null&&e.Leading)input=e.FilterLeading(input,dt);
             // Focus is a command chord, not simultaneous crouch, roll, or depth change.
-            if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;input.move.y=0;}
+            if(input.move.y>=-.5f)focusChordHeld=false;
+            if(Forms.Count>1&&input.alternate&&input.move.y<-.5f){focus=(focus+1)%Forms.Count;input.alternate=false;focusChordHeld=true;}
+            if(focusChordHeld)input.move.y=0;
 
             var depth=Form<ParallaxForm>();if(depth!=null){depth.ReadDepthInput(input.move.y,dt);input.move.y=0;}
             return input;
