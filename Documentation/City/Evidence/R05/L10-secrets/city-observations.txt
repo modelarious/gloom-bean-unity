@@ -1,0 +1,15 @@
+BEGIN GB-L10 The Street Behind the Wall
+PASS GB-L10 walk 17 | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 cherub opens the stone interior | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 jump 20 / 1 peak 2.37 | (19.79, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-L10 jump 22 / 2 peak 3.37 | (21.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L10 jump 24.2 / 3 peak 3.50 | (23.99, 3.76) feet=3.01 hp=6 twin=none
+PHYSICAL shape=Center: (24.56, 3.76, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=InsideOut
+CONTACT Complement boundary Center: (24.50, 2.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (25.50, 2.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Fresco stone Center: (24.50, 4.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (25.50, 4.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Fresco stone Center: (24.50, 3.50, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (25.50, 3.50, 0.00), Extents: (0.50, 0.50, 0.00)
+FAIL GB-L10 jump 25.6 / 5 peak 3.50 | (24.56, 3.75) feet=3.00 hp=6 twin=none
+FAIL GB-L10 stage cleared by actual return or boss solution | (24.56, 3.75) feet=3.00 hp=6 twin=none

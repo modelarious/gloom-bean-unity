@@ -1,0 +1,55 @@
+BEGIN GB-L09 Tenement of Two Suns
+PASS GB-L09 walk 7 | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 vanity nun creates independently colliding twin | (6.80, 0.76) feet=0.01 hp=6 twin=(35.20, 0.76)
+PASS GB-L09 jump 10.5 / 2 peak 2.37 | (10.28, 2.75) feet=2.00 hp=6 twin=(31.72, 2.75)
+PASS GB-L09 jump 13 / 2 peak 4.37 | (12.79, 2.75) feet=2.00 hp=6 twin=(29.14, 4.53)
+PASS GB-L09 reflection lands after its cabinet detour | (12.79, 2.75) feet=2.00 hp=6 twin=(29.14, 2.81)
+PASS GB-L09 jump 16 / 4 peak 4.37 | (15.78, 4.75) feet=4.00 hp=6 twin=(26.15, 4.76)
+PASS GB-L09 two bodies hold the balcony scales | (15.78, 4.75) feet=4.00 hp=6 twin=(26.15, 4.76)
+PASS GB-L09 walk 14.1 | (14.29, 4.75) feet=4.00 hp=6 twin=(27.64, 4.76)
+PASS GB-L09 jump 10 / 6 peak 6.37 | (10.21, 6.75) feet=6.00 hp=6 twin=(31.72, 6.75)
+PASS GB-L09 physical shutter displaces the twin onto off-register scale | (10.21, 6.75) feet=6.00 hp=6 twin=(33.69, 6.76)
+PASS GB-L09 shutter completes an actual movement | (10.21, 6.75) feet=6.00 hp=6 twin=(34.68, 6.76)
+PASS GB-L09 walk 3 | (3.20, 6.75) feet=6.00 hp=6 twin=(41.87, 0.76)
+PASS GB-L09 Mercy inside the original apartment | (3.20, 6.75) feet=6.00 hp=6 twin=(41.87, 0.76)
+PASS GB-L09 walk 14 | (13.80, 6.40) feet=5.65 hp=6 twin=(31.36, 0.76)
+PASS GB-L09 walk 44 | (43.81, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L09 matte velvet removes reflection | (43.81, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L09 released lift physically carries the Host | (44.00, 4.70) feet=3.95 hp=6 twin=none
+PASS GB-L09 walk 45.2 | (45.00, 4.76) feet=4.01 hp=6 twin=none
+PASS GB-L09 curtains create real cast-shadow bridge collision | (45.02, 4.76) feet=4.01 hp=6 twin=none
+PASS GB-L09 jump 49 / 4.3 peak 6.37 | (48.79, 5.05) feet=4.30 hp=6 twin=none
+PASS GB-L09 walk 50.7 | (50.50, 5.05) feet=4.30 hp=6 twin=none
+PASS GB-L09 jump 55 / 4.95 peak 6.67 | (54.79, 5.70) feet=4.95 hp=6 twin=none
+PASS GB-L09 walk 56.7 | (56.49, 5.70) feet=4.95 hp=6 twin=none
+PASS GB-L09 jump 61 / 5.6 peak 7.32 | (60.79, 6.35) feet=5.60 hp=6 twin=none
+PASS GB-L09 walk 62.7 | (62.49, 6.36) feet=5.61 hp=6 twin=none
+PASS GB-L09 jump 67 / 6.25 peak 7.97 | (66.79, 7.00) feet=6.25 hp=6 twin=none
+PASS GB-L09 walk 68.7 | (68.49, 7.00) feet=6.25 hp=6 twin=none
+PASS GB-L09 jump 72 / 7 peak 8.62 | (71.78, 7.75) feet=7.00 hp=6 twin=none
+PASS GB-L09 walk 73.4 | (73.20, 7.75) feet=7.00 hp=6 twin=none
+PASS GB-L09 jump 76 / 8.2 peak 9.37 | (75.78, 8.95) feet=8.20 hp=6 twin=none
+PASS GB-L09 walk 77.5 | (77.29, 8.95) feet=8.20 hp=6 twin=none
+PASS GB-L09 jump 81 / 10 peak 10.57 | (80.78, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-L09 walk 82.5 | (82.29, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-L09 jump 86 / 11.8 peak 12.37 | (85.78, 12.56) feet=11.81 hp=6 twin=none
+PASS GB-L09 walk 87.5 | (87.29, 12.56) feet=11.81 hp=6 twin=none
+PASS GB-L09 jump 91 / 13.6 peak 14.17 | (90.78, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 roof key collected by contact | (90.78, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 jump 96 / 13.6 peak 15.97 | (95.79, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 walk 97.6 | (97.39, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 one sun extinguishes at the Turn | (97.41, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 only eastern shadow bridges disappear | (97.41, 14.36) feet=13.61 hp=6 twin=none
+PASS GB-L09 walk 77.8 | (78.00, 10.22) feet=9.47 hp=6 twin=(78.93, 8.25)
+PASS GB-L09 return vanity creates a new paired route | (78.00, 10.22) feet=9.47 hp=6 twin=(78.93, 8.25)
+PASS GB-L09 walk 75 | (75.20, 8.95) feet=8.20 hp=6 twin=(81.60, 8.25)
+PASS GB-L09 jump 70 / 7.5 peak 10.57 | (70.21, 8.25) feet=7.50 hp=6 twin=(86.59, 8.25)
+PASS GB-L09 walk 67.5 | (67.70, 8.25) feet=7.50 hp=6 twin=(89.10, 8.25)
+PASS GB-L09 changed furniture solved by both return bodies | (67.70, 8.25) feet=7.50 hp=6 twin=(89.10, 8.25)
+PASS GB-L09 walk 61.5 | (61.70, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L09 return velvet releases both-body constraint | (61.70, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L09 walk 43 | (43.20, 4.75) feet=4.00 hp=6 twin=none
+PHYSICAL shape=Center: (43.19, 4.75, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=
+CONTACT Cross-building lift Center: (44.00, 3.80, 0.00), Extents: (1.75, 0.20, 0.00)
+FAIL GB-L09 return reaches old street | (43.19, 4.75) feet=4.00 hp=6 twin=none
+FAIL GB-L09 stage cleared by actual return or boss solution | (43.19, 4.75) feet=4.00 hp=6 twin=none

@@ -56,6 +56,7 @@ namespace GloomBean.Campaign
             const int w=28;int h=secret?20:15;var grid=new char[h][];for(int y=0;y<h;y++){grid[y]=new char[w];for(int x=0;x<w;x++)grid[y][x]='.';}
             void Fill(int x0,int y0,int x1,int y1,char c){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)grid[y][x]=c;}
             Fill(0,0,3,4,'A');Fill(4,1,11,4,'#');Fill(9,4,12,8,'#');Fill(12,6,21,9,'#');Fill(19,9,23,12,'#');Fill(24,10,27,13,'A');
+            Fill(8,3,12,8,'#');Fill(17,7,23,12,'#'); // Room for a full jump before each ascending interior corner.
             // The two domains share only their framed entry and exit. The staircase consists
             // of empty tiles in normal space, so it becomes solid ONLY inside the fresco.
             Fill(6,1,8,1,'.');Fill(8,1,10,2,'.');Fill(10,1,11,4,'.');Fill(11,4,12,5,'.');

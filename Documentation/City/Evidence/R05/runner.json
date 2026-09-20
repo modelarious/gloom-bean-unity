@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  45,
+                        "case":  "L09-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  52,
+                        "case":  "L09-secrets",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L10-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L10-secrets",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "City-R05-fresco-and-return",
+    "started":  "2026-09-19T19:38:00.6540260-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T19:39:00.5193295-06:00"
+}

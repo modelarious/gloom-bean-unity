@@ -1,5 +1,5 @@
 {
-  "id": "City-R05-fresco-and-return",
+  "id": "City-R06-interior-clearance",
   "build": true,
   "cases": [
     {
@@ -23,6 +23,10 @@
       "suite": "City",
       "route": "GB-L10",
       "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

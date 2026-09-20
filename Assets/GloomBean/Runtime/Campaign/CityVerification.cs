@@ -82,7 +82,7 @@ namespace GloomBean.Campaign
             Check("one sun extinguishes at the Turn",session.Phase==RunPhase.Returning);yield return Pause(.1f);Check("only eastern shadow bridges disappear",session.GetComponentsInChildren<SunShutter>().All(s=>s.GetComponent<Collider2D>().enabled==(s.phase==0)));Snapshot("turn");
             yield return Walk(77.8f);yield return Await("return vanity creates a new paired route",()=>host.Has(HostKind.Mirror),4);yield return Walk(75);yield return Jump(70,7.5f);yield return Walk(67.5f);
             if(stopped)yield break;var returnGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Return apartment interlock");yield return Await("changed furniture solved by both return bodies",()=>returnGate.opened,4);Snapshot("return-mirror");
-            yield return Walk(61.5f);yield return Await("return velvet releases both-body constraint",()=>!host.Has(HostKind.Mirror),4);yield return Walk(43);yield return Await("return reaches old street",()=>actor.Grounded&&actor.Feet.y<1,6);yield return Walk(2);
+            yield return Walk(61.5f);yield return Await("return velvet releases both-body constraint",()=>!host.Has(HostKind.Mirror),4);yield return Walk(43);yield return Press(new InputFrame{interact=true});yield return Await("return reaches old street",()=>actor.Grounded&&actor.Feet.y<1,6);yield return Walk(2);
         }
         IEnumerator Fresco(bool secret)
         {
