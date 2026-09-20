@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  50,
+                        "case":  "L12-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  54,
+                        "case":  "L12-secrets",
+                        "failed":  4,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "City-R17-room-docking",
+    "started":  "2026-09-19T20:23:29.3023271-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T20:24:24.9791771-06:00"
+}

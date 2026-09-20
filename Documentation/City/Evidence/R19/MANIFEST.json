@@ -1,0 +1,78 @@
+{
+  "source": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\City-R19-chandelier-reboarding",
+  "observed_utc": "2026-09-20T02:32:40.838281+00:00",
+  "files": [
+    {
+      "path": "runner.json",
+      "sha256": "159de6258780f96c53c1145c3d32c8e7c950736d96b4028a8e259896c6f6e676"
+    },
+    {
+      "path": "L12-critical/city-observations.txt",
+      "sha256": "9bb9f4f1c8748c3b5de0a491c21cb99f113adbf3d80e55342d2faf6a9de48a89"
+    },
+    {
+      "path": "L12-critical/city-result.json",
+      "sha256": "a6244fe0e4f183be26da95eea54d629de38a3d06a16441255f4f5c408437bfad"
+    },
+    {
+      "path": "L12-critical/GB-L12-finish.png",
+      "sha256": "bbcdba6d62ecd255faff58840bf2deb34936fc14cc2b01f8d38e7294286fb680"
+    },
+    {
+      "path": "L12-critical/GB-L12-hotel-return-orbit.png",
+      "sha256": "43608736852f8850b4173b7ea11b979b5504d3b8af5f4701f436c1a3642340c5"
+    },
+    {
+      "path": "L12-critical/GB-L12-split-depth-room-brake.png",
+      "sha256": "e8bb79c0bfebbc25b37a335ae900c291003e01d0c55e95343bec1c451de171c2"
+    },
+    {
+      "path": "L12-critical/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "L12-critical/saved-progress.json",
+      "sha256": "2f955cb3fd5e76c2140eb8ffa97feec1df83bf7a340614af1d1bddd37ceeba3c"
+    },
+    {
+      "path": "L12-critical/test-save.json",
+      "sha256": "2f955cb3fd5e76c2140eb8ffa97feec1df83bf7a340614af1d1bddd37ceeba3c"
+    },
+    {
+      "path": "L12-secrets/city-observations.txt",
+      "sha256": "0808b5ed0cdeae97597d222b9aab6a0e029ffabef082311495b66bef4afd1713"
+    },
+    {
+      "path": "L12-secrets/city-result.json",
+      "sha256": "08b20e23b59a78f4c12172e922ec97c71ddfe28a3c8fd30afe03441cd0d3fe39"
+    },
+    {
+      "path": "L12-secrets/GB-L12-chandelier-interior.png",
+      "sha256": "901c66205290ae2ace7f7902a71fc48bf760dfb588dfecd7afbabadac90c139b"
+    },
+    {
+      "path": "L12-secrets/GB-L12-finish.png",
+      "sha256": "291a3f05e43bbafffea8c1e3322e3e43d13c8bffb2aa48946f6acbd2d6381201"
+    },
+    {
+      "path": "L12-secrets/GB-L12-hotel-return-orbit.png",
+      "sha256": "74ad434d2a7144a805b9b0d1aa4e3a2e5846b7694aeb749869629ca3137a3a5e"
+    },
+    {
+      "path": "L12-secrets/GB-L12-split-depth-room-brake.png",
+      "sha256": "a492a150c6ab2e8ec702499e462c28be7acbbb889c4c4c7e0eb38afaf8c79b1c"
+    },
+    {
+      "path": "L12-secrets/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "L12-secrets/saved-progress.json",
+      "sha256": "15914849e6fedb9fbd5d47957d49140c77fc72b2bedd3c430522a6bc624842b3"
+    },
+    {
+      "path": "L12-secrets/test-save.json",
+      "sha256": "15914849e6fedb9fbd5d47957d49140c77fc72b2bedd3c430522a6bc624842b3"
+    }
+  ]
+}

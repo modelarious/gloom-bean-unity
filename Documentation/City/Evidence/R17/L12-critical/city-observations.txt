@@ -1,0 +1,107 @@
+BEGIN GB-L12 The Hotel That Is Its Own Courtyard
+EVENT t=1.60 depth 1
+PASS GB-L12 walk 9 | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 perspective fly acquired in hotel lobby | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 walk 10 | (9.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 jump 12 / 2 peak 2.37 | (11.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 walk 13.4 | (13.20, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 jump 17 / 4 peak 4.37 | (16.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 walk 18.4 | (18.19, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 jump 22 / 6 peak 6.37 | (21.78, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 walk 38 | (37.79, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 perspective tenant exists | (37.79, 6.75) feet=6.00 hp=6 twin=none
+EVENT t=8.73 depth 0
+PASS GB-L12 project into plane 0 | (37.81, 6.75) feet=6.26 hp=6 twin=none
+RIDE t=8.867 actor=(37.13, 6.64) feet=(37.13, 6.16) vel=(0.00, -1.00) ground=Room 0 floor room=(36.32, 6.04) roomVel=(0.00, 0.00) phase=-1.690796
+RIDE t=8.950 actor=(35.95, 6.73) feet=(35.95, 6.24) vel=(0.00, -1.00) ground=Room 0 floor room=(35.14, 6.13) roomVel=(0.00, 0.00) phase=-1.765796
+RIDE t=9.033 actor=(34.77, 6.86) feet=(34.77, 6.37) vel=(0.00, -1.00) ground=Room 0 floor room=(33.96, 6.26) roomVel=(0.00, 0.00) phase=-1.840796
+RIDE t=9.117 actor=(33.63, 7.03) feet=(33.63, 6.54) vel=(0.00, -1.00) ground=Room 0 floor room=(32.82, 6.43) roomVel=(0.00, 0.00) phase=-1.915796
+RIDE t=9.200 actor=(32.51, 7.25) feet=(32.51, 6.76) vel=(0.00, -1.00) ground=Room 0 floor room=(31.70, 6.65) roomVel=(0.00, 0.00) phase=-1.990796
+RIDE t=9.283 actor=(31.42, 7.50) feet=(31.42, 7.02) vel=(0.00, -1.00) ground=Room 0 floor room=(30.61, 6.90) roomVel=(0.00, 0.00) phase=-2.065796
+RIDE t=9.367 actor=(30.38, 7.80) feet=(30.38, 7.31) vel=(0.00, -1.00) ground=Room 0 floor room=(29.57, 7.20) roomVel=(0.00, 0.00) phase=-2.140797
+RIDE t=9.450 actor=(29.38, 8.13) feet=(29.38, 7.65) vel=(0.00, -1.00) ground=Room 0 floor room=(28.57, 7.54) roomVel=(0.00, 0.00) phase=-2.215797
+RIDE t=9.533 actor=(28.44, 8.51) feet=(28.44, 8.02) vel=(0.00, -1.00) ground=Room 0 floor room=(27.63, 7.91) roomVel=(0.00, 0.00) phase=-2.290798
+RIDE t=9.617 actor=(27.56, 8.91) feet=(27.56, 8.42) vel=(0.00, -1.00) ground=Room 0 floor room=(26.75, 8.31) roomVel=(0.00, 0.00) phase=-2.365798
+RIDE t=9.700 actor=(26.74, 9.35) feet=(26.74, 8.86) vel=(0.00, -1.00) ground=Room 0 floor room=(25.93, 8.75) roomVel=(0.00, 0.00) phase=-2.440799
+RIDE t=9.783 actor=(25.98, 9.82) feet=(25.98, 9.33) vel=(0.00, -1.00) ground=Room 0 floor room=(25.17, 9.22) roomVel=(0.00, 0.00) phase=-2.5158
+RIDE t=9.867 actor=(25.30, 10.31) feet=(25.30, 9.82) vel=(0.00, -1.00) ground=Room 0 floor room=(24.49, 9.71) roomVel=(0.00, 0.00) phase=-2.5908
+RIDE t=9.950 actor=(24.70, 10.83) feet=(24.70, 10.34) vel=(0.00, -1.00) ground=Room 0 floor room=(23.89, 10.23) roomVel=(0.00, 0.00) phase=-2.665801
+RIDE t=10.033 actor=(24.17, 11.37) feet=(24.17, 10.88) vel=(0.00, -1.00) ground=Room 0 floor room=(23.36, 10.77) roomVel=(0.00, 0.00) phase=-2.740801
+RIDE t=10.117 actor=(23.73, 11.93) feet=(23.73, 11.44) vel=(0.00, -1.00) ground=Room 0 floor room=(22.92, 11.33) roomVel=(0.00, 0.00) phase=-2.815802
+RIDE t=10.200 actor=(23.37, 12.50) feet=(23.37, 12.01) vel=(0.00, -1.00) ground=Room 0 floor room=(22.56, 11.90) roomVel=(0.00, 0.00) phase=-2.890802
+RIDE t=10.283 actor=(23.10, 13.08) feet=(23.10, 12.59) vel=(0.00, -1.00) ground=Room 0 floor room=(22.29, 12.48) roomVel=(0.00, 0.00) phase=-2.965803
+RIDE t=10.367 actor=(22.92, 13.67) feet=(22.92, 13.19) vel=(0.00, -1.00) ground=Room 0 floor room=(22.11, 13.08) roomVel=(0.00, 0.00) phase=-3.040803
+RIDE t=10.450 actor=(22.82, 14.27) feet=(22.82, 13.79) vel=(0.00, -1.00) ground=Room 0 floor room=(22.01, 13.67) roomVel=(0.00, 0.00) phase=-3.115804
+PASS GB-L12 room carries its actual occupant to (22.00, 14.00) | (22.82, 14.41) feet=13.92 hp=6 twin=none
+PASS GB-L12 support belongs to preserved moving room | (22.82, 14.41) feet=13.92 hp=6 twin=none
+PASS GB-L12 walk 18.5 | (18.70, 14.49) feet=14.01 hp=6 twin=(25.30, 14.49)
+PASS GB-L12 vanity reflection composes with perspective | (18.70, 14.49) feet=14.01 hp=6 twin=(25.30, 14.49)
+PASS GB-L12 jump 17 / 15.395 peak 16.37 | (17.22, 15.89) feet=15.40 hp=6 twin=(26.41, 16.45)
+PASS GB-L12 reflection receives a distinct depth footprint | (17.22, 15.89) feet=15.40 hp=6 twin=(26.41, 16.45)
+PASS GB-L12 align physical body at 17 | (17.04, 15.89) feet=15.40 hp=6 twin=(26.37, 16.45)
+PASS GB-L12 two depths hold the same room brake | (17.04, 15.89) feet=15.40 hp=6 twin=(26.37, 16.45)
+RIDE t=13.000 actor=(17.06, 16.25) feet=(17.06, 15.76) vel=(0.00, -1.00) ground=Perspective platform room=(22.02, 14.36) roomVel=(0.00, 0.00) phase=-3.201593
+RIDE t=13.083 actor=(17.16, 16.85) feet=(17.16, 16.36) vel=(0.00, -1.00) ground=Perspective platform room=(22.12, 14.96) roomVel=(0.00, 0.00) phase=-3.276594
+RIDE t=13.167 actor=(17.35, 17.44) feet=(17.35, 16.95) vel=(0.00, -1.00) ground=Perspective platform room=(22.30, 15.55) roomVel=(0.00, 0.00) phase=-3.351594
+RIDE t=13.250 actor=(17.62, 18.02) feet=(17.62, 17.53) vel=(0.00, -1.00) ground=Perspective platform room=(22.58, 16.13) roomVel=(0.00, 0.00) phase=-3.426595
+RIDE t=13.333 actor=(17.99, 18.59) feet=(17.99, 18.11) vel=(0.00, -1.00) ground=Perspective platform room=(22.94, 16.71) roomVel=(0.00, 0.00) phase=-3.501595
+RIDE t=13.417 actor=(18.43, 19.15) feet=(18.43, 18.66) vel=(0.00, -1.00) ground=Perspective platform room=(23.39, 17.26) roomVel=(0.00, 0.00) phase=-3.576596
+RIDE t=13.500 actor=(18.96, 19.69) feet=(18.96, 19.20) vel=(0.00, -1.00) ground=Perspective platform room=(23.92, 17.80) roomVel=(0.00, 0.00) phase=-3.651596
+RIDE t=13.583 actor=(19.57, 20.20) feet=(19.57, 19.72) vel=(0.00, -1.00) ground=Perspective platform room=(24.53, 18.32) roomVel=(0.00, 0.00) phase=-3.726597
+RIDE t=13.667 actor=(20.26, 20.70) feet=(20.26, 20.21) vel=(0.00, -1.00) ground=Perspective platform room=(25.21, 18.81) roomVel=(0.00, 0.00) phase=-3.801597
+RIDE t=13.750 actor=(21.02, 21.16) feet=(21.02, 20.68) vel=(0.00, -1.00) ground=Perspective platform room=(25.97, 19.28) roomVel=(0.00, 0.00) phase=-3.876598
+RIDE t=13.833 actor=(21.84, 21.60) feet=(21.84, 21.11) vel=(0.00, -1.00) ground=Perspective platform room=(26.80, 19.71) roomVel=(0.00, 0.00) phase=-3.951598
+RIDE t=13.917 actor=(22.73, 22.00) feet=(22.73, 21.51) vel=(0.00, -1.00) ground=Perspective platform room=(27.68, 20.11) roomVel=(0.00, 0.00) phase=-4.026598
+RIDE t=14.000 actor=(23.67, 22.37) feet=(23.67, 21.88) vel=(0.00, -1.00) ground=Perspective platform room=(28.63, 20.48) roomVel=(0.00, 0.00) phase=-4.101598
+RIDE t=14.083 actor=(24.67, 22.70) feet=(24.67, 22.22) vel=(0.00, -1.00) ground=Perspective platform room=(29.63, 20.82) roomVel=(0.00, 0.00) phase=-4.176597
+RIDE t=14.167 actor=(25.72, 23.00) feet=(25.72, 22.51) vel=(0.00, -1.00) ground=Perspective platform room=(30.67, 21.11) roomVel=(0.00, 0.00) phase=-4.251596
+RIDE t=14.250 actor=(26.80, 23.25) feet=(26.80, 22.77) vel=(0.00, -1.00) ground=Perspective platform room=(31.76, 21.37) roomVel=(0.00, 0.00) phase=-4.326596
+RIDE t=14.333 actor=(27.92, 23.47) feet=(27.92, 22.98) vel=(0.00, -1.00) ground=Perspective platform room=(32.88, 21.58) roomVel=(0.00, 0.00) phase=-4.401595
+RIDE t=14.417 actor=(29.07, 23.64) feet=(29.07, 23.15) vel=(0.00, -1.00) ground=Perspective platform room=(34.03, 21.75) roomVel=(0.00, 0.00) phase=-4.476594
+RIDE t=14.500 actor=(30.25, 23.76) feet=(30.25, 23.28) vel=(0.00, -1.00) ground=Perspective platform room=(35.20, 21.88) roomVel=(0.00, 0.00) phase=-4.551594
+RIDE t=14.583 actor=(31.43, 23.85) feet=(31.43, 23.36) vel=(0.00, -1.00) ground=Perspective platform room=(36.39, 21.96) roomVel=(0.00, 0.00) phase=-4.626593
+RIDE t=14.667 actor=(32.63, 23.88) feet=(32.63, 23.40) vel=(0.00, -1.00) ground=Perspective platform room=(37.59, 22.00) roomVel=(0.00, 0.00) phase=-4.701592
+PASS GB-L12 room carries its actual occupant to (38.00, 22.00) | (32.87, 23.89) feet=23.40 hp=6 twin=none
+PASS GB-L12 support belongs to preserved moving room | (32.87, 23.89) feet=23.40 hp=6 twin=none
+PASS GB-L12 walk 33 | (32.87, 23.89) feet=23.40 hp=6 twin=none
+PASS GB-L12 roof velvet releases the reflected tenant | (32.87, 23.89) feet=23.40 hp=6 twin=none
+PASS GB-L12 jump 34 / 23.4 peak 24.42 | (33.78, 23.89) feet=23.40 hp=6 twin=none
+PASS GB-L12 walk 35.5 | (35.28, 24.15) feet=23.40 hp=6 twin=none
+PASS GB-L12 formerly exterior wall becomes inside-out corridor | (35.28, 24.15) feet=23.40 hp=6 twin=none
+PASS GB-L12 jump 37.5 / 24.4 peak 25.77 | (37.29, 25.15) feet=24.40 hp=6 twin=none
+PASS GB-L12 jump 39 / 25.4 peak 26.77 | (38.79, 26.15) feet=25.40 hp=6 twin=none
+PASS GB-L12 jump 41 / 26.4 peak 27.76 | (40.79, 27.15) feet=26.40 hp=6 twin=none
+PASS GB-L12 jump 43 / 28.4 peak 28.77 | (42.79, 29.15) feet=28.40 hp=6 twin=none
+PASS GB-L12 walk 47 | (46.79, 29.15) feet=28.40 hp=6 twin=none
+PASS GB-L12 wall frame returns normal collision | (46.79, 29.15) feet=28.40 hp=6 twin=none
+EVENT t=20.33 depth 1
+PASS GB-L12 walk 50 | (49.79, 29.15) feet=28.40 hp=6 twin=none
+PASS GB-L12 depth transfer remains available past wall | (49.79, 29.15) feet=28.40 hp=6 twin=none
+PASS GB-L12 walk 52 | (51.79, 29.15) feet=28.40 hp=6 twin=none
+PASS GB-L12 plane jump has perspective tenant | (51.79, 29.15) feet=28.40 hp=6 twin=none
+DEPTH target=0 actual=1 pos=(51.83, 29.36) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Platform:9 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=21.02 depth 0
+PASS GB-L12 land projected body 0 at 57 / 29.995 | (56.80, 30.49) feet=30.00 hp=6 twin=none
+PASS GB-L12 walk 59 | (58.79, 30.49) feet=30.00 hp=6 twin=none
+PASS GB-L12 plane jump has perspective tenant | (58.79, 30.49) feet=30.00 hp=6 twin=none
+DEPTH target=2 actual=0 pos=(58.82, 30.69) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=23.18 depth 1
+DEPTH target=2 actual=1 pos=(60.54, 32.85) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=23.52 depth 2
+PASS GB-L12 land projected body 2 at 65 / 31.72 | (64.81, 32.77) feet=31.72 hp=6 twin=none
+PASS GB-L12 walk 68 | (67.83, 32.77) feet=31.72 hp=6 twin=none
+PASS GB-L12 plane jump has perspective tenant | (67.83, 32.77) feet=31.72 hp=6 twin=none
+PASS GB-L12 land projected body 2 at 73 / 33.2 | (72.82, 34.25) feet=33.20 hp=6 twin=none
+PASS GB-L12 walk 73.6 | (73.41, 34.25) feet=33.20 hp=6 twin=none
+PASS GB-L12 hotel Keyling collected physically | (73.41, 34.25) feet=33.20 hp=6 twin=none
+PASS GB-L12 facade removal releases orbiting rooms | (73.44, 34.25) feet=33.20 hp=6 twin=none
+PASS GB-L12 walk 71.5 | (71.71, 33.96) feet=33.21 hp=6 twin=none
+PASS GB-L12 flat hotel sign restores normal body | (71.71, 33.96) feet=33.21 hp=6 twin=none
+PHYSICAL shape=Center: (42.44, 33.96, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=
+CONTACT Platform Center: (58.00, 33.00, 0.00), Extents: (16.00, 0.20, 0.00)
+CONTACT Unreachable lobby chandelier seen from below Center: (38.00, 37.00, 0.00), Extents: (4.00, 3.00, 0.00)
+CONTACT Chandelier inner sill Center: (37.00, 34.55, 0.00), Extents: (6.00, 0.25, 0.00)
+CONTACT Complement boundary Center: (42.50, 33.90, 0.00), Extents: (0.50, 0.50, 0.00)
+CONTACT Complement boundary Center: (41.50, 33.90, 0.00), Extents: (0.50, 0.50, 0.00)
+FAIL GB-L12 walk 41 | (42.44, 33.96) feet=33.21 hp=6 twin=none
+FAIL GB-L12 stage cleared by actual return or boss solution | (42.44, 33.96) feet=33.21 hp=6 twin=none

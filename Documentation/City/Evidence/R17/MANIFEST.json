@@ -1,0 +1,50 @@
+{
+  "source": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\City-R17-room-docking",
+  "observed_utc": "2026-09-20T02:32:40.821982+00:00",
+  "files": [
+    {
+      "path": "runner.json",
+      "sha256": "53417679e803e56f8ed23093cbd5dea8f7b0b752030f2528ea25eca04310b7bb"
+    },
+    {
+      "path": "L12-critical/city-observations.txt",
+      "sha256": "ff04b53ac3955ea1fa3406ec0fcc733ca15bae0afc2f1c8a7a59faa6fef19d45"
+    },
+    {
+      "path": "L12-critical/city-result.json",
+      "sha256": "c1c23131dfaa84ea486468924bc38a18d31e69b15bbe445bbae0be88c89782ba"
+    },
+    {
+      "path": "L12-critical/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "L12-critical/saved-progress.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "L12-critical/test-save.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "L12-secrets/city-observations.txt",
+      "sha256": "22ae2f343274ad6efd2ed2e630f82bcc42b5d4616c450bd1863b4cec6583458c"
+    },
+    {
+      "path": "L12-secrets/city-result.json",
+      "sha256": "82f6cf8211f1b67927174c8eb67a2e1a933692a8c837ec911ecd2755d2089948"
+    },
+    {
+      "path": "L12-secrets/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "L12-secrets/saved-progress.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "L12-secrets/test-save.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    }
+  ]
+}

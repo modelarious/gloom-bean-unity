@@ -1,0 +1,50 @@
+{
+  "source": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\City-R18-chandelier-clearance",
+  "observed_utc": "2026-09-20T02:32:40.828980+00:00",
+  "files": [
+    {
+      "path": "runner.json",
+      "sha256": "dce7f2d50df739bd42909be7ce4d0676fec85d6b83bfb094a77573e7a2bebaf6"
+    },
+    {
+      "path": "L12-critical/city-observations.txt",
+      "sha256": "31ac5e169bb585583e9ccda27422a126110996ba7ede12d0bcbe1f9ab6ac8c44"
+    },
+    {
+      "path": "L12-critical/city-result.json",
+      "sha256": "a6244fe0e4f183be26da95eea54d629de38a3d06a16441255f4f5c408437bfad"
+    },
+    {
+      "path": "L12-critical/player.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "path": "L12-critical/saved-progress.json",
+      "sha256": "2f955cb3fd5e76c2140eb8ffa97feec1df83bf7a340614af1d1bddd37ceeba3c"
+    },
+    {
+      "path": "L12-critical/test-save.json",
+      "sha256": "2f955cb3fd5e76c2140eb8ffa97feec1df83bf7a340614af1d1bddd37ceeba3c"
+    },
+    {
+      "path": "L12-secrets/city-observations.txt",
+      "sha256": "ad3a5cfd2bb8350aae5773cc8cdf5f416d0e3afd4572afa23e994ed63bf3d925"
+    },
+    {
+      "path": "L12-secrets/city-result.json",
+      "sha256": "cf15d802b0e4744fec0d7fabb2ed5a0fd376c318898ede625ffed0d8095267f9"
+    },
+    {
+      "path": "L12-secrets/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "L12-secrets/saved-progress.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "L12-secrets/test-save.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    }
+  ]
+}

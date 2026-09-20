@@ -1,0 +1,148 @@
+BEGIN GB-L12 The Hotel That Is Its Own Courtyard
+EVENT t=1.60 depth 1
+PASS GB-L12 walk 9 | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 perspective fly acquired in hotel lobby | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 walk 10 | (9.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 jump 12 / 2 peak 2.37 | (11.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 walk 13.4 | (13.20, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L12 jump 17 / 4 peak 4.37 | (16.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 walk 18.4 | (18.19, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L12 jump 22 / 6 peak 6.37 | (21.78, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 walk 38 | (37.79, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L12 perspective tenant exists | (37.79, 6.75) feet=6.00 hp=6 twin=none
+EVENT t=8.73 depth 0
+PASS GB-L12 project into plane 0 | (37.81, 6.75) feet=6.26 hp=6 twin=none
+RIDE t=8.850 actor=(37.37, 6.63) feet=(37.37, 6.14) vel=(0.00, -1.00) ground=Room 0 floor room=(36.56, 6.03) roomVel=(0.00, 0.00) phase=-1.675796
+RIDE t=8.933 actor=(36.18, 6.71) feet=(36.18, 6.22) vel=(0.00, -1.00) ground=Room 0 floor room=(35.37, 6.11) roomVel=(0.00, 0.00) phase=-1.750796
+RIDE t=9.017 actor=(35.01, 6.83) feet=(35.01, 6.34) vel=(0.00, -1.00) ground=Room 0 floor room=(34.20, 6.23) roomVel=(0.00, 0.00) phase=-1.825796
+RIDE t=9.100 actor=(33.85, 6.99) feet=(33.85, 6.51) vel=(0.00, -1.00) ground=Room 0 floor room=(33.04, 6.39) roomVel=(0.00, 0.00) phase=-1.900796
+RIDE t=9.183 actor=(32.73, 7.20) feet=(32.73, 6.71) vel=(0.00, -1.00) ground=Room 0 floor room=(31.92, 6.60) roomVel=(0.00, 0.00) phase=-1.975796
+RIDE t=9.267 actor=(31.64, 7.45) feet=(31.64, 6.96) vel=(0.00, -1.00) ground=Room 0 floor room=(30.83, 6.85) roomVel=(0.00, 0.00) phase=-2.050796
+RIDE t=9.350 actor=(30.58, 7.74) feet=(30.58, 7.25) vel=(0.00, -1.00) ground=Room 0 floor room=(29.77, 7.14) roomVel=(0.00, 0.00) phase=-2.125797
+RIDE t=9.433 actor=(29.58, 8.06) feet=(29.58, 7.58) vel=(0.00, -1.00) ground=Room 0 floor room=(28.77, 7.47) roomVel=(0.00, 0.00) phase=-2.200797
+RIDE t=9.517 actor=(28.63, 8.43) feet=(28.63, 7.94) vel=(0.00, -1.00) ground=Room 0 floor room=(27.82, 7.83) roomVel=(0.00, 0.00) phase=-2.275798
+RIDE t=9.600 actor=(27.73, 8.83) feet=(27.73, 8.34) vel=(0.00, -1.00) ground=Room 0 floor room=(26.92, 8.23) roomVel=(0.00, 0.00) phase=-2.350798
+RIDE t=9.683 actor=(26.90, 9.26) feet=(26.90, 8.77) vel=(0.00, -1.00) ground=Room 0 floor room=(26.09, 8.66) roomVel=(0.00, 0.00) phase=-2.425799
+RIDE t=9.767 actor=(26.13, 9.72) feet=(26.13, 9.23) vel=(0.00, -1.00) ground=Room 0 floor room=(25.32, 9.12) roomVel=(0.00, 0.00) phase=-2.500799
+RIDE t=9.850 actor=(25.43, 10.21) feet=(25.43, 9.72) vel=(0.00, -1.00) ground=Room 0 floor room=(24.62, 9.61) roomVel=(0.00, 0.00) phase=-2.5758
+RIDE t=9.933 actor=(25.18, 10.66) feet=(25.18, 10.17) vel=(0.00, 3.84) ground=none room=(24.00, 10.12) roomVel=(0.00, 0.00) phase=-2.6508
+RIDE t=10.017 actor=(25.18, 11.15) feet=(25.18, 10.67) vel=(0.00, 5.95) ground=none room=(23.46, 10.66) roomVel=(0.00, 0.00) phase=-2.725801
+RIDE t=10.100 actor=(25.18, 11.71) feet=(25.18, 11.22) vel=(0.00, 6.16) ground=none room=(23.00, 11.21) roomVel=(0.00, 0.00) phase=-2.800802
+RIDE t=10.183 actor=(25.18, 12.28) feet=(25.18, 11.79) vel=(0.00, 6.34) ground=none room=(22.63, 11.78) roomVel=(0.00, 0.00) phase=-2.875802
+RIDE t=10.267 actor=(25.18, 12.86) feet=(25.18, 12.37) vel=(0.00, 6.47) ground=none room=(22.34, 12.37) roomVel=(0.00, 0.00) phase=-2.950803
+RIDE t=10.350 actor=(25.18, 13.45) feet=(25.18, 12.96) vel=(0.00, 6.56) ground=none room=(22.14, 12.96) roomVel=(0.00, 0.00) phase=-3.025803
+RIDE t=10.433 actor=(25.18, 14.05) feet=(25.18, 13.56) vel=(0.00, 6.62) ground=none room=(22.02, 13.55) roomVel=(0.00, 0.00) phase=-3.100804
+RIDE t=10.517 actor=(25.18, 14.62) feet=(25.18, 14.13) vel=(0.00, 5.50) ground=none room=(22.00, 14.00) roomVel=(0.00, 0.00) phase=-3.141593
+RIDE t=10.600 actor=(25.18, 14.98) feet=(25.18, 14.50) vel=(0.00, 2.67) ground=none room=(22.00, 14.00) roomVel=(0.00, 0.00) phase=-3.141593
+RIDE t=10.683 actor=(25.18, 15.11) feet=(25.18, 14.62) vel=(0.00, -0.17) ground=none room=(22.00, 14.00) roomVel=(0.00, 0.00) phase=-3.141593
+RIDE t=10.767 actor=(25.18, 15.00) feet=(25.18, 14.52) vel=(0.00, -3.00) ground=none room=(22.00, 14.00) roomVel=(0.00, 0.00) phase=-3.141593
+RIDE t=10.850 actor=(25.18, 14.66) feet=(25.18, 14.17) vel=(0.00, -5.83) ground=none room=(22.00, 14.00) roomVel=(0.00, 0.00) phase=-3.141593
+PASS GB-L12 room carries its actual occupant to (22.00, 14.00) | (25.18, 14.55) feet=14.06 hp=6 twin=none
+PASS GB-L12 support belongs to preserved moving room | (25.18, 14.55) feet=14.06 hp=6 twin=none
+PASS GB-L12 walk 18.5 | (18.72, 14.50) feet=14.01 hp=6 twin=(25.28, 14.50)
+PASS GB-L12 vanity reflection composes with perspective | (18.72, 14.50) feet=14.01 hp=6 twin=(25.28, 14.50)
+PASS GB-L12 jump 17 / 15.395 peak 16.37 | (17.22, 15.89) feet=15.40 hp=6 twin=(26.41, 16.45)
+PASS GB-L12 reflection receives a distinct depth footprint | (17.22, 15.89) feet=15.40 hp=6 twin=(26.41, 16.45)
+PASS GB-L12 align physical body at 17 | (17.04, 15.89) feet=15.40 hp=6 twin=(26.37, 16.45)
+PASS GB-L12 two depths hold the same room brake | (17.04, 15.89) feet=15.40 hp=6 twin=(26.37, 16.45)
+RIDE t=14.033 actor=(17.05, 16.13) feet=(17.05, 15.64) vel=(0.00, 6.63) ground=none room=(22.01, 14.24) roomVel=(0.00, 0.00) phase=-3.186593
+RIDE t=14.117 actor=(17.05, 16.73) feet=(17.05, 16.24) vel=(0.00, 6.60) ground=none room=(22.09, 14.84) roomVel=(0.00, 0.00) phase=-3.261594
+RIDE t=14.200 actor=(17.05, 17.32) feet=(17.05, 16.83) vel=(0.00, 6.53) ground=none room=(22.26, 15.43) roomVel=(0.00, 0.00) phase=-3.336594
+RIDE t=14.283 actor=(17.05, 17.91) feet=(17.05, 17.42) vel=(0.00, 6.41) ground=none room=(22.52, 16.02) roomVel=(0.00, 0.00) phase=-3.411595
+RIDE t=14.367 actor=(17.05, 18.48) feet=(17.05, 17.99) vel=(0.00, 6.26) ground=none room=(22.86, 16.59) roomVel=(0.00, 0.00) phase=-3.486595
+RIDE t=14.450 actor=(17.05, 19.04) feet=(17.05, 18.55) vel=(0.00, 6.07) ground=none room=(23.29, 17.15) roomVel=(0.00, 0.00) phase=-3.561596
+RIDE t=14.533 actor=(17.05, 19.58) feet=(17.05, 19.09) vel=(0.00, 5.84) ground=none room=(23.81, 17.69) roomVel=(0.00, 0.00) phase=-3.636596
+RIDE t=14.617 actor=(17.05, 20.10) feet=(17.05, 19.62) vel=(0.00, 5.58) ground=none room=(24.40, 18.22) roomVel=(0.00, 0.00) phase=-3.711597
+RIDE t=14.700 actor=(17.05, 20.47) feet=(17.05, 19.99) vel=(0.00, 2.75) ground=none room=(25.07, 18.71) roomVel=(0.00, 0.00) phase=-3.786597
+RIDE t=14.783 actor=(17.05, 20.61) feet=(17.05, 20.12) vel=(0.00, -0.09) ground=none room=(25.81, 19.18) roomVel=(0.00, 0.00) phase=-3.861598
+RIDE t=14.867 actor=(17.05, 20.51) feet=(17.05, 20.02) vel=(0.00, -2.92) ground=none room=(26.63, 19.63) roomVel=(0.00, 0.00) phase=-3.936598
+RIDE t=14.950 actor=(17.05, 20.17) feet=(17.05, 19.68) vel=(0.00, -5.75) ground=none room=(27.50, 20.04) roomVel=(0.00, 0.00) phase=-4.011599
+RIDE t=15.033 actor=(17.05, 19.60) feet=(17.05, 19.11) vel=(0.00, -8.59) ground=none room=(28.43, 20.41) roomVel=(0.00, 0.00) phase=-4.086598
+RIDE t=15.117 actor=(17.05, 18.79) feet=(17.05, 18.30) vel=(0.00, -11.42) ground=none room=(29.42, 20.75) roomVel=(0.00, 0.00) phase=-4.161597
+RIDE t=15.200 actor=(17.05, 17.74) feet=(17.05, 17.25) vel=(0.00, -14.25) ground=none room=(30.46, 21.06) roomVel=(0.00, 0.00) phase=-4.236597
+RIDE t=15.283 actor=(17.05, 16.46) feet=(17.05, 15.97) vel=(0.00, -17.09) ground=none room=(31.54, 21.32) roomVel=(0.00, 0.00) phase=-4.311596
+RIDE t=15.367 actor=(17.05, 14.94) feet=(17.05, 14.45) vel=(0.00, -19.92) ground=none room=(32.65, 21.54) roomVel=(0.00, 0.00) phase=-4.386595
+RIDE t=15.450 actor=(17.05, 13.18) feet=(17.05, 12.70) vel=(0.00, -22.75) ground=none room=(33.80, 21.72) roomVel=(0.00, 0.00) phase=-4.461595
+RIDE t=15.533 actor=(16.23, 12.39) feet=(16.23, 11.90) vel=(-13.91, -3.88) ground=none room=(34.97, 21.85) roomVel=(0.00, 0.00) phase=-4.536594
+RIDE t=15.617 actor=(15.14, 11.97) feet=(15.14, 11.49) vel=(-11.91, -6.71) ground=none room=(36.15, 21.95) roomVel=(0.00, 0.00) phase=-4.611593
+RIDE t=15.700 actor=(14.21, 11.32) feet=(14.21, 10.83) vel=(-9.91, -9.55) ground=none room=(37.35, 21.99) roomVel=(0.00, 0.00) phase=-4.686593
+RIDE t=15.783 actor=(13.45, 10.43) feet=(13.45, 9.94) vel=(-7.91, -12.38) ground=none room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=15.867 actor=(12.86, 9.30) feet=(12.86, 8.82) vel=(-5.91, -15.21) ground=none room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=15.950 actor=(12.44, 7.94) feet=(12.44, 7.45) vel=(-3.91, -18.05) ground=none room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.033 actor=(12.18, 6.34) feet=(12.18, 5.85) vel=(-1.91, -20.88) ground=none room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.117 actor=(12.08, 4.51) feet=(12.08, 4.02) vel=(0.00, -23.71) ground=none room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=16.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.033 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.117 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=17.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.033 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.117 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=18.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.033 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.117 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=19.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.033 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.117 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=20.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.033 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.117 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.200 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.283 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.367 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.450 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.533 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.617 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.700 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.783 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.867 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+RIDE t=21.950 actor=(12.08, 2.49) feet=(12.08, 2.00) vel=(0.00, -1.00) ground=Platform room=(38.00, 22.00) roomVel=(0.00, 0.00) phase=-4.712389
+PHYSICAL shape=Center: (12.08, 2.49, 0.00), Extents: (0.29, 0.49, 0.00) axis=Vertical forms=Parallax,Mirror
+CONTACT Platform Center: (12.00, 1.80, 0.00), Extents: (2.00, 0.20, 0.00)
+FAIL GB-L12 room carries its actual occupant to (38.00, 22.00) | (12.08, 2.49) feet=2.00 hp=6 twin=(32.12, 7.05)
+FAIL GB-L12 support belongs to preserved moving room | (12.08, 2.49) feet=2.00 hp=6 twin=(32.12, 7.05)
+FAIL GB-L12 stage cleared by actual return or boss solution | (12.08, 2.49) feet=2.00 hp=6 twin=(32.12, 7.05)

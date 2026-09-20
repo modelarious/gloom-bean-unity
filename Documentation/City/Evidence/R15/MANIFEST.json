@@ -1,0 +1,38 @@
+{
+  "source": "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\City-R15-support-trace",
+  "observed_utc": "2026-09-20T02:32:40.803882+00:00",
+  "files": [
+    {
+      "path": "runner.json",
+      "sha256": "2c6d2c6c4b4d9523209404ee10e90e5e5c6d07b6e4bbf22ef18d32dc0bcbeab1"
+    },
+    {
+      "path": "L12-critical/city-observations.txt",
+      "sha256": "72fcd9a25bb70580a7628c8c2dd74acb548f5d54bb2fa8770e07f4065f32a619"
+    },
+    {
+      "path": "L12-critical/city-result.json",
+      "sha256": "b49e700672105b3bfa43a42f9c434b9f871415df11d5a3209f8aacac4c28a004"
+    },
+    {
+      "path": "L12-critical/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "L12-critical/saved-progress.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "L12-critical/test-save.json",
+      "sha256": "523a11efc9d57de3680281c5d2c6d8815ae980c42bf5cd61569a9e7a646311ec"
+    },
+    {
+      "path": "Mechanics/player.exit",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "Mechanics/verification.json",
+      "sha256": "0cda03359bb9ab5c96886067d1e62fe8b1d60ebdb217b86853b4b56362c0511e"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  75,
+                        "case":  "L12-secrets",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  62,
+                        "case":  "L12-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "City-R19-chandelier-reboarding",
+    "started":  "2026-09-19T20:30:07.7678788-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-19T20:31:08.1908717-06:00"
+}
