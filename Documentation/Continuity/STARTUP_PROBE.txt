@@ -1,0 +1,201 @@
+{
+  "project": "C:\\Users\\micha\\Projects\\GloomBeanUnity",
+  "head": "567ceba87e7df2a026d5f801f98b58fb8785420e",
+  "branch": "main",
+  "changes": [
+    "M .gitignore",
+    " M Documentation/CONTINUATION.md",
+    " M Documentation/RELEASE_STATUS.md",
+    " M Documentation/RESUME.md",
+    "?? AGENTS.md",
+    "?? Documentation/Continuity/AGENT_CHECKPOINT.md",
+    "?? Documentation/Continuity/CURRENT_CHECKPOINT.json",
+    "?? Documentation/Continuity/GATES.md",
+    "?? Documentation/Continuity/TOOL_TESTS.txt",
+    "?? Documentation/History/PRE_CONTINUITY_CONTINUATION.md",
+    "?? Documentation/History/PRE_CONTINUITY_RELEASE_STATUS.md",
+    "?? Documentation/History/PRE_CONTINUITY_RESUME.md",
+    "?? START_HERE.md",
+    "?? Tools/agent_status.py",
+    "?? Tools/checkpoint_work.py",
+    "?? Tools/test_continuity.py"
+  ],
+  "changes_truncated": false,
+  "recent_commits": [
+    "567ceba WIP: use genuine Wax inputs for low-clearance Orchard return; retain failing witness",
+    "b2bf187 Preserve recovered Orchard clean-run evidence, failed practice witness and exact continuation configs",
+    "b47386c Extend reusable native verification for body shape and damage preservation",
+    "9f940d7 Resolve Orchard physical routes and preserve material-system invariants",
+    "7aa5aff Orchard iteration: physical wax flow, terrain serving circuit and genuine input witnesses",
+    "27a2b98 Preserve recovered Parish clean-build, full-chapter and optional-secret evidence",
+    "b24f8d5 Complete Parish return recovery and reusable authoring regressions for clean acceptance",
+    "8f9b68f Parish: solve optional routes, preserve form costs and add safe Unity layout editing"
+  ],
+  "remote_names": [],
+  "checkpoint_found": true,
+  "next_gate": "Read R12-continuity-practice result for WIP Wax return witness, preserve outcome, then City W3 full-input implementation. Previous clean run failed practice.",
+  "source_fingerprint": {
+    "files": 288,
+    "normalized_sha256": "f3e2780d813206bb92891c9df226dbd588dc130fe9cc7a1458715867a557d02a"
+  },
+  "tested_source": "b47386ce1adf46fab87b65a44cca49c83e2db02f",
+  "publication": {
+    "status": "BLOCKED_NO_ORIGIN",
+    "repository": "modelarious/gloom-bean-unity",
+    "visibility": "PUBLIC_USER_DECIDED",
+    "creation_request": "modelarious/project-factory#38",
+    "last_probe": "404",
+    "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
+  },
+  "active_job": {
+    "task": "GloomBean-Orchard-v04",
+    "receipt": "Reports/Orchard-v04/R12-continuity-practice/runner.json",
+    "source_commit": "567ceba87e7df2a026d5f801f98b58fb8785420e"
+  },
+  "evidence": [
+    {
+      "name": "Recovered clean batch including failed practice",
+      "path": "Documentation/Evidence/OrchardRecovery/runner.json",
+      "sha256": "454664fca066a66cfa439ec49ee3d793a5b023e63be3eeca8904bc21ddc23cba",
+      "status": "FAIL",
+      "cases": [
+        {
+          "name": "Foundation",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 61,
+          "exceptions": 0,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Mechanics",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 198,
+          "exceptions": 0,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "W1-critical",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 138,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "W1-secrets",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 173,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "W2-critical",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 313,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "W2-secrets",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 369,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Judge",
+          "expected_denial": false,
+          "failed": 0,
+          "assertions": 29,
+          "exceptions": null,
+          "exit": 0,
+          "status": "PASS"
+        },
+        {
+          "name": "Practice-isolation",
+          "expected_denial": false,
+          "failed": 2,
+          "assertions": 28,
+          "exceptions": null,
+          "exit": 1,
+          "status": "FAIL"
+        },
+        {
+          "name": "Unearned-world-denied",
+          "expected_denial": true,
+          "failed": 1,
+          "assertions": 0,
+          "exceptions": null,
+          "exit": 1,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "name": "Original practice failure",
+      "path": "Documentation/Evidence/OrchardRecovery/Practice-isolation/orchard-result.json",
+      "sha256": "aec033a0c20c43f425e9588f1bab88e266058dd8b412ea0f2e6dfe236369b965",
+      "passed": null,
+      "checks": 28,
+      "failed": 2,
+      "exceptions": null,
+      "exit": "1",
+      "status": "FAIL_OR_INCOMPLETE"
+    },
+    {
+      "name": "Current retry",
+      "path": "Reports/Orchard-v04/R12-continuity-practice/runner.json",
+      "sha256": "77f595568bfeedc3a1621e14323aad71615a74adc21767d4af20e17a8e6d3cd7",
+      "status": "PASS",
+      "cases": [
+        {
+          "passed": null,
+          "exceptions": null,
+          "checks": 38,
+          "case": "Practice-isolation",
+          "failed": 0,
+          "status": "PASS"
+        },
+        {
+          "passed": null,
+          "exceptions": null,
+          "checks": 39,
+          "case": "Pears-critical",
+          "failed": 0,
+          "status": "PASS"
+        },
+        {
+          "passed": null,
+          "exceptions": null,
+          "checks": 49,
+          "case": "Pears-secrets",
+          "failed": 0,
+          "status": "PASS"
+        },
+        {
+          "passed": 198,
+          "exceptions": 0,
+          "checks": null,
+          "case": "Mechanics",
+          "failed": 0,
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "scope": "Inspection only. No gameplay tests, builds or remote publication performed.",
+  "source_vs_tested": "DIFF",
+  "write_probe": "PASS"
+}
+CHECKPOINT_INSPECTION_COMPLETE (not gameplay acceptance)
