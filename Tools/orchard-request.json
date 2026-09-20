@@ -1,14 +1,22 @@
 {
-  "id": "Completion-K06-windowed-ending",
+  "id": "Completion-K07-readable-boss-hud",
   "build": true,
   "cases": [
     {
-      "name": "B5-windowed",
+      "name": "Final-HUD",
       "suite": "Empyrean",
       "route": "GB-B5",
       "finalPair": "stitch-coffin",
-      "renderFps": 60,
-      "windowed": true
+      "renderFps": 60
+    },
+    {
+      "name": "Fourth-boss",
+      "suite": "Fall",
+      "route": "GB-B4"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

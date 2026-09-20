@@ -50,7 +50,7 @@ try {
  Key 13;Picture '03-cute-world-selection';Key 13;Picture '04-cute-level-selection';Key 13;Start-Sleep -Seconds 2;Picture '05-sunday-entry'
  Focus;[GloomWindow]::keybd_event(39,0,0,[UIntPtr]::Zero);Start-Sleep -Milliseconds 400;[GloomWindow]::keybd_event(32,0,0,[UIntPtr]::Zero);Start-Sleep -Milliseconds 200;[GloomWindow]::keybd_event(32,0,2,[UIntPtr]::Zero);[GloomWindow]::keybd_event(39,0,2,[UIntPtr]::Zero);Picture '06-keyboard-jump'
  Key 27;Picture '07-real-pause';Key 83;Picture '07b-first-pause-selection';Key 83;Picture '07c-second-pause-selection';Key 13;Picture '08-returned-level-select';Key 27;Key 27
- Key 83;Key 83;Key 13;Picture '09-practice-world-select';Key 40;Key 40;Key 83;Key 83;Key 13;Picture '10-final-world-practice';Key 83;Key 83;Key 83;Key 83;Key 13;Start-Sleep -Seconds 2;Picture '11-final-boss-native'
+ Key 83;Key 83;Key 13;Picture '09-practice-world-select';Key 40;Key 40;Key 83;Key 83;Key 13;Picture '10-final-world-practice';Key 83;Key 83;Key 83;Key 83;Key 13;Start-Sleep -Seconds 2;Picture '11-final-boss-native';Key 112;Picture '12-boss-controls-front';Key 112
  $save=Join-Path $Reports 'isolated-save.json';if(Test-Path $save){$d=Get-Content $save -Raw|ConvertFrom-Json;if(@($d.cleared).Count -gt 0 -or @($d.mercies).Count -gt 0){throw 'This UI check unexpectedly earned progression'}}
  $status.status='CAPTURED_PENDING_VISUAL_REVIEW';$status.isolated_save_has_no_progress=$true
 } catch {$status.status='FAIL';$status.error=$_.Exception.Message}
