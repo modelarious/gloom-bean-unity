@@ -1,0 +1,3 @@
+# Cathedral physical frame and impact hoist
+
+The descending frame moves real kinematic collision bodies, existing platform anchors, scenery and camera bounds. The portal rises relative to that frame. Independent dynamic loads are not dragged as scenery: an armed nave falls under gravity, must actually collide with a braced load-bearing body at measurable speed, and only that collision catches its windlass and raises the return platform. Moving bells keep their actual rope paths attached to architecture. Coffin corner flips retain the moving support pivot. None of these systems write player progress or invent a successful route. Native fixtures and input witnesses are pending.

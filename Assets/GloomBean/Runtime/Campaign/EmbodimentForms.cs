@@ -131,7 +131,7 @@ namespace GloomBean.Campaign
         public override HostKind Kind=>HostKind.Coffin;public override bool Locomotion=>true;
         public override string Help=>"Left/right: quarter-turn around the leading corner. No jump. Horizontal lids brace machinery.";
         public BoxCollider2D Hull {get;private set;} public bool Horizontal=>Mathf.Abs(Mathf.Sin(Actor.Body.rotation*Mathf.Deg2Rad))>.7f;
-        LoadBearingBody brace;float cooldown,fallSpeed;bool flipping;float elapsed,fromAngle,turn;Vector2 pivot,offset;const float duration=.30f;
+        LoadBearingBody brace;float cooldown,fallSpeed;bool flipping;float elapsed,fromAngle,turn;Vector2 pivot,offset,pivotLocal;Rigidbody2D pivotSupport;const float duration=.30f;
         public override void Enter(){Actor.CancelActions();Actor.Shape.enabled=false;Hull=Actor.gameObject.AddComponent<BoxCollider2D>();Hull.size=new Vector2(1,2);Hull.sharedMaterial=Actor.Shape.sharedMaterial;Actor.Body.bodyType=RigidbodyType2D.Kinematic;Actor.Body.mass=4;Actor.Shape.size=new Vector2(1,2);brace=Actor.gameObject.AddComponent<LoadBearingBody>();Actor.Body.position+=Vector2.up*.3f;Actor.chargeDisabled=true;}
         bool Clear(Vector2 p,float angle)
         {
@@ -141,14 +141,14 @@ namespace GloomBean.Campaign
         public bool BeginFlip(int sign)
         {
             if(flipping)return false;float w=Horizontal?2:1,h=Horizontal?1:2;Vector2 center=Actor.Body.position;
-            pivot=center+new Vector2(sign*w*.5f,-h*.5f);offset=center-pivot;fromAngle=Actor.Body.rotation;turn=-sign*90;
+            pivot=center+new Vector2(sign*w*.5f,-h*.5f);pivotSupport=Actor.GroundCollider?Actor.GroundCollider.attachedRigidbody:null;pivotLocal=pivotSupport?pivot-pivotSupport.position:Vector2.zero;offset=center-pivot;fromAngle=Actor.Body.rotation;turn=-sign*90;
             for(int i=1;i<=12;i++){float a=turn*i/12;Vector2 q=pivot+(Vector2)(Quaternion.Euler(0,0,a)*(Vector3)offset);if(!Clear(q,fromAngle+a)){Notice("The coffin's swept corner needs more room.");return false;}}
             flipping=true;elapsed=0;return true;
         }
         public override bool Move(InputFrame f,float dt)
         {
             cooldown-=dt;Actor.Body.linearVelocity=Vector2.zero;
-            if(flipping){elapsed+=dt;float t=Mathf.SmoothStep(0,1,Mathf.Clamp01(elapsed/duration));float a=turn*t;Actor.Body.position=pivot+(Vector2)(Quaternion.Euler(0,0,a)*(Vector3)offset);Actor.Body.rotation=fromAngle+a;if(elapsed>=duration){flipping=false;cooldown=.10f;Actor.Shape.size=Horizontal?new Vector2(2,1):new Vector2(1,2);}return true;}
+            if(flipping){if(pivotSupport)pivot=pivotSupport.position+pivotLocal;elapsed+=dt;float t=Mathf.SmoothStep(0,1,Mathf.Clamp01(elapsed/duration));float a=turn*t;Actor.Body.position=pivot+(Vector2)(Quaternion.Euler(0,0,a)*(Vector3)offset);Actor.Body.rotation=fromAngle+a;if(elapsed>=duration){flipping=false;cooldown=.10f;Actor.Shape.size=Horizontal?new Vector2(2,1):new Vector2(1,2);}return true;}
             float h=Horizontal?1:2;Vector2 feet=Actor.Body.position-Vector2.up*h*.5f;
             var ground=Physics2D.BoxCast(feet+Vector2.up*.06f,new Vector2((Horizontal?2:1)*.8f,.03f),0,Vector2.down,.16f,Layers.Solids);
             if(ground){fallSpeed=0;if(Mathf.Abs(f.move.x)>.5f&&cooldown<=0)BeginFlip(f.move.x>0?1:-1);}
