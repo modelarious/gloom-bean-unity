@@ -35,9 +35,10 @@ try {
  Copy-Item "$($config.atlas)\Reports\build-result.json" "$dir\atlas-build.json"
  $null=Source $config.atlas $config.atlas_commit
  if($config.foundation){$null=Source $config.foundation $config.foundation_commit}
+ $status.managed_assembly_sha256=(Get-FileHash (Join-Path $config.atlas 'Builds\Windows\GloomBean_Data\Managed\Assembly-CSharp.dll') -Algorithm SHA256).Hash.ToLower()
  $status.phase='native-input-and-earned-save-chain';Receipt;$allStarted=Get-Date
  while(@($jobs|Where-Object {$_.state -in @('PENDING','RUNNING')}).Count -gt 0){
-  if(((Get-Date)-$allStarted).TotalSeconds -gt 1800){throw 'Overall acceptance deadline exceeded'}
+  if(((Get-Date)-$allStarted).TotalSeconds -gt 2700){throw 'Overall complete-five-world acceptance deadline exceeded'}
   foreach($j in $jobs){
    $c=$j.case
    if($j.state -eq 'PENDING'){
@@ -56,6 +57,12 @@ try {
     $root=if($c.suite -eq 'Foundation'){$config.foundation}else{$config.atlas}
     if(-not $root){throw 'Foundation case has no root'}
     if($c.renderFps){$mode+=' -gb-render-fps '+[int]$c.renderFps}
+    if($c.finalPair){if($c.finalPair -notmatch '^(magnet-shadow|echo-ink|wax-gullet|stitch-coffin|mirror-parallax)$'){throw 'Invalid final pair'};$mode+=' -gb-final-pair '+$c.finalPair}
+    if($c.finalChoice){if($c.finalChoice -notmatch '^(Echo|Wax|Parallax)$'){throw 'Invalid final choice'};$mode+=' -gb-final-choice '+$c.finalChoice}
+    if($c.whiteAlternatives){$mode+=' -gb-white-alternatives 1'}
+    if($c.noInkControl){$mode+=' -gb-scripture-no-ink 1'}
+    if($null -ne $c.expectedMercies){if([int]$c.expectedMercies -lt 0 -or [int]$c.expectedMercies -gt 20){throw 'Invalid Mercy boundary'};$mode+=' -gb-expected-mercies '+[int]$c.expectedMercies}
+
     if($null -ne $c.startDelay){$mode+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
     $flags='-batchmode '+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
     $j.process=Start-Process (Join-Path $root 'Builds\Windows\GloomBean.exe') -ArgumentList $flags -PassThru;$j.started=Get-Date;$j.state='RUNNING'

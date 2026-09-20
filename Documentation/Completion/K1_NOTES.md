@@ -7,3 +7,5 @@ K02: Echo+Ink48 assertions PASS, actual recorded high arc supports gallery acces
 K03 was intercepted by a genuine gallery attack as Walk completed; the next jump was issued during hurt and suppressed. K04 waits for physical footing while steering back to a safe takeoff x, without changing damage, position or state. Presentation code now attached; native build and visual review pending.
 
 K04 native PASS: Mirror+Parallax48 and mechanics252. Final mirrored far/near calipers release the actual falling heart. Original new Host/source/background sprites visibly confirmed in the native final-mirror screenshot. All five final pair families now have individual victories, but fresh combined/earned campaign and ending/media checks remain pending.
+
+Clean runner supports explicit final pair/choice, alternative sanctums, no-Ink control and0..20 exact Mercy boundary. Full5-world dependency chain has a45-minute aggregate ceiling; each individual child remains bounded540seconds. Receipt now also hashes Assembly-CSharp.dll, since Unity executable stubs can be identical across different program builds.

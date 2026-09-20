@@ -14,7 +14,7 @@ try {
  if((& git -C $p diff --name-only $source -- Assets Packages ProjectSettings)){throw 'Runtime source changed during build; this binary is not certified'}
  $status.player_sha256=(Get-FileHash "$p\Builds\Windows\GloomBean.exe" -Algorithm SHA256).Hash.ToLower()
  $cases=if($r.cases){@($r.cases)}else{@($r.routes | ForEach-Object {@{name=$_;route=$_;suite='Parish';secrets=$r.secrets}})}
- $status.phase='native-acceptance';Receipt
+ $status.managed_assembly_sha256=(Get-FileHash (Join-Path $p 'Builds\Windows\GloomBean_Data\Managed\Assembly-CSharp.dll') -Algorithm SHA256).Hash.ToLower();$status.phase='native-acceptance';Receipt
  foreach($c in $cases){
   $out=Join-Path $dir $c.name;New-Item -ItemType Directory -Force $out | Out-Null
   $mode=switch($c.suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Orchard'{'-gb-orchard-verify -gb-route-id '+$c.route} 'City'{'-gb-city-verify -gb-route-id '+$c.route} 'Fall'{'-gb-fall-verify -gb-route-id '+$c.route} 'Empyrean'{'-gb-empyrean-verify -gb-route-id '+$c.route} default {'-gb-parish-verify -gb-route-id '+$c.route}}
@@ -24,6 +24,7 @@ try {
   if($r.trace){$flags+=' -gb-echo-trace'}
   if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
   if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}
+  if($null -ne $c.expectedMercies){if([int]$c.expectedMercies -lt 0 -or [int]$c.expectedMercies -gt 20){throw 'Invalid Mercy boundary'};$flags+=' -gb-expected-mercies '+[int]$c.expectedMercies}
   if($c.railProbe){$flags+=' -gb-rail-probe 1'}
   if($c.whiteAlternatives){$flags+=' -gb-white-alternatives 1'}
   if($c.noInkControl){$flags+=' -gb-scripture-no-ink 1'}
