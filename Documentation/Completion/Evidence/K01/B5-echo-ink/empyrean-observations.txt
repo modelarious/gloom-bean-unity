@@ -1,0 +1,41 @@
+BEGIN GB-B5 The Host of Hosts
+PASS GB-B5 final witness selects a real authored route body=(3.00, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-B5 jump to 5 / 2 body=(4.70, 2.75) velocity=(0.93, 0.00) feet=2.003951 hp=6
+PASS GB-B5 jump to 8 / 4 body=(7.71, 4.75) velocity=(0.91, 0.00) feet=4.004992 hp=6
+PASS GB-B5 votive angel supplies conserved wax body=(7.71, 4.75) velocity=(0.91, 0.00) feet=4.004992 hp=6
+PASS GB-B5 walk 21 body=(20.80, 4.67) velocity=(1.54, 0.00) feet=4.004999 hp=6
+PASS GB-B5 actual reduced living mass releases the upper arch body=(20.81, 4.67) velocity=(0.00, 0.00) feet=4.004999 hp=6
+PASS GB-B5 first act tenant follows the player's actual route body=(20.81, 4.67) velocity=(0.00, 0.00) feet=4.004999 hp=6
+PASS GB-B5 walk 38 body=(37.80, 0.75) velocity=(1.55, 0.00) feet=0.004998386 hp=6
+PASS GB-B5 the opponent steals the chosen tenant without relocating the player body=(37.80, 0.75) velocity=(1.55, 0.00) feet=0.004998386 hp=6
+PASS GB-B5 theft removes and embargoes exactly the chosen tenant body=(37.80, 0.75) velocity=(0.47, 0.00) feet=0.004998684 hp=6
+PASS GB-B5 theft does not refill player health body=(37.80, 0.75) velocity=(0.47, 0.00) feet=0.004998684 hp=6
+PASS GB-B5 walk 60 body=(59.79, 0.75) velocity=(1.64, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 jump to 63 / 2 body=(62.71, 2.75) velocity=(0.91, 0.00) feet=2.00485 hp=6
+PASS GB-B5 walk 65.8 body=(65.60, 2.64) velocity=(1.47, -0.14) feet=1.893452 hp=6
+PASS GB-B5 the wet crack remains reachable above the stolen wax body=(65.60, 2.64) velocity=(1.47, -0.14) feet=1.893452 hp=6
+PASS GB-B5 stolen wax forces a different root solution body=(65.61, 2.64) velocity=(0.31, -0.49) feet=1.88839 hp=6
+PASS GB-B5 tenant acquired Root body=(65.61, 2.64) velocity=(0.31, -0.49) feet=1.88839 hp=6
+PASS GB-B5 focus Root body=(65.61, 2.64) velocity=(0.31, -0.49) feet=1.88839 hp=6
+PASS GB-B5 diagonal season moistens the starting seam body=(65.61, 2.64) velocity=(-0.14, -0.11) feet=1.887447 hp=6
+PASS GB-B5 extend root through actual seasonal substrate body=(65.60, 2.63) velocity=(0.00, 0.00) feet=1.884566 hp=6
+PASS GB-B5 steer seasonal root to (65.00, -4.00) body=(65.60, 2.76) velocity=(0.00, 0.00) feet=2.014967 hp=6
+PASS GB-B5 steer seasonal root to (80.00, -4.00) body=(65.60, 2.77) velocity=(0.00, 0.00) feet=2.018398 hp=6
+PASS GB-B5 steer seasonal root to (80.00, 1.00) body=(66.56, 3.39) velocity=(0.00, 0.00) feet=2.635064 hp=5
+ROOT EXIT tip=(80.00, 0.89) clear=True
+PASS GB-B5 body follows the curved seasonal root body=(80.00, 0.89) velocity=(0.00, 0.00) feet=0.1406458 hp=5
+PASS GB-B5 root adaptation does not remove the vault's wall body=(80.00, 0.89) velocity=(0.00, 0.00) feet=0.1406458 hp=5
+PASS GB-B5 walk 88 body=(87.80, 0.75) velocity=(1.55, 0.00) feet=0.004999876 hp=5
+PASS GB-B5 new physical solution earns the final act body=(87.80, 0.75) velocity=(1.55, 0.00) feet=0.004999876 hp=5
+PASS GB-B5 stolen rule was actually used against the Host body=(87.81, 0.75) velocity=(0.46, 0.00) feet=0.004999876 hp=5
+PASS GB-B5 walk 104 body=(103.80, 0.75) velocity=(1.56, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 the gallery threshold clears the temporary adaptation body=(103.80, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-B5 walk 147 body=(146.80, 0.75) velocity=(2.59, 0.00) feet=0.004997492 hp=5
+PASS GB-B5 jump to 150 / 2 body=(149.71, 2.75) velocity=(0.89, 0.00) feet=2.004997 hp=5
+PASS GB-B5 jump to 152 / 4 body=(151.71, 4.75) velocity=(0.91, 0.00) feet=4.003881 hp=5
+PASS GB-B5 walk 155 body=(154.80, 4.75) velocity=(1.51, 0.00) feet=4.004999 hp=5
+PASS GB-B5 two footsteps share the actual writing tenant body=(154.80, 4.75) velocity=(1.51, 0.00) feet=4.004999 hp=5
+PASS GB-B5 walk 156.5 body=(156.31, 4.75) velocity=(5.26, 0.00) feet=4.004999 hp=5
+PASS GB-B5 short hop authors a revisitable arc body=(152.85, 4.75) velocity=(-1.15, 0.00) feet=4.004998 hp=5
+INK SUPPORT Delayed ink stroke
+FAIL GB-B5 land on own hardened falling stroke body=(153.08, 4.80) velocity=(4.13, 0.23) feet=4.048411 hp=4

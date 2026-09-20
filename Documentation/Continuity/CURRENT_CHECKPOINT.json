@@ -2,10 +2,10 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "K01: validate latest committed L20 folded-sill/return and final Root approach corrections; finish remaining pair routes, then earned all20 endings and presentation.",
+  "next_gate": "K02: finish high Ink support and distant Mirror/Parallax circuit; L20 all three route families passed K01. Then full earned campaign/endings and presentation.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Completion-K01-recovered-final-corrections/runner.json",
+    "receipt": "Reports/Orchard-v04/Completion-K02-final-ink-and-mirror/runner.json",
     "status": "READY_NOT_STARTED"
   },
   "publication": {

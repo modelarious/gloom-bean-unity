@@ -1,0 +1,60 @@
+{
+    "started":  "2026-09-20T11:01:20.5736603-06:00",
+    "id":  "Completion-K01-recovered-final-corrections",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  159,
+                        "case":  "L20-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  169,
+                        "case":  "L20-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  168,
+                        "case":  "L20-alternatives",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  38,
+                        "case":  "B5-echo-ink",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  32,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  252,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "485de7f5bfc3c68c316cd4c1bd6b95b3c192a26c86250056677905bf87fa001d",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "50ee1fdee5e087df3795b65207526b685bfb41f8",
+    "finished":  "2026-09-20T11:04:36.7595623-06:00"
+}

@@ -1,27 +1,7 @@
 {
-  "id": "Completion-K01-recovered-final-corrections",
+  "id": "Completion-K02-final-ink-and-mirror",
   "build": true,
   "cases": [
-    {
-      "name": "L20-critical",
-      "suite": "Empyrean",
-      "route": "GB-L20",
-      "renderFps": 60
-    },
-    {
-      "name": "L20-secret",
-      "suite": "Empyrean",
-      "route": "GB-L20",
-      "secrets": true,
-      "renderFps": 60
-    },
-    {
-      "name": "L20-alternatives",
-      "suite": "Empyrean",
-      "route": "GB-L20",
-      "whiteAlternatives": true,
-      "renderFps": 60
-    },
     {
       "name": "B5-echo-ink",
       "suite": "Empyrean",
@@ -35,10 +15,6 @@
       "route": "GB-B5",
       "finalPair": "mirror-parallax",
       "renderFps": 60
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

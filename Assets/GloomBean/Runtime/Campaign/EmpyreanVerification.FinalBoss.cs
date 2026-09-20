@@ -50,7 +50,16 @@ namespace GloomBean.Campaign
         IEnumerator FinalEchoInkRoute()
         {
             yield return Walk(147,true);yield return Jump(150,2);yield return Jump(152,4);yield return Walk(155);Check("two footsteps share the actual writing tenant",host.Has(HostKind.Echo)&&host.Has(HostKind.Ink));if(stopped)yield break;
-            yield return Walk(156.5f,true);yield return ShortArc(152.5f,4);yield return InkLanding(154,5,6.9f);if(stopped)yield break;yield return Jump(158,7.6f);yield return Pause(2.2f);
+            yield return Walk(156.5f,true);yield return RunArc(152.5f,4);yield return Pause(1.05f);if(stopped)yield break;
+            // Aim for a real, already hardened shallow segment of the recorded jump, not a guessed x.
+            // The upper gallery is 3.6 m above the takeoff: ordinary jumping cannot skip this support.
+            var ink=host.Form<InkForm>();var candidates=new System.Collections.Generic.List<Vector2>();
+            foreach(var st in ink.Strokes)if(st&&st.Solid&&st.age<5.5f){var edge=st.GetComponent<EdgeCollider2D>();Vector2 a=edge.transform.TransformPoint(edge.points[0]),b=edge.transform.TransformPoint(edge.points[1]);Note("FINAL INK segment="+a+" -> "+b+" age="+st.age);
+                if(Mathf.Abs(b.x-a.x)<Mathf.Abs(b.y-a.y)*.65f)continue;
+                for(int j=1;j<10;j++){var q=Vector2.Lerp(a,b,j*.1f);if(q.y>5.35f&&q.y<6.25f&&Mathf.Abs(q.x-actor.Body.position.x)<6)candidates.Add(q);}}
+            Check("the recorded arc provides reachable high support",candidates.Count>0);if(stopped)yield break;
+            var landing=candidates.OrderByDescending(q=>q.y).First();Note("FINAL INK target="+landing);
+            yield return InkLanding(landing.x,5.25f,6.9f);if(stopped)yield break;yield return Jump(158,7.6f);yield return Pause(2.2f);
             yield return Walk(162);yield return Walk(172);yield return Wait("ink access and delayed twin jointly hold the separated scales",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,4);Snapshot("final-echo-ink");
         }
         IEnumerator FinalWaxGulletRoute()
@@ -79,7 +88,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator FinalMirrorParallaxRoute()
         {
-            yield return Walk(261,true);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
+            yield return Walk(157,true);yield return Walk(209,true);yield return Walk(261,true);yield return Jump(264,2);yield return Walk(267);Check("mirrored bodies and depth coexist",host.Has(HostKind.Mirror)&&host.Has(HostKind.Parallax));if(stopped)yield break;
             yield return SanctuaryPlane(0);yield return SanctuaryPlaneJump(266,3.5625f,0);if(stopped)yield break;var twin=host.Form<MirrorForm>().Twin;
             yield return Walk(271);yield return Walk(268);yield return Wait("asymmetric calipers align bodies in different physical planes",()=>session.GetComponentInChildren<FinalHeartAnchor>().Released,5);Check("the other collision body participates in the near plane",twin&&twin.Shape.includeLayers==(1<<19));Snapshot("final-mirror-parallax");
         }
