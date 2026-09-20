@@ -1,15 +1,11 @@
 {
-  "id": "Fall-R17-seam-selection-and-clock-control",
+  "id": "Fall-R18-upper-load-route",
   "build": true,
   "cases": [
     {
       "name": "B4",
       "suite": "Fall",
       "route": "GB-B4"
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }
