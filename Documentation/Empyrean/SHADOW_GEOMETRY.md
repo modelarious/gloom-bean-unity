@@ -1,0 +1,2 @@
+# Shadow geometry groundwork
+Actual collider outlines (including rotated rectangles and capsules) are projected using physics poses. Directional sunlight is the Minkowski sweep along a ray; point lamps use silhouette extrema. The convex-hull utility is not yet wired into the level in this commit. Bounded convex footprints are supported; arbitrary concave silhouettes are explicitly outside this first utility. New L18 routes must prove provenance of body-cast vs screen-cast bridges rather than merely touching a labeled receiver.
