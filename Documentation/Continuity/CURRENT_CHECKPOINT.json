@@ -2,11 +2,11 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "I11: finish L19 semicolon Ink/Shadow support and the final ordinary return gap. Both fresh-arc return ascents and physical punctuation already have actual-input proof; no complete L19 clear claimed yet. White Gate first leading-Echo/Molt input probe also running. Continue original L20/B5 thereafter.",
+  "next_gate": "I15: verify revised L19 full-edge Ink sampling at both cadences and isolated practice; the complete ordinary/secret route has prior real-input proof, not yet a current clean earned-chain certificate. L20 first two sanctums now pass; execute real projected-gap/folded-fresco third sanctum, then rising/light/collapse/alternatives and B5/endings.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Empyrean-I11-optional-writing-margin/runner.json",
-    "source": "6b041ddda01a21c5cf8872dce277cd3ad6ea9e5a",
+    "receipt": "Reports/Orchard-v04/Empyrean-I15-scripture-cadence-and-folded-sanctum/runner.json",
+    "source": "10a4c352d246c95de2d418b29fef67127c3dd5ff",
     "status": "DISPATCHED_READ_ACTUAL_RECEIPT"
   },
   "publication": {
@@ -92,5 +92,6 @@
     "assertions": 104,
     "receipt": "Documentation/Fall/Evidence/Packaged-v06-g1/runner.json"
   },
-  "observed_at": "2026-09-20T14:37:12.499276+00:00"
+  "observed_at": "2026-09-20T14:54:36.403958+00:00",
+  "canonical_progress_record": "Context/projects/gloom-bean-unity/records/SCRIPTURE-PROGRESS-20260920-i1.md"
 }
