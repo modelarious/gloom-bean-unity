@@ -5,6 +5,6 @@ namespace GloomBean.Foundation
     [RequireComponent(typeof(BoxCollider2D))]
     public sealed class OneWaySurface:MonoBehaviour
     {
-        void Awake(){var c=GetComponent<BoxCollider2D>();c.usedByEffector=true;var e=GetComponent<PlatformEffector2D>();if(!e)e=gameObject.AddComponent<PlatformEffector2D>();e.useOneWay=true;e.useOneWayGrouping=true;e.surfaceArc=160;e.useSideFriction=false;e.useSideBounce=false;}
+        void Awake(){var c=GetComponent<BoxCollider2D>();c.usedByEffector=true;var e=GetComponent<PlatformEffector2D>();if(!e)e=gameObject.AddComponent<PlatformEffector2D>();e.useColliderMask=false;e.useOneWay=true;e.useOneWayGrouping=true;e.surfaceArc=160;e.useSideFriction=false;e.useSideBounce=false;}
     }
 }
