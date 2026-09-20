@@ -5,9 +5,9 @@ namespace GloomBean.Campaign
     [DefaultExecutionOrder(-105)]
     public sealed class BearingPress:MonoBehaviour
     {
-        public Vector2 rest,low;public float speed=1.3f,holdRequired=.8f,held;public bool released,contact;Rigidbody2D body;BoxCollider2D shape;
+        public PulseReceiver bell;public Rigidbody2D counterweight;public Vector2 counterweightRaised;public Vector2 rest,low;public float speed=1.3f,holdRequired=.8f,held;public bool released,contact;Rigidbody2D body;BoxCollider2D shape;
         void Start(){body=GetComponent<Rigidbody2D>();shape=GetComponent<BoxCollider2D>();rest=body.position;}
-        void FixedUpdate(){Vector2 goal=released?rest:low;Vector2 next=Vector2.MoveTowards(body.position,goal,speed*Time.fixedDeltaTime*LocalTime.Scale(body.position));
+        void FixedUpdate(){if(bell&&bell.count==0){body.linearVelocity=Vector2.zero;return;}if(released&&counterweight)counterweight.MovePosition(Vector2.MoveTowards(counterweight.position,counterweightRaised,2*Time.fixedDeltaTime));Vector2 goal=released?rest:low;Vector2 next=Vector2.MoveTowards(body.position,goal,speed*Time.fixedDeltaTime*LocalTime.Scale(body.position));
             contact=false;bool occupied=false;
             foreach(var c in Physics2D.OverlapBoxAll(next,shape.size,0,1<<Layers.Actor)){
                 if(c.isTrigger)continue;occupied=true;var brace=c.GetComponent<LoadBearingBody>();

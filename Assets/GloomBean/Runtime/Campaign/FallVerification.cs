@@ -133,6 +133,42 @@ namespace GloomBean.Campaign
             yield return Walk(38);yield return Fold("span-b",Vector2.left,7.13f);yield return Walk(24);
             yield return Fold("span-a",Vector2.left,9.46f);yield return Walk(2);
         }
+        IEnumerator Flip(int sign)
+        {
+            if(stopped||!Live)yield break;var coffin=host.Form<CoffinForm>();Check("rigid coffin acquired",coffin!=null);if(stopped)yield break;
+            float x=actor.Body.position.x;bool orientation=coffin.Horizontal;
+            yield return Press(new InputFrame{move=new Vector2(sign,0)});yield return Await("quarter turn changes footprint",()=>coffin.Horizontal!=orientation&&Mathf.Abs(actor.Body.position.x-x)>1,.9f);
+            yield return Pause(.2f);
+        }
+        IEnumerator CoffinTo(float x,float seconds=16)
+        {
+            if(stopped||!Live)yield break;float end=Time.time+seconds;int sign=x>actor.Body.position.x?1:-1;
+            while(Live&&Time.time<end&&sign*(x-actor.Body.position.x)>.45f){input.frame=new InputFrame{move=new Vector2(sign,0)};yield return NextPhysics();}
+            input.frame=default;yield return Pause(.5f);Check("coffin crosses real ground to "+x,sign*(actor.Body.position.x-x)>-.8f&&actor.Feet.y> -1.2f);
+        }
+        IEnumerator Ferry(ProcessionCarrier ferry,float board,float exit)
+        {
+            if(stopped||!Live)yield break;
+            yield return Await("pallbearer docks within a real flip",()=>ferry.Progress<.025f,20);
+            yield return CoffinTo(board,4);yield return Await("coffin rides moving pallbearers",()=>actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==ferry.body&&ferry.Progress>.94f,20);
+            yield return CoffinTo(exit,5);
+        }
+        IEnumerator ClosedLids(bool secret)
+        {
+            yield return Walk(7);Check("undertaker closes the coffin",host.Has(HostKind.Coffin));yield return CoffinTo(12.5f);
+            var ferries=session.GetComponentsInChildren<ProcessionCarrier>().OrderBy(x=>x.a.x).ToArray();yield return Ferry(ferries[0],16.4f,28);
+            yield return CoffinTo(30);Check("seamstress can share the coffin",host.Has(HostKind.Stitch));
+            if(secret){yield return CoffinTo(34);var c=host.Form<CoffinForm>();if(!c.Horizontal)yield return Flip(1);
+                var lift=session.GetComponentInChildren<InspectionLift>();Check("horizontal orientation selected before inspection",c.Horizontal);yield return Press(new InputFrame{interact=true});
+                yield return Await("grille physically lowers the body",()=>actor.Feet.y< -2.7f,7);yield return Await("low inspection passage grants Mercy",()=>session.Mercies.Count==1,10);
+                yield return Await("inspection trip brings the body back",()=>lift.trips>0&&!lift.moving&&actor.Feet.y>-.1f,15);Check("horizontal lid was not blocked by the ceiling",!lift.blocked);Snapshot("coffin-inspection");}
+            yield return CoffinTo(41);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(-1);
+            yield return Flip(1);yield return Flip(1);var press=session.GetComponentInChildren<BearingPress>();Check("horizontal footprint beneath the bearing head",coffin.Horizontal&&Mathf.Abs(actor.Body.position.x-44)<2.3f);
+            yield return Press(new InputFrame{interact=true});yield return Await("actual bracing releases the counterweight",()=>press.released,6);yield return Await("counterweight physically retracts",()=>press.counterweight.position.y>5.5f,4);Snapshot("bearing-contact");
+            yield return CoffinTo(47.2f);yield return Ferry(ferries[1],50.4f,63);yield return CoffinTo(78.8f);Check("procession Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("return silences bells",session.Phase==RunPhase.Returning);if(stopped)yield break;
+            yield return CoffinTo(64);yield return Fold("procession-b",Vector2.up,0);yield return CoffinTo(40);
+            yield return CoffinTo(28);yield return Fold("procession-a",Vector2.up,0);yield return CoffinTo(6);yield return Walk(2);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[3];
@@ -141,7 +177,7 @@ namespace GloomBean.Campaign
             var stages=new List<StageDefinition>();if(selected=="W4"){stages.AddRange(world.levels);stages.Add(world.boss);}else stages.Add(selected==world.boss.id?world.boss:Array.Find(world.levels,x=>x.id==selected));
             foreach(var stage in stages){if(stage==null){failures++;Note("FAIL unknown Fall stage "+selected);break;}yield return Load(stage);
                 if(selected=="W4")Check("earned intra-world stage selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else Check("route not implemented yet",false);
+                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else if(stage.course==15)yield return ClosedLids(secrets);else Check("route not implemented yet",false);
                 Check("stage completes through physical exit or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no earned progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("completion survives save",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy persists after real return":"Mercy remains optional",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}Snapshot("finish");if(stopped)break;}
             if(selected=="W4"&&!stopped){var save=new SaveStore(Path.Combine(dir,"test-save.json"));Check("Fall earns the False Empyrean",CampaignProgression.WorldOpen(game.AvailableWorlds,4,save.Data,PracticeWitness));Check("sixteen Mercies cannot restore the ending",!save.RestoredEnding);}

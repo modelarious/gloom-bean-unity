@@ -65,15 +65,31 @@ namespace GloomBean.Campaign
         }
         void Procession(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-12,122,43),new Vector2(2,1));var b=a.b;a.Floor(-5,19);a.Floor(19,100,-4);a.Floor(100,112,2);a.Exit(2,1.1f);a.Source(HostKind.Coffin,8);
-            var receiver=a.Receiver(new Vector2(18,7));a.Bell(new Vector2(14,1),new[]{new Vector2(14,1),new Vector2(14,7),new Vector2(18,7)},receiver);
-            var carriers=new[]{Carrier(a,new Vector2(23,.4f),new Vector2(34,2.4f),receiver,2),Carrier(a,new Vector2(41,2),new Vector2(49,6),receiver,1.8f),Carrier(a,new Vector2(56,6),new Vector2(67,6),receiver,2.2f),Carrier(a,new Vector2(75,6),new Vector2(88,9),receiver,1.7f)};
-            a.Ledge(35,2.8f,5);a.Ledge(51,6.3f,5);a.Ledge(70,6.3f,5);a.Ledge(92,9.2f,8);a.Ledge(104,8.7f,10);a.Key(103,9.65f);a.Nail(108,9.1f);
-            var braceGate=b.Door(new Vector2(72,8.4f),new Vector2(.8f,4.2f));var brace=b.Trigger("Carrier pressure point",new Vector2(66,6.9f),new Vector2(4,1.5f),new Color(.74f,.59f,.5f,.2f)).AddComponent<BraceReceiver>();brace.gate=braceGate;brace.holdRequired=.65f;
-            a.Source(HostKind.Stitch,52,7.3f,true);var fold=a.Hinge(new Vector2(71,3),10,-5);a.Seam(new Vector2(79,9));
-            a.Ledge(37,1.2f,9);b.Solid("Horizontal coffin grille",new Vector2(38,3),new Vector2(9,1.2f));a.Mercy(41,1.9f);
-            b.session.Turned+=()=>{foreach(var c in carriers)c.deaf=true;receiver.minimumStrength=99;braceGate.SetOpen(true);};a.Health(94,10.4f);
-            b.Tip(new Vector2(8,2),"The coffin turns around its leading corner. No jump. Lie horizontally at the carrier's pressure point to brace it, or use the needle's folded route.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-10,-14,100,38),new Vector2(2,1));var b=a.b;a.Floor(-6,14);a.Floor(14,82,-9);a.Exit(2,1.1f);a.Source(HostKind.Coffin,8);
+            for(int i=0;i<5;i++)a.Ledge(11-i%2*3,-7+i*2,4).AddComponent<OneWaySurface>();a.Cure(HostKind.Coffin,16,-8);
+            var command=a.Receiver(new Vector2(12,3));var bell=a.Bell(new Vector2(12,2.3f),new[]{new Vector2(12,2.3f),new Vector2(12,3)},command);bell.GetComponent<Collider2D>().isTrigger=true;bell.splitOnTurn=false;
+            var ferryA=Carrier(a,new Vector2(16,-.325f),new Vector2(24,-.325f),command,1.6f);ferryA.name="First pallbearer ferry";ferryA.endPause=2;
+            a.Floor(25,32.5f);a.Floor(37.5f,48);a.Floor(61,83);a.Source(HostKind.Stitch,29,1,true);
+            var ferryB=Carrier(a,new Vector2(50,-.325f),new Vector2(60,-.325f),command,1.8f);ferryB.name="Second pallbearer ferry";ferryB.endPause=2;
+            var bannerA=a.Hinge(new Vector2(14,-.225f),12,-90,"procession-a");bannerA.name="First procession banner";a.Seam(new Vector2(26,-.225f),"procession-a");
+            var bannerB=a.Hinge(new Vector2(48,-.225f),14,-90,"procession-b");bannerB.name="Second procession banner";a.Seam(new Vector2(62,-.225f),"procession-b");
+            var inspectionBell=a.Receiver(new Vector2(35,2.8f));var toll=a.Bell(new Vector2(35,2.2f),new[]{new Vector2(35,2.2f),new Vector2(35,2.8f)},inspectionBell);toll.GetComponent<Collider2D>().isTrigger=true;toll.splitOnTurn=false;
+            var grille=b.Solid("Coffin inspection grille",new Vector2(35,-.2f),new Vector2(5,.4f));var grilleBody=grille.AddComponent<Rigidbody2D>();grilleBody.bodyType=RigidbodyType2D.Kinematic;grille.layer=Layers.Moving;
+            var inspection=grille.AddComponent<InspectionLift>();inspection.bell=inspectionBell;inspection.speed=2;
+            inspection.route=new[]{new Vector2(35,-.2f),new Vector2(35,-3.2f),new Vector2(42,-3.2f),new Vector2(35,-3.2f),new Vector2(35,-.2f)};
+            b.Solid("Low inspection ceiling",new Vector2(40,-1.35f),new Vector2(6,.9f));a.Mercy(42,-2.45f);
+            var pressBell=a.Receiver(new Vector2(44,3));var weightBell=a.Bell(new Vector2(44,2.3f),new[]{new Vector2(44,2.3f),new Vector2(44,3)},pressBell);weightBell.GetComponent<Collider2D>().isTrigger=true;weightBell.splitOnTurn=false;
+            var head=b.Solid("Inspection bearing press",new Vector2(44,3.4f),new Vector2(4,.5f),b.accent,Layers.Moving);head.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;
+            var press=head.AddComponent<BearingPress>();press.low=new Vector2(44,.95f);press.speed=4;press.bell=pressBell;
+            var balance=b.Solid("Load-linked counterweight",new Vector2(47,1.8f),new Vector2(.6f,3.6f),b.accent,Layers.Moving);press.counterweight=balance.AddComponent<Rigidbody2D>();press.counterweight.bodyType=RigidbodyType2D.Kinematic;press.counterweightRaised=new Vector2(47,6);
+            a.Key(76,1.2f);a.Nail(80,.5f);a.Health(66,1.2f);
+            b.session.Turned+=()=>{ferryA.deaf=ferryB.deaf=true;ferryA.speed=2.8f;ferryB.speed=3.1f;ferryA.endPause=ferryB.endPause=0;command.minimumStrength=99;
+                foreach(var banner in new[]{bannerA,bannerB}){banner.targetAngle=40;banner.folding=true;}};
+            a.Cure(HostKind.None,4,1,true);
+            b.Tip(new Vector2(8,2),"No jump: flip around the leading corner. Ride the pallbearers; their bell cycles march, halt, kneel and turn-back.");
+            b.Tip(new Vector2(35,3.7f),"The inspection bell lowers this grille. Plan your last flip BEFORE the trip: a horizontal lid fits under the low ceiling.");
+            b.Tip(new Vector2(44,4.5f),"Lie flat beneath the bearing head, then toll its bell. Your actual footprint takes the load and raises its counterweight.");
+            b.Tip(new Vector2(76,3),"The Nail silences the procession. Restitch the hanging banners into flat return bridges, or attempt the moving ferries.");
         }
         void Cathedral(AtlasBuilder a)
         {
