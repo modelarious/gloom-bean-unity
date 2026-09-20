@@ -124,7 +124,7 @@ namespace GloomBean.Campaign
         {
             yield return Walk(11.8f);yield return Fold("span-a",Vector2.up,30);yield return Walk(26);
             yield return Walk(27);yield return Fold("span-b",Vector2.up,30);yield return Walk(38.8f);yield return Calm();
-            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(49.5f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(51.2f,true);
+            if(secret){yield return Fold("island",new Vector2(-1,1),35.6f);yield return Jump(39,10.6f);yield return Leap(41.6f,11.8f,13.6f,false);yield return Walk(49.5f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<17);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(51.2f,true);
                 yield return Leap(56.8f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
@@ -155,14 +155,14 @@ namespace GloomBean.Campaign
         }
         IEnumerator ClosedLids(bool secret)
         {
-            yield return Walk(7);Check("undertaker closes the coffin",host.Has(HostKind.Coffin));yield return CoffinTo(12.5f);
+            yield return Walk(6.5f);yield return Await("undertaker closes the coffin",()=>host.Has(HostKind.Coffin),4,()=>new InputFrame{move=Vector2.right});if(stopped)yield break;yield return CoffinTo(12.5f);
             var ferries=session.GetComponentsInChildren<ProcessionCarrier>().OrderBy(x=>x.a.x).ToArray();yield return Ferry(ferries[0],16.4f,28);
-            yield return CoffinTo(30);Check("seamstress can share the coffin",host.Has(HostKind.Stitch));
+            yield return CoffinTo(30);Check("seamstress can share the coffin",host.Has(HostKind.Stitch));if(stopped)yield break;
             if(secret){yield return CoffinTo(34);var c=host.Form<CoffinForm>();if(!c.Horizontal)yield return Flip(1);
                 var lift=session.GetComponentInChildren<InspectionLift>();Check("horizontal orientation selected before inspection",c.Horizontal);yield return Press(new InputFrame{interact=true});
                 yield return Await("grille physically lowers the body",()=>actor.Feet.y< -2.7f,7);yield return Await("low inspection passage grants Mercy",()=>session.Mercies.Count==1,10);
                 yield return Await("inspection trip brings the body back",()=>lift.trips>0&&!lift.moving&&actor.Feet.y>-.1f,15);Check("horizontal lid was not blocked by the ceiling",!lift.blocked);Snapshot("coffin-inspection");}
-            yield return CoffinTo(41);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(-1);
+            if(stopped)yield break;yield return CoffinTo(41);if(stopped)yield break;var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(-1);
             yield return Flip(1);yield return Flip(1);var press=session.GetComponentInChildren<BearingPress>();Check("horizontal footprint beneath the bearing head",coffin.Horizontal&&Mathf.Abs(actor.Body.position.x-44)<2.3f);
             yield return Press(new InputFrame{interact=true});yield return Await("actual bracing releases the counterweight",()=>press.released,6);yield return Await("counterweight physically retracts",()=>press.counterweight.position.y>5.5f,4);Snapshot("bearing-contact");
             yield return CoffinTo(47.2f);yield return Ferry(ferries[1],50.4f,63);yield return CoffinTo(78.8f);Check("procession Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("return silences bells",session.Phase==RunPhase.Returning);if(stopped)yield break;

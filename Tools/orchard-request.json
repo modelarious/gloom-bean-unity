@@ -1,5 +1,5 @@
 {
-  "id": "Fall-R08-landing-and-procession",
+  "id": "Fall-R09-optional-clearance",
   "build": true,
   "cases": [
     {
@@ -23,10 +23,6 @@
       "suite": "Fall",
       "route": "GB-L15",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

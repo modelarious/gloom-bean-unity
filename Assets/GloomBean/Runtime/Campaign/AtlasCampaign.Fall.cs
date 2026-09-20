@@ -43,11 +43,11 @@ namespace GloomBean.Campaign
             var third=a.Hinge(new Vector2(48,8.74f),10,-90,"span-c");third.name="Far folding tower";
             var thirdEnd=a.Seam(new Vector2(56.660f,13.74f),"span-c");a.Ledge(63.5f,14,13);a.Key(61,15.2f);a.Nail(67,14.4f);
             // A support's movement carries an entire suspended island, not just an unlock token.
-            var secret=a.Hinge(new Vector2(40,8.74f),8,130,"island");secret.name="Island support tower";
-            a.Seam(new Vector2(46.5f,13.39f),"island");
-            var island=a.Ledge(37.858f,15.218f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
+            var secret=a.Hinge(new Vector2(40,11),8,130,"island");secret.name="Island support tower";a.Ledge(39,10.6f,3).AddComponent<OneWaySurface>();
+            a.Seam(new Vector2(46.5f,15.65f),"island");
+            var island=a.Ledge(37.858f,17.478f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
             var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(3,.15f);
-            a.Mercy(37.858f,16.418f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
+            a.Mercy(37.858f,18.678f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
             var ret1=a.Seam(new Vector2(20,.74f),"span-a");ret1.gameObject.SetActive(false);
             var ret2=a.Seam(new Vector2(36,4.74f),"span-b");ret2.gameObject.SetActive(false);
             var ret3=a.Seam(new Vector2(56,10.74f),"span-c");ret3.gameObject.SetActive(false);
