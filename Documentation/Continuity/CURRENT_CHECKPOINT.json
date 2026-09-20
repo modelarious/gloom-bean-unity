@@ -3,13 +3,13 @@
   "scope": "Current common-source full native release acceptance; manual judgement separate",
   "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
   "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "next_gate": "Full-Campaign-M1: all54 common-source cases, actual saved0/19/20 ending paths. Then independent lineage/source audit, exact source/binary packages and extracted ending smoke checks. All twenty stage implementations already exist; do not reimplement from old checkpoints.",
+  "next_gate": "Read full M1 and queued packaged-ending receipts. On54/54PASS, run audit_release.py against exact config/source, preserve safe final evidence, inspect three packaged ending backbuffers, commit current release docs/state/journal, package full source+Git history, restore/hash-check externally, then publish canonical final record. All20stages/5bosses already exist; do not restart content.",
   "active_job": {
     "task": "GloomBean-Campaign-Acceptance-M1",
     "receipt": "Reports/Full-Campaign-M1/runner.json",
     "config": "Tools/campaign-acceptance-m1.json",
     "source": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-    "status": "READY_NOT_STARTED"
+    "status": "STARTED_CHECK_ACTUAL_RECEIPT"
   },
   "latest_focused": {
     "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
@@ -34,5 +34,23 @@
     "Final native visual and atlas-fidelity review",
     "Current guide and engineering journal",
     "Manual uncoached/controller judgement"
-  ]
+  ],
+  "queued_job": {
+    "task": "GloomBean-Packaged-Endings-M1",
+    "script": "Tools/Complete-M1-PackagedChecks.ps1",
+    "receipt": "Reports/Packaged-Endings-M1/runner.json",
+    "requires": "All54 Full-Campaign-M1 cases PASS and phasefinished",
+    "status": "STARTED_WAITING_FOR_PREDECESSOR_OR_EXECUTING_CHECK_RECEIPT",
+    "watchdog": "15-minute predecessor wait plus three bounded4-minute final-boss runs; own scheduled task30minute ceiling"
+  },
+  "packaged_player": {
+    "archive": "Delivery/Full-Campaign-M1/GloomBean_Windows_Full_Campaign.zip",
+    "sha256": "fe7241c2bc8b4786f2fee961865a287e4175f5dab52f63a67d1a2d289b8abc27",
+    "bytes": 62858688,
+    "assembly_sha256": "8ccc3b3ac2d8aba179e74333bd999190b8f8d0ac7a1f871fa268297389795e3e",
+    "payload_files": 158,
+    "container_payload_verification": "PASS",
+    "native_packaged_endings": "PENDING_ACTUAL_RECEIPT",
+    "warning": "Do not modify frozen ZIP after the extracted verification; regenerate and retest instead."
+  }
 }
