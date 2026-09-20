@@ -215,6 +215,7 @@ namespace GloomBean.Campaign
 
             yield return Arena();var cableDeck=a.Metal(new Vector2(600,4),new Vector2(5,.6f),1,false,1);var cableBell=a.Metal(new Vector2(606,8),Vector2.one*1.2f,4,false,1);
             var deckBody=cableDeck.GetComponent<Rigidbody2D>();var bellBody=cableBell.GetComponent<Rigidbody2D>();deckBody.constraints=RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;deckBody.gravityScale=bellBody.gravityScale=2;
+            var cableRail=deckBody.gameObject.AddComponent<SliderJoint2D>();cableRail.autoConfigureConnectedAnchor=false;cableRail.connectedAnchor=deckBody.position;cableRail.autoConfigureAngle=false;cableRail.angle=90;cableRail.useLimits=true;cableRail.limits=new JointTranslationLimits2D{min=-12,max=0};cableRail.enableCollision=true;
             var pulley=fixture.AddComponent<CablePulley>();pulley.Configure(deckBody,bellBody,new Vector2(600,16),new Vector2(606,16));yield return Steps(130);
             C("cable.falling-mass-raises-real-deck",deckBody.position.y>6&&bellBody.position.y<6,deckBody.position+" / "+bellBody.position);
             C("cable.bounded-length-without-teleport",pulley.MaximumExtension<.35f&&pulley.PeakTension>10&&pulley.HighestDeck>pulley.InitialDeckHeight+2,"max stretch="+pulley.MaximumExtension+" current slack="+pulley.Extension+" peak tension="+pulley.PeakTension);

@@ -42,7 +42,7 @@ namespace GloomBean.Campaign
             var b=a.b;
             var screen=a.Metal(new Vector2(83,11.7f),new Vector2(6.5f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=60;screen.gameObject.layer=Layers.Moving;
             var deck=screen.GetComponent<Rigidbody2D>();deck.gravityScale=2;deck.constraints=RigidbodyConstraints2D.FreezeRotation;
-            var rail=screen.gameObject.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=deck.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=0,max=8};rail.enableCollision=true;
+            var rail=screen.gameObject.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=deck.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=-8,max=0};rail.enableCollision=true;
             var bell=a.Metal(new Vector2(78.5f,15),new Vector2(1.2f,1.4f),4,false,1);bell.name="Loose bell counterweight";bell.strength=170;bell.fieldRadius=4.5f;
             var weight=bell.GetComponent<Rigidbody2D>();weight.gravityScale=2;weight.linearDamping=.08f;
             var saddle=b.Solid("Greased bell saddle",new Vector2(78.5f,13.9f),new Vector2(2,.4f));var slick=new PhysicsMaterial2D("Greased iron"){friction=0};saddle.GetComponent<Collider2D>().sharedMaterial=slick;bell.GetComponent<Collider2D>().sharedMaterial=slick;

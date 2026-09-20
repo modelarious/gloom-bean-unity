@@ -1,12 +1,21 @@
 {
-  "id": "Empyrean-H20b-rail-sign-diagnostic",
+  "id": "Empyrean-H21-correct-physical-rail-limits",
   "build": true,
   "cases": [
     {
-      "name": "Rail-sign",
+      "name": "L17-critical",
+      "suite": "Empyrean",
+      "route": "GB-L17"
+    },
+    {
+      "name": "L17-secret",
       "suite": "Empyrean",
       "route": "GB-L17",
-      "railProbe": true
+      "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

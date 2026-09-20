@@ -1,0 +1,7 @@
+BEGIN GB-L17 Choir of Iron Halos
+COMPONENT PROBE ONLY — not a gameplay route. Disposable bodies receive diagnostic forces.
+RAIL mode=0 forceDirection=-1 dy=-7.75 translation=7.75 state=Inactive reaction=(0.00, 0.00)
+RAIL mode=0 forceDirection=1 dy=0 translation=0 state=LowerLimit reaction=(0.00, 60.00)
+RAIL mode=1 forceDirection=-1 dy=0 translation=0 state=UpperLimit reaction=(0.00, -60.00)
+RAIL mode=1 forceDirection=1 dy=7.749985 translation=-7.749985 state=Inactive reaction=(0.00, 0.00)
+PASS GB-L17 diagnostic completed without game-state mutation body=(2.00, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6

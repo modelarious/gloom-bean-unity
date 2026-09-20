@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  1,
+                        "case":  "Rail-sign",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Empyrean-H20b-rail-sign-diagnostic",
+    "started":  "2026-09-20T05:34:19.4354988-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-20T05:34:29.1299824-06:00"
+}
