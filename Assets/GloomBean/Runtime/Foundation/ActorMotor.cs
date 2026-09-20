@@ -46,6 +46,7 @@ namespace GloomBean.Foundation
         Collider2D previousSupport;
         Vector2 supportLocal;
         Vector2 previousSupportPoint;
+        Rigidbody2D supportBody;Vector2 supportNormal=Vector2.up;
 
         void Awake()
         {
@@ -85,22 +86,27 @@ namespace GloomBean.Foundation
             {
                 previousSupport=GroundCollider;
                 previousSupportPoint=Feet;
-                supportLocal=GroundCollider.transform.InverseTransformPoint(previousSupportPoint);
-            } else previousSupport=null;
+                supportBody=GroundCollider.attachedRigidbody;supportNormal=GroundNormal;
+                supportLocal=supportBody?(Vector2)(Quaternion.Euler(0,0,-supportBody.rotation)*(Vector3)(previousSupportPoint-supportBody.position)):(Vector2)GroundCollider.transform.InverseTransformPoint(previousSupportPoint);
+            } else {previousSupport=null;supportBody=null;}
         }
         void CarryWithSupport()
         {
-            if(!previousSupport || groundIgnore>0)return;
-            Vector2 now=previousSupport.transform.TransformPoint(supportLocal);
+            if(!previousSupport || groundIgnore>0||hurtTime>0)return;
+            // Rigidbody poses belong to the fixed simulation, unlike interpolated child transforms.
+            Vector2 now=supportBody?supportBody.position+(Vector2)(Quaternion.Euler(0,0,supportBody.rotation)*(Vector3)supportLocal):(Vector2)previousSupport.transform.TransformPoint(supportLocal);
             var delta=now-previousSupportPoint;
-            // Platform motion is applied once; actor velocity remains relative to support.
-            if(delta.sqrMagnitude<9f) Body.position+=delta;
+            // The contact solver may already have transmitted the platform's normal movement.
+            // Apply tangential carry once, and only the normal displacement still missing.
+            float normalAlready=Vector2.Dot(Feet-previousSupportPoint,supportNormal);
+            Vector2 carry=delta-supportNormal*normalAlready;
+            if(delta.sqrMagnitude<9f&&carry.sqrMagnitude<9f)Body.position+=carry;
             previousSupportPoint=now;
         }
         public void ProbeGround()
         {
             Grounded=false; GroundCollider=null; GroundNormal=Vector2.up;
-            if(groundIgnore>0||Body.linearVelocity.y>2.5f)return;
+            if(groundIgnore>0||Body.linearVelocity.y-(supportBody?supportBody.linearVelocity.y:0)>2.5f)return;
             var origin=Feet+Vector2.up*.09f;
             int n=Physics2D.BoxCastNonAlloc(origin,new Vector2(Shape.size.x*.78f,.06f),0,Vector2.down,groundHits,.18f,collisionMask);
             float closest=999;
@@ -209,7 +215,7 @@ namespace GloomBean.Foundation
                 if(State==MotionState.RunTackle)State=MotionState.AirTackle;
                 RuntimeEvents.Emit("jump");
             }
-            else if(Grounded&&v.y<=2.5f)
+            else if(Grounded)
             {
                 // Match the slope tangent, avoiding the uphill-stall of horizontal-only controllers.
                 v.y=-GroundNormal.x/Mathf.Max(.4f,GroundNormal.y)*v.x-1.0f;
