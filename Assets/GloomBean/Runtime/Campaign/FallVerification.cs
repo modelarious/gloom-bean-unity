@@ -19,7 +19,7 @@ namespace GloomBean.Campaign
         bool Live=>session && session.Phase!=RunPhase.Failed && session.Phase!=RunPhase.Cleared;
         string Arg(string key,string fallback){var args=Environment.GetCommandLineArgs();int n=Array.IndexOf(args,key);return n>=0&&n+1<args.Length?args[n+1]:fallback;}
         public void Begin(GameRoot root){game=root;dir=root.reportDirectory;Directory.CreateDirectory(dir);began=Time.realtimeSinceStartup;Application.logMessageReceived+=OnLog;RuntimeEvents.Event+=TraceEvent;StartCoroutine(Run());}
-        void TraceEvent(string kind,string detail){if(kind=="stitch-tug"||kind=="boss-phase")Note("EVENT t="+Time.time.ToString("0.00")+" "+kind+" "+detail);}
+        void TraceEvent(string kind,string detail){if(kind=="stitch-tug"||kind=="boss-phase"||kind.StartsWith("nave-")||kind=="bearing-released")Note("EVENT t="+Time.time.ToString("0.00")+" "+kind+" "+detail);}
         void OnLog(string m,string stack,LogType type){if(type==LogType.Error||type==LogType.Exception){failures++;Note("ERROR "+m);Finish();}}
         void Update(){if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-echo-trace")>=0&&!finished&&host&&session.definition.course==2&&Time.time>lastTrace+.5f&&Time.time<11){lastTrace=Time.time;var echo=host.Form<EchoForm>();Note("TRACE t="+Time.time.ToString("0.00")+" body="+actor.Body.position+" echo="+(echo!=null&&echo.Echo?echo.Echo.Body.position+" velocity="+echo.Echo.Body.linearVelocity+" live="+echo.Echo.Body.simulated:"none"));}if(!finished&&Time.realtimeSinceStartup-began>510){failures++;Note("FAIL native route watchdog");Finish();}}
         void Note(string text){log.Add(text);File.WriteAllLines(Path.Combine(dir,"fall-observations.txt"),log);}
@@ -144,7 +144,7 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;float end=Time.time+seconds;int sign=x>actor.Body.position.x?1:-1;
             while(Live&&Time.time<end&&sign*(x-actor.Body.position.x)>.45f){input.frame=new InputFrame{move=new Vector2(sign,0)};yield return NextPhysics();}
-            input.frame=default;yield return Pause(.5f);Check("coffin crosses real ground to "+x,sign*(actor.Body.position.x-x)>-.8f&&actor.Feet.y> -1.2f);
+            input.frame=default;yield return Pause(.5f);Check("coffin crosses real ground to "+x,sign*(actor.Body.position.x-x)>-.8f&&RelativeFeet()> -1.2f);
         }
         IEnumerator Ferry(ProcessionCarrier ferry,float board,float exit)
         {
@@ -169,6 +169,39 @@ namespace GloomBean.Campaign
             yield return CoffinTo(64);yield return Fold("procession-b",Vector2.up,0);yield return CoffinTo(40);
             yield return CoffinTo(28);yield return Fold("procession-a",Vector2.up,0);yield return CoffinTo(6);yield return Walk(2);
         }
+        float RelativeFeet(){var frame=session.GetComponentInChildren<DescentController>();return actor.Feet.y+(frame?frame.fallen:0);}
+        IEnumerator FrameJump(float x,float floor,bool running=false)
+        {
+            if(stopped||!Live)yield break;float end=Time.time+6;bool sent=false;
+            while(Live&&Time.time<end){float dx=x-actor.Body.position.x;bool edge=!sent&&actor.Grounded;if(edge)sent=true;
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx-actor.Body.linearVelocity.x*.1f,-1,1),0),jump=edge,jumpHeld=true,run=running};
+                if(sent&&!edge&&actor.Grounded&&Mathf.Abs(RelativeFeet()-floor)<.35f&&Mathf.Abs(dx)<.25f)break;yield return NextPhysics();}
+            input.frame=default;Check("landing within falling frame "+x+" / "+floor,actor.Grounded&&Mathf.Abs(RelativeFeet()-floor)<.4f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
+        }
+        IEnumerator Board(MotionPlatform platform)
+        {
+            if(stopped||!Live)yield break;float end=Time.time+9,lastJump=-10;var shape=platform.GetComponent<Collider2D>();
+            while(Live&&Time.time<end&&actor.GroundCollider!=shape){float dx=platform.transform.position.x-actor.Body.position.x;bool jump=actor.Grounded&&Time.time-lastJump>.7f;if(jump)lastJump=Time.time;
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx-actor.Body.linearVelocity.x*.12f,-1,1),0),jump=jump,jumpHeld=true};yield return NextPhysics();}
+            input.frame=default;Check("board real "+platform.name,actor.Grounded&&actor.GroundCollider==shape);
+        }
+        IEnumerator Freefall(bool secret)
+        {
+            yield return Walk(10);Check("opening incense tenant",host.Has(HostKind.Censer));yield return Walk(28);Check("transept stitch source",host.Has(HostKind.Stitch));
+            yield return Walk(80.5f);Check("cathedral Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail releases actual cathedral",session.Phase==RunPhase.Returning);if(stopped)yield break;
+            var frame=session.GetComponentInChildren<DescentController>();var mover=session.GetComponentsInChildren<MotionPlatform>().First(x=>x.name=="Collapsing transept");
+            yield return Walk(74.5f);yield return Await("transept aligns with its lower dock",()=>mover.transform.position.x>71.5f,15);yield return Board(mover);yield return Calm();
+            Check("Censer slows physical transept",mover.timeScale<.55f);yield return Await("ride transept toward attached tower",()=>mover.transform.position.x<62.7f,40);yield return FrameJump(61,6);
+            yield return Fold("transept",Vector2.left,150);yield return Walk(47.2f);yield return Await("coffin can bear the new joint",()=>host.Has(HostKind.Coffin),4,()=>new InputFrame{move=Vector2.left});if(stopped)yield break;
+            yield return CoffinTo(43);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(-1);yield return Press(new InputFrame{interact=true});
+            var load=session.GetComponentInChildren<FallingLoad>();var hoist=session.GetComponentInChildren<ImpactHoist>();yield return Await("falling nave strikes actual braced body",()=>load.impacted,8);Check("nave collision has real impact speed",load.impactSpeed>2.5f);
+            yield return Await("bearing collision raises the return hoist",()=>hoist.Arrived,8);Snapshot("impact-hoist");yield return CoffinTo(45.5f);yield return Await("open the lid at the lifted grave mouth",()=>!host.Has(HostKind.Coffin),3);
+            if(stopped)yield break;
+            if(secret){var chapel=session.GetComponentsInChildren<MotionPlatform>().First(x=>x.name=="Passing Mercy chapel");yield return Await("chapel aligns for the limited detour",()=>chapel.transform.position.x<50.3f,18);yield return Board(chapel);
+                Check("passing chapel Mercy",session.Mercies.Count==1);Snapshot("passing-chapel");yield return Await("chapel returns within jumping distance",()=>chapel.transform.position.x<50.5f,20);yield return FrameJump(43.5f,25,true);}
+            yield return Walk(38.8f);yield return FrameJump(35,26.6f);yield return Walk(33);yield return FrameJump(29,28.2f);yield return Walk(2);
+            Check("escape precedes altitude exhaustion",frame.RemainingAltitude>0&&frame.fallen>5);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[3];
@@ -177,7 +210,7 @@ namespace GloomBean.Campaign
             var stages=new List<StageDefinition>();if(selected=="W4"){stages.AddRange(world.levels);stages.Add(world.boss);}else stages.Add(selected==world.boss.id?world.boss:Array.Find(world.levels,x=>x.id==selected));
             foreach(var stage in stages){if(stage==null){failures++;Note("FAIL unknown Fall stage "+selected);break;}yield return Load(stage);
                 if(selected=="W4")Check("earned intra-world stage selection",stage.boss?CampaignProgression.BossOpen(world,game.Save.Data,PracticeWitness):CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,stage),game.Save.Data,PracticeWitness));
-                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else if(stage.course==15)yield return ClosedLids(secrets);else Check("route not implemented yet",false);
+                if(stage.course==13)yield return Rain(secrets);else if(stage.course==14)yield return SeamBridge(secrets);else if(stage.course==15)yield return ClosedLids(secrets);else if(stage.course==16)yield return Freefall(secrets);else Check("route not implemented yet",false);
                 Check("stage completes through physical exit or boss solution",session.Phase==RunPhase.Cleared);
                 if(!stopped){if(PracticeWitness)Check("practice writes no earned progress",!game.Save.Data.cleared.Contains(stage.id)&&!game.Save.Data.mercies.Contains(stage.id+"-MERCY"));else{Check("completion survives save",game.Save.Data.cleared.Contains(stage.id));if(!stage.boss)Check(secrets?"Mercy persists after real return":"Mercy remains optional",secrets?game.Save.Data.mercies.Contains(stage.id+"-MERCY"):session.Mercies.Count==0);}}Snapshot("finish");if(stopped)break;}
             if(selected=="W4"&&!stopped){var save=new SaveStore(Path.Combine(dir,"test-save.json"));Check("Fall earns the False Empyrean",CampaignProgression.WorldOpen(game.AvailableWorlds,4,save.Data,PracticeWitness));Check("sixteen Mercies cannot restore the ending",!save.RestoredEnding);}

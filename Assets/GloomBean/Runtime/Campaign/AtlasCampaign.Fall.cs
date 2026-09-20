@@ -93,18 +93,31 @@ namespace GloomBean.Campaign
         }
         void Cathedral(AtlasBuilder a)
         {
-            a.Begin(new Rect(-9,-235,125,280),new Vector2(2,1));var b=a.b;
-            // Camera initially frames the structure, not the entire altitude budget.
-            b.session.Camera.bounds=new Rect(-9,-9,125,65);
-            a.Floor(-6,106);var exit=a.Exit(2,1.1f);a.Source(HostKind.Censer,8);a.Source(HostKind.Stitch,20,1,true);
-            a.Steps(14,2,7,5,2,4);a.Ledge(48,14,7);a.Figure(54,32,15,2);
-            var hinge=a.Hinge(new Vector2(51,15),12,-30);a.Seam(new Vector2(61,21.5f));a.Ledge(61,19,4);a.Ledge(67,21,5);
-            a.Source(HostKind.Coffin,68,22,true);a.Ledge(73,22,5);var platform=b.Slider(new Vector2(78,22),new Vector2(90,25),new Vector2(6,.5f),1.8f);a.Ledge(98,25,13);a.Key(95,26.3f);a.Nail(103,25.4f);
-            var upperReturn=new List<GameObject>();for(int i=0;i<11;i++){var g=a.Ledge(3+i*8.5f,24,7);g.SetActive(false);upperReturn.Add(g);}
-            var chapel=b.Slider(new Vector2(7,28),new Vector2(23,31),new Vector2(6,.5f),1.5f);chapel.paused=true;a.Mercy(18,32.2f);a.Health(46,15.3f);
-            var obj=new GameObject("Cathedral descent clock");obj.transform.SetParent(b.root);var descent=obj.AddComponent<DescentController>();descent.altitude=210;descent.speed=1.6f;descent.exit=exit.transform;descent.Capture(b);
-            b.session.Turned+=()=>{foreach(var g in upperReturn)g.SetActive(true);descent.falling=true;chapel.paused=false;hinge.targetAngle=0;hinge.folding=true;};
-            b.Tip(new Vector2(9,2),"Pulling the high Nail cuts the cathedral loose. The return arch rises through the falling building. The altitude gauge is your deadline.");a.Cure(HostKind.None,4,25,true);
+            a.Begin(new Rect(-12,-260,108,315),new Vector2(2,21));a.b.session.Camera.bounds=new Rect(-12,-13,108,60);var b=a.b;
+            a.Floor(-6,12,20);a.Floor(12,86,-8);var exit=a.Exit(2,21.1f);a.Source(HostKind.Censer,7,21);
+            for(int i=0;i<10;i++)a.Ledge(16+i*6,18-i*2,5);a.Ledge(78,0,15);a.Source(HostKind.Stitch,28,15,true);a.Key(76,1.2f);a.Nail(82,.45f);
+            var frameObject=new GameObject("The cathedral's falling frame");frameObject.transform.SetParent(b.root);var frame=frameObject.AddComponent<DescentController>();frame.altitude=230;frame.speed=1.6f;frame.exit=exit.transform;frame.exitRise=8;frame.exitRiseRate=.6f;
+            var transept=b.Slider(new Vector2(73,1.8f),new Vector2(60.5f,5.8f),new Vector2(5,.4f),3);transept.name="Collapsing transept";transept.gameObject.SetActive(false);transept.respectBraces=false;
+            var dock=a.Ledge(62,6,6);dock.name="Still-attached tower";
+            var bridge=a.Hinge(new Vector2(59,5.74f),10,180,"transept");bridge.name="Transept structural joint";a.Seam(new Vector2(50.340f,10.74f),"transept");a.Ledge(47.95f,11,3.9f);
+            a.Source(HostKind.Coffin,46,12,true);
+            var platform=b.Solid("Impact return hoist",new Vector2(42,10.8f),new Vector2(8,.4f),b.accent,Layers.Moving);var platformBody=platform.AddComponent<Rigidbody2D>();platformBody.bodyType=RigidbodyType2D.Kinematic;
+            var hoist=platform.AddComponent<ImpactHoist>();hoist.frame=frame;hoist.rise=14;hoist.speed=6;
+            var bellReceiver=a.Receiver(new Vector2(42,14));var toll=a.Bell(new Vector2(42,13.1f),new[]{new Vector2(42,13.1f),new Vector2(42,14)},bellReceiver);toll.GetComponent<Collider2D>().isTrigger=true;toll.splitOnTurn=false;
+            var nave=b.Solid("Detached falling nave",new Vector2(42,21),new Vector2(5,1),new Color(.61f,.48f,.48f),Layers.Prop);var mass=nave.AddComponent<Rigidbody2D>();mass.mass=14;mass.gravityScale=3.4f;mass.freezeRotation=true;mass.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
+            var load=nave.AddComponent<FallingLoad>();load.frame=frame;load.releaseBell=bellReceiver;load.hoist=hoist;hoist.load=load;
+            var cure=a.Cure(HostKind.Coffin,45.2f,12);cure.transform.SetParent(platform.transform,true);cure.gameObject.SetActive(false);hoist.releaseCure=cure.gameObject;
+            var incense=a.Source(HostKind.Censer,44,12,true);incense.transform.SetParent(platform.transform,true);incense.gameObject.SetActive(false);hoist.arrivalObjects=new[]{incense.gameObject};
+            var returnA=a.Ledge(35,26.6f,5);var returnB=a.Ledge(29,28.2f,6);var gallery=a.Ledge(11,28.2f,32);returnA.SetActive(false);returnB.SetActive(false);gallery.SetActive(false);
+            var chapel=b.Slider(new Vector2(49,26.8f),new Vector2(58,26.8f),new Vector2(5,.4f),2.1f);chapel.name="Passing Mercy chapel";chapel.gameObject.SetActive(false);a.Mercy(49,28.2f);
+            foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(chapel.transform,true);
+            a.Health(77,1.2f);a.Cure(HostKind.None,4,29.2f,true);
+            b.session.Turned+=()=>{frame.falling=true;transept.gameObject.SetActive(true);chapel.gameObject.SetActive(true);returnA.SetActive(true);returnB.SetActive(true);gallery.SetActive(true);};
+            b.Tip(new Vector2(7,22),"The descent is still quiet. Learn the ledges: the way out will rise above them.");
+            b.Tip(new Vector2(74,2),"The Nail releases the whole building. Slow the moving transept, then cross to the still-attached tower.");
+            b.Tip(new Vector2(60,7),"Join the loose transept edge to its tower seam. The piece itself swings into a rising return route.");
+            b.Tip(new Vector2(42,14.8f),"Brace horizontally, then toll the nave bell. Only a real bearing impact catches the windlass and raises the return hoist.");
+            frame.Capture(b);
         }
     }
 }
