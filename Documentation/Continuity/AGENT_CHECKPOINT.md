@@ -1,334 +1,112 @@
-# Gloom Bean: agent execution checkpoint
+# Gloom Bean / Host Cycle — operational checkpoint
 
-## Current continuation — 20 September 2026
+## 1. The current position has one owner
 
-The completed clean checkpoint now covers worlds1–4:16 levels,4 bosses and all first16 Mercies through genuine inputs and earned save chains. Read CURRENT_CHECKPOINT.json and Documentation/Fall/Evidence/Clean-v06-g1/runner.json before older paragraphs below. Main is already developing World5. Its R09 first magnetic gap is not repeatably solved; earlier R08 success is a narrow observation, not full L17 acceptance. The separate release/fall-v0.6.0 branch retains the verified engine inputs at ce58671. No verification job is left running at this checkpoint. Existing scheduled runners remain available; there is no missing-write-access blocker.
+Read `CURRENT_CHECKPOINT.json` beside this file before acting. It records the latest candidate, exact live/finished report, next gate and publication boundary. This guide owns reusable procedures, not a competing static current-stage summary. `Documentation/RELEASE_STATUS.md` is the human-facing release receipt; `Documentation/Release/NATIVE_AUDIT.json` is the final native audit when present.
 
+The complete native campaign is implemented: twenty stages, five world bosses, fifteen possession systems, ordinary and all-Mercy routes, permanent first corruption, original pixel presentation and both endings. Do not start over from an earlier four-world ZIP. Do not interpret a failed conversation response as erased machine work. Compare actual Git history, current files and persistent run receipts first.
 
-## Current execution position â€” 2026-09-19, after both repairs
+The original user asked for a separately committed reusable platformer foundation, then implementation of the44-page atlas. The independent `foundation` branch and immutable original `foundation-v0.1.0` tag remain intact. Gloom Bean is not DungeonForge's top-down generator.
 
-**Read CURRENT_CHECKPOINT.json for the live successor of this checkpoint.** The latest complete clean suite is PASS: independent foundation61, combined mechanics200, W1 ordinary138, W1 secrets173, W2 ordinary318, W2 secrets374, Judge29, practice38, and the explicit expected empty-save denial. W2 resumed the actual earned W1 saves. No verification job remains pending at this checkpoint. The tested atlas source is 747f8ebcebb3a6769f684e8686649142730b971e; later documentation/tool changes do not change its runtime.
+## 2. Canonical authority and first read
 
-Both earlier failures are preserved as history: the Pears witness needed the actual Wax movement mode, and partial Marionette removal with retained Echo must not demand a different hypothetical standing footprint. Do not restart those repaired tasks from the historical sections below.
+Canonical project/user context: `modelarious/obsidian-notes`, main. Global skills: `modelarious/chatgpt-skills`, main. Load current `global/cloud-context/SKILL.md`, follow HOME and the explicit registry slug `gloom-bean-unity`, then complete requirements and relevant records. GitHub commits are durable ingestion; no legacy ACK daemon is needed. Read current `global/unlazy/SKILL.md` for substantial work. Shared procedure versions are not copied into this project as competing globals.
 
-**Next content:** City (World3), beginning with GB-L09 / Tenement of Two Suns, its Mirror controller, critical route, Turn and Mercy, followed by the remaining City levels and Surveyor. Fall is World4, Empyrean World5. Twelve remaining stages, three bosses, production presentation and human acceptance are not finished.
+The source atlas identity is `c006f063e336651e89109251fbc74cac1114ca8d939867acdd209646a90bc5fc`. Its reference PDF and supplied character image are included in the delivered archive. Normative source wording stays unchanged. The atlas's schematic layouts are not final tile-accurate production maps. New proposals and human judgements must not silently become decided requirements.
 
-Canonical registry now includes the explicit slug `gloom-bean-unity` with its own complete hash-verified user requirements and project state. Generic `my game` aliases remain with the parent DungeonForge project; do not load unrelated top-down V2 requirements as Gloom Bean's implementation instructions. Read `Context/projects/gloom-bean-unity/PROJECT_STATE.md` and `REQUIREMENTS.md`, then the linked first-read guide/execution JSON.
+## 3. One bounded access probe
 
-The source tree is committed and full history bundles are verified; public standalone source publication remains the narrow recorded administration blocker. Ordinary Git read/write to existing canonical context on Mac is verified. That does not create or push the missing public game repository.
+Discover only the currently needed connector schema. The known Windows route is SentinelX `sentinel_script_run` with `interpreter=python3` for filesystem/Git and `powershell` for scheduled tasks. The observed enrolled host is `win-desktop-s717dnm` / `DESKTOP-S717DNM`; verify the returned operational host rather than using an old ephemeral session ID.
 
+Run `python Tools/agent_status.py --probe-write` in the existing project. It checks HEAD, dirty/staged state, source identity, checkpoint/request receipts and a reversible scoped write. Current task/process observations are read-only. An absent historical tool name is not a revoked permission. A real permission or policy denial must be respected; never bypass it.
 
-Read this before broad searches, tool-access claims, new repository requests or implementation. This is the project-specific companion to modelarious/obsidian-notes main, Context/projects/game/GLOOMBEAN_START_HERE.md. The canonical guide is linked from Context/HOME.md and the current global/cloud-context procedure in modelarious/chatgpt-skills. Current machine state is in CURRENT_CHECKPOINT.json next to this file.
+The main worktree is `C:\Users\micha\Projects\GloomBeanUnity`; the independent base is `C:\Users\micha\Projects\GloomBeanFoundation`. These are observed execution paths, not stronger authority than the registry. Probe them before broad disk/history searches. Do not use SentinelX temporary script paths, old process IDs or a cached virtualenv executable as authority.
 
-## 1. First-read procedure: one bounded orientation, then content
+## 4. Native Unity is already available
 
-Load the current global/cloud-context skill and canonical context. Resolve game through the registry; Gloom Bean is a separate platformer implementation and must not replace DungeonForge's top-down requirements. Read the canonical GLOOMBEAN_START_HERE guide rather than searching historical chats indiscriminately.
+The installed editor is `C:\Program Files\Unity\Hub\Editor\6000.5.9f1\Editor\Unity.exe`. `Tools/Build-Windows.ps1` resolves the version from `ProjectSettings/ProjectVersion.txt`, supports explicit overrides and paths with spaces, checks the native result, and bounds its owned process to540seconds.
 
-Discover SentinelX using api_tool.list_resources(paths=["SentinelX"], query="script_run") only if its schema is absent. Call sentinel_list_hosts and use the returned operational Windows host. Last observed: win-desktop-s717dnm / DESKTOP-S717DNM / gamer-bro.
+Unity must execute as the already licensed ordinary desktop user `micha`. Running the editor as the connector's SYSTEM identity previously produced entitlement/profile errors. The established solution is the existing interactive scheduled-task runner, not reinstalling Unity, extracting a licence, weakening a password or repeatedly asking for activation.
 
-The following is a SentinelX.sentinel_script_run tool payload, not shell syntax:
+The user-facing boot scene is `Assets/GloomBean/Scenes/Boot.unity`. The compiled game is `<project>\Builds\Windows\GloomBean.exe`. Use the native executable for visual/route checks; do not substitute a browser port or source-presence test.
 
-```json
-{"host_id":"win-desktop-s717dnm","interpreter":"python3","timeout":30,"content":"import runpy,sys; sys.argv=['agent_status.py','--probe-write']; runpy.run_path(r'C:\\Users\\micha\\Projects\\GloomBeanUnity\\Tools\\agent_status.py',run_name='__main__')"}
-```
+## 5. Reuse the current runner rather than rebuilding one
 
-The helper reports HEAD, owned/dirty state, tested-source comparison, pinned receipts, next gate and an actual reversible write probe. It does not build, certify gameplay, alter permissions, install dependencies or read credentials. A missing loaded tool name is not lost write permission. Historical functions.exec/ALL_TOOLS wrappers are not portable tools; never fabricate their availability.
+The focused task `GloomBean-Orchard-v04` retains its historical name but now invokes `Tools/Run-Orchard-Local.ps1`, which delegates to `Run-Campaign-Checks.ps1`. Its request is `Tools/orchard-request.json`; it supports all current suites, including Empyrean. Inspect the action/principal/state before starting it. Write a unique request only while idle, commit it, then launch once. Its persistent receipt is `Reports/Orchard-v04/<request-id>/runner.json`.
 
-If the helper is missing, inspect the exact worktree with git status, last eight commits, the linked checkpoint and latest runner.json. Test a unique file only inside the project and remove only that probe. Stop and record an actual scoped security denial; do not bypass it. A host being unavailable does not invalidate durable user requirements.
+Full acceptance uses `Run-Campaign-Acceptance.ps1 -ConfigPath <unique-config>`. The M1 reference configuration is `Tools/campaign-acceptance-m1.json`; its run lives in a separate fresh clone. Follow CURRENT_CHECKPOINT for the exact task, clone and receipt. The runner validates its parent graph, pins source trees, performs native builds, records real parent-save copies and serializes visible final-boss/ending cases. A source clone with spaces in its name is supported.
 
-## 2. Exact known locations
+Never launch a duplicate Editor for the same project, overwrite a live request, kill an unrelated game or assume Ready means a pending job was never executed. Read the actual receipt. Each child and the overall sequence have bounded timeouts. Let the machine perform the test while doing independent authorized work; avoid chat polling loops.
 
-| Purpose | Location |
+## 6. Ownership and incremental commits
+
+Use a separate branch/worktree for actual concurrent workers; two connectors pointed at one checkout are not isolation. Shared motor/host composition/build/config files need coordinated ownership. No paid Codex CLI workers or subprocess agents.
+
+Before long builds, host/tool changes or context exhaustion, commit the meaningful owned unit. A clearly labeled WIP commit is better than losing uncommitted work while waiting for a whole release. `Tools/checkpoint_work.py --expected-head <observed-head> --message <message> --paths <explicit-owned-paths>` refuses an unexpected HEAD, pre-existing staged changes and unsafe paths. It records the commit and verifies a complete-history bundle under `.continuity/`.
+
+Do not use a blind `git add .`. Preserve another worker's files. Never stage credentials, private saves, license-bearing logs or caches. Report local commit, retrieved bundle, canonical context and public source push separately. The user explicitly authorized PUBLIC visibility for the intended `modelarious/gloom-bean-unity` repo; do not silently recreate a private request.
+
+## 7. The acceptance layers are deliberately different
+
+Component fixtures may place bodies and inspect internal state. Route witnesses must use real controls and obtain sources/pickups/clears through actual game rules. They can observe state to select an input, but cannot grant invulnerability, set win flags, teleport through a route or manufacture earned progress.
+
+Use `Tools/Verify-Windows.ps1 -Describe` to inspect command routing first. Campaign dispatch covers all twenty levels and five bosses. Test flags always select a new isolated save/report; normal user saves remain untouched. World5 full release testing is split by stage in the configured graph. `-SaveSeed` copies a real earned parent save unchanged; `-RequireEarned` tests the progression boundary. `-ExpectedMercies` is an assertion, not a grant.
+
+The full release checks ordinary and all-secret progress, a real nineteen-Mercy near-miss, all five final pair solutions, alternative final sanctums, practice isolation, empty/unearned-stage denials, no-Ink negative controls and selected30/60/120-fps/start-delay variants. Existence of these witnessed solutions is not exhaustive model checking of all possible action sequences.
+
+`audit_release.py` independently compares exits, result counts, actual PASS observations, component lists, parent-save hashes, exact25-clear/0–19–20-Mercy sets, ending states and the real assembly. Its unit tests intentionally tamper with evidence. Do not manually edit a failed receipt to pass.
+
+## 8. GUI and ending evidence
+
+Physics batchmode does not paint every menu backbuffer. Final-boss ending checks run windowed and are serialized. `Review-NativeUI.ps1` sends actual keyboard input only after verifying the foreground belongs to its own game window. It captures title, controls, selections, live jump, pause, practice and final boss with an isolated save. Screens must still be inspected; a captured PNG is not automatically a visual pass.
+
+`Verify-PackagedEndings.ps1` takes the final archive/hash, extracted executable/assembly hash, earned full-run reports and a new output folder. It defeats B5 from unmodified earned pre-final saves at0/19/20Mercies. It checks distinct rendered endings while corruption remains in the saved world. It is still not physical-controller or uncoached human acceptance.
+
+Never run a visible UI journey concurrently with another visible ending test. The runner's GUI predecessor protocol and bounded receipt retries exist for this reason.
+
+## 9. Common failure recipes — use the measured cause
+
+| Symptom | Established interpretation / treatment |
 |---|---|
-| Active campaign main | C:\Users\micha\Projects\GloomBeanUnity |
-| Independent foundation branch | C:\Users\micha\Projects\GloomBeanFoundation |
-| Orchard pinned clean clone | C:\Users\micha\Projects\GloomBean Orchard Clean v04 |
-| Foundation pinned clean clone | C:\Users\micha\Projects\GloomBean Foundation Clean v013 |
-| Installed Editor | C:\Program Files\Unity\Hub\Editor\6000.5.9f1\Editor\Unity.exe |
-| Native output | Builds\Windows\GloomBean.exe |
-| Boot | Assets/GloomBean/Scenes/Boot.unity |
-| Tuning | Assets/GloomBean/Resources/MovementTuning.asset |
-| Raw runs | Reports/<unique-run>/ |
-| Reviewed evidence | Documentation/Evidence/ |
-| Complete histories/packages | Delivery/ and .continuity/ |
+| Old summary says a world is absent | Compare actual HEAD, worktree, current request and newest report; source survived multiple failed chats. |
+| Historical tool unavailable by name | Discover current schema and perform the bounded probe; do not infer revoked authorization. |
+| Unity entitlement exit under SYSTEM | Reuse licensed-user runner; no credential/licence extraction. |
+| Fixture jump passes but route stalls | Inspect actual headroom, support and return-only geometry. |
+| Pendulum crosses target with no collision | World-anchored joint collision configuration matters. |
+| Wax/crouch footprint is inconsistent | Preserve capsule orientation and atomic resizing. |
+| Boss transition repairs health | Use health-preserving reposition, not Revive. |
+| Partial cure fails under low roof | Do not demand a changed base footprint when unchanged-body partial cure is valid. |
+| Aiming Stitch flips Coffin | Focused aiming and unfocused locomotion must remain distinct. |
+| Dynamic boss mass never reaches bottom | Inspect actual contacts; remove/retract the intended supporting geometry through its real mechanism. |
+| First-only success across frame rates | Diagnose physical/input/event timing and repeat with the same source; do not grant progress to hide it. |
+| Shadow secret fails with valid support | Compare atlas invariant: physical Ink support+tether, not an invented world-position lock. |
+| Scripted ending exists but screenshot black | Windowed native backbuffer required; camera-only arena captures are insufficient. |
+| Ready ending appears cyclic | Validate dependency and serialized-GUI scheduling; delayed readiness is not a cycle. |
+| Receipt briefly absent during replacement | Paired bounded writer/reader handles it; permanently missing/invalid data still fails. |
+| Many files differ after a clean clone | Compare Git blob/line-ending identity before any reset; preserve actual edits. |
+| Source push blocked | Repository administration/remote configuration is separate from working local edits/builds. |
+| Restored bundle origin points at a file | That is a recovery source, not a GitHub publication remote. |
 
-Revalidate these observed locations once. They are not permission to overwrite a divergent checkout. Do not search every drive while the exact path works. Do not hard-code ephemeral SentinelX script directories, interpreter venv paths, old PIDs or tool-session IDs.
+Original negative reports remain in versioned evidence. Small changes to an oracle can be correct, but must preserve the real requirement. Never make the game artificially invulnerable or immobile just to satisfy an unjustified test.
 
-## 3. What survived and what was actually wrong
+## 10. Packaging and recovery
 
-Eight commits newer than the delivered 9a1c92a survived: 8358b7c, b22f0f7, 8f9b68f, b24f8d5, 27a2b98, 7aa5aff, 9f940d7 and b47386c. They contain Parish main/secret routes and Usher victory, Orchard material systems and routes, and shared regressions. Only two main files were untracked: Tools/orchard-request.json and Tools/clean-orchard-config.json. Preservation commit b2bf187fcf3718d7d18f5af61c668c01304d6a1c captured them and 45 clean-run evidence files including failures.
+`package_checkpoint.py` packages the committed named branch, current guide and complete Git history. It refuses uncommitted tracked files and reused output labels. `package_release.py --kind player` packages the clean verified Windows build and avoids symbol/log/font files. Source and player can come from different documentation revisions only when the tested engine trees match exactly.
 
-No implementation loss was established by that inspection. The proven continuity defects were stale RESUME/RELEASE_STATUS documents, absent root AGENTS/START_HERE, and no published game-code remote. Do not deny an uninvestigated loss elsewhere, but do not recreate code just because a chat ended with a thinking failure.
+Keep the original atlas and supplied image unchanged in the delivery's Reference directory and include their hashes in the payload manifest. The source bundle is independently restored into a NEW directory, followed by `git fsck --full`. Validate every payload hash, not just the ZIP CRC. Then execute the actual extracted downloadable player, not the working-tree binary. Keep the three ending boundaries and their saved progress distinct.
 
-Original foundation-v0.1.0 at 84c52bb17fea2ff46dd45c34fed07ad005b05330 predates all atlas code. Preserve it immutably. Later independent foundation HEAD at recovery was cfd65bff6cf5024459cb300beb02863c6fd24c59. Main at recovery was b47386ce1adf46fab87b65a44cca49c83e2db02f.
+A recovery bundle can contain newer development and older release branches. Select the documented branch explicitly; never overwrite a divergent existing worktree. `git bundle list-heads` shows what is present. User-uploaded/downloadable artifacts do not themselves establish a container path: inspect actual mounts or materialize the exact file identity when needed.
 
-## 4. Read both positive and negative evidence
+## 11. Iteration and preserved design constraints
 
-The earlier Clean-v04 batch finished after its chat failed. It was not lost. Overall FAIL: independent foundation 61 passes; combined mechanics 198; W1 critical 138 checks; W1 secrets 173; W2 critical 313; W2 secrets 369; Judge 29. All those positive cases exited zero. W2 resumed from unchanged actually earned W1 saves. The unearned-world negative control correctly denied access with exit 1.
+The workbench and `MovementTuning.asset` provide the shortest loop. Safe static layout overlays are ordinary JSON; callbacks, movers, gates, sources and cures remain builder-owned. The source map, editing restrictions and native commands are in `ITERATION_GUIDE.md`. The implementation/fidelity ledger is `Documentation/Release/IMPLEMENTATION_SCOPE.md`.
 
-Practice isolation had 28 checks and two failures: Pear Tree Gallows stalled near (48.22,0.67) under Foldable cloth-stone during the return. The 1.33-unit-tall Wax body did not fit. The witness repeatedly jumped instead of using its available fluid form. This did not prove practice saves leaked: the stage never reached the save-isolation assertion. Earlier R11 had passed, indicating route/timing fragility.
+Keep secrets optional. Do not restore the cute body during normal play. The full set of twenty canonical Mercies restores it only in the ending. Local gimmicks and world-specific Turns must remain meaningful; not every Turn needs a timer. Do not reduce fifteen systemic possessions to fifteen colored door keys. The first corruption is a permanent narrative/state change, not an equipable ability.
 
-Original evidence is Documentation/Evidence/OrchardRecovery/. WIP 567ceba87e7df2a026d5f801f98b58fb8785420e changes only the input witness: melt before the low maintenance route, pass below, reform afterward. No world geometry, position, progression, health or success threshold was altered. Read R12-continuity-practice/runner.json for its actual outcome; do not infer it from this prose. The updated CURRENT_CHECKPOINT.json identifies later results.
+Human judgement of controller mapping, feel, comprehension, art, audio mix and pacing remains manual. Do not claim those gates from native scripts. Conversely, absence of a manual judgement is not evidence that working code or a durable user requirement is missing.
 
-Component checks are not completed levels; boss initializers are not victories; construction checks are not secret solutions. Tests use real production physics, but scripted inputs are not blind human comprehension, controller feel or enjoyment. Preserve these separate claims.
+## 12. Close without losing the work position
 
-## 5. User requirements and correct world order
+Update the actual next gate, candidate, finished reports and any active task in CURRENT_CHECKPOINT before stopping. Refresh RELEASE_STATUS from measured evidence. Publish an engineering-journal entry for meaningful work, preserving failed attempts and limitations. Commit reviewed owned files, retrieve a complete verified history/package, then capture the substantial result through canonical GitHub ingress and update the semantic project record.
 
-Build and commit the reusable Unity platformer base, then implement the atlas. Continue requests authorize ongoing engineering, not silent scope reductions. The old '4 worlds then a boss' shorthand was resolved by the explicit atlas: five worlds, four levels per world, then a boss.
-
-| World | Levels | Boss |
-|---|---|---|
-| W1 Parish | Sunday Best; Belfry; Puppet Laundry; Borrowed Skins | Kindly Usher |
-| W2 Orchard | Pear Tree Gallows; Kitchen; Irrigation Ditch; Garden of No Seasons | Orchard Judge |
-| W3 City | Tenement of Two Suns; Street Behind the Wall; Perspective Tax Office; Hotel/Courtyard | Surveyor |
-| W4 Fall | Rain of Kneeling Men; Seamstress Bridge; Closed Lids; Cathedral in Freefall | Weight of Everyone |
-| W5 Empyrean | Iron Halos; Noon Without Shadows; Scripture; White Gate | Host of Hosts |
-
-An old coordination proposal swapped City and Fall. That proposal is not authority. The first two worlds have actual input-route evidence; twelve later levels and three bosses still require full critical/secret/victory acceptance and further atlas fidelity. All five worlds have graybox code, which is not the finished campaign.
-
-Fifteen forms: Echo, Marionette, Molt, Wax, Gullet, Root, Mirror, Inside-Out, Parallax, Censer, Stitch, Coffin, Lodestone, Shadow and Ink. Their triggers/cures must be diegetic; each changes player/world rules and has a cost. No renamed WL4 transformations, cosmetic 'darkness powers', simple jump upgrades or colored-key lock parade.
-
-The initial corruption halfway through L01 is permanent. Later possessions return to the corrupted base. Menu/save presentation stays corrupted. Exactly the twenty canonical Mercy IDs enable the restored body in the ending only. Secrets never block ordinary completion. Not every atlas Turn is timed: preserve each stage's rule/topology mutation.
-
-Foundation already implements movement/run/jump, variable jump, buffering/coyote, crouch/crawl/roll, tackle tiers, normal/strong pound, patrol/stun/carry/throws, swim/dash swim, sliding/moving pieces/carousel, camera, selection/progression, key follower, return/timer, collectibles and save recovery. Regress this controller; do not start a replacement.
-
-## 6. Files to edit, not rediscover
-
-- Documentation/Source/CURRENT_REQUEST.txt: exact implementation request.
-- Documentation/Source/ATLAS_REFERENCE.json: original 44-page PDF identity. PDF SHA256 c006f063e336651e89109251fbc74cac1114ca8d939867acdd209646a90bc5fc. Read original page/diagram rather than infer from its title.
-- AtlasCampaign.Parish.cs / .Orchard.cs / .City.cs / .Fall.cs / .Empyrean.cs: authored world geometry and Turn hooks.
-- AtlasCampaign.Bosses.cs: shared boss authoring; coordinate ownership.
-- HostController.cs: possession composition, sources and cures. Shared state changes require cross-world regression.
-- Foundation/ActorMotor.cs: motion and collision; Progress.cs: saves; StageSession.cs: run state; GameRoot.cs: menus/load/dispatch.
-- ParishVerification.cs / OrchardVerification.cs: input-only routes. AtlasVerification.cs: component and construction checks. Do not confuse their scopes.
-- City: SpatialForms, TopologyRegion, DepthGeometry, ProjectionOverlap, SunShutter, RoomOrbit.
-- Fall: ForceAndTimeForms, EmbodimentForms, FoldPanel, DescentController, BraceReceiver.
-- Empyrean: ShadowForm, ShadowSun, MagneticBody, InkStroke, host-composition limits.
-- Editor/CampaignWorkbench.cs and existing layout authoring tools: native iteration. A runtime snapshot does not automatically preserve all authoring callbacks.
-
-## 7. Known working run route
-
-SentinelX.sentinel_script_run with python3 writes files and commits successfully. powershell manages existing scheduled tasks. Use subprocess argument arrays and bounded timeouts. sentinel_exec rejects shell operators because it is a prefix allowlist; script_run is the exposed authorized compound-script interface, not a claim that permissions vanished.
-
-Unity under a SYSTEM process returned exit 198 with missing entitlement/profile-cache errors. The working route uses the already logged-in licensed desktop user micha through an interactive scheduled task. Do not reinstall Unity, extract licensing files or ask to activate repeatedly for this known process-identity issue.
-
-Existing tasks, inspect state/principal/actions before use:
-
-- GloomBean-Orchard-v04 -> Tools/Run-Orchard-Local.ps1 -> Tools/orchard-request.json.
-- GloomBean-Orchard-Clean-v04 -> Tools/Run-Orchard-Clean-Local.ps1 -> Tools/clean-orchard-config.json.
-- GloomBean-Parish-v03 and GloomBean-Parish-Clean-v03 -> the corresponding existing Parish runner.
-- GloomBean-Foundation-v012 -> independent foundation runner.
-- Older GloomBean-Atlas-* and GloomBean-Unity-* may be disabled or point to historical suites. Never revive blindly.
-
-Before launch: task idle, no other Unity import on the same project, unique report directory and no overwrite of an in-flight request. Commit the request and implementation before launch. The local runner owns process IDs, timeout and persistent receipts beyond the chat. Do not block a chat tool for ten minutes or keep a tight polling loop.
-
-## 8. Commands and save provenance
-
-Under the licensed user:
-
-```powershell
-$P='C:\Users\micha\Projects\GloomBeanUnity'
-& "$P\Tools\Build-Windows.ps1" -ProjectPath $P
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Mechanics
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Campaign -Route W1
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Campaign -Route W1 -WithSecrets
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Campaign -Route W2
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Campaign -Route W2 -WithSecrets
-& "$P\Tools\Verify-Windows.ps1" -ProjectPath $P -Suite Campaign -Route GB-L05 -Practice
-```
-
-Wrappers currently validate W1/W2 route IDs. Extend wrapper and dispatch deliberately when later witnesses exist. Native flags: -gb-verify; -gb-route-verify; -gb-parish-verify -gb-route-id W1; -gb-orchard-verify -gb-route-id W2; optional -gb-with-secrets / -gb-practice-witness / -gb-require-earned-world. Pass unique -gb-reports and -logFile paths.
-
-For earned W1-to-W2 runs, copy the unchanged W1-produced test-save.json into a new W2 test report directory and record parent run plus SHA256. No synthetic cleared flag. Test the empty-save denial separately with an explicit expected-negative oracle. Test saves are not the user's real persistent save.
-
-For a focused batch inspect the current request, replace it only when idle, use a new ID, commit and start the exact task. Child processes have a 540-second ceiling. Verify process exit AND structured JSON. An old build-result.json is insufficient proof of a newly requested build; retain the matching unique build log/exit and source identity.
-
-## 9. Solved failures that must not consume another session
-
-| Symptom | Established explanation / treatment |
-|---|---|
-| Only opening level seems implemented | Stale checkpoint; compare real history and pinned receipts first |
-| Missing historical write tool | Discover current schema and run one scoped probe |
-| Unity exit 198 | Wrong process identity; existing desktop-user runner |
-| Fixture jump works but stage stalls | Inspect actual headroom; L01 return shelves and optional jaw once blocked the main route |
-| World-anchored joint crosses a wall | DistanceJoint2D.enableCollision=true on Marionette/chandelier |
-| Wax/crouch size confusing | Preserve capsule axis and atomic shape changes |
-| Boss transition restores health | Health-preserving reposition, not full revive |
-| Curing one form breaks another | Respect shared compatible-form state, test partial cures |
-| Mirror never collides with original | Echo and Mirror have different collision contracts |
-| Shadow tether snaps position | Constrain physical motion, do not silently teleport |
-| Copied source all appears dirty | Compare Git blobs/normalized CRLF; never reset unreviewed changes |
-| 87 opening checks vs31 assertions | Old counter included traces; count assertions separately |
-| Factory repeats401 | Invalid administration credential; unchanged retry is not a fix |
-| Temporary peer HTTP fails | Timeout and socket-denial observed; do not weaken controls or retry unchanged |
-| Context commit succeeds | Does not prove game-code/binary/tag publication |
-
-## 10. Commit before the next risky step
-
-After a meaningful edit/test unit, before a long build, host/tool switch or session boundary, inspect the diff and commit only owned paths. Aim not to leave more than roughly five minutes of meaningful edits uncheckpointed when practical. This is an execution rule, not an unattended background promise. Preserve WIP/failing witnesses on their work branch rather than waiting for all tests to pass. Never label untested code validated.
-
-Example (substitute the directly observed full HEAD):
-
-```text
-python Tools/checkpoint_work.py --expected-head <full-observed-head> --message "WIP: exact change; native validation pending" --paths Assets/GloomBean/Runtime/Campaign/OrchardVerification.cs Documentation/Continuity/CURRENT_CHECKPOINT.json
-```
-
-It refuses a moved HEAD, pre-existing staged changes, unsafe ownership paths and concurrent checkpoint locks. It commits explicit paths, verifies a complete Git bundle and writes an immutable receipt under .continuity. --publish uses only a configured legitimate origin, never force-pushes or extracts credentials. Missing origin returns a distinct blocked state after preserving the local commit/bundle.
-
-This helper is a guardrail, not a content-security oracle: review included files yourself. No credential files, licensing-bearing editor logs, personal saves, caches or another worker's changes. Update the current next gate and solved-blocker recipe in the same unit. Do not write only 'continue implementation'.
-
-## 11. Concurrency and source safety
-
-Connector choice is not isolation. SentinelX and Desktop Commander can modify the same path. Use disjoint Git worktrees/branches and Unity cache/build/report directories, plus declared owned files. Shared Foundation, HostController, AtlasBuilder, catalogue, bosses and test dispatch remain integrator-owned unless explicitly delegated. No two Editors import one project simultaneously. Never start paid Codex CLI workers; direct work is the fallback when native included subagents are unavailable. Do not announce unlaunched workers or treat a prior proposed split as a current assignment.
-
-## 12. Publication and recovery
-
-The user explicitly chose PUBLIC modelarious/gloom-bean-unity. Its last direct lookup returned404; this checkout has no remote. Public factory request38 supersedes private37; both documented401 Bad credentials. Context publication and game-source publication are separate.
-
-The exact one-time missing administration step is creating the empty PUBLIC intended repository, or repairing the existing factory credential through the owner's authorized route. Never expose/extract credentials. Once it exists attach preserved history, not a replacement codebase. Do not turn the absent remote into an excuse to stop unrelated implementation.
-
-Recovery bundle: gloombean-recovery-20260919-e1.bundle, SHA256 b4662bec5a5b6efd7e2dbe667fcce7809c1bb9f242a2d7eab3c5e00709e7b73d, main b2bf187fcf3718d7d18f5af61c668c01304d6a1c, foundation cfd65bff6cf5024459cb300beb02863c6fd24c59. Later bundles are recorded in immutable checkpoint receipts.
-
-```text
-git bundle list-heads <bundle>
-git clone -b main <bundle> <new-empty-directory>
-git -C <new-empty-directory> fsck --full
-```
-
-No clone over current work. Compare ancestry/hashes, not mtimes alone. The source has not been lost merely because an artifact link or old chat is unavailable.
-
-## 13. Continue to the real finish line
-
-Close the specific Orchard practice failure, preserve results and clean source/build identity, then proceed to City critical/secret paths and Surveyor. Repeat for Fall and Empyrean with the final choice-based encounter and both ending conditions. Regress the independent base after shared changes. Finish advanced atlas choreography, production visuals/animation, audio/dialogue/cinematics and robust editor authoring. Human comprehension/controller feel/enjoyment remain separate tests; do not claim them from automation or wait for them before unrelated engineering.
-
-Every handoff names source/branch, tested revision, job/task and persistent receipt, exact first unmet assertion, next source file and command, changed owned paths, failed AND passing cases, artifact hashes and actual remote/bundle status. Current state overrides old numeric observations in this runbook; user requirements do not expire. No document forces noncompliant future agents to read it, but HOME -> shared procedure -> project AGENTS/START_HERE -> this file supplies a concrete first-read path.
-
-## 14. Current runner source and request
-
-The following are exact observed source snapshots for reference, not a second writable implementation. Re-read the actual Tools files before execution if they changed.
-
-### Tools/Build-Windows.ps1
-
-```powershell
-param(
-    [string]$ProjectPath=(Split-Path $PSScriptRoot -Parent),
-    [string]$UnityPath,
-    [ValidateRange(30,540)][int]$TimeoutSeconds=540
-)
-$ErrorActionPreference='Stop'
-$ProjectPath=(Resolve-Path $ProjectPath).Path
-$versionFile=Join-Path $ProjectPath 'ProjectSettings\ProjectVersion.txt'
-if(-not (Test-Path $versionFile)){throw "Not a Unity project: $ProjectPath"}
-$version=((Get-Content $versionFile | Where-Object {$_ -match '^m_EditorVersion: '}) -replace '^m_EditorVersion: ','').Trim()
-if(-not $UnityPath){$UnityPath=Join-Path ${env:ProgramFiles} "Unity\Hub\Editor\$version\Editor\Unity.exe"}
-if(-not (Test-Path $UnityPath)){throw "Unity $version not found. Pass -UnityPath with the installed Editor executable. No installation or licence changes were attempted."}
-function Q([string]$s){if($s.Contains('"')){throw 'Quotes are not valid in these arguments.'};return '"'+$s+'"'}
-$run=Get-Date -Format 'yyyyMMdd-HHmmss-fff'
-$report=Join-Path $ProjectPath "Reports\Build-$run"
-New-Item -ItemType Directory -Force $report | Out-Null
-$log=Join-Path $report 'editor.log'
-$arguments='-batchmode -quit -projectPath '+(Q $ProjectPath)+' -buildTarget Win64 -executeMethod GloomBean.Editor.BuildTools.BuildWindows -logFile '+(Q $log)
-# Run as your normal licensed desktop user, not a SYSTEM service account.
-$process=Start-Process -FilePath $UnityPath -ArgumentList $arguments -PassThru
-if(-not $process.WaitForExit($TimeoutSeconds*1000)){
-    Stop-Process -Id $process.Id -Force
-    [IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),'TIMEOUT')
-    throw "This build exceeded $TimeoutSeconds seconds. Only its own Editor process was stopped. Log: $log"
-}
-$process.Refresh();$code=$process.ExitCode
-[IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),[string]$code)
-if($code -ne 0){throw "Unity build failed with exit $code. Log: $log"}
-$receipt=Join-Path $ProjectPath 'Reports\build-result.json'
-if(-not (Test-Path $receipt)){throw 'Build exited without the expected result receipt.'}
-$result=Get-Content $receipt -Raw | ConvertFrom-Json
-if($result.result -ne 'Succeeded' -or $result.errors -ne 0){throw 'Build receipt did not certify success.'}
-Write-Output "Built: $(Join-Path $ProjectPath 'Builds\Windows\GloomBean.exe')"
-Write-Output "Log: $log"
-
-```
-
-### Tools/Verify-Windows.ps1
-
-```powershell
-param(
-    [string]$ProjectPath=(Split-Path $PSScriptRoot -Parent),
-    [ValidateSet('Mechanics','OpeningRoute','Parish','Campaign')][string]$Suite='Mechanics',
-    [ValidatePattern('^(W[12]|GB-L0[1-8]|GB-B[12])$')][string]$Route='W2',
-    [switch]$WithSecrets,
-    [switch]$Practice,
-    [ValidateRange(30,540)][int]$TimeoutSeconds=540
-)
-$ErrorActionPreference='Stop'
-$ProjectPath=(Resolve-Path $ProjectPath).Path
-$player=Join-Path $ProjectPath 'Builds\Windows\GloomBean.exe'
-if(-not (Test-Path $player)){throw 'Build the Windows player first with Build-Windows.ps1.'}
-function Q([string]$s){if($s.Contains('"')){throw 'Quotes are not valid in these arguments.'};return '"'+$s+'"'}
-$report=Join-Path $ProjectPath ('Reports\'+$Suite+'-'+(Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
-New-Item -ItemType Directory -Force $report | Out-Null
-$flag=switch($Suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Parish'{'-gb-parish-verify -gb-route-id '+$Route} 'Campaign'{$chapterFlag=if($Route -match '^(W1|GB-L0[1-4]|GB-B1)$'){'-gb-parish-verify'}else{'-gb-orchard-verify'};$chapterFlag+' -gb-route-id '+$Route}}
-if($WithSecrets){$flag+=' -gb-with-secrets'}
-if($Practice){$flag+=' -gb-practice-witness'}
-$log=Join-Path $report 'player.log'
-$arguments=$flag+' -gb-reports '+(Q $report)+' -logFile '+(Q $log)+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
-# All suites force an isolated test save below $report; the player's real save is untouched.
-$process=Start-Process -FilePath $player -ArgumentList $arguments -PassThru
-if(-not $process.WaitForExit($TimeoutSeconds*1000)){
-    Stop-Process -Id $process.Id -Force
-    [IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),'TIMEOUT')
-    throw 'Verification timed out; only the test player was stopped.'
-}
-$process.Refresh();$code=$process.ExitCode
-[IO.File]::WriteAllText((Join-Path $report 'exit-code.txt'),[string]$code)
-$file=switch($Suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Parish'{'parish-result.json'} 'Campaign'{if($Route -match '^(W1|GB-L0[1-4]|GB-B1)$'){'parish-result.json'}else{'orchard-result.json'}}}
-$resultPath=Join-Path $report $file
-if(-not (Test-Path $resultPath)){throw "No verification receipt: $log"}
-$result=Get-Content $resultPath -Raw | ConvertFrom-Json
-if($code -ne 0 -or $result.failed -ne 0){throw "Verification failed: $resultPath"}
-Write-Output "PASS $Suite : $resultPath"
-
-```
-
-### Tools/orchard-request.json
-
-```json
-{
-  "id": "R12-continuity-practice",
-  "build": true,
-  "cases": [
-    {
-      "name": "Practice-isolation",
-      "suite": "Orchard",
-      "route": "GB-L05",
-      "practice": true
-    },
-    {
-      "name": "Pears-critical",
-      "suite": "Orchard",
-      "route": "GB-L05"
-    },
-    {
-      "name": "Pears-secrets",
-      "suite": "Orchard",
-      "route": "GB-L05",
-      "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
-    }
-  ]
-}
-
-```
-
-## 15. Portable source/history packaging
-
-After committing reviewed changes, run `python Tools/package_checkpoint.py --label <unique-checkpoint-id>`. It packages only committed source, a complete verified Git bundle, this guide, current state, restoration instructions and SHA256 manifests. It refuses tracked edits or an existing label; it never stages or pushes files. Retrieve the returned ZIP through SentinelX.sentinel_read_media and verify its receipt. A fresh bundle clone plus `git fsck --full` is the independent recovery test. Do not replace a newer source checkpoint with an older delivered ZIP.
-
-Newly solved gameplay blocker: partial Marionette removal with ANY retained form leaves the body footprint unchanged. The one-way shore shelf can overlap a hypothetical full-restoration probe without making thread removal unsafe. The narrow exemption preserves full-cure clearance checks. R13 tests both the blocked-restoration negative control and the actual unchanged-body cure.
-
-### Recovery-origin pitfall
-A clone made from history.bundle may set origin to that local bundle path. It is a recovery transport, not a writable GitHub repository. Inspect and deliberately configure the approved actual source remote after it exists; do not repeatedly try pushing back into a bundle.
-
-### Canonical context write route
-Ordinary authenticated Git push from Mac to the existing modelarious/obsidian-notes main was verified in this session. It uses the existing configured Git credential helper; do not extract credential values or confuse gh CLI login state with ordinary Git access. A newly authored project folder may be outside a sparse-checkout definition: inspect ownership, then use explicit git add --sparse or extend that definition. That workspace error is not lost authorization.
+Read back the canonical commit. No ACK file is required. Do not claim background implementation after the response; completed native jobs and manual/publication boundaries must be explicit. When another agent resumes, HOME -> Gloom Bean entry -> current JSON -> bounded machine probe must reach the correct work immediately.
