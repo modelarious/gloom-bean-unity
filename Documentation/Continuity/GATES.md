@@ -8,6 +8,6 @@ These gates concern the checkpoint and scoped repairs, not the unfinished full a
 - [x] C4 Fifteen native Windows helper tests passed, including ownership refusals, negative result handling and real bundle restoration.
 - [x] C5 Actual project changes committed through expected-HEAD explicit-path checkpoints before native builds, not only at session end.
 - [x] C6 Focused fixes and fresh-clone earned W1/W2 full normal/secret regressions passed. Original failed runs remain preserved.
-- [ ] C7 Final delivery package retrieved, independently restored and hashed; final canonical record read back. Complete this only after the actual final package is checked.
+- [x] C7 Complete source/history candidate retrieved;638 payload hashes verified; new bundle clone and git fsck passed; canonical continuity record read back through GitHub. See CONTINUITY_ACCEPTANCE.json. The receipt-only final archive is checked again after packaging, with its hash stored in the external delivery receipt.
 
 Standalone public game-source repository creation/push remains separately BLOCKED, not silently counted as success. Human game acceptance remains UNKNOWN. The original full-game finish line is unchanged.

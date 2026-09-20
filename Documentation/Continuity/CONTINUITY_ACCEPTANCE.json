@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "continuity_scope": "Completed checkpoint recovery, tooling and scoped repairs; full atlas game remains unfinished",
+  "canonical_context_commit": "0ab8ee46c08b738a721f68f2cdafcbbdcf089849",
+  "canonical_readback": "PASS: GitHub connector read project continuity record after ordinary Git push",
+  "shared_skill_commit": "fe13f1002f6517a1676b66cdb8fe585d9ea89fba",
+  "candidate_source": "3df31f9a6d2c1fdb0a66722da9b01a59422d5729",
+  "candidate_archive_sha256": "df36407ddf3ff3128c1f85b811787c959e8c97f10154c59453c072591939171f",
+  "candidate_payload_hashes_verified": 638,
+  "independent_bundle_restore": "PASS",
+  "independent_git_fsck": "PASS",
+  "native_clean_cases": "9/9 PASS, including expected negative denial",
+  "native_continuity_helper_tests": "15/15 PASS",
+  "public_game_source_push": "NOT_PERFORMED: repository creation still blocked",
+  "final_packaging_note": "This receipt-only commit does not change the verified runtime. The final delivery archive is independently rechecked and its SHA is recorded outside its own payload."
+}

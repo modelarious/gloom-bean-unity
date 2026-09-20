@@ -1,6 +1,6 @@
 # Gloom Bean: agent execution checkpoint
 
-## Current execution position — 2026-09-19, after both repairs
+## Current execution position â€” 2026-09-19, after both repairs
 
 **Read CURRENT_CHECKPOINT.json for the live successor of this checkpoint.** The latest complete clean suite is PASS: independent foundation61, combined mechanics200, W1 ordinary138, W1 secrets173, W2 ordinary318, W2 secrets374, Judge29, practice38, and the explicit expected empty-save denial. W2 resumed the actual earned W1 saves. No verification job remains pending at this checkpoint. The tested atlas source is 747f8ebcebb3a6769f684e8686649142730b971e; later documentation/tool changes do not change its runtime.
 
@@ -324,3 +324,6 @@ Newly solved gameplay blocker: partial Marionette removal with ANY retained form
 
 ### Recovery-origin pitfall
 A clone made from history.bundle may set origin to that local bundle path. It is a recovery transport, not a writable GitHub repository. Inspect and deliberately configure the approved actual source remote after it exists; do not repeatedly try pushing back into a bundle.
+
+### Canonical context write route
+Ordinary authenticated Git push from Mac to the existing modelarious/obsidian-notes main was verified in this session. It uses the existing configured Git credential helper; do not extract credential values or confuse gh CLI login state with ordinary Git access. A newly authored project folder may be outside a sparse-checkout definition: inspect ownership, then use explicit git add --sparse or extend that definition. That workspace error is not lost authorization.
