@@ -2,8 +2,13 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "L17 and L18 critical/signature/secret/Turn routes passed clean 25-case earned chain. Implement original atlas L19 Ink/punctuation/Shadow secret/erasing return, then L20 and B5. No job running.",
-  "active_job": null,
+  "next_gate": "I11: finish L19 semicolon Ink/Shadow support and the final ordinary return gap. Both fresh-arc return ascents and physical punctuation already have actual-input proof; no complete L19 clear claimed yet. White Gate first leading-Echo/Molt input probe also running. Continue original L20/B5 thereafter.",
+  "active_job": {
+    "task": "GloomBean-Orchard-v04",
+    "receipt": "Reports/Orchard-v04/Empyrean-I11-optional-writing-margin/runner.json",
+    "source": "6b041ddda01a21c5cf8872dce277cd3ad6ea9e5a",
+    "status": "DISPATCHED_READ_ACTUAL_RECEIPT"
+  },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -86,5 +91,6 @@
     "input_smoke": "PASS",
     "assertions": 104,
     "receipt": "Documentation/Fall/Evidence/Packaged-v06-g1/runner.json"
-  }
+  },
+  "observed_at": "2026-09-20T14:37:12.499276+00:00"
 }
