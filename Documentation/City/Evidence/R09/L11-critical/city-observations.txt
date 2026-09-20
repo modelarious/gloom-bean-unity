@@ -1,0 +1,59 @@
+BEGIN GB-L11 The Perspective Tax Office
+EVENT t=1.40 depth 1
+PASS GB-L11 walk 11 | (10.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L11 perspective tenant exists | (10.79, 0.76) feet=0.01 hp=6 twin=none
+EVENT t=2.15 depth 0
+PASS GB-L11 project into plane 0 | (10.81, 0.75) feet=0.26 hp=6 twin=none
+PASS GB-L11 walk 12.2 | (11.99, 0.49) feet=0.01 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (11.99, 0.49) feet=0.01 hp=6 twin=none
+PASS GB-L11 land projected body 0 at 17 / 1.195 | (16.81, 1.69) feet=1.20 hp=6 twin=none
+PASS GB-L11 walk 18.5 | (18.30, 1.69) feet=1.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (18.30, 1.69) feet=1.20 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(18.32, 1.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.
+EVENT t=4.75 depth 1
+PASS GB-L11 land projected body 1 at 23 / 3 | (22.81, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L11 walk 25 | (24.80, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (24.80, 3.75) feet=3.00 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(24.85, 3.96) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Perspective platform:18 notice=Far, middle, near change body and furniture scale together. Change plane during a jump where projected outlines overlap; standing growth may not fit.
+DEPTH target=2 actual=1 pos=(26.61, 6.12) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+EVENT t=6.57 depth 2
+PASS GB-L11 land projected body 2 at 29 / 4.72 | (28.82, 5.78) feet=4.73 hp=6 twin=none
+PASS GB-L11 walk 32 | (31.79, 5.78) feet=4.73 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (31.79, 5.78) feet=4.73 hp=6 twin=none
+DEPTH target=0 actual=2 pos=(31.87, 5.99) size=(1.23, 2.10) mask=526080 excluded=393216 ground=Perspective platform:19 notice=The destination silhouette is occupied.
+EVENT t=7.50 depth 1
+DEPTH target=0 actual=1 pos=(33.79, 8.15) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+EVENT t=7.83 depth 0
+PASS GB-L11 land projected body 0 at 35 / 6.195 | (34.80, 6.69) feet=6.20 hp=6 twin=none
+PASS GB-L11 walk 36.8 | (36.59, 6.69) feet=6.20 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (36.59, 6.69) feet=6.20 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(36.63, 6.89) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=The destination silhouette is occupied.
+DEPTH target=1 actual=0 pos=(37.84, 9.05) size=(0.57, 0.98) mask=132864 excluded=786432 ground=none notice=The destination silhouette is occupied.
+EVENT t=9.17 depth 1
+PASS GB-L11 land projected body 1 at 41 / 8 | (40.81, 8.75) feet=8.00 hp=6 twin=none
+PASS GB-L11 walk 43.4 | (43.19, 8.75) feet=8.00 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (43.19, 8.75) feet=8.00 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(43.24, 8.96) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Perspective platform:18 notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(45.11, 11.12) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(46.69, 10.47) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(46.96, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+DEPTH target=2 actual=1 pos=(47.00, 10.48) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+PHYSICAL shape=Center: (47.00, 10.48, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Parallax
+CONTACT Perspective platform Center: (47.00, 9.30, 0.00), Extents: (5.60, 0.42, 0.00)
+FAIL GB-L11 land projected body 2 at 47 / 9.72 | (47.00, 10.48) feet=9.72 hp=6 twin=none
+FAIL GB-L11 stage cleared by actual return or boss solution | (47.00, 10.48) feet=9.72 hp=6 twin=none

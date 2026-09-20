@@ -1,24 +1,7 @@
 {
-  "id": "City-R09-lips-and-registration",
+  "id": "City-R10-real-depth-and-hotel",
   "build": true,
   "cases": [
-    {
-      "name": "L09-secrets",
-      "suite": "City",
-      "route": "GB-L09",
-      "secrets": true
-    },
-    {
-      "name": "L10-critical",
-      "suite": "City",
-      "route": "GB-L10"
-    },
-    {
-      "name": "L10-secrets",
-      "suite": "City",
-      "route": "GB-L10",
-      "secrets": true
-    },
     {
       "name": "L11-critical",
       "suite": "City",
@@ -28,6 +11,17 @@
       "name": "L11-secrets",
       "suite": "City",
       "route": "GB-L11",
+      "secrets": true
+    },
+    {
+      "name": "L12-critical",
+      "suite": "City",
+      "route": "GB-L12"
+    },
+    {
+      "name": "L12-secrets",
+      "suite": "City",
+      "route": "GB-L12",
       "secrets": true
     },
     {
