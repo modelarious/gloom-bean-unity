@@ -1,0 +1,65 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  43,
+                        "case":  "L17-120fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  43,
+                        "case":  "L17-30fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  43,
+                        "case":  "L17-delayed",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "L17-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  55,
+                        "case":  "L18-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  72,
+                        "case":  "L18-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  244,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H26-complete-signatures-regression",
+    "started":  "2026-09-20T05:47:53.4541062-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:49:55.3094852-06:00"
+}

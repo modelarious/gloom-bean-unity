@@ -249,10 +249,19 @@ input.rule=null;input.frame=default;
             string route=Arg("-gb-route-id","GB-L17");bool secrets=Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-with-secrets")>=0;
             var definition=world.levels.FirstOrDefault(d=>d.id==route);
             if(definition==null||(definition.course!=17&&definition.course!=18)){failures++;Note("FAIL No complete input witness authored for "+route+". This is not a campaign success.");Finish();yield break;}
+            bool requireEarned=Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-require-earned-world")>=0;
+            if(requireEarned&&!CampaignProgression.LevelOpen(world,Array.IndexOf(world.levels,definition),game.Save.Data,false)){failures++;Note("FAIL Empyrean stage was not earned by the supplied real save");Finish();yield break;}
             yield return game.Load(definition,Practice);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new WitnessInput();actor.input=input;actor.Stepped+=(f,dt)=>ticks++;
             Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));if(Arg("-gb-rail-probe","0")=="1"){yield return RailProbe();Finish();yield break;}if(definition.course==17)yield return Halos(secrets);else yield return NoShadows(secrets);
             if(!stopped){Check("physical return completed",session.Phase==RunPhase.Cleared);if(!stopped){Check(Practice?"practice does not award progress":"clear is persistent",Practice?!game.Save.Data.cleared.Contains(route):game.Save.Data.cleared.Contains(route));if(!Practice)Check(secrets?"Mercy is saved":"Mercy was optional",secrets?game.Save.Data.mercies.Contains(route+"-MERCY"):session.Mercies.Count==0);}}
-            Finish();
+            if(!stopped&&requireEarned&&definition.course==18){
+                var reloaded=new SaveStore(Path.Combine(dir,"test-save.json"));
+                Check("eighteen level clears survive the earned save chain",Enumerable.Range(1,18).All(i=>reloaded.Data.cleared.Contains("GB-L"+i.ToString("00"))));
+                Check("four bosses remain earned and final boss remains unfinished",Enumerable.Range(1,4).All(i=>reloaded.Data.cleared.Contains("GB-B"+i))&&!reloaded.Data.cleared.Contains("GB-B5"));
+                Check(secrets?"all eighteen reached Mercies persist":"ordinary eighteen-level route needs no Mercy",secrets?Enumerable.Range(1,18).All(i=>reloaded.Data.mercies.Contains("GB-L"+i.ToString("00")+"-MERCY")):reloaded.Data.mercies.Count==0);
+                Check("eighteen secrets do not restore the ending",!reloaded.RestoredEnding&&reloaded.Data.corrupted);
+            }
+            Snapshot("finish");Finish();
         }
         void Finish(){if(finished)return;finished=true;Application.logMessageReceived-=Error;
             if(Arg("-gb-rail-probe","0")=="1")File.WriteAllText(Path.Combine(dir,"SCOPE.txt"),"Disposable-body diagnostic. Not an input-only route or level completion.");

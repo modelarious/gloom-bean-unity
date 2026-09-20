@@ -55,6 +55,8 @@ try {
     if($c.route){$mode+=' -gb-route-id '+$c.route};if($c.secrets){$mode+=' -gb-with-secrets'};if($c.practice){$mode+=' -gb-practice-witness'};if($c.requireEarned -or $c.expectedDenial){$mode+=' -gb-require-earned-world'}
     $root=if($c.suite -eq 'Foundation'){$config.foundation}else{$config.atlas}
     if(-not $root){throw 'Foundation case has no root'}
+    if($c.renderFps){$mode+=' -gb-render-fps '+[int]$c.renderFps}
+    if($null -ne $c.startDelay){$mode+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
     $flags='-batchmode '+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
     $j.process=Start-Process (Join-Path $root 'Builds\Windows\GloomBean.exe') -ArgumentList $flags -PassThru;$j.started=Get-Date;$j.state='RUNNING'
    }
@@ -70,7 +72,7 @@ try {
     if($c.expectedDenial){
      $observation=Join-Path $j.out ($c.suite.ToLower()+'-observations.txt')
      $denial=Test-Path $observation
-     if($denial){$denial=(Get-Content $observation -Raw).Contains($c.suite+' was not earned by the supplied real save')}
+     if($denial){$phrase=if($c.expectedStageDenial){$c.suite+' stage was not earned by the supplied real save'}else{$c.suite+' was not earned by the supplied real save'};$denial=(Get-Content $observation -Raw).Contains($phrase)}
      $j.state=if($j.exit -eq 1 -and $j.failed -eq 1 -and $denial){'PASS'}else{'FAIL'}
     }else{$j.state=if($j.exit -eq 0 -and $j.failed -eq 0 -and ($null -eq $j.exceptions -or $j.exceptions -eq 0) -and $j.assertions -gt 0){'PASS'}else{'FAIL'}}
    }
