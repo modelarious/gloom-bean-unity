@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L17-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-R02-magnetic-approach",
+    "started":  "2026-09-20T03:19:58.8922984-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T03:20:27.6642091-06:00"
+}

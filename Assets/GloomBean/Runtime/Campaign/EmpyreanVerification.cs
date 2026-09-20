@@ -32,12 +32,12 @@ namespace GloomBean.Campaign
                 if(sent&&!edge&&actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(dx)<.3f)break;yield return Tick();}
             input.frame=default;Check("jump to "+x+" / "+floor,actor.Grounded&&Mathf.Abs(actor.Feet.y-floor)<.3f&&Mathf.Abs(x-actor.Body.position.x)<.5f);
         }
-        IEnumerator MagnetTo(Vector2 target,float timeout=18)
+        IEnumerator MagnetTo(Vector2 target,float timeout=18,bool landing=true)
         {
             if(stopped||!Live)yield break;var magnet=host.Form<LodestoneForm>();Check("Lodestone acquired by actual source",magnet!=null);if(stopped)yield break;
             float end=Time.time+timeout,nextToggle=0,lastJump=-1,trace=0;int reversals=0;
             while(Live&&Time.time<end){Vector2 error=target-actor.Body.position;var velocity=actor.Body.linearVelocity;
-                if(error.magnitude<.8f&&actor.Grounded&&Mathf.Abs(velocity.x)<1.5f)break;
+                if(error.magnitude<(landing?.8f:1.1f)&&(!landing||actor.Grounded&&Mathf.Abs(velocity.x)<1.5f))break;
                 Vector2 northForce=Vector2.zero;
                 foreach(var metal in MagneticBody.All)if(metal&&metal.enabled&&Vector2.Distance(actor.Body.position,metal.transform.position)<magnet.range)
                     northForce+=LodestoneForm.Force(actor.Body.position,metal.transform.position,1,metal.polarity,metal.strength);
@@ -48,11 +48,12 @@ namespace GloomBean.Campaign
                 input.frame=new InputFrame{action=reverse,actionHeld=reverse,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp(error.x*2-velocity.x*.6f,-1,1),0)};
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("MAGNET t="+Time.time+" body="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+target+" reversals="+reversals);}
             }
-            input.frame=default;Check("magnetic landing at "+target,actor.Grounded&&Vector2.Distance(actor.Body.position,target)<.9f);Snapshot("magnet-"+target.x);
+            input.frame=default;Check((landing?"magnetic landing at ":"magnetic transit through ")+target,(!landing||actor.Grounded)&&Vector2.Distance(actor.Body.position,target)<(landing?.9f:1.2f));Snapshot("magnet-"+target.x);
         }
         IEnumerator Halos(bool secret)
         {
-            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));
+            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));yield return Walk(17.8f);
+            yield return MagnetTo(new Vector2(21,7),12,false);
             foreach(var point in new[]{new Vector2(29,4.75f),new Vector2(46,6.75f),new Vector2(65,8.75f),new Vector2(83,10.75f),new Vector2(99,12.75f)}){yield return MagnetTo(point);if(stopped)yield break;}
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret){yield return MagnetTo(new Vector2(61,18.75f));Check("orbiting loft Mercy",session.Mercies.Count==1);yield return MagnetTo(new Vector2(99,12.75f));}
