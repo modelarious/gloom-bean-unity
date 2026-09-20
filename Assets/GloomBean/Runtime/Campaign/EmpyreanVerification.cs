@@ -46,7 +46,7 @@ namespace GloomBean.Campaign
                 Vector2 error=target-actor.Body.position;var velocity=actor.Body.linearVelocity;
                 Vector2 northForce=Vector2.zero;
                 foreach(var metal in MagneticBody.All)if(metal&&metal.isActiveAndEnabled&&Vector2.Distance(actor.Body.position,metal.Position)<magnet.range)
-                    northForce+=LodestoneForm.Force(actor.Body.position,metal.Position,1,metal.polarity,metal.strength);
+                    northForce+=metal.ForceOn(actor.Body.position,1,magnet.range);
                 Vector2 desired=new Vector2(error.x*6-velocity.x*3,error.y*9-velocity.y*4+actor.tuning.gravity);
                 int pole=fixedPole!=0&&(!landing||error.magnitude<3.5f)?fixedPole:(Vector2.Dot(northForce,desired)>=0?1:-1);
                 bool reverse=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;
@@ -87,7 +87,7 @@ namespace GloomBean.Campaign
                 if(jumped&&actor.Grounded&&Vector2.Distance(pos,destination)<1.65f){landed=true;bool interact=!landingInteract;landingInteract=true;return new InputFrame{action=magnet.Polarity!=-1,interact=interact,move=new Vector2(Mathf.Clamp(dx*3-v.x*1.1f,-1,1),0)};}
                 float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
                 Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
-                Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=LodestoneForm.Force(pos,m.Position,1,m.polarity,m.strength);
+                Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=m.ForceOn(pos,1,magnet.range);
                 int pole=launch?1:Vector2.Dot(north,wanted)>=0?1:-1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
                 bool jump=!jumped&&actor.Grounded;if(jump)jumped=true;
                 float steer=launch?Mathf.Clamp((start.x-pos.x)*2-v.x*.8f,-1,1):Mathf.Clamp(dx*1.5f-v.x*.65f,-1,1);

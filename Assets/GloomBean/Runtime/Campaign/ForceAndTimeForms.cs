@@ -29,8 +29,9 @@ namespace GloomBean.Campaign
         public override bool Move(InputFrame f,float dt)
         {
             if(f.action)Reverse();var shadow=host.Form<ShadowForm>();if(shadow!=null&&shadow.Controlling)return false;
-            bool field=false;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(Actor.Body.position,m.Position)<range){field=true;break;}
-            if(!field)return false;
+            bool field=false;foreach(var m in MagneticBody.All)if(m&&m.Influence(Actor.Body.position,range)>0){field=true;break;}
+            // Airborne momentum must not be silently clamped by normal walking when a field ends.
+            if(!field&&Actor.Grounded)return false;
             // Do not let the ordinary walking brake cancel every external force at each tick.
             // In a magnetic field the Host keeps inertia, with a modest steering force.
             var v=Actor.Body.linearVelocity;v.x=(v.x+f.move.x*8*dt)*Mathf.Exp(-.6f*dt);
@@ -43,7 +44,7 @@ namespace GloomBean.Campaign
             foreach(var m in MagneticBody.All)
             {
                 if(!m||!m.enabled||Vector2.Distance(Actor.Body.position,m.Position)>range)continue;
-                Vector2 force=Force(Actor.Body.position,m.Position,Polarity,m.polarity,m.strength);
+                Vector2 force=m.ForceOn(Actor.Body.position,Polarity,range);
                 Actor.Body.AddForce(force,ForceMode2D.Force);var rb=m.GetComponent<Rigidbody2D>();if(rb&&rb.bodyType==RigidbodyType2D.Dynamic)rb.AddForce(-force,ForceMode2D.Force);
             }
         }

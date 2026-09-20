@@ -8,7 +8,7 @@ namespace GloomBean.Campaign
         void Halos(AtlasBuilder a)
         {
             a.Begin(new Rect(-8,-13,127,50),new Vector2(2,1));var b=a.b;a.Floor(-5,18);a.Floor(18,112,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
-            var poles=new List<MagneticBody>();for(int i=0;i<7;i++){var m=a.Metal(new Vector2(22+i*11,8+i*.6f),Vector2.one*1.5f,4,true,i%2==0?1:-1);m.name="Orbiting iron halo "+i;m.strength=170;
+            var poles=new List<MagneticBody>();for(int i=0;i<7;i++){var m=a.Metal(new Vector2(22+i*11,8+i*.6f),Vector2.one*1.5f,4,true,i%2==0?1:-1);m.name="Orbiting iron halo "+i;m.strength=170;m.fieldRadius=3.5f;
                 // A rounded moving hub preserves glancing/tangential motion. The old
                 // square stand-in stopped the Host dead against an invisible flat underside.
                 var box=m.GetComponent<BoxCollider2D>();if(box)box.enabled=false;

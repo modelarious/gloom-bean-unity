@@ -1,0 +1,23 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 11.8 body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 Lodestone acquired by actual source body=(11.60, 0.76) velocity=(1.54, 0.00) feet=0.008333325 hp=6
+MAGNET t=4.556538 body=(11.64, 0.97) velocity=(2.29, 12.40) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=5.06919 body=(14.25, 2.82) velocity=(5.07, -1.00) pole=1 target=(16.00, 2.75) reversals=0
+MAGNET t=5.571435 body=(16.01, 2.75) velocity=(2.44, 0.00) pole=1 target=(16.00, 2.75) reversals=0
+SUPPORT Platform
+PASS GB-L17 magnetic landing at (16.00, 2.75) body=(16.39, 2.75) velocity=(1.45, 0.00) feet=2.004999 hp=6
+PASS GB-L17 visible reversible coil is energized at 16 body=(16.00, 2.75) velocity=(0.18, 0.00) feet=2.004999 hp=6
+FLIGHT body=(16.00, 2.99) v=(0.23, 14.02) pole=1 target=(29.00, 4.75)
+FLIGHT body=(17.45, 10.98) v=(8.98, 9.96) pole=1 target=(29.00, 4.75)
+FLIGHT body=(22.44, 13.79) v=(10.69, 3.91) pole=-1 target=(29.00, 4.75)
+FLIGHT body=(27.38, 12.59) v=(6.53, -8.79) pole=1 target=(29.00, 4.75)
+FLIGHT body=(28.44, 6.25) v=(3.19, -17.13) pole=-1 target=(29.00, 4.75)
+PASS GB-L17 coil flight lands on physical support (29.00, 4.75) body=(29.67, 4.76) velocity=(1.89, 0.00) feet=4.00942 hp=6
+PASS GB-L17 visible reversible coil is energized at 29 body=(28.72, 4.76) velocity=(-2.38, 0.00) feet=4.00942 hp=6
+FLIGHT body=(28.68, 4.99) v=(-2.26, 14.05) pole=1 target=(46.00, 6.75)
+FLIGHT body=(28.89, 11.44) v=(1.92, 4.44) pole=1 target=(46.00, 6.75)
+FLIGHT body=(30.32, 9.69) v=(3.14, -11.41) pole=1 target=(46.00, 6.75)
+FLIGHT body=(36.87, 1.51) v=(19.76, -16.09) pole=1 target=(46.00, 6.75)
+FAIL GB-L17 coil flight lands on physical support (46.00, 6.75) body=(36.87, 1.51) velocity=(19.76, -16.09) feet=0.7559674 hp=6
