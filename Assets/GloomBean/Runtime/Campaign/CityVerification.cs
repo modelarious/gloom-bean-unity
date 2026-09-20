@@ -138,8 +138,11 @@ namespace GloomBean.Campaign
         IEnumerator RideRoom(RoomOrbit room,Vector2 destination)
         {
             if(stopped||!Live)yield break;
+            float next=Time.time;Action<InputFrame,float> observe=(frame,dt)=>{if(Time.time<next)return;next=Time.time+.08f;
+                var rb=room.GetComponent<Rigidbody2D>();Note("RIDE t="+Time.time.ToString("0.000")+" actor="+actor.Body.position+" feet="+actor.Feet+" vel="+actor.Body.linearVelocity+" ground="+(actor.GroundCollider?actor.GroundCollider.name:"none")+" room="+rb.position+" roomVel="+rb.linearVelocity+" phase="+room.phase);};
+            actor.Stepped+=observe;
             yield return Await("room carries its actual occupant to "+destination,()=>room.Settled&&Vector2.Distance(room.transform.position,destination)<.2f&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform),8);
-            Check("support belongs to preserved moving room",actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform));
+            actor.Stepped-=observe;Check("support belongs to preserved moving room",actor.GroundCollider&&actor.GroundCollider.transform.IsChildOf(room.transform));
         }
         IEnumerator Hotel(bool secret)
         {

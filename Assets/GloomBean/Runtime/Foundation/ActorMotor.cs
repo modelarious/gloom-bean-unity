@@ -100,7 +100,7 @@ namespace GloomBean.Foundation
             // Apply tangential carry once, and only the normal displacement still missing.
             float normalAlready=Vector2.Dot(Feet-previousSupportPoint,supportNormal);
             Vector2 carry=delta-supportNormal*normalAlready;
-            if(delta.sqrMagnitude<9f&&carry.sqrMagnitude<9f)Body.position+=carry;
+            if(delta.sqrMagnitude>0.0000001f&&delta.sqrMagnitude<9f&&carry.sqrMagnitude<9f)Body.position+=carry;
             previousSupportPoint=now;
         }
         public void ProbeGround()
@@ -138,7 +138,7 @@ namespace GloomBean.Foundation
             var direction=size.x>size.y?CapsuleDirection2D.Horizontal:CapsuleDirection2D.Vertical;
             foreach(var c in Physics2D.OverlapCapsuleAll(Body.position+baseOffset,size-Vector2.one*.025f,direction,Body.rotation,destinationMask))
                 if(c&&!c.isTrigger&&c.attachedRigidbody!=Body)return false;
-            standingSize=size;Shape.direction=direction;Shape.size=size;Shape.offset=baseOffset;Crouched=false;
+            standingSize=size;Shape.direction=direction;Shape.size=size;Shape.offset=baseOffset;Crouched=false;previousSupport=null;supportBody=null;
             return true;
         }
         public void SetStandingSize(Vector2 size)
