@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-I15-scripture-cadence-and-folded-sanctum",
+  "id": "Empyrean-I16-disjoint-focus-and-shadow-rejoin",
   "build": true,
   "cases": [
     {
@@ -22,10 +22,8 @@
       "startDelay": 0.47
     },
     {
-      "name": "L19-practice",
-      "suite": "Empyrean",
-      "route": "GB-L19",
-      "practice": true
+      "name": "Mechanics",
+      "suite": "Mechanics"
     },
     {
       "name": "L20-third-sanctum",

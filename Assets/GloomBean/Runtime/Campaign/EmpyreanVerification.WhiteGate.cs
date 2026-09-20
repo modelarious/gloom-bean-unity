@@ -39,7 +39,7 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;var form=host.Form<ParallaxForm>();Check("depth change has a real tenant",form!=null);if(stopped)yield break;
             float end=Time.time+7,initial=actor.Feet.y;bool sent=false;
-            input.rule=()=>{bool jump=!sent&&actor.Grounded;if(jump)sent=true;return new InputFrame{jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.15f,-1,1),sent&&actor.Feet.y>initial+.45f&&form.Plane!=plane?Mathf.Sign(plane-form.Plane):0)};};
+            input.rule=()=>{bool jump=!sent&&actor.Grounded;if(jump)sent=true;return new InputFrame{jump=jump,jumpHeld=true,run=plane==0,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.15f,-1,1),sent&&actor.Feet.y>initial+.45f&&form.Plane!=plane?Mathf.Sign(plane-form.Plane):0)};};
             while(Live&&Time.time<end&&!(sent&&actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.25f&&Mathf.Abs(actor.Body.position.x-x)<.25f&&form.Plane==plane))yield return Tick();input.rule=null;input.frame=default;
             Check("real plane landing "+plane+" at "+x,actor.Grounded&&Mathf.Abs(actor.Feet.y-top)<.3f&&Mathf.Abs(actor.Body.position.x-x)<.5f&&form.Plane==plane);Snapshot("folded-perspective");
         }
@@ -50,11 +50,18 @@ namespace GloomBean.Campaign
             yield return Press(new InputFrame{action=true,move=aim});Check("connect two actual structural edges",f.Active!=null);if(stopped)yield break;
             yield return Press(new InputFrame{action=true});yield return Wait("folded ramp takes its physical angle",()=>Mathf.Abs(f.Active.angle-angle)<2,8);Snapshot("folded-ramp");
         }
+        IEnumerator BoardFoldedRamp()
+        {
+            if(stopped||!Live)yield break;yield return Walk(87,true);bool sent=false;float end=Time.time+6;
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,run=true,move=new Vector2(Mathf.Clamp((91-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.35f,-1,1),0)};};
+            while(Live&&Time.time<end&&!(sent&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponentInParent<FoldPanel>()))yield return Tick();input.rule=null;input.frame=default;
+            Check("land on the actual folded plane",actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.GetComponentInParent<FoldPanel>());Snapshot("folded-plane-landing");
+        }
         IEnumerator FoldedSanctum()
         {
             yield return Walk(72);yield return SanctuaryPlane(0);yield return Walk(72.7f);yield return SanctuaryPlaneJump(77,2.1625f,0);
             yield return Walk(78.2f);yield return SanctuaryPlaneJump(83,3.65f,2);yield return Walk(86);yield return Wait("spool nests alongside depth",()=>host.Has(HostKind.Stitch),3);if(stopped)yield break;
-            yield return SanctuaryFold("depth",Vector2.right,45);if(stopped)yield break;yield return Walk(97);
+            yield return SanctuaryFold("depth",Vector2.right,45);if(stopped)yield break;yield return BoardFoldedRamp();yield return Walk(97);
             yield return Wait("flat sign restores the normal footprint before the painted threshold",()=>!host.Has(HostKind.Parallax),4);yield return Walk(101);Check("enter the folded fresco from its actual threshold",host.Has(HostKind.InsideOut));if(stopped)yield break;
             yield return Jump(104,11);yield return Jump(106,12);yield return Jump(108.2f,13);yield return Jump(109.6f,15);yield return Jump(111.5f,16);yield return Walk(114.25f);
             yield return Jump(116.2f,17);yield return Jump(118.2f,18);yield return Jump(119.6f,20);yield return Jump(121.5f,21);yield return Walk(126.4f);yield return Wait("empty frame returns ordinary collision",()=>!host.Has(HostKind.InsideOut),3);Snapshot("third-sanctum-exit");

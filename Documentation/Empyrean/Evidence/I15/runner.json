@@ -1,0 +1,52 @@
+{
+    "started":  "2026-09-20T08:53:25.6250321-06:00",
+    "id":  "Empyrean-I15-scripture-cadence-and-folded-sanctum",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  77,
+                        "case":  "L19-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  37,
+                        "case":  "L19-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  36,
+                        "case":  "L19-secret-30fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  77,
+                        "case":  "L19-practice",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  32,
+                        "case":  "L20-third-sanctum",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "71d16aebfcb72bebb878e4017357313413d5b3c02d88aef0d5877dd0c1759456",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "10a4c352d246c95de2d418b29fef67127c3dd5ff",
+    "finished":  "2026-09-20T08:55:18.0715910-06:00"
+}
