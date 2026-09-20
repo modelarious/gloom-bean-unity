@@ -1,0 +1,8 @@
+{
+    "started":  "2026-09-20T05:33:41.8975186-06:00",
+    "id":  "Empyrean-H20-rail-sign-diagnostic",
+    "error":  "Unity build failed with exit 1. Log: C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Build-20260920-053341-921\\editor.log",
+    "phase":  "build",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:33:44.7789096-06:00"
+}
