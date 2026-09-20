@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  36,
+                        "case":  "Skins-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  46,
+                        "case":  "Skins-secrets",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  200,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "R13-shore-cure",
+    "started":  "2026-09-19T18:54:23.7705243-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-19T18:55:50.8459603-06:00"
+}

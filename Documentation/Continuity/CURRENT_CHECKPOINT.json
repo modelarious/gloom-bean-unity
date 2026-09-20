@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "tested_commit": "567ceba87e7df2a026d5f801f98b58fb8785420e",
+  "tested_commit": "a61e7846f047f44162dad206236a33562458a618",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Verify the real L04 shore-shears cure fix (retained Echo + Marionette below one-way shelf), rerun W1/W2 earned clean suite, then City. Do not ignore the newly retained full-run FAIL.",
+  "next_gate": "Full fresh-clone earned W1/W2 ordinary and secret regression including shore cure, practice isolation and expected empty-save denial; then City W3/L09 input route.",
   "active_job": {
-    "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/R13-shore-cure/runner.json",
+    "task": "GloomBean-Orchard-Clean-v04",
+    "receipt": "Reports/Orchard-v04/Clean-continuity-e2/runner.json",
     "status": "PREPARING"
   },
   "publication": {
@@ -18,12 +18,16 @@
   },
   "evidence_refs": [
     {
-      "name": "Current focused native repair",
+      "name": "Native shore-cure fix",
+      "path": "Documentation/Evidence/Continuity-R13/runner.json"
+    },
+    {
+      "name": "Native Wax return fix",
       "path": "Documentation/Evidence/Continuity-R12/runner.json"
     },
     {
-      "name": "Historical clean batch (retained FAIL)",
-      "path": "Documentation/Evidence/OrchardRecovery/runner.json"
+      "name": "Historical clean failure retained",
+      "path": "Documentation/Evidence/Continuity-Clean-e1/runner.json"
     }
   ],
   "repair_outcome": {
@@ -33,5 +37,6 @@
     "mechanics_passed": 198,
     "failed": 0,
     "scope": "Focused tests; not whole atlas completion"
-  }
+  },
+  "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db"
 }
