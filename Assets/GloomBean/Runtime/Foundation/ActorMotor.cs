@@ -46,7 +46,7 @@ namespace GloomBean.Foundation
         Collider2D previousSupport;
         Vector2 supportLocal;
         Vector2 previousSupportPoint;
-        Rigidbody2D supportBody;Vector2 supportNormal=Vector2.up;
+        Rigidbody2D supportBody;Vector2 supportNormal=Vector2.up,supportVelocity;
 
         void Awake()
         {
@@ -92,10 +92,12 @@ namespace GloomBean.Foundation
         }
         void CarryWithSupport()
         {
+            supportVelocity=Vector2.zero;
             if(!previousSupport || groundIgnore>0||hurtTime>0)return;
             // Rigidbody poses belong to the fixed simulation, unlike interpolated child transforms.
             Vector2 now=supportBody?supportBody.position+(Vector2)(Quaternion.Euler(0,0,supportBody.rotation)*(Vector3)supportLocal):(Vector2)previousSupport.transform.TransformPoint(supportLocal);
             var delta=now-previousSupportPoint;
+            supportVelocity=delta/Mathf.Max(.0001f,Time.fixedDeltaTime);
             // The contact solver may already have transmitted the platform's normal movement.
             // Apply tangential carry once, and only the normal displacement still missing.
             float normalAlready=Vector2.Dot(Feet-previousSupportPoint,supportNormal);
@@ -106,7 +108,7 @@ namespace GloomBean.Foundation
         public void ProbeGround()
         {
             Grounded=false; GroundCollider=null; GroundNormal=Vector2.up;
-            if(groundIgnore>0||Body.linearVelocity.y-(supportBody?supportBody.linearVelocity.y:0)>2.5f)return;
+            if(groundIgnore>0||Body.linearVelocity.y-supportVelocity.y>2.5f)return;
             var origin=Feet+Vector2.up*.09f;
             int n=Physics2D.BoxCastNonAlloc(origin,new Vector2(Shape.size.x*.78f,.06f),0,Vector2.down,groundHits,.18f,collisionMask);
             float closest=999;
