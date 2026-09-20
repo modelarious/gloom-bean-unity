@@ -1,0 +1,21 @@
+{
+    "started":  "2026-09-20T11:29:31.3884224-06:00",
+    "id":  "Completion-K06-windowed-ending",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  51,
+                        "case":  "B5-windowed",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "fe8508803179e57fdb73ebcbbe844dc9c1aa3af37376a83b32ff76bf8a0ab07e",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "62bb063b0dd3e0314e73754ba5c046c8e7038305fb7257f5592881e7685ed05b",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "4b587b96d25ec92b360b65fa50940712aaba41a8",
+    "finished":  "2026-09-20T11:30:42.7825578-06:00"
+}

@@ -1,0 +1,68 @@
+{
+    "started":  "2026-09-20T11:25:15.3060605-06:00",
+    "id":  "Completion-K05-five-final-families-and-media",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "B5-magnet-shadow",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  51,
+                        "case":  "B5-echo-ink",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  62,
+                        "case":  "B5-wax-gullet",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  51,
+                        "case":  "B5-stitch-coffin",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  51,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  309,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  169,
+                        "case":  "L20-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "4c1a6aa726083152b3cae0889ae674aa5b807a7881122022c3c6bc1e80808454",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "79ab9b8421c48712b82b296517a341142d2b4894",
+    "finished":  "2026-09-20T11:28:31.7674860-06:00"
+}
