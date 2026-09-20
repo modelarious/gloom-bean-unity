@@ -97,6 +97,14 @@ namespace GloomBean.Campaign
             foreach(var f in returns){yield return Back(f);if(stopped)yield break;yield return Walk(f.transform.position.x-1.05f);}
             yield return Jump(14,30.2f);yield return Walk(8);yield return Walk(4);yield return Walk(-1);yield return Await("descend to the remembered entrance",()=>actor.Grounded&&actor.Feet.y<1,12);yield return Walk(2);
         }
+        IEnumerator Leap(float x,float low,float high,bool running=true)
+        {
+            if(stopped||!Live)yield break;bool jumped=false;float deadline=Time.time+6;
+            while(Live&&Time.time<deadline){float dx=x-actor.Body.position.x;bool edge=!jumped&&actor.Grounded;if(edge)jumped=true;
+                input.frame=new InputFrame{jump=edge,jumpHeld=true,run=running,move=new Vector2(Mathf.Clamp(dx-actor.Body.linearVelocity.x*.15f,-1,1),0)};
+                if(jumped&&!edge&&actor.Grounded&&actor.Feet.y>=low&&actor.Feet.y<=high&&Mathf.Abs(dx)<.25f)break;yield return NextPhysics();}
+            input.frame=default;Check("physical running landing "+x,actor.Grounded&&Mathf.Abs(actor.Body.position.x-x)<.5f&&actor.Feet.y>=low&&actor.Feet.y<=high);
+        }
         IEnumerator Focus(HostKind kind)
         {
             if(stopped||!Live)yield break;Check("required tenant present: "+kind,host.Has(kind));
@@ -116,8 +124,8 @@ namespace GloomBean.Campaign
         {
             yield return Walk(11.8f);yield return Fold("span-a",Vector2.up,30);yield return Walk(26);
             yield return Walk(27);yield return Fold("span-b",Vector2.up,30);yield return Walk(38.8f);yield return Calm();
-            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(48.4f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(49.8f);
-                yield return Jump(56.8f,14);}
+            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(48.4f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(50.6f,true);
+                yield return Leap(56.8f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;
             yield return Walk(57.5f);yield return Fold("span-c",Vector2.up,14.04f);yield return Walk(43);yield return Calm();

@@ -31,26 +31,26 @@ namespace GloomBean.Campaign
             a.Begin(new Rect(-10,-17,88,50),new Vector2(2,1));var b=a.b;
             a.Floor(-6,14);a.Floor(14,73,-12);a.Exit(2,1.1f);a.Source(HostKind.Stitch,8);
             for(int k=0;k<6;k++){var step=a.Ledge(10+k%2*2,-10+k*2,4);step.AddComponent<OneWaySurface>();}
-            var first=a.Hinge(new Vector2(14,0),8,100,"span-a");first.name="Entry folding tower";
-            var firstEnd=a.Seam(new Vector2(20.928f,4),"span-a");a.Ledge(24.5f,4,7);
-            var second=a.Hinge(new Vector2(28,4),10,85,"span-b");second.name="Middle folding tower";
-            var secondEnd=a.Seam(new Vector2(36.660f,9),"span-b");
+            var first=a.Hinge(new Vector2(14,-.26f),8,100,"span-a");first.name="Entry folding tower";
+            var firstEnd=a.Seam(new Vector2(20.928f,3.74f),"span-a");a.Ledge(24.5f,4,7);
+            var second=a.Hinge(new Vector2(28,3.74f),10,85,"span-b");second.name="Middle folding tower";
+            var secondEnd=a.Seam(new Vector2(36.660f,8.74f),"span-b");
             var leftHalf=a.Ledge(40,9,8);leftHalf.name="Left drifting bridge half";var leftBody=leftHalf.AddComponent<Rigidbody2D>();leftBody.bodyType=RigidbodyType2D.Kinematic;
             var leftDrift=leftHalf.AddComponent<StructuralDrift>();leftDrift.amplitude=.65f;leftDrift.period=14;
             var rightHalf=a.Ledge(46,9,4);rightHalf.name="Right drifting bridge half";var rightBody=rightHalf.AddComponent<Rigidbody2D>();rightBody.bodyType=RigidbodyType2D.Kinematic;
             var rightDrift=rightHalf.AddComponent<StructuralDrift>();rightDrift.direction=Vector2.left;rightDrift.amplitude=.65f;rightDrift.period=14;
             a.Source(HostKind.Censer,38,10,true);
-            var third=a.Hinge(new Vector2(48,9),10,-90,"span-c");third.name="Far folding tower";
-            var thirdEnd=a.Seam(new Vector2(56.660f,14),"span-c");a.Ledge(63,14,14);a.Key(61,15.2f);a.Nail(67,14.4f);
+            var third=a.Hinge(new Vector2(48,8.74f),10,-90,"span-c");third.name="Far folding tower";
+            var thirdEnd=a.Seam(new Vector2(56.660f,13.74f),"span-c");a.Ledge(63,14,14);a.Key(61,15.2f);a.Nail(67,14.4f);
             // A support's movement carries an entire suspended island, not just an unlock token.
-            var secret=a.Hinge(new Vector2(40,9),8,130,"island");secret.name="Island support tower";
-            a.Seam(new Vector2(46.5f,13.65f),"island");
+            var secret=a.Hinge(new Vector2(40,8.74f),8,130,"island");secret.name="Island support tower";
+            a.Seam(new Vector2(46.5f,13.39f),"island");
             var island=a.Ledge(36.86f,15.58f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
             var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(2,.45f);
             a.Mercy(36.86f,16.78f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
-            var ret1=a.Seam(new Vector2(20,1),"span-a");ret1.gameObject.SetActive(false);
-            var ret2=a.Seam(new Vector2(36,5),"span-b");ret2.gameObject.SetActive(false);
-            var ret3=a.Seam(new Vector2(56,11),"span-c");ret3.gameObject.SetActive(false);
+            var ret1=a.Seam(new Vector2(20,.74f),"span-a");ret1.gameObject.SetActive(false);
+            var ret2=a.Seam(new Vector2(36,4.74f),"span-b");ret2.gameObject.SetActive(false);
+            var ret3=a.Seam(new Vector2(56,10.74f),"span-c");ret3.gameObject.SetActive(false);
             b.session.Turned+=()=>{leftDrift.released=rightDrift.released=true;foreach(var edge in new[]{firstEnd,secondEnd,thirdEnd})edge.gameObject.SetActive(false);
                 foreach(var edge in new[]{ret1,ret2,ret3})edge.gameObject.SetActive(true);
                 foreach(var panel in new[]{first,second,third}){panel.speed=32;panel.targetAngle=80;panel.folding=true;}};
