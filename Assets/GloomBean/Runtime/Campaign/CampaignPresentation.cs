@@ -17,7 +17,7 @@ namespace GloomBean.Campaign
         {
             if(caption==null){caption=new GUIStyle(GUI.skin.label){fontSize=17,wordWrap=true,alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.95f,.88f,.70f)}};kicker=new GUIStyle(caption){fontSize=11,alignment=TextAnchor.MiddleLeft};}
             LastPaintedScreen=screen;bool ending=screen=="Ending",restored=ending&&game.ShowingRestoredEnding;
-            int world=screen=="Home"?(game.IsCorrupted?1:0):ending?0:game.SelectedWorldNumber;
+            int world=!game.IsCorrupted&&!game.Practice?0:screen=="Home"?1:ending?0:game.SelectedWorldNumber;
             var art=SceneryArt.Get(world);Texture(new Rect(0,0,960,600),art,ending?new Color(.60f,.52f,.58f):new Color(.34f,.30f,.39f));
             Fill(new Rect(0,0,960,600),new Color(.025f,.02f,.04f,ending?.24f:.58f));
             for(int i=0;i<3;i++)Fill(new Rect(22+i*5,22+i*5,916-i*10,1),new Color(.73f,.56f,.39f,.35f));

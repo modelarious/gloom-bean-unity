@@ -62,6 +62,21 @@ namespace GloomBean.Campaign
             if(pose==3){p.Line(7,51,4,59,1,Cream);p.Line(57,48,60,57,1,Cream);}var sprite=p.Finish(key);bank[key]=sprite;return sprite;
         }
 
+        public static Sprite Enemy(int world,int frame,bool stunned,bool armor)
+        {
+            frame&=1;string key="patrol-"+world+"-"+frame+"-"+stunned+"-"+armor;if(bank.TryGetValue(key,out var cached))return cached;
+            var p=new Pixel(32);Color32 coat=world==1?Hex(0x785379):world==2?Hex(0x66754e):world==3?Hex(0x567184):world==4?Hex(0x836878):Hex(0xb89d73);
+            p.Ellipse(16,14,12,12,Ink);p.Ellipse(16,15,10,9,coat);p.Rect(7,2+frame,7,4,Ink);p.Rect(20,3-frame,7,4,Ink);p.Rect(8,4+frame,5,2,High);p.Rect(21,5-frame,5,2,High);
+            p.Ellipse(16,20,9,10,Ink);p.Ellipse(16,21,7,8,Cream);p.Ellipse(17,15,3,2,Ink);p.Line(14,25,13,19,1,Ink);p.Line(21,25,20,19,1,Ink);
+            if(stunned){p.Line(10,24,15,20,1,Ink);p.Line(10,20,15,24,1,Ink);p.Line(18,24,23,20,1,Ink);p.Line(18,20,23,24,1,Ink);p.Rect(2,27,3,2,Gold);p.Rect(26,29,3,2,Gold);}
+            if(armor){p.Rect(5,24,24,4,Dark);p.Ellipse(16,27,10,5,Ink);p.Ellipse(16,28,8,3,Hex(0x879ba9));p.Rect(15,24,2,7,White);}
+            else if(world==2){p.Line(9,27,4,31,1,Gold);p.Line(23,27,28,31,1,Gold);p.Rect(5,29,3,2,High);}
+            else if(world==3){p.Rect(7,28,21,2,Dark);p.Rect(10,29,15,3,coat);}
+            else if(world==4){p.Line(8,27,3,21,2,coat);p.Line(24,27,29,21,2,coat);}
+            else if(world==5)p.Ring(16,30,12,2,1,Gold);
+            p.Rect(2,10,4,6,Ink);p.Rect(3,12,3,4,White);p.Rect(27,10,4,6,Ink);p.Rect(27,12,3,4,White);
+            var sprite=p.Finish(key,32);bank[key]=sprite;return sprite;
+        }
         public static Sprite Tenant(HostKind kind,int frame=0)
         {
             frame&=3;string key="tenant-"+kind+"-"+frame;if(bank.TryGetValue(key,out var cached))return cached;

@@ -56,6 +56,7 @@ namespace GloomBean.Campaign
             }
             pictures=new SpriteRenderer[3];for(int i=0;i<3;i++){var go=new GameObject("Non-colliding parallax painting "+i);go.transform.SetParent(transform,false);pictures[i]=go.AddComponent<SpriteRenderer>();pictures[i].sortingOrder=-35;}
             foreach(var s in GetComponentsInChildren<HostSource>(true))if(!s.GetComponent<TenantPixelView>())s.gameObject.AddComponent<TenantPixelView>();
+            foreach(var enemy in GetComponentsInChildren<CarryableEnemy>(true))if(!enemy.GetComponent<PatrolPixelView>())enemy.gameObject.AddComponent<PatrolPixelView>().world=world;
             var boss=GetComponentInChildren<AtlasBoss>();if(boss&&boss.body){var skin=boss.body.gameObject.AddComponent<BossPixelView>();skin.boss=boss;skin.world=world;}
         }
         void LateUpdate()
@@ -79,4 +80,11 @@ namespace GloomBean.Campaign
         void Start(){picture=GetComponent<SpriteRenderer>();foreach(var old in GetComponentsInChildren<SpriteRenderer>())if(old!=picture)old.enabled=false;}
         void LateUpdate(){if(picture&&boss){picture.sprite=HostPixelArt.Boss(world,Mathf.Clamp(boss.phase,0,2));picture.color=Color.white;}}
     }
+    public sealed class PatrolPixelView:MonoBehaviour
+    {
+        public int world;CarryableEnemy enemy;SpriteRenderer picture;Transform image;
+        void Start(){enemy=GetComponent<CarryableEnemy>();foreach(var old in GetComponentsInChildren<SpriteRenderer>())old.enabled=false;image=new GameObject("Patrol mask pixel artwork").transform;image.SetParent(transform,false);image.localScale=Vector3.one*1.24f;picture=image.gameObject.AddComponent<SpriteRenderer>();picture.sortingOrder=10;}
+        void LateUpdate(){if(!enemy||!picture)return;bool stunned=enemy.state==EnemyState.Stunned||enemy.state==EnemyState.Carried;picture.sprite=HostPixelArt.Enemy(world,(int)(Time.time*5)%2,stunned,enemy.armored);picture.flipX=enemy.direction<0;image.localRotation=Quaternion.Euler(0,0,enemy.state==EnemyState.Thrown?Time.time*750:0);}
+    }
+
 }

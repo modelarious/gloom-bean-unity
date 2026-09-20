@@ -164,6 +164,17 @@ namespace GloomBean.Foundation
                 pendingEnter|=Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.JoystickButton0);
             }
         }
+        string WorldTitle(WorldDefinition world)
+        {
+            if(Practice||IsCorrupted||world.id=="BASE")return world.title;
+            string[] pleasant={"Little Sunday Town","The Harvest Fair","The Painted Promenade","The Skyline Parade","The Cloud Garden"};
+            int number;if(int.TryParse(world.id.Substring(1),out number)&&number>=1&&number<=5)return pleasant[number-1];return world.title;
+        }
+        string StageTitle(StageDefinition stage)
+        {
+            if(Practice||IsCorrupted||!stage.atlas)return stage.title;
+            string[] pleasant={"Sunday Best","The Bell Tower","Wash Day","The Dress-up House"};return !stage.boss&&stage.course>=1&&stage.course<=4?pleasant[stage.course-1]:stage.boss?"The Parade's Kindly Usher":stage.title;
+        }
         public StageDefinition NextStage()
         {
             if(!Session)return null;string id=Session.definition.id;
@@ -241,19 +252,19 @@ namespace GloomBean.Foundation
                 for(int i=0;i<worlds.Length;i++)
                 {
                     bool open=CampaignProgression.WorldOpen(worlds,i,Save.Data,Practice);
-                    if(Button(new Rect(55,108+i*70,830,55),worlds[i].title+(open?"":"  [clear previous boss]"),open)){worldIndex=i;screen=ScreenMode.Levels;choice=0;}
+                    if(Button(new Rect(55,108+i*70,830,55),WorldTitle(worlds[i])+(open?"":"  [clear previous boss]"),open)){worldIndex=i;screen=ScreenMode.Levels;choice=0;}
                 }
                 if(Button(new Rect(55,500,350,43),"Back")){screen=ScreenMode.Home;choice=0;}
             }
             if(screen==ScreenMode.Levels)
             {
-                var world=worlds[worldIndex];Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Levels");GUI.Label(new Rect(50,35,860,50),world.title,heading);
+                var world=worlds[worldIndex];Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Levels");GUI.Label(new Rect(50,35,860,50),WorldTitle(world),heading);
                 bool all=true;
                 for(int i=0;i<world.levels.Length;i++)
                 {
                     var stage=world.levels[i];bool done=Save.Data.cleared.Contains(stage.id);all&=done;
                     bool unlocked=CampaignProgression.LevelOpen(world,i,Save.Data,Practice);
-                    if(Button(new Rect(55,106+i*64,830,49),(i+1)+". "+stage.title+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
+                    if(Button(new Rect(55,106+i*64,830,49),(i+1)+". "+StageTitle(stage)+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
                 }
                 if(Button(new Rect(55,380,830,52),"BOSS — "+world.boss.title,CampaignProgression.BossOpen(world,Save.Data,Practice)))LoadStage(world.boss,Practice);
                 if(Button(new Rect(55,470,350,44),"World select")){screen=ScreenMode.Worlds;choice=0;}
