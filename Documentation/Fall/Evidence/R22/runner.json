@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  104,
+                        "case":  "B4",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Fall-R22-inspectable-release",
+    "started":  "2026-09-20T03:13:45.1646150-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-20T03:14:52.5427495-06:00"
+}
