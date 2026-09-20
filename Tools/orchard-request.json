@@ -1,7 +1,12 @@
 {
-  "id": "Empyrean-I14-supported-word-rise-and-root-pocket",
+  "id": "Empyrean-I15-scripture-cadence-and-folded-sanctum",
   "build": true,
   "cases": [
+    {
+      "name": "L19-critical",
+      "suite": "Empyrean",
+      "route": "GB-L19"
+    },
     {
       "name": "L19-secret",
       "suite": "Empyrean",
@@ -17,7 +22,13 @@
       "startDelay": 0.47
     },
     {
-      "name": "L20-root-probe",
+      "name": "L19-practice",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "practice": true
+    },
+    {
+      "name": "L20-third-sanctum",
       "suite": "Empyrean",
       "route": "GB-L20"
     }

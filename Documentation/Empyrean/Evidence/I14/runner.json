@@ -1,0 +1,36 @@
+{
+    "started":  "2026-09-20T08:49:17.1639119-06:00",
+    "id":  "Empyrean-I14-supported-word-rise-and-root-pocket",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  27,
+                        "case":  "L19-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  95,
+                        "case":  "L19-secret-30fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  27,
+                        "case":  "L20-root-probe",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "f665e37958a81a116425e521740b017abcbb58071f6ba3a92bb5cc365e884001",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "9d34279575423ee77a348642986c5fd438836678",
+    "finished":  "2026-09-20T08:51:06.1765869-06:00"
+}
