@@ -2,12 +2,12 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Full-Campaign-L3: same clean a74e7eb runtime, 53 cases, bounded retry of an externally replaced predecessor receipt. L2 built but orchestration aborted; preserve its FAIL. After PASS independently audit, package this exact program, and verify extracted ending/UI.",
+  "next_gate": "Full-Campaign-L4 is final common-source 54-case run. Gameplay unchanged from welcoming-menu candidate; L19 witness now plans a genuinely connected silhouette instead of reach alone. Six focused cadence/delay routes PASS. New paired receipt writer/reader withstands150 replacements. L3 runs older witness and has a known 30fps failure; do not certify it. After L4 PASS: independent audit, final UI/ending review, exact source/player packages and extracted ending checks.",
   "active_job": {
-    "task": "GloomBean-Campaign-Acceptance-L3",
-    "receipt": "Reports/Full-Campaign-L3/runner.json",
-    "config": "Tools/campaign-acceptance-l3.json",
-    "source": "a74e7eb4badace8a4ac463bcda092e3a1689350f",
+    "task": "GloomBean-Campaign-Acceptance-L4",
+    "receipt": "Reports/Full-Campaign-L4/runner.json",
+    "config": "Tools/campaign-acceptance-l4.json",
+    "source": "f5e846d7dfa26237ac3fac1a1695d22e6e75e34a",
     "status": "READY_NOT_STARTED"
   },
   "publication": {
