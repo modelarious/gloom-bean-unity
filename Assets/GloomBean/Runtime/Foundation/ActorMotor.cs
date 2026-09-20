@@ -125,7 +125,7 @@ namespace GloomBean.Foundation
             if(size.y>Shape.size.y || size.x>Shape.size.x)
             {
                 int n=Physics2D.OverlapBoxNonAlloc(feet+Vector2.up*(size.y*.5f+.04f),size-new Vector2(.08f,.08f),0,overlaps,collisionMask);
-                for(int i=0;i<n;i++) if(overlaps[i]&&!overlaps[i].isTrigger&&overlaps[i]!=Shape)return false;
+                for(int i=0;i<n;i++) if(overlaps[i]&&!overlaps[i].isTrigger&&overlaps[i]!=Shape){if(overlaps[i].GetComponent<OneWaySurface>()&&feet.y<overlaps[i].bounds.max.y-.12f)continue;return false;}
             }
             Shape.direction=size.x>size.y?CapsuleDirection2D.Horizontal:CapsuleDirection2D.Vertical;
             Shape.size=size; Shape.offset=baseOffset;

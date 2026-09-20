@@ -81,6 +81,13 @@ namespace GloomBean.Foundation
             Check("crouch.cannot-stand-through-roof",actor.Crouched&&actor.Height<1);
             Destroy(roof);yield return Steps(3);Check("crouch.stands-when-clear",!actor.Crouched&&actor.Height>1.3f);
             input.frame=new InputFrame{move=new Vector2(1,-1)};yield return Steps(20);Check("crawl.speed-limited",actor.Crouched&&Mathf.Abs(actor.Body.linearVelocity.x)<=actor.tuning.crawlSpeed+.1f);
+            yield return Place(new Vector2(605,.8f));var oneWayRoof=b.Platform(new Vector2(605,1.25f),new Vector2(4,.3f));oneWayRoof.AddComponent<OneWaySurface>();
+            input.frame=new InputFrame{move=Vector2.down};yield return Steps(5);input.frame=default;yield return Steps(5);
+            Check("crouch.stands-beneath-one-way-floor",!actor.Crouched&&actor.Height>1.4f);
+            Destroy(oneWayRoof);yield return Steps(2);input.frame=new InputFrame{move=Vector2.down};yield return Steps(4);
+            var solidAgain=b.Solid("Actual solid roof negative control",new Vector2(605,1.25f),new Vector2(4,.3f));input.frame=default;yield return Steps(5);
+            Check("crouch.one-way-exception-does-not-ignore-solid-roofs",actor.Crouched&&actor.Height<1);Destroy(solidAgain);yield return Steps(2);
+
 
             yield return Place(new Vector2(600,.8f));input.frame=new InputFrame{attack=true};yield return Steps(2);Check("tackle.normal-tier",actor.AttackPower==1,actor.State.ToString());
             yield return Place(new Vector2(600,.8f));input.frame=new InputFrame{move=Vector2.right,run=true};yield return Steps(50);input.frame=new InputFrame{move=Vector2.right,run=true,attack=true};yield return Steps(2);
