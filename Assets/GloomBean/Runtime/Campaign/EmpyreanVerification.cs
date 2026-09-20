@@ -104,8 +104,8 @@ namespace GloomBean.Campaign
         IEnumerator OrbitMercy()
         {
             if(stopped||!Live)yield break;var ring=session.GetComponentsInChildren<MotionPlatform>().Single(x=>x.name=="Orbiting Mercy halo");var magnet=host.Form<LodestoneForm>();var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(x=>x.name=="Launch coil 49");
-            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(44.5f);float steady=Time.time+4;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((44.5f-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
-            while(Live&&Time.time<steady&&(Mathf.Abs(actor.Body.position.x-44.5f)>.08f||Mathf.Abs(actor.Body.linearVelocity.x)>.15f))yield return Tick();input.rule=null;input.frame=default;bool powered=false;float next=0,end=Time.time+18,trace=0;bool interacted=false;int exchanges=0;
+            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(44.5f);if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});yield return Press(new InputFrame{interact=true});float steady=Time.time+4;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((44.5f-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
+            while(Live&&Time.time<steady&&(Mathf.Abs(actor.Body.position.x-44.5f)>.08f||Mathf.Abs(actor.Body.linearVelocity.x)>.15f))yield return Tick();input.rule=null;input.frame=default;bool powered=false;float next=0,end=Time.time+18,trace=0;bool interacted=true;int exchanges=0;
             input.rule=()=>{
                 Vector2 target=ring.GetComponent<Rigidbody2D>().position, pos=actor.Body.position,v=actor.Body.linearVelocity;bool low=pos.y<ring.GetComponent<Rigidbody2D>().position.y-.5f;
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m)north+=m.ForceOn(pos,1,magnet.range);
@@ -167,8 +167,10 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;yield return Jump(74.8f,6.5f);yield return Walk(72);yield return Focus(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();
             if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});yield return Press(new InputFrame{interact=true});yield return Press(new InputFrame{jump=true,jumpHeld=true});
-            float deadline=Time.time+10;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*5-actor.Body.linearVelocity.x*1.2f,-1,1),0)};
-            while(Live&&Time.time<deadline&&!(actor.Body.position.y>9&&actor.Body.position.y<11.5f&&Mathf.Abs(actor.Body.linearVelocity.y)<1.3f))yield return Tick();input.rule=null;input.frame=default;
+            float deadline=Time.time+10,suspensionTrace=0;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*5-actor.Body.linearVelocity.x*1.2f,-1,1),0)};
+            while(Live&&Time.time<deadline&&!(actor.Body.position.y>9&&actor.Body.position.y<11.5f&&Mathf.Abs(actor.Body.linearVelocity.y)<1.3f)){
+                yield return Tick();if(Time.time>suspensionTrace){suspensionTrace=Time.time+.3f;Vector2 sum=Vector2.zero;foreach(var m in MagneticBody.All)if(m)sum+=m.ForceOn(actor.Body.position,magnet.Polarity,magnet.range);Note("SUSPENSION pos="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" force="+sum+" active="+string.Join(",",session.GetComponentsInChildren<MagneticBody>(true).Where(m=>m.name.StartsWith("Suspension screen")).Select(m=>m.name+":"+m.enabled)));}}
+input.rule=null;input.frame=default;
             Check("two actual magnetic screens suspend the body",!actor.Grounded&&actor.Body.position.y>9&&actor.Body.position.y<11.5f);if(stopped)yield break;
             yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(72,5.6f));
             var own=session.GetComponentsInChildren<ShadowReceiver>().Single(x=>x.name=="Only your body can cast this bridge");yield return Pause(.1f);

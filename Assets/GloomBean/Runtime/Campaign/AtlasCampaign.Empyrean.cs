@@ -25,7 +25,7 @@ namespace GloomBean.Campaign
             }
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
             a.Key(71,13.3f);a.Nail(76,12.4f);
-            a.Ledge(44.5f,8,3);var secretCoil=a.Metal(new Vector2(44.5f,7.05f),new Vector2(2,.7f),20,true,1);secretCoil.name="Orbital entry coil";secretCoil.strength=170;secretCoil.enabled=false;
+            a.Ledge(44.5f,8,6);var secretCoil=a.Metal(new Vector2(44.5f,7.05f),new Vector2(2,.7f),20,true,1);secretCoil.name="Orbital entry coil";secretCoil.strength=170;secretCoil.enabled=false;
             var secretLever=b.Switch(new Vector2(44.5f,8.9f),"ORBITAL ENTRY");secretLever.Changed+=on=>secretCoil.enabled=on;
             var ring=new GameObject("Orbiting Mercy halo");ring.transform.SetParent(b.root);ring.transform.position=new Vector2(45,17.2f);ring.layer=Layers.Moving;
             var edge=ring.AddComponent<EdgeCollider2D>();var arc=new Vector2[42];for(int i=0;i<arc.Length;i++){float theta=Mathf.Lerp(-55,235,i/(float)(arc.Length-1))*Mathf.Deg2Rad;arc[i]=new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.65f;}edge.points=arc;edge.edgeRadius=.07f;
