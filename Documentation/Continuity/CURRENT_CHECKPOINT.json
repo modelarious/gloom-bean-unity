@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
+  "tested_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "This is the verified Fall release branch, not latest development main. W1-W4 ordinary/secret earned-save chain PASS. Continue W5 from the live main checkpoint and current canonical context; R09 magnetic course is not repeatably solved.",
+  "next_gate": "This is the verified release branch. All16 clean cases passed for first4worlds. Continue development from main and canonical context, where W5 R09 has an explicit reproducibility failure; do not overwrite newer work with this release.",
   "active_job": null,
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
@@ -14,20 +14,8 @@
   },
   "evidence_refs": [
     {
-      "name": "Earned first three worlds clean native acceptance",
-      "path": "Documentation/Evidence/CityClean-v05/runner.json"
-    },
-    {
-      "name": "Latest full earned chapter regression",
-      "path": "Documentation/Evidence/Continuity-Clean-e2/runner.json"
-    },
-    {
-      "name": "Historical failing clean run retained",
-      "path": "Documentation/Evidence/Continuity-Clean-e1/runner.json"
-    },
-    {
-      "name": "Focused shore cure repair",
-      "path": "Documentation/Evidence/Continuity-R13/runner.json"
+      "name": "Release clean first-four-world acceptance",
+      "path": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json"
     }
   ],
   "repair_outcome": {
@@ -40,9 +28,9 @@
   },
   "foundation_head": "66ed194a270f93f393b780e09004bf41a19be6db",
   "latest_finished_job": {
-    "receipt": "Documentation/Evidence/CityClean-v05/runner.json",
+    "receipt": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json",
     "status": "PASS",
-    "cases": 11
+    "cases": 16
   },
   "continuity_tool_tests": {
     "passed": 15,
@@ -51,17 +39,12 @@
   },
   "remaining_game": {
     "unverified_full_levels": [
-      "GB-L13",
-      "GB-L14",
-      "GB-L15",
-      "GB-L16",
       "GB-L17",
       "GB-L18",
       "GB-L19",
       "GB-L20"
     ],
     "unverified_full_bosses": [
-      "GB-B4",
       "GB-B5"
     ],
     "other": [

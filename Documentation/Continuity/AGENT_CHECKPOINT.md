@@ -1,5 +1,10 @@
 # Gloom Bean: agent execution checkpoint
 
+## Verified Fall release branch
+
+This snapshot is the completed first-four-world clean milestone, not latest main. Read Documentation/RELEASE_STATUS.md and CURRENT_CHECKPOINT.json for current evidence. Earlier procedures below are retained for recovery; their historical task/first-failure notes do not supersede the current state. Main in the full history contains later unvalidated World5 work.
+
+
 ## Current execution position â€” 2026-09-19, after both repairs
 
 **Read CURRENT_CHECKPOINT.json for the live successor of this checkpoint.** The latest complete clean suite is PASS: independent foundation61, combined mechanics200, W1 ordinary138, W1 secrets173, W2 ordinary318, W2 secrets374, Judge29, practice38, and the explicit expected empty-save denial. W2 resumed the actual earned W1 saves. No verification job remains pending at this checkpoint. The tested atlas source is 747f8ebcebb3a6769f684e8686649142730b971e; later documentation/tool changes do not change its runtime.
