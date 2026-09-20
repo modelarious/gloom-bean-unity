@@ -4,7 +4,7 @@ namespace GloomBean.Campaign
 {
     public sealed class StolenAttack:MonoBehaviour
     {
-        public HostEmbargo embargo;public AtlasBoss boss;float clock;int shot;
+        public HostEmbargo embargo;public AtlasBoss boss;float clock;int shot;public int Shots=>shot;
         void Update()
         {
             if(!embargo||!embargo.active||!boss||boss.defeated)return;clock+=Time.deltaTime;if(clock<5)return;clock=0;var actor=StageSession.Current.player;if(!actor)return;shot++;

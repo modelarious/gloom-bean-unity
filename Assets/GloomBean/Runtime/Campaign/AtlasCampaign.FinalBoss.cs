@@ -26,8 +26,8 @@ namespace GloomBean.Campaign
             // Three physical routes answer the same obstruction with time, conserved
             // mass or projection. Choice is observed from contact, not a menu grant.
             a.Source(HostKind.Echo,8);a.Source(HostKind.Wax,8,5);a.Source(HostKind.Parallax,8,9);
-            a.Ledge(5,2,4);a.Ledge(8,4,5);a.Ledge(5,6,4);a.Ledge(8,8,5);
-            a.Ledge(21,4,24);a.Ledge(31,8,8);
+            a.Ledge(5,2,4).AddComponent<OneWaySurface>();a.Ledge(8,4,5).AddComponent<OneWaySurface>();a.Ledge(5,6,4).AddComponent<OneWaySurface>();a.Ledge(8,8,5).AddComponent<OneWaySurface>();
+            a.Ledge(21,4,24).AddComponent<OneWaySurface>();a.Ledge(31,8,8).AddComponent<OneWaySurface>();
             var echoLeft=b.Plate(new Vector2(12,.14f),.7f);var echoRight=b.Plate(new Vector2(23,.14f),.7f);
             var echoGate=b.Door(new Vector2(29,2),new Vector2(.7f,4),echoLeft,echoRight);echoGate.latched=true;echoGate.holdSeconds=.1f;
             var mass=b.Plate(new Vector2(21,4.14f),.1f);var waxGate=b.Door(new Vector2(27,6),new Vector2(.7f,4));
@@ -63,7 +63,7 @@ namespace GloomBean.Campaign
         {heart.cables.Add(PrimitiveArt.Line(label,a.b.root,at,new Vector2(311,22),.07f,new Color(.59f,.23f,.38f,.45f),-4));}
         void FinalMagnetShadow(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+2,1,3);a.Ledge(x+14,2,28);a.Source(HostKind.Lodestone,x+4,3);a.Source(HostKind.Shadow,x+7,3,true);
+            var b=a.b;a.Ledge(x+2,1,3);a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Lodestone,x+4,3);a.Source(HostKind.Shadow,x+7,3,true);
             var screen=a.Metal(new Vector2(x+10,8),new Vector2(12,.65f),2,false,-1);screen.name="Final suspended iron screen";screen.strength=100;
             var rb=screen.GetComponent<Rigidbody2D>();rb.gravityScale=0;rb.constraints=RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;rb.linearDamping=1.2f;
             b.Solid("Opaque heart partition",new Vector2(x+18.5f,6),new Vector2(1,8));
@@ -75,7 +75,7 @@ namespace GloomBean.Campaign
         }
         void FinalEchoInk(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+2,2,4);a.Ledge(x+6,4,10);a.Source(HostKind.Echo,x+4,5);a.Source(HostKind.Ink,x+7,5,true);
+            var b=a.b;a.Ledge(x+2,2,4);a.Ledge(x+6,4,10).AddComponent<OneWaySurface>();a.Source(HostKind.Echo,x+4,5);a.Source(HostKind.Ink,x+7,5,true);
             a.Ledge(x+18,7.6f,23).AddComponent<OneWaySurface>();var l=b.Plate(new Vector2(x+14,7.74f),.7f);var r=b.Plate(new Vector2(x+24,7.74f),.7f);
             l.GetComponent<BoxCollider2D>().size=new Vector2(2.2f,.32f);r.GetComponent<BoxCollider2D>().size=new Vector2(2.2f,.32f);
             FinalSignal(a,boss,"echo-ink",new Vector2(x+19,8),()=>l.Pressed&&r.Pressed,()=>heart.Release("echo-ink"),2,.15f);
@@ -94,7 +94,7 @@ namespace GloomBean.Campaign
         }
         void FinalStitchCoffin(AtlasBuilder a,AtlasBoss boss,FinalHeartAnchor heart,float x)
         {
-            var b=a.b;a.Ledge(x+1,1,3);a.Ledge(x+14,2,28);a.Source(HostKind.Stitch,x+4,3);a.Source(HostKind.Coffin,x+7,3,true);
+            var b=a.b;a.Ledge(x+1,1,3);a.Ledge(x+14,2,28).AddComponent<OneWaySurface>();a.Source(HostKind.Stitch,x+4,3);a.Source(HostKind.Coffin,x+7,3,true);
             var hinge=a.Hinge(new Vector2(x+4,4),16,30,"heart-brace");hinge.name="Final stitched load";a.Seam(new Vector2(x+20,.8f),"heart-brace");
             FinalSignal(a,boss,"stitch-coffin",new Vector2(x+13,3),()=>hinge.HeldLoad&&hinge.BracedSeconds>.8f,()=>heart.Release("stitch-coffin"));Cable(a,heart,new Vector2(x+13,5),"The bearing tendon");
             b.Tip(new Vector2(x+6,4),"Fold the beam toward its lower seam. A horizontal body can bear the load; an upright body cannot hold the same sweep.");
@@ -105,7 +105,7 @@ namespace GloomBean.Campaign
             var mirror=a.Source(HostKind.Mirror,x+2,3);mirror.explicitAxis=true;mirror.mirrorAxis=x+11;a.Source(HostKind.Parallax,x+5,3,true);
             var left=a.Depth(new Vector2(x+6,3.4f),new Vector2(10,.5f),0);left.gameObject.AddComponent<OneWaySurface>();var right=a.Depth(new Vector2(x+20,3.4f),new Vector2(10,.5f),2);right.gameObject.AddComponent<OneWaySurface>();
             a.Projection(new Vector2(x+8,5),new Vector2(20,10));var stamp=b.Trigger("The reflected near-plane stamp",new Vector2(x+19,6),new Vector2(12,9),Color.clear).AddComponent<ReplicaDepthStamp>();stamp.plane=2;
-            b.Solid("Reflection left caliper",new Vector2(x+17,6),new Vector2(1,4.5f));b.Solid("Reflection right caliper",new Vector2(x+22,6),new Vector2(1,4.5f));
+            b.Solid("Reflection left caliper",new Vector2(x+17,5),new Vector2(1,10));b.Solid("Reflection right caliper",new Vector2(x+22,5),new Vector2(1,10));
             var l=b.Plate(new Vector2(x+6,3.70f),.2f);var r=b.Plate(new Vector2(x+21,3.89f),.5f);l.GetComponent<BoxCollider2D>().size=new Vector2(1.8f,.32f);
             FinalSignal(a,boss,"mirror-parallax",new Vector2(x+14,6),()=>l.Pressed&&r.Pressed&&stamp.Stamped&&stamp.Stamped.Grounded&&stamp.Stamped.GroundCollider&&stamp.Stamped.GroundCollider.gameObject.layer==19&&a.Player.Grounded&&a.Player.GroundCollider&&a.Player.GroundCollider.gameObject.layer==17,()=>heart.Release("mirror-parallax"));
             Cable(a,heart,new Vector2(x+14,6),"The misregistered twin tendon");b.Tip(new Vector2(x+5,4),"Your reflected body's near plane is not yours. Let the calipers stop one body while the other corrects its register.");

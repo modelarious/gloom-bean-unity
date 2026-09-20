@@ -1,5 +1,5 @@
 {
-  "id": "Completion-J06-use-the-actual-iron-footprint",
+  "id": "Completion-J07-final-encounter-and-return",
   "build": true,
   "cases": [
     {
@@ -12,6 +12,28 @@
       "suite": "Empyrean",
       "route": "GB-L20",
       "secrets": true
+    },
+    {
+      "name": "B5-magnet-shadow",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "magnet-shadow"
+    },
+    {
+      "name": "B5-wax-gullet",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "wax-gullet"
+    },
+    {
+      "name": "B5-stitch-coffin",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "stitch-coffin"
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

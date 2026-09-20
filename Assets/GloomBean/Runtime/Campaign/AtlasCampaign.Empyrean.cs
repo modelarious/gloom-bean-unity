@@ -162,7 +162,7 @@ namespace GloomBean.Campaign
             var rhyme=b.Trigger("The old parade remembered",new Vector2(185,24),new Vector2(5,7),Color.clear).AddComponent<RhythmMemory>();rhyme.gate=rhythmGate;
             a.Cure(HostKind.Lodestone,194,25.8f);a.Cure(HostKind.Shadow,193,27.8f);
             b.Tip(new Vector2(172,23),"Even your shadow needs light now. The dark outside these bright shapes has no path.");
-            var retreat=new List<GameObject>();for(int i=0;i<24;i++){var g=a.Ledge(6+i*8,29,7);g.name="Collapsing sanctum return "+i;g.AddComponent<OneWaySurface>();g.SetActive(false);retreat.Add(g);}a.Ledge(194,25,4);a.Ledge(193,27,4);
+            var retreat=new List<GameObject>();for(int i=0;i<24;i++){var g=a.Ledge(6+i*8,29,7);g.name="Collapsing sanctum return "+i;g.AddComponent<OneWaySurface>();g.SetActive(false);retreat.Add(g);}a.Ledge(194,25,4).AddComponent<OneWaySurface>();a.Ledge(193,27,4).AddComponent<OneWaySurface>();
             var collapseObject=new GameObject("Final controlled collapse");collapseObject.transform.SetParent(b.root);var collapse=collapseObject.AddComponent<DescentController>();collapse.altitude=500;collapse.speed=.8f;collapse.exit=whiteExit.transform;collapse.Capture(b);
             b.session.Turned+=()=>{collapse.falling=true;foreach(var g in retreat)g.SetActive(true);foreach(var r in risers){var old=r.origin;r.origin=r.end;r.end=old;}finalGate.SetOpen(true);};
             a.Health(70,1.2f);a.Health(130,1.2f);b.Tip(new Vector2(8,2),"Here your echo receives each command first. Your body executes it two seconds later. Four more sanctums bend familiar rules. The final Nail still does not heal you.");
