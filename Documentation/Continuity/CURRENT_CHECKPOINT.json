@@ -1,14 +1,9 @@
 {
   "schema_version": 1,
-  "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
+  "tested_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Fresh earned W1-W4 clean ordinary/secret chain on ce58671e62086e00d1a2e06d3ee67a8494197905. B4 passed R22; W5 L17 first magnetic input probe pending. Read current runner and request, not older City/W1-W2 summaries.",
-  "active_job": {
-    "task": "GloomBean-Campaign-Acceptance",
-    "receipt": "Reports/Fall-Clean-v06-g1/runner.json",
-    "status": "READY_NOT_STARTED",
-    "source": "ce58671e62086e00d1a2e06d3ee67a8494197905"
-  },
+  "next_gate": "Continue World5 from EmpyreanVerification.cs and AtlasCampaign.Empyrean.cs. First four worlds completed clean ordinary/secret earned-save acceptance. R08 crossed two magnetic gaps and launched from a real reversible coil, but R09 failed the earlier first gap: solve phase/reproducibility, then remaining L17 route, secret and Turn. Do not repeat repaired City/Fall work.",
+  "active_job": null,
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
@@ -18,6 +13,54 @@
     "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
   },
   "evidence_refs": [
+    {
+      "name": "Current completed first-four-world clean acceptance",
+      "path": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json"
+    },
+    {
+      "name": "Current W5 unpassed reproducibility probe",
+      "path": "Documentation/Empyrean/Evidence/R09/runner.json"
+    }
+  ],
+  "repair_outcome": {
+    "first_four_world_cases": "16/16 PASS",
+    "foundation_assertions": 72,
+    "combined_component_assertions": 230,
+    "W4_ordinary_assertions": 426,
+    "W4_secret_assertions": 468,
+    "W5": "UNVERIFIED / first-gap reproducibility regression R09",
+    "scope": "Input-driven machine evidence, not human acceptance"
+  },
+  "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
+  "latest_finished_job": {
+    "receipt": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json",
+    "status": "PASS",
+    "cases": 16
+  },
+  "continuity_tool_tests": {
+    "passed": 18,
+    "failed": 0,
+    "log": "Documentation/Continuity/DISPATCH_PROBE_TESTS.txt"
+  },
+  "remaining_game": {
+    "unverified_full_levels": [
+      "GB-L17",
+      "GB-L18",
+      "GB-L19",
+      "GB-L20"
+    ],
+    "unverified_full_bosses": [
+      "GB-B5"
+    ],
+    "other": [
+      "Remaining atlas choreography and fidelity",
+      "Production art/animation/audio/dialogue/cinematics",
+      "Blind readability and physical controller acceptance"
+    ],
+    "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
+  },
+  "development_source_scope": "Main has unvalidated W5-local changes beyond the tested Fall checkpoint. Source-vs-tested DIFF is expected and is not lost access. release/fall-v0.6.0 preserves the byte-identical engine inputs for the verified player.",
+  "historical_evidence_refs": [
     {
       "name": "Earned first three worlds clean native acceptance",
       "path": "Documentation/Evidence/CityClean-v05/runner.json"
@@ -34,46 +77,5 @@
       "name": "Focused shore cure repair",
       "path": "Documentation/Evidence/Continuity-R13/runner.json"
     }
-  ],
-  "repair_outcome": {
-    "practice_checks": 38,
-    "ordinary_checks": 39,
-    "secret_checks": 49,
-    "mechanics_passed": 198,
-    "failed": 0,
-    "scope": "Focused tests; not whole atlas completion"
-  },
-  "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
-  "latest_finished_job": {
-    "receipt": "Documentation/Evidence/CityClean-v05/runner.json",
-    "status": "PASS",
-    "cases": 11
-  },
-  "continuity_tool_tests": {
-    "passed": 15,
-    "failed": 0,
-    "log": "Documentation/Continuity/TOOL_TESTS.txt"
-  },
-  "remaining_game": {
-    "unverified_full_levels": [
-      "GB-L13",
-      "GB-L14",
-      "GB-L15",
-      "GB-L16",
-      "GB-L17",
-      "GB-L18",
-      "GB-L19",
-      "GB-L20"
-    ],
-    "unverified_full_bosses": [
-      "GB-B4",
-      "GB-B5"
-    ],
-    "other": [
-      "Remaining atlas choreography and fidelity",
-      "Production art/animation/audio/dialogue/cinematics",
-      "Blind readability and physical controller acceptance"
-    ],
-    "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
-  }
+  ]
 }

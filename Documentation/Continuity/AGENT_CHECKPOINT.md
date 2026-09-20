@@ -1,5 +1,10 @@
 # Gloom Bean: agent execution checkpoint
 
+## Current continuation — 20 September 2026
+
+The completed clean checkpoint now covers worlds1–4:16 levels,4 bosses and all first16 Mercies through genuine inputs and earned save chains. Read CURRENT_CHECKPOINT.json and Documentation/Fall/Evidence/Clean-v06-g1/runner.json before older paragraphs below. Main is already developing World5. Its R09 first magnetic gap is not repeatably solved; earlier R08 success is a narrow observation, not full L17 acceptance. The separate release/fall-v0.6.0 branch retains the verified engine inputs at ce58671. No verification job is left running at this checkpoint. Existing scheduled runners remain available; there is no missing-write-access blocker.
+
+
 ## Current execution position â€” 2026-09-19, after both repairs
 
 **Read CURRENT_CHECKPOINT.json for the live successor of this checkpoint.** The latest complete clean suite is PASS: independent foundation61, combined mechanics200, W1 ordinary138, W1 secrets173, W2 ordinary318, W2 secrets374, Judge29, practice38, and the explicit expected empty-save denial. W2 resumed the actual earned W1 saves. No verification job remains pending at this checkpoint. The tested atlas source is 747f8ebcebb3a6769f684e8686649142730b971e; later documentation/tool changes do not change its runtime.

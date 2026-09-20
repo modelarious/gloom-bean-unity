@@ -1,5 +1,3 @@
-# Current Gloom Bean continuation
+# Active development status
 
-The previous work-position claims are historical and preserved in History/PRE_CONTINUITY_RELEASE_STATUS.md. Read [the current first-read checkpoint](Continuity/AGENT_CHECKPOINT.md) and [machine-readable next gate](Continuity/CURRENT_CHECKPOINT.json), then run `python Tools/agent_status.py --probe-write`.
-
-Parish and Orchard later implementations survived. Their complete clean batch included a practice-route failure; read the current retry rather than assuming all green. The full atlas game is unfinished. Original requirements and immutable source captures are unchanged.
+The verified first-four-world milestone is preserved on release/fall-v0.6.0 and described in Documentation/Fall/Evidence/Clean-v06-g1/VERIFIED_SCOPE.json. Its engine source is ce58671e62086e00d1a2e06d3ee67a8494197905;16/16 clean acceptance cases passed. The current main branch has later experimental World5 magnetic-course work. It is not yet a complete or repeatably solved fifth world. Read Documentation/Empyrean/RESUME.md and the current checkpoint JSON before implementation. Final production art/fidelity and human/controller acceptance remain open. No game-source GitHub push is claimed; all history is committed locally and retrieved in full bundles.
