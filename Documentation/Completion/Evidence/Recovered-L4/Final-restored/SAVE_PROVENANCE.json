@@ -1,0 +1,5 @@
+﻿{
+    "parent":  "L20-secret",
+    "sha256":  "821bb7797db88849016c64d030773810071c1fa8ac5ec8ce8e3d85dcec6ee591",
+    "policy":  "Exact unmodified save from prior real-input completion"
+}

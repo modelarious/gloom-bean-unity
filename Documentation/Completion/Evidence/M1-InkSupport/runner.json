@@ -1,0 +1,37 @@
+{
+    "started":  "2026-09-20T16:37:25.1521230-06:00",
+    "id":  "Completion-M1-InkSupport",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  96,
+                        "case":  "practice-120-delay",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  97,
+                        "case":  "practice-60",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  96,
+                        "case":  "secret-30-delay",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "a87472a3829f33ba8c1c980f351dbf3c2ff52d135c23917467606ce6e0a030fa",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "ebbf2f9e405508375b52f007325574c24bb6cde30868a9e44f4d505de79f46d9",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
+    "finished":  "2026-09-20T16:38:41.3041766-06:00"
+}

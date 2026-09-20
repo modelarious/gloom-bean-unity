@@ -1,0 +1,54 @@
+BEGIN GB-B3 The Surveyor
+PASS GB-B3 walk 7 | (6.80, 0.76) feet=0.01 hp=6 twin=(37.20, 0.76)
+PASS GB-B3 Surveyor creates real player reflection | (6.80, 0.76) feet=0.01 hp=6 twin=(37.20, 0.76)
+PASS GB-B3 walk 12.1 | (11.89, 0.76) feet=0.01 hp=6 twin=(34.04, 0.76)
+PASS GB-B3 cabinet pins present body while twin reaches exposed reflection | (12.31, 0.76) feet=0.01 hp=6 twin=(33.15, 0.76)
+EVENT t=2.47 boss-phase The Surveyor:1
+PASS GB-B3 reflected tackle defeats Surveyor act I | (12.31, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-B3 first act transition preserves health and location | (12.31, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-B3 walk 14 | (13.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-B3 enter enclosed attack as inside-out body | (13.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-B3 jump 17 / 1 peak 2.37 | (16.79, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-B3 jump 19 / 2 peak 3.37 | (18.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-B3 jump 21.2 / 3 peak 3.50 | (20.99, 3.76) feet=3.01 hp=6 twin=none
+PASS GB-B3 jump 22.6 / 5 peak 5.37 | (22.38, 5.75) feet=5.00 hp=6 twin=none
+PASS GB-B3 jump 24.5 / 6 peak 7.37 | (24.29, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-B3 walk 27.25 | (27.05, 6.76) feet=6.01 hp=6 twin=none
+PASS GB-B3 jump 29.2 / 7 peak 8.37 | (28.99, 7.76) feet=7.01 hp=6 twin=none
+PASS GB-B3 jump 31.2 / 8 peak 9.37 | (30.98, 8.76) feet=8.01 hp=6 twin=none
+PASS GB-B3 jump 32.6 / 10 peak 10.37 | (32.38, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-B3 jump 34.5 / 11 peak 12.37 | (34.29, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-B3 physical weak point exists | (34.29, 11.75) feet=11.00 hp=6 twin=none
+EVENT t=10.87 boss-phase The Surveyor:2
+PASS GB-B3 actual tackle strikes Surveyor internal outline | (34.48, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-B3 internal hit opens moving calipers | (35.03, 11.76) feet=11.01 hp=6 twin=none
+PASS GB-B3 second act does not heal the player | (35.03, 11.76) feet=11.01 hp=6 twin=none
+EVENT t=11.55 depth 1
+PASS GB-B3 walk 37 | (36.80, 11.76) feet=11.01 hp=6 twin=none
+PASS GB-B3 perspective source acquired without a forced grant | (36.80, 11.76) feet=11.01 hp=6 twin=none
+PASS GB-B3 walk 38 | (37.78, 11.76) feet=11.01 hp=6 twin=none
+PASS GB-B3 plane jump has perspective tenant | (37.78, 11.76) feet=11.01 hp=6 twin=none
+DEPTH target=0 actual=1 pos=(37.83, 11.96) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Platform:9 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=12.07 depth 0
+PASS GB-B3 land projected body 0 at 42.4 / 12.395 | (42.21, 12.95) feet=12.46 hp=6 twin=none
+PASS GB-B3 physical weak point exists | (42.21, 12.95) feet=12.46 hp=6 twin=none
+PASS GB-B3 actual tackle strikes Surveyor caliper 0 | (42.53, 12.95) feet=12.46 hp=6 twin=none
+PASS GB-B3 walk 44.5 | (44.71, 12.95) feet=12.46 hp=6 twin=none
+PASS GB-B3 plane jump has perspective tenant | (44.71, 12.95) feet=12.46 hp=6 twin=none
+DEPTH target=1 actual=0 pos=(44.72, 13.18) size=(0.57, 0.98) mask=132864 excluded=786432 ground=Perspective platform:17 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+EVENT t=14.22 depth 1
+PASS GB-B3 land projected body 1 at 51.4 / 14.2 | (51.19, 15.04) feet=14.29 hp=6 twin=none
+PASS GB-B3 physical weak point exists | (51.19, 15.04) feet=14.29 hp=6 twin=none
+PASS GB-B3 actual tackle strikes Surveyor caliper 1 | (51.51, 15.04) feet=14.29 hp=6 twin=none
+PASS GB-B3 walk 54.5 | (54.45, 15.04) feet=14.29 hp=6 twin=none
+PASS GB-B3 plane jump has perspective tenant | (54.45, 15.04) feet=14.29 hp=6 twin=none
+DEPTH target=2 actual=1 pos=(54.47, 15.27) size=(0.88, 1.50) mask=263936 excluded=655360 ground=Perspective platform:18 notice=PARALLAX HOST: Up/down steps FAR / MID / NEAR only in overlapping silhouettes. Position stays fixed; scale and reach change.
+DEPTH target=2 actual=1 pos=(56.06, 17.42) size=(0.88, 1.50) mask=263936 excluded=655360 ground=none notice=The destination silhouette is occupied.
+EVENT t=16.67 depth 2
+PASS GB-B3 land projected body 2 at 60.4 / 15.92 | (60.21, 17.06) feet=16.01 hp=6 twin=none
+PASS GB-B3 physical weak point exists | (60.21, 17.06) feet=16.01 hp=6 twin=none
+EVENT t=17.51 boss-phase The Surveyor:3
+PASS GB-B3 actual tackle strikes Surveyor caliper 2 | (60.96, 17.06) feet=16.01 hp=6 twin=none
+PASS GB-B3 three physical depth weak points defeat Surveyor | (60.96, 17.06) feet=16.01 hp=6 twin=none
+PASS GB-B3 stage cleared by actual return or boss solution | (60.96, 17.06) feet=16.01 hp=6 twin=none
+PASS GB-B3 stage clear persisted | (60.96, 17.06) feet=16.01 hp=6 twin=none

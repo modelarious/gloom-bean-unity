@@ -1,0 +1,375 @@
+BEGIN GB-L13 Rain of Kneeling Men
+PASS GB-L13 walk 8 | (7.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (7.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (7.82, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 walk 11 | (10.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (10.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (10.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (10.81, 0.76) feet=0.01 hp=6 twin=none
+BACK t=11.69 body=(10.82, 0.97) feet=0.215 velocity=(0.75, 12.40) target=(15.00, 1.25) pose=Kneeling phaseTime=0.01269116 scale=0.7614698
+BACK t=11.82 body=(11.16, 2.28) feet=1.528334 velocity=(3.95, 7.87) target=(15.00, 1.25) pose=Kneeling phaseTime=0.1161413 scale=0.7881933
+BACK t=11.96 body=(11.86, 2.99) feet=2.237223 velocity=(5.50, 3.33) target=(15.00, 1.25) pose=Kneeling phaseTime=0.2216813 scale=0.7884967
+BACK t=12.09 body=(12.59, 3.09) feet=2.341667 velocity=(5.50, -1.20) target=(15.00, 1.25) pose=Kneeling phaseTime=0.3245208 scale=0.7485554
+BACK t=12.22 body=(13.33, 2.59) feet=1.841667 velocity=(5.50, -5.73) target=(15.00, 1.25) pose=Kneeling phaseTime=0.415054 scale=0.6033403
+BACK t=12.36 body=(14.02, 2.27) feet=1.522223 velocity=(4.43, -1.00) target=(15.00, 1.25) pose=Kneeling phaseTime=0.4801745 scale=0.4266161
+BACK t=12.48 body=(14.45, 2.26) feet=1.505556 velocity=(2.47, 0.00) target=(15.00, 1.25) pose=Kneeling phaseTime=0.5327973 scale=0.3872002
+BACK t=12.62 body=(14.70, 2.26) feet=1.505556 velocity=(1.38, 0.00) target=(15.00, 1.25) pose=Kneeling phaseTime=0.5866592 scale=0.4259136
+PASS GB-L13 land on real back of Outward penitent 0 | (14.74, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (14.74, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (14.74, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (14.74, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 walk 16.05 | (15.83, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (15.83, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (15.85, 2.26) feet=1.51 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (15.85, 2.26) feet=1.51 hp=6 twin=none
+BACK t=21.80 body=(15.86, 2.46) feet=1.712223 velocity=(0.75, 12.40) target=(20.00, 2.75) pose=Kneeling phaseTime=0.01258606 scale=0.7551636
+BACK t=21.94 body=(16.20, 3.78) feet=3.025556 velocity=(3.95, 7.87) target=(20.00, 2.75) pose=Kneeling phaseTime=0.1151563 scale=0.7814865
+BACK t=22.07 body=(16.89, 4.48) feet=3.734445 velocity=(5.50, 3.33) target=(20.00, 2.75) pose=Kneeling phaseTime=0.2197919 scale=0.781639
+BACK t=22.21 body=(17.63, 4.59) feet=3.83889 velocity=(5.50, -1.20) target=(20.00, 2.75) pose=Kneeling phaseTime=0.3216884 scale=0.7412126
+BACK t=22.34 body=(18.36, 4.09) feet=3.33889 velocity=(5.50, -5.73) target=(20.00, 2.75) pose=Kneeling phaseTime=0.4111504 scale=0.5946492
+BACK t=22.47 body=(19.05, 3.77) feet=3.019445 velocity=(4.22, -1.00) target=(20.00, 2.75) pose=Kneeling phaseTime=0.4751014 scale=0.4189965
+BACK t=22.60 body=(19.47, 3.75) feet=3.004534 velocity=(2.39, 0.00) target=(20.00, 2.75) pose=Kneeling phaseTime=0.5270603 scale=0.3837823
+BACK t=22.73 body=(19.70, 3.75) feet=3.004922 velocity=(1.34, 0.00) target=(20.00, 2.75) pose=Kneeling phaseTime=0.5806254 scale=0.4243388
+PASS GB-L13 land on real back of Outward penitent 1 | (19.72, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (19.72, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (19.73, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (19.73, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 walk 21.05 | (20.86, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (20.86, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (20.87, 3.75) feet=3.00 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (20.87, 3.75) feet=3.00 hp=6 twin=none
+BACK t=31.85 body=(20.88, 3.96) feet=3.211666 velocity=(0.75, 12.40) target=(25.00, 4.25) pose=Kneeling phaseTime=0.01251973 scale=0.7511837
+BACK t=31.98 body=(21.22, 5.28) feet=4.525 velocity=(3.95, 7.87) target=(25.00, 4.25) pose=Kneeling phaseTime=0.1145401 scale=0.7773252
+BACK t=32.12 body=(21.92, 5.98) feet=5.233889 velocity=(5.50, 3.33) target=(25.00, 4.25) pose=Kneeling phaseTime=0.2186199 scale=0.7774537
+BACK t=32.25 body=(22.65, 6.09) feet=5.338333 velocity=(5.50, -1.20) target=(25.00, 4.25) pose=Kneeling phaseTime=0.319946 scale=0.7368001
+BACK t=32.39 body=(23.38, 5.59) feet=4.838333 velocity=(5.50, -5.73) target=(25.00, 4.25) pose=Kneeling phaseTime=0.4087686 scale=0.589483
+BACK t=32.52 body=(24.07, 5.27) feet=4.518888 velocity=(4.15, -1.00) target=(25.00, 4.25) pose=Kneeling phaseTime=0.4720437 scale=0.4149043
+BACK t=32.65 body=(24.48, 5.25) feet=4.504417 velocity=(2.35, 0.00) target=(25.00, 4.25) pose=Kneeling phaseTime=0.5236418 scale=0.3819751
+BACK t=32.79 body=(24.71, 5.25) feet=4.504902 velocity=(1.32, 0.00) target=(25.00, 4.25) pose=Kneeling phaseTime=0.5770541 scale=0.4235805
+PASS GB-L13 land on real back of Outward penitent 2 | (24.73, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (24.73, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (24.73, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (24.73, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 walk 26.05 | (25.86, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (25.86, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (25.87, 5.25) feet=4.50 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (25.87, 5.25) feet=4.50 hp=6 twin=none
+BACK t=42.34 body=(25.88, 5.46) feet=4.711666 velocity=(0.75, 12.40) target=(30.00, 5.75) pose=Kneeling phaseTime=0.01251629 scale=0.7509771
+BACK t=42.47 body=(26.22, 6.77) feet=6.024999 velocity=(3.95, 7.87) target=(30.00, 5.75) pose=Kneeling phaseTime=0.1145082 scale=0.7771108
+BACK t=42.61 body=(26.92, 7.48) feet=6.733888 velocity=(5.50, 3.33) target=(30.00, 5.75) pose=Kneeling phaseTime=0.2185595 scale=0.7772398
+BACK t=42.73 body=(27.65, 7.59) feet=6.838333 velocity=(5.50, -1.20) target=(30.00, 5.75) pose=Kneeling phaseTime=0.3198566 scale=0.7365763
+BACK t=42.87 body=(28.38, 7.09) feet=6.338333 velocity=(5.50, -5.73) target=(30.00, 5.75) pose=Kneeling phaseTime=0.4086468 scale=0.5892221
+BACK t=43.00 body=(29.07, 6.77) feet=6.018887 velocity=(4.15, -1.00) target=(30.00, 5.75) pose=Kneeling phaseTime=0.4718882 scale=0.41471
+BACK t=43.14 body=(29.48, 6.75) feet=6.004417 velocity=(2.34, 0.00) target=(30.00, 5.75) pose=Kneeling phaseTime=0.523469 scale=0.3818884
+BACK t=43.27 body=(29.71, 6.75) feet=6.004902 velocity=(1.32, 0.00) target=(30.00, 5.75) pose=Kneeling phaseTime=0.5768738 scale=0.4235434
+PASS GB-L13 land on real back of Outward penitent 3 | (29.73, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (29.73, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (29.73, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (29.73, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 walk 31.05 | (30.86, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (30.86, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (30.87, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (30.87, 6.75) feet=6.00 hp=6 twin=none
+BACK t=53.12 body=(30.88, 6.96) feet=6.211666 velocity=(0.75, 12.40) target=(35.00, 7.25) pose=Kneeling phaseTime=0.01251612 scale=0.7509669
+BACK t=53.25 body=(31.22, 8.27) feet=7.524999 velocity=(3.95, 7.87) target=(35.00, 7.25) pose=Kneeling phaseTime=0.1145067 scale=0.7771003
+BACK t=53.39 body=(31.92, 8.98) feet=8.233888 velocity=(5.50, 3.33) target=(35.00, 7.25) pose=Kneeling phaseTime=0.2185565 scale=0.7772292
+BACK t=53.52 body=(32.65, 9.09) feet=8.338332 velocity=(5.50, -1.20) target=(35.00, 7.25) pose=Kneeling phaseTime=0.3198522 scale=0.7365655
+BACK t=53.66 body=(33.38, 8.59) feet=7.838332 velocity=(5.50, -5.73) target=(35.00, 7.25) pose=Kneeling phaseTime=0.4086409 scale=0.5892096
+BACK t=53.79 body=(34.07, 8.27) feet=7.518889 velocity=(4.15, -1.00) target=(35.00, 7.25) pose=Kneeling phaseTime=0.4718807 scale=0.4147008
+BACK t=53.92 body=(34.48, 8.25) feet=7.504418 velocity=(2.34, 0.00) target=(35.00, 7.25) pose=Kneeling phaseTime=0.5234606 scale=0.3818836
+BACK t=54.05 body=(34.71, 8.25) feet=7.504903 velocity=(1.32, 0.00) target=(35.00, 7.25) pose=Kneeling phaseTime=0.5768651 scale=0.423541
+PASS GB-L13 land on real back of Outward penitent 4 | (34.73, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (34.73, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (34.73, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (34.73, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 walk 36.05 | (35.86, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (35.86, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (35.87, 8.25) feet=7.50 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (35.87, 8.25) feet=7.50 hp=6 twin=none
+BACK t=64.41 body=(35.88, 8.46) feet=7.711665 velocity=(0.75, 12.40) target=(40.00, 8.75) pose=Kneeling phaseTime=0.01251611 scale=0.7509665
+BACK t=64.53 body=(36.22, 9.77) feet=9.024999 velocity=(3.95, 7.87) target=(40.00, 8.75) pose=Kneeling phaseTime=0.1145066 scale=0.7771
+BACK t=64.67 body=(36.92, 10.48) feet=9.733888 velocity=(5.50, 3.33) target=(40.00, 8.75) pose=Kneeling phaseTime=0.2185564 scale=0.777229
+BACK t=64.80 body=(37.65, 10.59) feet=9.838332 velocity=(5.50, -1.20) target=(40.00, 8.75) pose=Kneeling phaseTime=0.3198521 scale=0.7365648
+BACK t=64.94 body=(38.38, 10.09) feet=9.338332 velocity=(5.50, -5.73) target=(40.00, 8.75) pose=Kneeling phaseTime=0.4086407 scale=0.5892087
+BACK t=65.07 body=(39.07, 9.77) feet=9.018889 velocity=(4.15, -1.00) target=(40.00, 8.75) pose=Kneeling phaseTime=0.4718804 scale=0.4147
+BACK t=65.20 body=(39.48, 9.75) feet=9.004418 velocity=(2.34, 0.00) target=(40.00, 8.75) pose=Kneeling phaseTime=0.5234601 scale=0.3818829
+BACK t=65.34 body=(39.71, 9.75) feet=9.004903 velocity=(1.32, 0.00) target=(40.00, 8.75) pose=Kneeling phaseTime=0.5768647 scale=0.423541
+PASS GB-L13 land on real back of Outward penitent 5 | (39.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (39.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (39.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (39.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L13 jump 38 / 11 peak 11.37 | (38.22, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-L13 jump 34 / 12.8 peak 13.37 | (34.21, 13.56) feet=12.81 hp=6 twin=none
+PASS GB-L13 jump 29 / 14.6 peak 15.17 | (29.21, 15.36) feet=14.61 hp=6 twin=none
+PASS GB-L13 walk 27.1 | (27.32, 15.36) feet=14.61 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (27.32, 15.36) feet=14.61 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (27.30, 15.36) feet=14.61 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (27.30, 15.36) feet=14.61 hp=6 twin=none
+BACK t=76.17 body=(27.29, 15.56) feet=14.81167 velocity=(-0.75, 12.40) target=(24.00, 16.35) pose=Kneeling phaseTime=0.01020069 scale=0.6120413
+BACK t=76.30 body=(26.95, 16.88) feet=16.125 velocity=(-3.95, 7.87) target=(24.00, 16.35) pose=Kneeling phaseTime=0.08938363 scale=0.585183
+BACK t=76.44 body=(26.25, 17.58) feet=16.83389 velocity=(-5.50, 3.33) target=(24.00, 16.35) pose=Kneeling phaseTime=0.1651374 scale=0.550816
+BACK t=76.57 body=(25.52, 17.69) feet=16.93833 velocity=(-5.50, -1.20) target=(24.00, 16.35) pose=Kneeling phaseTime=0.2341452 scale=0.4821756
+BACK t=76.70 body=(24.86, 17.40) feet=16.64667 velocity=(-3.86, -1.00) target=(24.00, 16.35) pose=Kneeling phaseTime=0.2881465 scale=0.3497186
+BACK t=76.84 body=(24.48, 17.35) feet=16.60227 velocity=(-2.17, 0.00) target=(24.00, 16.35) pose=Kneeling phaseTime=0.3312643 scale=0.3173309
+BACK t=76.97 body=(24.27, 17.35) feet=16.60454 velocity=(-1.22, 0.00) target=(24.00, 16.35) pose=Kneeling phaseTime=0.3751762 scale=0.3440325
+PASS GB-L13 land on real back of Penitent bearing the Mercy | (24.27, 17.35) feet=16.60 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (24.27, 17.35) feet=16.60 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (24.27, 17.36) feet=16.61 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (24.27, 17.36) feet=16.61 hp=6 twin=none
+PASS GB-L13 jump 20 / 16.7 peak 18.97 | (20.21, 17.45) feet=16.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (20.21, 17.45) feet=16.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (20.21, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 standing left makes a physical kneeling ramp | (20.21, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (20.21, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (20.21, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (20.21, 17.46) feet=16.71 hp=6 twin=none
+BACK t=91.92 body=(20.23, 17.66) feet=16.91166 velocity=(0.75, 12.40) target=(24.00, 16.35) pose=Kneeling phaseTime=0.02354439 scale=0.7102364
+BACK t=92.05 body=(20.57, 18.98) feet=18.225 velocity=(3.95, 7.87) target=(24.00, 16.35) pose=Kneeling phaseTime=0.1285481 scale=0.8424132
+BACK t=92.18 body=(21.26, 19.68) feet=18.93389 velocity=(5.50, 3.33) target=(24.00, 16.35) pose=Kneeling phaseTime=0.2469923 scale=0.9153342
+BACK t=92.32 body=(21.99, 19.79) feet=19.03833 velocity=(5.50, -1.20) target=(24.00, 16.35) pose=Kneeling phaseTime=0.3713225 scale=0.9380471
+BACK t=92.45 body=(22.73, 19.29) feet=18.53833 velocity=(5.50, -5.73) target=(24.00, 16.35) pose=Kneeling phaseTime=0.4937086 scale=0.8863811
+BACK t=92.59 body=(23.29, 18.18) feet=17.43389 velocity=(3.21, -10.27) target=(24.00, 16.35) pose=Kneeling phaseTime=0.5972984 scale=0.6548284
+BACK t=92.72 body=(23.61, 17.39) feet=16.64223 velocity=(1.79, -0.28) target=(24.00, 16.35) pose=Kneeling phaseTime=0.6567066 scale=0.3743984
+PASS GB-L13 land on real back of Penitent bearing the Mercy | (23.73, 17.36) feet=16.61 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (23.73, 17.36) feet=16.61 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (23.21, 17.09) feet=16.34 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (23.21, 17.09) feet=16.34 hp=6 twin=none
+PASS GB-L13 Mercy touched on a moving body | (24.37, 17.70) feet=16.95 hp=6 twin=none
+PASS GB-L13 walk 43 | (42.80, 10.35) feet=9.60 hp=6 twin=none
+PASS GB-L13 return from secret to safe side masonry | (42.80, 10.35) feet=9.60 hp=6 twin=none
+PASS GB-L13 walk 41.05 | (41.27, 10.35) feet=9.60 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (41.27, 10.35) feet=9.60 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (41.25, 10.36) feet=9.60 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (41.25, 10.36) feet=9.60 hp=6 twin=none
+BACK t=105.79 body=(41.26, 10.56) feet=9.811666 velocity=(0.75, 12.40) target=(45.00, 10.25) pose=Kneeling phaseTime=0.01120149 scale=0.6720893
+BACK t=105.92 body=(41.60, 11.88) feet=11.125 velocity=(3.95, 7.87) target=(45.00, 10.25) pose=Kneeling phaseTime=0.1059645 scale=0.7416902
+BACK t=106.05 body=(42.30, 12.58) feet=11.83389 velocity=(5.50, 3.33) target=(45.00, 10.25) pose=Kneeling phaseTime=0.2082136 scale=0.779897
+BACK t=106.19 body=(43.03, 12.69) feet=11.93833 velocity=(5.50, -1.20) target=(45.00, 10.25) pose=Kneeling phaseTime=0.312274 scale=0.7705516
+BACK t=106.32 body=(43.77, 12.19) feet=11.43833 velocity=(5.50, -5.73) target=(45.00, 10.25) pose=Kneeling phaseTime=0.4076235 scale=0.6486664
+BACK t=106.46 body=(44.31, 11.26) feet=10.505 velocity=(3.13, 0.00) target=(45.00, 10.25) pose=Kneeling phaseTime=0.4735877 scale=0.3532296
+BACK t=106.58 body=(44.62, 11.26) feet=10.505 velocity=(1.74, 0.00) target=(45.00, 10.25) pose=Kneeling phaseTime=0.5204935 scale=0.35875
+PASS GB-L13 land on real back of Outward penitent 6 | (44.73, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (44.73, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (44.74, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (44.74, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 walk 46.05 | (45.86, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (45.86, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (45.87, 11.26) feet=10.51 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (45.87, 11.26) feet=10.51 hp=6 twin=none
+BACK t=109.24 body=(45.88, 11.46) feet=10.71167 velocity=(0.75, 12.40) target=(50.00, 11.75) pose=Kneeling phaseTime=1.875231 scale=0.8132514
+BACK t=109.37 body=(46.22, 12.78) feet=12.025 velocity=(3.95, 7.87) target=(50.00, 11.75) pose=Kneeling phaseTime=1.985926 scale=0.8447474
+BACK t=109.50 body=(46.92, 13.48) feet=12.73389 velocity=(5.50, 3.33) target=(50.00, 11.75) pose=Kneeling phaseTime=2.099485 scale=0.8517863
+BACK t=109.63 body=(47.65, 13.59) feet=12.83833 velocity=(5.50, -1.20) target=(50.00, 11.75) pose=Kneeling phaseTime=2.211405 scale=0.8205763
+BACK t=109.77 body=(48.38, 13.09) feet=12.33833 velocity=(5.50, -5.73) target=(50.00, 11.75) pose=Kneeling phaseTime=2.311887 scale=0.6769071
+BACK t=109.90 body=(49.07, 12.77) feet=12.01889 velocity=(4.15, -1.00) target=(50.00, 11.75) pose=Kneeling phaseTime=2.385623 scale=0.4885032
+BACK t=110.04 body=(49.48, 12.75) feet=12.00442 velocity=(2.34, 0.00) target=(50.00, 11.75) pose=Kneeling phaseTime=2.447232 scale=0.4623417
+BACK t=110.17 body=(49.71, 12.75) feet=12.0049 velocity=(1.31, 0.00) target=(50.00, 11.75) pose=Kneeling phaseTime=2.513509 scale=0.5368119
+PASS GB-L13 land on real back of Outward penitent 7 | (49.73, 12.75) feet=12.00 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (49.73, 12.75) feet=12.00 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (49.73, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (49.73, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L13 walk 51.05 | (50.86, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (50.86, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (50.87, 12.76) feet=12.01 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (50.87, 12.61) feet=11.86 hp=6 twin=none
+BACK t=120.77 body=(50.88, 12.82) feet=12.06968 velocity=(0.75, 12.40) target=(55.00, 13.25) pose=Kneeling phaseTime=0.01257541 scale=0.7545245
+BACK t=120.91 body=(51.22, 14.13) feet=13.38301 velocity=(3.95, 7.87) target=(55.00, 13.25) pose=Kneeling phaseTime=0.114315 scale=0.7712476
+BACK t=121.04 body=(51.92, 14.84) feet=14.0919 velocity=(5.50, 3.33) target=(55.00, 13.25) pose=Kneeling phaseTime=0.2169695 scale=0.7632859
+BACK t=121.17 body=(52.65, 14.95) feet=14.19635 velocity=(5.50, -1.20) target=(55.00, 13.25) pose=Kneeling phaseTime=0.3158562 scale=0.7153531
+BACK t=121.31 body=(53.38, 14.45) feet=13.69635 velocity=(5.50, -5.73) target=(55.00, 13.25) pose=Kneeling phaseTime=0.4013412 scale=0.562338
+BACK t=121.44 body=(54.07, 14.26) feet=13.50801 velocity=(4.15, 0.00) target=(55.00, 13.25) pose=Kneeling phaseTime=0.4628142 scale=0.4082742
+BACK t=121.57 body=(54.48, 14.26) feet=13.50801 velocity=(2.34, 0.00) target=(55.00, 13.25) pose=Kneeling phaseTime=0.5145012 scale=0.3830909
+BACK t=121.70 body=(54.71, 14.26) feet=13.50801 velocity=(1.32, 0.00) target=(55.00, 13.25) pose=Kneeling phaseTime=0.5680755 scale=0.4249176
+PASS GB-L13 land on real back of Outward penitent 8 | (54.73, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (54.73, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (54.73, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (54.73, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 walk 56.05 | (55.86, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (55.86, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (55.87, 14.26) feet=13.51 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (55.87, 14.26) feet=13.51 hp=6 twin=none
+BACK t=124.42 body=(55.88, 14.46) feet=13.71468 velocity=(0.75, 12.40) target=(60.00, 14.75) pose=Kneeling phaseTime=2.625411 scale=0.8133405
+BACK t=124.56 body=(56.22, 15.78) feet=15.02801 velocity=(3.95, 7.87) target=(60.00, 14.75) pose=Kneeling phaseTime=2.736133 scale=0.8450342
+BACK t=124.68 body=(56.92, 16.49) feet=15.7369 velocity=(5.50, 3.33) target=(60.00, 14.75) pose=Kneeling phaseTime=2.849742 scale=0.8522343
+BACK t=124.82 body=(57.65, 16.59) feet=15.84135 velocity=(5.50, -1.20) target=(60.00, 14.75) pose=Kneeling phaseTime=2.961735 scale=0.8211994
+BACK t=124.95 body=(58.38, 16.09) feet=15.34135 velocity=(5.50, -5.73) target=(60.00, 14.75) pose=Kneeling phaseTime=3.062318 scale=0.6777698
+BACK t=125.09 body=(59.07, 15.77) feet=15.02191 velocity=(4.15, -1.00) target=(60.00, 14.75) pose=Kneeling phaseTime=3.136182 scale=0.4895343
+BACK t=125.22 body=(59.48, 15.76) feet=15.00524 velocity=(2.34, 0.00) target=(60.00, 14.75) pose=Kneeling phaseTime=3.197895 scale=0.462817
+BACK t=125.36 body=(59.71, 15.76) feet=15.00524 velocity=(1.32, 0.00) target=(60.00, 14.75) pose=Kneeling phaseTime=3.264214 scale=0.5370518
+PASS GB-L13 land on real back of Outward penitent 9 | (59.73, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (59.73, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (59.73, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (59.73, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 walk 61 | (60.80, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 jump 66 / 15 peak 17.37 | (65.79, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 walk 67.6 | (67.39, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 Keyling on upper rain shelter | (67.39, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 Nail opens the denser upper vault | (67.41, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 walk 64.7 | (64.90, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (64.90, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (64.92, 15.75) feet=15.00 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (64.92, 15.75) feet=15.00 hp=6 twin=none
+BACK t=132.99 body=(64.98, 15.94) feet=15.18902 velocity=(3.52, 11.04) target=(63.00, 16.45) pose=Kneeling phaseTime=1.709716 scale=0.3666763
+BACK t=133.12 body=(65.21, 17.07) feet=16.32126 velocity=(0.32, 6.51) target=(63.00, 16.45) pose=Kneeling phaseTime=1.764461 scale=0.4574981
+BACK t=133.26 body=(65.01, 17.60) feet=16.84906 velocity=(-2.88, 1.98) target=(63.00, 16.45) pose=Kneeling phaseTime=1.832449 scale=0.5368649
+BACK t=133.39 body=(64.40, 17.55) feet=16.79838 velocity=(-5.50, -1.00) target=(63.00, 16.45) pose=Kneeling phaseTime=1.901103 scale=0.4701661
+BACK t=133.52 body=(63.79, 17.45) feet=16.70076 velocity=(-3.56, 0.00) target=(63.00, 16.45) pose=Kneeling phaseTime=1.954978 scale=0.3653601
+BACK t=133.65 body=(63.44, 17.45) feet=16.70429 velocity=(-1.99, 0.00) target=(63.00, 16.45) pose=Kneeling phaseTime=2.002548 scale=0.3590461
+PASS GB-L13 land on real back of Return penitent 0 | (63.26, 17.45) feet=16.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (63.26, 17.45) feet=16.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (63.26, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (63.26, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 walk 61.95 | (62.17, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (62.17, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (62.15, 17.46) feet=16.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (62.15, 17.46) feet=16.71 hp=6 twin=none
+BACK t=139.22 body=(62.14, 17.66) feet=16.91166 velocity=(-0.75, 12.40) target=(58.00, 17.95) pose=Kneeling phaseTime=0.01258687 scale=0.755212
+BACK t=139.35 body=(61.80, 18.98) feet=18.225 velocity=(-3.95, 7.87) target=(58.00, 17.95) pose=Kneeling phaseTime=0.1151608 scale=0.7814991
+BACK t=139.49 body=(61.11, 19.68) feet=18.93389 velocity=(-5.50, 3.33) target=(58.00, 17.95) pose=Kneeling phaseTime=0.2197959 scale=0.7816204
+BACK t=139.62 body=(60.37, 19.79) feet=19.03833 velocity=(-5.50, -1.20) target=(58.00, 17.95) pose=Kneeling phaseTime=0.3216879 scale=0.7411677
+BACK t=139.75 body=(59.64, 19.29) feet=18.53833 velocity=(-5.50, -5.73) target=(58.00, 17.95) pose=Kneeling phaseTime=0.4111423 scale=0.5945868
+BACK t=139.89 body=(58.95, 18.97) feet=18.21889 velocity=(-4.22, -1.00) target=(58.00, 17.95) pose=Kneeling phaseTime=0.4750839 scale=0.4189053
+BACK t=140.02 body=(58.53, 18.95) feet=18.20442 velocity=(-2.39, 0.00) target=(58.00, 17.95) pose=Kneeling phaseTime=0.5270338 scale=0.3837523
+BACK t=140.16 body=(58.30, 18.95) feet=18.2049 velocity=(-1.34, 0.00) target=(58.00, 17.95) pose=Kneeling phaseTime=0.5805972 scale=0.4243339
+PASS GB-L13 land on real back of Return penitent 1 | (58.28, 18.95) feet=18.20 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (58.28, 18.95) feet=18.20 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (58.27, 18.96) feet=18.21 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (58.27, 18.96) feet=18.21 hp=6 twin=none
+PASS GB-L13 walk 56.95 | (57.14, 18.96) feet=18.21 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (57.14, 18.96) feet=18.21 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (57.13, 18.96) feet=18.21 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (57.13, 18.96) feet=18.21 hp=6 twin=none
+BACK t=148.52 body=(57.12, 19.16) feet=18.41166 velocity=(-0.75, 12.40) target=(53.00, 19.45) pose=Kneeling phaseTime=0.01251976 scale=0.7511857
+BACK t=148.66 body=(56.78, 20.48) feet=19.725 velocity=(-3.95, 7.87) target=(53.00, 19.45) pose=Kneeling phaseTime=0.1145404 scale=0.7773269
+BACK t=148.78 body=(56.08, 21.18) feet=20.43389 velocity=(-5.50, 3.33) target=(53.00, 19.45) pose=Kneeling phaseTime=0.2186204 scale=0.7774552
+BACK t=148.92 body=(55.35, 21.29) feet=20.53833 velocity=(-5.50, -1.20) target=(53.00, 19.45) pose=Kneeling phaseTime=0.3199467 scale=0.7368016
+BACK t=149.05 body=(54.62, 20.79) feet=20.03833 velocity=(-5.50, -5.73) target=(53.00, 19.45) pose=Kneeling phaseTime=0.4087694 scale=0.5894846
+BACK t=149.19 body=(53.93, 20.47) feet=19.71889 velocity=(-4.15, -1.00) target=(53.00, 19.45) pose=Kneeling phaseTime=0.4720447 scale=0.4149053
+BACK t=149.32 body=(53.52, 20.45) feet=19.70442 velocity=(-2.35, 0.00) target=(53.00, 19.45) pose=Kneeling phaseTime=0.5236428 scale=0.3819759
+BACK t=149.45 body=(53.29, 20.45) feet=19.7049 velocity=(-1.32, 0.00) target=(53.00, 19.45) pose=Kneeling phaseTime=0.5770552 scale=0.4235799
+PASS GB-L13 land on real back of Return penitent 2 | (53.27, 20.45) feet=19.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (53.27, 20.45) feet=19.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (53.27, 20.46) feet=19.71 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (53.27, 20.46) feet=19.71 hp=6 twin=none
+PASS GB-L13 walk 51.95 | (52.14, 20.46) feet=19.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (52.14, 20.46) feet=19.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (52.13, 20.46) feet=19.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (52.13, 20.46) feet=19.71 hp=6 twin=none
+BACK t=157.12 body=(52.12, 20.66) feet=19.91166 velocity=(-0.75, 12.40) target=(48.00, 20.95) pose=Kneeling phaseTime=0.01251629 scale=0.7509772
+BACK t=157.25 body=(51.78, 21.98) feet=21.225 velocity=(-3.95, 7.87) target=(48.00, 20.95) pose=Kneeling phaseTime=0.1145083 scale=0.7771107
+BACK t=157.38 body=(51.08, 22.68) feet=21.93389 velocity=(-5.50, 3.33) target=(48.00, 20.95) pose=Kneeling phaseTime=0.2185595 scale=0.7772395
+BACK t=157.52 body=(50.35, 22.79) feet=22.03833 velocity=(-5.50, -1.20) target=(48.00, 20.95) pose=Kneeling phaseTime=0.3198566 scale=0.7365758
+BACK t=157.65 body=(49.62, 22.29) feet=21.53833 velocity=(-5.50, -5.73) target=(48.00, 20.95) pose=Kneeling phaseTime=0.4086467 scale=0.5892215
+BACK t=157.79 body=(48.93, 21.97) feet=21.21889 velocity=(-4.15, -1.00) target=(48.00, 20.95) pose=Kneeling phaseTime=0.4718882 scale=0.4147106
+BACK t=157.92 body=(48.52, 21.95) feet=21.20442 velocity=(-2.34, 0.00) target=(48.00, 20.95) pose=Kneeling phaseTime=0.523469 scale=0.3818885
+BACK t=158.06 body=(48.29, 21.95) feet=21.2049 velocity=(-1.32, 0.00) target=(48.00, 20.95) pose=Kneeling phaseTime=0.5768739 scale=0.4235428
+PASS GB-L13 land on real back of Return penitent 3 | (48.27, 21.95) feet=21.20 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (48.27, 21.95) feet=21.20 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (48.27, 21.96) feet=21.21 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (48.27, 21.96) feet=21.21 hp=6 twin=none
+PASS GB-L13 walk 46.95 | (47.14, 21.96) feet=21.21 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (47.14, 21.96) feet=21.21 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (47.13, 21.96) feet=21.21 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (47.13, 21.96) feet=21.21 hp=6 twin=none
+BACK t=166.32 body=(47.12, 22.16) feet=21.41166 velocity=(-0.75, 12.40) target=(43.00, 22.45) pose=Kneeling phaseTime=0.01251611 scale=0.7509667
+BACK t=166.46 body=(46.78, 23.48) feet=22.725 velocity=(-3.95, 7.87) target=(43.00, 22.45) pose=Kneeling phaseTime=0.1145066 scale=0.7770998
+BACK t=166.59 body=(46.08, 24.18) feet=23.43389 velocity=(-5.50, 3.33) target=(43.00, 22.45) pose=Kneeling phaseTime=0.2185564 scale=0.7772287
+BACK t=166.72 body=(45.35, 24.29) feet=23.53833 velocity=(-5.50, -1.20) target=(43.00, 22.45) pose=Kneeling phaseTime=0.319852 scale=0.7365644
+BACK t=166.85 body=(44.62, 23.79) feet=23.03833 velocity=(-5.50, -5.73) target=(43.00, 22.45) pose=Kneeling phaseTime=0.4086405 scale=0.5892082
+BACK t=166.99 body=(43.93, 23.47) feet=22.71889 velocity=(-4.15, -1.00) target=(43.00, 22.45) pose=Kneeling phaseTime=0.4718802 scale=0.4146993
+BACK t=167.12 body=(43.52, 23.45) feet=22.70442 velocity=(-2.34, 0.00) target=(43.00, 22.45) pose=Kneeling phaseTime=0.5234598 scale=0.3818823
+BACK t=167.25 body=(43.29, 23.45) feet=22.7049 velocity=(-1.32, 0.00) target=(43.00, 22.45) pose=Kneeling phaseTime=0.5768639 scale=0.4235397
+PASS GB-L13 land on real back of Return penitent 4 | (43.27, 23.45) feet=22.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (43.27, 23.45) feet=22.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (43.27, 23.46) feet=22.71 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (43.27, 23.46) feet=22.71 hp=6 twin=none
+PASS GB-L13 walk 41.95 | (42.14, 23.46) feet=22.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (42.14, 23.46) feet=22.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (42.13, 23.46) feet=22.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (42.13, 23.46) feet=22.71 hp=6 twin=none
+BACK t=175.64 body=(42.12, 23.66) feet=22.91166 velocity=(-0.75, 12.40) target=(38.00, 23.95) pose=Kneeling phaseTime=0.01251611 scale=0.7509667
+BACK t=175.77 body=(41.78, 24.98) feet=24.225 velocity=(-3.95, 7.87) target=(38.00, 23.95) pose=Kneeling phaseTime=0.1145066 scale=0.7770998
+BACK t=175.90 body=(41.08, 25.68) feet=24.93389 velocity=(-5.50, 3.33) target=(38.00, 23.95) pose=Kneeling phaseTime=0.2185564 scale=0.7772287
+BACK t=176.04 body=(40.35, 25.79) feet=25.03833 velocity=(-5.50, -1.20) target=(38.00, 23.95) pose=Kneeling phaseTime=0.319852 scale=0.7365644
+BACK t=176.17 body=(39.62, 25.29) feet=24.53833 velocity=(-5.50, -5.73) target=(38.00, 23.95) pose=Kneeling phaseTime=0.4086405 scale=0.5892082
+BACK t=176.31 body=(38.93, 24.97) feet=24.21889 velocity=(-4.15, -1.00) target=(38.00, 23.95) pose=Kneeling phaseTime=0.4718802 scale=0.4146993
+BACK t=176.43 body=(38.52, 24.95) feet=24.20442 velocity=(-2.34, 0.00) target=(38.00, 23.95) pose=Kneeling phaseTime=0.5234598 scale=0.3818823
+BACK t=176.57 body=(38.29, 24.95) feet=24.2049 velocity=(-1.32, 0.00) target=(38.00, 23.95) pose=Kneeling phaseTime=0.5768639 scale=0.4235397
+PASS GB-L13 land on real back of Return penitent 5 | (38.27, 24.95) feet=24.20 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (38.27, 24.95) feet=24.20 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (38.27, 24.96) feet=24.21 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (38.27, 24.96) feet=24.21 hp=6 twin=none
+PASS GB-L13 walk 36.95 | (37.14, 24.96) feet=24.21 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (37.14, 24.96) feet=24.21 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (37.13, 24.96) feet=24.21 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (37.13, 24.96) feet=24.21 hp=6 twin=none
+BACK t=185.09 body=(37.12, 25.16) feet=24.41166 velocity=(-0.75, 12.40) target=(33.00, 25.45) pose=Kneeling phaseTime=0.01251611 scale=0.7509667
+BACK t=185.22 body=(36.78, 26.48) feet=25.725 velocity=(-3.95, 7.87) target=(33.00, 25.45) pose=Kneeling phaseTime=0.1145066 scale=0.7770998
+BACK t=185.36 body=(36.08, 27.18) feet=26.43389 velocity=(-5.50, 3.33) target=(33.00, 25.45) pose=Kneeling phaseTime=0.2185564 scale=0.7772287
+BACK t=185.48 body=(35.35, 27.29) feet=26.53833 velocity=(-5.50, -1.20) target=(33.00, 25.45) pose=Kneeling phaseTime=0.319852 scale=0.7365644
+BACK t=185.62 body=(34.62, 26.79) feet=26.03833 velocity=(-5.50, -5.73) target=(33.00, 25.45) pose=Kneeling phaseTime=0.4086405 scale=0.5892082
+BACK t=185.75 body=(33.93, 26.47) feet=25.71889 velocity=(-4.15, -1.00) target=(33.00, 25.45) pose=Kneeling phaseTime=0.4718802 scale=0.4146993
+BACK t=185.89 body=(33.52, 26.45) feet=25.70442 velocity=(-2.34, 0.00) target=(33.00, 25.45) pose=Kneeling phaseTime=0.5234598 scale=0.3818823
+BACK t=186.02 body=(33.29, 26.45) feet=25.7049 velocity=(-1.32, 0.00) target=(33.00, 25.45) pose=Kneeling phaseTime=0.5768639 scale=0.4235397
+PASS GB-L13 land on real back of Return penitent 6 | (33.27, 26.45) feet=25.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (33.27, 26.45) feet=25.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (33.27, 26.46) feet=25.71 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (33.27, 26.46) feet=25.71 hp=6 twin=none
+PASS GB-L13 walk 31.95 | (32.14, 26.46) feet=25.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (32.14, 26.46) feet=25.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (32.13, 26.46) feet=25.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (32.13, 26.46) feet=25.71 hp=6 twin=none
+BACK t=194.92 body=(32.12, 26.66) feet=25.91166 velocity=(-0.75, 12.40) target=(28.00, 26.95) pose=Kneeling phaseTime=0.01251611 scale=0.7509667
+BACK t=195.06 body=(31.78, 27.98) feet=27.225 velocity=(-3.95, 7.87) target=(28.00, 26.95) pose=Kneeling phaseTime=0.1145066 scale=0.7771002
+BACK t=195.19 body=(31.08, 28.68) feet=27.93389 velocity=(-5.50, 3.33) target=(28.00, 26.95) pose=Kneeling phaseTime=0.2185564 scale=0.777229
+BACK t=195.32 body=(30.35, 28.79) feet=28.03833 velocity=(-5.50, -1.20) target=(28.00, 26.95) pose=Kneeling phaseTime=0.3198521 scale=0.7365648
+BACK t=195.45 body=(29.62, 28.29) feet=27.53833 velocity=(-5.50, -5.73) target=(28.00, 26.95) pose=Kneeling phaseTime=0.4086407 scale=0.5892088
+BACK t=195.59 body=(28.93, 27.97) feet=27.21889 velocity=(-4.15, -1.00) target=(28.00, 26.95) pose=Kneeling phaseTime=0.4718804 scale=0.4147002
+BACK t=195.72 body=(28.52, 27.95) feet=27.20442 velocity=(-2.34, 0.00) target=(28.00, 26.95) pose=Kneeling phaseTime=0.5234602 scale=0.3818837
+BACK t=195.85 body=(28.29, 27.95) feet=27.2049 velocity=(-1.32, 0.00) target=(28.00, 26.95) pose=Kneeling phaseTime=0.5768645 scale=0.4235403
+PASS GB-L13 land on real back of Return penitent 7 | (28.27, 27.95) feet=27.20 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (28.27, 27.95) feet=27.20 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (28.27, 27.96) feet=27.21 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (28.27, 27.96) feet=27.21 hp=6 twin=none
+PASS GB-L13 walk 26.95 | (27.14, 27.96) feet=27.21 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (27.14, 27.96) feet=27.21 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (27.13, 27.96) feet=27.21 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (27.13, 27.96) feet=27.21 hp=6 twin=none
+BACK t=204.74 body=(27.12, 28.16) feet=27.41166 velocity=(-0.75, 12.40) target=(23.00, 28.45) pose=Kneeling phaseTime=0.0125161 scale=0.750966
+BACK t=204.87 body=(26.78, 29.48) feet=28.725 velocity=(-3.95, 7.87) target=(23.00, 28.45) pose=Kneeling phaseTime=0.1145065 scale=0.777099
+BACK t=205.01 body=(26.08, 30.18) feet=29.43389 velocity=(-5.50, 3.33) target=(23.00, 28.45) pose=Kneeling phaseTime=0.2185562 scale=0.7772279
+BACK t=205.13 body=(25.35, 30.29) feet=29.53833 velocity=(-5.50, -1.20) target=(23.00, 28.45) pose=Kneeling phaseTime=0.3198516 scale=0.7365637
+BACK t=205.27 body=(24.62, 29.79) feet=29.03833 velocity=(-5.50, -5.73) target=(23.00, 28.45) pose=Kneeling phaseTime=0.40864 scale=0.5892074
+BACK t=205.40 body=(23.93, 29.47) feet=28.71889 velocity=(-4.15, -1.00) target=(23.00, 28.45) pose=Kneeling phaseTime=0.4718796 scale=0.4146993
+BACK t=205.54 body=(23.52, 29.45) feet=28.70442 velocity=(-2.34, 0.00) target=(23.00, 28.45) pose=Kneeling phaseTime=0.5234593 scale=0.381883
+BACK t=205.67 body=(23.29, 29.45) feet=28.7049 velocity=(-1.32, 0.00) target=(23.00, 28.45) pose=Kneeling phaseTime=0.5768636 scale=0.4235403
+PASS GB-L13 land on real back of Return penitent 8 | (23.27, 29.45) feet=28.70 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (23.27, 29.45) feet=28.70 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (23.27, 29.46) feet=28.71 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (23.27, 29.46) feet=28.71 hp=6 twin=none
+PASS GB-L13 walk 21.95 | (22.14, 29.46) feet=28.71 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (22.14, 29.46) feet=28.71 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (22.13, 29.46) feet=28.71 hp=6 twin=none
+PASS GB-L13 kneeling back becomes a physical landing | (22.13, 29.46) feet=28.71 hp=6 twin=none
+BACK t=215.05 body=(22.12, 29.66) feet=28.91166 velocity=(-0.75, 12.40) target=(18.00, 29.95) pose=Kneeling phaseTime=0.0125161 scale=0.750966
+BACK t=215.19 body=(21.78, 30.98) feet=30.225 velocity=(-3.95, 7.87) target=(18.00, 29.95) pose=Kneeling phaseTime=0.1145065 scale=0.777099
+BACK t=215.32 body=(21.08, 31.68) feet=30.93389 velocity=(-5.50, 3.33) target=(18.00, 29.95) pose=Kneeling phaseTime=0.2185562 scale=0.7772279
+BACK t=215.45 body=(20.35, 31.79) feet=31.03833 velocity=(-5.50, -1.20) target=(18.00, 29.95) pose=Kneeling phaseTime=0.3198516 scale=0.7365637
+BACK t=215.59 body=(19.62, 31.29) feet=30.53833 velocity=(-5.50, -5.73) target=(18.00, 29.95) pose=Kneeling phaseTime=0.40864 scale=0.5892074
+BACK t=215.72 body=(18.93, 30.97) feet=30.21889 velocity=(-4.15, -1.00) target=(18.00, 29.95) pose=Kneeling phaseTime=0.4718796 scale=0.4146993
+BACK t=215.86 body=(18.52, 30.95) feet=30.20442 velocity=(-2.34, 0.00) target=(18.00, 29.95) pose=Kneeling phaseTime=0.5234593 scale=0.381883
+BACK t=215.99 body=(18.29, 30.95) feet=30.2049 velocity=(-1.32, 0.00) target=(18.00, 29.95) pose=Kneeling phaseTime=0.5768636 scale=0.4235403
+PASS GB-L13 land on real back of Return penitent 9 | (18.27, 30.95) feet=30.20 hp=6 twin=none
+PASS GB-L13 censer acquired from swinging incense | (18.27, 30.95) feet=30.20 hp=6 twin=none
+PASS GB-L13 stillness expands the local time field | (18.27, 30.96) feet=30.21 hp=6 twin=none
+PASS GB-L13 incense changes this body's simulation rate | (18.27, 30.96) feet=30.21 hp=6 twin=none
+PASS GB-L13 walk 16.95 | (17.14, 30.95) feet=30.20 hp=6 twin=none
+PASS GB-L13 jump 14 / 30.2 peak 32.57 | (14.22, 30.95) feet=30.20 hp=6 twin=none
+PASS GB-L13 walk 8 | (8.18, 28.34) feet=27.59 hp=6 twin=none
+PASS GB-L13 walk 4 | (4.19, 26.47) feet=25.72 hp=6 twin=none
+PASS GB-L13 walk -1 | (-0.80, 23.47) feet=22.72 hp=6 twin=none
+PASS GB-L13 descend to the remembered entrance | (-0.97, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L13 walk 2 | (0.85, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L13 stage completes through physical exit or boss solution | (0.85, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L13 completion survives save | (0.85, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L13 Mercy persists after real return | (0.85, 0.75) feet=0.00 hp=6 twin=none

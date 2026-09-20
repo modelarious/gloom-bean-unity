@@ -1,0 +1,5 @@
+﻿{
+    "parent":  "W4-critical",
+    "sha256":  "a78ffeeea259977b7f29232b7b3dd4e54728dbbf503eed9470a1e1b32b5bb4d7",
+    "policy":  "Exact unmodified save from prior real-input completion"
+}

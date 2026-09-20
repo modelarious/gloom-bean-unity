@@ -1,93 +1,38 @@
 {
-  "schema_version": 1,
-  "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
-  "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Full-Campaign-L4 is final common-source 54-case run. Gameplay unchanged from welcoming-menu candidate; L19 witness now plans a genuinely connected silhouette instead of reach alone. Six focused cadence/delay routes PASS. New paired receipt writer/reader withstands150 replacements. L3 runs older witness and has a known 30fps failure; do not certify it. After L4 PASS: independent audit, final UI/ending review, exact source/player packages and extracted ending checks.",
+  "schema_version": 8,
+  "scope": "Current common-source full native release acceptance; manual judgement separate",
+  "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
+  "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
+  "next_gate": "Full-Campaign-M1: all54 common-source cases, actual saved0/19/20 ending paths. Then independent lineage/source audit, exact source/binary packages and extracted ending smoke checks. All twenty stage implementations already exist; do not reimplement from old checkpoints.",
   "active_job": {
-    "task": "GloomBean-Campaign-Acceptance-L4",
-    "receipt": "Reports/Full-Campaign-L4/runner.json",
-    "config": "Tools/campaign-acceptance-l4.json",
-    "source": "f5e846d7dfa26237ac3fac1a1695d22e6e75e34a",
+    "task": "GloomBean-Campaign-Acceptance-M1",
+    "receipt": "Reports/Full-Campaign-M1/runner.json",
+    "config": "Tools/campaign-acceptance-m1.json",
+    "source": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
     "status": "READY_NOT_STARTED"
   },
+  "latest_focused": {
+    "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
+    "status": "PASS",
+    "scope": "Three L19 actual-input support/cadence routes,96/97/96 assertions; no production geometry/physics change."
+  },
+  "latest_full": {
+    "receipt": "Documentation/Completion/Evidence/Recovered-L4/runner.json",
+    "status": "FAIL",
+    "scope": "53/54passed including ordinary/restored/19-Mercy endings; extra120fps witness had an unjustified0.65m body-lock assertion. Original failure retained."
+  },
+  "foundation_head": "1b450786f425c0ca325be8ff9b09cafdaeb0cfb8",
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",
     "visibility": "PUBLIC_USER_DECIDED",
-    "creation_request": "modelarious/project-factory#38",
-    "last_probe": "404",
-    "blocker": "Repository creation credential returned HTTP401; no public source push is claimed."
+    "boundary": "Editing/build/local commits work. Do not reattempt unchanged credential workarounds. No game-source remote push claimed."
   },
-  "evidence_refs": [
-    {
-      "name": "Earned eighteen-level current clean acceptance",
-      "path": "Documentation/Empyrean/Evidence/Clean-v07-h1/runner.json"
-    },
-    {
-      "name": "Current completed first-four-world clean acceptance",
-      "path": "Documentation/Fall/Evidence/Clean-v06-g1/runner.json"
-    },
-    {
-      "name": "Current W5 unpassed reproducibility probe",
-      "path": "Documentation/Empyrean/Evidence/R09/runner.json"
-    }
-  ],
-  "repair_outcome": {
-    "first_four_world_cases": "16/16 PASS",
-    "foundation_assertions": 72,
-    "combined_component_assertions": 230,
-    "W4_ordinary_assertions": 426,
-    "W4_secret_assertions": 468,
-    "W5": "UNVERIFIED / first-gap reproducibility regression R09",
-    "scope": "Input-driven machine evidence, not human acceptance"
-  },
-  "foundation_head": "e83d1f5d30f61ed0c0c09235dd8d4c1bee031acc",
-  "latest_finished_job": {
-    "receipt": "Documentation/Completion/Evidence/K06/runner.json",
-    "status": "PASS",
-    "scope": "Windowed actual final-boss/ending51"
-  },
-  "continuity_tool_tests": {
-    "passed": 18,
-    "failed": 0,
-    "log": "Documentation/Continuity/DISPATCH_PROBE_TESTS.txt"
-  },
-  "remaining_game": {
-    "unverified_full_levels": [],
-    "unverified_full_bosses": [],
-    "other": [
-      "Full common-source acceptance, including restored ending and isolated practice",
-      "Final source/package/presentation and fidelity audit",
-      "Physical-controller and uncoached human acceptance"
-    ],
-    "scope": "Existing graybox/components are not missing source; expand and validate them rather than replacing the foundation."
-  },
-  "development_source_scope": "Main has unvalidated W5-local changes beyond the tested Fall checkpoint. Source-vs-tested DIFF is expected and is not lost access. release/fall-v0.6.0 preserves the byte-identical engine inputs for the verified player.",
-  "historical_evidence_refs": [
-    {
-      "name": "Earned first three worlds clean native acceptance",
-      "path": "Documentation/Evidence/CityClean-v05/runner.json"
-    },
-    {
-      "name": "Latest full earned chapter regression",
-      "path": "Documentation/Evidence/Continuity-Clean-e2/runner.json"
-    },
-    {
-      "name": "Historical failing clean run retained",
-      "path": "Documentation/Evidence/Continuity-Clean-e1/runner.json"
-    },
-    {
-      "name": "Focused shore cure repair",
-      "path": "Documentation/Evidence/Continuity-R13/runner.json"
-    }
-  ],
-  "packaged_player": {
-    "path": "GloomBean_Windows_Fall_Milestone.zip",
-    "sha256": "57f5a7d40f26779991b139829146b1f5d612a4f051451cb7ac2a8c583f0dfc5c",
-    "input_smoke": "PASS",
-    "assertions": 104,
-    "receipt": "Documentation/Fall/Evidence/Packaged-v06-g1/runner.json"
-  },
-  "observed_at": "2026-09-20T14:54:36.403958+00:00",
-  "canonical_progress_record": "Context/projects/gloom-bean-unity/records/SCRIPTURE-PROGRESS-20260920-i1.md"
+  "remaining": [
+    "Common-source acceptance and independent audit",
+    "Final source/player packaging and extracted-ending checks",
+    "Final native visual and atlas-fidelity review",
+    "Current guide and engineering journal",
+    "Manual uncoached/controller judgement"
+  ]
 }
