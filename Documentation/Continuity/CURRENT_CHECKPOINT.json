@@ -2,12 +2,12 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Finish Full-Campaign-L1:53 cases, exact earned 0/19/20 Mercy endings and every final pair. L1 repairs false GUI scheduler deadlock and L19 practice takeoff. Preserve source and receipts; then package the exact tested binary/source and inspect both endings.",
+  "next_gate": "Full-Campaign-L2 is final exact-source 53-case clean acceptance, including welcoming menu art. L1 predecessor still verifies earlier identical mechanics. L2 GUI waits for L1 to finish; no overlapping visible ending captures. After PASS, audit and package exact L2 source/player and run extracted-player ending/UI checks.",
   "active_job": {
-    "task": "GloomBean-Campaign-Acceptance-L1",
-    "receipt": "Reports/Full-Campaign-L1/runner.json",
-    "config": "Tools/campaign-acceptance-l1.json",
-    "source": "7e3456582477a63fa11dfb07976afedc72309b97",
+    "task": "GloomBean-Campaign-Acceptance-L2",
+    "receipt": "Reports/Full-Campaign-L2/runner.json",
+    "config": "Tools/campaign-acceptance-l2.json",
+    "source": "a74e7eb4badace8a4ac463bcda092e3a1689350f",
     "status": "READY_NOT_STARTED"
   },
   "publication": {
