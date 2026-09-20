@@ -110,15 +110,52 @@ namespace GloomBean.Campaign
             yield return Walk(71);for(int i=docks.Length-1;i>0;i--){yield return PowerAltar(docks[i].x,-1);yield return Flight(docks[i-1]);if(stopped)yield break;}
             yield return Walk(2,true);
         }
+        IEnumerator Focus(HostKind kind)
+        {
+            if(stopped||!Live)yield break;Check("tenant acquired "+kind,host.Has(kind));
+            for(int i=0;i<3&&host.Primary!=kind;i++)yield return Press(new InputFrame{alternate=true,move=Vector2.down});
+            Check("focus "+kind,host.Primary==kind);
+        }
+        IEnumerator ShadowTravel(Vector2 point)
+        {
+            if(stopped||!Live)yield break;var shadow=host.Form<ShadowForm>();float end=Time.time+8;
+            input.rule=()=>new InputFrame{move=Vector2.ClampMagnitude((point-shadow.Position)*4,1)};
+            while(Live&&Time.time<end&&Vector2.Distance(point,shadow.Position)>.15f)yield return Tick();
+            input.rule=null;input.frame=default;Check("traverse connected silhouette to "+point,shadow.Controlling&&shadow.Allowed(shadow.Position)&&Vector2.Distance(point,shadow.Position)<.25f);
+        }
+        IEnumerator ShadowWindow(int index,bool returning)
+        {
+            if(stopped||!Live)yield break;float dx=index*32;var sun=session.GetComponentInChildren<ShadowSun>();var latch=session.GetComponentsInChildren<ShadowReceiver>().Single(x=>x.name=="Shadow latch "+index);var screen=session.GetComponentsInChildren<MagneticBody>().Single(x=>x.name=="Manufactured shadow screen "+index);
+            yield return Walk((returning?24.8f:16.3f)+dx);
+            if(returning){
+                yield return Focus(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});
+                float end=Time.time+9;input.rule=()=>new InputFrame{move=Vector2.left};
+                while(Live&&Time.time<end&&screen.Position.x<22+dx)yield return Tick();input.rule=null;input.frame=default;
+                Check("physical iron screen manufactures the noon bridge "+index,sun.noon&&screen.Position.x>22+dx);Snapshot("manufactured-shadow-"+index);
+            }else{
+                float end=Time.time+25;while(Live&&Time.time<end&&sun.direction.x<.76f)yield return Tick();Check("moving sunlight opens a real shadow connection "+index,sun.direction.x>=.76f);
+            }
+            yield return Focus(HostKind.Shadow);yield return Press(new InputFrame{alternate=true});yield return ShadowTravel(new Vector2(20.5f+dx,.35f));
+            yield return Pause(.08f);Check("controlled valid shadow operates latch "+index,latch.active);
+            yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});Check("shadow rejoins without teleporting through light",host.Form<ShadowForm>().Attached);yield return Walk((returning?18:28)+dx);
+        }
+        IEnumerator NoShadows(bool secret)
+        {
+            yield return Walk(8);Check("noon lamp tears off an available shadow",host.Has(HostKind.Shadow));yield return ShadowWindow(0,false);yield return ShadowWindow(1,false);
+            yield return Walk(61.5f);yield return Jump(65,1.6f);yield return Walk(67);yield return Jump(71,3.2f);yield return Walk(73);yield return Jump(78,4.8f);Check("Noon Keyling reached",session.HasKey);
+            if(secret){Check("suspended own-body Mercy remains an unverified gate",false);yield break;}
+            yield return Walk(81.6f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
+            yield return ShadowWindow(1,true);yield return ShadowWindow(0,true);yield return Walk(2,true);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[4];
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-require-earned-world")>=0&&!CampaignProgression.WorldOpen(game.AvailableWorlds,4,game.Save.Data,false)){failures++;Note("FAIL Empyrean was not earned by the supplied real save");Finish();yield break;}
             string route=Arg("-gb-route-id","GB-L17");bool secrets=Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-with-secrets")>=0;
             var definition=world.levels.FirstOrDefault(d=>d.id==route);
-            if(definition==null||definition.course!=17){failures++;Note("FAIL No complete input witness authored for "+route+". This is not a campaign success.");Finish();yield break;}
+            if(definition==null||(definition.course!=17&&definition.course!=18)){failures++;Note("FAIL No complete input witness authored for "+route+". This is not a campaign success.");Finish();yield break;}
             yield return game.Load(definition,Practice);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new WitnessInput();actor.input=input;actor.Stepped+=(f,dt)=>ticks++;
-            Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));yield return Halos(secrets);
+            Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));if(definition.course==17)yield return Halos(secrets);else yield return NoShadows(secrets);
             if(!stopped){Check("physical return completed",session.Phase==RunPhase.Cleared);if(!stopped){Check(Practice?"practice does not award progress":"clear is persistent",Practice?!game.Save.Data.cleared.Contains(route):game.Save.Data.cleared.Contains(route));if(!Practice)Check(secrets?"Mercy is saved":"Mercy was optional",secrets?game.Save.Data.mercies.Contains(route+"-MERCY"):session.Mercies.Count==0);}}
             Finish();
         }

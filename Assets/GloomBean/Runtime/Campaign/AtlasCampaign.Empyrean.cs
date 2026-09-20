@@ -32,16 +32,27 @@ namespace GloomBean.Campaign
         {var g=PrimitiveArt.Shape("Noon lamp",a.b.root,p,Vector2.one*2,new Color(1,.94f,.68f),PrimitiveArt.Icon.Star,-1);var s=g.AddComponent<ShadowSun>();s.reach=reach;return s;}
         void Noon(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-11,123,43),new Vector2(2,1));var b=a.b;a.Floor(-5,113);a.Exit(2,1.1f);a.Source(HostKind.Shadow,8);
-            var sun=Sun(a,new Vector2(10,15),24);a.Metal(new Vector2(16,2),new Vector2(2,4),4,false,1);var screen=a.Metal(new Vector2(26,3),new Vector2(1,6),7,false,-1);
-            var gate=b.Door(new Vector2(35,4),new Vector2(.7f,8));var receiver=b.Trigger("Shadow hand at the window",new Vector2(28,.6f),Vector2.one*.7f,new Color(.35f,.26f,.5f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();receiver.gate=gate;receiver.radius=.9f;
-            a.Source(HostKind.Lodestone,22,1,true);a.Source(HostKind.Shadow,40,1,true);a.Metal(new Vector2(45,3),new Vector2(1.2f,6),5,false,1);var second=Sun(a,new Vector2(46,15),22);
-            var highGate=b.Door(new Vector2(60,4),new Vector2(.7f,8));var high=b.Trigger("Far shadow latch",new Vector2(55,.5f),Vector2.one*.7f,new Color(.35f,.26f,.5f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();high.gate=highGate;
-            a.Steps(65,2,6,6,1.6f,4);a.Ledge(103,10,10);a.Key(98,11.4f);a.Nail(108,10.4f);
-            var mercyGate=b.Door(new Vector2(78,5),new Vector2(.6f,4));var own=b.Trigger("The missing final shadow",new Vector2(71,.6f),Vector2.one*.7f,new Color(.4f,.3f,.58f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();own.gate=mercyGate;
-            a.Metal(new Vector2(68,3),new Vector2(1,6),5,false,-1);Sun(a,new Vector2(65,16),20);a.Ledge(82,3.4f,5);a.Mercy(84,4.7f);
-            b.session.Turned+=()=>{sun.moving=second.moving=true;sun.orbit=new Vector2(12,0);second.orbit=new Vector2(10,0);sun.speed=second.speed=.45f;};
-            b.Enemy(new Vector2(52,1),true);a.Health(62,1.2f);b.Tip(new Vector2(8,2),"I leaves your body to control its shadow. Only connected cast silhouettes support it. Shift the metal screen, then follow the new silhouette while your exposed body waits.");a.Cure(HostKind.None,4,1,true);
+            a.Begin(new Rect(-8,-10,103,42),new Vector2(2,1));var b=a.b;a.Floor(-5,90);a.Exit(2,1.1f);a.Source(HostKind.Shadow,8);
+            var sun=Sun(a,new Vector2(43,25),22);sun.directional=true;sun.moving=true;sun.speed=.3f;sun.sweep=1.4f;sun.renderFilled=true;
+            var latches=new List<ShadowReceiver>();var screens=new List<MagneticBody>();
+            for(int i=0;i<2;i++)
+            {
+                float dx=i*32;
+                var statue=b.Solid("Suspended saint "+i,new Vector2(13+dx,5),new Vector2(2,4),new Color(.8f,.77f,.66f));statue.AddComponent<ShadowCaster>();
+                var gate=b.Door(new Vector2(24+dx,4),new Vector2(.65f,8));gate.name="Noon shutter "+i;
+                var latch=b.Trigger("Shadow latch "+i,new Vector2(20.5f+dx,.35f),Vector2.one*.6f,new Color(.32f,.27f,.46f),PrimitiveArt.Icon.Eye).AddComponent<ShadowReceiver>();latch.gate=gate;latch.radius=.6f;latches.Add(latch);
+                var screen=a.Metal(new Vector2(18+dx,6.5f),new Vector2(8,.5f),.6f,false,1);screen.name="Manufactured shadow screen "+i;screen.strength=80;
+                var body=screen.GetComponent<Rigidbody2D>();body.gravityScale=0;body.constraints=RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;body.linearDamping=.15f;screen.gameObject.layer=Layers.Moving;screens.Add(screen);
+                b.Solid("Screen left stop "+i,new Vector2(13.75f+dx,6.5f),new Vector2(.5f,1));b.Solid("Screen right stop "+i,new Vector2(26.65f+dx,6.5f),new Vector2(.5f,1));
+                PrimitiveArt.Line("Screen rail "+i,b.root,new Vector2(14+dx,7.2f),new Vector2(26.4f+dx,7.2f),.06f,new Color(.76f,.59f,.26f),0);
+            }
+            a.Source(HostKind.Lodestone,28,1,true);a.Source(HostKind.Shadow,34,1,true);
+            a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(78,4.8f,12);a.Key(78,6.1f);a.Nail(82,5.2f);
+            a.Ledge(72,9,5);a.Mercy(72,10.3f);a.Health(63,1.2f);
+            b.session.Turned+=()=>{sun.LockNoon();for(int i=0;i<latches.Count;i++){latches[i].active=false;latches[i].gate.SetOpen(false);latches[i].requiredSun=sun;latches[i].requiredCaster=screens[i].GetComponent<Collider2D>();}};
+            b.Tip(new Vector2(8,2),"I detaches your shadow. The moving sunlight makes a bridge under each hanging saint. Return the shadow to your feet before walking on.");
+            b.Tip(new Vector2(60,2),"At noon a vertical ray cannot make a sideways bridge. Pull the iron screen along its visible rail; its real shadow must connect your feet to the latch.");
+            a.Cure(HostKind.None,4,1,true);
         }
         void Scripture(AtlasBuilder a)
         {
