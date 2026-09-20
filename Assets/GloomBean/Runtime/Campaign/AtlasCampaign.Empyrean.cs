@@ -7,8 +7,8 @@ namespace GloomBean.Campaign
     {
         void Halos(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-12,96,48),new Vector2(2,1));var b=a.b;
-            a.Floor(-5,18);a.Floor(18,82,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
+            a.Begin(new Rect(-8,-12,128,54),new Vector2(2,1));var b=a.b;
+            a.Floor(-5,18);a.Floor(18,112,-6);a.Exit(2,1.1f);a.Source(HostKind.Lodestone,8);
             var docks=new[]{new Vector2(16,2),new Vector2(27,4),new Vector2(38,6),new Vector2(49,8),new Vector2(60,10),new Vector2(71,12)};
             var poles=new List<MagneticBody>();
             for(int i=0;i<docks.Length;i++)
@@ -24,7 +24,7 @@ namespace GloomBean.Campaign
                     var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=1.4f;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             }
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
-            a.Key(71,13.3f);a.Nail(76,12.4f);
+            BellScreen(a);
             a.Ledge(44.5f,8,6);var secretCoil=a.Metal(new Vector2(44.5f,7.05f),new Vector2(2,.7f),20,true,1);secretCoil.name="Orbital entry coil";secretCoil.strength=170;secretCoil.enabled=false;
             var secretLever=b.Switch(new Vector2(44.5f,8.9f),"ORBITAL ENTRY");secretLever.Changed+=on=>secretCoil.enabled=on;
             var ring=new GameObject("Orbiting Mercy halo");ring.transform.SetParent(b.root);ring.transform.position=new Vector2(45,17.2f);ring.layer=Layers.Moving;
@@ -36,6 +36,21 @@ namespace GloomBean.Campaign
             b.Tip(new Vector2(49,9),"The Mercy travels inside an open iron halo. Leave the ordinary route to match it between the two opposed masses; enter through the moving gap.");
             b.session.Turned+=()=>choir.desynchronized=true;a.Health(38,7.3f);a.Cure(HostKind.Lodestone,4,1);
             b.Tip(new Vector2(8,2),"U changes your pole. E powers each visible north coil. South holds you; north pushes you away. The choir reverses the overhead iron. Start a launch from the forward edge, not directly over the coil.");
+        }
+        void BellScreen(AtlasBuilder a)
+        {
+            var b=a.b;
+            var screen=a.Metal(new Vector2(83,11.7f),new Vector2(6.5f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=120;screen.gameObject.layer=Layers.Moving;
+            var deck=screen.GetComponent<Rigidbody2D>();deck.gravityScale=2;deck.constraints=RigidbodyConstraints2D.FreezeRotation;
+            var rail=screen.gameObject.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=deck.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=0,max=8};rail.enableCollision=true;
+            var bell=a.Metal(new Vector2(76,15),new Vector2(1.2f,1.4f),4,false,1);bell.name="Loose bell counterweight";bell.strength=170;
+            var weight=bell.GetComponent<Rigidbody2D>();weight.gravityScale=2;weight.linearDamping=.08f;
+            var saddle=b.Solid("Greased bell saddle",new Vector2(76,13.9f),new Vector2(2,.4f));var slick=new PhysicsMaterial2D("Greased iron"){friction=0};saddle.GetComponent<Collider2D>().sharedMaterial=slick;bell.GetComponent<Collider2D>().sharedMaterial=slick;
+            b.Solid("Bell saddle backstop",new Vector2(74.8f,15.4f),new Vector2(.4f,3));
+            a.Ledge(81,7,10);a.Ledge(92,19.4f,10);a.Key(91,20.7f);a.Nail(96,19.8f);
+            var pulleyObject=new GameObject("Loose-bell hanging-screen cable");pulleyObject.transform.SetParent(b.root);var cable=pulleyObject.AddComponent<CablePulley>();cable.Configure(deck,weight,new Vector2(83,28),new Vector2(78,28));
+            b.Tip(new Vector2(71,13),"Repel from the final coil and catch the suspended screen. SOUTH pulls the loose bell off its saddle; its falling mass tensions the cable and lifts your real platform.");
+            PrimitiveArt.Line("Screen guide",b.root,new Vector2(83,11),new Vector2(83,21),.04f,new Color(.66f,.68f,.72f),-1);
         }
         ShadowSun Sun(AtlasBuilder a,Vector2 p,float reach=22)
         {var g=PrimitiveArt.Shape("Noon lamp",a.b.root,p,Vector2.one*2,new Color(1,.94f,.68f),PrimitiveArt.Icon.Star,-1);var s=g.AddComponent<ShadowSun>();s.reach=reach;return s;}

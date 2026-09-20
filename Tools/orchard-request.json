@@ -1,7 +1,12 @@
 {
-  "id": "Empyrean-H16-real-glass-guides-and-open-rim",
+  "id": "Empyrean-H17-bell-screen-signature",
   "build": true,
   "cases": [
+    {
+      "name": "L17-critical",
+      "suite": "Empyrean",
+      "route": "GB-L17"
+    },
     {
       "name": "L17-secret",
       "suite": "Empyrean",
@@ -9,21 +14,8 @@
       "secrets": true
     },
     {
-      "name": "L18-secret",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "secrets": true
-    },
-    {
-      "name": "L18-critical",
-      "suite": "Empyrean",
-      "route": "GB-L18"
-    },
-    {
-      "name": "L17-critical",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "renderFps": 30
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

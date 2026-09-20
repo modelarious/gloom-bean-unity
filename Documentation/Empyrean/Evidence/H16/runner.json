@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  38,
+                        "case":  "L17-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  72,
+                        "case":  "L18-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  55,
+                        "case":  "L18-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Empyrean-H16-real-glass-guides-and-open-rim",
+    "started":  "2026-09-20T05:18:25.1696334-06:00",
+    "phase":  "native-acceptance",
+    "status":  "PASS",
+    "finished":  "2026-09-20T05:19:33.1190679-06:00"
+}

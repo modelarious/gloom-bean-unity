@@ -73,16 +73,17 @@ namespace GloomBean.Campaign
             input.rule=null;input.frame=default;
             Check("visible coil launch stance "+x,!coil.enabled&&actor.Grounded&&Mathf.Abs(actor.Body.position.x-stance.x)<.12f);
         }
-        IEnumerator Flight(Vector2 destination)
+        IEnumerator Flight(Vector2 destination,Rigidbody2D landingBody=null)
         {
             if(stopped||!Live)yield break;
             var magnet=host.Form<LodestoneForm>();Vector2 start=actor.Body.position;int direction=destination.x>start.x?1:-1;
             float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false,landed=false,landingInteract=false,activated=false;
             // Only genuine controls: launch, adjust pole in the observed field, steer, land.
             input.rule=()=>{
+                if(landingBody)destination=landingBody.position+Vector2.up*1.05f;
                 Vector2 pos=actor.Body.position,v=actor.Body.linearVelocity;float dx=destination.x-pos.x;
                 bool launch=direction*(pos.x-start.x)<5;
-                if(jumped&&actor.Grounded&&Vector2.Distance(pos,destination)<1.65f){landed=true;bool interact=!landingInteract;landingInteract=true;return new InputFrame{action=magnet.Polarity!=-1,interact=interact,move=new Vector2(Mathf.Clamp(dx*3-v.x*1.1f,-1,1),0)};}
+                if(jumped&&actor.Grounded&&(Vector2.Distance(pos,destination)<1.65f||(landingBody&&actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody))){landed=true;bool interact=!landingInteract;landingInteract=true;return new InputFrame{action=magnet.Polarity!=-1,interact=interact,move=new Vector2(Mathf.Clamp(dx*3-v.x*1.1f,-1,1),0)};}
                 float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
                 Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=m.ForceOn(pos,1,magnet.range);
@@ -95,11 +96,12 @@ namespace GloomBean.Campaign
             };
             while(Live&&Time.time<deadline){
                 if(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Grounded&&actor.Body.position.x<18&&actor.Feet.y<.25f)break;
-                if(landed&&Vector2.Distance(actor.Body.position,destination)<1.1f&&actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<2)break;
+                if(landingBody)destination=landingBody.position+Vector2.up*1.05f;
+                if(landed&&actor.Grounded&&(landingBody?actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody:Vector2.Distance(actor.Body.position,destination)<1.1f&&Mathf.Abs(actor.Body.linearVelocity.x)<2))break;
                 if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
             }
-            input.rule=null;input.frame=default;Check("coil flight lands on physical support "+destination,actor.Grounded&&(Vector2.Distance(actor.Body.position,destination)<1.1f||(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Body.position.x<18&&actor.Feet.y<.25f)));Snapshot("flight-"+destination.x);
+            input.rule=null;input.frame=default;Check("coil flight lands on physical support "+destination,actor.Grounded&&((landingBody&&actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==landingBody)||Vector2.Distance(actor.Body.position,destination)<1.1f||(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Body.position.x<18&&actor.Feet.y<.25f)));Snapshot("flight-"+destination.x);
         }
         IEnumerator OrbitMercy()
         {
@@ -127,15 +129,36 @@ namespace GloomBean.Campaign
             while(Live&&Time.time<end&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f))yield return Tick();input.rule=null;input.frame=default;
             Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);yield return Press(new InputFrame{interact=true});if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Walk(49);
         }
+        IEnumerator BellScreenRoute(bool returning)
+        {
+            if(stopped||!Live)yield break;var cable=session.GetComponentInChildren<CablePulley>();var magnet=host.Form<LodestoneForm>();
+            if(!returning){
+                yield return PowerAltar(71);yield return Flight(cable.deck.position+Vector2.up*1.05f,cable.deck);if(stopped)yield break;
+                Check("catch the actual hanging screen",actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==cable.deck);
+                float end=Time.time+15,trace=0;input.rule=()=>new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((83-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
+                while(Live&&Time.time<end&&cable.deck.position.y<18.6f){yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("CABLE deck="+cable.deck.position+" bell="+cable.bell.position+" tension="+cable.Tension+" body="+actor.Body.position);}}
+                input.rule=null;input.frame=default;
+                Check("loose bell physically leaves its saddle",cable.bell.position.x>77&&cable.bell.position.y<12);
+                Check("falling bell lifts screen and Host through the cable",cable.deck.position.y>18.6f&&actor.Feet.y>18&&cable.PeakTension>10);Snapshot("bell-screen-exchange");
+                if(stopped)yield break;if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Jump(89,19.4f);yield return Walk(91);Check("Keyling lies beyond the physical screen mechanism",session.HasKey);
+            }else{
+                yield return Walk(88);if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});bool jumped=false;float end=Time.time+10;
+                input.rule=()=>{bool edge=!jumped&&actor.Grounded;if(edge)jumped=true;return new InputFrame{jump=edge,jumpHeld=true,move=new Vector2(Mathf.Clamp((83-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.6f,-1,1),0)};};
+                while(Live&&Time.time<end&&!(jumped&&actor.Grounded&&actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==cable.deck))yield return Tick();input.rule=null;input.frame=default;
+                Check("return catches the same physical hanging screen",actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==cable.deck);if(stopped)yield break;
+                end=Time.time+2;input.rule=()=>new InputFrame{move=Vector2.left};while(Live&&Time.time<end&&actor.Body.position.x>=82.92f)yield return Tick();input.rule=null;input.frame=default;
+                yield return Flight(new Vector2(71,12.75f));
+            }
+        }
         IEnumerator Halos(bool secret)
         {
             yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));
             var docks=new[]{new Vector2(16,2.75f),new Vector2(27,4.75f),new Vector2(38,6.75f),new Vector2(49,8.75f),new Vector2(60,10.75f),new Vector2(71,12.75f)};
             for(int i=0;i<docks.Length-1;i++){yield return PowerAltar(docks[i].x);yield return Flight(docks[i+1]);if(stopped)yield break;if(secret&&i==2)yield return OrbitMercy();}
-            Check("Keyling reached through magnetic traversal",session.HasKey);
+            yield return BellScreenRoute(false);if(stopped)yield break;
             if(secret)Check("orbiting Mercy retained before return",session.Mercies.Count==1);
-            yield return Press(new InputFrame{interact=true});yield return Walk(74.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
-            yield return Walk(71);for(int i=docks.Length-1;i>0;i--){
+            yield return Walk(94.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
+            yield return BellScreenRoute(true);if(stopped)yield break;yield return Walk(71);for(int i=docks.Length-1;i>0;i--){
                 var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name=="Launch coil "+docks[i].x);if(coil.enabled)yield return Press(new InputFrame{interact=true});
                 if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
                 yield return Walk(docks[i].x-2.35f);yield return Jump(docks[i-1].x,docks[i-1].y-.75f);if(stopped)yield break;}
