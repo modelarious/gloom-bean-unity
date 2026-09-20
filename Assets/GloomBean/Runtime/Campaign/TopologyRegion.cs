@@ -11,6 +11,7 @@ namespace GloomBean.Campaign
         sealed class Cell {public char material;public Collider2D ordinary,inverse;}
         readonly Dictionary<Vector2Int,Cell> cells=new Dictionary<Vector2Int,Cell>();
         readonly List<Vector2Int> supplement=new List<Vector2Int>();
+        readonly List<Vector2Int> supplementFloors=new List<Vector2Int>();
         public float cell=1;public bool closed=true;public readonly List<Collider2D> Inverse=new List<Collider2D>();
         public bool SupplementClosed {get;private set;}public int SupplementCount=>supplement.Count;
         StageBuilder builder;Vector2 origin;
@@ -43,9 +44,10 @@ namespace GloomBean.Campaign
             char next=stone?'#':'.';if(c.material==next)return true;c.material=next;Refresh(at,c);return true;
         }
         public void DefineSupplement(IEnumerable<Vector2Int> path){foreach(var p in path)if(cells.TryGetValue(p,out var c)&&c.material=='.'&&!supplement.Contains(p))supplement.Add(p);}
+        public void DefineSupplementFloor(Vector2Int point){if(cells.TryGetValue(point,out var c)&&c.material=='#')supplementFloors.Add(point);}
         public void SetSupplement(bool value)
         {
-            foreach(var p in supplement)Paint(p.x,p.y,value);SupplementClosed=value;Physics2D.SyncTransforms();RuntimeEvents.Emit("paint-loop",value?"moon contour closed":"moon contour erased");
+            foreach(var p in supplement)Paint(p.x,p.y,value);foreach(var p in supplementFloors)Paint(p.x,p.y,!value);SupplementClosed=value;Physics2D.SyncTransforms();RuntimeEvents.Emit("paint-loop",value?"moon contour closed":"moon contour erased");
         }
         public void SetClosed(bool value){closed=value;foreach(var pair in cells)Refresh(pair.Key,pair.Value);RuntimeEvents.Emit("paint-loop",value?"closed":"open");}
     }

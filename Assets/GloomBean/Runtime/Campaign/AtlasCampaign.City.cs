@@ -70,7 +70,7 @@ namespace GloomBean.Campaign
                 var extras=new List<Vector2Int>();
                 void Region(int x0,int y0,int x1,int y1){for(int y=y0;y<=y1;y++)for(int x=x0;x<=x1;x++)extras.Add(new Vector2Int(x,y));}
                 Region(3,14,14,17);Region(12,11,15,15);Region(14,11,22,14);
-                extras.RemoveAll(v=>v.x>=12&&v.x<=13&&v.y>=11&&v.y<=12);r.DefineSupplement(extras);
+                extras.RemoveAll(v=>v.x>=12&&v.x<=13&&v.y>=11&&v.y<=12);r.DefineSupplement(extras);for(int x=14;x<=21;x++)r.DefineSupplementFloor(new Vector2Int(x,10));
                 PrimitiveArt.Line("Unfinished moon contour",a.b.root,origin+new Vector2(3,18),origin+new Vector2(15,18),.07f,new Color(.89f,.82f,.56f),-1);
             }
             return r;
