@@ -1,0 +1,8 @@
+PASS known RUNNING
+PASS known PASS
+PASS known FAIL
+PASS invalid state remains refused
+PASS invalid state remains refused
+PASS permanently missing file refused
+PASS transient disappearance waits for a real receipt
+PREDECESSOR_READER_TESTS_PASS 7
