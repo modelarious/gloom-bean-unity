@@ -6,10 +6,10 @@ namespace GloomBean.Campaign
     {
         public override HostKind Kind=>HostKind.Shadow;public override bool Locomotion=>true;
         public override string Help=>"I switches between body and shadow. Crawl only through connected cast silhouettes, within a 14 m tether. The body stays vulnerable.";
-        public Vector2 Position {get;private set;}public bool Controlling {get;private set;}public float tether=14;GameObject cursor;float stranded;
+        public Vector2 Position {get;private set;}public bool Controlling {get;private set;}public bool Attached {get;private set;}=true;public float tether=14;GameObject cursor;float stranded;
         public override string Status=>Controlling?"Controlling SHADOW":"Controlling exposed BODY";
         public override void Enter(){Position=Actor.Feet;cursor=PrimitiveArt.Shape("Living shadow",Root,Position,new Vector2(.55f,.45f),new Color(.65f,.64f,.92f),PrimitiveArt.Icon.Eye,17);if(!Actor.GetComponent<ShadowCaster>())Actor.gameObject.AddComponent<ShadowCaster>();}
-        public void Toggle(){Controlling=!Controlling;if(Controlling&&Vector2.Distance(Position,Actor.Body.position)>tether)Position=Actor.Feet;}
+        public void Toggle(){if(!Controlling){if(Attached)Position=Actor.Feet;Attached=false;Controlling=true;}else{Controlling=false;if(Vector2.Distance(Position,Actor.Feet)<1)Attached=true;}}
         public bool Allowed(Vector2 p)=>Vector2.Distance(p,Actor.Body.position)<=tether&&(Vector2.Distance(p,Actor.Feet)<1||ShadowSun.Contains(p));
         public bool Advance(Vector2 delta)
         {
@@ -18,13 +18,16 @@ namespace GloomBean.Campaign
         public override bool Move(InputFrame f,float dt)
         {
             if(f.alternate)Toggle();if(!Controlling)return false;
-            Actor.Body.linearVelocity=new Vector2(0,Mathf.Max(-18,Actor.Body.linearVelocity.y-28*dt));Advance(f.move*5*dt);
-            if(!Allowed(Position)){stranded+=dt;if(stranded>.65f){Position=Actor.Feet;Controlling=false;stranded=0;Notice("The light severed your route. Your shadow snaps back.");}}else stranded=0;
+            // The abandoned body remains physical: magnetic suspension and inertia still apply.
+            Actor.Body.linearVelocity=new Vector2(host.Has(HostKind.Lodestone)?Actor.Body.linearVelocity.x*Mathf.Exp(-.6f*dt):0,Mathf.Max(-24,Actor.Body.linearVelocity.y-Actor.tuning.gravity*dt));Advance(f.move*5*dt);
+            if(!Allowed(Position)){stranded+=dt;if(stranded>.65f){Position=Actor.Feet;Controlling=false;Attached=true;stranded=0;Notice("The light severed your route. Your shadow snaps back.");}}else stranded=0;
             return true;
         }
         public override void After(InputFrame f,float dt)
         {
             if(Controlling||dt<=0)return;
+            if(Attached){Position=Actor.Feet;return;}
+            if(Vector2.Distance(Position,Actor.Feet)<.65f){Attached=true;Position=Actor.Feet;return;}
             Vector2 radial=Actor.Body.position-Position;
             Vector2 predicted=radial+Actor.Body.linearVelocity*dt;
             if(predicted.magnitude>tether)
