@@ -35,19 +35,19 @@ namespace GloomBean.Campaign
             var firstEnd=a.Seam(new Vector2(20.928f,3.74f),"span-a");a.Ledge(24.5f,4,7);
             var second=a.Hinge(new Vector2(28,3.74f),10,85,"span-b");second.name="Middle folding tower";
             var secondEnd=a.Seam(new Vector2(36.660f,8.74f),"span-b");
-            var leftHalf=a.Ledge(40,9,8);leftHalf.name="Left drifting bridge half";var leftBody=leftHalf.AddComponent<Rigidbody2D>();leftBody.bodyType=RigidbodyType2D.Kinematic;
+            var leftHalf=a.Ledge(40.5f,9,7);leftHalf.name="Left drifting bridge half";var leftBody=leftHalf.AddComponent<Rigidbody2D>();leftBody.bodyType=RigidbodyType2D.Kinematic;
             var leftDrift=leftHalf.AddComponent<StructuralDrift>();leftDrift.amplitude=.65f;leftDrift.period=14;
             var rightHalf=a.Ledge(46,9,4);rightHalf.name="Right drifting bridge half";var rightBody=rightHalf.AddComponent<Rigidbody2D>();rightBody.bodyType=RigidbodyType2D.Kinematic;
             var rightDrift=rightHalf.AddComponent<StructuralDrift>();rightDrift.direction=Vector2.left;rightDrift.amplitude=.65f;rightDrift.period=14;
             a.Source(HostKind.Censer,38,10,true);
             var third=a.Hinge(new Vector2(48,8.74f),10,-90,"span-c");third.name="Far folding tower";
-            var thirdEnd=a.Seam(new Vector2(56.660f,13.74f),"span-c");a.Ledge(63,14,14);a.Key(61,15.2f);a.Nail(67,14.4f);
+            var thirdEnd=a.Seam(new Vector2(56.660f,13.74f),"span-c");a.Ledge(63.5f,14,13);a.Key(61,15.2f);a.Nail(67,14.4f);
             // A support's movement carries an entire suspended island, not just an unlock token.
             var secret=a.Hinge(new Vector2(40,8.74f),8,130,"island");secret.name="Island support tower";
             a.Seam(new Vector2(46.5f,13.39f),"island");
-            var island=a.Ledge(36.86f,15.58f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
-            var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(2,.45f);
-            a.Mercy(36.86f,16.78f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
+            var island=a.Ledge(37.858f,15.218f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
+            var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(3,.15f);
+            a.Mercy(37.858f,16.418f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
             var ret1=a.Seam(new Vector2(20,.74f),"span-a");ret1.gameObject.SetActive(false);
             var ret2=a.Seam(new Vector2(36,4.74f),"span-b");ret2.gameObject.SetActive(false);
             var ret3=a.Seam(new Vector2(56,10.74f),"span-c");ret3.gameObject.SetActive(false);

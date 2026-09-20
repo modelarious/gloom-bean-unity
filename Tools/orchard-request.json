@@ -1,5 +1,5 @@
 {
-  "id": "Fall-R07-flush-hinge-footprints",
+  "id": "Fall-R08-landing-and-procession",
   "build": true,
   "cases": [
     {
@@ -11,6 +11,17 @@
       "name": "L14-secrets",
       "suite": "Fall",
       "route": "GB-L14",
+      "secrets": true
+    },
+    {
+      "name": "L15-critical",
+      "suite": "Fall",
+      "route": "GB-L15"
+    },
+    {
+      "name": "L15-secrets",
+      "suite": "Fall",
+      "route": "GB-L15",
       "secrets": true
     },
     {

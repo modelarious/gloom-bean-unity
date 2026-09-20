@@ -124,7 +124,7 @@ namespace GloomBean.Campaign
         {
             yield return Walk(11.8f);yield return Fold("span-a",Vector2.up,30);yield return Walk(26);
             yield return Walk(27);yield return Fold("span-b",Vector2.up,30);yield return Walk(38.8f);yield return Calm();
-            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(48.4f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(50.6f,true);
+            if(secret){yield return Fold("island",new Vector2(1,1),35.6f);yield return Walk(49.5f);Check("Mercy island moves with folded support",session.GetComponentInChildren<FoldTipIsland>().transform.position.y<15);Check("suspended island Mercy",session.Mercies.Count==1);yield return Walk(51.2f,true);
                 yield return Leap(56.8f,13.8f,14.2f);}
             else{yield return Walk(46);yield return Fold("span-c",Vector2.down,30);yield return Walk(59);}
             yield return Walk(65.6f);Check("bridge Keyling",session.HasKey);yield return Press(new InputFrame{interact=true});Check("Nail separates bridge halves",session.Phase==RunPhase.Returning);if(stopped)yield break;

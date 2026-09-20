@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  17,
+                        "case":  "L14-critical",
+                        "failed":  4,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  19,
+                        "case":  "L14-secrets",
+                        "failed":  6,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  218,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Fall-R07-flush-hinge-footprints",
+    "started":  "2026-09-19T22:29:35.1175621-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T22:31:16.8425153-06:00"
+}
