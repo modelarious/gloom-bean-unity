@@ -25,7 +25,7 @@ namespace GloomBean.Campaign
         void Note(string text){log.Add(text);File.WriteAllLines(Path.Combine(dir,"city-observations.txt"),log);}
         void Check(string name,bool pass,bool stop=true){assertions++;if(!pass){failures++;if(stop&&!stopped){Snapshot("first-failure");Note("PHYSICAL shape="+actor.Shape.bounds+" axis="+actor.Shape.direction+" forms="+string.Join(",",host.Forms.Select(f=>f.Kind.ToString())));
                 foreach(var near in Physics2D.OverlapBoxAll(actor.Body.position,(Vector2)actor.Shape.bounds.size+Vector2.one*.15f,0))if(!near.isTrigger&&near!=actor.Shape)Note("CONTACT "+near.name+" "+near.bounds);}
-                if(stop)stopped=true;}Note((pass?"PASS ":"FAIL ")+session.definition.id+" "+name+" | "+actor.Body.position+" feet="+actor.Feet.y.ToString("0.00")+" hp="+actor.Health);}
+                if(stop)stopped=true;}Note((pass?"PASS ":"FAIL ")+session.definition.id+" "+name+" | "+actor.Body.position+" feet="+actor.Feet.y.ToString("0.00")+" hp="+actor.Health+" twin="+(host.Form<MirrorForm>()?.Twin ? host.Form<MirrorForm>().Twin.Body.position.ToString():"none"));}
         void Snapshot(string label){if(session&&session.Camera)FoundationVerification.Capture(session.Camera.GetComponent<UnityEngine.Camera>(),Path.Combine(dir,session.definition.id+"-"+label+".png"));}
         IEnumerator Pause(float seconds){input.frame=default;float end=Time.time+seconds;while(Live&&Time.time<end)yield return NextPhysics();}
         IEnumerator Hold(InputFrame value,float seconds){if(stopped||!Live)yield break;float end=Time.time+seconds;while(Live&&Time.time<end){input.frame=value;yield return NextPhysics();}input.frame=default;}
@@ -64,16 +64,23 @@ namespace GloomBean.Campaign
         IEnumerator Suns(bool secret)
         {
             yield return Walk(7);Check("vanity nun creates independently colliding twin",host.Has(HostKind.Mirror));
-            yield return Jump(10.5f,2);yield return Jump(13.5f,2);yield return Jump(16,4);
-            var joint=session.GetComponentsInChildren<Gate>().First(g=>g.plates.Length==2);
+            yield return Jump(10.5f,2);yield return Jump(13,2);yield return Jump(16,4);
+            var joint=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Paired apartment interlock");
             yield return Await("two bodies hold the balcony scales",()=>joint.opened,4);Snapshot("paired-balconies");
-            if(secret){yield return Jump(21,6);yield return Jump(26,4);yield return Jump(31,5.8f);yield return Jump(36,7.6f);Check("upper apartment Mercy",session.Mercies.Count==1);Snapshot("mercy");}
-            yield return Walk(44);yield return Await("matte velvet removes reflection",()=>!host.Has(HostKind.Mirror),4);
-            yield return Walk(48);yield return Jump(51,0);yield return Walk(72);
-            yield return Jump(76,4);yield return Walk(77.5f);yield return Jump(81,5.9f);yield return Walk(82.5f);yield return Jump(86,7.8f);yield return Walk(87.5f);yield return Jump(91,9.7f);
-            Check("roof key collected by contact",session.HasKey);yield return Jump(96,10);yield return Walk(97.6f);yield return Press(new InputFrame{interact=true});
-            Check("one sun extinguishes at the Turn",session.Phase==RunPhase.Returning);Snapshot("turn");
-            yield return Walk(48);yield return Await("return settles",()=>actor.Grounded,6);yield return Walk(43);yield return Walk(2);
+            if(secret&&!stopped){yield return Walk(14.1f);yield return Jump(10,6);yield return Press(new InputFrame{interact=true});
+                var shutter=session.GetComponentInChildren<WindowShutter>();var secretGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Off-register Mercy shutters");
+                yield return Await("physical shutter displaces the twin onto off-register scale",()=>secretGate.opened,6);Check("shutter completes an actual movement",shutter.IsClosed);Snapshot("shutter-desynchronization");yield return Walk(3);Check("Mercy inside the original apartment",session.Mercies.Count==1);yield return Walk(14);}
+            yield return Walk(44);yield return Await("matte velvet removes reflection",()=>!host.Has(HostKind.Mirror),4);yield return Press(new InputFrame{interact=true});
+            yield return Await("released lift physically carries the Host",()=>actor.Grounded&&actor.Feet.y>3.9f,7,()=>new InputFrame{move=new Vector2(Mathf.Clamp(44-actor.Body.position.x,-1,1),0)});
+            yield return Walk(45.2f);yield return Press(new InputFrame{interact=true});yield return Pause(.15f);
+            Check("curtains create real cast-shadow bridge collision",session.GetComponentsInChildren<SunShutter>().All(s=>s.GetComponent<Collider2D>().enabled));
+            yield return Jump(49,4.3f);yield return Walk(50.7f);yield return Jump(55,4.95f);yield return Walk(56.7f);yield return Jump(61,5.6f);yield return Walk(62.7f);yield return Jump(67,6.25f);yield return Walk(68.7f);yield return Jump(72,7);yield return Walk(73.4f);
+            yield return Jump(76,8.2f);yield return Walk(77.5f);yield return Jump(81,10);yield return Walk(82.5f);yield return Jump(86,11.8f);yield return Walk(87.5f);yield return Jump(91,13.6f);
+            Check("roof key collected by contact",session.HasKey);yield return Jump(96,13.6f);yield return Walk(97.6f);yield return Press(new InputFrame{interact=true});
+            Check("one sun extinguishes at the Turn",session.Phase==RunPhase.Returning);yield return Pause(.1f);Check("only eastern shadow bridges disappear",session.GetComponentsInChildren<SunShutter>().All(s=>s.GetComponent<Collider2D>().enabled==(s.phase==0)));Snapshot("turn");
+            yield return Walk(77.8f);yield return Await("return vanity creates a new paired route",()=>host.Has(HostKind.Mirror),4);yield return Walk(75);yield return Jump(70,7.5f);yield return Walk(68);
+            var returnGate=session.GetComponentsInChildren<Gate>().First(g=>g.name=="Return apartment interlock");yield return Await("changed furniture solved by both return bodies",()=>returnGate.opened,4);Snapshot("return-mirror");
+            yield return Walk(61.5f);yield return Await("return velvet releases both-body constraint",()=>!host.Has(HostKind.Mirror),4);yield return Walk(43);yield return Await("return reaches old street",()=>actor.Grounded&&actor.Feet.y<1,6);yield return Walk(2);
         }
         IEnumerator Run()
         {

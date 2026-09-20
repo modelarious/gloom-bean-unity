@@ -1,11 +1,21 @@
 {
-  "id": "City-R01-existing-layout",
+  "id": "City-R02-suns-systems",
   "build": true,
   "cases": [
     {
       "name": "L09-critical",
       "suite": "City",
       "route": "GB-L09"
+    },
+    {
+      "name": "L09-secrets",
+      "suite": "City",
+      "route": "GB-L09",
+      "secrets": true
+    },
+    {
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

@@ -7,18 +7,48 @@ namespace GloomBean.Campaign
     {
         void Suns(AtlasBuilder a)
         {
-            a.Begin(new Rect(-8,-9,111,44),new Vector2(2,1));var b=a.b;a.Floor(-5,43);a.Floor(49,102);a.Exit(2,1.1f);
+            a.Begin(new Rect(-8,-9,116,47),new Vector2(2,1));var b=a.b;a.Floor(-5,43);a.Floor(49,104);a.Floor(43,49,-3);a.Exit(2,1.1f);
+            GameObject Balcony(float x,float y,float w){var g=a.Ledge(x,y,w);g.AddComponent<OneWaySurface>();return g;}
             var source=a.Source(HostKind.Mirror,7);source.explicitAxis=true;source.mirrorAxis=21;
-            a.Ledge(12,2,5);a.Ledge(30,2,5);a.Ledge(16,4,5);a.Ledge(26,4,5);a.Ledge(21,6,7);
-            var west=b.Plate(new Vector2(16,4.14f));var east=b.Plate(new Vector2(26,4.14f));var joined=b.Door(new Vector2(41,4),new Vector2(.8f,8),west,east);joined.latched=true;
-            b.Solid("The cabinet without a reflection",new Vector2(30,3.1f),new Vector2(.8f,2.2f));a.Ledge(31,5.8f,4);a.Ledge(36,7.6f,5);a.Mercy(36,8.9f);
-            var sunlight1=PrimitiveArt.Shape("Western sun",b.root,new Vector2(6,14),Vector2.one*3,new Color(.97f,.72f,.46f),PrimitiveArt.Icon.Star,-2);
-            var sunlight2=PrimitiveArt.Shape("Eastern sun",b.root,new Vector2(36,14),Vector2.one*3,new Color(.61f,.8f,.96f),PrimitiveArt.Icon.Star,-2);
-            var shutters=new List<SunShutter>();for(int i=0;i<4;i++){var g=a.Ledge(49+i*6,2+i*.65f,5);var sh=g.AddComponent<SunShutter>();sh.phase=i%2;sh.period=5;shutters.Add(sh);}
-            a.Cure(HostKind.Mirror,44,1);a.Floor(43,49,-3);a.Steps(76,4,4,5,1.9f,4);a.Ledge(96,10,10);a.Key(90,10.9f);a.Nail(99,10.4f);
-            var back=a.Ledge(67,7.5f,42);back.SetActive(false);
-            b.session.Turned+=()=>{sunlight2.SetActive(false);foreach(var sh in shutters)sh.reverse=true;back.SetActive(true);};
-            b.Enemy(new Vector2(78,1),true);a.Health(56,1.2f);b.Tip(new Vector2(8,2),"The mirror does not teleport your twin to safety. Both bodies obey their own furniture. Land on both balcony scales at once.");
+            Balcony(12,2,5);Balcony(30,2,5);Balcony(16,4,5);Balcony(26,4,5);Balcony(21,6,7);
+            b.Solid("The cabinet without a reflection",new Vector2(30,3.1f),new Vector2(.8f,2.2f));
+            var west=b.Plate(new Vector2(16,4.14f));var east=b.Plate(new Vector2(26,4.14f));
+            var joined=b.Door(new Vector2(41,4),new Vector2(.8f,8),west,east);joined.latched=true;joined.name="Paired apartment interlock";
+            var liftObj=b.Solid("Cross-building lift",new Vector2(44,-.2f),new Vector2(3.5f,.4f),b.accent,Layers.Moving);
+            var lift=liftObj.AddComponent<ApartmentLift>();lift.lower=new Vector2(44,-.2f);lift.upper=new Vector2(44,3.8f);lift.access=joined;
+            a.Cure(HostKind.Mirror,42.3f,1);
+            b.Tip(new Vector2(43,1),"The two balcony scales release the lift. E aboard it calls the upper floor.");
+
+            // The Mercy is a physical desynchronization problem, not a form-name lock.
+            Balcony(6,6,14);Balcony(32,6,9);
+            var still=b.Plate(new Vector2(10,6.14f));var shifted=b.Plate(new Vector2(34.8f,6.14f));
+            var secret=b.Door(new Vector2(6,8),new Vector2(.6f,4),still,shifted);secret.name="Off-register Mercy shutters";secret.latched=true;
+            var shutterObj=b.Solid("Heavy east window shutter",new Vector2(30.6f,10),new Vector2(1,1.6f),new Color(.42f,.56f,.63f),Layers.Moving);
+            var pusher=shutterObj.AddComponent<WindowShutter>();pusher.park=new Vector2(30.6f,10);pusher.lowered=new Vector2(30.6f,6.82f);pusher.closed=new Vector2(33.7f,6.82f);
+            var handle=b.Switch(new Vector2(10,6.8f),"CLOSE EAST SHUTTER");handle.Changed+=pusher.SetClosed;
+            a.Mercy(3,7.1f);b.Tip(new Vector2(11,7),"Hold your own scale still. A real shutter can move the reflection without moving you.");
+            var sunlight1=PrimitiveArt.Shape("Western sun",b.root,new Vector2(6,19),Vector2.one*3,new Color(.97f,.72f,.46f),PrimitiveArt.Icon.Star,-2);
+            var sunlight2=PrimitiveArt.Shape("Eastern sun",b.root,new Vector2(93,23),Vector2.one*3,new Color(.61f,.8f,.96f),PrimitiveArt.Icon.Star,-2);
+            var shade=b.Switch(new Vector2(45.35f,4.8f),"DRAW THE SUN CURTAINS");
+            var shutters=new List<SunShutter>();for(int i=0;i<4;i++){
+                var g=Balcony(49+i*6,4.3f+i*.65f,5);g.name=(i%2==0?"West":"East")+" cast-shadow bridge";
+                var sh=g.AddComponent<SunShutter>();sh.phase=i%2;sh.occluder=shade;shutters.Add(sh);
+                PrimitiveArt.Line("Projected sunlight "+i,b.root,i%2==0?(Vector2)sunlight1.transform.position:(Vector2)sunlight2.transform.position,(Vector2)g.transform.position,.04f,new Color(.67f,.7f,.78f,.16f),-4);
+            }
+            Balcony(72,7,4);for(int i=0;i<4;i++)Balcony(76+i*5,8.2f+i*1.8f,4);Balcony(96,13.6f,10);a.Key(90.7f,14.6f);a.Nail(99,14.0f);
+            // On the Turn, one sun and its bridges vanish. A new mirrored return room
+            // preserves the second-body rule but supplies different physical furniture.
+            var back=Balcony(67,7.5f,42);back.name="Western sun return gallery";back.SetActive(false);
+            var twinLanding=Balcony(90,7.5f,6);twinLanding.SetActive(false);
+            var returnSource=a.Source(HostKind.Mirror,78,9);returnSource.explicitAxis=true;returnSource.mirrorAxis=79;returnSource.GetComponent<BoxCollider2D>().size=new Vector2(1.3f,4);returnSource.gameObject.SetActive(false);
+            var returnCabinet=b.Solid("Cabinet left behind by the extinguished sun",new Vector2(85,8.3f),new Vector2(.8f,1.6f));returnCabinet.SetActive(false);
+            var rw=b.Plate(new Vector2(68,7.64f));var re=b.Plate(new Vector2(90,7.64f));
+            var returnGate=b.Door(new Vector2(59,11),new Vector2(.7f,7),rw,re);returnGate.name="Return apartment interlock";returnGate.latched=true;returnGate.gameObject.SetActive(false);
+            var velvet=a.Cure(HostKind.Mirror,61.5f,8.4f);velvet.gameObject.SetActive(false);
+            b.session.Turned+=()=>{sunlight2.SetActive(false);foreach(var sh in shutters)sh.reverse=true;back.SetActive(true);twinLanding.SetActive(true);returnSource.gameObject.SetActive(true);returnCabinet.SetActive(true);returnGate.gameObject.SetActive(true);velvet.gameObject.SetActive(true);};
+            a.Health(56,1.2f);b.Enemy(new Vector2(97,1),true);
+            b.Tip(new Vector2(8,2),"Two bodies, one intention. Furniture interrupts each body separately; thin balcony rails admit jumps from below.");
+            b.Tip(new Vector2(75,9),"The eastern sun is gone. Jump the cabinet with your reflection, then bring both bodies to the new balcony scales.");
         }
         TopologyRegion PaintedPassage(AtlasBuilder a,Vector2 origin,bool secret=false)
         {

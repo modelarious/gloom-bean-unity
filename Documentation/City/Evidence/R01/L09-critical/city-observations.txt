@@ -1,0 +1,11 @@
+BEGIN GB-L09 Tenement of Two Suns
+PASS GB-L09 walk 7 | (6.80, 0.76) feet=0.01 hp=6
+PASS GB-L09 vanity nun creates independently colliding twin | (6.80, 0.76) feet=0.01 hp=6
+PASS GB-L09 jump 10.5 / 2 peak 2.37 | (10.28, 2.75) feet=2.00 hp=6
+PASS GB-L09 jump 13.5 / 2 peak 4.37 | (13.29, 2.75) feet=2.00 hp=6
+PHYSICAL shape=Center: (16.00, 0.76, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Mirror
+CONTACT Floor Center: (19.00, -0.50, 0.00), Extents: (24.00, 0.50, 0.00)
+FAIL GB-L09 jump 16 / 4 peak 2.20 | (16.00, 0.76) feet=0.01 hp=6
+FAIL GB-L09 roof key collected by contact | (16.00, 0.76) feet=0.01 hp=6
+FAIL GB-L09 one sun extinguishes at the Turn | (16.00, 0.76) feet=0.01 hp=6
+FAIL GB-L09 stage cleared by actual return or boss solution | (16.00, 0.76) feet=0.01 hp=6

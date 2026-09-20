@@ -55,6 +55,7 @@ namespace GloomBean.Campaign
         {
             Axis=host.Source&&host.Source.explicitAxis?host.Source.mirrorAxis:Actor.Body.position.x+5;
             Twin=host.Replica(new Vector2(2*Axis-Actor.Body.position.x,Actor.Body.position.y),new Color(.69f,.53f,.91f));
+            Twin.CopyLocomotionFrom(Actor);var v=Twin.Body.linearVelocity;v.x=-v.x;Twin.Body.linearVelocity=v;
             Twin.SetFacing(-Actor.Facing);Twin.Died+=()=>dead=true;
             if(Session&&Session.Camera)Session.Camera.secondary=Twin.transform;
         }
