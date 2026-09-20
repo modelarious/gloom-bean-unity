@@ -19,8 +19,11 @@ namespace GloomBean.Campaign
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
             // The atlas's fixed-altar launch is distinct from the reversing orbital field:
             // oppose this pole to settle, match it to exchange momentum with an anchored mass.
-            var launchAltar=a.Metal(new Vector2(29,3.05f),new Vector2(2.2f,.7f),20,true,1);launchAltar.name="Fixed north launch altar";launchAltar.strength=170;
-            b.Tip(new Vector2(28,5),"A fixed north altar beneath your feet: SOUTH holds you down; NORTH pushes you off. The hanging halos still follow their own beat.");
+            var launchAltar=a.Metal(new Vector2(29,3.05f),new Vector2(2.2f,.7f),20,true,1);launchAltar.name="Fixed north launch altar";launchAltar.strength=170;launchAltar.enabled=false;
+            var altarSwitch=b.Switch(new Vector2(29,4.9f),"ALTAR COIL");altarSwitch.name="Reversible altar coil switch";
+            altarSwitch.Changed+=powered=>{launchAltar.enabled=powered;launchAltar.GetComponent<SpriteRenderer>().color=powered?new Color(.86f,.46f,.48f):new Color(.35f,.32f,.34f);};
+            PrimitiveArt.Line("Altar copper circuit",b.root,new Vector2(29,3.4f),new Vector2(29,4.9f),.08f,new Color(.87f,.62f,.31f),2);
+            b.Tip(new Vector2(28,5),"E powers the fixed north altar. SOUTH holds you down; NORTH pushes you off. Switch the coil off to remove its force. The hanging halos still follow their own beat.");
             a.Ledge(16,2,5);a.Ledge(29,4,4);a.Ledge(46,6,4);a.Ledge(65,8,4);a.Ledge(83,10,4);a.Ledge(99,12,13);a.Key(96,13.3f);a.Nail(104,12.4f);
             a.Metal(new Vector2(38,5),new Vector2(3,.65f),3,false,-1);a.Metal(new Vector2(74,7),new Vector2(3,.65f),3,false,1);
             a.Ledge(60,18,6);a.Mercy(61,19.3f);var secret=a.Metal(new Vector2(57,17),Vector2.one*1.2f,4,true,-1);secret.strength=160;poles.Add(secret);choir.halos=poles.ToArray();

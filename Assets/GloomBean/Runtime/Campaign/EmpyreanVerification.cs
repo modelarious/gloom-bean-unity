@@ -54,7 +54,10 @@ namespace GloomBean.Campaign
         {
             yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));yield return Walk(17.8f);
             yield return MagnetTo(new Vector2(21,7),12,false);
-            yield return MagnetTo(new Vector2(29,4.75f),18,true,-1);yield return Pause(.25f);
+            yield return MagnetTo(new Vector2(29,4.75f));if(stopped)yield break;
+            if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
+            yield return Press(new InputFrame{interact=true});yield return Pause(.25f);
+            Check("actual switch energizes the physical altar",session.GetComponentsInChildren<MagneticBody>().Single(m=>m.name=="Fixed north launch altar").enabled);
             Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
             yield return MagnetTo(new Vector2(35,10),12,false,1);yield return MagnetTo(new Vector2(41,10),12,false);yield return MagnetTo(new Vector2(46,6.75f));
             yield return Walk(47.4f);yield return MagnetTo(new Vector2(53,12),12,false);yield return MagnetTo(new Vector2(60,12),12,false);yield return MagnetTo(new Vector2(65,8.75f));

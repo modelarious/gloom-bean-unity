@@ -1,0 +1,17 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  11,
+                        "case":  "L17-critical",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-R06-late-settle-polarity",
+    "started":  "2026-09-20T03:33:06.4987928-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T03:33:36.4902367-06:00"
+}
