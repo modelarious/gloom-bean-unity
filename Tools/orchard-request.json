@@ -1,12 +1,7 @@
 {
-  "id": "Empyrean-I13-causal-scripture-and-leading-cure",
+  "id": "Empyrean-I14-supported-word-rise-and-root-pocket",
   "build": true,
   "cases": [
-    {
-      "name": "L19-critical",
-      "suite": "Empyrean",
-      "route": "GB-L19"
-    },
     {
       "name": "L19-secret",
       "suite": "Empyrean",
@@ -14,14 +9,12 @@
       "secrets": true
     },
     {
-      "name": "No-Ink-control",
+      "name": "L19-secret-30fps",
       "suite": "Empyrean",
       "route": "GB-L19",
-      "noInkControl": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "secrets": true,
+      "renderFps": 30,
+      "startDelay": 0.47
     },
     {
       "name": "L20-root-probe",
