@@ -27,7 +27,7 @@ All twenty stages have an actual source-built outward route, a stage-specific Tu
 | 37 / L17 Iron Halos | Reciprocal magnetic launch/catch, moving metal and desynchronized choir | Empyrean / EmpyreanVerification |
 | 38 / L18 Noon | Cast-shadow graph manufactured by real metal screens and body position | Empyrean / EmpyreanVerification |
 | 39 / L19 Scripture | Real punctuation changes word layout; delayed self-authored Ink and Shadow dot | Empyrean / EmpyreanVerification.Scripture |
-| 40 / L20 White Gate | Five inverted sanctums, alternative solution families, remembered opening rhythm | Empyrean / EmpyreanVerification.White |
+| 40 / L20 White Gate | Five inverted sanctums, alternative solution families, remembered opening rhythm | Empyrean / EmpyreanVerification.WhiteGate / WhiteFinal |
 
 ## Bosses and endings
 

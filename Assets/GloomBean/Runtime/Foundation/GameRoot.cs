@@ -214,6 +214,10 @@ namespace GloomBean.Foundation
         void OnGUI()
         {
             Styles();GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));buttonIndex=0;
+            bool friendlyMenu=PresentationBackground!=null&&!IsCorrupted&&!Practice&&(screen==ScreenMode.Home||screen==ScreenMode.Worlds||screen==ScreenMode.Levels);
+            title.normal.textColor=friendlyMenu?new Color(.33f,.11f,.37f):new Color(1,.86f,.49f);
+            heading.normal.textColor=friendlyMenu?new Color(.24f,.10f,.30f):Color.white;
+            body.normal.textColor=small.normal.textColor=friendlyMenu?new Color(.25f,.17f,.29f):new Color(.88f,.87f,.92f);
             if(screen==ScreenMode.Play||screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
             {
                 Panel(new Rect(0,0,960,72),new Color(.03f,.025f,.06f,.92f));
@@ -290,6 +294,8 @@ namespace GloomBean.Foundation
             }
             if(controls)
             {
+                // Controls always use their own dark modal panel, including over a friendly title.
+                heading.normal.textColor=Color.white;body.normal.textColor=new Color(.88f,.87f,.92f);
                 Panel(new Rect(95,90,770,420),new Color(.02f,.015f,.04f,.98f));GUI.Label(new Rect(119,108,725,35),"CONTROLS / MOVEMENT VOCABULARY",heading);
                 GUI.Label(new Rect(119,153,715,332),"Move: WASD / arrows / left stick\nJump: Space / Z / gamepad A (release early for a shorter jump)\nRun: Shift / LB. Tackle: J / X / gamepad X\nGround pound: L or Down + tackle while airborne\nCrouch / crawl: Down. Start a roll by crouching on a slope\nCarry / throw: K / C / gamepad Y (stun first; aim up/down)\nSwim dash: tackle while swimming. Surface jump: A / Space\nInteract / pull Nail: E / gamepad B\nPossession action: U / RB. Secondary / swap: I / Back\nPause: Esc / Start. Close this card: F1. Sound on/off: F4. Music: F5\n\nPossessions are acquired from entities in the level, never from a menu.\nTheir on-screen short rules appear only after contact.",body);
             }

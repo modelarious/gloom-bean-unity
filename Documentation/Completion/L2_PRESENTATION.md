@@ -1,0 +1,5 @@
+# Final visual contract repair
+
+The external keyboard/UI review of the L1 clean build successfully reached title, controls, world/level selection, live movement, pause, practice and final boss. No earned progress was written. Actual images exposed an art-direction mismatch: the opening menus were almost black despite their cute names and normal Bean. The atlas explicitly asks for an honestly pleasant opening.
+
+L2 changes only presentation: uncorrupted non-practice menus draw the original pale village at normal brightness with cream wash and dark plum type. Corrupted/practice menus retain the dark treatment. F1 uses white text on its own dark panel in either theme. No source, input, physics, save, timers, layout or puzzle predicate changes. The independent base lacks the campaign presentation callback and retains its prior palette. Both original and fixed images are retained. The final common-source acceptance is rerun, not inferred from the earlier binary.
