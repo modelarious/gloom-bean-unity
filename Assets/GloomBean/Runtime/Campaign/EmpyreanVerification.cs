@@ -118,7 +118,7 @@ namespace GloomBean.Campaign
             Check("collect Mercy inside the actual orbiting rim",session.Mercies.Count==1);Snapshot("orbiting-mercy");if(stopped)yield break;
             end=Time.time+10;input.rule=()=>{float x=actor.Body.position.y>14?ring.GetComponent<Rigidbody2D>().position.x:44.5f;return new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.8f,-1,1),0)};};
             while(Live&&Time.time<end&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f))yield return Tick();input.rule=null;input.frame=default;
-            Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);yield return Press(new InputFrame{interact=true});yield return Walk(49);
+            Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);yield return Press(new InputFrame{interact=true});if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Walk(49);
         }
         IEnumerator Halos(bool secret)
         {
@@ -166,7 +166,10 @@ namespace GloomBean.Campaign
         IEnumerator OwnBodyMercy()
         {
             if(stopped||!Live)yield break;yield return Jump(74.8f,6.5f);yield return Walk(72);yield return Focus(HostKind.Lodestone);var magnet=host.Form<LodestoneForm>();
-            if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});yield return Press(new InputFrame{interact=true});yield return Press(new InputFrame{jump=true,jumpHeld=true});
+            if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});yield return Press(new InputFrame{jump=true,jumpHeld=true});
+            float apex=Time.time+2;input.rule=()=>new InputFrame{jumpHeld=true,move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1),0)};
+            while(Live&&Time.time<apex&&(actor.Body.linearVelocity.y>1||actor.Body.position.y<9))yield return Tick();input.rule=null;input.frame=default;
+            yield return Press(new InputFrame{interact=true});Check("energize suspension near the real jump apex",session.GetComponentsInChildren<MagneticBody>(true).Where(m=>m.name.StartsWith("Suspension screen")).All(m=>m.enabled)&&actor.Body.position.y>9);
             float deadline=Time.time+10,suspensionTrace=0;input.rule=()=>new InputFrame{move=new Vector2(Mathf.Clamp((72-actor.Body.position.x)*5-actor.Body.linearVelocity.x*1.2f,-1,1),0)};
             while(Live&&Time.time<deadline&&!(actor.Body.position.y>9&&actor.Body.position.y<11.5f&&Mathf.Abs(actor.Body.linearVelocity.y)<1.3f)){
                 yield return Tick();if(Time.time>suspensionTrace){suspensionTrace=Time.time+.3f;Vector2 sum=Vector2.zero;foreach(var m in MagneticBody.All)if(m)sum+=m.ForceOn(actor.Body.position,magnet.Polarity,magnet.range);Note("SUSPENSION pos="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" force="+sum+" active="+string.Join(",",session.GetComponentsInChildren<MagneticBody>(true).Where(m=>m.name.StartsWith("Suspension screen")).Select(m=>m.name+":"+m.enabled)));}}

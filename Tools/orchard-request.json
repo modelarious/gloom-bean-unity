@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H14-real-secret-stance-diagnostics",
+  "id": "Empyrean-H15-magnetic-apex-and-secret-exit",
   "build": true,
   "cases": [
     {
@@ -15,10 +15,8 @@
       "secrets": true
     },
     {
-      "name": "L17-critical",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "renderFps": 30
+      "name": "Mechanics",
+      "suite": "Mechanics"
     }
   ]
 }

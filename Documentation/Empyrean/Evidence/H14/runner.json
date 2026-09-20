@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  15,
+                        "case":  "L17-secret",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L18-secret",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-critical",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "id":  "Empyrean-H14-real-secret-stance-diagnostics",
+    "started":  "2026-09-20T05:14:23.4651244-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:15:17.1853934-06:00"
+}
