@@ -1,0 +1,13 @@
+BEGIN GB-L12 The Hotel That Is Its Own Courtyard
+EVENT t=1.60 depth 1
+PASS GB-L12 walk 9 | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 perspective fly acquired in hotel lobby | (8.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 walk 10 | (9.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L12 jump 12 / 2 peak 2.37 | (11.79, 2.75) feet=2.00 hp=6 twin=none
+PHYSICAL shape=Center: (17.00, 0.75, 0.00), Extents: (0.44, 0.75, 0.00) axis=Vertical forms=Parallax
+CONTACT Floor Center: (9.50, -0.50, 0.00), Extents: (14.50, 0.50, 0.00)
+FAIL GB-L12 jump 17 / 4 peak 4.37 | (17.00, 0.75) feet=0.00 hp=6 twin=none
+FAIL GB-L12 vanity reflection composes with perspective | (17.00, 0.75) feet=0.00 hp=6 twin=none
+FAIL GB-L12 formerly exterior wall becomes inside-out corridor | (17.00, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L12 depth transfer remains available past wall | (17.00, 0.75) feet=0.00 hp=6 twin=none
+FAIL GB-L12 stage cleared by actual return or boss solution | (17.00, 0.75) feet=0.00 hp=6 twin=none
