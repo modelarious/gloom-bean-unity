@@ -22,7 +22,7 @@ namespace GloomBean.Campaign
             Vector2 next=center+new Vector2(Mathf.Cos(phase)*radius.x,Mathf.Sin(phase)*radius.y);Vector2 delta=next-body.position;
             var moved=new HashSet<Rigidbody2D>();
             foreach(var c in Physics2D.OverlapBoxAll(body.position+Vector2.up*2,roomSize,0,(1<<Layers.Prop)|(1<<Layers.Enemy))){var rb=c.attachedRigidbody;
-                if(rb&&rb.bodyType==RigidbodyType2D.Dynamic&&!rb.transform.IsChildOf(transform)&&moved.Add(rb))rb.position+=delta;}
+                if(delta.sqrMagnitude>0.0000001f&&rb&&rb.bodyType==RigidbodyType2D.Dynamic&&!rb.transform.IsChildOf(transform)&&moved.Add(rb))rb.position+=delta;}
             body.MovePosition(next);
         }
     }
