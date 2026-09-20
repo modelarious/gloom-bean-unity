@@ -1,0 +1,91 @@
+{
+    "foundation_commit":  "cfd65bff6cf5024459cb300beb02863c6fd24c59",
+    "phase":  "finished",
+    "started":  "2026-09-19T17:17:42.5851117-06:00",
+    "atlas_commit":  "b47386ce1adf46fab87b65a44cca49c83e2db02f",
+    "status":  "FAIL",
+    "finished":  "2026-09-19T17:27:20.5588932-06:00",
+    "cases":  [
+                  {
+                      "name":  "Foundation",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  61,
+                      "exceptions":  0,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "Mechanics",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  198,
+                      "exceptions":  0,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "W1-critical",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  138,
+                      "exceptions":  null,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "W1-secrets",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  173,
+                      "exceptions":  null,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "W2-critical",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  313,
+                      "exceptions":  null,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "W2-secrets",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  369,
+                      "exceptions":  null,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "Judge",
+                      "expected_denial":  false,
+                      "failed":  0,
+                      "assertions":  29,
+                      "exceptions":  null,
+                      "exit":  0,
+                      "status":  "PASS"
+                  },
+                  {
+                      "name":  "Practice-isolation",
+                      "expected_denial":  false,
+                      "failed":  2,
+                      "assertions":  28,
+                      "exceptions":  null,
+                      "exit":  1,
+                      "status":  "FAIL"
+                  },
+                  {
+                      "name":  "Unearned-world-denied",
+                      "expected_denial":  true,
+                      "failed":  1,
+                      "assertions":  0,
+                      "exceptions":  null,
+                      "exit":  1,
+                      "status":  "PASS"
+                  }
+              ]
+}

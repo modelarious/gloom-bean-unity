@@ -1,0 +1,6 @@
+{
+    "parent":  "W1-critical",
+    "sha256":  "b029901029876591b1c9bc633da192a99149d87aa622d0bedcde6e404dadb5d1",
+    "policy":  "Unmodified output of real input-only previous-world completion",
+    "source":  "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\Clean-v04\\W1-critical\\test-save.json"
+}

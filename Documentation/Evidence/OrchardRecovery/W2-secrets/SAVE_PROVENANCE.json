@@ -1,0 +1,6 @@
+{
+    "parent":  "W1-secrets",
+    "sha256":  "324a8b91868f5fe89b913ac4e981c6dd1985cd52eb0889289e26b88e558aad64",
+    "policy":  "Unmodified output of real input-only previous-world completion",
+    "source":  "C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Orchard-v04\\Clean-v04\\W1-secrets\\test-save.json"
+}

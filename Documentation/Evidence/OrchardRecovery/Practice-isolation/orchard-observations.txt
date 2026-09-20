@@ -1,0 +1,35 @@
+BEGIN GB-L05 Pear Tree Gallows
+PASS GB-L05 walk 8 | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 Wax source acquired | (7.81, 0.76) feet=0.01 hp=6
+PASS GB-L05 melt through changed body footprint | (7.86, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 19 | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L05 walk 23.35 | (23.17, -1.84) feet=-2.00 hp=6
+PASS GB-L05 conserved plug seals actual drain | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 flow costs body volume | (23.28, -1.84) feet=-2.00 hp=6
+PASS GB-L05 walk 26 | (25.78, 4.19) feet=4.03 hp=6
+PASS GB-L05 diverted wax physically rises | (25.78, 4.19) feet=4.03 hp=6
+PASS GB-L05 walk 30 | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 Wax source acquired | (29.78, 3.46) feet=3.30 hp=6
+PASS GB-L05 reform with conserved volume | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 land in pear cage | (29.78, 3.97) feet=3.30 hp=6
+PASS GB-L05 walk 46.5 | (46.32, 3.70) feet=3.04 hp=6
+PASS GB-L05 jump onto dynamic support 53 | (52.76, 4.05) feet=3.39 hp=6
+PASS GB-L05 walk 63 | (62.79, 3.71) feet=3.05 hp=6
+PASS GB-L05 jump onto dynamic support 70 | (69.75, 4.05) feet=3.39 hp=6
+PASS GB-L05 walk 80 | (79.80, 3.71) feet=3.05 hp=6
+PASS GB-L05 jump onto dynamic support 87 | (86.76, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 93 | (92.80, 3.87) feet=3.21 hp=6
+PASS GB-L05 physical pear key | (92.80, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 96.6 | (96.40, 3.87) feet=3.21 hp=6
+PASS GB-L05 ripening Turn | (96.41, 3.87) feet=3.21 hp=6
+PASS GB-L05 walk 66 | (66.18, 2.15) feet=1.48 hp=6
+PASS GB-L05 drop between boughs to the maintenance return | (66.01, 0.67) feet=0.00 hp=6
+EVENT t=31.25 fruit-burst Ripening pear counterweight
+EVENT t=35.98 fruit-burst Ripening pear counterweight
+EVENT t=35.98 fruit-burst Ripening pear counterweight
+PHYSICAL shape=Center: (48.22, 0.67, 0.00), Extents: (0.39, 0.66, 0.00) axis=Vertical forms=Wax
+CONTACT Foldable cloth-stone Center: (40.94, 2.20, 0.00), Extents: (6.97, 1.12, 0.00)
+CONTACT Collapsed orchard maintenance path Center: (53.00, -0.50, 0.00), Extents: (35.00, 0.50, 0.00)
+FAIL GB-L05 run and jump through actual fallen debris | (48.22, 0.67) feet=0.00 hp=6
+PASS GB-L05 Wax source acquired | (48.22, 0.67) feet=0.00 hp=6
+FAIL GB-L05 complete actual stage | (48.22, 0.67) feet=0.00 hp=6
