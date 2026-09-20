@@ -106,9 +106,9 @@ namespace GloomBean.Campaign
             var corrector=b.root.gameObject.AddComponent<ScriptureCorrector>();
             a.Ledge(40,7.2f,5).name="Last permanent margin before the semicolon";a.Source(HostKind.Shadow,40,8.2f,true);
             // The upper dot is a collectible in shadow space, beyond the tether from the safe margin.
-            var sun=Sun(a,new Vector2(50,25),24);sun.directional=true;sun.direction=new Vector2(-.65f,-1);sun.renderFilled=true;
+            var sun=Sun(a,new Vector2(50,25),24);sun.directional=true;sun.direction=new Vector2(-1,-.8f);sun.renderFilled=true;
             var stroke=b.Solid("Giant semicolon curved stem",new Vector2(58,15),new Vector2(3,7),new Color(.28f,.19f,.39f));stroke.AddComponent<ShadowCaster>();
-            var dot=b.Collect(PickupKind.Mercy,new Vector2(56.5f,14.1f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
+            var dot=b.Collect(PickupKind.Mercy,new Vector2(57.5f,14.5f),"GB-L19-MERCY");dot.gameObject.AddComponent<ShadowMercy>();dot.name="The semicolon dot";
             a.Ledge(50,1,4).name="Lower line-break refuge";
             var lowerWords=new List<GameObject>();for(int k=0;k<9;k++){
                 var word=a.Ledge(55+k*5,2+k*.7f,3.5f);word.name="Imperative word "+k;word.AddComponent<OneWaySurface>();lowerWords.Add(word);

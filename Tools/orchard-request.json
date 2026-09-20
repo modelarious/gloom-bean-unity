@@ -1,11 +1,17 @@
 {
-  "id": "Empyrean-I02-comma-track-clearance",
+  "id": "Empyrean-I03-word-rows-and-shadow-dot",
   "build": true,
   "cases": [
     {
       "name": "L19-critical",
       "suite": "Empyrean",
       "route": "GB-L19"
+    },
+    {
+      "name": "L19-secret",
+      "suite": "Empyrean",
+      "route": "GB-L19",
+      "secrets": true
     }
   ]
 }
