@@ -16,7 +16,7 @@ namespace GloomBean.Foundation
         {
             var box=GetComponent<BoxCollider2D>();int n=Physics2D.OverlapBoxNonAlloc(box.bounds.center,box.bounds.size,0,results);
             bodies.Clear();Mass=0;
-            for(int i=0;i<n;i++){var c=results[i];if(!c||c.isTrigger)continue;var rb=c.attachedRigidbody;if(rb&&rb.bodyType!=RigidbodyType2D.Static&&bodies.Add(rb))Mass+=rb.mass;}
+            for(int i=0;i<n;i++){var c=results[i];if(!c||c.isTrigger)continue;var rb=c.attachedRigidbody;if(rb&&rb!=box.attachedRigidbody&&(rb.bodyType==RigidbodyType2D.Dynamic||rb.GetComponent<ActorMotor>())&&bodies.Add(rb))Mass+=rb.mass;}
             bool value=Mass>=requiredMass;
             if(value!=Pressed){Pressed=value;Changed?.Invoke(value);RuntimeEvents.Emit("plate",name+":"+value);}
             var sprite=GetComponent<SpriteRenderer>();if(sprite)sprite.color=Pressed?new Color(.4f,.92f,.6f):new Color(.93f,.67f,.24f);

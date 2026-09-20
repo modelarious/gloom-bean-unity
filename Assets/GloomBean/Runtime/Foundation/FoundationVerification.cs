@@ -117,7 +117,11 @@ namespace GloomBean.Foundation
 
             input.frame=default;var slider=b.Slider(new Vector2(610,2),new Vector2(620,2),new Vector2(4,.4f),2);
             yield return Place(new Vector2(610,3.1f));yield return Steps(15);float relative=actor.Body.position.x-slider.transform.position.x;yield return Steps(50);
-            Check("platform.carries-standing-actor",Mathf.Abs(actor.Body.position.x-slider.transform.position.x-relative)<.6f,"relative delta="+(actor.Body.position.x-slider.transform.position.x-relative));Destroy(slider.gameObject);
+            Check("platform.carries-standing-actor",Mathf.Abs(actor.Body.position.x-slider.transform.position.x-relative)<.6f,"relative delta="+(actor.Body.position.x-slider.transform.position.x-relative));
+            slider.gameObject.layer=Layers.Interior;actor.Shape.includeLayers=1<<Layers.Interior;actor.Shape.layerOverridePriority=20;actor.collisionMask=Layers.Solids|(1<<Layers.Interior);
+            yield return Steps(10);relative=actor.Body.position.x-slider.transform.position.x;yield return Steps(45);
+            Check("platform.carries-kinematic-support-in-another-domain",Mathf.Abs(actor.Body.position.x-slider.transform.position.x-relative)<.6f&&actor.Grounded);
+            actor.Shape.includeLayers=0;actor.Shape.layerOverridePriority=0;actor.collisionMask=Layers.Solids;Destroy(slider.gameObject);
             var carousel=b.Wheel(new Vector2(600,10),3,.6f);yield return Steps(20);bool four=carousel.arms.Length==4;
             foreach(var arm in carousel.arms)four&=arm&&Mathf.Abs(Vector2.Distance(arm.transform.position,carousel.transform.position)-3)<.1f&&Mathf.Abs(arm.transform.eulerAngles.z)<.1f;
             Check("carousel.four-upright-arms",four);
@@ -131,6 +135,11 @@ namespace GloomBean.Foundation
             var plate=b.Plate(new Vector2(630,.14f));var gate=b.Door(new Vector2(632,1),new Vector2(1,2),plate);
             yield return Place(new Vector2(630,.8f));yield return Steps(10);Check("plate.actor-mass-opens-gate",plate.Pressed&&gate.opened);
             yield return Place(new Vector2(626,.8f));yield return Steps(10);Check("plate.release-closes-gate",!plate.Pressed&&!gate.opened);
+            var structural=b.Solid("Structural shutter must not pretend to be a body",new Vector2(630,.2f),new Vector2(1,.4f),Color.gray,Layers.Moving);var structuralBody=structural.AddComponent<Rigidbody2D>();structuralBody.bodyType=RigidbodyType2D.Kinematic;structuralBody.mass=10;
+            yield return Steps(5);Check("plate.rejects-self-propelled-structural-shutter",!plate.Pressed&&!gate.opened);
+            structuralBody.bodyType=RigidbodyType2D.Dynamic;structuralBody.gravityScale=2;yield return Steps(10);Check("plate.accepts-released-physical-counterweight",plate.Pressed&&gate.opened);Destroy(structural);
+            yield return Steps(70);actor.Hit(new HitInfo(null,Vector2.up,99));Check("damage.lethal-hit-clamps-health-to-zero",actor.Health==0&&actor.State==MotionState.Dead);yield return Place(new Vector2(626,.8f));
+
 
             var session=game.Session;float remaining=session.Remaining;session.TickClock(20);Check("escape.no-clock-before-turn",Mathf.Abs(remaining-session.Remaining)<.01f);
             Check("escape.cannot-clear-before-switch",!session.TryClear());int turns=0;session.Turned+=()=>turns++;session.Turn();session.Turn();Check("escape.switch-one-shot",turns==1);
