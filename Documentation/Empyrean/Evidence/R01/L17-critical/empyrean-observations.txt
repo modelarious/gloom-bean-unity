@@ -1,0 +1,5 @@
+BEGIN GB-L17 Choir of Iron Halos
+PASS GB-L17 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 iron halo source body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L17 walk 15.5 body=(15.29, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+FAIL GB-L17 jump to 16 / 2 body=(15.25, 0.75) velocity=(-0.31, 0.00) feet=0.004999876 hp=6

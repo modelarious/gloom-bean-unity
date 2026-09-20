@@ -52,7 +52,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator Halos(bool secret)
         {
-            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(15.5f);yield return Jump(16,2);
+            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));
             foreach(var point in new[]{new Vector2(29,4.75f),new Vector2(46,6.75f),new Vector2(65,8.75f),new Vector2(83,10.75f),new Vector2(99,12.75f)}){yield return MagnetTo(point);if(stopped)yield break;}
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret){yield return MagnetTo(new Vector2(61,18.75f));Check("orbiting loft Mercy",session.Mercies.Count==1);yield return MagnetTo(new Vector2(99,12.75f));}
