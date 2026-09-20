@@ -9,6 +9,7 @@ namespace GloomBean.Campaign
         public Rigidbody2D deck,bell;public Vector2 deckPulley,bellPulley;
         public float length;public float Tension {get;private set;}public float Extension=>CurrentLength-length;
         public float CurrentLength=>deck&&bell?Vector2.Distance(deck.position,deckPulley)+Vector2.Distance(bell.position,bellPulley):0;
+        public float MaximumExtension {get;private set;}public float PeakTension {get;private set;}
         public float InitialDeckHeight {get;private set;}public float LowestBell {get;private set;}public float HighestDeck {get;private set;}
         bool ready;LineRenderer rope;
         public void Configure(Rigidbody2D a,Rigidbody2D b,Vector2 pa,Vector2 pb)
@@ -26,7 +27,7 @@ namespace GloomBean.Campaign
             if(al<.05f||bl<.05f)return;a/=al;b/=bl;float inv=EffectiveInverseMass(deck,a)+EffectiveInverseMass(bell,b);
             float error=al+bl-length,rate=Vector2.Dot(deck.linearVelocity,a)+Vector2.Dot(bell.linearVelocity,b);
             float impulse=inv>.0001f?Mathf.Clamp((rate+error*(error>0?.2f:1)/dt)/inv,0,100):0;
-            Tension=impulse/dt;if(impulse>0){deck.AddForce(-a*impulse,ForceMode2D.Impulse);bell.AddForce(-b*impulse,ForceMode2D.Impulse);}
+            Tension=impulse/dt;MaximumExtension=Mathf.Max(MaximumExtension,error);PeakTension=Mathf.Max(PeakTension,Tension);if(impulse>0){deck.AddForce(-a*impulse,ForceMode2D.Impulse);bell.AddForce(-b*impulse,ForceMode2D.Impulse);}
             LowestBell=Mathf.Min(LowestBell,bell.position.y);HighestDeck=Mathf.Max(HighestDeck,deck.position.y);
         }
         void LateUpdate()
