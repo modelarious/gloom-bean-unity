@@ -145,10 +145,21 @@ namespace GloomBean.Campaign
             Vector2 kneelingPosition=kneeler.body.position;yield return Steps(100);
             C("penitent.stationary-kneel-does-not-retain-fall-velocity",kneeler.pose==KneelingFigure.Pose.Kneeling&&Vector2.Distance(kneeler.body.position,kneelingPosition)<.02f&&kneeler.body.linearVelocity.sqrMagnitude<.0001f,kneeler.body.position.ToString());
 
-            yield return Arena();var sleepingMover=b.Slider(new Vector2(604,3),new Vector2(616,3),new Vector2(3,.4f),2);sleepingMover.gameObject.SetActive(false);a.Finish();
-            C("censer.return-only-mover-receives-clock",sleepingMover.GetComponent<TemporalBody>());
-            sleepingMover.paused=true;sleepingMover.gameObject.SetActive(true);host.Acquire(HostKind.Censer);yield return Steps(200);sleepingMover.paused=false;yield return Steps(3);
-            C("censer.activated-return-mover-really-slows",sleepingMover.timeScale<.8f,sleepingMover.timeScale.ToString());
+            yield return Arena();
+            // This fixture tests deferred activation, not an arbitrary cutoff at the field's rim.
+            var sleepingMover=b.Slider(new Vector2(601.5f,2),new Vector2(617.5f,2),new Vector2(2,.4f),2);
+            var controlMover=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);
+            sleepingMover.gameObject.SetActive(false);controlMover.gameObject.SetActive(false);a.Finish();
+            C("censer.return-only-mover-receives-clock",sleepingMover.GetComponent<TemporalBody>()&&controlMover.GetComponent<TemporalBody>());
+            sleepingMover.paused=controlMover.paused=true;sleepingMover.gameObject.SetActive(true);controlMover.gameObject.SetActive(true);
+            host.Acquire(HostKind.Censer);yield return Steps(200);
+            float dormantStart=sleepingMover.transform.position.x,controlStart=controlMover.transform.position.x;
+            sleepingMover.paused=controlMover.paused=false;yield return Steps(60);
+            float slowedDistance=sleepingMover.transform.position.x-dormantStart,controlDistance=controlMover.transform.position.x-controlStart;
+            C("censer.activated-return-mover-really-slows",slowedDistance>.05f&&slowedDistance<.9f&&controlDistance>1.8f,
+                "local displacement="+slowedDistance+" outside displacement="+controlDistance);
+            host.Cure(HostKind.Censer,true);dormantStart=sleepingMover.transform.position.x;yield return Steps(60);
+            C("censer.cured-return-mover-restores-speed",sleepingMover.transform.position.x-dormantStart>1.8f&&sleepingMover.timeScale>.99f);
 
             yield return Arena();var inspectionPlatform=b.Platform(new Vector2(600,6),new Vector2(5,.4f));var inspectionBody=inspectionPlatform.AddComponent<Rigidbody2D>();inspectionBody.bodyType=RigidbodyType2D.Kinematic;inspectionPlatform.layer=Layers.Moving;
             var inspectionBell=a.Receiver(new Vector2(596,7));var inspection=inspectionPlatform.AddComponent<InspectionLift>();inspection.bell=inspectionBell;inspection.speed=3;

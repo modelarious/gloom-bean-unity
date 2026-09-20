@@ -1,13 +1,7 @@
 {
-  "id": "Fall-R16-chapel-and-bearing-approach",
+  "id": "Fall-R17-seam-selection-and-clock-control",
   "build": true,
   "cases": [
-    {
-      "name": "L16-secrets",
-      "suite": "Fall",
-      "route": "GB-L16",
-      "secrets": true
-    },
     {
       "name": "B4",
       "suite": "Fall",

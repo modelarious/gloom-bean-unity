@@ -115,6 +115,8 @@ namespace GloomBean.Campaign
         {
             if(stopped||!Live)yield break;yield return Focus(HostKind.Stitch);yield return Press(new InputFrame{alternate=true});
             yield return Press(new InputFrame{action=true,move=aim});var stitch=host.Form<StitchForm>();
+            Note("SEAM picked="+(stitch.First?stitch.First.group+"@"+stitch.First.transform.position:"none")+" focus="+host.Primary+" aim="+aim);
+            if(session.definition.boss)foreach(var n in session.GetComponentsInChildren<SeamNode>())Note("SEAM option="+n.group+"@"+n.transform.position+" distance="+Vector2.Distance(n.transform.position,actor.Body.position));
             Check("catch visible "+group+" seam",stitch.First&&stitch.First.group==group);if(stopped)yield break;
             yield return Press(new InputFrame{action=true});Check("thread connects two real edges",stitch.Active&&stitch.Second);if(stopped)yield break;
             yield return Press(new InputFrame{action=true});yield return Await("physical fold reaches "+angle,()=>Mathf.Abs(Mathf.DeltaAngle(stitch.Active.angle,angle))<2,12);

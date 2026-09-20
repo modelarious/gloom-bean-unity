@@ -1,0 +1,47 @@
+BEGIN GB-L16 The Cathedral in Freefall
+PASS GB-L16 walk 10 | (9.78, 20.76) feet=20.01 hp=6 twin=none
+PASS GB-L16 opening incense tenant | (9.78, 20.76) feet=20.01 hp=6 twin=none
+PASS GB-L16 walk 28 | (27.80, 14.75) feet=14.00 hp=6 twin=none
+PASS GB-L16 transept stitch source | (27.80, 14.75) feet=14.00 hp=6 twin=none
+PASS GB-L16 walk 80.5 | (80.28, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L16 cathedral Keyling | (80.28, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L16 Nail releases actual cathedral | (80.30, 0.73) feet=-0.02 hp=6 twin=none
+PASS GB-L16 walk 74.5 | (74.72, -1.06) feet=-1.81 hp=6 twin=none
+PASS GB-L16 transept aligns with its lower dock | (74.70, -12.68) feet=-13.43 hp=6 twin=none
+PASS GB-L16 board real Collapsing transept | (73.19, -11.52) feet=-12.27 hp=6 twin=none
+PASS GB-L16 censer acquired from swinging incense | (73.19, -11.52) feet=-12.27 hp=6 twin=none
+PASS GB-L16 stillness expands the local time field | (73.22, -13.30) feet=-14.05 hp=6 twin=none
+PASS GB-L16 Censer slows physical transept | (73.22, -13.30) feet=-14.05 hp=6 twin=none
+PASS GB-L16 ride transept toward attached tower | (65.44, -35.32) feet=-36.07 hp=6 twin=none
+PASS GB-L16 landing within falling frame 61 / 6 | (61.24, -36.54) feet=-37.29 hp=6 twin=none
+PASS GB-L16 walk 60 | (60.20, -37.00) feet=-37.75 hp=6 twin=none
+PASS GB-L16 required tenant present: Stitch | (60.20, -37.00) feet=-37.75 hp=6 twin=none
+PASS GB-L16 focus Stitch | (60.20, -37.00) feet=-37.75 hp=6 twin=none
+PASS GB-L16 catch visible transept seam | (60.17, -37.13) feet=-37.88 hp=6 twin=none
+PASS GB-L16 thread connects two real edges | (60.17, -37.18) feet=-37.93 hp=6 twin=none
+EVENT t=42.43 stitch-tug Transept structural joint
+PASS GB-L16 physical fold reaches 150 | (60.17, -38.01) feet=-38.76 hp=6 twin=none
+PASS GB-L16 walk 47.2 | (47.39, -37.08) feet=-37.83 hp=6 twin=none
+PASS GB-L16 coffin can bear the new joint | (46.97, -36.94) feet=-37.94 hp=6 twin=none
+PASS GB-L16 coffin crosses real ground to 43 | (42.47, -39.77) feet=-40.27 hp=6 twin=none
+EVENT t=47.23 nave-released Detached falling nave
+EVENT t=49.15 nave-bearing-impact 65.73
+PASS GB-L16 falling nave strikes actual braced body | (42.47, -43.10) feet=-43.60 hp=6 twin=none
+PASS GB-L16 nave collision has real impact speed | (42.47, -43.10) feet=-43.60 hp=6 twin=none
+PASS GB-L16 bearing collision raises the return hoist | (42.47, -32.93) feet=-33.43 hp=6 twin=none
+PASS GB-L16 coffin crosses real ground to 45.5 | (45.31, -34.63) feet=-35.38 hp=6 twin=none
+PASS GB-L16 open the lid at the lifted grave mouth | (45.31, -34.63) feet=-35.38 hp=6 twin=none
+PASS GB-L16 chapel aligns for the limited detour | (45.31, -41.75) feet=-42.50 hp=6 twin=none
+PASS GB-L16 board real Passing Mercy chapel | (48.33, -40.88) feet=-41.63 hp=6 twin=none
+PASS GB-L16 passing chapel Mercy | (48.44, -40.93) feet=-41.68 hp=6 twin=none
+PASS GB-L16 chapel returns within jumping distance | (48.44, -40.93) feet=-41.68 hp=6 twin=none
+PASS GB-L16 landing within falling frame 43.5 / 25 | (43.45, -44.61) feet=-45.36 hp=6 twin=none
+PASS GB-L16 walk 38.8 | (39.01, -46.02) feet=-46.77 hp=6 twin=none
+PASS GB-L16 landing within falling frame 35 / 26.6 | (35.24, -45.95) feet=-46.70 hp=6 twin=none
+PASS GB-L16 walk 33 | (33.18, -46.73) feet=-47.48 hp=6 twin=none
+PASS GB-L16 landing within falling frame 29 / 28.2 | (29.24, -46.90) feet=-47.65 hp=6 twin=none
+PASS GB-L16 walk 2 | (3.13, -54.56) feet=-55.31 hp=6 twin=none
+PASS GB-L16 escape precedes altitude exhaustion | (3.13, -54.56) feet=-55.31 hp=6 twin=none
+PASS GB-L16 stage completes through physical exit or boss solution | (3.13, -54.56) feet=-55.31 hp=6 twin=none
+PASS GB-L16 completion survives save | (3.13, -54.56) feet=-55.31 hp=6 twin=none
+PASS GB-L16 Mercy persists after real return | (3.13, -54.56) feet=-55.31 hp=6 twin=none

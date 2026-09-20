@@ -2,10 +2,10 @@
   "schema_version": 1,
   "tested_commit": "aaaaa0f11fb8804b3cfec427beeb3bea7ddaf648",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "R12: finish island secret actual run-up, test buffered Coffin parity and nonblocking Nail, execute new Cathedral impact-hoist routes. Then B4 and earned W4 regression. Do not repeat Rain/City setup.",
+  "next_gate": "Fall boss upper seam selection at x43; diagnostic R17 plus matched near/far Censer deferred-activation test. City and L13-L16 routes already exist. W4 earned-chain acceptance remains pending.",
   "active_job": {
     "task": "GloomBean-Orchard-v04",
-    "receipt": "Reports/Orchard-v04/Fall-R12-buffered-parity-and-nave/runner.json",
+    "receipt": "Reports/Orchard-v04/Fall-R17-seam-selection-and-clock-control/runner.json",
     "status": "READY_NOT_STARTED"
   },
   "publication": {
