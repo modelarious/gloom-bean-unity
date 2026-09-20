@@ -212,7 +212,9 @@ namespace GloomBean.Campaign
             yield return Jump(39,13.2f);yield return Walk(40);yield return Jump(43,15);
             var boss=session.GetComponentInChildren<AtlasBoss>();var mass=session.GetComponentInChildren<ColossusMass>();var lower=session.GetComponentsInChildren<FoldPanel>().First(x=>x.name=="Lower load-bearing slab");
             yield return Await("congregation reaches its structural second act",()=>boss.phase==1,3);Check("seamstress joins the incense",host.Has(HostKind.Stitch));
-            yield return Fold("avalanche",new Vector2(1,.7f),24.79f);yield return Await("real mass falls into lower catch",()=>boss.phase==2,15);Snapshot("mass-upper-catch");
+            // The lower catch is still folding through the old aiming cone. Walk to the
+            // right side of the work ledge and aim at the upper slab, not that nearer edge.
+            yield return Walk(44.8f);yield return Fold("avalanche",new Vector2(1,.3f),24.79f);yield return Await("real mass falls into lower catch",()=>boss.phase==2,15);Snapshot("mass-upper-catch");
             yield return Walk(48);yield return Await("descend to lower work platform",()=>actor.Grounded&&actor.Feet.y<8.3f,7);yield return Walk(41.8f);yield return Jump(38,10);
             yield return Walk(33.2f);yield return Await("undertaker closes the structural brace",()=>host.Has(HostKind.Coffin),3,()=>new InputFrame{move=Vector2.left});if(stopped)yield break;
             yield return Press(new InputFrame{interact=true});yield return CoffinTo(36);var coffin=host.Form<CoffinForm>();if(!coffin.Horizontal)yield return Flip(1);
