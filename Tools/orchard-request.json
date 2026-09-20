@@ -1,15 +1,24 @@
 {
-  "id": "Empyrean-H01-fixed-pose-clock",
+  "id": "Empyrean-H02-authored-coil-launches",
   "build": true,
   "cases": [
     {
-      "name": "L17-critical",
+      "name": "L17-120fps",
       "suite": "Empyrean",
-      "route": "GB-L17"
+      "route": "GB-L17",
+      "renderFps": 120
     },
     {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "name": "L17-30fps",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "renderFps": 30
+    },
+    {
+      "name": "L17-delayed",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "startDelay": 2.1
     }
   ]
 }
