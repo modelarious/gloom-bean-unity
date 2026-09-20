@@ -81,7 +81,7 @@ namespace GloomBean.Foundation
         void Record(InputFrame f,float dt)
         {
             jumpWasHeld=f.jumpHeld; Stepped?.Invoke(f,dt);
-            if(Grounded && GroundCollider && GroundCollider.gameObject.layer==Layers.Moving)
+            if(Grounded && GroundCollider && (GroundCollider.gameObject.layer==Layers.Moving || (GroundCollider.attachedRigidbody && GroundCollider.attachedRigidbody.bodyType==RigidbodyType2D.Kinematic)))
             {
                 previousSupport=GroundCollider;
                 previousSupportPoint=Feet;
@@ -294,7 +294,7 @@ namespace GloomBean.Foundation
         public void Hit(HitInfo h)
         {
             if(Invulnerability>0||State==MotionState.Dead)return;
-            Health-=Mathf.Max(1,h.power);Invulnerability=tuning.hurtInvulnerability;hurtTime=.25f;
+            Health=Mathf.Max(0,Health-Mathf.Max(1,h.power));Invulnerability=tuning.hurtInvulnerability;hurtTime=.25f;
             CancelActions();DropCarried();Body.linearVelocity=new Vector2(h.direction.x*7,7);State=MotionState.Hurt;
             RuntimeEvents.Emit("damage",Health.ToString());
             if(Health<=0){State=MotionState.Dead;Died?.Invoke();}
