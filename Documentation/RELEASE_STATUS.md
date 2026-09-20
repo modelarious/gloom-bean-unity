@@ -54,3 +54,7 @@ Extract the entire Windows archive and run `GloomBeanWindows/GloomBean.exe`. Use
 ## Preservation and publication
 
 Reviewed units were committed incrementally and old failures retained. Complete main/foundation/release history is in the source bundle, with the unchanged original atlas/character reference in the delivery. Canonical context is separately committed to GitHub. The intended public standalone game repository still had no verified origin/publication path at the last probe; a game-source push is NOT claimed. That administration boundary does not mean source editing, native builds or local Git stopped working.
+
+## Source recovery verification
+
+The complete source/history validation snapshot was independently reassembled and checked in the container: 6,019 payload hashes, fresh bundle clone, `git fsck --full` and matching tested engine trees all passed. The final snapshot only adds documentation/tooling/evidence and is rechecked in the external delivery verification before handoff. The exact source ZIP hash is kept outside the ZIP in that final receipt and canonical context to avoid self-referential hashes.

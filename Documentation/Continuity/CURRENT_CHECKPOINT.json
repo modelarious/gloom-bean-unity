@@ -1,9 +1,9 @@
 {
-  "schema_version": 8,
+  "schema_version": 9,
   "scope": "Current common-source full native release acceptance; manual judgement separate",
   "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
   "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "next_gate": "Native software and exact final Windows ending acceptance are PASS. Finish source/history packaging and external restoration/hash verification, then commit/read back canonical final delivery. Do not rebuild completed worlds. Human/controller judgement and standalone source publication remain separate.",
+  "next_gate": "The full native development campaign and final Windows ending proofs are complete. Use the matching final delivery verification/manifest for the exact source archive hash and Git HEAD. No setup or chapter reconstruction is required. Next changes should come from actual play feedback, documented fidelity work, or the distinct unresolved public-repository administration; manual physical-controller/uncoached judgements are not certified.",
   "active_job": null,
   "latest_focused": {
     "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
@@ -26,9 +26,8 @@
     "boundary": "Editing/build/local commits work. Do not reattempt unchanged credential workarounds. No game-source remote push claimed."
   },
   "remaining": [
-    "Final source/history packaging, external restore/hash audit and canonical delivery receipt",
-    "Manual uncoached human/physical-controller judgement",
-    "Standalone public game-source GitHub publication; not source-write/build access"
+    "Manual physical-controller, uncoached comprehension, pacing, art direction and audio mix judgement",
+    "Standalone PUBLIC game-source GitHub publication, still distinct from local commits/context commits/history bundles"
   ],
   "queued_job": null,
   "packaged_player": {
@@ -44,5 +43,40 @@
       54,
       54
     ]
+  },
+  "software_status": "PASS_NATIVE_FULL_CAMPAIGN",
+  "source_restoration": {
+    "status": "PASS",
+    "scope": "Independently retrieved source archive reassembled in the container; every payload checked, full Git bundle cloned and fsck run. Final documentation-only package is reverified again at delivery.",
+    "source_head": "5f69d104eb4fa51471d494eceec026f69356927d",
+    "archive_sha256": "d4c2166608e749045e33df7419467a604c34346057d07413fd0f48a801c06ca1",
+    "archive_bytes": 137769298,
+    "payloads_verified": 6019,
+    "bundle_sha256": "023ae2e0e864706adda97f93535b6151bed08ca12a05f2d0f96aab9f0b848068",
+    "bundle_restore": "PASS",
+    "git_fsck": "PASS",
+    "engine_trees_match": "PASS",
+    "evidence": "DIRECT_CONTAINER_TOOL_OBSERVATION",
+    "final_source_hash_location": "Final external delivery receipt and canonical GitHub execution state, created after the package is frozen."
+  },
+  "native_acceptance": {
+    "status": "PASS",
+    "cases": 54,
+    "expected_negative_cases": 5,
+    "foundation_assertions": 72,
+    "combined_assertions": 309,
+    "native_ending_boundaries": [
+      0,
+      19,
+      20
+    ],
+    "packaged_ending_assertions": [
+      51,
+      54,
+      54
+    ],
+    "native_ui_images_reviewed": 14,
+    "audit": "Documentation/Release/NATIVE_AUDIT.json",
+    "packaged_audit": "Documentation/Release/PACKAGED_AUDIT.json"
   }
 }

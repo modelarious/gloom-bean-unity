@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "Independently retrieved source archive reassembled in the container; every payload checked, full Git bundle cloned and fsck run. Final documentation-only package is reverified again at delivery.",
+  "source_head": "5f69d104eb4fa51471d494eceec026f69356927d",
+  "archive_sha256": "d4c2166608e749045e33df7419467a604c34346057d07413fd0f48a801c06ca1",
+  "archive_bytes": 137769298,
+  "payloads_verified": 6019,
+  "bundle_sha256": "023ae2e0e864706adda97f93535b6151bed08ca12a05f2d0f96aab9f0b848068",
+  "bundle_restore": "PASS",
+  "git_fsck": "PASS",
+  "engine_trees_match": "PASS",
+  "evidence": "DIRECT_CONTAINER_TOOL_OBSERVATION",
+  "final_source_hash_location": "Final external delivery receipt and canonical GitHub execution state, created after the package is frozen."
+}

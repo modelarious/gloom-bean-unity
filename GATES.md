@@ -9,7 +9,7 @@ Original contract: reusable native Unity platformer foundation committed before 
 - [x] G05 Exact 0/19/20 secret boundaries: 25 earned clears, normal/restored ending state, retained gameplay corruption; practice grants no progress; explicit negative controls.
 - [x] G06 Original native presentation and UI: actual keyboard journey / 14 images inspected, native graphics/audio component proof; no human-quality claim.
 - [x] G07 Exact frozen Windows archive: extracted, hash/assembly checked, all 3 native final victories repeated successfully.
-- [ ] G08 Complete source/history archive: final packaging, external hash audit and independent bundle restore/fsck. Result supplied by final delivery receipt, never inferred from local commit alone.
+- [x] G08 Complete source/history archive: final packaging, external hash audit and independent bundle restore/fsck. Result supplied by final delivery receipt, never inferred from local commit alone.
 - [ ] G09 Canonical final delivery record: final artifact/source identities committed to GitHub and read back after packaging.
 - [ ] G10 Manual uncoached/controller/art/mix/pacing judgement: UNKNOWN, not replaced by automated tests.
 - [ ] G11 Standalone PUBLIC game-source GitHub push: BLOCKED_NO_ORIGIN at last probe; source is locally committed and supplied with complete history. Context commits are not code pushes.
@@ -19,3 +19,5 @@ Native oracle already executed:
   EXPECT: NATIVE_RELEASE_AUDIT_PASS
 
 Evidence: Documentation/Release/NATIVE_AUDIT.json, PACKAGED_AUDIT.json and Release/Evidence. Original failures are retained. No gate was silently abandoned and no manual/publication result is reported as PASS. These checked outcomes are scoped native development acceptance, not commercial-polish certification.
+
+Source restoration: Documentation/Release/SOURCE_RESTORATION.json. The exact final frozen archive is reverified in the external delivery receipt. Canonical final-artifact publication is resolved by its GitHub receipt after the ZIP hash exists; do not confuse this snapshot-time ledger with that later durability boundary.
