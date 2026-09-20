@@ -40,7 +40,7 @@ namespace GloomBean.Campaign
         void BellScreen(AtlasBuilder a)
         {
             var b=a.b;
-            var screen=a.Metal(new Vector2(83,11.7f),new Vector2(4.4f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=60;screen.gameObject.layer=Layers.Moving;
+            var screen=a.Metal(new Vector2(83,11.7f),new Vector2(4.4f,.6f),1,false,1);screen.name="Hanging iron screen";screen.strength=60;screen.gameObject.layer=Layers.Prop; // Dynamic load uses solver contact, not kinematic platform carry.
             var deck=screen.GetComponent<Rigidbody2D>();deck.gravityScale=2;deck.constraints=RigidbodyConstraints2D.FreezeRotation;
             var rail=screen.gameObject.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=deck.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=-8,max=0};rail.enableCollision=true;
             var bell=a.Metal(new Vector2(78.2f,15),new Vector2(1.2f,1.4f),4,false,1);bell.name="Loose bell counterweight";bell.strength=170;bell.fieldRadius=4.5f;

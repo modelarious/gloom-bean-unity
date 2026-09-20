@@ -1,0 +1,25 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  20,
+                        "case":  "L17-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  24,
+                        "case":  "L17-secret",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H24-physical-reaction-support",
+    "started":  "2026-09-20T05:42:40.3181005-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:43:33.6184982-06:00"
+}

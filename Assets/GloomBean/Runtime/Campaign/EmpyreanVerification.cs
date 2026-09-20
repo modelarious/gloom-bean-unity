@@ -136,15 +136,17 @@ namespace GloomBean.Campaign
             if(!returning){
                 yield return PowerAltar(71);yield return Flight(cable.deck.position+Vector2.up*1.05f,cable.deck);if(stopped)yield break;
                 Check("catch the actual hanging screen",actor.GroundCollider&&actor.GroundCollider.attachedRigidbody==cable.deck);
-                float end=Time.time+20,trace=0;input.rule=()=>{
-                    // The visible side guide supplies the reaction while both free bodies attract.
+                float end=Time.time+20,trace=0;bool atGuide=false;input.rule=()=>{
+                    if(actor.Body.position.x<81.03f)atGuide=true;
+                    // Repel to the visible guide, then attract while the guide supplies the reaction.
+                    int pole=!atGuide&&cable.bell.position.y>13?1:-1;
                     float command=cable.bell.position.y>13?-1:Mathf.Clamp((83-actor.Body.position.x)*4-actor.Body.linearVelocity.x,-1,1);
-                    return new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(command,0)};
+                    return new InputFrame{action=magnet.Polarity!=pole,move=new Vector2(command,0)};
                 };
                 while(Live&&Time.time<end&&cable.deck.position.y<18.6f){yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("CABLE deck="+cable.deck.position+" bell="+cable.bell.position+" tension="+cable.Tension+" body="+actor.Body.position);}}
                 input.rule=null;input.frame=default;
                 Check("loose bell physically leaves its saddle",cable.bell.position.y<12&&cable.LowestBell<12);
-                Check("falling bell lifts screen and Host through the cable",cable.deck.position.y>18.6f&&actor.Feet.y>18&&cable.PeakTension>10);Snapshot("bell-screen-exchange");
+                Check("falling bell lifts screen and Host through the cable",cable.deck.position.y>18.6f&&actor.Feet.y>18&&cable.bell.position.y<12&&cable.PeakTension>10);Snapshot("bell-screen-exchange");
                 if(stopped)yield break;if(magnet.Polarity!=1)yield return Press(new InputFrame{action=true});yield return Jump(89,19.4f);yield return Walk(91);Check("Keyling lies beyond the physical screen mechanism",session.HasKey);
             }else{
                 yield return Walk(88);if(magnet.Polarity!=-1)yield return Press(new InputFrame{action=true});bool jumped=false;float end=Time.time+10;
