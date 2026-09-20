@@ -1,0 +1,3 @@
+# Active development status
+
+The verified first-four-world milestone is preserved on release/fall-v0.6.0 and described in Documentation/Fall/Evidence/Clean-v06-g1/VERIFIED_SCOPE.json. Its engine source is ce58671e62086e00d1a2e06d3ee67a8494197905;16/16 clean acceptance cases passed. The current main branch has later experimental World5 magnetic-course work. It is not yet a complete or repeatably solved fifth world. Read Documentation/Empyrean/RESUME.md and the current checkpoint JSON before implementation. Final production art/fidelity and human/controller acceptance remain open. No game-source GitHub push is claimed; all history is committed locally and retrieved in full bundles.

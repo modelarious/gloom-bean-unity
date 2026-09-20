@@ -1,5 +1,5 @@
-# Current Gloom Bean continuation
+# Current continuation
 
-The previous work-position claims are historical and preserved in History/PRE_CONTINUITY_RESUME.md. Read [the current first-read checkpoint](Continuity/AGENT_CHECKPOINT.md) and [machine-readable next gate](Continuity/CURRENT_CHECKPOINT.json), then run `python Tools/agent_status.py --probe-write`.
+Read `../START_HERE.md` and `Continuity/CURRENT_CHECKPOINT.json`. All twenty stages and five bosses already exist; the current work is the full common-source release and its audit, not first-world reconstruction. Exact native results and package status are in `RELEASE_STATUS.md` and the referenced receipts. The original atlas finish line is unchanged.
 
-Parish and Orchard later implementations survived. Their complete clean batch included a practice-route failure; read the current retry rather than assuming all green. The full atlas game is unfinished. Original requirements and immutable source captures are unchanged.
+Historical work positions are preserved under `History/Before-Full-Campaign-M1/`; do not treat them as current instructions.

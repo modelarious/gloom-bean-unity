@@ -8,7 +8,7 @@ The standalone Windows package requires no Unity installation: extract it comple
 
 Open this source directory in **Unity 6000.5.9f1**, open `Assets/GloomBean/Scenes/Boot.unity`, and press Play. **Gloom Bean > Campaign workbench** provides practice selection, movement tuning and static layout editing. No Asset Store purchase, Nintendo asset, ROM, model download or runtime AI service is required.
 
-**Release evidence:** [current release status](Documentation/RELEASE_STATUS.md), [full campaign acceptance](Documentation/Completion/L1_GATES.md), and the structured audit shipped with the release. A runnable complete campaign is different from commercial-quality polish or blind human acceptance. See the explicit scope in those records.
+**Release evidence:** [current release status](Documentation/RELEASE_STATUS.md), [full campaign acceptance](Documentation/Completion/M1_GATES.md), and the structured audit shipped with the release. A runnable complete campaign is different from commercial-quality polish or blind human acceptance. See the explicit scope in those records.
 
 ## The two editions
 
@@ -39,6 +39,8 @@ Physical controller mapping and subjective feel require an actual controller che
 
 ## Iterate
 
+See [ITERATION_GUIDE.md](ITERATION_GUIDE.md) for source ownership, safe layout editing and release regression.
+
 `Assets/GloomBean/Resources/MovementTuning.asset` exposes the controller numbers. `Runtime/Foundation/ActorMotor.cs` owns movement; `CarryableEnemy.cs` owns patrol/stun/carry/projectile behavior. `StageBuilder.cs` owns reusable objects, while `StageSession.cs` and `Progress.cs` own the level loop and save model. Campaign forms live in `HostController.cs`, `EmbodimentForms.cs`, `MaterialForms.cs`, `SpatialForms.cs`, `ForceAndTimeForms.cs` and `ShadowForm.cs`. `AtlasCampaign.*.cs` authors the levels; the boss builders are separate from the witnesses.
 
 Geometry and components are ordinary inspectable Unity objects during Play. Static box layout edits can be saved by **Campaign workbench > Edit layout > Save static layout overrides**. These ordinary JSON files survive later runs/builds and reject stale source fingerprints. Moving machinery, source/cure placement and callback rules remain builder-authored. A runtime scene snapshot is for inspection, not a self-contained replacement for callbacks and generated textures. The project does not falsely present twenty hand-authored tilemap scenes.
@@ -54,7 +56,7 @@ Run under your normal licensed Windows account:
 .\Tools\Verify-Windows.ps1 -Suite Empyrean -Route GB-B5 -FinalPair mirror-parallax
 ```
 
-All twenty levels and five bosses route to their real witnesses. `-Describe` explains the dispatch without launching anything. Every test uses a unique isolated report/save directory. `-SaveSeed <earned-test-save.json> -RequireEarned` copies an actual prior earned save unchanged and records its hash; it never writes the source save. `-ExpectedMercies 0`, `19` or `20` checks the final ending boundary rather than granting secrets. World5 is deliberately tested per stage; use the configured full acceptance graph for the complete earned sequence. See `Tools/campaign-acceptance-l1.json`; replace machine-local clone/report paths when running elsewhere.
+All twenty levels and five bosses route to their real witnesses. `-Describe` explains the dispatch without launching anything. Every test uses a unique isolated report/save directory. `-SaveSeed <earned-test-save.json> -RequireEarned` copies an actual prior earned save unchanged and records its hash; it never writes the source save. `-ExpectedMercies 0`, `19` or `20` checks the final ending boundary rather than granting secrets. World5 is deliberately tested per stage; use the configured full acceptance graph for the complete earned sequence. See `Tools/campaign-acceptance-m1.json`; replace machine-local clone/report paths when running elsewhere.
 
 `Tools/Test-CampaignGraph.ps1`, `Tools/Test-VerifyRoutes.ps1` and `Tools/test_release_audit.py` test the testing/delivery infrastructure. `Tools/audit_release.py` independently verifies result/exit agreement, every parent-save hash, twenty-level/five-boss saves, exact ending states and source/assembly identity. Component fixtures and scripted-input playthroughs are not blind playtests or a proof of every possible player action.
 

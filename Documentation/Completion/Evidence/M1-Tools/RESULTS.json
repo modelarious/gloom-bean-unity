@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "Actual Windows helper tests; native campaign and human acceptance remain separate",
+  "tests": [
+    {
+      "name": "continuity",
+      "command": [
+        "C:\\ProgramData\\SentinelX\\.venv\\Scripts\\python.exe",
+        "Tools/test_continuity.py"
+      ],
+      "exit": 0,
+      "output_sha256": "24c354c97823b60b8c4b451c619509dbf87765021d8834f20c48e2f73e080bfa"
+    },
+    {
+      "name": "audit-oracles",
+      "command": [
+        "C:\\ProgramData\\SentinelX\\.venv\\Scripts\\python.exe",
+        "Tools/test_release_audit.py"
+      ],
+      "exit": 0,
+      "output_sha256": "0e7a8683707e7cc3ef6524ea7d538f3dbbca8d43041a4e921030fc27e9badff3"
+    },
+    {
+      "name": "graph",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "Tools/Test-CampaignGraph.ps1"
+      ],
+      "exit": 0,
+      "output_sha256": "1ae5e65d07016f53bca65b1a5062208b2a718d7e05b8cba30fe07623ff12bcda"
+    },
+    {
+      "name": "cli-routing",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "Tools/Test-VerifyRoutes.ps1"
+      ],
+      "exit": 0,
+      "output_sha256": "4fdaf92a33f11d49211bcf83bb2bb3999339bcf6562ea2e1ab2a30410566ddb0"
+    },
+    {
+      "name": "receipt-read",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "Tools/Test-PredecessorReceipt.ps1"
+      ],
+      "exit": 0,
+      "output_sha256": "603d8f503033f0cd512f941f1ac88576fcdf6154c65d5e2399b940c743e83a9a"
+    },
+    {
+      "name": "receipt-write",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "Tools/Test-AtomicReceipt.ps1"
+      ],
+      "exit": 0,
+      "output_sha256": "444deeeffa3a99affc09d95f399e2156ce58f9517039b9c21e56cdece2062964"
+    }
+  ]
+}

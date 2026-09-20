@@ -1,0 +1,11 @@
+PASS out-of-order acyclic graph accepted
+PASS visible players are serialized
+PASS earlier skipped ending becomes ready after later GUI finishes
+PASS failed dependency must be propagated, not reported as cycle
+PASS terminal graph has no pending launch
+PASS real cycle refused before launching
+PASS missing parent refused
+PASS self parent refused
+PASS pending child waits for its running parent
+PASS independent non-GUI case can run while ending paints
+CAMPAIGN_GRAPH_TESTS_PASS 10

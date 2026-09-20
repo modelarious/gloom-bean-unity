@@ -1,0 +1,21 @@
+test_cannot_erase_corruption (__main__.AuditTests.test_cannot_erase_corruption) ... ok
+test_consistent_fixture (__main__.AuditTests.test_consistent_fixture) ... ok
+test_duplicate_secret_does_not_count (__main__.AuditTests.test_duplicate_secret_does_not_count) ... ok
+test_ending_boundary (__main__.AuditTests.test_ending_boundary) ... ok
+test_error_text_not_pass (__main__.AuditTests.test_error_text_not_pass) ... ok
+test_exact_denial (__main__.AuditTests.test_exact_denial) ... ok
+test_missing_backbuffer (__main__.AuditTests.test_missing_backbuffer) ... ok
+test_missing_result (__main__.AuditTests.test_missing_result) ... ok
+test_nonzero_native_exit (__main__.AuditTests.test_nonzero_native_exit) ... ok
+test_parent_save_tamper (__main__.AuditTests.test_parent_save_tamper) ... ok
+test_pending_not_pass (__main__.AuditTests.test_pending_not_pass) ... ok
+test_practice_leak (__main__.AuditTests.test_practice_leak) ... ok
+test_restoration_requires_all_twenty (__main__.AuditTests.test_restoration_requires_all_twenty) ... ok
+test_summary_cannot_hide_failure (__main__.AuditTests.test_summary_cannot_hide_failure) ... ok
+test_trace_count_not_assertions (__main__.AuditTests.test_trace_count_not_assertions) ... ok
+test_wrong_denial (__main__.AuditTests.test_wrong_denial) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.036s
+
+OK

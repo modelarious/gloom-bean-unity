@@ -1,9 +1,14 @@
-# Continue Gloom Bean, not setup archaeology
+# Gloom Bean — continue the current implementation
 
-1. Read [the detailed checkpoint](Documentation/Continuity/AGENT_CHECKPOINT.md). Canonical first-read entry: modelarious/obsidian-notes main, Context/projects/game/GLOOMBEAN_START_HERE.md.
-2. Run `python Tools/agent_status.py --probe-write`. It checks actual Git state and receipts without building or certifying the game.
-3. Read [CURRENT_CHECKPOINT.json](Documentation/Continuity/CURRENT_CHECKPOINT.json) and the first unmet gate. Reuse the licensed-user scheduled runner; inspect its state before dispatch.
-4. Implement the next owned change, commit before the native run, verify and regress affected systems, preserve both failed and corrected receipts.
-5. Update this checkpoint and canonical context before stopping. Never leave only 'continue implementation'.
+This is the existing native Unity platformer, not a request to create another base project.
 
-Later Parish/Orchard commits survived failed chats. The previous RESUME/RELEASE_STATUS work positions are historical, not current. City, Fall and Empyrean still need full route/secret/boss acceptance and the whole game needs production presentation.
+Read `Documentation/Continuity/CURRENT_CHECKPOINT.json` first. It records the actual candidate, completed evidence, active task/report and next gate. The atlas and all twenty levels, fifteen possession systems, five bosses, presentation and endings are already implemented. Older world-by-world reports are retained history, not the current work position.
+
+1. Hydrate the canonical global cloud-context procedure and the explicit `gloom-bean-unity` registry entry. Read its complete requirements when changing the game.
+2. Run `python Tools/agent_status.py --probe-write` once. Check actual HEAD, changes, current report and running task. A stale summary or missing historical tool name is not lost access.
+3. Read the specific current failing assertion or next gate, then the owning source. Never rebuild the first chapter from an old ZIP.
+4. Commit meaningful owned edits before long builds and preserve source identities and original failures. Use `Tools/checkpoint_work.py`, not a blind `git add .`.
+5. Native builds use the licensed desktop account and existing bounded scheduled runners. Reuse their current schema and inspect their actions before dispatch; do not launch duplicate Editors or overwrite live requests.
+6. Separate complete native campaign evidence, actual visual inspection, manual controller judgement and public GitHub publication. They are different claims.
+
+For play, start with [PLAY_GUIDE.md](PLAY_GUIDE.md). For implementation, read [ITERATION_GUIDE.md](ITERATION_GUIDE.md), [the full operational checkpoint](Documentation/Continuity/AGENT_CHECKPOINT.md) and [current release scope](Documentation/Release/IMPLEMENTATION_SCOPE.md). Source history is complete in the delivery bundle; the independent `foundation` branch remains intact.
