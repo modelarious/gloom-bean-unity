@@ -208,6 +208,11 @@ namespace GloomBean.Campaign
             C("shadow.rotated-outline-is-not-aabb",silhouette.Length==4&&!ShadowSun.Inside(new Vector2(602.7f,8.3f),silhouette));
             var noonSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.down,12);var sideSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.right,12);
             C("shadow.noon-erases-sideways-bridge",!ShadowSun.Inside(new Vector2(612,6),noonSilhouette)&&ShadowSun.Inside(new Vector2(612,6),sideSilhouette));
+            yield return Arena();var cableDeck=a.Metal(new Vector2(600,4),new Vector2(5,.6f),1,false,1);var cableBell=a.Metal(new Vector2(606,8),Vector2.one*1.2f,4,false,1);
+            var deckBody=cableDeck.GetComponent<Rigidbody2D>();var bellBody=cableBell.GetComponent<Rigidbody2D>();deckBody.constraints=RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;deckBody.gravityScale=bellBody.gravityScale=2;
+            var pulley=fixture.AddComponent<CablePulley>();pulley.Configure(deckBody,bellBody,new Vector2(600,16),new Vector2(606,16));yield return Steps(130);
+            C("cable.falling-mass-raises-real-deck",deckBody.position.y>6&&bellBody.position.y<6,deckBody.position+" / "+bellBody.position);
+            C("cable.bounded-length-without-teleport",Mathf.Abs(pulley.Extension)<.35f&&pulley.HighestDeck>pulley.InitialDeckHeight+2,pulley.Extension.ToString());
             yield return Arena();var sunObj=new GameObject("Fixture sun");sunObj.transform.SetParent(fixture.transform);sunObj.transform.position=new Vector2(590,10);var sun=sunObj.AddComponent<ShadowSun>();sun.reach=25;var occluder=b.Solid("Shadow screen",new Vector2(600,3),new Vector2(2,6));occluder.AddComponent<ShadowCaster>();host.Acquire(HostKind.Shadow);var shadow=host.Form<ShadowForm>();yield return Steps(4);sun.Rebuild();shadow.Toggle();Vector2 shadowStart=shadow.Position;bool walked=true;for(int i=0;i<8;i++)walked&=shadow.Advance(Vector2.right*.3f);
             C("shadow.follows-projected-silhouette",walked&&shadow.Position.x>shadowStart.x+2);C("shadow.cannot-cross-empty-light",!shadow.Advance(Vector2.up*15));C("shadow.primary-body-remains",actor.Shape.enabled&&actor.Body.simulated&&Vector2.Distance(actor.Body.position,shadow.Position)>1);
 
