@@ -1,27 +1,12 @@
 {
-  "id": "Empyrean-H19-physical-landing-capture",
+  "id": "Empyrean-H20-rail-sign-diagnostic",
   "build": true,
   "cases": [
     {
-      "name": "L17-critical",
-      "suite": "Empyrean",
-      "route": "GB-L17"
-    },
-    {
-      "name": "L17-secret",
+      "name": "Rail-sign",
       "suite": "Empyrean",
       "route": "GB-L17",
-      "secrets": true
-    },
-    {
-      "name": "L18-secret",
-      "suite": "Empyrean",
-      "route": "GB-L18",
-      "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
+      "railProbe": true
     }
   ]
 }

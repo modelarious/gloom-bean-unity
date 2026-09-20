@@ -228,6 +228,18 @@ input.rule=null;input.frame=default;
             yield return Walk(80.5f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
             yield return ShadowWindow(1,true);yield return ShadowWindow(0,true);yield return Walk(2,true);
         }
+        IEnumerator RailProbe()
+        {
+            Note("COMPONENT PROBE ONLY — not a gameplay route. Disposable bodies receive diagnostic forces.");
+            for(int mode=0;mode<2;mode++)for(int direction=-1;direction<=1;direction+=2){
+                var go=new GameObject("Disposable rail diagnostic");go.transform.position=new Vector2(200,60);var rb=go.AddComponent<Rigidbody2D>();rb.gravityScale=0;rb.constraints=RigidbodyConstraints2D.FreezeRotation;
+                var rail=go.AddComponent<SliderJoint2D>();rail.autoConfigureConnectedAnchor=false;rail.connectedAnchor=rb.position;rail.autoConfigureAngle=false;rail.angle=90;rail.useLimits=true;rail.limits=new JointTranslationLimits2D{min=mode==0?0:-8,max=mode==0?8:0};rail.enableCollision=true;
+                float first=rb.position.y;for(int tick=0;tick<30;tick++){rb.AddForce(Vector2.up*(direction*60));yield return new WaitForFixedUpdate();}
+                Note("RAIL mode="+mode+" forceDirection="+direction+" dy="+(rb.position.y-first)+" translation="+rail.jointTranslation+" state="+rail.limitState+" reaction="+rail.reactionForce);
+                Destroy(go);yield return null;
+            }
+            Check("diagnostic completed without game-state mutation",session.Phase==RunPhase.Exploring&&!session.HasKey);
+        }
         IEnumerator Run()
         {
             game.SelectSource(1);var world=game.AvailableWorlds[4];
@@ -236,11 +248,12 @@ input.rule=null;input.frame=default;
             var definition=world.levels.FirstOrDefault(d=>d.id==route);
             if(definition==null||(definition.course!=17&&definition.course!=18)){failures++;Note("FAIL No complete input witness authored for "+route+". This is not a campaign success.");Finish();yield break;}
             yield return game.Load(definition,Practice);session=game.Session;actor=session.player;host=actor.GetComponent<HostController>();actor.GetComponent<HumanInput>().disabled=true;input=new WitnessInput();actor.input=input;actor.Stepped+=(f,dt)=>ticks++;
-            Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));if(definition.course==17)yield return Halos(secrets);else yield return NoShadows(secrets);
+            Note("BEGIN "+definition.id+" "+definition.title);float startDelay;float.TryParse(Arg("-gb-start-delay","0"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out startDelay);yield return Pause(.35f+Mathf.Clamp(startDelay,0,20));if(Arg("-gb-rail-probe","0")=="1"){yield return RailProbe();Finish();yield break;}if(definition.course==17)yield return Halos(secrets);else yield return NoShadows(secrets);
             if(!stopped){Check("physical return completed",session.Phase==RunPhase.Cleared);if(!stopped){Check(Practice?"practice does not award progress":"clear is persistent",Practice?!game.Save.Data.cleared.Contains(route):game.Save.Data.cleared.Contains(route));if(!Practice)Check(secrets?"Mercy is saved":"Mercy was optional",secrets?game.Save.Data.mercies.Contains(route+"-MERCY"):session.Mercies.Count==0);}}
             Finish();
         }
         void Finish(){if(finished)return;finished=true;Application.logMessageReceived-=Error;
+            if(Arg("-gb-rail-probe","0")=="1")File.WriteAllText(Path.Combine(dir,"SCOPE.txt"),"Disposable-body diagnostic. Not an input-only route or level completion.");
             File.WriteAllText(Path.Combine(dir,"empyrean-result.json"),"{\"failed\":"+failures+",\"checks\":"+checks+",\"scope\":\"Input-only Empyrean witness under development; no full-game or human acceptance claim\"}");
             File.WriteAllText(Path.Combine(dir,"saved-progress.json"),JsonUtility.ToJson(game.Save.Data,true));Application.Quit(failures==0?0:1);
         }
