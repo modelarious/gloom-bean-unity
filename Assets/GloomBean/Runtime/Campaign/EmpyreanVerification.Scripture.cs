@@ -35,6 +35,13 @@ namespace GloomBean.Campaign
             Check("shadow takes the actual semicolon dot",session.Mercies.Count==1&&host.Form<ShadowForm>().Controlling);Snapshot("semicolon-dot");if(stopped)yield break;
             yield return ShadowTravel(actor.Feet);yield return Press(new InputFrame{alternate=true});yield return Walk(50);yield return Wait("leave ink before it dries",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,8);
         }
+        IEnumerator WordStep(float x)
+        {
+            if(stopped||!Live)yield break;bool sent=false;float end=Time.time+6;
+            input.rule=()=>{bool edge=!sent&&actor.Grounded;if(edge)sent=true;return new InputFrame{jump=edge,jumpHeld=true,move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.3f,-1,1),0)};};
+            while(Live&&Time.time<end&&!(sent&&actor.Grounded&&actor.Body.linearVelocity.y<=.2f&&actor.Feet.y>=7&&actor.Feet.y<=10.6f&&Mathf.Abs(actor.Body.position.x-x)<.35f))yield return Tick();
+            input.rule=null;input.frame=default;Check("cross the actual reflowed rows at "+x,actor.Grounded&&actor.Feet.y>=7&&actor.Feet.y<=10.6f&&Mathf.Abs(actor.Body.position.x-x)<.5f);
+        }
         IEnumerator ScriptureRoute(bool secret)
         {
             yield return Walk(8);Check("scribe leech supplies actual Ink",host.Has(HostKind.Ink));yield return Walk(17);
@@ -43,7 +50,7 @@ namespace GloomBean.Campaign
             yield return Jump(17.6f,5);Check("reach punctuation desk through authored ink",actor.Feet.y>4.7f);if(stopped)yield break;
             yield return Walk(18.2f);var comma=session.GetComponentInChildren<PunctuationCart>();yield return Press(new InputFrame{interact=true});Check("grip physical comma",comma.Holder==actor);yield return Walk(21.5f);yield return Pause(.4f);yield return Press(new InputFrame{interact=true});
             var layout=session.GetComponentInChildren<ScriptureLayout>();yield return Wait("moved comma reflows actual words",()=>comma.Slot==1&&layout.wrap==3&&layout.Reflows>0,3);Snapshot("physical-line-wrap");
-            if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return Jump(31,9.4f);yield return Jump(35,9.4f);yield return Jump(40,7.2f);
+            if(stopped)yield break;yield return Jump(24,5);yield return Jump(27,7.2f);yield return WordStep(31);yield return WordStep(35);yield return Jump(40,7.2f);
             if(stopped)yield break;Check("shadow source composes with Ink",host.Has(HostKind.Shadow)&&host.Has(HostKind.Ink));
             if(secret){yield return SemicolonMercy();if(stopped)yield break;}
             if(!secret){yield return Walk(42,true);yield return RunArc(52,1);}yield return Wait("lower sentence refuge",()=>actor.Grounded&&Mathf.Abs(actor.Feet.y-1)<.3f,6);
