@@ -1,0 +1,41 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-120fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  33,
+                        "case":  "L17-30fps",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  29,
+                        "case":  "L17-delayed",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  28,
+                        "case":  "L18-critical",
+                        "failed":  3,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H10-orbital-return-and-noon-headroom",
+    "started":  "2026-09-20T05:02:07.1204821-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T05:02:55.0545926-06:00"
+}

@@ -24,7 +24,14 @@ namespace GloomBean.Campaign
                     var orbit=m.gameObject.AddComponent<MotionPlatform>();orbit.pattern=MotionPlatform.Pattern.Orbit;orbit.origin=m.transform.position;orbit.radius=1.4f;orbit.speed=.35f;orbit.phase=i*.4f;poles.Add(m);}
             }
             var choirObject=new GameObject("Iron choir clock");choirObject.transform.SetParent(b.root);var choir=choirObject.AddComponent<HaloChoir>();choir.halos=poles.ToArray();choir.measure=4;
-            a.Key(71,13.3f);a.Nail(76,12.4f);a.Ledge(53,24,6);a.Mercy(54,25.3f);
+            a.Key(71,13.3f);a.Nail(76,12.4f);
+            var ring=new GameObject("Orbiting Mercy halo");ring.transform.SetParent(b.root);ring.transform.position=new Vector2(45,17.2f);ring.layer=Layers.Moving;
+            var edge=ring.AddComponent<EdgeCollider2D>();var arc=new Vector2[42];for(int i=0;i<arc.Length;i++){float theta=Mathf.Lerp(-55,235,i/(float)(arc.Length-1))*Mathf.Deg2Rad;arc[i]=new Vector2(Mathf.Cos(theta),Mathf.Sin(theta))*1.65f;}edge.points=arc;edge.edgeRadius=.07f;
+            var rimLine=PrimitiveArt.Line("Open iron rim",ring.transform,Vector2.zero,Vector2.zero,.13f,new Color(.9f,.75f,.35f),8);rimLine.transform.localPosition=Vector3.zero;rimLine.useWorldSpace=false;rimLine.positionCount=arc.Length;for(int i=0;i<arc.Length;i++)rimLine.SetPosition(i,arc[i]);
+            var ringMotion=ring.AddComponent<MotionPlatform>();ringMotion.pattern=MotionPlatform.Pattern.Orbit;ringMotion.origin=new Vector2(45,17.2f);ringMotion.radius=.9f;ringMotion.speed=.65f;
+            var mercy=b.Collect(PickupKind.Mercy,new Vector2(45,17.2f),"GB-L17-MERCY");mercy.transform.SetParent(ring.transform,true);mercy.transform.localPosition=Vector3.zero;
+            foreach(var anchor in new[]{new Vector2(42.5f,19.5f),new Vector2(47.5f,19.5f)}){var m=a.Metal(anchor,Vector2.one,12,true,anchor.x<45?1:-1);m.name="Orbital velocity matching mass";m.strength=100;m.fieldRadius=5;}
+            b.Tip(new Vector2(49,9),"The Mercy travels inside an open iron halo. Leave the ordinary route to match it between the two opposed masses; enter through the moving gap.");
             b.session.Turned+=()=>choir.desynchronized=true;a.Health(38,7.3f);a.Cure(HostKind.Lodestone,4,1);
             b.Tip(new Vector2(8,2),"U changes your pole. E powers each visible north coil. South holds you; north pushes you away. The choir reverses the overhead iron. Start a launch from the forward edge, not directly over the coil.");
         }
@@ -47,7 +54,7 @@ namespace GloomBean.Campaign
                 PrimitiveArt.Line("Screen rail "+i,b.root,new Vector2(14+dx,7.2f),new Vector2(26.4f+dx,7.2f),.06f,new Color(.76f,.59f,.26f),0);
             }
             a.Source(HostKind.Lodestone,28,1,true);a.Source(HostKind.Shadow,34,1,true);
-            a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(80,4.8f,8);a.Key(78,6.1f);a.Nail(82,5.2f);
+            a.Ledge(65,1.6f,5);a.Ledge(71,3.2f,5);a.Ledge(80,4.8f,9);a.Key(78,6.1f);a.Nail(82,5.2f);
             a.Ledge(72,9,5);a.Mercy(72,10.3f);a.Health(63,1.2f);
             b.session.Turned+=()=>{sun.LockNoon();for(int i=0;i<latches.Count;i++){latches[i].active=false;latches[i].gate.SetOpen(false);latches[i].requiredSun=sun;latches[i].requiredCaster=screens[i].GetComponent<Collider2D>();}};
             b.Tip(new Vector2(8,2),"I detaches your shadow. The moving sunlight makes a bridge under each hanging saint. Return the shadow to your feet before walking on.");

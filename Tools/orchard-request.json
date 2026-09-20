@@ -1,5 +1,5 @@
 {
-  "id": "Empyrean-H10-orbital-return-and-noon-headroom",
+  "id": "Empyrean-H11-orbiting-mercy-and-noon",
   "build": true,
   "cases": [
     {
@@ -24,6 +24,12 @@
       "name": "L18-critical",
       "suite": "Empyrean",
       "route": "GB-L18"
+    },
+    {
+      "name": "L17-secret",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "secrets": true
     }
   ]
 }

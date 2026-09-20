@@ -94,19 +94,38 @@ namespace GloomBean.Campaign
                 return new InputFrame{action=toggle,actionHeld=toggle,interact=activate,move=new Vector2(steer,0),jump=jump,jumpHeld=true};
             };
             while(Live&&Time.time<deadline){
+                if(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Grounded&&actor.Body.position.x<18&&actor.Feet.y<.25f)break;
                 if(landed&&Vector2.Distance(actor.Body.position,destination)<1.1f&&actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<2)break;
                 if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
             }
-            input.rule=null;input.frame=default;Check("coil flight lands on physical support "+destination,actor.Grounded&&Vector2.Distance(actor.Body.position,destination)<1.1f);Snapshot("flight-"+destination.x);
+            input.rule=null;input.frame=default;Check("coil flight lands on physical support "+destination,actor.Grounded&&(Vector2.Distance(actor.Body.position,destination)<1.1f||(session.Phase==RunPhase.Returning&&destination.x==16&&actor.Body.position.x<18&&actor.Feet.y<.25f)));Snapshot("flight-"+destination.x);
+        }
+        IEnumerator OrbitMercy()
+        {
+            if(stopped||!Live)yield break;var ring=session.GetComponentsInChildren<MotionPlatform>().Single(x=>x.name=="Orbiting Mercy halo");var magnet=host.Form<LodestoneForm>();var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(x=>x.name=="Launch coil 49");
+            if(coil.enabled)yield return Press(new InputFrame{interact=true});yield return Walk(48.7f);bool powered=false;float next=0,end=Time.time+18;bool interacted=false;int exchanges=0;
+            input.rule=()=>{
+                Vector2 target=ring.GetComponent<Rigidbody2D>().position, pos=actor.Body.position,v=actor.Body.linearVelocity;bool low=pos.y<12;
+                Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m)north+=m.ForceOn(pos,1,magnet.range);
+                Vector2 desired=new Vector2((target.x-pos.x)*5-v.x*3,(target.y-pos.y)*7-v.y*3+actor.tuning.gravity);
+                int pole=low?1:Vector2.Dot(north,desired)>=0?1:-1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=next;if(toggle){next=Time.fixedTime+.14f;exchanges++;}
+                bool engage=!interacted;interacted=true;bool jump=actor.Grounded&&!powered;if(jump)powered=true;
+                return new InputFrame{interact=engage,action=toggle,actionHeld=toggle,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp((target.x-pos.x)*2-v.x*.6f,-1,1),0)};
+            };
+            while(Live&&Time.time<end&&session.Mercies.Count==0)yield return Tick();input.rule=null;input.frame=default;
+            Check("collect Mercy inside the actual orbiting rim",session.Mercies.Count==1);Snapshot("orbiting-mercy");if(stopped)yield break;
+            end=Time.time+10;input.rule=()=>new InputFrame{action=magnet.Polarity!=-1,move=new Vector2(Mathf.Clamp((49-actor.Body.position.x)*2-actor.Body.linearVelocity.x*.8f,-1,1),0)};
+            while(Live&&Time.time<end&&!(actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f))yield return Tick();input.rule=null;input.frame=default;
+            Check("leave the orbital secret through real geometry",actor.Grounded&&Mathf.Abs(actor.Feet.y-8)<.3f);
         }
         IEnumerator Halos(bool secret)
         {
             yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));
             var docks=new[]{new Vector2(16,2.75f),new Vector2(27,4.75f),new Vector2(38,6.75f),new Vector2(49,8.75f),new Vector2(60,10.75f),new Vector2(71,12.75f)};
-            for(int i=0;i<docks.Length-1;i++){yield return PowerAltar(docks[i].x);yield return Flight(docks[i+1]);if(stopped)yield break;}
+            for(int i=0;i<docks.Length-1;i++){yield return PowerAltar(docks[i].x);yield return Flight(docks[i+1]);if(stopped)yield break;if(secret&&i==2)yield return OrbitMercy();}
             Check("Keyling reached through magnetic traversal",session.HasKey);
-            if(secret){Check("Orbiting Mercy route not yet certified",false);yield break;}
+            if(secret)Check("orbiting Mercy retained before return",session.Mercies.Count==1);
             yield return Press(new InputFrame{interact=true});yield return Walk(74.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
             yield return Walk(71);for(int i=docks.Length-1;i>0;i--){yield return PowerAltar(docks[i].x,-1);yield return Flight(docks[i-1]);if(stopped)yield break;}
             yield return Walk(2,true);
@@ -143,7 +162,7 @@ namespace GloomBean.Campaign
         IEnumerator NoShadows(bool secret)
         {
             yield return Walk(8);Check("noon lamp tears off an available shadow",host.Has(HostKind.Shadow));yield return ShadowWindow(0,false);yield return ShadowWindow(1,false);
-            yield return Walk(61.5f);yield return Jump(65,1.6f);yield return Walk(67);yield return Jump(71,3.2f);yield return Walk(73);yield return Jump(78,4.8f);Check("Noon Keyling reached",session.HasKey);
+            yield return Walk(61.5f);yield return Jump(65,1.6f);yield return Walk(67);yield return Jump(71,3.2f);yield return Walk(73.35f);yield return Jump(78,4.8f);Check("Noon Keyling reached",session.HasKey);
             if(secret){Check("suspended own-body Mercy remains an unverified gate",false);yield break;}
             yield return Walk(80.5f);yield return Press(new InputFrame{interact=true});Check("Nail fixes the sun overhead rather than accelerating it",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<ShadowSun>().noon);
             yield return ShadowWindow(1,true);yield return ShadowWindow(0,true);yield return Walk(2,true);
