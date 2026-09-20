@@ -23,7 +23,7 @@ Open the source folder in **Unity 6000.5.9f1** and load `Assets/GloomBean/Scenes
 | Cast silhouettes and delayed temporary terrain | `ShadowForm.cs`, `ShadowSun.cs`, `InkStroke.cs` |
 | Courses and boss arrangements | `AtlasCampaign.*.cs` and stage-specific components |
 | Character animation, environments, menus and endings | `HostPixelArt.cs`, `HostPixelView.cs`, `CampaignPresentation.cs` and related presentation files |
-| Original score and sound | `CampaignScore.cs` and the foundation sound controller |
+| Original score and sound | `CampaignPresentation.cs` (`CampaignScore` class) and `GameAudio.cs` |
 | Real-input route proofs | `ParishVerification`, `OrchardVerification`, `CityVerification`, `FallVerification`, `EmpyreanVerification.*` |
 
 Paths in the table are below `Assets/GloomBean/` unless shown fully. Prefer a small coherent change and affected-world regression over replacing a working system.
