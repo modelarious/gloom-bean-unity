@@ -130,12 +130,12 @@ namespace GloomBean.Campaign
     {
         public override HostKind Kind=>HostKind.Coffin;public override bool Locomotion=>true;
         public override string Help=>"Left/right: quarter-turn around the leading corner. No jump. Horizontal lids brace machinery.";
-        public BoxCollider2D Hull {get;private set;} public bool Horizontal=>Mathf.Abs(Mathf.Sin(Actor.Body.rotation*Mathf.Deg2Rad))>.7f;
+        public string LastBlocker {get;private set;}="none";public BoxCollider2D Hull {get;private set;} public bool Horizontal=>Mathf.Abs(Mathf.Sin(Actor.Body.rotation*Mathf.Deg2Rad))>.7f;
         LoadBearingBody brace;float cooldown,fallSpeed;bool flipping;float elapsed,fromAngle,turn;Vector2 pivot,offset,pivotLocal;Rigidbody2D pivotSupport;const float duration=.30f;
         public override void Enter(){Actor.CancelActions();Actor.Shape.enabled=false;Hull=Actor.gameObject.AddComponent<BoxCollider2D>();Hull.size=new Vector2(1,2);Hull.sharedMaterial=Actor.Shape.sharedMaterial;Actor.Body.bodyType=RigidbodyType2D.Kinematic;Actor.Body.mass=4;Actor.Shape.size=new Vector2(1,2);brace=Actor.gameObject.AddComponent<LoadBearingBody>();Actor.Body.position+=Vector2.up*.3f;Actor.chargeDisabled=true;}
         bool Clear(Vector2 p,float angle)
         {
-            foreach(var c in Physics2D.OverlapBoxAll(p,new Vector2(.94f,1.94f),angle,Layers.Solids))if(c&&!c.isTrigger&&c.attachedRigidbody!=Actor.Body)return false;
+            foreach(var c in Physics2D.OverlapBoxAll(p,new Vector2(.94f,1.94f),angle,Layers.Solids))if(c&&!c.isTrigger&&c.attachedRigidbody!=Actor.Body){LastBlocker=c.name+" "+c.bounds+" candidate="+p+" angle="+angle;return false;}LastBlocker="none";
             return true;
         }
         public bool BeginFlip(int sign)

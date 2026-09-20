@@ -1,5 +1,5 @@
 {
-  "id": "Fall-R10-oneway-and-coffin",
+  "id": "Fall-R11-coffin-contact-probe",
   "build": true,
   "cases": [
     {
@@ -23,10 +23,6 @@
       "suite": "Fall",
       "route": "GB-L15",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

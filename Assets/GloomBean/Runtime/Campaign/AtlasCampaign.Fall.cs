@@ -46,7 +46,7 @@ namespace GloomBean.Campaign
             var secret=a.Hinge(new Vector2(40,11),8,130,"island");secret.name="Island support tower";a.Ledge(39,10.6f,3).AddComponent<OneWaySurface>();
             a.Seam(new Vector2(46.5f,15.65f),"island");
             var island=a.Ledge(37.858f,17.478f,5);island.name="Suspended Mercy island";var rb=island.AddComponent<Rigidbody2D>();rb.bodyType=RigidbodyType2D.Kinematic;
-            var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(3,.15f);
+            var attachment=island.AddComponent<FoldTipIsland>();attachment.support=secret;attachment.offset=new Vector2(3,-.15f);
             a.Mercy(37.858f,18.678f);foreach(var item in b.root.GetComponentsInChildren<Pickup>())if(item.kind==PickupKind.Mercy)item.transform.SetParent(island.transform,true);
             var ret1=a.Seam(new Vector2(20,.74f),"span-a");ret1.gameObject.SetActive(false);
             var ret2=a.Seam(new Vector2(36,4.74f),"span-b");ret2.gameObject.SetActive(false);
