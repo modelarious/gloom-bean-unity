@@ -73,7 +73,7 @@ namespace GloomBean.Campaign
             if(stopped)yield break;float end=Time.time+6,nextTrace=0;bool sent=false;
             while(Live&&Time.time<end){float dx=f.transform.position.x-actor.Body.position.x;bool edge=!sent&&actor.Grounded;if(edge)sent=true;
                 input.frame=new InputFrame{move=new Vector2(Mathf.Clamp(dx*1.4f-actor.Body.linearVelocity.x*.14f,-1,1),0),jump=edge,jumpHeld=true};yield return NextPhysics();if(Time.time>=nextTrace){nextTrace=Time.time+.12f;Note("BACK t="+Time.time.ToString("0.00")+" body="+actor.Body.position+" feet="+actor.Feet.y+" velocity="+actor.Body.linearVelocity+" target="+f.body.position+" pose="+f.pose+" phaseTime="+f.clock+" scale="+f.CurrentTimeScale);}
-                if(sent&&!edge&&actor.Grounded&&actor.GroundCollider==f.GetComponent<Collider2D>()&&Mathf.Abs(dx)<.3f)break;}
+                if(sent&&!edge&&actor.Grounded&&actor.GroundCollider==f.GetComponent<Collider2D>()&&f.pose==KneelingFigure.Pose.Kneeling&&Mathf.Abs(dx)<.3f)break;}
             input.frame=default;Check("land on real back of "+f.name,actor.Grounded&&actor.GroundCollider==f.GetComponent<Collider2D>());
             if(stopped)yield break;yield return Calm();Check("incense changes this body's simulation rate",f.CurrentTimeScale<.55f);Snapshot("penitent-"+f.name.Replace(" ","-"));
         }
@@ -83,7 +83,7 @@ namespace GloomBean.Campaign
             var figures=session.GetComponentsInChildren<KneelingFigure>(true);var outward=figures.Where(f=>f.name.StartsWith("Outward penitent")).OrderBy(f=>f.transform.position.x).ToArray();
             for(int i=0;i<outward.Length;i++){
                 yield return Back(outward[i]);if(stopped)yield break;
-                if(secret&&i==5){yield return Jump(38,11);yield return Jump(34,12.8f);yield return Jump(29,14.6f);
+                if(secret&&i==5){yield return Jump(38,11);yield return Jump(34,12.8f);yield return Jump(29,14.6f);yield return Walk(27.1f);
                     var bearer=figures.First(f=>f.name=="Penitent bearing the Mercy");yield return Back(bearer);yield return Jump(20,16.7f);yield return Calm();
                     yield return Await("standing left makes a physical kneeling ramp",()=>bearer.pose==KneelingFigure.Pose.Kneeling&&bearer.IsLeaning,40);
                     yield return Back(bearer);yield return Press(new InputFrame{move=Vector2.right,jump=true,jumpHeld=true});yield return Hold(new InputFrame{move=Vector2.right,jumpHeld=true},.3f);yield return Await("Mercy touched on a moving body",()=>session.Mercies.Count==1,4);Snapshot("carried-mercy");
