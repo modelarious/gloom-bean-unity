@@ -69,27 +69,32 @@ namespace GloomBean.Campaign
             if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
             if(!coil.enabled)yield return Press(new InputFrame{interact=true});
             yield return Pause(.2f);
+            float settle=Time.time+3;
+            while(Live&&Time.time<settle&&(Mathf.Abs(actor.Body.position.x-x)>.05f||Mathf.Abs(actor.Body.linearVelocity.x)>.25f)){
+                input.frame=new InputFrame{move=new Vector2(Mathf.Clamp((x-actor.Body.position.x)*4-actor.Body.linearVelocity.x*1.2f,-1,1),0)};yield return Tick();}
+            input.frame=default;
             Check("visible reversible coil is energized at "+x,coil.enabled&&actor.Grounded&&Mathf.Abs(actor.Body.position.x-x)<1.6f);
         }
         IEnumerator Flight(Vector2 destination)
         {
             if(stopped||!Live)yield break;
             var magnet=host.Form<LodestoneForm>();Vector2 start=actor.Body.position;int direction=destination.x>start.x?1:-1;
-            float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false;
+            float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false,landed=false,landingInteract=false;
             // Only genuine controls: launch, adjust pole in the observed field, steer, land.
             input.rule=()=>{
                 Vector2 pos=actor.Body.position,v=actor.Body.linearVelocity;float dx=destination.x-pos.x;
-                bool launch=pos.y<start.y+4&&Mathf.Abs(pos.x-start.x)<3;
+                bool launch=pos.y<start.y+6&&Mathf.Abs(pos.x-start.x)<2;
+                if(jumped&&actor.Grounded&&Vector2.Distance(pos,destination)<1.65f){landed=true;bool interact=!landingInteract;landingInteract=true;return new InputFrame{action=magnet.Polarity!=-1,interact=interact,move=new Vector2(Mathf.Clamp(dx*3-v.x*1.1f,-1,1),0)};}
                 float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
                 Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
                 Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=LodestoneForm.Force(pos,m.Position,1,m.polarity,m.strength);
                 int pole=launch?1:Vector2.Dot(north,wanted)>=0?1:-1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
                 bool jump=!jumped&&actor.Grounded;if(jump)jumped=true;
-                float steer=launch?direction:Mathf.Clamp(dx*1.5f-v.x*.65f,-1,1);
+                float steer=launch?Mathf.Clamp((start.x-pos.x)*2-v.x*.8f,-1,1):Mathf.Clamp(dx*1.5f-v.x*.65f,-1,1);
                 return new InputFrame{action=toggle,actionHeld=toggle,move=new Vector2(steer,0),jump=jump,jumpHeld=true};
             };
             while(Live&&Time.time<deadline){
-                if(jumped&&Vector2.Distance(actor.Body.position,destination)<1.05f&&actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<2)break;
+                if(landed&&Vector2.Distance(actor.Body.position,destination)<1.1f&&actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<2)break;
                 if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
             }

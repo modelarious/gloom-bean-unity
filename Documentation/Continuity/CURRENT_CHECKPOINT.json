@@ -2,8 +2,12 @@
   "schema_version": 1,
   "tested_commit": "ce58671e62086e00d1a2e06d3ee67a8494197905",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Continue World5 from EmpyreanVerification.cs and AtlasCampaign.Empyrean.cs. First four worlds completed clean ordinary/secret earned-save acceptance. R08 crossed two magnetic gaps and launched from a real reversible coil, but R09 failed the earlier first gap: solve phase/reproducibility, then remaining L17 route, secret and Turn. Do not repeat repaired City/Fall work.",
-  "active_job": null,
+  "next_gate": "Empyrean H04: validate actual vertical coil launch and grounded opposite-pole catch across cadence/start-delay variants. H03 collides with orbit and drifts off landing; original failures preserved. W1-W4 verified release unchanged.",
+  "active_job": {
+    "task": "GloomBean-Orchard-v04",
+    "receipt": "Reports/Orchard-v04/Empyrean-H04-clear-apex-and-catch/runner.json",
+    "status": "READY_NOT_STARTED"
+  },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
     "repository": "modelarious/gloom-bean-unity",

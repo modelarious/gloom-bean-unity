@@ -1,0 +1,33 @@
+{
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L17-120fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L17-30fps",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  7,
+                        "case":  "L17-delayed",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "id":  "Empyrean-H03-real-coil-approach",
+    "started":  "2026-09-20T04:47:00.9880838-06:00",
+    "phase":  "native-acceptance",
+    "status":  "FAIL",
+    "finished":  "2026-09-20T04:47:18.8308486-06:00"
+}
