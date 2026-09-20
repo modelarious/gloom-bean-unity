@@ -2,12 +2,13 @@
   "schema_version": 1,
   "tested_commit": "ff6bb3da47362e3a79bf78da55f91774bc7d7283",
   "preservation_commit": "b2bf187fcf3718d7d18f5af61c668c01304d6a1c",
-  "next_gate": "Full-Campaign-K1: fresh build and real earned W1..W5 chain with normal, all20 Mercy and19Mercy endings; independent foundation, all5 final solution families, alternative sanctums and practice/access negatives. Do not reconstruct now-passing final routes.",
+  "next_gate": "Full-Campaign-K2:50 fresh-source cases. K1 ordinary final chain continues separately; K1 Fall secret aggregate watchdog failure preserved, now split at actual saved level boundaries with no rule changes. K07 HUD/B4/final/media passed. Inspect K2 three exact ending boundaries and actual backbuffer images, then package exact tested source/player.",
   "active_job": {
-    "task": "GloomBean-Campaign-Acceptance",
-    "receipt": "Reports/Full-Campaign-K1/runner.json",
-    "status": "READY_NOT_STARTED",
-    "tested_source": "d645319783d610d75577a24492236634f1cea97f"
+    "task": "GloomBean-Campaign-Acceptance-K2",
+    "receipt": "Reports/Full-Campaign-K2/runner.json",
+    "config": "Tools/campaign-acceptance-k2.json",
+    "source": "fbf951924d3295b194fda40bae4d274f0dbb5309",
+    "status": "READY_NOT_STARTED"
   },
   "publication": {
     "status": "BLOCKED_NO_ORIGIN",
