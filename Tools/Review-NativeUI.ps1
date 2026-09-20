@@ -46,7 +46,8 @@ try {
  for($i=0;$i -lt 60;$i++){Start-Sleep -Milliseconds 250;$window=[GloomWindow]::Find([uint32]$proc.Id);if($window -ne [IntPtr]::Zero){break}}
  if($window -eq [IntPtr]::Zero){throw 'Own Unity player window never appeared'}
  [GloomWindow]::SetWindowPos($window,[IntPtr]::Zero,20,20,1296,839,4)|Out-Null;Start-Sleep -Seconds 3
- Key 115;Picture '01-cute-title';Key 112;Picture '02-controls';Key 112
+ # Preserve the user's persistent sound preference; UI review must not toggle F4.
+ Picture '01-cute-title';Key 112;Picture '02-controls';Key 112
  Key 13;Picture '03-cute-world-selection';Key 13;Picture '04-cute-level-selection';Key 13;Start-Sleep -Seconds 2;Picture '05-sunday-entry'
  Focus;[GloomWindow]::keybd_event(39,0,0,[UIntPtr]::Zero);Start-Sleep -Milliseconds 400;[GloomWindow]::keybd_event(32,0,0,[UIntPtr]::Zero);Start-Sleep -Milliseconds 200;[GloomWindow]::keybd_event(32,0,2,[UIntPtr]::Zero);[GloomWindow]::keybd_event(39,0,2,[UIntPtr]::Zero);Picture '06-keyboard-jump'
  Key 27;Picture '07-real-pause';Key 83;Picture '07b-first-pause-selection';Key 83;Picture '07c-second-pause-selection';Key 13;Picture '08-returned-level-select';Key 27;Key 27
