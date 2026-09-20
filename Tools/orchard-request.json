@@ -1,23 +1,7 @@
 {
-  "id": "Fall-R15-physical-gaps-and-dock",
+  "id": "Fall-R16-chapel-and-bearing-approach",
   "build": true,
   "cases": [
-    {
-      "name": "L14-critical",
-      "suite": "Fall",
-      "route": "GB-L14"
-    },
-    {
-      "name": "L14-secrets",
-      "suite": "Fall",
-      "route": "GB-L14",
-      "secrets": true
-    },
-    {
-      "name": "L16-critical",
-      "suite": "Fall",
-      "route": "GB-L16"
-    },
     {
       "name": "L16-secrets",
       "suite": "Fall",

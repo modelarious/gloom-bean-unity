@@ -1,3 +1,5 @@
 # The Weight of Everyone
 
 Replaced the initial boss-position/stopwatch sketch with a real dynamic congregation mass. Censer controls the falling-limb approach. Stitch tilts the upper support so gravity transfers the load into a lower catch. The player reaches its underside, releases a physical abutment, and uses Coffin's actual load-bearing collision to arrest the catch at a shallower angle while the mass continues toward the bottom chute. The displayed altitude is the mass's physical Y position. The victory predicate measures the mass at the bottom, not an ability name, elapsed timer, injected damage or player position beyond a door. Native input route and physical failure-mode tests remain pending.
+
+The catching slab begins raised so it does not occupy the final falling-limb landing; entering act II physically lowers it to receive the mass. The right abutment retains the lower mass without walling off the upper player route. This preserves headroom and an honest path to the underside, not a phase teleport. R15 proves L14 ordinary/secret and L16 ordinary; the chapel witness now walks into the collectible after boarding its near edge.

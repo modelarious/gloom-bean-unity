@@ -85,9 +85,9 @@ namespace GloomBean.Campaign
             a.Ledge(9,1,3);a.Ledge(22,4.9f,3).AddComponent<OneWaySurface>();a.Ledge(30,8.3f,3).AddComponent<OneWaySurface>();
             a.Ledge(39,13.2f,4);a.Ledge(43,15,5);var stitchSource=a.Source(HostKind.Stitch,43,16,true);stitchSource.gameObject.SetActive(false);
             var upper=a.Hinge(new Vector2(43,19.74f),10,0,"avalanche");upper.name="Upper load-bearing slab";a.Seam(new Vector2(51.66f,23.74f),"avalanche");
-            var catchFloor=a.Hinge(new Vector2(32,12.8f),12,0,"catch");catchFloor.name="Lower load-bearing slab";a.Seam(new Vector2(39.7f,3.6f),"catch");
+            var catchFloor=a.Hinge(new Vector2(32,12.8f),12,90,"catch");catchFloor.name="Lower load-bearing slab";a.Seam(new Vector2(39.7f,3.6f),"catch");
             var leftStop=b.Solid("Left catch abutment",new Vector2(30.5f,16),new Vector2(1,7));
-            var rightStop=b.Solid("Retractable catch abutment",new Vector2(45.5f,15),new Vector2(1,7));
+            var rightStop=b.Solid("Retractable catch abutment",new Vector2(45.5f,13),new Vector2(1,3));
             var bodyArt=PrimitiveArt.Shape("The physical falling congregation",b.root,new Vector2(48,23),Vector2.one*4,new Color(.58f,.44f,.49f),PrimitiveArt.Icon.Round,7);bodyArt.layer=Layers.Prop;
             var circle=bodyArt.AddComponent<CircleCollider2D>();circle.radius=2;bodyArt.transform.localScale=Vector3.one;bodyArt.GetComponent<SpriteRenderer>().drawMode=SpriteDrawMode.Sliced;bodyArt.GetComponent<SpriteRenderer>().size=Vector2.one*4;
             circle.sharedMaterial=new PhysicsMaterial2D("Congregation slides under its own mass"){friction=.015f,bounciness=0};var rb=bodyArt.AddComponent<Rigidbody2D>();rb.mass=24;rb.gravityScale=3.4f;rb.freezeRotation=true;rb.collisionDetectionMode=CollisionDetectionMode2D.Continuous;
@@ -99,7 +99,7 @@ namespace GloomBean.Campaign
             a.Health(43,16.3f);a.Cure(HostKind.Coffin,29,11);
             boss.Configure(boss.title,phase=>phase==0?a.Player.Feet.y>14.7f:phase==1?rb.position.x<41&&rb.position.y<18:mass.AtBottom,phase=>{
                 if(phase==0)boss.objective="Slow the falling limbs and climb the congregation. The mass above is real, not a health bar.";
-                if(phase==1){stitchSource.gameObject.SetActive(true);boss.objective="Tilt its supporting slab. Let its own weight carry it into the lower catch.";}
+                if(phase==1){stitchSource.gameObject.SetActive(true);catchFloor.targetAngle=0;catchFloor.folding=true;boss.objective="Tilt its supporting slab. Let its own weight carry it into the lower catch.";}
                 if(phase==2){foreach(var limb in limbs)limb.gameObject.SetActive(false);braceFloor.SetActive(true);accessFloor.SetActive(true);coffinSource.gameObject.SetActive(true);lowerLatch.gameObject.SetActive(true);boss.objective="Work beneath the load: release the right abutment, then brace the folding catch so the congregation rolls into the bottom chute.";}
             });
             b.Tip(new Vector2(42,16.8f),"Aim U at a loose architectural edge and its partner. Tilting a support moves everything resting on it.");

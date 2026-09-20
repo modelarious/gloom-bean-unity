@@ -1,0 +1,61 @@
+BEGIN GB-L14 The Seamstress Bridge
+PASS GB-L14 walk 11.8 | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 focus Stitch | (11.59, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 catch visible span-a seam | (11.61, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (11.61, 0.76) feet=0.01 hp=6 twin=none
+EVENT t=2.43 stitch-tug Entry folding tower
+PASS GB-L14 physical fold reaches 30 | (11.61, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L14 walk 26 | (25.80, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 walk 27 | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 focus Stitch | (26.78, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 catch visible span-b seam | (26.80, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (26.80, 4.75) feet=4.00 hp=6 twin=none
+EVENT t=6.87 stitch-tug Middle folding tower
+PASS GB-L14 physical fold reaches 30 | (26.80, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 walk 38.8 | (38.58, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 censer acquired from swinging incense | (38.58, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 stillness expands the local time field | (38.60, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 walk 46 | (45.80, 9.76) feet=9.01 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (45.80, 9.76) feet=9.01 hp=6 twin=none
+PASS GB-L14 focus Stitch | (45.81, 9.76) feet=9.01 hp=6 twin=none
+PASS GB-L14 catch visible span-c seam | (45.81, 9.76) feet=9.01 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (45.81, 9.76) feet=9.01 hp=6 twin=none
+EVENT t=14.85 stitch-tug Far folding tower
+PASS GB-L14 physical fold reaches 30 | (45.81, 9.76) feet=9.01 hp=6 twin=none
+PASS GB-L14 walk 59 | (58.79, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 walk 65.6 | (65.41, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 bridge Keyling | (65.41, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 Nail separates bridge halves | (65.42, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 walk 57.5 | (57.69, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 far tower completes its physical Turn | (57.69, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (57.68, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 focus Stitch | (57.68, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 catch visible span-c seam | (57.67, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (57.67, 14.76) feet=14.01 hp=6 twin=none
+EVENT t=23.05 stitch-tug Far folding tower
+PASS GB-L14 physical fold reaches 14.04 | (57.67, 14.76) feet=14.01 hp=6 twin=none
+PASS GB-L14 walk 45.6 | (45.80, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 physical running landing 40.5 | (40.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 censer acquired from swinging incense | (40.73, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 stillness expands the local time field | (40.32, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 incense slows the moving bridge half | (40.32, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 walk 38 | (38.20, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (38.20, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 focus Stitch | (38.18, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 catch visible span-b seam | (38.16, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (38.16, 9.75) feet=9.00 hp=6 twin=none
+EVENT t=31.87 stitch-tug Middle folding tower
+PASS GB-L14 physical fold reaches 7.13 | (37.99, 9.75) feet=9.00 hp=6 twin=none
+PASS GB-L14 walk 24 | (24.21, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 required tenant present: Stitch | (24.21, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 focus Stitch | (24.21, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 catch visible span-a seam | (24.19, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 thread connects two real edges | (24.19, 4.75) feet=4.00 hp=6 twin=none
+EVENT t=36.83 stitch-tug Entry folding tower
+PASS GB-L14 physical fold reaches 9.46 | (24.19, 4.75) feet=4.00 hp=6 twin=none
+PASS GB-L14 walk 2 | (3.19, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L14 stage completes through physical exit or boss solution | (3.19, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L14 completion survives save | (3.19, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L14 Mercy remains optional | (3.19, 0.75) feet=0.00 hp=6 twin=none
