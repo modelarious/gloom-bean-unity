@@ -1,5 +1,5 @@
 {
-  "id": "City-R07-fresco-projection",
+  "id": "City-R08-outlines-and-projection",
   "build": true,
   "cases": [
     {
@@ -23,10 +23,6 @@
       "suite": "City",
       "route": "GB-L11",
       "secrets": true
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
     }
   ]
 }

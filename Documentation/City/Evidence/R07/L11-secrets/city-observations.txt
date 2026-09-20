@@ -1,0 +1,10 @@
+BEGIN GB-L11 The Perspective Tax Office
+EVENT t=1.42 depth 1
+PASS GB-L11 walk 11 | (10.79, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L11 perspective tenant exists | (10.79, 0.76) feet=0.01 hp=6 twin=none
+EVENT t=2.17 depth 0
+PASS GB-L11 project into plane 0 | (10.81, 0.75) feet=0.26 hp=6 twin=none
+PASS GB-L11 plane jump has perspective tenant | (10.85, 0.54) feet=0.06 hp=6 twin=none
+PHYSICAL shape=Center: (15.96, -16.65, 0.00), Extents: (0.29, 0.49, 0.00) axis=Vertical forms=Parallax
+FAIL GB-L11 land projected body 0 at 17 / 1.195 | (15.96, -16.65) feet=-17.14 hp=-93 twin=none
+FAIL GB-L11 stage cleared by actual return or boss solution | (15.96, -16.65) feet=-17.14 hp=-93 twin=none
