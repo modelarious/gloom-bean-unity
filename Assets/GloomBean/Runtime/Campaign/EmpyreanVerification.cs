@@ -48,7 +48,7 @@ namespace GloomBean.Campaign
                 input.frame=new InputFrame{action=reverse,actionHeld=reverse,jump=jump,jumpHeld=true,move=new Vector2(Mathf.Clamp(error.x*2-velocity.x*.6f,-1,1),0)};
                 yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("MAGNET t="+Time.time+" body="+actor.Body.position+" velocity="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+target+" reversals="+reversals);}
             }
-            input.frame=default;Check((landing?"magnetic landing at ":"magnetic transit through ")+target,(!landing||actor.Grounded)&&Vector2.Distance(actor.Body.position,target)<(landing?.9f:1.2f));Snapshot("magnet-"+target.x);
+            input.frame=default;Note("SUPPORT "+(actor.GroundCollider?actor.GroundCollider.name:"none"));Check((landing?"magnetic landing at ":"magnetic transit through ")+target,(!landing||actor.Grounded)&&Vector2.Distance(actor.Body.position,target)<(landing?.9f:1.2f));Snapshot("magnet-"+target.x);
         }
         IEnumerator Halos(bool secret)
         {
@@ -60,9 +60,9 @@ namespace GloomBean.Campaign
             Check("actual switch energizes the physical altar",session.GetComponentsInChildren<MagneticBody>().Single(m=>m.name=="Fixed north launch altar").enabled);
             Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
             yield return MagnetTo(new Vector2(41,13),16,false);yield return MagnetTo(new Vector2(46,6.75f));
-            yield return Walk(47.4f);yield return MagnetTo(new Vector2(53,12),12,false);yield return MagnetTo(new Vector2(60,12),12,false);yield return MagnetTo(new Vector2(65,8.75f));
-            yield return Walk(66.4f);yield return MagnetTo(new Vector2(72,14),12,false);yield return MagnetTo(new Vector2(79,14),12,false);yield return MagnetTo(new Vector2(83,10.75f));
-            yield return Walk(84.4f);yield return MagnetTo(new Vector2(90,16),12,false);yield return MagnetTo(new Vector2(96,16),12,false);yield return MagnetTo(new Vector2(99,12.75f));
+            yield return MagnetTo(new Vector2(58,15),16,false);yield return MagnetTo(new Vector2(65,8.75f));
+            yield return MagnetTo(new Vector2(77,17),16,false);yield return MagnetTo(new Vector2(83,10.75f));
+            yield return MagnetTo(new Vector2(94,19),16,false);yield return MagnetTo(new Vector2(99,12.75f));
             if(stopped)yield break;
             Check("Keyling reached through magnetic traversal",session.HasKey);
             if(secret){yield return MagnetTo(new Vector2(61,18.75f));Check("orbiting loft Mercy",session.Mercies.Count==1);yield return MagnetTo(new Vector2(99,12.75f));}
