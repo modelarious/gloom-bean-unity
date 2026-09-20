@@ -5,3 +5,5 @@ Existing HostPixelArt/HostPixelView were unreferenced, so prior source presence 
 Original offline modal score: eight 8-bar synthesized themes and return variants, with crossfade and F5 music toggle. Existing F4 sound/master mute and verification silence retained. Composition is deterministic and imports no recordings. New art, audio and UI remain implementation pending actual native render/audio verification.
 
 K03 final Mirror approach was hit by the boss just as Walk returned, leaving stale ground state and suppressing the next jump during hurt. Fix the real-input timing, not player damage or acceptance thresholds.
+
+K05: all five gameplay families reached actual victory; the new GUI assertions correctly failed because the batchmode player did not paint the ending and screen readback was black. It was not missing permissions or missing game code. Native GPU asset and audio suite passed309 assertions. Final-screen witnesses now run windowed through the same licensed-user task; complete-chain runner serializes windowed cases so only one visible test player is open at once. Camera-only scene pictures do not certify IMGUI. Preserve K05 failures.

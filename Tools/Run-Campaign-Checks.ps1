@@ -18,7 +18,7 @@ try {
  foreach($c in $cases){
   $out=Join-Path $dir $c.name;New-Item -ItemType Directory -Force $out | Out-Null
   $mode=switch($c.suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Orchard'{'-gb-orchard-verify -gb-route-id '+$c.route} 'City'{'-gb-city-verify -gb-route-id '+$c.route} 'Fall'{'-gb-fall-verify -gb-route-id '+$c.route} 'Empyrean'{'-gb-empyrean-verify -gb-route-id '+$c.route} default {'-gb-parish-verify -gb-route-id '+$c.route}}
-  $flags='-batchmode '+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
+  $gui=[bool]$c.windowed -or $c.route -eq 'GB-B5';$flags=$(if($gui){''}else{'-batchmode '})+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
   if($c.secrets){$flags+=' -gb-with-secrets'}
   if($c.practice){$flags+=' -gb-practice-witness'}
   if($r.trace){$flags+=' -gb-echo-trace'}

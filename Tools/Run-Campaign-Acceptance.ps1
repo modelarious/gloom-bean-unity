@@ -42,6 +42,7 @@ try {
   foreach($j in $jobs){
    $c=$j.case
    if($j.state -eq 'PENDING'){
+    $gui=[bool]$c.windowed -or $c.route -eq 'GB-B5';if($gui -and @($jobs|Where-Object {$_.state -eq 'RUNNING' -and ($_.case.windowed -or $_.case.route -eq 'GB-B5')}).Count -gt 0){continue}
     if($c.parent){$parent=$names[$c.parent];if($parent.state -in @('PENDING','RUNNING')){continue};if($parent.state -ne 'PASS'){$j.state='DEPENDENCY_FAILED';continue}}
     $out=Join-Path $dir $j.name;New-Item -ItemType Directory $out | Out-Null;$j.out=$out
     if($c.parent){
@@ -64,7 +65,7 @@ try {
     if($null -ne $c.expectedMercies){if([int]$c.expectedMercies -lt 0 -or [int]$c.expectedMercies -gt 20){throw 'Invalid Mercy boundary'};$mode+=' -gb-expected-mercies '+[int]$c.expectedMercies}
 
     if($null -ne $c.startDelay){$mode+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
-    $flags='-batchmode '+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
+    $flags=$(if($gui){''}else{'-batchmode '})+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
     $j.process=Start-Process (Join-Path $root 'Builds\Windows\GloomBean.exe') -ArgumentList $flags -PassThru;$j.started=Get-Date;$j.state='RUNNING'
    }
    if($j.state -eq 'RUNNING'){

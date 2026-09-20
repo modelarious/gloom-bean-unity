@@ -1,52 +1,14 @@
 {
-  "id": "Completion-K05-five-final-families-and-media",
+  "id": "Completion-K06-windowed-ending",
   "build": true,
   "cases": [
     {
-      "name": "B5-magnet-shadow",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "magnet-shadow",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-echo-ink",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "echo-ink",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-wax-gullet",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "wax-gullet",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-stitch-coffin",
+      "name": "B5-windowed",
       "suite": "Empyrean",
       "route": "GB-B5",
       "finalPair": "stitch-coffin",
-      "renderFps": 60
-    },
-    {
-      "name": "B5-mirror-parallax",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "mirror-parallax",
-      "renderFps": 60
-    },
-    {
-      "name": "Mechanics",
-      "suite": "Mechanics"
-    },
-    {
-      "name": "L20-secret",
-      "suite": "Empyrean",
-      "route": "GB-L20",
-      "secrets": true,
-      "renderFps": 60
+      "renderFps": 60,
+      "windowed": true
     }
   ]
 }
