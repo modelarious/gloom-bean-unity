@@ -204,6 +204,9 @@ namespace GloomBean.Campaign
             C("lodestone.bounded-field-retains-reciprocity",(localPull+localPush).sqrMagnitude<.0001f&&localPull.sqrMagnitude>1);
             yield return Arena();host.Acquire(HostKind.Lodestone);actor.Body.position+=Vector2.up*12;actor.Body.linearVelocity=new Vector2(18,2);yield return Steps(5);
             C("lodestone.leaving-field-retains-air-momentum",actor.Body.linearVelocity.x>15&&actor.Body.position.y>10,actor.Body.linearVelocity.ToString());
+            yield return Arena();var freeScreen=a.Metal(new Vector2(600,4),new Vector2(4,.6f),2,false,1);freeScreen.strength=60;actor.Body.position=new Vector2(600,5.05f);host.Acquire(HostKind.Lodestone);input.frame=new InputFrame{action=true};yield return tick;input.frame=default;
+            float highestFree=freeScreen.transform.position.y;for(int i=0;i<120;i++){yield return tick;highestFree=Mathf.Max(highestFree,freeScreen.GetComponent<Rigidbody2D>().position.y);}
+            C("lodestone.internal-attraction-cannot-lift-its-own-support",highestFree<4.3f&&freeScreen.gameObject.layer==Layers.Prop,"highest="+highestFree);
             yield return Arena();var diagonal=b.Solid("Diagonal silhouette fixture",new Vector2(605,6),new Vector2(6,1));diagonal.transform.rotation=Quaternion.Euler(0,0,45);Physics2D.SyncTransforms();var diagShape=diagonal.GetComponent<Collider2D>();var silhouette=ShadowGeometry.Outline(diagShape);
             C("shadow.rotated-outline-is-not-aabb",silhouette.Length==4&&!ShadowSun.Inside(new Vector2(602.7f,8.3f),silhouette));
             var noonSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.down,12);var sideSilhouette=ShadowGeometry.Parallel(silhouette,Vector2.right,12);
@@ -232,7 +235,7 @@ namespace GloomBean.Campaign
             yield return Arena();host.Acquire(HostKind.Ink);var ink=host.Form<InkForm>();var stroke=ink.Add(new Vector2(600,3),new Vector2(603,3));yield return Steps(35);C("ink.not-solid-immediately",stroke&&!stroke.Solid);yield return Steps(40);C("ink.hardens-after-delay",stroke&&stroke.Solid);yield return Steps(450);C("ink.expires",!stroke);
             for(int i=0;i<9;i++)ink.Add(new Vector2(600+i*3,5),new Vector2(603+i*3,5));yield return Steps(3);C("ink.finite-length-budget",ink.Length<=18.01f,ink.Length.ToString());
 
-            yield return Arena();var comma=b.Prop(new Vector2(603,.5f),Vector2.one,1);comma.GetComponent<Collider2D>().sharedMaterial=new PhysicsMaterial2D("Frictionless punctuation fixture"){friction=0};var punctuation=comma.AddComponent<PunctuationCart>();punctuation.firstSlot=603;
+            yield return Arena();var comma=b.Prop(new Vector2(603,.5f),Vector2.one,1);comma.GetComponent<Collider2D>().sharedMaterial=new PhysicsMaterial2D("Frictionless punctuation fixture"){friction=0};var punctuation=comma.AddComponent<PunctuationCart>();punctuation.firstSlot=603;b.Wall(607,2,4);
             var sentence=fixture.AddComponent<ScriptureLayout>();sentence.punctuation=punctuation;sentence.origin=new Vector2(620,20);sentence.rowHeight=-2.1f;sentence.words=new Transform[6];
             for(int word=0;word<6;word++){var piece=b.Solid("Test word "+word,sentence.origin+new Vector2(word%5*sentence.spacing,word/5*sentence.rowHeight),new Vector2(3,.4f));piece.AddComponent<Rigidbody2D>().bodyType=RigidbodyType2D.Kinematic;sentence.words[word]=piece.transform;}
             var fourth=sentence.words[3];Vector2 beforeWrap=fourth.position;punctuation.Body.AddForce(Vector2.right*5,ForceMode2D.Impulse);for(int i=0;i<100&&punctuation.Slot==0;i++)yield return tick;
