@@ -65,29 +65,45 @@ namespace GloomBean.Campaign
         IEnumerator PowerAltar(float x)
         {
             if(stopped||!Live)yield break;
-            var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name=="Launch coil "+x);
+            var coil=session.GetComponentsInChildren<MagneticBody>(true).Single(m=>m.name==(x==29?"Fixed north launch altar":"Launch coil "+x));
             if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
-            yield return Press(new InputFrame{interact=true});yield return Pause(.18f);
+            if(!coil.enabled)yield return Press(new InputFrame{interact=true});
+            yield return Pause(.2f);
             Check("visible reversible coil is energized at "+x,coil.enabled&&actor.Grounded&&Mathf.Abs(actor.Body.position.x-x)<1.6f);
+        }
+        IEnumerator Flight(Vector2 destination)
+        {
+            if(stopped||!Live)yield break;
+            var magnet=host.Form<LodestoneForm>();Vector2 start=actor.Body.position;int direction=destination.x>start.x?1:-1;
+            float cruise=Mathf.Max(start.y,destination.y)+6.5f,deadline=Time.time+12,nextToggle=0,trace=0;bool jumped=false;
+            // Only genuine controls: launch, adjust pole in the observed field, steer, land.
+            input.rule=()=>{
+                Vector2 pos=actor.Body.position,v=actor.Body.linearVelocity;float dx=destination.x-pos.x;
+                bool launch=pos.y<start.y+4&&Mathf.Abs(pos.x-start.x)<3;
+                float goalY=Mathf.Abs(dx)>4?cruise:destination.y;
+                Vector2 wanted=new Vector2(dx*4-v.x*3,(goalY-pos.y)*5-v.y*4+actor.tuning.gravity);
+                Vector2 north=Vector2.zero;foreach(var m in MagneticBody.All)if(m&&m.isActiveAndEnabled&&Vector2.Distance(pos,m.Position)<magnet.range)north+=LodestoneForm.Force(pos,m.Position,1,m.polarity,m.strength);
+                int pole=launch?1:Vector2.Dot(north,wanted)>=0?1:-1;bool toggle=pole!=magnet.Polarity&&Time.fixedTime>=nextToggle;if(toggle)nextToggle=Time.fixedTime+.12f;
+                bool jump=!jumped&&actor.Grounded;if(jump)jumped=true;
+                float steer=launch?direction:Mathf.Clamp(dx*1.5f-v.x*.65f,-1,1);
+                return new InputFrame{action=toggle,actionHeld=toggle,move=new Vector2(steer,0),jump=jump,jumpHeld=true};
+            };
+            while(Live&&Time.time<deadline){
+                if(jumped&&Vector2.Distance(actor.Body.position,destination)<1.05f&&actor.Grounded&&Mathf.Abs(actor.Body.linearVelocity.x)<2)break;
+                if(actor.Feet.y<Mathf.Min(start.y,destination.y)-4)break;
+                yield return Tick();if(Time.time>trace){trace=Time.time+.5f;Note("FLIGHT body="+actor.Body.position+" v="+actor.Body.linearVelocity+" pole="+magnet.Polarity+" target="+destination);}
+            }
+            input.rule=null;input.frame=default;Check("coil flight lands on physical support "+destination,actor.Grounded&&Vector2.Distance(actor.Body.position,destination)<1.1f);Snapshot("flight-"+destination.x);
         }
         IEnumerator Halos(bool secret)
         {
-            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));yield return Walk(17.8f);
-            yield return MagnetTo(new Vector2(21,7),12,false);
-            yield return MagnetTo(new Vector2(29,4.75f));if(stopped)yield break;
-            if(host.Form<LodestoneForm>().Polarity!=-1)yield return Press(new InputFrame{action=true});
-            yield return Press(new InputFrame{interact=true});yield return Pause(.25f);
-            Check("actual switch energizes the physical altar",session.GetComponentsInChildren<MagneticBody>().Single(m=>m.name=="Fixed north launch altar").enabled);
-            Check("opposite pole anchors the Host on the fixed altar",actor.Grounded&&host.Form<LodestoneForm>().Polarity==-1);
-            yield return MagnetTo(new Vector2(41,13),16,false);yield return MagnetTo(new Vector2(46,6.75f));
-            yield return PowerAltar(46);yield return MagnetTo(new Vector2(58,15),16,false);yield return MagnetTo(new Vector2(65,8.75f));
-            yield return PowerAltar(65);yield return MagnetTo(new Vector2(77,17),16,false);yield return MagnetTo(new Vector2(83,10.75f));
-            yield return PowerAltar(83);yield return MagnetTo(new Vector2(94,19),16,false);yield return MagnetTo(new Vector2(99,12.75f));
-            if(stopped)yield break;
+            yield return Walk(8);Check("iron halo source",host.Has(HostKind.Lodestone));yield return Walk(11.8f);yield return MagnetTo(new Vector2(16,2.75f));
+            var docks=new[]{new Vector2(16,2.75f),new Vector2(29,4.75f),new Vector2(46,6.75f),new Vector2(65,8.75f),new Vector2(83,10.75f),new Vector2(99,12.75f)};
+            for(int i=0;i<docks.Length-1;i++){yield return PowerAltar(docks[i].x);yield return Flight(docks[i+1]);if(stopped)yield break;}
             Check("Keyling reached through magnetic traversal",session.HasKey);
-            if(secret){yield return MagnetTo(new Vector2(61,18.75f));Check("orbiting loft Mercy",session.Mercies.Count==1);yield return MagnetTo(new Vector2(99,12.75f));}
+            if(secret){Check("Orbiting Mercy route not yet certified",false);yield break;}
             yield return Walk(103.5f);yield return Press(new InputFrame{interact=true});Check("Nail desynchronizes actual choir",session.Phase==RunPhase.Returning&&session.GetComponentInChildren<HaloChoir>().desynchronized);
-            foreach(var point in new[]{new Vector2(83,10.75f),new Vector2(65,8.75f),new Vector2(46,6.75f),new Vector2(29,4.75f),new Vector2(16,2.75f)}){yield return MagnetTo(point);if(stopped)yield break;}
+            yield return Walk(99);for(int i=docks.Length-1;i>0;i--){yield return PowerAltar(docks[i].x);yield return Flight(docks[i-1]);if(stopped)yield break;}
             yield return Walk(2,true);
         }
         IEnumerator Run()

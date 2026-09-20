@@ -26,14 +26,14 @@ namespace GloomBean.Campaign
             b.Tip(new Vector2(28,5),"E powers the fixed north altar. SOUTH holds you down; NORTH pushes you off. Switch the coil off to remove its force. The hanging halos still follow their own beat.");
             a.Ledge(16,2,5);a.Ledge(29,4,4);a.Ledge(46,6,4);a.Ledge(65,8,4);a.Ledge(83,10,4);a.Ledge(99,12,13);a.Key(96,13.3f);a.Nail(104,12.4f);
             // Independent reversible circuits expose real forces, not invisible jump boosts.
-            foreach(var dock in new[]{new Vector2(46,6),new Vector2(65,8),new Vector2(83,10),new Vector2(99,12)})
+            foreach(var dock in new[]{new Vector2(16,2),new Vector2(46,6),new Vector2(65,8),new Vector2(83,10),new Vector2(99,12)})
             {
                 var coil=a.Metal(dock+Vector2.down*.95f,new Vector2(2.2f,.7f),20,true,1);coil.name="Launch coil "+dock.x;coil.strength=170;coil.enabled=false;
                 var lever=b.Switch(dock+Vector2.up*.9f,"COIL "+dock.x);lever.name="Coil lever "+dock.x;lever.Changed+=on=>coil.enabled=on;
                 PrimitiveArt.Line("Coil circuit "+dock.x,b.root,dock+Vector2.down*.6f,dock+Vector2.up*.9f,.08f,new Color(.87f,.62f,.31f),2);
             }
             a.Metal(new Vector2(38,5),new Vector2(3,.65f),3,false,-1);a.Metal(new Vector2(74,7),new Vector2(3,.65f),3,false,1);
-            a.Ledge(60,18,6);a.Mercy(61,19.3f);var secret=a.Metal(new Vector2(57,17),Vector2.one*1.2f,4,true,-1);secret.strength=160;poles.Add(secret);choir.halos=poles.ToArray();
+            a.Ledge(64,23,6);a.Mercy(65,24.3f);var secret=a.Metal(new Vector2(62,24),Vector2.one*1.2f,4,true,-1);secret.strength=160;poles.Add(secret);choir.halos=poles.ToArray();
             b.session.Turned+=()=>choir.desynchronized=true;a.Health(46,7.3f);b.Tip(new Vector2(8,2),"Equal poles repel; opposite poles attract. The anchored halo pulls you. The loose iron is pulled back just as hard. U changes your pole.");a.Cure(HostKind.Lodestone,4,1);
         }
         ShadowSun Sun(AtlasBuilder a,Vector2 p,float reach=22)
