@@ -24,6 +24,16 @@ namespace GloomBean.Campaign
             var sr=obj.GetComponent<SpriteRenderer>();sr.drawMode=SpriteDrawMode.Sliced;sr.size=new Vector2(2.4f,18);
             var attack=obj.AddComponent<BossLaneAttack>();attack.delay=wait;attack.floor=arenaCenter.y-8;
         }
-        void OnGUI(){if(!StageSession.Current||defeated)return;GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));var s=new GUIStyle(GUI.skin.label){fontSize=16,wordWrap=true};GUI.Label(new Rect(180,122,630,70),title+"  |  ACT "+(phase+1)+" / "+phases+"\n"+objective,s);}
+        void OnGUI()
+        {
+            if(!StageSession.Current||defeated||!GameRoot.Instance||GameRoot.Instance.CurrentScreen!="Play")return;
+            var matrix=GUI.matrix;var color=GUI.color;int depth=GUI.depth;
+            GUI.depth=10; // The controls card and pause menu stay above the encounter HUD.
+            GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));
+            GUI.color=new Color(.025f,.018f,.045f,.91f);GUI.DrawTexture(new Rect(18,166,924,78),Texture2D.whiteTexture);GUI.color=Color.white;
+            var style=new GUIStyle(GUI.skin.label){fontSize=15,wordWrap=true,normal={textColor=Color.white}};
+            GUI.Label(new Rect(30,172,900,65),title+"  |  ACT "+(phase+1)+" / "+phases+"\n"+objective,style);
+            GUI.matrix=matrix;GUI.color=color;GUI.depth=depth;
+        }
     }
 }

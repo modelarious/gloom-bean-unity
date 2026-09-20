@@ -1,0 +1,14 @@
+{
+  "status": "PASS_VISUAL_REVIEW",
+  "scope": "13 native own-window captures; actual menu inputs and readable control card, not complete gameplay",
+  "source": "d645319783d610d75577a24492236634f1cea97f",
+  "screens": 13,
+  "observations": [
+    "Cute title and character, F1 controls readable",
+    "World and level selection reached through Enter",
+    "Sunday actual entry, jump and Pause",
+    "S navigates both pause rows; Enter returns to level selection",
+    "Practice opens all worlds; World5 and final boss entered without modifying real save"
+  ],
+  "repair_required": "Boss HUD overlap discovered; presentation-only fix committed separately"
+}
