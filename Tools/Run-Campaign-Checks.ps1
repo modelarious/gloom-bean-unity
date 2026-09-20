@@ -13,7 +13,7 @@ try {
  $status.phase='native-acceptance';Receipt
  foreach($c in $cases){
   $out=Join-Path $dir $c.name;New-Item -ItemType Directory -Force $out | Out-Null
-  $mode=switch($c.suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Orchard'{'-gb-orchard-verify -gb-route-id '+$c.route} 'City'{'-gb-city-verify -gb-route-id '+$c.route} 'Fall'{'-gb-fall-verify -gb-route-id '+$c.route} default {'-gb-parish-verify -gb-route-id '+$c.route}}
+  $mode=switch($c.suite){'Mechanics'{'-gb-verify'} 'OpeningRoute'{'-gb-route-verify'} 'Orchard'{'-gb-orchard-verify -gb-route-id '+$c.route} 'City'{'-gb-city-verify -gb-route-id '+$c.route} 'Fall'{'-gb-fall-verify -gb-route-id '+$c.route} 'Empyrean'{'-gb-empyrean-verify -gb-route-id '+$c.route} default {'-gb-parish-verify -gb-route-id '+$c.route}}
   $flags='-batchmode '+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
   if($c.secrets){$flags+=' -gb-with-secrets'}
   if($c.practice){$flags+=' -gb-practice-witness'}
@@ -26,7 +26,7 @@ try {
   $proc=$j.process;$out=$j.directory;$c=$j.case;$remain=[Math]::Max(1,540-((Get-Date)-$j.started).TotalSeconds)
   if(-not $proc.WaitForExit([int]($remain*1000))){Stop-Process -Id $proc.Id -Force;[IO.File]::WriteAllText("$out\player.exit",'TIMEOUT');$outcomes+=@{case=$c.name;status='TIMEOUT'};continue}
   $proc.Refresh();[IO.File]::WriteAllText("$out\player.exit",[string]$proc.ExitCode)
-  $file=switch($c.suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Orchard'{'orchard-result.json'} 'City'{'city-result.json'} 'Fall'{'fall-result.json'} default {'parish-result.json'}}
+  $file=switch($c.suite){'Mechanics'{'verification.json'} 'OpeningRoute'{'route-result.json'} 'Orchard'{'orchard-result.json'} 'City'{'city-result.json'} 'Fall'{'fall-result.json'} 'Empyrean'{'empyrean-result.json'} default {'parish-result.json'}}
   if(Test-Path "$out\$file"){$result=Get-Content "$out\$file" -Raw | ConvertFrom-Json;$ok=($proc.ExitCode -eq 0 -and $result.failed -eq 0);$outcomes+=@{case=$c.name;status=$(if($ok){'PASS'}else{'FAIL'});passed=$result.passed;checks=$result.checks;failed=$result.failed;exceptions=$result.exceptions}}
   else {$outcomes+=@{case=$c.name;status='NO_RECEIPT';exit=$proc.ExitCode}}
  }

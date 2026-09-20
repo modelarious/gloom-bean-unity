@@ -50,7 +50,7 @@ namespace GloomBean.Foundation
             if(atlasType!=null&&typeof(ICampaignSource).IsAssignableFrom(atlasType))sources.Add((ICampaignSource)Activator.CreateInstance(atlasType));
             Source=sources[0];worlds=Source.Worlds();screen=ScreenMode.Home;
             string[] args=Environment.GetCommandLineArgs();
-            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0||Array.IndexOf(args,"-gb-city-verify")>=0||Array.IndexOf(args,"-gb-fall-verify")>=0;
+            testMode=Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0||Array.IndexOf(args,"-gb-city-verify")>=0||Array.IndexOf(args,"-gb-fall-verify")>=0||Array.IndexOf(args,"-gb-empyrean-verify")>=0;
             reportDirectory=Argument(args,"-gb-reports",Path.Combine(Application.persistentDataPath,"Reports"));
             string savePath=Argument(args,"-gb-save",Path.Combine(Application.persistentDataPath,"host-cycle-save.json"));
             if(testMode)savePath=Path.Combine(reportDirectory,"test-save.json");
@@ -65,6 +65,7 @@ namespace GloomBean.Foundation
         IEnumerator BeginVerification()
         {
             yield return null;
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-empyrean-verify")>=0){var empyrean=Type.GetType("GloomBean.Campaign.EmpyreanVerification, Assembly-CSharp");if(empyrean==null)throw new InvalidOperationException("Empyrean witness is not installed.");empyrean.GetMethod("Begin").Invoke(gameObject.AddComponent(empyrean),new object[]{this});yield break;}
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-fall-verify")>=0){var fall=Type.GetType("GloomBean.Campaign.FallVerification, Assembly-CSharp");if(fall==null)throw new InvalidOperationException("Fall witness is not installed.");fall.GetMethod("Begin").Invoke(gameObject.AddComponent(fall),new object[]{this});yield break;}
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-gb-city-verify")>=0)
             {
