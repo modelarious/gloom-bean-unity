@@ -3,7 +3,7 @@
 Original requirement: reusable native Unity foundation, committed before the full five-world atlas implementation.
 
 - [ ] M1.1 Preserve interrupted-run source and original negative evidence; no claimed source loss.
-- [ ] M1.2 Correctly test the vulnerable, physically supported Ink/Shadow body; delayed120 and other cadence routes must complete with genuine controls. No physics or layout changes to pass the oracle.
+- [ ] M1.2 Correctly test the vulnerable, physically supported Ink/Shadow body; delayed 120 and other cadence routes must complete with genuine controls. No physics or layout changes to pass the oracle.
 - [ ] M1.3 Complete all54 configured common-source cases: twenty ordinary/secret levels, five bosses, exact0/19/20 earned endings, five final pairs, alternate sanctums, practice/access and no-Ink controls. No omitted failures.
 - [ ] M1.4 Independently audit each child exit and observations, unchanged earned-save chains, source identity and managed assembly.
   CHECK: python Tools/audit_release.py --config Tools/campaign-acceptance-m1.json

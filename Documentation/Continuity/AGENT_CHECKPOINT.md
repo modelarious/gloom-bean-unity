@@ -6,7 +6,7 @@ Read `CURRENT_CHECKPOINT.json` beside this file before acting. It records the la
 
 The complete native campaign is implemented: twenty stages, five world bosses, fifteen possession systems, ordinary and all-Mercy routes, permanent first corruption, original pixel presentation and both endings. Do not start over from an earlier four-world ZIP. Do not interpret a failed conversation response as erased machine work. Compare actual Git history, current files and persistent run receipts first.
 
-The original user asked for a separately committed reusable platformer foundation, then implementation of the44-page atlas. The independent `foundation` branch and immutable original `foundation-v0.1.0` tag remain intact. Gloom Bean is not DungeonForge's top-down generator.
+The original user asked for a separately committed reusable platformer foundation, then implementation of the 44-page atlas. The independent `foundation` branch and immutable original `foundation-v0.1.0` tag remain intact. Gloom Bean is not DungeonForge's top-down generator.
 
 ## 2. Canonical authority and first read
 
@@ -24,7 +24,7 @@ The main worktree is `C:\Users\micha\Projects\GloomBeanUnity`; the independent b
 
 ## 4. Native Unity is already available
 
-The installed editor is `C:\Program Files\Unity\Hub\Editor\6000.5.9f1\Editor\Unity.exe`. `Tools/Build-Windows.ps1` resolves the version from `ProjectSettings/ProjectVersion.txt`, supports explicit overrides and paths with spaces, checks the native result, and bounds its owned process to540seconds.
+The installed editor is `C:\Program Files\Unity\Hub\Editor\6000.5.9f1\Editor\Unity.exe`. `Tools/Build-Windows.ps1` resolves the version from `ProjectSettings/ProjectVersion.txt`, supports explicit overrides and paths with spaces, checks the native result, and bounds its owned process to 540 seconds.
 
 Unity must execute as the already licensed ordinary desktop user `micha`. Running the editor as the connector's SYSTEM identity previously produced entitlement/profile errors. The established solution is the existing interactive scheduled-task runner, not reinstalling Unity, extracting a licence, weakening a password or repeatedly asking for activation.
 
@@ -52,15 +52,15 @@ Component fixtures may place bodies and inspect internal state. Route witnesses 
 
 Use `Tools/Verify-Windows.ps1 -Describe` to inspect command routing first. Campaign dispatch covers all twenty levels and five bosses. Test flags always select a new isolated save/report; normal user saves remain untouched. World5 full release testing is split by stage in the configured graph. `-SaveSeed` copies a real earned parent save unchanged; `-RequireEarned` tests the progression boundary. `-ExpectedMercies` is an assertion, not a grant.
 
-The full release checks ordinary and all-secret progress, a real nineteen-Mercy near-miss, all five final pair solutions, alternative final sanctums, practice isolation, empty/unearned-stage denials, no-Ink negative controls and selected30/60/120-fps/start-delay variants. Existence of these witnessed solutions is not exhaustive model checking of all possible action sequences.
+The full release checks ordinary and all-secret progress, a real nineteen-Mercy near-miss, all five final pair solutions, alternative final sanctums, practice isolation, empty/unearned-stage denials, no-Ink negative controls and selected 30/60/120-fps/start-delay variants. Existence of these witnessed solutions is not exhaustive model checking of all possible action sequences.
 
-`audit_release.py` independently compares exits, result counts, actual PASS observations, component lists, parent-save hashes, exact25-clear/0–19–20-Mercy sets, ending states and the real assembly. Its unit tests intentionally tamper with evidence. Do not manually edit a failed receipt to pass.
+`audit_release.py` independently compares exits, result counts, actual PASS observations, component lists, parent-save hashes, exact 25-clear/0–19–20-Mercy sets, ending states and the real assembly. Its unit tests intentionally tamper with evidence. Do not manually edit a failed receipt to pass.
 
 ## 8. GUI and ending evidence
 
 Physics batchmode does not paint every menu backbuffer. Final-boss ending checks run windowed and are serialized. `Review-NativeUI.ps1` sends actual keyboard input only after verifying the foreground belongs to its own game window. It captures title, controls, selections, live jump, pause, practice and final boss with an isolated save. Screens must still be inspected; a captured PNG is not automatically a visual pass.
 
-`Verify-PackagedEndings.ps1` takes the final archive/hash, extracted executable/assembly hash, earned full-run reports and a new output folder. It defeats B5 from unmodified earned pre-final saves at0/19/20Mercies. It checks distinct rendered endings while corruption remains in the saved world. It is still not physical-controller or uncoached human acceptance.
+`Verify-PackagedEndings.ps1` takes the final archive/hash, extracted executable/assembly hash, earned full-run reports and a new output folder. It defeats B5 from unmodified earned pre-final saves at 0/19/20 Mercies. It checks distinct rendered endings while corruption remains in the saved world. It is still not physical-controller or uncoached human acceptance.
 
 Never run a visible UI journey concurrently with another visible ending test. The runner's GUI predecessor protocol and bounded receipt retries exist for this reason.
 

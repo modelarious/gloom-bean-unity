@@ -4,7 +4,7 @@
 
 Use the independent `foundation` branch/project for a reusable platformer without possession/campaign dependencies. Use `main` for the complete Host Cycle implementation. The immutable `foundation-v0.1.0` tag predates the atlas work. Do not move it when improving the base.
 
-Open the source folder in **Unity6000.5.9f1** and load `Assets/GloomBean/Scenes/Boot.unity`. Open **Gloom Bean > Campaign workbench**. It offers Foundation/Host Cycle selection, direct practice entry for every course/boss, movement tuning and safe static-layout editing. Practice never banks campaign progress. The native Windows player does not require Unity.
+Open the source folder in **Unity 6000.5.9f1** and load `Assets/GloomBean/Scenes/Boot.unity`. Open **Gloom Bean > Campaign workbench**. It offers Foundation/Host Cycle selection, direct practice entry for every course/boss, movement tuning and safe static-layout editing. Practice never banks campaign progress. The native Windows player does not require Unity.
 
 ## The source is deliberately inspectable
 

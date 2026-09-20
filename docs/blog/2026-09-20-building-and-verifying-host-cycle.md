@@ -48,11 +48,11 @@ The acceptance runner itself needed tests. A ready ending could appear earlier i
 
 ## The last strict assertion was not a requirement
 
-The L4 run completed the normal and secret campaign and all three ending boundaries but failed its additional delayed120-fps Scripture case. The secret had actually been acquired via the connected shadow path. The exposed body, still supported by sloping Ink, had drifted farther than an arbitrary0.65-metre tolerance.
+The L4 run completed the normal and secret campaign and all three ending boundaries but failed its additional delayed 120-fps Scripture case. The secret had actually been acquired via the connected shadow path. The exposed body, still supported by sloping Ink, had drifted farther than an arbitrary 0.65-metre tolerance.
 
 The original atlas says the Ink bridge must keep the physical body within tether range while Shadow reaches the semicolon dot. It does not require the body to be locked to a world position. The production Shadow form deliberately leaves gravity active. Freezing the body or flattening the slope to satisfy the test would remove an intended cost.
 
-M1 therefore changes the oracle rather than the game: it checks actual grounded solid-Ink support, an enabled simulated dynamic body, and the real tether. It logs support, drift and stroke age. It does not extend Ink lifetime, change gravity, move the secret, grant a form or alter the route. The original failure is retained. The first focused rerun passed the delayed120-fps practice route,60-fps practice route and delayed30-fps secret route, with96,97 and96 assertions respectively. This is a corrected overly strict test—not a claim that gameplay was repaired by deleting an assertion.
+M1 therefore changes the oracle rather than the game: it checks actual grounded solid-Ink support, an enabled simulated dynamic body, and the real tether. It logs support, drift and stroke age. It does not extend Ink lifetime, change gravity, move the secret, grant a form or alter the route. The original failure is retained. The first focused rerun passed the delayed 120-fps practice route, 60-fps practice route and delayed 30-fps secret route, with96,97 and96 assertions respectively. This is a corrected overly strict test—not a claim that gameplay was repaired by deleting an assertion.
 
 The final full common-source run includes that extra case. Its result and all other outcomes remain in the final audit, even if a future run fails.
 
@@ -64,7 +64,7 @@ The three earned endings are precise boundary tests. Ordinary completion has twe
 
 The final player ZIP is extracted into a new directory. Its payload and assembly are verified, and that extracted executable defeats the final boss again using unchanged genuinely earned pre-final saves. Source history is independently cloned from the supplied bundle and checked with Git's integrity tools. These are different tests from “the executable exists” or “the ZIP opens.”
 
-The audit infrastructure is also exercised with negative fixtures: missing results, nonzero exits, false summaries, changed parent files, practice leakage, duplicate secrets, incorrect restoration, corrupted-body erasure and missing ending backbuffers. The M1 helper rerun passed18 continuity tests,16 audit tests,10 dependency-graph cases,34 command-dispatch cases,7 predecessor-reader cases and7 concurrent-receipt cases. Those numbers describe test-tool checks, not additional player mechanics.
+The audit infrastructure is also exercised with negative fixtures: missing results, nonzero exits, false summaries, changed parent files, practice leakage, duplicate secrets, incorrect restoration, corrupted-body erasure and missing ending backbuffers. The M1 helper rerun passed 18 continuity tests, 16 audit tests, 10 dependency-graph cases, 34 command-dispatch cases, 7 predecessor-reader cases and 7 concurrent-receipt cases. Those numbers describe test-tool checks, not additional player mechanics.
 
 ## Presentation without external dependencies
 

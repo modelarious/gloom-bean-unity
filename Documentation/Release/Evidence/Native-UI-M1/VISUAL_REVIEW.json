@@ -1,0 +1,83 @@
+{
+  "status": "PASS_SCOPED_VISUAL_REVIEW",
+  "source": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
+  "assembly_sha256": "8ccc3b3ac2d8aba179e74333bd999190b8f8d0ac7a1f871fa268297389795e3e",
+  "method": "External real-keyboard native Windows journey, then model visual inspection of all14 images plus full-size controls/final-boss image. No images altered in the evidence set.",
+  "screens": 14,
+  "observations": [
+    "Pre-corruption title/world/stage menus visibly use pale town palette and the normal Bean.",
+    "Actual keyboard jump changes player position in the rendered opening stage.",
+    "Pause navigation highlights Resume, Restart and Level select; return reaches the real selection screen.",
+    "Practice visibly exposes five worlds and final boss without earning progress.",
+    "The native final boss, player art, three possession sources, objective panel and narrative caption render.",
+    "F1 controls are readable in front of the boss objective; dominant foreground text is not clipped or overwritten.",
+    "Current L4 native presentation/ending renders were also inspected; the production art/presentation source is unchanged by M1, whose only engine-input delta is a route witness assertion."
+  ],
+  "limits": [
+    "Not an uncoached human playtest or physical controller test.",
+    "Not an audio listening/mix review, accessibility certification or performance benchmark.",
+    "Camera-only mechanical screenshots are not substituted for native menu/backbuffer evidence."
+  ],
+  "files": [
+    {
+      "path": "01-cute-title.png",
+      "sha256": "cf8569a91280fd8edc4ea3369ab1a298736fdbffa353829a1bae859ada4b2005"
+    },
+    {
+      "path": "02-controls.png",
+      "sha256": "cdc4324b7ff48331a33c818c35de1986244a530128fe731fd8897fd9fef34a64"
+    },
+    {
+      "path": "03-cute-world-selection.png",
+      "sha256": "1f3170d9bb5d293801b5f062afa6beaf2d19de05821e7fec09b25c9d27a4fa2a"
+    },
+    {
+      "path": "04-cute-level-selection.png",
+      "sha256": "88d9f31606623c5978cc410513248c805571dad37259599a8f97c595904b34ba"
+    },
+    {
+      "path": "05-sunday-entry.png",
+      "sha256": "8d28b14cd92d77fea843f97045d66618a2e0bac62ed83db76c6fb28608073777"
+    },
+    {
+      "path": "06-keyboard-jump.png",
+      "sha256": "7af54a2b7785455e55f837f3089e080fb53cad97fa9762a718fa4ceedc8f52cb"
+    },
+    {
+      "path": "07-real-pause.png",
+      "sha256": "a76cbf7b15741211902ac70e1023362e8443e0501a2b2cd2d38990d63161e895"
+    },
+    {
+      "path": "07b-first-pause-selection.png",
+      "sha256": "2f48196106ea087b5c1416bb24527f26e06c2ce59f7117a2cbfa1ba5657fe7e2"
+    },
+    {
+      "path": "07c-second-pause-selection.png",
+      "sha256": "f74f75f07acf4c86fb7d2fa3db276f872c8b3b525903c6b2ef5e4de55c7f46ba"
+    },
+    {
+      "path": "08-returned-level-select.png",
+      "sha256": "88d9f31606623c5978cc410513248c805571dad37259599a8f97c595904b34ba"
+    },
+    {
+      "path": "09-practice-world-select.png",
+      "sha256": "4e8692b6ecd96201af9e65d129e9120d4412fac45fc0a9d15f0e7e03c597c695"
+    },
+    {
+      "path": "10-final-world-practice.png",
+      "sha256": "5a9e23d9265c1d2096cdf4c9f220f4d8f0b809ebb2b78cfdc43266b76d3c3b47"
+    },
+    {
+      "path": "11-final-boss-native.png",
+      "sha256": "c3f1eb1ddd48ff8890916c4687d96f619d8b5ca44de316d727e7265cfe7a8a4e"
+    },
+    {
+      "path": "12-boss-controls-front.png",
+      "sha256": "68d0300443ba072500b1996f9e3ce0754636b55e6982e9a133eed2a62efffe69"
+    },
+    {
+      "path": "ui-result.json",
+      "sha256": "33870d58aeab765d90e87ab3ee5980df3adc30818ee623b48ae0150dbdc8f41a"
+    }
+  ]
+}
