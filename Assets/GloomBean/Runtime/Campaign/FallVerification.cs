@@ -204,7 +204,7 @@ namespace GloomBean.Campaign
         }
         IEnumerator Everyone()
         {
-            yield return Walk(8.4f);yield return Jump(9,1);
+            yield return Walk(6.6f);yield return Jump(9,1);
             var limbs=session.GetComponentsInChildren<KneelingFigure>().OrderBy(x=>x.transform.position.x).ToArray();
             foreach(var limb in limbs){yield return Back(limb);if(stopped)yield break;yield return Calm();yield return Walk(limb.body.position.x+.8f);}
             yield return Jump(39,13.2f);yield return Walk(40);yield return Jump(43,15);

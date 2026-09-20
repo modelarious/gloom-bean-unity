@@ -145,6 +145,18 @@ namespace GloomBean.Campaign
             Vector2 kneelingPosition=kneeler.body.position;yield return Steps(100);
             C("penitent.stationary-kneel-does-not-retain-fall-velocity",kneeler.pose==KneelingFigure.Pose.Kneeling&&Vector2.Distance(kneeler.body.position,kneelingPosition)<.02f&&kneeler.body.linearVelocity.sqrMagnitude<.0001f,kneeler.body.position.ToString());
 
+            yield return Arena();var sleepingMover=b.Slider(new Vector2(604,3),new Vector2(616,3),new Vector2(3,.4f),2);sleepingMover.gameObject.SetActive(false);a.Finish();
+            C("censer.return-only-mover-receives-clock",sleepingMover.GetComponent<TemporalBody>());
+            sleepingMover.paused=true;sleepingMover.gameObject.SetActive(true);host.Acquire(HostKind.Censer);yield return Steps(200);sleepingMover.paused=false;yield return Steps(3);
+            C("censer.activated-return-mover-really-slows",sleepingMover.timeScale<.8f,sleepingMover.timeScale.ToString());
+
+            yield return Arena();var inspectionPlatform=b.Platform(new Vector2(600,6),new Vector2(5,.4f));var inspectionBody=inspectionPlatform.AddComponent<Rigidbody2D>();inspectionBody.bodyType=RigidbodyType2D.Kinematic;inspectionPlatform.layer=Layers.Moving;
+            var inspectionBell=a.Receiver(new Vector2(596,7));var inspection=inspectionPlatform.AddComponent<InspectionLift>();inspection.bell=inspectionBell;inspection.speed=3;
+            inspection.route=new[]{new Vector2(600,6),new Vector2(600,3),new Vector2(607,3),new Vector2(600,3),new Vector2(600,6)};
+            b.Solid("Inspection ceiling rejects a tall passenger",new Vector2(605,4.8f),new Vector2(6,.8f));actor.Body.position=new Vector2(600,7);actor.Body.linearVelocity=Vector2.zero;Physics2D.SyncTransforms();yield return Steps(20);inspectionBell.Receive(1);yield return Steps(290);
+            C("inspection.upright-passenger-blocks-real-clearance",inspection.blocked);
+            C("inspection.blocked-trip-returns-instead-of-crushing",inspection.trips==1&&!inspection.moving&&actor.Feet.y>6,actor.Body.position.ToString());
+
             yield return Arena();var near=b.Slider(new Vector2(602,2),new Vector2(618,2),new Vector2(2,.4f),2);var far=b.Slider(new Vector2(630,2),new Vector2(646,2),new Vector2(2,.4f),2);near.gameObject.AddComponent<TemporalBody>();far.gameObject.AddComponent<TemporalBody>();near.paused=far.paused=true;
             host.Acquire(HostKind.Censer);yield return Steps(200);float nx=near.transform.position.x,fx=far.transform.position.x;near.paused=far.paused=false;yield return Steps(60);
             C("censer.local-not-global-time",far.transform.position.x-fx>1.8f&&near.transform.position.x-nx<1.5f,"near="+(near.transform.position.x-nx)+" far="+(far.transform.position.x-fx));
