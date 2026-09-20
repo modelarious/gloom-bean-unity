@@ -1,47 +1,61 @@
 {
-  "id": "Completion-J08-exit-footprint-and-free-cargo",
+  "id": "Completion-J09-choice-pairs-and-alternative-sanctums",
   "build": true,
   "cases": [
     {
       "name": "L20-critical",
       "suite": "Empyrean",
-      "route": "GB-L20"
+      "route": "GB-L20",
+      "renderFps": 60
     },
     {
       "name": "L20-secret",
       "suite": "Empyrean",
       "route": "GB-L20",
-      "secrets": true
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "L20-alternatives",
+      "suite": "Empyrean",
+      "route": "GB-L20",
+      "whiteAlternatives": true,
+      "renderFps": 60
     },
     {
       "name": "B5-magnet-shadow",
       "suite": "Empyrean",
       "route": "GB-B5",
-      "finalPair": "magnet-shadow"
-    },
-    {
-      "name": "B5-wax-gullet",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "wax-gullet"
-    },
-    {
-      "name": "B5-stitch-coffin",
-      "suite": "Empyrean",
-      "route": "GB-B5",
-      "finalPair": "stitch-coffin"
+      "finalPair": "magnet-shadow",
+      "renderFps": 60
     },
     {
       "name": "B5-echo-ink",
       "suite": "Empyrean",
       "route": "GB-B5",
-      "finalPair": "echo-ink"
+      "finalPair": "echo-ink",
+      "renderFps": 60
+    },
+    {
+      "name": "B5-wax-gullet",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "wax-gullet",
+      "renderFps": 60
+    },
+    {
+      "name": "B5-stitch-coffin",
+      "suite": "Empyrean",
+      "route": "GB-B5",
+      "finalPair": "stitch-coffin",
+      "renderFps": 60
     },
     {
       "name": "B5-mirror-parallax",
       "suite": "Empyrean",
       "route": "GB-B5",
-      "finalPair": "mirror-parallax"
+      "finalPair": "mirror-parallax",
+      "renderFps": 60
     }
   ]
 }

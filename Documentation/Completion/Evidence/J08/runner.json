@@ -1,0 +1,68 @@
+{
+    "started":  "2026-09-20T10:02:09.7388408-06:00",
+    "id":  "Completion-J08-exit-footprint-and-free-cargo",
+    "results":  [
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  156,
+                        "case":  "L20-critical",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  109,
+                        "case":  "L20-secret",
+                        "failed":  2,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  43,
+                        "case":  "B5-magnet-shadow",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  49,
+                        "case":  "B5-wax-gullet",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  46,
+                        "case":  "B5-stitch-coffin",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  20,
+                        "case":  "B5-echo-ink",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  20,
+                        "case":  "B5-mirror-parallax",
+                        "failed":  1,
+                        "status":  "FAIL"
+                    }
+                ],
+    "status":  "FAIL",
+    "phase":  "native-acceptance",
+    "request_sha256":  "151f23322821c29a6a322e387d22c06af78acda66e5a11ad084169f83702147f",
+    "player_sha256":  "da7f9558bf80ab2b695db04a76773c3ee62eaabf9c367d02f44d9270e483bfab",
+    "source_commit":  "b8915031055af0c64d201008eb3c1bffdd59ac62",
+    "finished":  "2026-09-20T10:05:20.7764520-06:00"
+}
