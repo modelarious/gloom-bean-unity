@@ -13,7 +13,12 @@ namespace GloomBean.Campaign
         public static SpriteRenderer Picture(Transform parent,string name,int order){var go=new GameObject("QualityBar visual / "+name);go.transform.SetParent(parent,false);var sr=go.AddComponent<SpriteRenderer>();sr.sortingOrder=order;return sr;}
         public static void Fit(SpriteRenderer sr,Vector2 dimensions){if(!sr||!sr.sprite)return;var size=sr.sprite.bounds.size;sr.transform.localScale=new Vector3(dimensions.x/size.x,dimensions.y/size.y,1);}
         public static Vector2 PropSize(string name,float width,float height){var sprite=Get(name);if(!sprite)return new Vector2(width,height);var b=sprite.bounds.size;float scale=Mathf.Min(width/Mathf.Max(.01f,b.x),height/Mathf.Max(.01f,b.y));return new Vector2(b.x*scale,b.y*scale);}
-        public static int Group(StageSession session){if(session.definition.course==1&&!GameRoot.Instance.IsCorrupted)return 0;return Mathf.Clamp(int.Parse(session.definition.worldId.Substring(1)),1,5);}
+        public static int Group(StageSession session){
+            if(!session||session.definition==null)return 1;
+            if(session.definition.course==1&&GameRoot.Instance&&!GameRoot.Instance.IsCorrupted)return 0;
+            string id=session.definition.worldId;int world;
+            return !string.IsNullOrEmpty(id)&&id.Length>1&&int.TryParse(id.Substring(1),out world)?Mathf.Clamp(world,1,5):1;
+        }
         public static string Motif(StageDefinition stage){if(stage.boss)return new[]{"bell","pump","balcony","coffin","statue"}[int.Parse(stage.worldId.Substring(1))-1];switch(stage.course){case 1:return "balcony";case 2:return "bell";case 3:return "washer";case 4:return "skin";case 5:return "fruit_cart";case 6:return "oven";case 7:return "garden_well";case 8:return "season_tree";case 9:case 12:return "tenement";case 10:return "balcony";case 11:return "ledger";case 13:return "coffin";case 14:return "spindle";case 15:return "coffin";case 16:return "statue";case 17:case 18:return "statue";case 19:return "book";default:return "statue";}}
         public static bool Eligible(SpriteRenderer sr){return BroadArt.Eligible(sr)&&!sr.name.StartsWith("QualityBar visual /");}
     }
@@ -94,7 +99,7 @@ namespace GloomBean.Campaign
         public int AppliedCount=>GetComponentsInChildren<QualityBarSurface>(true).Count(v=>v.Applied);
         public int EligibleCount=>GetComponentsInChildren<SpriteRenderer>(true).Count(QualityBarArt.Eligible);
         public int AddedColliders=>GetComponentsInChildren<Transform>(true).Where(t=>t.name.StartsWith("QualityBar visual /")).Sum(t=>t.GetComponents<Collider2D>().Length);
-        public void Initialize(){session=GetComponent<StageSession>();Scan();}
+        public void Initialize(){session=GetComponentInParent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
             foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.60f,.56f,.65f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
@@ -104,7 +109,7 @@ namespace GloomBean.Campaign
             foreach(var enemy in GetComponentsInChildren<CarryableEnemy>(true))if(!enemy.GetComponent<PatrolPixelView>())enemy.gameObject.AddComponent<PatrolPixelView>().world=QualityBarArt.Group(session);
             foreach(var husk in GetComponentsInChildren<HuskBody>(true))if(!husk.GetComponent<QualityBarHusk>())husk.gameObject.AddComponent<QualityBarHusk>();
             foreach(var cure in GetComponentsInChildren<HostCure>(true)){var sr=cure.GetComponent<SpriteRenderer>();if(sr&&!cure.GetComponent<GbaMechanismView>())cure.gameObject.AddComponent<GbaMechanismView>().Initialize(sr,"cure_"+(int)cure.kind,new Vector2(1.2f,2.3f));}
-            var host=session.player?session.player.GetComponent<HostController>():null;if(host&&!host.GetComponent<QualityBarAnchor>())host.gameObject.AddComponent<QualityBarAnchor>();
+            var host=session&&session.player?session.player.GetComponent<HostController>():null;if(host&&!host.GetComponent<QualityBarAnchor>())host.gameObject.AddComponent<QualityBarAnchor>();
         }
         void Update(){if(Time.unscaledTime>=next){next=Time.unscaledTime+.75f;Scan();}}
 
