@@ -212,6 +212,9 @@ for group in range(6):
    face(d,17,18,6)
   else:
    for x,y in [(7,9),(7,46),(36,21),(74,5)]:nail(d,x,y)
+ if group!=2:
+  d.polygon([(13,12),(57,12),(32,29),(13,47)],fill=(0,0,0,0))
+  line(d,[(13,12),(56,12),(32,28),(13,47)],hi,1)
  save(im,f'construction_brace_{group}')
 
 # Small original enemy gait sprite bank: do not change the actors' collision model.

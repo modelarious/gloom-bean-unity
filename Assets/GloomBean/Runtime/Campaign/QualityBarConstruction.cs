@@ -37,10 +37,12 @@ namespace GloomBean.Campaign
                     }
                     bool stable=!GetComponent<Rigidbody2D>();bool floor=Source.name=="Floor";
                     if(stable&&((floor&&size.x>=5)||size.x>=7.8f)){
-                        int count=Mathf.Clamp(Mathf.CeilToInt(size.x/10),1,40);float span=size.x/count;
-                        for(int i=0;i<count;i++){int theme=Room(stage.definition,i+transform.GetSiblingIndex(),g==0);float width=Mathf.Min(10,span+.12f),height=width*112/128f;float x=(i+.5f)*span-size.x*.5f;
+                        int count=Mathf.Clamp(Mathf.CeilToInt(size.x/7),1,40);float span=size.x/count;
+                        for(int i=0;i<count;i++){int theme=Room(stage.definition,i+transform.GetSiblingIndex(),g==0);float width=Mathf.Min(7,span+.10f),height=width*112/128f;float x=(i+.5f)*span-size.x*.5f;
                             Add("construction_room_"+theme,new Vector2(x,size.y*.5f+height*.5f),new Vector2(width,height),-27,new Color(.70f,.65f,.75f,1));}
                         foreach(Transform child in transform)if(child.name=="Broad visual / level architecture bay"){var old=child.GetComponent<SpriteRenderer>();if(old){hidden.Add(old);old.forceRenderingOff=true;}}
+                        if(g==3)foreach(Transform child in transform)if(child.name=="QualityBar visual / rear tenement"||child.name=="QualityBar visual / rear elevated tenement"||child.name=="QualityBar visual / rear lit lancet"||child.name=="QualityBar visual / rear elevated lancet"){var old=child.GetComponent<SpriteRenderer>();if(old){hidden.Add(old);old.forceRenderingOff=true;}}
+
                     }
                 }
             }

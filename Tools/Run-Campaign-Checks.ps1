@@ -22,6 +22,7 @@ try {
   if($c.secrets){$flags+=' -gb-with-secrets'}
   if($c.practice){$flags+=' -gb-practice-witness'}
   if($c.nativeCapture){$flags+=' -gb-action-captures'}
+  if($c.motionCapture){$flags+=' -gb-motion-captures'}
   if($r.trace){$flags+=' -gb-echo-trace'}
   if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
   if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}

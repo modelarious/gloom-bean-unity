@@ -18,6 +18,8 @@ namespace GloomBean.Campaign
                 var quality=session.GetComponent<QualityBarWorld>();int colliderBefore=session.GetComponentsInChildren<Collider2D>(true).Length;
                 if(quality)quality.Scan();yield return null;
                 check("quality.stage-coverage-"+stage.id,quality&&quality.EligibleCount>0&&quality.AppliedCount==quality.EligibleCount&&quality.AddedColliders==0&&session.GetComponentsInChildren<Collider2D>(true).Length==colliderBefore,"Whole-stage eligible="+(quality?quality.EligibleCount:0)+" rendered="+(quality?quality.AppliedCount:0));
+                check("motion.stage-installed-"+stage.id,session.player.GetComponent<HostPixelView>()&&QualityBarMotion.Pixels(true,0,0)!=null,"Actual stage player receives the shared authored motion renderer");
+                check("construction.stage-installed-"+stage.id,session.GetComponentsInChildren<QualityBarConstruction>(true).Any(c=>c.Applied),"Physical floor/support-driven construction exists in the stage");
                 int eligible=dressing.EligibleCount,applied=dressing.AppliedCount;
                 check("broad.stage-coverage-"+stage.id,eligible>0&&eligible==applied&&dressing.VisualColliders==0,"eligible="+eligible+" applied="+applied+" visualColliders="+dressing.VisualColliders);
                 // Newly-created geometry deliberately far outside EVERY review camera. No game state grants.
@@ -26,6 +28,7 @@ namespace GloomBean.Campaign
                 dressing.Scan();yield return null;var skin=probe.GetComponent<BroadSurface>();check("broad.late-spawn-"+stage.id,skin&&skin.Applied&&skin.Profile==BroadArt.Profile(session),"New off-camera object receives the current profile without fixture coordinates");
                 if(quality)quality.Scan();yield return null;var fitting=probe.GetComponent<QualityBarSurface>();
                 check("quality.offcamera-late-spawn-"+stage.id,fitting&&fitting.Applied&&probe.GetComponentsInChildren<Collider2D>(true).Length==1,"New construction receives the art outside every review camera, without added collision");
+                var construction=probe.GetComponent<QualityBarConstruction>();check("construction.offcamera-late-spawn-"+stage.id,construction&&construction.Applied&&construction.PieceCount>0,"Previously unseen support receives dimensional structure without review-coordinate conditions");
                 sr.enabled=false;yield return null;
                 check("quality.disabled-source-hides-fittings-"+stage.id,probe.GetComponentsInChildren<SpriteRenderer>(true).Where(r=>r.name.StartsWith("QualityBar visual /")).All(r=>!r.enabled),"Inactive terrain must not leave a visible fake ledge");
                 UnityEngine.Object.Destroy(probe);yield return null;
