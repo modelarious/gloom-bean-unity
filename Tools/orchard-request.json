@@ -1,31 +1,28 @@
 {
-  "id": "Completion-M1-InkSupport",
-  "build": true,
+  "id": "V6-GBA-P1-regression",
+  "build": false,
   "cases": [
     {
-      "name": "practice-120-delay",
-      "suite": "Empyrean",
-      "route": "GB-L19",
-      "practice": true,
-      "secrets": true,
-      "renderFps": 120,
-      "startDelay": 0.74
+      "name": "Mechanics",
+      "suite": "Mechanics"
     },
     {
-      "name": "practice-60",
+      "name": "Opening",
+      "suite": "OpeningRoute"
+    },
+    {
+      "name": "Mirror",
+      "suite": "City",
+      "route": "GB-L09",
+      "practice": true
+    },
+    {
+      "name": "Ink-secret",
       "suite": "Empyrean",
       "route": "GB-L19",
       "practice": true,
       "secrets": true,
       "renderFps": 60
-    },
-    {
-      "name": "secret-30-delay",
-      "suite": "Empyrean",
-      "route": "GB-L19",
-      "secrets": true,
-      "renderFps": 30,
-      "startDelay": 1.2
     }
   ]
 }

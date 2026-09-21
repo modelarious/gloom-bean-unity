@@ -1,0 +1,27 @@
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Heavy hanging sheet|False|8
+BoxCollider2D|Key|True|13
+BoxCollider2D|Laundry crosswind|True|13
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Second hanging sheet|False|8
+BoxCollider2D|SHEARS|True|13
+BoxCollider2D|Tenant: Marionette|True|13
+BoxCollider2D|Tenant: Marionette|True|13
+BoxCollider2D|Thorns|True|13
+BoxCollider2D|Thorns|True|13
+BoxCollider2D|Thorns|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Upper laundry shelf|False|8
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11

@@ -1,0 +1,36 @@
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Falling congregation limb 0|False|9
+BoxCollider2D|Falling congregation limb 1|False|9
+BoxCollider2D|Falling congregation limb 2|False|9
+BoxCollider2D|Falling congregation limb 3|False|9
+BoxCollider2D|Falling congregation limb 4|False|9
+BoxCollider2D|Falling congregation limb 5|False|9
+BoxCollider2D|Falling congregation limb 6|False|9
+BoxCollider2D|Fixed seam|True|13
+BoxCollider2D|Fixed seam|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|GRAVE MOUTH|True|13
+BoxCollider2D|Health|True|13
+BoxCollider2D|Host|False|11
+BoxCollider2D|Left catch abutment|False|8
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Lower catch release lever|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Retractable catch abutment|False|8
+BoxCollider2D|Retractable lower work stair|False|9
+BoxCollider2D|Retractable upper work stair|False|9
+BoxCollider2D|Tenant: Censer|True|13
+BoxCollider2D|Tenant: Coffin|True|13
+BoxCollider2D|Tenant: Stitch|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+CapsuleCollider2D|Host|False|11
+CircleCollider2D|The physical falling congregation|False|10
