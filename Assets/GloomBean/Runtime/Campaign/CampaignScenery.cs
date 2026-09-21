@@ -11,6 +11,7 @@ namespace GloomBean.Campaign
         public static Color Sky(int world)=>world==0?new Color(.75f,.84f,.70f):world==1?new Color(.10f,.065f,.14f):world==2?new Color(.14f,.16f,.095f):world==3?new Color(.095f,.135f,.19f):world==4?new Color(.16f,.105f,.135f):new Color(.73f,.69f,.61f);
         public static Sprite Get(int world)
         {
+            int profile=world==0?0:world==1?2:world==2?5:world==3?9:world==4?13:17;var broad=BroadArt.Get("scene_"+profile,16);if(broad)return broad;
             var v6=V6Art.Sprite("background_"+world,24);if(v6)return v6;
             if(cache.TryGetValue(world,out var result))return result;
             Color sky=Sky(world),dark=Color.Lerp(sky,world==5?new Color(.42f,.39f,.38f):Color.black,.35f),mid=Color.Lerp(sky,world==0?Color.white:new Color(.59f,.44f,.54f),world==5?.30f:.22f),light=Color.Lerp(mid,world==5?new Color(.92f,.83f,.58f):new Color(.65f,.66f,.71f),.20f);

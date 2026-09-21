@@ -1,0 +1,93 @@
+{
+    "started":  "2026-09-21T14:05:54.5069276-06:00",
+    "id":  "Broad-Visual-B4-regression",
+    "results":  [
+                    {
+                        "passed":  391,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics-and-25-stage-rendering",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  87,
+                        "case":  "Opening",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "Kitchen",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  103,
+                        "case":  "Wet-root",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  47,
+                        "case":  "Mirror",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  54,
+                        "case":  "Fresco",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  104,
+                        "case":  "Weight",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  97,
+                        "case":  "Ink",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  42,
+                        "case":  "Surveyor",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  72,
+                        "case":  "Noon-shadows",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "6e97358d4c1f2b3e901aaeb63e8bccb52db56a77602a2f8d9b36ce8e6d205786",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "e561610bc54ad89d953bd5befd3a9c09d40c7f0a8a933abb286378db5a5f47bc",
+    "player_sha256":  "36c5c9f13481406382a8e9ef8fc0ea7cdf055c43bb12fc8fd545b07c199cd277",
+    "source_commit":  "d1fd29a91705069e1af505484b35e019215706e7",
+    "finished":  "2026-09-21T14:08:00.8066345-06:00"
+}
