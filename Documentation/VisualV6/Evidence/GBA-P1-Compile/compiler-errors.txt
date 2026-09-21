@@ -1,0 +1,1 @@
+Unity 6000.5.9f1 rejects obsolete Object.GetInstanceID. The sprite-size cache now uses the object reference and dimensions as a tuple. No generation count, source identity, geometry or simulation changes. The original failed run remains retained.

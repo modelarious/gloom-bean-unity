@@ -37,7 +37,7 @@ namespace GloomBean.Campaign
         {'=',"00000/00000/11111/00000/11111/00000/00000"},{'|',"00100/00100/00100/00100/00100/00100/00100"}
         };
         static readonly Dictionary<string,Texture2D> textCache=new Dictionary<string,Texture2D>();
-        static readonly Dictionary<string,Texture2D> imageCache=new Dictionary<string,Texture2D>();
+        static readonly Dictionary<(UnityEngine.Sprite,int,int),Texture2D> imageCache=new Dictionary<(UnityEngine.Sprite,int,int),Texture2D>();
         public static string Normalize(string s)=>(s??"").ToUpperInvariant().Replace('—','-').Replace('–','-').Replace('’','\'').Replace('·','/').Replace("→",">").Replace("×","X").Replace("…","...");
         public static Texture2D TextTexture(string raw,int width,int height,int scale=1,bool shadow=true)
         {
@@ -70,7 +70,7 @@ namespace GloomBean.Campaign
             Text(new Rect(r.x+5,r.y+3,r.width-8,r.height-4),(selected?"> ":"  ")+value,enabled?new Color(1,.94f,.76f):new Color(.49f,.45f,.49f),1,false);GUI.matrix=m;}
         public static void Sprite(Rect rect,UnityEngine.Sprite sprite,Color tint)
         {
-            if(!sprite)return;int width=Mathf.Max(1,Mathf.RoundToInt(rect.width)),height=Mathf.Max(1,Mathf.RoundToInt(rect.height));string key=sprite.GetInstanceID()+"/"+width+"/"+height;
+            if(!sprite)return;int width=Mathf.Max(1,Mathf.RoundToInt(rect.width)),height=Mathf.Max(1,Mathf.RoundToInt(rect.height));var key=(sprite,width,height);
             if(!imageCache.TryGetValue(key,out var texture)){
                 Texture2D source=sprite.texture;Color32[] pixels;
                 if(source.isReadable)pixels=source.GetPixels32();else{var prior=RenderTexture.active;var rt=RenderTexture.GetTemporary(source.width,source.height,0,RenderTextureFormat.ARGB32);Graphics.Blit(source,rt);RenderTexture.active=rt;var copy=new Texture2D(source.width,source.height,TextureFormat.RGBA32,false);copy.ReadPixels(new Rect(0,0,source.width,source.height),0,0);copy.Apply();pixels=copy.GetPixels32();RenderTexture.active=prior;RenderTexture.ReleaseTemporary(rt);UnityEngine.Object.Destroy(copy);}
