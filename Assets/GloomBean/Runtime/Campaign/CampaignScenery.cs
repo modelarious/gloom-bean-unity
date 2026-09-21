@@ -70,7 +70,7 @@ namespace GloomBean.Campaign
             int theme=BroadArt.Profile(session);
             if(theme!=last){last=theme;foreach(var p in pictures)p.sprite=BroadArt.Get("scene_"+theme,16)??SceneryArt.Get(world);camera.backgroundColor=theme==0?SceneryArt.Sky(0):new Color(.085f,.075f,.13f);}
             Vector3 c=camera.transform.position;var bounds=pictures[0].sprite.bounds.size;float scale=Mathf.Max(1,2*camera.orthographicSize/Mathf.Max(1,bounds.y)),width=bounds.x*scale;float phase=Mathf.Repeat(c.x*.25f,width);
-            for(int i=0;i<3;i++){pictures[i].transform.position=new Vector3(c.x-phase+(i-1)*width,c.y,2);pictures[i].transform.localScale=new Vector3(scale,scale,1);}
+            for(int i=0;i<3;i++){pictures[i].transform.position=new Vector3(c.x-phase+(i-1)*width,c.y,2);pictures[i].transform.localScale=new Vector3(scale,scale,1);pictures[i].color=theme==0?Color.white:new Color(.70f,.67f,.80f,1);}
         }
     }
     public sealed class TenantPixelView:MonoBehaviour
