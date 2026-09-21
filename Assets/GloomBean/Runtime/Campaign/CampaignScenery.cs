@@ -61,6 +61,7 @@ namespace GloomBean.Campaign
             var boss=GetComponentInChildren<AtlasBoss>();if(boss&&boss.body){var skin=boss.body.gameObject.AddComponent<BossPixelView>();skin.boss=boss;skin.world=world;}
             gameObject.AddComponent<V6WorldDressing>().Initialize(d);
             gameObject.AddComponent<BroadWorldDressing>().Initialize();
+            gameObject.AddComponent<QualityBarWorld>().Initialize();
         }
         void LateUpdate()
         {
