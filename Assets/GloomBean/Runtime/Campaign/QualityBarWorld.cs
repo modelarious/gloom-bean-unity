@@ -12,8 +12,9 @@ namespace GloomBean.Campaign
         public static Sprite Get(string name,float ppu=16){string key=name+"@"+ppu;if(cache.TryGetValue(key,out var result))return result;var texture=Resources.Load<Texture2D>("QualityBar/"+name);if(!texture)return null;texture.filterMode=FilterMode.Point;texture.wrapMode=TextureWrapMode.Repeat;result=Sprite.Create(texture,new Rect(0,0,texture.width,texture.height),Vector2.one*.5f,ppu,0,SpriteMeshType.FullRect);result.name="QualityBar art / "+name;cache[key]=result;return result;}
         public static SpriteRenderer Picture(Transform parent,string name,int order){var go=new GameObject("QualityBar visual / "+name);go.transform.SetParent(parent,false);var sr=go.AddComponent<SpriteRenderer>();sr.sortingOrder=order;return sr;}
         public static void Fit(SpriteRenderer sr,Vector2 dimensions){if(!sr||!sr.sprite)return;var size=sr.sprite.bounds.size;sr.transform.localScale=new Vector3(dimensions.x/size.x,dimensions.y/size.y,1);}
+        public static Vector2 PropSize(string name,float width,float height){var sprite=Get(name);if(!sprite)return new Vector2(width,height);var b=sprite.bounds.size;float scale=Mathf.Min(width/Mathf.Max(.01f,b.x),height/Mathf.Max(.01f,b.y));return new Vector2(b.x*scale,b.y*scale);}
         public static int Group(StageSession session){if(session.definition.course==1&&!GameRoot.Instance.IsCorrupted)return 0;return Mathf.Clamp(int.Parse(session.definition.worldId.Substring(1)),1,5);}
-        public static string Motif(StageDefinition stage){if(stage.boss)return new[]{"bell","pump","balcony","coffin","statue"}[int.Parse(stage.worldId.Substring(1))-1];switch(stage.course){case 1:return "balcony";case 2:return "bell";case 3:return "washer";case 4:return "skin";case 5:return "pump";case 6:return "oven";case 7:return "pump";case 8:return "book";case 9:case 10:case 12:return "balcony";case 11:return "ledger";case 13:case 14:return "coffin";case 15:return "coffin";case 16:return "statue";case 17:case 18:return "halo";case 19:return "book";default:return "statue";}}
+        public static string Motif(StageDefinition stage){if(stage.boss)return new[]{"bell","pump","balcony","coffin","statue"}[int.Parse(stage.worldId.Substring(1))-1];switch(stage.course){case 1:return "balcony";case 2:return "bell";case 3:return "washer";case 4:return "skin";case 5:return "fruit_cart";case 6:return "oven";case 7:return "garden_well";case 8:return "season_tree";case 9:case 12:return "tenement";case 10:return "balcony";case 11:return "ledger";case 13:return "coffin";case 14:return "spindle";case 15:return "coffin";case 16:return "statue";case 17:case 18:return "statue";case 19:return "book";default:return "statue";}}
         public static bool Eligible(SpriteRenderer sr){return BroadArt.Eligible(sr)&&!sr.name.StartsWith("QualityBar visual /");}
     }
     [DefaultExecutionOrder(275)]
@@ -49,20 +50,21 @@ namespace GloomBean.Campaign
                     int bays=Mathf.Clamp(Mathf.CeilToInt(size.x/12f),1,35);string motif=QualityBarArt.Motif(session.definition);
                     for(int i=0;i<bays;i++){float span=size.x/bays;float x=(i+.5f)*span-size.x*.5f;float top=size.y*.5f;
                         Add("column_"+group,"rear structural pier",new Vector2(x-span*.42f,top+3.4f),new Vector2(group==2?1.65f:1.1f,7),-21,new Color(.82f,.78f,.86f,1));
-                        float h=motif=="washer"||motif=="oven"?4.6f:motif=="ledger"||motif=="balcony"?4.8f:4.0f;
-                        float w=motif=="washer"||motif=="oven"?4.0f:3.0f;
-                        bool low=motif=="washer"||motif=="oven"||motif=="pump";float y=low?top-h*.51f:top+h*.52f;
+                        float maxH=motif=="statue"||motif=="season_tree"?6.0f:motif=="tenement"?4.8f:4.0f;float maxW=motif=="tenement"||motif=="season_tree"?6.2f:4.5f;
+                        Vector2 prop=QualityBarArt.PropSize(motif,maxW,maxH);float w=prop.x,h=prop.y;
+                        bool low=motif=="washer"||motif=="oven";float y=low?top-h*.55f:top+h*.49f;
                         Add(motif,"rear "+motif,new Vector2(x+span*.12f,y),new Vector2(w,h),-18,new Color(1,.94f,.96f,1));
-                        if(group>=3){Add("lancet","rear lit lancet",new Vector2(x-span*.28f,top+4.0f),new Vector2(1.5f,4.5f),-24,new Color(.86f,.79f,.93f,1));
+                        if(group>=3){Add(group==5?"glass":"lancet","rear lit lancet",new Vector2(x-span*.28f,top+4.0f),group==5?new Vector2(4.8f,6.2f):new Vector2(1.5f,4.5f),-24,new Color(.86f,.79f,.93f,1));
                             Add("banner_detail","rear hanging banner",new Vector2(x+span*.33f,top+4.8f),new Vector2(1.2f,2.2f),-18,new Color(.9f,.83f,.94f,1));}
                         if(group!=0&&group!=2){float lx=x-span*.21f;Add("lamp_"+group,"rear hanging lamp",new Vector2(lx,top+5.0f),new Vector2(1.4f,1.0f),-17,new Color(1,.91f,.76f,1));Add("light_"+group,"rear light cone",new Vector2(lx,top+2.55f),new Vector2(3.6f,4.4f),-10,new Color(1,1,1,.5f));Add("chain_"+group,"rear lamp chain",new Vector2(lx,top+6.2f),new Vector2(.16f,1.8f),-20,Color.white);}
                     }
                 }
-                if(Source.name!="Floor"&&size.x>=2.5f&&size.y<2f&&!GetComponent<Rigidbody2D>()&&!semanticTint&&!food&&!cloth){
-                    string motif=QualityBarArt.Motif(session.definition);float width=Mathf.Min(size.x*.95f,4f);float height=motif=="washer"?width*.8f:width*1.1f;bool above=motif=="balcony"||motif=="ledger"||motif=="statue";
+                if(Source.name!="Floor"&&size.x>=2.5f&&size.y<2f&&(!GetComponent<Rigidbody2D>()||GetComponent<Rigidbody2D>().bodyType==RigidbodyType2D.Kinematic)&&!semanticTint&&!food&&!cloth&&!GetComponent<ProcessionCarrier>()){
+                    string motif=QualityBarArt.Motif(session.definition);Vector2 prop=QualityBarArt.PropSize(motif,Mathf.Min(size.x*1.1f,5f),motif=="statue"||motif=="season_tree"?5.5f:4.4f);float width=prop.x,height=prop.y;
+                    bool above=motif!="washer"&&motif!="oven"&&motif!="bell"&&motif!="coffin";
                     float top=size.y*.5f;float y=above?top+height*.48f:top-height*.60f;
                     Add(motif,"rear elevated "+motif,new Vector2(0,y),new Vector2(width,height),-17,new Color(1,.96f,.98f,1));
-                    if(group>=3){Add("lancet","rear elevated lancet",new Vector2(-width*.28f,top+3.0f),new Vector2(1.2f,3.6f),-24,new Color(.8f,.77f,.9f,1));
+                    if(group>=3){Add(group==5?"glass":"lancet","rear elevated lancet",new Vector2(-width*.28f,top+3.0f),group==5?new Vector2(3.7f,4.8f):new Vector2(1.2f,3.6f),-24,new Color(.8f,.77f,.9f,1));
                         if(width>3)Add("banner_detail","rear elevated banner",new Vector2(width*.28f,top+2.8f),new Vector2(1,1.85f),-18,Color.white);}
                     if(group!=0&&group!=2){float lx=-width*.36f;Add("lamp_"+group,"rear elevated lamp",new Vector2(lx,top+3.6f),new Vector2(1.2f,.82f),-15,new Color(1,.96f,.86f,1));Add("light_"+group,"rear elevated light cone",new Vector2(lx,top+1.62f),new Vector2(3.0f,3.65f),-10,Color.white);}
                 }
@@ -96,6 +98,8 @@ namespace GloomBean.Campaign
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
             foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.35f,.32f,.46f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
+            foreach(var carrier in GetComponentsInChildren<ProcessionCarrier>(true))if(!carrier.GetComponent<QualityBarProcession>())carrier.gameObject.AddComponent<QualityBarProcession>();
+            foreach(var wheel in GetComponentsInChildren<SeasonWheel>(true))if(!wheel.GetComponent<QualityBarSeason>())wheel.gameObject.AddComponent<QualityBarSeason>();
             foreach(var source in GetComponentsInChildren<HostSource>(true))if(!source.GetComponent<TenantPixelView>())source.gameObject.AddComponent<TenantPixelView>();
             foreach(var enemy in GetComponentsInChildren<CarryableEnemy>(true))if(!enemy.GetComponent<PatrolPixelView>())enemy.gameObject.AddComponent<PatrolPixelView>().world=QualityBarArt.Group(session);
             foreach(var husk in GetComponentsInChildren<HuskBody>(true))if(!husk.GetComponent<QualityBarHusk>())husk.gameObject.AddComponent<QualityBarHusk>();
@@ -120,6 +124,23 @@ namespace GloomBean.Campaign
         void Start(){husk=GetComponent<HuskBody>();original=GetComponent<SpriteRenderer>();picture=QualityBarArt.Picture(transform,"cast-off empty Host skin",10);picture.sprite=HostPixelArt.Host(HostKind.None,true);var box=GetComponent<BoxCollider2D>();QualityBarArt.Fit(picture,box?box.size*1.1f:new Vector2(1.2f,1.6f));}
         void LateUpdate(){if(!husk||!picture)return;picture.enabled=!original||original.enabled;picture.color=new Color(.73f,.64f,.78f,.9f);if(original)original.forceRenderingOff=picture.sprite!=null;}
         void OnDestroy(){if(original)original.forceRenderingOff=false;}
+    }
+
+    [DefaultExecutionOrder(284)]
+    public sealed class QualityBarProcession:MonoBehaviour
+    {
+        ProcessionCarrier carrier;SpriteRenderer[] people;float gait,last;bool initialized;
+        void Start(){carrier=GetComponent<ProcessionCarrier>();people=new SpriteRenderer[3];for(int i=0;i<3;i++){people[i]=QualityBarArt.Picture(transform,"actual coffin pallbearer "+i,-2);people[i].sprite=QualityBarArt.Get("pallbearer_0");QualityBarArt.Fit(people[i],new Vector2(1.05f,1.58f));people[i].transform.localPosition=new Vector3(-1.35f+i*1.35f,-1.03f,0);}}
+        void LateUpdate(){if(!carrier||people==null)return;float progress=carrier.Progress;if(!initialized){last=progress;initialized=true;}float delta=progress-last;gait+=Mathf.Abs(delta)*Vector2.Distance(carrier.a,carrier.b)*2;last=progress;bool walking=Mathf.Abs(delta)>.00005f;
+            for(int i=0;i<people.Length;i++){int pose=walking?((int)(gait+i*.5f)%4):0;people[i].sprite=QualityBarArt.Get("pallbearer_"+pose);people[i].flipX=walking&&delta<0;var sr=carrier.GetComponent<SpriteRenderer>();people[i].enabled=!sr||sr.enabled;}
+        }
+    }
+    [DefaultExecutionOrder(284)]
+    public sealed class QualityBarSeason:MonoBehaviour
+    {
+        SeasonWheel wheel;SpriteRenderer picture;
+        void Start(){wheel=GetComponent<SeasonWheel>();picture=QualityBarArt.Picture(transform,"actual four-season wheel",5);picture.sprite=QualityBarArt.Get("season_wheel");QualityBarArt.Fit(picture,new Vector2(2.4f,2.4f));}
+        void LateUpdate(){if(!wheel||!picture)return;picture.transform.localRotation=Quaternion.Euler(0,0,-90*wheel.offset/Mathf.Max(.1f,wheel.width));}
     }
 
 }
