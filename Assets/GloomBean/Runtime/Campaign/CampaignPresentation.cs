@@ -29,8 +29,6 @@ namespace GloomBean.Campaign
             if(screen=="Home"){
                 var sprite=HostPixelArt.Host(HostKind.None,game.IsCorrupted,(int)(Time.unscaledTime*3)%4);
                 Texture(new Rect(714,253,196,215),sprite,Color.white);
-                Label(new Rect(704,475,216,45),game.IsCorrupted?"SAME BEAN.\nDIFFERENT HOST.":"YOUR SUNDAY BEST.",caption);
-                Label(new Rect(61,557,790,25),"Original Host Cycle campaign  /  Editable native Unity project",kicker);
             }else if(ending){
                 float age=Time.unscaledTime-entered;bool showNormal=restored&&age>=5;LastFigureWasNormal=showNormal;
                 float wobble=showNormal?0:Mathf.Sin(age*1.4f)*5;

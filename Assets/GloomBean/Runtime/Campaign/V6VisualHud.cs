@@ -19,7 +19,7 @@ namespace GloomBean.Campaign
             Image(new Rect(67,2,8,8),V6Art.Sprite("coin",64),Gold);GbaPixels.Text(new Rect(78,2,24,8),s.Coins.ToString("000"),Bone);
             Image(new Rect(109,1,9,9),V6Art.Sprite("key",64),s.HasKey?Color.white:new Color(.32f,.29f,.36f));
             Image(new Rect(123,0,10,10),V6Art.Sprite("mercy",64),s.Mercies.Count>0?Color.white:new Color(.32f,.29f,.36f));
-            string stage=s.definition.worldId.Substring(1)+"-"+(s.definition.boss?"B":(((s.definition.course-1)%4)+1).ToString());
+            string stage=s.definition.atlas?s.definition.worldId.Substring(1)+"-"+(s.definition.boss?"B":(((s.definition.course-1)%4)+1).ToString()):"BASE";
             GbaPixels.Text(new Rect(141,2,33,8),stage+(game.Practice?" P":""),new Color(.76f,.68f,.80f));
             bool returning=s.Phase==RunPhase.Returning;string phase=returning?(s.definition.timed?TimeSpan.FromSeconds(Mathf.Max(0,s.Remaining)).ToString(@"mm\:ss"):"THE TURN"):"EXPLORE";
             GbaPixels.Text(new Rect(194,2,46,8),phase,returning?Gold:Bone);

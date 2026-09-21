@@ -22,15 +22,17 @@ namespace GloomBean.Campaign
             if(!camera)camera=Camera.main;if(!camera||!game)return;
             bool active=game.Session&&game.Session.gameObject.activeInHierarchy;
             if(active){if(!attached){originalAspect=camera.aspect;attached=true;}camera.targetTexture=Frame;camera.aspect=Width/(float)Height;
-                var follow=camera.GetComponent<FollowCamera>();if(follow)follow.baseSize=game.Session.definition.atlas?5f:7f;
+                var follow=camera.GetComponent<FollowCamera>();if(follow){float size=game.Session.definition.atlas?5f:7f;
+                    var host=game.Session.player?game.Session.player.GetComponent<HostController>():null;if(host)foreach(var form in host.Forms)if(form.Kind==HostKind.Mirror)size=7f;
+                    if(game.Session.definition.boss)size=7f;follow.baseSize=size;}
             }else if(attached){if(camera.targetTexture==Frame)camera.targetTexture=null;camera.aspect=originalAspect;attached=false;}
         }
         void OnGUI()
         {
-            if(!attached||!Frame||Event.current.type!=EventType.Repaint)return;
+            if(!game||Event.current.type!=EventType.Repaint)return;
             var matrix=GUI.matrix;int depth=GUI.depth;var color=GUI.color;
             GUI.depth=10000;GUI.matrix=Matrix4x4.identity;GUI.color=Color.black;GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),Texture2D.whiteTexture);
-            GUI.color=Color.white;GUI.DrawTexture(Viewport,Frame,ScaleMode.StretchToFill,false);
+            GUI.color=Color.white;if(attached&&Frame)GUI.DrawTexture(Viewport,Frame,ScaleMode.StretchToFill,false);
             GUI.color=color;GUI.matrix=matrix;GUI.depth=depth;
         }
         void OnDestroy(){if(camera&&camera.targetTexture==Frame)camera.targetTexture=null;if(Frame){Frame.Release();Destroy(Frame);}if(Instance==this)Instance=null;}

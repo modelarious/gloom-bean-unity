@@ -310,7 +310,10 @@ namespace GloomBean.Foundation
                 // Controls always use their own dark modal panel, including over a friendly title.
                 heading.normal.textColor=Color.white;body.normal.textColor=new Color(.88f,.87f,.92f);
                 Panel(new Rect(24,18,912,564),new Color(.02f,.015f,.04f,.98f));Text(new Rect(44,34,870,40),"CONTROLS / MOVEMENT VOCABULARY",heading);
-                Text(new Rect(44,83,868,511),"MOVE: ARROWS / WASD / LEFT STICK\nJUMP: SPACE / Z / PAD A\nRUN: SHIFT / LB     TACKLE: J / PAD X\nPOUND: L / DOWN+TACKLE IN AIR\nCROUCH / CRAWL / SLOPE ROLL: DOWN\nCARRY / THROW: K / C / PAD Y\nSTUN FIRST. UP / DOWN AIMS THE THROW.\nSWIM DASH: TACKLE IN WATER\nINTERACT / PULL NAIL: E / PAD B\nPOSSESSION: U / RB   SECONDARY: I\nCHANGE FOCUSED FORM: DOWN+I\nPAUSE: ESC / START  CLOSE HELP: F1\nSOUND: F4          MUSIC: F5\n\nFORMS COME FROM CREATURES, NOT MENUS.\nACCEPT THEIR RULE. FIND THEIR CURE.\nF2 SHOWS DEVELOPMENT NOTES",body);
+                string help="MOVE: ARROWS / WASD / LEFT STICK\nSPACE / A: JUMP     SHIFT / LB: RUN\nJ / X: TACKLE       K / Y: CARRY\nL / DOWN+J: POUND   DOWN: CROUCH\nE / B: INTERACT     U / RB: FORM\nI: SECONDARY       DOWN+I: FOCUS\nF4: SOUND / F5: MUSIC / ESC: PAUSE\nF1: CLOSE HELP\n\n";
+                if(Session&&!string.IsNullOrEmpty(PossessionHelp)){var parts=PossessionHelp.Split('|');help+="CURRENT HOST RULE\n"+(parts.Length>1?parts[1]:PossessionHelp);}
+                else help+="STUN ENEMIES BEFORE PICKING UP.\nDIRECTION AIMS THROWS.\nIN WATER, TACKLE BECOMES SWIM DASH.\nF2: DEVELOPMENT NOTES";
+                Text(new Rect(44,83,868,511),help,body);
             }
             if(Event.current.type==EventType.Repaint&&buttonIndex>0){choice=Mathf.Clamp(choice,0,buttonIndex-1);pendingEnter=false;}
         }

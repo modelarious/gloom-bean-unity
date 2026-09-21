@@ -39,10 +39,10 @@ namespace GloomBean.Campaign
         static readonly Dictionary<string,Texture2D> textCache=new Dictionary<string,Texture2D>();
         static readonly Dictionary<(UnityEngine.Sprite,int,int),Texture2D> imageCache=new Dictionary<(UnityEngine.Sprite,int,int),Texture2D>();
         public static string Normalize(string s)=>(s??"").ToUpperInvariant().Replace('—','-').Replace('–','-').Replace('’','\'').Replace('·','/').Replace("→",">").Replace("×","X").Replace("…","...");
-        public static Texture2D TextTexture(string raw,int width,int height,int scale=1,bool shadow=true)
+        public static Texture2D TextTexture(string raw,int width,int height,int scale=1,bool shadow=true,bool fresh=false)
         {
             width=Mathf.Clamp(width,1,480);height=Mathf.Clamp(height,1,200);scale=Mathf.Clamp(scale,1,3);string value=Normalize(raw);
-            string key=value+"/"+width+"/"+height+"/"+scale+"/"+shadow;if(textCache.TryGetValue(key,out var result))return result;
+            string key=value+"/"+width+"/"+height+"/"+scale+"/"+shadow;Texture2D result;if(!fresh&&textCache.TryGetValue(key,out result))return result;
             int cols=Math.Max(1,width/(6*scale));var lines=new List<string>();
             foreach(string paragraph in value.Split('\n')){string line="";foreach(string word in paragraph.Split(' ')){
                 if(line.Length>0&&line.Length+word.Length+1>cols){lines.Add(line);line="";}
@@ -57,14 +57,16 @@ namespace GloomBean.Campaign
                     foreach(char bit in pattern){if(bit=='/')continue;if(bit=='1')for(int dy=0;dy<scale;dy++)for(int dx=0;dx<scale;dx++)Dot(col*6*scale+(n%5)*scale+dx+(pass==0?1:0),yy+(n/5)*scale+dy+(pass==0?1:0),pass==0?new Color32(0,0,0,230):new Color32(255,255,255,255));n++;}
                 }
             }
-            result=new Texture2D(width,height,TextureFormat.RGBA32,false){name="Original GBA glyphs",filterMode=FilterMode.Point,wrapMode=TextureWrapMode.Clamp};result.SetPixels32(pixels);result.Apply(false,true);
+            result=new Texture2D(width,height,TextureFormat.RGBA32,false){name="Original GBA glyphs",filterMode=FilterMode.Point,wrapMode=TextureWrapMode.Clamp};result.SetPixels32(pixels);result.Apply(false,!fresh);if(fresh)return result;
             if(textCache.Count>384){foreach(var t in textCache.Values)UnityEngine.Object.Destroy(t);textCache.Clear();}textCache[key]=result;return result;
         }
         public static void Fill(Rect rect,Color color){var old=GUI.color;GUI.color=color;GUI.DrawTexture(rect,Texture2D.whiteTexture);GUI.color=old;}
         public static void Text(Rect rect,string value,Color tint,int scale=1,bool shadow=true){var old=GUI.color;GUI.color=tint;GUI.DrawTexture(rect,TextTexture(value,Mathf.RoundToInt(rect.width),Mathf.RoundToInt(rect.height),scale,shadow),ScaleMode.StretchToFill,true);GUI.color=old;}
-        public static void LegacyLabel(Rect rect,string value,int fontSize,Color color){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;Text(GbaDisplay.PixelRect(rect),value,color,fontSize>=35?2:1,false);GUI.matrix=m;}
+        public static void LegacyLabel(Rect rect,string value,int fontSize,Color color){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;var target=GbaDisplay.PixelRect(rect);target.height=Mathf.Max(target.height,fontSize>=35?16:8);Text(target,value,color,fontSize>=35?2:1,false);GUI.matrix=m;}
         public static void LegacyPanel(Rect rect,Color color){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;Fill(GbaDisplay.PixelRect(rect),color);GUI.matrix=m;}
         public static void LegacyButton(Rect rect,string value,bool selected,bool enabled){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;var r=GbaDisplay.PixelRect(rect);value=value.Replace("BEGIN / CONTINUE HOST CYCLE","BEGIN / CONTINUE").Replace("PRACTICE / direct level selection","PRACTICE - ALL STAGES");
+            int bracket=value.IndexOf('[');if(bracket>=0)value=value.Substring(0,bracket).Trim();
+            if(!enabled)value="LOCKED: "+value;int limit=Mathf.Max(6,(int)((r.width-12)/6)-2);if(value.Length>limit)value=value.Substring(0,limit-1)+".";
             Fill(r,new Color(.08f,.055f,.15f,1));Fill(new Rect(r.x+1,r.y+1,r.width-2,r.height-2),selected?new Color(.45f,.19f,.39f):new Color(.19f,.14f,.28f));
             if(selected)Fill(new Rect(r.x+1,r.y+1,2,r.height-2),new Color(1,.78f,.40f));
             Text(new Rect(r.x+5,r.y+3,r.width-8,r.height-4),(selected?"> ":"  ")+value,enabled?new Color(1,.94f,.76f):new Color(.49f,.45f,.49f),1,false);GUI.matrix=m;}
