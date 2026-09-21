@@ -1,0 +1,7 @@
+# Final validation review and camera uniqueness
+
+All25 E captures show the same revised art application as the earlier strata; no formerly unseen stage reverted to old shared backgrounds or unskinned qualifying floors. The final heart is no longer a metal vent; the boss silhouette is unobscured in act1 and the physical core has its own exposed/released artwork. Shadow/heaven chapters retain high-key contrast.
+
+Metadata audit caught two E cameras (Irrigation and Surveyor) landing on exactly the same long-floor center as an earlier stratum. They were new captures but not genuinely new viewpoints. The capture-only final correction detects that collision and chooses a new camera offset while leaving the staged actor on the same real support. No production graphics or gameplay behavior changes. Old A/B/C/D views, including duplicates, remain for comparison and are not relabelled unique. The final125 captures contain122 unique camera compositions; all25 E cameras are new relative to their preceding strata.
+
+Remaining quality limits are visible, not hidden: repeating architecture modules, some very sparse spans, relatively flat original prop/creature sprites, and a limited procedural animation library. Whole-campaign distribution of the improvements passes; extreme visual fidelity / superiority to the fresh WL4 corpus remains UNMET. That target is not replaced by coverage or software tests.

@@ -30,6 +30,14 @@ namespace GloomBean.Campaign
                 if(old!=null&&Vector2.Distance(new Vector2(cx,cy),new Vector2(old.cx,old.cy))<6){index=(index+Mathf.Max(1,candidates.Length/3))%candidates.Length;anchor=candidates[index];px=anchor.bounds.center.x;py=anchor.bounds.max.y+.85f;cx=px+1.5f;cy=py+1.8f;}
                 if(old!=null&&Vector2.Distance(new Vector2(cx,cy),new Vector2(old.cx,old.cy))<5){cx-=6;px-=Mathf.Min(2,anchor.bounds.extents.x*.5f);}
                 if(sample==3&&stage.boss){var boss=session.GetComponentInChildren<AtlasBoss>();if(boss&&boss.body){var sr=boss.body.GetComponent<SpriteRenderer>();if(sr){cx=sr.bounds.center.x;cy=sr.bounds.center.y;px=cx-3;py=Mathf.Max(1,cy-3);}}}
+                // Quantiles can land on the same long floor. Keep old comparison cameras,
+                // but require the LAST validation camera to be genuinely unseen in this stage.
+                if(sample==4&&shots.Any(s=>s.stage==stage.id&&Vector2.Distance(new Vector2(s.cx,s.cy),new Vector2(cx,cy))<3f)){
+                    Vector2 original=new Vector2(cx,cy);bool chosen=false;
+                    foreach(var delta in new[]{new Vector2(6,0),new Vector2(-6,0),new Vector2(0,4),new Vector2(3,3)}){var point=original+delta;
+                        if(shots.All(s=>s.stage!=stage.id||Vector2.Distance(new Vector2(s.cx,s.cy),point)>=3f)&&(old==null||Vector2.Distance(point,new Vector2(old.cx,old.cy))>=5f)){cx=point.x;cy=point.y;chosen=true;break;}}
+                    if(!chosen)errors.Add("Fresh validation camera could not be selected: "+stage.id);
+                }
                 string form="None";if(stage.possessions!=null&&stage.possessions.Length>0){form=stage.possessions[sample%stage.possessions.Length];host.Acquire((HostKind)Enum.Parse(typeof(HostKind),form));}
                 bool returned=sample==1&&!stage.boss;if(returned)session.Turn();
                 actor.GetComponent<HumanInput>().disabled=true;actor.input=new ScriptedInput();actor.enabled=false;actor.Body.bodyType=RigidbodyType2D.Kinematic;actor.Body.linearVelocity=Vector2.zero;
