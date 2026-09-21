@@ -1,0 +1,10 @@
+{
+  "path": "C:\\Users\\micha\\Projects\\GloomBean QualityBar Q1\\Delivery\\WholeGame-Q8\\GloomBean_Whole_Game_Visual_Update_Windows.zip",
+  "bytes": 36832694,
+  "sha256": "b53918ba4ac366892e461e245d3f4c00dbc96b13ecf3ca397d1df115b908da91",
+  "payload_files": 155,
+  "source_head": "4d224f03810a50a072fa62754627f01731299122",
+  "assembly_sha256": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
+  "extracted": "C:\\Users\\micha\\Projects\\GloomBean QualityBar Q8 Extracted",
+  "status": "HASH_VERIFIED_PENDING_EXACT_PACKAGE_RUN"
+}
