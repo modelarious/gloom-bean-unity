@@ -1,0 +1,3 @@
+Deliberately pick new screenshots from our built game and new screenshots from wario land 4. Things we haven't been using previously.  I want to make sure we are not just optimizing a small slice of the game to look good, and that we're not just optimizing to a handful of wario land 4 screenshots.  This is considered a fail if the updated graphics are not reflected throughout the entire game and only appear at a handful of points. This is a graphical overhaul to the entire game. Extreme visual fidelity is the only goal
+
+Do it, and action on it. Deliver the improved visuals
