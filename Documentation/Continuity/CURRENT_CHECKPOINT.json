@@ -3,7 +3,7 @@
   "scope": "Current common-source full native release acceptance; manual judgement separate",
   "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
   "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "next_gate": "The full native development campaign and final Windows ending proofs are complete. Use the matching final delivery verification/manifest for the exact source archive hash and Git HEAD. No setup or chapter reconstruction is required. Next changes should come from actual play feedback, documented fidelity work, or the distinct unresolved public-repository administration; manual physical-controller/uncoached judgements are not certified.",
+  "next_gate": "Implement and capture V6 GBA P1: 240x160 nearest display, bitmap HUD/menus, readable pixel-scale materials, then critique all ten same fixtures and revise. Existing pass2_n1 native screenshots PASS but subjective superiority remains UNMET.",
   "active_job": null,
   "latest_focused": {
     "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
@@ -20,10 +20,11 @@
   },
   "foundation_head": "1b450786f425c0ca325be8ff9b09cafdaeb0cfb8",
   "publication": {
-    "status": "BLOCKED_NO_ORIGIN",
+    "status": "PUBLISHED_VERIFIED",
     "repository": "modelarious/gloom-bean-unity",
-    "visibility": "PUBLIC_USER_DECIDED",
-    "boundary": "Editing/build/local commits work. Do not reattempt unchanged credential workarounds. No game-source remote push claimed."
+    "main": "a504e962e41b6f853c86a805e56b60bc1c3724aa",
+    "visual_branch": "4424d5c46256bc74cbfd402cb61f2d6c3183603f",
+    "boundary": "Independent GitHub refs match live checkout; no creation/access recovery needed."
   },
   "remaining": [
     "Manual physical-controller, uncoached comprehension, pacing, art direction and audio mix judgement",
@@ -78,5 +79,13 @@
     "native_ui_images_reviewed": 14,
     "audit": "Documentation/Release/NATIVE_AUDIT.json",
     "packaged_audit": "Documentation/Release/PACKAGED_AUDIT.json"
-  }
+  },
+  "source_branch": "visual/v6",
+  "latest_visual": {
+    "receipt": "Reports/VisualV6/pass2_n1/runner.json",
+    "source": "4424d5c46256bc74cbfd402cb61f2d6c3183603f",
+    "images": 10,
+    "scope": "staged visual fixtures, not gameplay proof"
+  },
+  "gates": "Documentation/VisualV6/GBA_GATES.md"
 }
