@@ -1,0 +1,65 @@
+[
+  {
+    "id": "palm",
+    "url": "https://mario.wiki.gallery/images/0/07/Wario_land_4_500_coin.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "455eb8e6700769ed6495b8d37b2adc545de657631953afc2dcaced2d483376da",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "factory",
+    "url": "https://mario.wiki.gallery/images/f/f3/The_Curious_Factory_WL4_screenshot.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "71e428c7823ba2ca22763e26f333a77be9151164c20ef8ec85db30bccc213e5f",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "wildflower",
+    "url": "https://mario.wiki.gallery/images/4/40/WildflowerFields.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "b58e4375ba950af867a8ccf54050b90d848cca3bb090df98a0bbb20ff6fb5b2b",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "crescent",
+    "url": "https://mario.wiki.gallery/images/f/f4/Crescent_Moon_Village_WL4_screenshot.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "57954fcacc95b93fc2f73ea95e3d7471af8646578c822f68502d444f45352f3c",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "fiery",
+    "url": "https://mario.wiki.gallery/images/0/09/Fiery_Cavern_WL4_screenshot.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "4b18bd86bd6127c7915628cb6e7f4686e6eb72631201832439c4e8ac14103d02",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "hotel",
+    "url": "https://mario.wiki.gallery/images/e/ea/Hotel_Horror_WL4_screenshot.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "12786126418a6f5ce0f60f18ef6f55c66c8b2b0868d4327b7c65db3ea41c8a14",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "arabian",
+    "url": "https://mario.wiki.gallery/images/f/fd/WL4-Mayu_Bird.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "a8edc89628eb7660738b90a33f805c02214f4389b80faa436603dd973b4687db",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "pinball",
+    "url": "https://mario.wiki.gallery/images/1/13/Pinball_Zone_WL4_screenshot.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "6df35fc61d9f3c0d8948ac7d48d78ecf3e96355213febf5ea47ef470b395dda9",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  },
+  {
+    "id": "diva",
+    "url": "https://mario.wiki.gallery/images/f/fd/WL4-Golden_Diva_Battle.png",
+    "gallery": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+    "sha256": "940ce414c8515bf4637132312aec41a8294996c48b422a9adc2a41aa550bf01a",
+    "rights": "Wario Land 4 screenshot, Nintendo. Comparative criticism only; not a game asset."
+  }
+]

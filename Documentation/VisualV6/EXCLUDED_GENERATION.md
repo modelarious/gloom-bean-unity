@@ -1,0 +1,1 @@
+The image-generator output in this conversation inferred a comparison infographic instead of the requested background asset. It invents game pictures and verdicts. It is not a screenshot of either game, is not included as reference or runtime artwork, and is not evidence for any gate. Actual native screenshots and retail WL4 captures are the only comparative evidence.
