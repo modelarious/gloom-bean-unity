@@ -1,0 +1,61 @@
+{
+  "final_runtime": "eca7422c77d8c85743b8d26e1b09bfd8a5f64bb7",
+  "scored_world_runtime": "d221ea49253f885caf381e853e72bf1fb9c8f758",
+  "full_candidate": "cc40096f1afa50b1d102c0cc7b75308bfd63d819",
+  "final_assembly": "2b59ab1173d0e07b8b01f6a09f495ecf035e4178dbe35d1ab6dc4c2df9bd505b",
+  "packaged_status": "PASS",
+  "packaged_cases": [
+    {
+      "exit": 0,
+      "restored": false,
+      "name": "Ordinary",
+      "seed_sha256": "49cba446c28efb760905a111aacfd814caaed7049fefe7e1048cb4551948d57f",
+      "status": "PASS",
+      "mercies": 0,
+      "ending_image_sha256": "c08ee9ea88b293c483893cabbad26a880a61ddf8464c53b506945287ec8de121",
+      "checks": 51
+    },
+    {
+      "exit": 0,
+      "restored": false,
+      "name": "Nineteen",
+      "seed_sha256": "6a195da4ec6e095e523473ebcc7e2e2c7cd55634c9d808e3e3e157ed3000c258",
+      "status": "PASS",
+      "mercies": 19,
+      "ending_image_sha256": "c08ee9ea88b293c483893cabbad26a880a61ddf8464c53b506945287ec8de121",
+      "checks": 54
+    },
+    {
+      "exit": 0,
+      "restored": true,
+      "name": "Restored",
+      "seed_sha256": "821bb7797db88849016c64d030773810071c1fa8ac5ec8ce8e3d85dcec6ee591",
+      "status": "PASS",
+      "mercies": 20,
+      "ending_image_sha256": "b7b7a5aa687bb3bcc9f8686bad8a828ea50d38f433cbdc685d5743fac6a1b6f7",
+      "checks": 54
+    }
+  ],
+  "test_summary": [
+    {
+      "name": "Full GBA P4 campaign",
+      "result": "54/54 scenarios PASS, including five expected negatives and genuine earned20-level/five-boss chains. Only20Mercies restores the ending."
+    },
+    {
+      "name": "P7 focused rendering and gameplay",
+      "result": "6/6 PASS: mechanics313; opening87 reported checks; Mirror47, Ink97, Choir48 and Weight104. No unexpected failures."
+    },
+    {
+      "name": "Native pixel / keyboard review",
+      "result": "20 P7 +20 P8 fixtures and14 P7 keyboard/UI frames pass exact pixel checks. Ten collision inventories unchanged; five oracle controls."
+    },
+    {
+      "name": "Protected source",
+      "result": "154 protected runtime files and tuning/Boot/packages/settings unchanged. Explicit rendering/test paths reviewed separately."
+    },
+    {
+      "name": "Exact final P8 ZIP",
+      "result": "All155 payload hashes verified. Actual0/19/20-Mercy boss victories51/54/54 passed using unchanged earned P4 seeds. P8 only fixes displayed ending copy."
+    }
+  ]
+}

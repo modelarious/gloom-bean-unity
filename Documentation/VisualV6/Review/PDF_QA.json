@@ -1,0 +1,11 @@
+{
+  "scope": "Caller-reported direct ChatGPT container PDF/render inspection, corroborated by exact remote artifact hash",
+  "status": "PASS",
+  "sha256": "ef19f6883af3625ed8341c36d969170aeb560d97a7233c1a3dc5b09eb32f3c0f",
+  "bytes": 1591769,
+  "pages": 18,
+  "all_text_in_bounds": true,
+  "visual_review": "All18 rendered pages inspected in a contact sheet; full-size comparison/technical samples and final ordinary/restored ending backbuffers inspected",
+  "clipped_ending_copy_corrected": true,
+  "strict_wl4_superiority": "UNMET"
+}

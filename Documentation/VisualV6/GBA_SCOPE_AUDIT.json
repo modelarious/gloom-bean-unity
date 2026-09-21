@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "baseline": "4424d5c46256bc74cbfd402cb61f2d6c3183603f",
-  "head": "4b70604e66960bef8dc1f929af51f6d96dab0fac",
+  "head": "970f9737f00fa95742e7803d6af6bc9268ab3318",
   "protected_runtime_files_unchanged": 154,
   "unchanged_paths": [
     "Assets/GloomBean/Runtime/Campaign/AirJet.cs",

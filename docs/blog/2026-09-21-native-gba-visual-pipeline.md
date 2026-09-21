@@ -61,7 +61,9 @@ A protected-source audit checks the unchanged movement, possession, stage and sa
 The full54-scenario GBA P4 run passed with genuinely earned save lineage through all twenty levels and five bosses. Zero and nineteen Mercies retained the ordinary ending; twenty produced the restored ending. That run belongs to its pinned P4 candidate. The subsequent P5–P7 art/render changes have their own captures, focused native checks and frozen-package tests; the earlier54-case certificate is not relabelled as a later engine.
 
 <!-- CURRENT_VERIFICATION_RESULTS -->
-Current exact source identities and final packaged-run results are recorded in the adjacent verification JSON and receipts. Do not infer a later PASS from an earlier candidate.
+The final exact P8 preview contains155 verified payloads. Its 0/19/20-Mercy final-boss runs passed51/54/54 checks with unchanged genuinely earned P4 seeds; only20 restored the ending. P7's six focused scenarios passed, including313 mechanics/presentation assertions. The full54-scenario certificate belongs to the pinned P4 candidate, not retroactively to P8. P8 only shortens displayed ending copy and changes its text rectangle; the original completion/restoration predicates, art, levels and physics are unchanged.
+
+Actual P7 ending images had exposed clipped sentences despite successful game checks. The final P8 ordinary/restored backbuffers were inspected after the frozen ZIP was played. All text now fits. The report's18 pages were rendered and inspected; every text block remains in bounds. These checks do not turn the visual target into a win: the reviewer still records0/10 strict four-dimension sweeps against WL4.
 <!-- END_CURRENT_VERIFICATION_RESULTS -->
 
 ## The comparison result is not a victory lap

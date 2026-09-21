@@ -15,6 +15,7 @@ assert v['packaged_status']=='PASS','Do not publish a pending package as a passe
 OUT=R/'GloomBean_V6_GBA_Visual_Review.pdf';W,H=842,595
 c=canvas.Canvas(str(OUT),pagesize=(W,H),pageCompression=1);c.setTitle('Gloom Bean V6 / Native GBA Visual Review');c.setAuthor('Gloom Bean development / comparative visual review')
 colors={'paper':'F7F4EB','ink':'261F30','muted':'696174','plum':'60406B','line':'CDC5BA','soft':'EAE5DD','warn':'AC305E'}
+colors={k:'#'+v for k,v in colors.items()}
 styles={n:ParagraphStyle('s'+str(n),fontName='Helvetica',fontSize=n,leading=n*1.32,textColor=HexColor(colors['ink'])) for n in [7,8,9,10,11,12]}
 page=0
 def rect(x,y,w,h,col):c.setFillColor(HexColor(colors[col]));c.rect(x,y,w,h,fill=1,stroke=0)

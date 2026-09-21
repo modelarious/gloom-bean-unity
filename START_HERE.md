@@ -1,3 +1,7 @@
+# Current V6 continuation
+
+The active Windows worktree is **visual/v6**. Read Documentation/VisualV6/Review/README.md and Documentation/Continuity/CURRENT_CHECKPOINT.json first. P8 native GBA preview is delivered; all ten comparison pairs, ending proof and remaining art losses are explicit. **Strict visual superiority remains unmet.** The public source repository works; do not restart Project Factory or complete already-finished chapters. Next actual art work is foreground machinery/room composition and expressive action poses, not another global resolution filter.
+
 # Gloom Bean — continue the current implementation
 
 This is the existing native Unity platformer, not a request to create another base project.

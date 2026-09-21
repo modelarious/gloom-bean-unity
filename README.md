@@ -2,6 +2,15 @@
 
 Twenty authored levels. Five worlds and bosses. Fifteen temporary possessions. One irreversible first corruption.
 
+## Current V6 GBA visual preview
+
+The active art branch is **visual/v6**, now published with the complete source history. [Read the actual10-pair visual review](Documentation/VisualV6/Review/README.md), [view the18-page PDF](Documentation/VisualV6/Review/GloomBean_V6_GBA_Visual_Review.pdf), and inspect [the exact package proof](Documentation/VisualV6/Review/PACKAGED_AUDIT.json).
+
+The campaign now uses a genuine **240x160 point-filtered framebuffer, integer scaling and original bitmap UI**, with revised scenic framing, contact materials, source/cure objects, parade/cathedral art and boss silhouettes. This remains a native Windows Unity game, not a GBA ROM. **The strict superiority target is still UNMET:0/10 selected pairs win every dimension over Wario Land4.** The development preview is useful; it is not a final-art victory claim.
+
+[Current gates and remaining work](Documentation/VisualV6/GBA_GATES.md) distinguish P4's54-case full regression, P7's focused current checks and P8's ending-copy-only correction and exact-package0/19/20 proofs. Stable main and the independent foundation are preserved. Do not reconstruct completed campaign chapters or repeat solved repository provisioning.
+
+
 ## Play
 
 The standalone Windows package requires no Unity installation: extract it completely and run **GloomBeanWindows/GloomBean.exe**. Keep its Data, DLL and MonoBleedingEdge folders together. Choose **BEGIN / CONTINUE HOST CYCLE** for the campaign, **PLATFORMER FOUNDATION** for the reusable movement playground, or **PRACTICE** to inspect any stage without earning progress. F1 opens the complete controls; Escape pauses. F4 toggles sound/master mute, F5 toggles the original music.
