@@ -1,3 +1,11 @@
+# Current whole-game visual update
+
+**Active branch: `visual/qualitybar-q1`.** This is the current native Q8 whole-game art update, not the earlier P8 GBA-renderer milestone. Open [the actual175-view whole-game gallery](Documentation/QualityBarQ1/Review/GloomBean_Whole_Game_Visual_Review.html), [the current evidence and limits](Documentation/QualityBarQ1/Review/README.md), and [the exact continuation state](Documentation/Continuity/CURRENT_CHECKPOINT.json).
+
+The supplied concept quality is **not yet achieved**. The update is implemented across all25 stages, including later-spawned objects. It is not limited to the old ten showcase points. The gallery also contains all52 additional WL4 references,40 real-action frames,14 real-keyboard frames and three actual ending screens. Full public history and the independent foundation remain preserved. The older release instructions below remain useful for controls/building but are not the current visual-quality verdict.
+
+---
+
 # Gloom Bean / Host Cycle — native Unity game
 
 Twenty authored levels. Five worlds and bosses. Fifteen temporary possessions. One irreversible first corruption.

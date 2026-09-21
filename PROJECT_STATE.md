@@ -1,9 +1,5 @@
-# Project State
+# Gloom Bean current source state
 
-- Repository: `modelarious/gloom-bean-unity`
-- Objective: Gloom Bean — Unity horror transformation platformer built on a Wario Land-inspired mechanical foundation.
-- Semantic status: EXPERIMENTAL
-- Active work: none recorded at creation
-- Blockers: none
-- Next actions: record them here as the project starts
-- Request ID: `gloombean-unity-public-20260919-b1`
+Active native visual iteration: **visual/qualitybar-q1 / whole-game Q8**. Read Documentation/Continuity/CURRENT_CHECKPOINT.json and Documentation/QualityBarQ1/Review/README.md. The updated game and current renderer/input tests are real; the supplied concept-quality target remains UNMET. Canonical user requirements remain in modelarious/obsidian-notes; do not rewrite them to make this iteration pass.
+
+Source publication works. Preserve completed campaign history, all negative evidence and the independent foundation. Do not re-create the project or resume a stale chapter TODO.
