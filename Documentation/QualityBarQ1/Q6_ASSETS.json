@@ -1,0 +1,37 @@
+{
+  "scope": "Q5 visual regression corrected; original dimensional bronze and sarcophagus motifs used throughout matching stages",
+  "files": [
+    {
+      "path": "Assets\\GloomBean\\Resources\\QualityBar\\bell.png",
+      "sha256": "21d8c08df5ec93badba7bc2b07a332786da33ec0651d5eef61724ed1983b018e"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\QualityBar\\coffin.png",
+      "sha256": "db2600377f99ccbeb2cad91a7be6de1e81c8bb1415b914bc4d9bb9748e3d1eba"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\QualityBar\\solid_3.png",
+      "sha256": "c18708ecfc4cd2f487cb6c07e5e0e04e65b83240dcb92164f8a4fa3568ff2d7f"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\QualityBar\\solid_4.png",
+      "sha256": "565e9137804dfdb970bbd61dc359673bec346927e2dc174fe82f796a2ad36175"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\QualityBar\\solid_5.png",
+      "sha256": "99a7963c91b243923e98cc5222390810a205a83819f936f838c1ae04c9106b39"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\BroadVisual\\scene_9.png",
+      "sha256": "b92b317212bf03777893e1f37c2449af0780a4e07f777ba095c1c7ba81f712c1"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\BroadVisual\\scene_12.png",
+      "sha256": "9b363f8ed66f77f81f34e339aa443fe4ce6b95c9a9e013d48dad91f31631e718"
+    },
+    {
+      "path": "Assets\\GloomBean\\Resources\\BroadVisual\\scene_23.png",
+      "sha256": "ebce07fdfe76860a2602c15c339d4dd9e852d539f4207cd98f2d6f807a954a6c"
+    }
+  ]
+}
