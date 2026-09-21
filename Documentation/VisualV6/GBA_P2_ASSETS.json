@@ -1,0 +1,629 @@
+{
+  "provenance": "Original pixel icons and cathedral/parade compositions; other CC0 source components retain their credits",
+  "assets": [
+    {
+      "name": "background_0.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "b80cd63931ad42027f3f94abc59fd5dd85bca29f25f26ef41681bffd3197f9f5"
+    },
+    {
+      "name": "background_1.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "6d1c231828917d6e1596c95a88cd87cb2f898fd730c886d306af7a61efa9197c"
+    },
+    {
+      "name": "background_2.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "d3a48026d1b50592efadf74161bda0a1eed2d81ec9fdc88327143534efa25a1d"
+    },
+    {
+      "name": "background_3.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "92e4455c0951fa8ce9f5ce69405b886f84de3973b7ade5c94708377b457c421b"
+    },
+    {
+      "name": "background_4.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "5820260c1a8d3124173dd3766f0d563234cfc47ec7272bac467105452a8c98f1"
+    },
+    {
+      "name": "background_5.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "91acdc2a1fee60650b0f3d831a46eef1fde61a01e5d60f004b495cd764d6295d"
+    },
+    {
+      "name": "background_6.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "17d835e3bb18561ddd2cea5a042b09913e335f38e3e61da7ada0a48b11f8d54f"
+    },
+    {
+      "name": "background_7.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "bde22f843b1d1f9168fd54ecf468199184b86c88b925c3ddfc2502aff4f3e5c3"
+    },
+    {
+      "name": "boss_1_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "45c0e9e59035244b5f353bb0db896a344476767aad765ba04d8e0a7c30ee4694"
+    },
+    {
+      "name": "boss_1_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "bc1b8074ff60962247bb56f75dc07d717d170632defa1ab6c9a8d8e5eb4ee851"
+    },
+    {
+      "name": "boss_1_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "87516ab5686af54899f61d818a68e3ffaef30a2f07bf249b3a3fb0928c3feda2"
+    },
+    {
+      "name": "boss_2_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "35f0103e233143180590bf1cb313b4969cef95c4623157e9bf30bc5ad0d0764a"
+    },
+    {
+      "name": "boss_2_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "e8fd63ce607a74730cf14439c04f70f1dddead430d998ac04b3b956e9db321a7"
+    },
+    {
+      "name": "boss_2_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "b81f5e74b0a31a6c0f6e2e1075616f5f4266c2bf998f226dc9230c7053b16dfd"
+    },
+    {
+      "name": "boss_3_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "6f5ac735b1ee552b52869b245ee23de0539d327055909c1ff254bc5fc9cc8098"
+    },
+    {
+      "name": "boss_3_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "b68ff574fda96a35f4f1bb6d36bdd1d725ebedc244c47b0e7621b88230749f5d"
+    },
+    {
+      "name": "boss_3_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "9d2da57c338b2715340b6a958854ddf8fc1b5cc61f779c679488020916efbc9e"
+    },
+    {
+      "name": "boss_4_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "4900ae79102c146674829513c19119eac3686092e730788404a3358fe8e50b6e"
+    },
+    {
+      "name": "boss_4_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "8b51a555c77c28c2dd05a0281b0e3764247941c097ac8679e4f9386bdd0ed7ac"
+    },
+    {
+      "name": "boss_4_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "90337b1a16939e56a60098e84e6866886dda8e86b79eb06d556369d418b248c1"
+    },
+    {
+      "name": "boss_5_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "3fd73ddc81d2d2113471b3751ba9e63afd3db64330359e224ada67725817963c"
+    },
+    {
+      "name": "boss_5_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "a476bbbadd0009d488a3116a077e7e3970390ae4594f8e3e6893177ec6804631"
+    },
+    {
+      "name": "boss_5_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "218fa5a0bc3055d5bceb1eea54ef17aa73cca22fa1244b7003a2dd1bb595c15f"
+    },
+    {
+      "name": "coin.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "28775ee60316c232b11369cabc64a07874ef4b40608716fbc1bed39c41ff47aa"
+    },
+    {
+      "name": "corbel_0.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "309c385a9255933b49b4c39e0231c3edea55f325418be0abd293fdc354e05e42"
+    },
+    {
+      "name": "corbel_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "557deda3a57b2d85cdf4e27477304345db60ed3673c897aa1ca0abe116e7433b"
+    },
+    {
+      "name": "corbel_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "d403004e6bf4227de19dec3ec10475e5d8eef49daf5aac0d056a1764548898f8"
+    },
+    {
+      "name": "corbel_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "99eb3a408beabb1743a76cd47aff18d478ea18366e0a963fd59135b4209b23b8"
+    },
+    {
+      "name": "corbel_4.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "5510544fbdb543014bf5a00428534bbf882db06cfdd202bed8e670f0fcc40914"
+    },
+    {
+      "name": "corbel_5.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "603bf3df53fadf4329c99052a0b9e1bb9678eca4639148cf38ba0ef5a17c586a"
+    },
+    {
+      "name": "cure_0.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "ce4d6998798fda7cd7de4188c987588879320aac26cb168724369ea2e0963fc0"
+    },
+    {
+      "name": "cure_1.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "8892cd4ea585f00e659bc031ebd3dfb43e93cd5c5fbd1998d52af1fee4ea0793"
+    },
+    {
+      "name": "cure_10.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "706f148e9e32f01525ed783f4dea6f79b97548e7983bb8fced7d6c27e33b0eb7"
+    },
+    {
+      "name": "cure_11.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "eb33a02c137cb7981f551be909f5c793a0d81523304fdcc02bf2b629e75591f9"
+    },
+    {
+      "name": "cure_12.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "1c65516c902f5c7c2a2222350e54870fe7944650f4fbe3e616a9afd672fc6b53"
+    },
+    {
+      "name": "cure_13.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "4dd4b966b4a27ec82a2198447dedc4545115845e4e9df702b4723f48cc5a6e16"
+    },
+    {
+      "name": "cure_14.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "3ee8390d5c637f5321a015abfbb50dea7c27d0f984dac848df974e6be75cd46c"
+    },
+    {
+      "name": "cure_15.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "e9cb1e82aa7d11e467eaa403858fd723e304546f9cbd224a95414839f900666a"
+    },
+    {
+      "name": "cure_2.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "eb33a02c137cb7981f551be909f5c793a0d81523304fdcc02bf2b629e75591f9"
+    },
+    {
+      "name": "cure_3.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "56f82bd215bdfaf9c0df05e6986b814453fcadf937bb2a29d7465431e936a1d3"
+    },
+    {
+      "name": "cure_4.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "8b9b2805e2e196b6c03ae3680f64f316a3cf73c18bdbcbda7b3445e0ef8d44fd"
+    },
+    {
+      "name": "cure_5.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "aeb122739fee5aa38bca10c4bf124740f8a3f52e806ca4f85d5dc1fa13ee546e"
+    },
+    {
+      "name": "cure_6.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "f957e23299dde7edb4656c2998f7acc1ff42ed9a941e31f4375f4aa307146070"
+    },
+    {
+      "name": "cure_7.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "1a57566b17e8db660c8491e222d7d9af101ec3222be5ae733e6c47ed415e1db8"
+    },
+    {
+      "name": "cure_8.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "ce4d6998798fda7cd7de4188c987588879320aac26cb168724369ea2e0963fc0"
+    },
+    {
+      "name": "cure_9.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "f52e4c5f177f1aceb4919085356823caf58b328005645a5bf364c6e75664ecbe"
+    },
+    {
+      "name": "fill_0.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "7c62d25af16fd5729567bf8611a4953cecc211a350b7dac1dd98ee058b681efa"
+    },
+    {
+      "name": "fill_1.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "192a9e43ba00d8fc5c3e4b8dca9716a270b1a853e5be5b89d0abe6ab4c3f12ca"
+    },
+    {
+      "name": "fill_2.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "4f62bb971a45b4a93c7a4ffdd39336912f86a21c84338f66ae74e5c0fb721ec3"
+    },
+    {
+      "name": "fill_3.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "956a1017730b764664d5cbd95d294ac7f3fcaad95102413aca380ca1128f1fe7"
+    },
+    {
+      "name": "fill_4.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "ede141d0aba6b98ebcecff4cc494e05ee861d7a0eac2564cfbc4c607c11313e7"
+    },
+    {
+      "name": "fill_5.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "49985c910b5396df76b64f6745e12c4000799c213f9b038c199be519ba411df7"
+    },
+    {
+      "name": "heart.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "343c28db72c4b2bb972f656e10151922c4e071e5c1b30ca1735959a5dc12f278"
+    },
+    {
+      "name": "hinge.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "527ee1915e37b62bccb89d4e64205645d2ce9f5971352c24919c55a51194b82d"
+    },
+    {
+      "name": "host_corrupted.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "85541ab903c14c06dd7ce10f580176f85d345e205d1f91d5a38c981b5412494f"
+    },
+    {
+      "name": "host_original.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "5fe12fdc9e8999bdb3d9d0cc2e1c8bee3899d32eb1f47e8d46a91351643093fc"
+    },
+    {
+      "name": "key.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "eb226ccbf757acde46737d415fd2aef563de31d29a530c156224a6c5b7719435"
+    },
+    {
+      "name": "lever_0.png",
+      "size": [
+        24,
+        24
+      ],
+      "sha256": "8ad30e34e9d121fee4abeebd654354ff9e342e84fd5f5d6a11ce6f7828ee6102"
+    },
+    {
+      "name": "lever_1.png",
+      "size": [
+        24,
+        24
+      ],
+      "sha256": "b2d4a5b1a9bb2dde336f98d1c7b5506f21373a266f7f54154223daa76aa720b6"
+    },
+    {
+      "name": "lip_0.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "279a51aeea5aba35c616da3dc61b8e1ae8f7c3e59f196a1f916944108ae74b4b"
+    },
+    {
+      "name": "lip_1.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "60971e55342cc4722040aa11aa775d18e4d3516f027efe752aa2dcaccd0f599d"
+    },
+    {
+      "name": "lip_2.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "3d84f354a1438aacb43633e55b940f6d58bd52b62acfadc58571573d286cc317"
+    },
+    {
+      "name": "lip_3.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "ac3650c51c50df67d199b382c8fc0dbcd8bdfe3fae78f1f1d1238ae75efcddee"
+    },
+    {
+      "name": "lip_4.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "04bd0a279ae1e5655ff8b20dd83a276d5f04aba20f684c2b3dba09703d398bd2"
+    },
+    {
+      "name": "lip_5.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "571ba156b8ba59b9cd5c043bfc6b6ec748acee1399b8c7677c7e9c32561c5d02"
+    },
+    {
+      "name": "mercy.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "16abe9056dded7f5a699938c907fb443ce4478a367f12dfeb36a5d53e032269b"
+    },
+    {
+      "name": "nail.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "6d9d61d0df85b0b9d8e175fa1299c1eb3aa2fd3534bb5e25c4b8dd6f886f21d5"
+    },
+    {
+      "name": "parade_front_0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "76f789f96c909143cb1fbeaa05bc59b2ac62bbd23712cbd52fc30b24f4d334bb"
+    },
+    {
+      "name": "parade_front_1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "b2ec98af8d170a516ab4c6efe6e8b99f1303a7e798b6f462cd720e1eeb49467c"
+    },
+    {
+      "name": "parade_front_2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "ea86e4d1a845f91be6a52bfc6a23fb630a426b1bac1129694a5562216108623f"
+    },
+    {
+      "name": "pear_0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "55829dcf976c5ccdc28d13c722f3dc009e685b98a2594b91ed7a4477d2afa2b7"
+    },
+    {
+      "name": "pear_1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "9b0903fdc4b50bb4637b395096ffd5a2d1c0a20c47269c2679c028c13b6134ed"
+    },
+    {
+      "name": "pear_2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "07afc557d63b7ca3f5eed0f0c5f60391694b10f327aa98f4f6b6a720bdaec289"
+    },
+    {
+      "name": "penitent_falling.png",
+      "size": [
+        96,
+        128
+      ],
+      "sha256": "1f28344ffc75c2c0d72d45d1cc70120ff2292b823c581d6412439afcc18d28d6"
+    },
+    {
+      "name": "penitent_kneeling.png",
+      "size": [
+        128,
+        64
+      ],
+      "sha256": "97f71d535d52fda81c4fd6909107a770a6ee7abbc4ba17873c586a5ee0305b9e"
+    },
+    {
+      "name": "plate_0.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "02a70b9044eb62a07c5f72b4871b3d8fc0c02fcbd6d3bc3e144cb6033586c6cd"
+    },
+    {
+      "name": "plate_1.png",
+      "size": [
+        32,
+        8
+      ],
+      "sha256": "7726e65c51e2350016513bfbfee82959cda0b90a946d57f1d6107693b69e4ea4"
+    },
+    {
+      "name": "portal.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "5690c280f86ddffb0b874d9a324a4eb7dc050874c5a640cab3b623b4976b56e0"
+    }
+  ]
+}

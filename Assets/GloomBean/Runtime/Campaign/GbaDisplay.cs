@@ -20,9 +20,9 @@ namespace GloomBean.Campaign
         void LateUpdate()
         {
             if(!camera)camera=Camera.main;if(!camera||!game)return;
-            bool active=game.Session&&game.Session.definition.atlas&&game.Session.gameObject.activeInHierarchy;
+            bool active=game.Session&&game.Session.gameObject.activeInHierarchy;
             if(active){if(!attached){originalAspect=camera.aspect;attached=true;}camera.targetTexture=Frame;camera.aspect=Width/(float)Height;
-                var follow=camera.GetComponent<FollowCamera>();if(follow)follow.baseSize=5f;
+                var follow=camera.GetComponent<FollowCamera>();if(follow)follow.baseSize=game.Session.definition.atlas?5f:7f;
             }else if(attached){if(camera.targetTexture==Frame)camera.targetTexture=null;camera.aspect=originalAspect;attached=false;}
         }
         void OnGUI()

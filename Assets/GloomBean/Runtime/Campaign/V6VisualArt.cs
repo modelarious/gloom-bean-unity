@@ -7,7 +7,7 @@ namespace GloomBean.Campaign
     public static class V6Art
     {
         static readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
-        public static readonly string[] RequiredAssets={"background_0","background_1","background_2","background_3","background_4","background_5","background_6","boss_1_0","boss_1_1","boss_1_2","boss_2_0","boss_2_1","boss_2_2","boss_3_0","boss_3_1","boss_3_2","boss_4_0","boss_4_1","boss_4_2","boss_5_0","boss_5_1","boss_5_2","coin","corbel_0","corbel_1","corbel_2","corbel_3","corbel_4","corbel_5","fill_0","fill_1","fill_2","fill_3","fill_4","fill_5","heart","hinge","host_corrupted","host_original","key","lip_0","lip_1","lip_2","lip_3","lip_4","lip_5","mercy","nail","pear_0","pear_1","pear_2","penitent_falling","penitent_kneeling","portal"};
+        public static readonly string[] RequiredAssets={"background_0","background_1","background_2","background_3","background_4","background_5","background_6","background_7","boss_1_0","boss_1_1","boss_1_2","boss_2_0","boss_2_1","boss_2_2","boss_3_0","boss_3_1","boss_3_2","boss_4_0","boss_4_1","boss_4_2","boss_5_0","boss_5_1","boss_5_2","coin","corbel_0","corbel_1","corbel_2","corbel_3","corbel_4","corbel_5","cure_0","cure_1","cure_10","cure_11","cure_12","cure_13","cure_14","cure_15","cure_2","cure_3","cure_4","cure_5","cure_6","cure_7","cure_8","cure_9","fill_0","fill_1","fill_2","fill_3","fill_4","fill_5","heart","hinge","host_corrupted","host_original","key","lever_0","lever_1","lip_0","lip_1","lip_2","lip_3","lip_4","lip_5","mercy","nail","parade_front_0","parade_front_1","parade_front_2","pear_0","pear_1","pear_2","penitent_falling","penitent_kneeling","plate_0","plate_1","portal"};
         public static Sprite Sprite(string name,float ppu=32)
         {
             string key=name+"@"+ppu;if(sprites.TryGetValue(key,out var s))return s;
@@ -79,7 +79,11 @@ namespace GloomBean.Campaign
             foreach(var sr in renderers)
             {
                 if(sr.GetComponentInParent<ActorMotor>()||sr.GetComponentInParent<CarryableEnemy>())continue;
+                if(sr.name=="Smiling parade facade"){int variant=Mathf.Abs(Mathf.RoundToInt(sr.transform.position.x/6))%3;sr.gameObject.AddComponent<GbaMechanismView>().Initialize(sr,"parade_front_"+variant,Vector2.one);continue;}
                 var collider=sr.GetComponent<Collider2D>();if(!collider)continue;
+                if(sr.GetComponent<PressurePlate>()){sr.gameObject.AddComponent<GbaMechanismView>().Initialize(sr,"plate_0",new Vector2(sr.size.x,.42f));continue;}
+                if(sr.GetComponent<Lever>()){sr.gameObject.AddComponent<GbaMechanismView>().Initialize(sr,"lever_0",new Vector2(.9f,.95f));continue;}
+                var cure=sr.GetComponent<HostCure>();if(cure){sr.gameObject.AddComponent<GbaMechanismView>().Initialize(sr,"cure_"+(int)cure.kind,new Vector2(1.2f,2.3f));continue;}
                 if(sr.GetComponent<KneelingFigure>()){sr.gameObject.AddComponent<V6PropView>().Initialize("penitent_falling",new Vector2(1.8f,2.65f));continue;}
                 if(sr.GetComponent<RipeningFruit>()){sr.gameObject.AddComponent<V6PropView>().Initialize("pear_0",new Vector2(1.25f,1.9f));continue;}
                 if(sr.GetComponent<ExitPortal>()){sr.gameObject.AddComponent<V6PropView>().Initialize("portal",new Vector2(1.5f,2.2f));continue;}

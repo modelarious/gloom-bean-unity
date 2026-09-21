@@ -64,7 +64,7 @@ namespace GloomBean.Campaign
         public static void Text(Rect rect,string value,Color tint,int scale=1,bool shadow=true){var old=GUI.color;GUI.color=tint;GUI.DrawTexture(rect,TextTexture(value,Mathf.RoundToInt(rect.width),Mathf.RoundToInt(rect.height),scale,shadow),ScaleMode.StretchToFill,true);GUI.color=old;}
         public static void LegacyLabel(Rect rect,string value,int fontSize,Color color){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;Text(GbaDisplay.PixelRect(rect),value,color,fontSize>=35?2:1,false);GUI.matrix=m;}
         public static void LegacyPanel(Rect rect,Color color){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;Fill(GbaDisplay.PixelRect(rect),color);GUI.matrix=m;}
-        public static void LegacyButton(Rect rect,string value,bool selected,bool enabled){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;var r=GbaDisplay.PixelRect(rect);
+        public static void LegacyButton(Rect rect,string value,bool selected,bool enabled){var m=GUI.matrix;GUI.matrix=GbaDisplay.PixelMatrix;var r=GbaDisplay.PixelRect(rect);value=value.Replace("BEGIN / CONTINUE HOST CYCLE","BEGIN / CONTINUE").Replace("PRACTICE / direct level selection","PRACTICE - ALL STAGES");
             Fill(r,new Color(.08f,.055f,.15f,1));Fill(new Rect(r.x+1,r.y+1,r.width-2,r.height-2),selected?new Color(.45f,.19f,.39f):new Color(.19f,.14f,.28f));
             if(selected)Fill(new Rect(r.x+1,r.y+1,2,r.height-2),new Color(1,.78f,.40f));
             Text(new Rect(r.x+5,r.y+3,r.width-8,r.height-4),(selected?"> ":"  ")+value,enabled?new Color(1,.94f,.76f):new Color(.49f,.45f,.49f),1,false);GUI.matrix=m;}

@@ -251,8 +251,8 @@ namespace GloomBean.Foundation
                 Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));
                 PresentationBackground?.Invoke("Home");
                 Text(new Rect(56,53,870,76),IsCorrupted?"GLOOM BEAN":"BEAN'S SUNDAY BEST",title);
-                Text(new Rect(61,140,800,35),IsCorrupted?"SAME BEAN. DIFFERENT HOST.":"A LITTLE SUNDAY WALK. A LONG WAY HOME.",heading);
-                Text(new Rect(61,182,810,58),IsCorrupted?"TWENTY ROUTES. FIFTEEN UNWANTED GUESTS.\nBORROW A RULE. FIND YOUR WAY BACK.":"THE PARADE IS READY. PUT ON YOUR SHOES.\nTHERE IS NOTHING UNDER THE SCENERY.",body);
+                Text(new Rect(61,140,800,35),IsCorrupted?"SAME BEAN. DIFFERENT HOST.":"YOUR SUNDAY BEST.",heading);
+                Text(new Rect(61,182,810,58),IsCorrupted?"TWENTY ROUTES. FIFTEEN GUESTS.\nONE BODY TO KEEP.":"THE PARADE IS READY.\nPUT ON YOUR BEST SHOES.",body);
                 float y=270;
                 for(int i=0;i<sources.Count;i++)
                 {
@@ -261,7 +261,7 @@ namespace GloomBean.Foundation
                     y+=60;
                 }
                 if(Button(new Rect(60,y,630,48),"PRACTICE / direct level selection")){SelectSource(sources.Count-1);Practice=true;screen=ScreenMode.Worlds;choice=0;}
-                Text(new Rect(61,520,820,54),"Keyboard: arrows / WASD, Space, Shift, J, K, E.\nGamepad: left stick, A jump, X tackle, Y carry, B interact, LB run. See F1 for possession controls.",small);
+                Text(new Rect(61,520,820,65),"ARROWS MOVE / SPACE JUMPS\nF1 HELP / ESC PAUSE / PAD A JUMP",small);
             }
             if(screen==ScreenMode.Worlds)
             {
@@ -310,7 +310,7 @@ namespace GloomBean.Foundation
                 // Controls always use their own dark modal panel, including over a friendly title.
                 heading.normal.textColor=Color.white;body.normal.textColor=new Color(.88f,.87f,.92f);
                 Panel(new Rect(24,18,912,564),new Color(.02f,.015f,.04f,.98f));Text(new Rect(44,34,870,40),"CONTROLS / MOVEMENT VOCABULARY",heading);
-                Text(new Rect(44,91,868,470),"MOVE: ARROWS / WASD / LEFT STICK\nJUMP: SPACE / Z / PAD A\nRUN: SHIFT / LB     TACKLE: J / PAD X\nPOUND: L / DOWN+TACKLE IN AIR\nCROUCH / CRAWL / SLOPE ROLL: DOWN\nCARRY / THROW: K / C / PAD Y\nSTUN FIRST. UP / DOWN AIMS THE THROW.\nSWIM DASH: TACKLE IN WATER\nINTERACT / PULL NAIL: E / PAD B\nPOSSESSION: U / RB   SECONDARY: I\nCHANGE FOCUSED FORM: DOWN+I\nPAUSE: ESC / START  CLOSE HELP: F1\nSOUND: F4          MUSIC: F5\n\nFORMS COME FROM CREATURES, NOT MENUS.\nACCEPT THEIR RULE. FIND THEIR CURE.\nF2 SHOWS DEVELOPMENT NOTES",body);
+                Text(new Rect(44,83,868,511),"MOVE: ARROWS / WASD / LEFT STICK\nJUMP: SPACE / Z / PAD A\nRUN: SHIFT / LB     TACKLE: J / PAD X\nPOUND: L / DOWN+TACKLE IN AIR\nCROUCH / CRAWL / SLOPE ROLL: DOWN\nCARRY / THROW: K / C / PAD Y\nSTUN FIRST. UP / DOWN AIMS THE THROW.\nSWIM DASH: TACKLE IN WATER\nINTERACT / PULL NAIL: E / PAD B\nPOSSESSION: U / RB   SECONDARY: I\nCHANGE FOCUSED FORM: DOWN+I\nPAUSE: ESC / START  CLOSE HELP: F1\nSOUND: F4          MUSIC: F5\n\nFORMS COME FROM CREATURES, NOT MENUS.\nACCEPT THEIR RULE. FIND THEIR CURE.\nF2 SHOWS DEVELOPMENT NOTES",body);
             }
             if(Event.current.type==EventType.Repaint&&buttonIndex>0){choice=Mathf.Clamp(choice,0,buttonIndex-1);pendingEnter=false;}
         }

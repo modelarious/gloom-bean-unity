@@ -1,0 +1,45 @@
+{
+    "started":  "2026-09-21T11:37:31.9302372-06:00",
+    "id":  "V6-GBA-P1-regression",
+    "results":  [
+                    {
+                        "passed":  310,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  87,
+                        "case":  "Opening",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  47,
+                        "case":  "Mirror",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  97,
+                        "case":  "Ink-secret",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "491277fa643c18d5da03e1bb77695317424f38cb61802115de6992919c717043",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "304e1c8d56adb43e26b9b738c89c2bde1a75376409370d834ad8b476e57b028b",
+    "player_sha256":  "36c5c9f13481406382a8e9ef8fc0ea7cdf055c43bb12fc8fd545b07c199cd277",
+    "source_commit":  "abaa763a496fd4e6f78ccc25b367c53f3e93080a",
+    "finished":  "2026-09-21T11:39:36.3188418-06:00"
+}

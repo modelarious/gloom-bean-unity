@@ -35,7 +35,8 @@ namespace GloomBean.Campaign
             File.WriteAllText(Path.Combine(dir,"resource-types.txt"),string.Join("\n",Resources.LoadAll<UnityEngine.Object>("VisualV6").Select(x=>x.name+" "+x.GetType().Name)));
             int count=0;
             var actual=new List<Shot>(Shots);
-            foreach(var original in Shots)actual.Add(new Shot("GBA-"+original.id,original.stage,original.x,original.y,original.cx,original.cy,original.form,original.reference,original.size>7?6.5f:5f,original.turn));
+            foreach(var original in Shots){float size=original.stage=="GB-L09"?7f:original.size>7?6.5f:5f;float cy=original.stage=="GB-B5"?4.8f:original.cy;
+                actual.Add(new Shot("GBA-"+original.id,original.stage,original.x,original.y,original.cx,cy,original.form,original.reference,size,original.turn));}
             foreach(var shot in actual)
             {
                 game.SelectSource(1);var stage=game.AvailableWorlds.SelectMany(w=>w.levels.Concat(new[]{w.boss})).Single(s=>s.id==shot.stage);
