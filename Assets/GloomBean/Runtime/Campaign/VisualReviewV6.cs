@@ -34,7 +34,9 @@ namespace GloomBean.Campaign
             foreach(string asset in V6Art.RequiredAssets)if(!textures.Any(t=>t.name==asset))errors.Add("Required visual Texture2D missing: "+asset);
             File.WriteAllText(Path.Combine(dir,"resource-types.txt"),string.Join("\n",Resources.LoadAll<UnityEngine.Object>("VisualV6").Select(x=>x.name+" "+x.GetType().Name)));
             int count=0;
-            foreach(var shot in Shots)
+            var actual=new List<Shot>(Shots);
+            foreach(var original in Shots)actual.Add(new Shot("GBA-"+original.id,original.stage,original.x,original.y,original.cx,original.cy,original.form,original.reference,original.size>7?6.5f:5f,original.turn));
+            foreach(var shot in actual)
             {
                 game.SelectSource(1);var stage=game.AvailableWorlds.SelectMany(w=>w.levels.Concat(new[]{w.boss})).Single(s=>s.id==shot.stage);
                 yield return game.Load(stage,true);var session=game.Session;var actor=session.player;var host=actor.GetComponent<HostController>();
@@ -54,7 +56,7 @@ namespace GloomBean.Campaign
                 var shapes=session.GetComponentsInChildren<Collider2D>(true);File.WriteAllText(Path.Combine(dir,shot.id+"-geometry.txt"),string.Join("\n",shapes.Select(c=>c.GetType().Name+"|"+c.name+"|"+c.isTrigger+"|"+c.gameObject.layer).OrderBy(s=>s)));
                 Time.timeScale=1;follow.enabled=true;
             }
-            File.WriteAllText(Path.Combine(dir,"visual-result.json"),JsonUtility.ToJson(new Receipt{status=errors.Count==0&&count==Shots.Length?"PASS":"FAIL",scope="Native fixed-camera art fixtures. Bodies/forms are staged; not a route-playthrough claim. No campaign progress is awarded.",unity=Application.unityVersion,images=count,shots=Shots,errors=errors.ToArray()},true));
+            File.WriteAllText(Path.Combine(dir,"visual-result.json"),JsonUtility.ToJson(new Receipt{status=errors.Count==0&&count==actual.Count?"PASS":"FAIL",scope="Native 240x160-rendered art fixtures: original ten camera centers/lenses retained, plus explicitly prefixed GBA tighter framing. Aspect is now 3:2. Bodies/forms staged; not input-driven route evidence. No progress awarded.",unity=Application.unityVersion,images=count,shots=actual.ToArray(),errors=errors.ToArray()},true));
             Application.logMessageReceived-=Error;Application.Quit(errors.Count==0?0:1);
         }
     }
