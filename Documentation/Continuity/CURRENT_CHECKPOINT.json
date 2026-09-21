@@ -2,9 +2,15 @@
   "schema_version": 9,
   "scope": "Current common-source full native release acceptance; manual judgement separate",
   "tested_commit": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "source_candidate": "e8203f2825db1583022ceb37e14ba843ab0ed3a5",
-  "next_gate": "Implement and capture V6 GBA P1: 240x160 nearest display, bitmap HUD/menus, readable pixel-scale materials, then critique all ten same fixtures and revise. Existing pass2_n1 native screenshots PASS but subjective superiority remains UNMET.",
-  "active_job": null,
+  "source_candidate": "cc40096f1afa50b1d102c0cc7b75308bfd63d819",
+  "next_gate": "Complete the pinned full54-case regression for the GBA P4 presentation; then publish exact preview package and all10 honest reference scorecards. Native pixel/UI correctness passes; subjective all-example superiority is still UNMET. Do not recreate the now-public repository.",
+  "active_job": {
+    "task": "GloomBean-GBA-Full-P4",
+    "receipt": "Reports/V6-GBA-Full-P4/runner.json",
+    "config": "Tools/campaign-acceptance-gba-p4.json",
+    "source": "cc40096f1afa50b1d102c0cc7b75308bfd63d819",
+    "status": "READY_NOT_STARTED"
+  },
   "latest_focused": {
     "receipt": "Documentation/Completion/Evidence/M1-InkSupport/runner.json",
     "status": "PASS",
@@ -82,10 +88,12 @@
   },
   "source_branch": "visual/v6",
   "latest_visual": {
-    "receipt": "Reports/VisualV6/pass2_n1/runner.json",
-    "source": "4424d5c46256bc74cbfd402cb61f2d6c3183603f",
-    "images": 10,
-    "scope": "staged visual fixtures, not gameplay proof"
+    "source": "f4b874e57e810e233d8bbe57c658e3197b28f260",
+    "receipt": "Documentation/VisualV6/Evidence/GBA-P4/runner.json",
+    "native_images": 20,
+    "ui_images": 14,
+    "pixel_audit": "PASS",
+    "strict_superiority": "UNMET"
   },
   "gates": "Documentation/VisualV6/GBA_GATES.md"
 }
