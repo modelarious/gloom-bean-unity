@@ -19,12 +19,13 @@ namespace GloomBean.Campaign
     public sealed class BroadSurface:MonoBehaviour
     {
         public SpriteRenderer Source {get;private set;}public int Profile {get;private set;}public bool Applied=>face&&face.sprite&&Source&&Source.forceRenderingOff;
-        StageSession session;SpriteRenderer face,trim;readonly List<SpriteRenderer> backing=new List<SpriteRenderer>();Vector2 previous;int last=-1;bool tint;
-        public void Initialize(SpriteRenderer source){Source=source;session=GetComponentInParent<StageSession>();tint=source.GetComponent<MagneticBody>();face=BroadArt.Picture(transform,"solid material",source.sortingOrder);face.drawMode=SpriteDrawMode.Tiled;trim=BroadArt.Picture(transform,"contact cornice",source.sortingOrder+1);trim.drawMode=SpriteDrawMode.Tiled;Update();}
+        StageSession session;SpriteRenderer face,trim,leftCap,rightCap;readonly List<SpriteRenderer> backing=new List<SpriteRenderer>();Vector2 previous;int last=-1;bool tint;
+        public void Initialize(SpriteRenderer source){Source=source;session=GetComponentInParent<StageSession>();tint=source.GetComponent<MagneticBody>()||source.GetComponent<DepthGeometry>();face=BroadArt.Picture(transform,"solid material",source.sortingOrder);face.drawMode=SpriteDrawMode.Tiled;trim=BroadArt.Picture(transform,"contact cornice",source.sortingOrder+1);trim.drawMode=SpriteDrawMode.Tiled;leftCap=BroadArt.Picture(transform,"left material edge",source.sortingOrder+1);rightCap=BroadArt.Picture(transform,"right material edge",source.sortingOrder+1);Update();}
         void Update(){if(!Source||!face||!Source.sprite)return;Profile=BroadArt.Material(Source,BroadArt.Profile(session));Vector2 size=Source.drawMode==SpriteDrawMode.Simple?(Vector2)Source.sprite.bounds.size:Source.size;size=new Vector2(Mathf.Max(.025f,size.x),Mathf.Max(.025f,size.y));bool horizontal=size.x>1.6f&&size.y<size.x*.7f;
-            if(last!=Profile){last=Profile;face.sprite=BroadArt.Get("face_"+Profile);trim.sprite=BroadArt.Get("trim_"+Profile);previous=Vector2.zero;}
+            if(last!=Profile){last=Profile;face.sprite=BroadArt.Get("face_"+Profile);trim.sprite=BroadArt.Get("trim_"+Profile);leftCap.sprite=rightCap.sprite=BroadArt.Get("cap_"+Profile);previous=Vector2.zero;}
             face.size=size;face.enabled=Source.enabled&&face.sprite;face.color=tint?Source.color:new Color(1,1,1,Source.color.a);Source.forceRenderingOff=face.sprite!=null;
-            float h=Mathf.Min(size.y,.5f);trim.size=new Vector2(size.x,h);trim.transform.localPosition=new Vector3(0,(size.y-h)*.5f,0);trim.enabled=Source.enabled&&horizontal;trim.color=face.color;
+            float h=Mathf.Min(size.y,.5f);trim.size=new Vector2(size.x,1);trim.transform.localScale=new Vector3(1,h,1);trim.transform.localPosition=new Vector3(0,(size.y-h)*.5f,0);trim.enabled=Source.enabled&&horizontal;trim.color=face.color;
+            float capWidth=Mathf.Min(.18f,size.x*.25f);BroadArt.Fit(leftCap,new Vector2(capWidth,size.y));BroadArt.Fit(rightCap,new Vector2(capWidth,size.y));leftCap.transform.localPosition=new Vector3(-size.x*.5f+capWidth*.5f,0,0);rightCap.transform.localPosition=new Vector3(size.x*.5f-capWidth*.5f,0,0);rightCap.flipX=true;leftCap.color=rightCap.color=face.color;leftCap.enabled=rightCap.enabled=Source.enabled;
             if((size-previous).sqrMagnitude>.001f){previous=size;foreach(var sr in backing)if(sr)Destroy(sr.gameObject);backing.Clear();
                 // Physical surface stays exact. Recessed feet/braces are background decoration below the contact.
                 if(horizontal&&size.y<.9f&&size.x>2&&!tint){int count=Mathf.Clamp(Mathf.FloorToInt(size.x/4),1,10);for(int i=0;i<count;i++){
@@ -60,6 +61,7 @@ namespace GloomBean.Campaign
         public void Initialize(){session=GetComponent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(BroadArt.Eligible(sr)&&!sr.GetComponent<BroadSurface>()&&!sr.GetComponent<V6Surface>())sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
             foreach(var sr in GetComponentsInChildren<MeshRenderer>(true))if(sr.name=="Slope mesh"&&!sr.GetComponent<BroadSlope>())sr.gameObject.AddComponent<BroadSlope>().Initialize(sr);
+            foreach(var soil in GetComponentsInChildren<RootSoil>(true))if(!soil.GetComponent<BroadSoilArt>())soil.gameObject.AddComponent<BroadSoilArt>();
             foreach(var water in GetComponentsInChildren<WaterVolume>(true))if(!water.GetComponent<BroadWaterArt>())water.gameObject.AddComponent<BroadWaterArt>();
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<BroadRailArt>())rail.gameObject.AddComponent<BroadRailArt>();
             foreach(var orbit in GetComponentsInChildren<Carousel>(true))if(!orbit.GetComponent<BroadCarouselArt>())orbit.gameObject.AddComponent<BroadCarouselArt>();
@@ -87,6 +89,15 @@ namespace GloomBean.Campaign
         void Start(){water=GetComponent<WaterVolume>();source=GetComponent<SpriteRenderer>();shape=GetComponent<BoxCollider2D>();body=BroadArt.Picture(transform,"water depth",source?source.sortingOrder:1);body.sprite=BroadArt.Get("water");body.drawMode=SpriteDrawMode.Tiled;surface=BroadArt.Picture(transform,"water contact",3);surface.sprite=BroadArt.Get("water");surface.drawMode=SpriteDrawMode.Tiled;}
         void LateUpdate(){if(!shape||!body)return;if(source)source.forceRenderingOff=body.sprite!=null;body.size=shape.size;body.color=new Color(.72f,1,1,1);body.enabled=shape.enabled&&(!source||source.enabled);surface.size=new Vector2(shape.size.x,.16f);surface.transform.localPosition=new Vector3(shape.offset.x,shape.offset.y+shape.size.y*.5f-.08f,0);surface.color=new Color(.8f,1,.94f,1);surface.enabled=body.enabled;}
         void OnDestroy(){if(source)source.forceRenderingOff=false;}
+    }
+
+    [DefaultExecutionOrder(251)]
+    public sealed class BroadSoilArt:MonoBehaviour
+    {
+        RootSoil soil;SpriteRenderer original,picture;bool last;bool ready;
+        void Start(){soil=GetComponent<RootSoil>();original=GetComponent<SpriteRenderer>();picture=BroadArt.Picture(transform,"wet root substrate",original?original.sortingOrder:0);picture.drawMode=SpriteDrawMode.Tiled;}
+        void LateUpdate(){if(!soil||!picture)return;if(!ready||last!=soil.wet){ready=true;last=soil.wet;picture.sprite=BroadArt.Get("soil_"+(last?1:0));}picture.size=soil.size;picture.color=new Color(1,1,1,.7f);picture.enabled=!original||original.enabled;if(original)original.forceRenderingOff=picture.sprite!=null;}
+        void OnDestroy(){if(original)original.forceRenderingOff=false;}
     }
 
 }
