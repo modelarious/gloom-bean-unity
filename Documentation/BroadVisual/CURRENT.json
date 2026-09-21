@@ -1,0 +1,17 @@
+{
+  "status": "ACTIVE_WHOLE_GAME_OVERHAUL",
+  "branch": "visual/v6",
+  "source": "ab28fed6ae78bf2d639747ef0ca55cf30339b7bf",
+  "user_scope": "New frames and WL4 corpus; no isolated ten-scene optimization; extreme whole-game fidelity target remains open",
+  "baseline": "Reports/BroadVisual/B0/runner.json",
+  "latest_reviewed": "Reports/BroadVisual/B2/runner.json",
+  "active_task": "GloomBean-BroadVisual",
+  "active_receipt": "Reports/BroadVisual/B3b/runner.json",
+  "new_images": 75,
+  "new_references": 52,
+  "coverage": "All20levels+5bosses; A/B review, C held-out not yet visually reviewed",
+  "rendering": "26 authored stage profiles, object-driven original material/room kits and credited structural texture composition. All observed eligible surfaces covered in B2. No new visual colliders.",
+  "next": "Review B3b A/B and all25previously unseenC frames; run configured focused native regression; deliver rebuilt ZIP/source and all-stage new-sample comparison. Do not restart assets or bootstrap.",
+  "do_not_touch": "Separate untracked ArtSources/QualityBarQ1 work is not owned by this task.",
+  "strict_fidelity": "UNMET_PENDING_VISUAL_REVIEW"
+}

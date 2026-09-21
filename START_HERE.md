@@ -1,3 +1,7 @@
+# ACTIVE WHOLE-GAME VISUAL OVERHAUL
+
+Read `Documentation/BroadVisual/CURRENT.json` and `GATES.md` first. The new user request replaces final acceptance on the older ten-pair sample with coverage throughout all25stages. Existing26profile art/75frame captures are committed; do not rebuild or rely on stale P8-only guidance below.
+
 # Current V6 continuation
 
 The active Windows worktree is **visual/v6**. Read Documentation/VisualV6/Review/README.md and Documentation/Continuity/CURRENT_CHECKPOINT.json first. P8 native GBA preview is delivered; all ten comparison pairs, ending proof and remaining art losses are explicit. **Strict visual superiority remains unmet.** The public source repository works; do not restart Project Factory or complete already-finished chapters. Next actual art work is foreground machinery/room composition and expressive action poses, not another global resolution filter.
