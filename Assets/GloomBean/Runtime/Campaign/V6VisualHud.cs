@@ -24,16 +24,16 @@ namespace GloomBean.Campaign
             bool returning=s.Phase==RunPhase.Returning;string phase=returning?(s.definition.timed?TimeSpan.FromSeconds(Mathf.Max(0,s.Remaining)).ToString(@"mm\:ss"):"THE TURN"):"EXPLORE";
             GbaPixels.Text(new Rect(194,2,46,8),phase,returning?Gold:Bone);
             if(host&&host.Forms.Count>0){
-                GbaPixels.Fill(new Rect(2,139,140,20),Panel);GbaPixels.Fill(new Rect(2,139,1,20),Gold);
-                Image(new Rect(4,140,17,18),HostPixelArt.Host(host.Primary,true),Color.white);
-                GbaPixels.Text(new Rect(24,141,116,8),HostController.Display(host.Primary),Bone);
-                GbaPixels.Text(new Rect(24,150,116,8),CompactStatus(host),new Color(.78f,.80f,.69f));
-                if(host.Forms.Count>1)Image(new Rect(144,146,13,13),HostPixelArt.Host(host.Forms[1-host.focus].Kind,true),Color.white);
+                GbaPixels.Fill(new Rect(2,14,140,20),Panel);GbaPixels.Fill(new Rect(2,14,1,20),Gold);
+                Image(new Rect(4,15,17,18),HostPixelArt.Host(host.Primary,true),Color.white);
+                GbaPixels.Text(new Rect(24,16,116,8),HostController.Display(host.Primary),Bone);
+                GbaPixels.Text(new Rect(24,25,116,8),CompactStatus(host),new Color(.78f,.80f,.69f));
+                if(host.Forms.Count>1)Image(new Rect(144,15,13,13),HostPixelArt.Host(host.Forms[1-host.focus].Kind,true),Color.white);
             }
-            if(s.definition.requiredShards>0){GbaPixels.Fill(new Rect(2,147,90,12),Panel);GbaPixels.Text(new Rect(6,150,84,8),"SEALS "+s.Shards+"/"+s.definition.requiredShards,Bone);}
+            if(s.definition.requiredShards>0){GbaPixels.Fill(new Rect(2,15,90,12),Panel);GbaPixels.Text(new Rect(6,18,84,8),"SEALS "+s.Shards+"/"+s.definition.requiredShards,Bone);}
             var boss=s.GetComponentInChildren<AtlasBoss>();var mass=s.GetComponentInChildren<ColossusMass>();
-            if(boss&&!boss.defeated){GbaPixels.Fill(new Rect(159,147,79,12),Panel);GbaPixels.Text(new Rect(163,150,75,8),mass?"ALT "+mass.Altitude.ToString("0.0"):"ACT "+(boss.phase+1)+"/"+boss.phases,Gold);}
-            if(!string.IsNullOrEmpty(s.Message)){GbaPixels.Fill(new Rect(7,24,226,27),Panel);GbaPixels.Text(new Rect(11,27,217,23),s.Message,Bone);}
+            if(boss&&!boss.defeated){GbaPixels.Fill(new Rect(159,15,79,12),Panel);GbaPixels.Text(new Rect(163,18,75,8),mass?"ALT "+mass.Altitude.ToString("0.0"):"ACT "+(boss.phase+1)+"/"+boss.phases,Gold);}
+            if(!string.IsNullOrEmpty(s.Message)){GbaPixels.Fill(new Rect(7,37,226,27),Panel);GbaPixels.Text(new Rect(11,40,217,23),s.Message,Bone);}
             GUI.matrix=prior;
         }
         static string CompactStatus(HostController host)

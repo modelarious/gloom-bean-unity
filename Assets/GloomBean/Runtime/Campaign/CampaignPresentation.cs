@@ -9,7 +9,7 @@ namespace GloomBean.Campaign
     {
         public string LastPaintedScreen {get;private set;}="";public bool LastFigureWasNormal {get;private set;}
         GameRoot game;CampaignScore score;GUIStyle caption,kicker;string lastScreen="";float entered;
-        void Start(){game=GetComponent<GameRoot>();game.PresentationBackground=Draw;gameObject.AddComponent<GbaDisplay>();game.PixelLabel=GbaPixels.LegacyLabel;game.PixelPanel=GbaPixels.LegacyPanel;game.PixelButton=GbaPixels.LegacyButton;game.PresentationMatrix=()=>GbaDisplay.LegacyMatrix;gameObject.AddComponent<V6VisualHud>();score=gameObject.AddComponent<CampaignScore>();score.Initialize(game);}
+        void Start(){game=GetComponent<GameRoot>();game.PresentationBackground=Draw;gameObject.AddComponent<GbaDisplay>();GbaActionCapture.Install(game);game.PixelLabel=GbaPixels.LegacyLabel;game.PixelPanel=GbaPixels.LegacyPanel;game.PixelButton=GbaPixels.LegacyButton;game.PresentationMatrix=()=>GbaDisplay.LegacyMatrix;gameObject.AddComponent<V6VisualHud>();score=gameObject.AddComponent<CampaignScore>();score.Initialize(game);}
         void Update(){if(!game)return;if(lastScreen!=game.CurrentScreen){lastScreen=game.CurrentScreen;entered=Time.unscaledTime;}}
         static void Texture(Rect r,Sprite sprite,Color tint){GbaPixels.LegacySprite(r,sprite,tint);}
         static void Fill(Rect r,Color tint){GbaPixels.LegacyPanel(r,tint);}

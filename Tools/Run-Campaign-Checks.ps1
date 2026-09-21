@@ -21,6 +21,7 @@ try {
   $gui=[bool]$c.windowed -or $c.route -eq 'GB-B5';$flags=$(if($gui){''}else{'-batchmode '})+$mode+' -gb-reports '+(Q $out)+' -logFile '+(Q "$out\player.log")+' -screen-width 1280 -screen-height 800 -screen-fullscreen 0'
   if($c.secrets){$flags+=' -gb-with-secrets'}
   if($c.practice){$flags+=' -gb-practice-witness'}
+  if($c.nativeCapture){$flags+=' -gb-action-captures'}
   if($r.trace){$flags+=' -gb-echo-trace'}
   if($null -ne $c.startDelay){$flags+=' -gb-start-delay '+([double]$c.startDelay).ToString([Globalization.CultureInfo]::InvariantCulture)}
   if($c.renderFps){$flags+=' -gb-render-fps '+[int]$c.renderFps}
