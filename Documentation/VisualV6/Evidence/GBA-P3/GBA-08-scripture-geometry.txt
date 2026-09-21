@@ -1,0 +1,52 @@
+BoxCollider2D|EMPTY FRAME|True|13
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Fresh return margin 18|False|9
+BoxCollider2D|Fresh return margin 24|False|9
+BoxCollider2D|Fresh return margin 30|False|9
+BoxCollider2D|Fresh return margin 36|False|9
+BoxCollider2D|Fresh return margin 42|False|9
+BoxCollider2D|Fresh return margin 48|False|9
+BoxCollider2D|Fresh return margin 58|False|9
+BoxCollider2D|Fresh return margin 68|False|9
+BoxCollider2D|Fresh return margin 74|False|9
+BoxCollider2D|Fresh return margin 80|False|9
+BoxCollider2D|Fresh return margin 86|False|9
+BoxCollider2D|Fresh return margin 92|False|9
+BoxCollider2D|Fresh return margin 98|False|9
+BoxCollider2D|Giant semicolon curved stem|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Imperative word 0|False|9
+BoxCollider2D|Imperative word 1|False|9
+BoxCollider2D|Imperative word 2|False|9
+BoxCollider2D|Imperative word 3|False|9
+BoxCollider2D|Imperative word 4|False|9
+BoxCollider2D|Imperative word 5|False|9
+BoxCollider2D|Imperative word 6|False|9
+BoxCollider2D|Imperative word 7|False|9
+BoxCollider2D|Imperative word 8|False|9
+BoxCollider2D|Key|True|13
+BoxCollider2D|Last permanent margin before the semicolon|False|9
+BoxCollider2D|Left comma stop|False|8
+BoxCollider2D|Lower line-break refuge|False|9
+BoxCollider2D|Margin landing alcove|False|9
+BoxCollider2D|Movable line-break comma|False|10
+BoxCollider2D|Optional suspended paper margin|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Punctuation desk|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Right comma stop|False|8
+BoxCollider2D|Scrolling word 0|False|9
+BoxCollider2D|Scrolling word 1|False|9
+BoxCollider2D|Scrolling word 2|False|9
+BoxCollider2D|Scrolling word 3|False|9
+BoxCollider2D|Scrolling word 4|False|9
+BoxCollider2D|Tenant: Ink|True|13
+BoxCollider2D|Tenant: Shadow|True|13
+BoxCollider2D|The semicolon dot|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11

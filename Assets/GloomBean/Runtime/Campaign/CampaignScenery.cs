@@ -11,7 +11,7 @@ namespace GloomBean.Campaign
         public static Color Sky(int world)=>world==0?new Color(.75f,.84f,.70f):world==1?new Color(.10f,.065f,.14f):world==2?new Color(.14f,.16f,.095f):world==3?new Color(.095f,.135f,.19f):world==4?new Color(.16f,.105f,.135f):new Color(.73f,.69f,.61f);
         public static Sprite Get(int world)
         {
-            var v6=V6Art.Sprite("background_"+world,12);if(v6)return v6;
+            var v6=V6Art.Sprite("background_"+world,24);if(v6)return v6;
             if(cache.TryGetValue(world,out var result))return result;
             Color sky=Sky(world),dark=Color.Lerp(sky,world==5?new Color(.42f,.39f,.38f):Color.black,.35f),mid=Color.Lerp(sky,world==0?Color.white:new Color(.59f,.44f,.54f),world==5?.30f:.22f),light=Color.Lerp(mid,world==5?new Color(.92f,.83f,.58f):new Color(.65f,.66f,.71f),.20f);
             var pixels=new Color32[W*H];for(int y=0;y<H;y++)for(int x=0;x<W;x++)pixels[x+y*W]=Color.Lerp(sky,dark,(1f-(float)y/H)*.25f);
@@ -66,7 +66,7 @@ namespace GloomBean.Campaign
             var camera=UnityEngine.Camera.main;if(!camera||pictures==null)return;
             bool cute=definition.course==1&&!GameRoot.Instance.IsCorrupted;int theme=cute?0:definition.course==19?6:definition.course==16?7:world;
             if(theme!=last){last=theme;foreach(var p in pictures)p.sprite=SceneryArt.Get(theme);camera.backgroundColor=SceneryArt.Sky(theme);}
-            Vector3 c=camera.transform.position;float scale=Mathf.Max(1,camera.orthographicSize/8f),width=32*scale;float phase=Mathf.Repeat(c.x*.25f,width);
+            Vector3 c=camera.transform.position;var bounds=pictures[0].sprite.bounds.size;float scale=Mathf.Max(1,2*camera.orthographicSize/Mathf.Max(1,bounds.y)),width=bounds.x*scale;float phase=Mathf.Repeat(c.x*.25f,width);
             for(int i=0;i<3;i++){pictures[i].transform.position=new Vector3(c.x-phase+(i-1)*width,c.y,2);pictures[i].transform.localScale=new Vector3(scale,scale,1);}
         }
     }

@@ -30,6 +30,7 @@ namespace GloomBean.Campaign
                 GbaPixels.Text(new Rect(24,150,116,8),CompactStatus(host),new Color(.78f,.80f,.69f));
                 if(host.Forms.Count>1)Image(new Rect(144,146,13,13),HostPixelArt.Host(host.Forms[1-host.focus].Kind,true),Color.white);
             }
+            if(s.definition.requiredShards>0){GbaPixels.Fill(new Rect(2,147,90,12),Panel);GbaPixels.Text(new Rect(6,150,84,8),"SEALS "+s.Shards+"/"+s.definition.requiredShards,Bone);}
             var boss=s.GetComponentInChildren<AtlasBoss>();var mass=s.GetComponentInChildren<ColossusMass>();
             if(boss&&!boss.defeated){GbaPixels.Fill(new Rect(159,147,79,12),Panel);GbaPixels.Text(new Rect(163,150,75,8),mass?"ALT "+mass.Altitude.ToString("0.0"):"ACT "+(boss.phase+1)+"/"+boss.phases,Gold);}
             if(!string.IsNullOrEmpty(s.Message)){GbaPixels.Fill(new Rect(7,24,226,27),Panel);GbaPixels.Text(new Rect(11,27,217,23),s.Message,Bone);}

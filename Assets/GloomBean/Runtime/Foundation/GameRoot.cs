@@ -229,7 +229,7 @@ namespace GloomBean.Foundation
             body.normal.textColor=small.normal.textColor=friendlyMenu?new Color(.25f,.17f,.29f):new Color(.88f,.87f,.92f);
             if(screen==ScreenMode.Play||screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
             {
-                bool visualHud=Session&&Session.definition.atlas&&GameplayHud!=null;
+                bool visualHud=Session&&GameplayHud!=null;
                 if(visualHud)GameplayHud();
                 else {
                 Panel(new Rect(0,0,960,72),new Color(.03f,.025f,.06f,.92f));

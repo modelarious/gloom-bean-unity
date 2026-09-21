@@ -1,0 +1,55 @@
+BoxCollider2D|Cabinet left behind by the extinguished sun|False|8
+BoxCollider2D|Cross-building lift|False|9
+BoxCollider2D|East cast-shadow bridge|False|9
+BoxCollider2D|East cast-shadow bridge|False|9
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Heavy east window shutter|False|9
+BoxCollider2D|Key|True|13
+BoxCollider2D|Lever|True|13
+BoxCollider2D|Lever|True|13
+BoxCollider2D|MATTE VELVET|True|13
+BoxCollider2D|MATTE VELVET|True|13
+BoxCollider2D|MATTE VELVET|True|13
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Off-register Mercy shutters|False|8
+BoxCollider2D|Paired apartment interlock|False|8
+BoxCollider2D|Patrol 7|False|12
+BoxCollider2D|Plate 0|True|13
+BoxCollider2D|Plate 1|True|13
+BoxCollider2D|Plate 2|True|13
+BoxCollider2D|Plate 3|True|13
+BoxCollider2D|Plate 4|True|13
+BoxCollider2D|Plate 5|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return apartment interlock|False|8
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Tenant: Mirror|True|13
+BoxCollider2D|Tenant: Mirror|True|13
+BoxCollider2D|The cabinet without a reflection|False|8
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|West cast-shadow bridge|False|9
+BoxCollider2D|West cast-shadow bridge|False|9
+BoxCollider2D|Western sun return gallery|False|9
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Corporeal secondary Host|False|11
+CapsuleCollider2D|Host|False|11
