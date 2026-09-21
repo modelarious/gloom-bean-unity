@@ -22,7 +22,7 @@ namespace GloomBean.Campaign
     {
         public SpriteRenderer Source {get;private set;}
         public bool Applied=>Source&&fascia&&fascia.sprite&&fascia.enabled==Source.enabled;
-        StageSession session;int group=-1;Vector2 previous;SpriteRenderer fascia,capLeft,capRight,main,contact;readonly List<SpriteRenderer> details=new List<SpriteRenderer>();bool semanticTint,food,cloth;
+        StageSession session;int group=-1;Vector2 previous;SpriteRenderer fascia,capLeft,capRight,main,contact;readonly List<SpriteRenderer> details=new List<SpriteRenderer>();readonly Dictionary<SpriteRenderer,float> detailAlpha=new Dictionary<SpriteRenderer,float>();bool semanticTint,food,cloth;
         public void Initialize(SpriteRenderer sr){Source=sr;session=GetComponentInParent<StageSession>();semanticTint=GetComponent<MagneticBody>()||GetComponent<DepthGeometry>();food=GetComponent<EdibleChunk>();cloth=sr.name.ToLowerInvariant().Contains("sheet")||sr.name.ToLowerInvariant().Contains("skin");main=QualityBarArt.Picture(transform,"physical material face",sr.sortingOrder);main.drawMode=SpriteDrawMode.Tiled;contact=QualityBarArt.Picture(transform,"physical contact edge",sr.sortingOrder+1);contact.drawMode=SpriteDrawMode.Tiled;fascia=QualityBarArt.Picture(transform,"recessed load housing",sr.sortingOrder-2);fascia.drawMode=SpriteDrawMode.Tiled;capLeft=QualityBarArt.Picture(transform,"left housing bracket",sr.sortingOrder-2);capRight=QualityBarArt.Picture(transform,"right housing bracket",sr.sortingOrder-2);LateUpdate();}
         void LateUpdate()
         {
@@ -31,12 +31,12 @@ namespace GloomBean.Campaign
             if(next!=group||(size-previous).sqrMagnitude>.001f){group=next;previous=size;Rebuild(size);}
             Color color=semanticTint?new Color(Source.color.r,Source.color.g,Source.color.b,Source.color.a):new Color(1,1,1,Source.color.a);
             bool visible=Source.enabled;main.enabled=visible;main.color=color;contact.enabled=visible&&size.x>1.6f&&size.y<size.x*.65f;contact.color=color;fascia.enabled=visible;fascia.color=color;capLeft.enabled=capRight.enabled=visible;capLeft.color=capRight.color=color;
-            foreach(var sr in details){if(!sr)continue;sr.enabled=visible;var tint=sr.color;tint.a=Source.color.a*(sr.name.Contains("light cone")?.92f:sr.name.Contains("rear")?.96f:1f);sr.color=tint;}
+            foreach(var sr in details){if(!sr)continue;sr.enabled=visible;var tint=sr.color;tint.a=Source.color.a*(detailAlpha.TryGetValue(sr,out var authoredAlpha)?authoredAlpha:1f);sr.color=tint;}
         }
-        void Add(string art,string name,Vector2 at,Vector2 dimensions,int order,Color tint){var sr=QualityBarArt.Picture(transform,name,order);sr.sprite=QualityBarArt.Get(art);QualityBarArt.Fit(sr,dimensions);sr.transform.localPosition=new Vector3(at.x,at.y,.08f);sr.color=tint;details.Add(sr);}
+        void Add(string art,string name,Vector2 at,Vector2 dimensions,int order,Color tint){var sr=QualityBarArt.Picture(transform,name,order);sr.sprite=QualityBarArt.Get(art);QualityBarArt.Fit(sr,dimensions);sr.transform.localPosition=new Vector3(at.x,at.y,.08f);sr.color=tint;details.Add(sr);detailAlpha[sr]=tint.a;}
         void Rebuild(Vector2 size)
         {
-            foreach(var old in details)if(old)Destroy(old.gameObject);details.Clear();
+            foreach(var old in details)if(old)Destroy(old.gameObject);details.Clear();detailAlpha.Clear();
             bool horizontal=size.x>1.6f&&size.y<size.x*.65f;bool thin=horizontal&&size.y<1.2f;
             main.sprite=QualityBarArt.Get(food?"solid_food":cloth?"solid_cloth":"solid_"+group);main.size=size;contact.sprite=QualityBarArt.Get("edge_"+group);contact.size=new Vector2(size.x,.5f);float edgeHeight=Mathf.Min(size.y,.28f);contact.transform.localScale=new Vector3(1,edgeHeight/.5f,1);contact.transform.localPosition=new Vector3(0,size.y*.5f-edgeHeight*.5f,0);
             foreach(Transform child in transform){if(child.name=="Broad visual / solid material"||child.name=="Broad visual / contact cornice"||child.name=="Broad visual / left material edge"||child.name=="Broad visual / right material edge"){var sr=child.GetComponent<SpriteRenderer>();if(sr)sr.forceRenderingOff=true;}}
@@ -52,9 +52,9 @@ namespace GloomBean.Campaign
                         Add("column_"+group,"rear structural pier",new Vector2(x-span*.42f,top+3.4f),new Vector2(group==2?1.65f:1.1f,7),-21,new Color(.82f,.78f,.86f,1));
                         float maxH=motif=="statue"||motif=="season_tree"?6.0f:motif=="tenement"?4.8f:4.0f;float maxW=motif=="tenement"||motif=="season_tree"?6.2f:4.5f;
                         Vector2 prop=QualityBarArt.PropSize(motif,maxW,maxH);float w=prop.x,h=prop.y;
-                        bool low=motif=="washer"||motif=="oven";float y=low?top-h*.55f:top+h*.49f;
+                        bool low=motif=="washer"||motif=="oven";float y=low?top-h*.15f:top+h*.49f;
                         Add(motif,"rear "+motif,new Vector2(x+span*.12f,y),new Vector2(w,h),-18,new Color(1,.94f,.96f,1));
-                        if(group>=3){Add(group==5?"glass":"lancet","rear lit lancet",new Vector2(x-span*.28f,top+4.0f),group==5?new Vector2(4.8f,6.2f):new Vector2(1.5f,4.5f),-24,new Color(.86f,.79f,.93f,1));
+                        if(group>=3){Add(group==5?"glass":"lancet","rear lit lancet",new Vector2(x-span*.28f,top+4.0f),group==5?new Vector2(3.5f,4.6f):new Vector2(1.5f,4.5f),-24,new Color(.86f,.79f,.93f,1));
                             Add("banner_detail","rear hanging banner",new Vector2(x+span*.33f,top+4.8f),new Vector2(1.2f,2.2f),-18,new Color(.9f,.83f,.94f,1));}
                         if(group!=0&&group!=2){float lx=x-span*.21f;Add("lamp_"+group,"rear hanging lamp",new Vector2(lx,top+5.0f),new Vector2(1.4f,1.0f),-17,new Color(1,.91f,.76f,1));Add("light_"+group,"rear light cone",new Vector2(lx,top+2.55f),new Vector2(3.6f,4.4f),-10,new Color(1,1,1,.5f));Add("chain_"+group,"rear lamp chain",new Vector2(lx,top+6.2f),new Vector2(.16f,1.8f),-20,Color.white);}
                     }
@@ -62,15 +62,15 @@ namespace GloomBean.Campaign
                 if(Source.name!="Floor"&&size.x>=2.5f&&size.y<2f&&(!GetComponent<Rigidbody2D>()||GetComponent<Rigidbody2D>().bodyType==RigidbodyType2D.Kinematic)&&!semanticTint&&!food&&!cloth&&!GetComponent<ProcessionCarrier>()){
                     string motif=QualityBarArt.Motif(session.definition);Vector2 prop=QualityBarArt.PropSize(motif,Mathf.Min(size.x*1.1f,5f),motif=="statue"||motif=="season_tree"?5.5f:4.4f);float width=prop.x,height=prop.y;
                     bool above=motif!="washer"&&motif!="oven"&&motif!="bell"&&motif!="coffin";
-                    float top=size.y*.5f;float y=above?top+height*.48f:top-height*.60f;
+                    float top=size.y*.5f;float y=above?top+height*.48f:top-height*.24f;
                     Add(motif,"rear elevated "+motif,new Vector2(0,y),new Vector2(width,height),-17,new Color(1,.96f,.98f,1));
-                    if(group>=3){Add(group==5?"glass":"lancet","rear elevated lancet",new Vector2(-width*.28f,top+3.0f),group==5?new Vector2(3.7f,4.8f):new Vector2(1.2f,3.6f),-24,new Color(.8f,.77f,.9f,1));
+                    if(group>=3){Add(group==5?"glass":"lancet","rear elevated lancet",new Vector2(-width*.28f,top+3.0f),group==5?new Vector2(2.6f,3.4f):new Vector2(1.2f,3.6f),-24,new Color(.8f,.77f,.9f,1));
                         if(width>3)Add("banner_detail","rear elevated banner",new Vector2(width*.28f,top+2.8f),new Vector2(1,1.85f),-18,Color.white);}
                     if(group!=0&&group!=2){float lx=-width*.36f;Add("lamp_"+group,"rear elevated lamp",new Vector2(lx,top+3.6f),new Vector2(1.2f,.82f),-15,new Color(1,.96f,.86f,1));Add("light_"+group,"rear elevated light cone",new Vector2(lx,top+1.62f),new Vector2(3.0f,3.65f),-10,Color.white);}
                 }
                 if(GetComponent<MotionPlatform>()||GetComponent<Rigidbody2D>()&&Source.name.Contains("Halo")){
                     if(group==5)Add("halo_detail","moving halo ring",new Vector2(0,size.y*.5f-.8f),new Vector2(Mathf.Max(1.4f,size.x),1.4f),-1,Color.white);
-                    if(group==1&&size.x>2.5f)Add("banner_detail","moving tray cloth",new Vector2(size.x*.24f,size.y*.5f-1.4f),new Vector2(.6f,1.1f),-2,new Color(.85f,.73f,.78f,1));
+                    if(group==1&&size.x>2.5f)Add("drapery","moving tray cloth",new Vector2(size.x*.24f,size.y*.5f-.85f),new Vector2(1.5f,1.7f),-2,new Color(.85f,.73f,.78f,1));
                     Add("gear_"+group,"moving axle",new Vector2(0,size.y*.5f-1.1f),new Vector2(1.2f,1.2f),-3,new Color(1,.93f,.84f,1));
                 }
             }else{
@@ -97,7 +97,7 @@ namespace GloomBean.Campaign
         public void Initialize(){session=GetComponent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
-            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.35f,.32f,.46f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
+            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.60f,.56f,.65f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
             foreach(var carrier in GetComponentsInChildren<ProcessionCarrier>(true))if(!carrier.GetComponent<QualityBarProcession>())carrier.gameObject.AddComponent<QualityBarProcession>();
             foreach(var wheel in GetComponentsInChildren<SeasonWheel>(true))if(!wheel.GetComponent<QualityBarSeason>())wheel.gameObject.AddComponent<QualityBarSeason>();
             foreach(var source in GetComponentsInChildren<HostSource>(true))if(!source.GetComponent<TenantPixelView>())source.gameObject.AddComponent<TenantPixelView>();

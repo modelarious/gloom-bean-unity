@@ -1,0 +1,366 @@
+{
+  "scope": "26 wholly framed level compositions, material surfaces and restrained pixel-stepped local light; original/credited individual components, never a concept screenshot as a backplate",
+  "source_base": "77a46bb7160b25c39713bf7b23dda2fe069e55d7",
+  "assets": [
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_0.png",
+      "sha256": "a6191a0c4f5c5e6cc753a8c335c37ce53bf53ea464996a0691238f7fdb86f8e7",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_1.png",
+      "sha256": "ec5620a2f54eb35445d1457ec5d7586884631335f052d9a72ad90368c97df909",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_10.png",
+      "sha256": "6b63602d8bc83548678c6de6e54456b1b7594bb2d7202306a40885148223062f",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_11.png",
+      "sha256": "800d526bf164d095c3265435004ca40c747dbfb3b8e8fcb02304260c86e8e678",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_12.png",
+      "sha256": "495f1d5b3ddc0018554471ed15c6bc701498e289bf2b697c5799fedee5ab192f",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_13.png",
+      "sha256": "533a5175250e6644f8dfd3d6b42962d47f0901bb41401af5c1c30133a0c26de2",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_14.png",
+      "sha256": "15df0a56ecf584dca127b3e5e7cad959f8bc1e0be61da831aeb23274b5285490",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_15.png",
+      "sha256": "50ddadaea26295365b0ce92e549ace0e6d06bccd40e8ce324b8f45fafae9b178",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_16.png",
+      "sha256": "bc34e47252bbccca65fb7c5bc17859e24c4238b1f1fbdf6a65e7273d8c1a5ab8",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_17.png",
+      "sha256": "0fb91e6f4ea20e499d54cfebf23193c21156cd90aafc07488415f4f396b50b38",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_18.png",
+      "sha256": "4a9102f1864e8000266a7106e25c5eeff1207e2badd524eed975ca4e5bf7c69d",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_19.png",
+      "sha256": "9dd154178a868c22363a88939de6dc969f2e2727a48cb04780808688a929cb47",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_2.png",
+      "sha256": "0f35acf90c68f2f9d960b06e6283b47709a75359cda1519abc9b247facc18883",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_20.png",
+      "sha256": "ed48c64d5203048cb8b3cedac31b0f8e1c1cce574e2ae9501e0391923f761848",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_21.png",
+      "sha256": "a9e48bf9f8ab8147156d0a2b9bbc0516a4cba892189f534f06c3f40aa06e4504",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_22.png",
+      "sha256": "eb9cf332aae61d09b480af84d216a5665019923633428632a6ec98d12eacaf1c",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_23.png",
+      "sha256": "744ca5b33cea38b2dd86a711217903d948db1aabf380dd3e734c7175d1063748",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_24.png",
+      "sha256": "533a5175250e6644f8dfd3d6b42962d47f0901bb41401af5c1c30133a0c26de2",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_25.png",
+      "sha256": "3e65b41fc62a7a7d41e294ba47420bb528e2933e7a225f4f0e5901614e786eaf",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_3.png",
+      "sha256": "1e3b91dc20c095a95496c50559fdaf5dfb9b9c360f9face94cbf110f2149dfab",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_4.png",
+      "sha256": "5e504c58ec6dbbaf0edbd7add7640f5a0f9c78ce9e9c85f3a075134103dc47cb",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_5.png",
+      "sha256": "eb9cf332aae61d09b480af84d216a5665019923633428632a6ec98d12eacaf1c",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_6.png",
+      "sha256": "028c3fdcf9faa08fab8dcc7d81aa386ec11d8f08355ef71f49d79811e90d901c",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_7.png",
+      "sha256": "884cd976bce241bc2d1439ba054fe87f60b8f39abfbdd5f36af0227f57805dc9",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_8.png",
+      "sha256": "8ab65cd3fdc21b3ece3d75e7e7781fd1b80169199ac6073010b7956c3dacb64b",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/BroadVisual/scene_9.png",
+      "sha256": "023e97e34fc20a4c35101b3cdbed6df6be2338bf68d06aeae1d1a8beaad857cf",
+      "size": [
+        320,
+        200
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_0.png",
+      "sha256": "467e97f9420634bb6f678ad4f85bda8c41c959dc1f236bce211b245526ddf9b4",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_1.png",
+      "sha256": "b802720b48d70dc9fc2d8cba5138cd79bd00ae7bdfba3f83106fd80ab8d421fb",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_2.png",
+      "sha256": "963b3bb005d3e44b84ab1059c67bad694e51d5eec49211fe1c162bf7f10d6a0c",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_3.png",
+      "sha256": "d8fbeea7ce6cf190cafc19721d7c3c14e919595de71f7544268d1725fd430a46",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_4.png",
+      "sha256": "ba912955b3f33412d67e596038add86168aaf59d975bfbc712ba874b50d62283",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/solid_5.png",
+      "sha256": "be4e8dfbebd7c04ea240d9d6ed6c3677aad247cd204a7728e87c91d96cad56f2",
+      "size": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_0.png",
+      "sha256": "19b05893c1f9ec2309cd1b95b710d26a2e70b32866dca46fe643a4b9282035a1",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_1.png",
+      "sha256": "e28e23a7dd0e09d3beeefc774c161c192871274bd6addc6ed36e35022b6cecfa",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_2.png",
+      "sha256": "7a12c3884bf0bac2678113e18cef2c3e5cf7f4d09b8c532cd197a80833f6e807",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_3.png",
+      "sha256": "08f2fa09cf7cf27f000f41c0debf72c13333ca8a5c92201949a7530efeb36327",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_4.png",
+      "sha256": "b1132ffbc97026fb2f7bd3705a73cc9d492bafcab18e7f87a4b406ee3ca1dc8f",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/edge_5.png",
+      "sha256": "0c86dc816f63651030c23808bce80f59df6b5c495a79dca1845719116a7d8846",
+      "size": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_0.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_1.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_2.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_3.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_4.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/light_5.png",
+      "sha256": "2d952d42eaf037a94ce3c1fa5839a26718dfdb12e21cdb1cc7d5f614d4634f4a",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "file": "Assets/GloomBean/Resources/QualityBar/drapery.png",
+      "sha256": "d63f9032bbe80c3934b7f62b89a71d05e8bdabef305c4fb932e3e4badf5d2b1c",
+      "size": [
+        64,
+        64
+      ]
+    }
+  ]
+}

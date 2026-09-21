@@ -1,0 +1,7 @@
+# Q4 native review and whole-stage Q5 changes
+
+All five world contacts and125-frame native corpus were inspected, including all bosses. Actual images are well below the generated concepts: repeated flat window/bib props, dim midplanes and disconnected thin platforms reduce tangible architectural depth. The assets are connected but presentation hierarchy is weak.
+
+Q5 composes all26 scenic profiles from physical bays, apartment cutaways with furniture, forest/conservatory silhouettes, ledger shelves, ruined skyline and vaulted stone. These use the retained credited texture components and original shapes; no concept screenshot is painted as a full-screen result. Material banks add coherent stone/timber/riveted planes and narrower contact ridges. The old background multiplier had darkened already-dark art; local and far planes now have independently authored values. Lamp penumbra is pixel-stepped and its originally authored opacity is no longer accidentally overwritten at runtime. Washer/oven fittings are raised within their noncolliding rear plane, not by moving any collider.
+
+F/G add50 new support-derived viewpoints, none within3.1world-units of a preceding frame centre. Existing ABCDE retained. These are staged visual fixtures, not reachable-route evidence. No runtime renderer reads camera/sample IDs. All quality, motion and whole-game art claims remain pending actual Q5 capture and subsequent critique.
