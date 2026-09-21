@@ -1,0 +1,158 @@
+{
+  "tool": "compose_visual_v6_n1.py",
+  "provenance": "Ansimuz CC0 components plus original arrangement/decoration; no Nintendo pixels and no generated screenshot evidence",
+  "assets": [
+    {
+      "file": "background_0.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "e27a6257338c8969ff9aa23deee44b1258594084e83d364e17a258fef031cde7"
+    },
+    {
+      "file": "background_1.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "1b920016eb9cd93a85a8d5051e497a50019709f1f7cc3af12ec067d602d76fe0"
+    },
+    {
+      "file": "background_2.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "ca1b5e5c5dffd9fa04eb9d8a21a7b2ea37f5cbd2c2f67c9bb0dfdcd4b2c8d6d4"
+    },
+    {
+      "file": "background_3.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "58340c052dd159868a63c0c66e6673d7ded87112f377659f655f5f64f0176601"
+    },
+    {
+      "file": "background_4.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "a9ffb7fcb32d24513a8bc1eb940610d4ea3f5b8b106152855194c9ada51a35dc"
+    },
+    {
+      "file": "background_5.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "c434253930f7c18f91c1da05ac659aaf968a02355f98dc208955669ce43ce7c9"
+    },
+    {
+      "file": "background_6.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "e508431045ed528386e9ae81a4082af623024bc94ca10825ef71bb92639e951e"
+    },
+    {
+      "file": "fill_0.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "b3c0d18fa66cc6d01b02019931bdce4ffdc0a563f822c9af55e8dec490738b71"
+    },
+    {
+      "file": "lip_0.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "251e403ca87b1aaef410f0ab0030379927f16b01fd169eb688726122d51e22aa"
+    },
+    {
+      "file": "fill_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "ba39cbb4a96d873f91b4264438020d0f6d29d0559af840e9350cfef6dbcd51a5"
+    },
+    {
+      "file": "lip_1.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "55418ec047a6e8602a1d45f7540857c35897d53cb8b3ae77aa9cc153cea11d1a"
+    },
+    {
+      "file": "fill_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "3b2ae62d21107af12150ef97a5ad16f4ce36038a703ff55c9b11bcb549b5c78e"
+    },
+    {
+      "file": "lip_2.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "0e9224da91bdd32db562de24d158fd500277f912e27080a521d76fe3cd5413a3"
+    },
+    {
+      "file": "fill_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "07c987a66a4d7dd3946db93547f9c142459f791ec6dd6c46f054b5df55bb3799"
+    },
+    {
+      "file": "lip_3.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "5c117dcb8994d06ce1cab5a8da4f704776e6c180dd745f647e0c685d2e844c7d"
+    },
+    {
+      "file": "fill_4.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "bbe1994bc7a5eaae2db5d40fb09a414f53cc7020492abda95567bf816e59abf3"
+    },
+    {
+      "file": "lip_4.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "3a8df68eb33d21cc203cf6d9ed49ebc7f9c60840eca52d68a1adb989ad1eab9d"
+    },
+    {
+      "file": "fill_5.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "98f2756910e1df2b15fe8305dcd820604136b97d15a3d67506ccb6b571c67394"
+    },
+    {
+      "file": "lip_5.png",
+      "size": [
+        64,
+        16
+      ],
+      "sha256": "36a609ddd51c9ce8155d2364c229436554e4d7e6e220d4bf9150cf43a26b8cd7"
+    }
+  ]
+}

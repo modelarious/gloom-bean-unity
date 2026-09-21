@@ -4,7 +4,7 @@ using UnityEngine;
 using GloomBean.Foundation;
 namespace GloomBean.Campaign
 {
-    /// <summary>Original non-colliding, low-contrast parallax paintings. Simulation never reads this art.</summary>
+    /// <summary>Non-colliding parallax compositions; see ArtSources/Ansimuz for CC0 component credits. Simulation never reads this art.</summary>
     public static class SceneryArt
     {
         const int W=256,H=160;static readonly Dictionary<int,Sprite> cache=new Dictionary<int,Sprite>();
@@ -64,7 +64,7 @@ namespace GloomBean.Campaign
         void LateUpdate()
         {
             var camera=UnityEngine.Camera.main;if(!camera||pictures==null)return;
-            bool cute=definition.course==1&&!GameRoot.Instance.IsCorrupted;int theme=cute?0:world;
+            bool cute=definition.course==1&&!GameRoot.Instance.IsCorrupted;int theme=cute?0:definition.course==19?6:world;
             if(theme!=last){last=theme;foreach(var p in pictures)p.sprite=SceneryArt.Get(theme);camera.backgroundColor=SceneryArt.Sky(theme);}
             Vector3 c=camera.transform.position;float scale=Mathf.Max(1,camera.orthographicSize/8f),width=32*scale;float phase=Mathf.Repeat(c.x*.25f,width);
             for(int i=0;i<3;i++){pictures[i].transform.position=new Vector3(c.x-phase+(i-1)*width,c.y,2);pictures[i].transform.localScale=new Vector3(scale,scale,1);}

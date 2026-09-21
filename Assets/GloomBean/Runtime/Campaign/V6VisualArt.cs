@@ -7,6 +7,7 @@ namespace GloomBean.Campaign
     public static class V6Art
     {
         static readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
+        public static readonly string[] RequiredAssets={"background_0","background_1","background_2","background_3","background_4","background_5","background_6","boss_1_0","boss_1_1","boss_1_2","boss_2_0","boss_2_1","boss_2_2","boss_3_0","boss_3_1","boss_3_2","boss_4_0","boss_4_1","boss_4_2","boss_5_0","boss_5_1","boss_5_2","coin","corbel_0","corbel_1","corbel_2","corbel_3","corbel_4","corbel_5","fill_0","fill_1","fill_2","fill_3","fill_4","fill_5","heart","hinge","host_corrupted","host_original","key","lip_0","lip_1","lip_2","lip_3","lip_4","lip_5","mercy","nail","pear_0","pear_1","pear_2","penitent_falling","penitent_kneeling","portal"};
         public static Sprite Sprite(string name,float ppu=32)
         {
             string key=name+"@"+ppu;if(sprites.TryGetValue(key,out var s))return s;

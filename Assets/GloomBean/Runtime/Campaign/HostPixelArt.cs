@@ -5,7 +5,7 @@ using GloomBean.Foundation;
 namespace GloomBean.Campaign
 {
     // Hand-authored pixel primitives and palettes. Art never defines collision,
-    // saves, generated rules or puzzle validity. No models or external assets.
+    // saves, generated rules or puzzle validity. V6 portraits use the user-supplied reference; no runtime model.
     public static class HostPixelArt
     {
         static readonly Dictionary<string,Sprite> bank=new Dictionary<string,Sprite>();
@@ -19,6 +19,23 @@ namespace GloomBean.Campaign
             public void Ellipse(int x,int y,int rx,int ry,Color32 c){if(rx<1||ry<1)return;for(int j=-ry;j<=ry;j++)for(int i=-rx;i<=rx;i++)if((float)i*i/(rx*rx)+(float)j*j/(ry*ry)<=1)Dot(x+i,y+j,c);}
             public void Ring(int x,int y,int rx,int ry,int thick,Color32 c){for(int j=-ry;j<=ry;j++)for(int i=-rx;i<=rx;i++){float outer=(float)i*i/(rx*rx)+(float)j*j/(ry*ry),inner=(float)i*i/Mathf.Max(1,(rx-thick)*(rx-thick))+(float)j*j/Mathf.Max(1,(ry-thick)*(ry-thick));if(outer<=1&&inner>=1)Dot(x+i,y+j,c);}}
             public void Line(int x,int y,int z,int w,int thick,Color32 c){int steps=Math.Max(Math.Abs(z-x),Math.Abs(w-y));for(int i=0;i<=steps;i++){float t=steps==0?0:(float)i/steps;Ellipse(Mathf.RoundToInt(Mathf.Lerp(x,z,t)),Mathf.RoundToInt(Mathf.Lerp(y,w,t)),thick,thick,c);}}
+            public bool Reference(bool corrupt,HostKind form,int frame,int pose)
+            {
+                var texture=Resources.Load<Texture2D>("VisualV6/"+(corrupt?"host_corrupted":"host_original"));
+                if(!texture||texture.width!=64||texture.height!=64)return false;
+                var reference=texture.GetPixels32();
+                int step=frame==1?1:frame==3?-1:0;
+                for(int y=0;y<64;y++)for(int x=0;x<64;x++){
+                    int sy=y;if(y<15)sy=y+(x<33?step:-step);else if(pose==2)sy=y-1;
+                    if(sy<0||sy>=64)continue;var c=reference[x+sy*64];
+                    if(c.a>0&&c.r<150&&c.g<95&&c.b>c.g*1.3f&&c.b>c.r){
+                        if(form==HostKind.Wax)c=(Color32)Color.Lerp(new Color(.27f,.17f,.17f),new Color(.95f,.82f,.48f),Mathf.Clamp01(c.r/110f));
+                        else if(form==HostKind.Root)c=(Color32)Color.Lerp(new Color(.11f,.19f,.17f),new Color(.59f,.71f,.35f),Mathf.Clamp01(c.r/160f));
+                    }
+                    Dot(x,y,c);
+                }
+                return true;
+            }
             public Sprite Finish(string name,float pixelsPerUnit=64)
             {var t=new Texture2D(n,n,TextureFormat.RGBA32,false){name=name,filterMode=FilterMode.Point,wrapMode=TextureWrapMode.Clamp};t.SetPixels32(p);t.Apply(false,true);return Sprite.Create(t,new Rect(0,0,n,n),Vector2.one*.5f,pixelsPerUnit,0,SpriteMeshType.FullRect);}
         }
@@ -35,12 +52,14 @@ namespace GloomBean.Campaign
                 p.Rect(18,5,29,50,Ink);p.Rect(15,13,35,32,Ink);p.Rect(20,8,25,45,Hex(0x7d4856));p.Rect(18,15,29,28,Hex(0x482e40));p.Rect(22,10,2,41,Hex(0xad726a));p.Rect(42,10,2,41,Hex(0xad726a));
                 p.Rect(25,41,15,2,Gold);p.Rect(31,35,2,14,Gold);Eye(p,29,29,5,8,0);Eye(p,39,30,4,6,0);p.Line(33,21,32,10,1,Pink);foreach(int y in new[]{12,23,39,49}){p.Rect(20,y,2,2,Cream);p.Rect(43,y,2,2,Cream);}Glove(p,11,28);Glove(p,53,28);
             }else{
+                if(!p.Reference(corrupt,form,frame,pose)){
                 Shoe(p,23,8+foot+lift);Shoe(p,44,8-foot+lift);
                 p.Line(26,43,24,54,4,Ink);p.Line(24,54,30,59,4,Ink);p.Line(30,59,34,56,4,Ink);p.Line(26,44,25,54,2,Mid);p.Line(25,54,30,57,2,High);
                 p.Ellipse(33,29+bob,21,21,Ink);p.Ellipse(33,29+bob,18,18,body);p.Ellipse(29,34+bob,15,15,Mid);p.Ellipse(25,38+bob,9,8,High);p.Ellipse(38,23+bob,13,12,body);p.Ellipse(38,19+bob,12,7,Dark);
                 Glove(p,8,23-foot+(pose==1?2:0));Glove(p,55,pose==1?32:23+foot);
                 Eye(p,28,33+bob,10,15,2,corrupt);Eye(p,47,corrupt?47:37+bob,7,10,1,corrupt);
                 if(corrupt){p.Line(40,37,46,42,3,Pink);p.Line(24,22,22,5+frame,2,Pink);p.Line(35,18,33,4,3,Pink);p.Ellipse(47,23,10,8,Pink);p.Ellipse(49,23,6,5,Ink);p.Line(51,19,56,12,2,Pink);p.Line(56,12,60,14,2,Rose);p.Rect(45,25,3,3,Cream);p.Rect(50,27,2,2,White);p.Ellipse(31,6,3,2,Rose);}
+                }
                 if(pose==4){p.Line(23,39,32,29,1,White);p.Line(32,39,23,29,1,White);}
                 switch(form){
                     case HostKind.Echo:p.Ring(32,31,26,25,1,Hex(0x9ee4dd));p.Line(6,41,13,41,1,Hex(0x76b8cf));p.Line(4,35,10,35,1,Hex(0x76b8cf));break;

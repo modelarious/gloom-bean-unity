@@ -31,7 +31,7 @@ namespace GloomBean.Campaign
         {
             QualitySettings.vSyncCount=0;Application.targetFrameRate=60;UnityEngine.Random.InitState(601);
             var textures=Resources.LoadAll<Texture2D>("VisualV6");
-            if(textures.Length!=51)errors.Add("Visual asset import contract: expected 51 Texture2D resources, got "+textures.Length);
+            foreach(string asset in V6Art.RequiredAssets)if(!textures.Any(t=>t.name==asset))errors.Add("Required visual Texture2D missing: "+asset);
             File.WriteAllText(Path.Combine(dir,"resource-types.txt"),string.Join("\n",Resources.LoadAll<UnityEngine.Object>("VisualV6").Select(x=>x.name+" "+x.GetType().Name)));
             int count=0;
             foreach(var shot in Shots)
