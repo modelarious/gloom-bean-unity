@@ -65,8 +65,8 @@ namespace GloomBean.Campaign
         void LateUpdate()
         {
             var camera=UnityEngine.Camera.main;if(!camera||pictures==null)return;
-            bool cute=definition.course==1&&!GameRoot.Instance.IsCorrupted;int theme=cute?0:definition.course==19?6:definition.course==16?7:world;
-            if(theme!=last){last=theme;foreach(var p in pictures)p.sprite=SceneryArt.Get(theme);camera.backgroundColor=SceneryArt.Sky(theme);}
+            int theme=BroadArt.Profile(session);
+            if(theme!=last){last=theme;foreach(var p in pictures)p.sprite=BroadArt.Get("scene_"+theme,16)??SceneryArt.Get(world);camera.backgroundColor=theme==0?SceneryArt.Sky(0):new Color(.085f,.075f,.13f);}
             Vector3 c=camera.transform.position;var bounds=pictures[0].sprite.bounds.size;float scale=Mathf.Max(1,2*camera.orthographicSize/Mathf.Max(1,bounds.y)),width=bounds.x*scale;float phase=Mathf.Repeat(c.x*.25f,width);
             for(int i=0;i<3;i++){pictures[i].transform.position=new Vector3(c.x-phase+(i-1)*width,c.y,2);pictures[i].transform.localScale=new Vector3(scale,scale,1);}
         }

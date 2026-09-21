@@ -60,6 +60,7 @@ namespace GloomBean.Campaign
         public void Initialize(){session=GetComponent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(BroadArt.Eligible(sr)&&!sr.GetComponent<BroadSurface>()&&!sr.GetComponent<V6Surface>())sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
             foreach(var sr in GetComponentsInChildren<MeshRenderer>(true))if(sr.name=="Slope mesh"&&!sr.GetComponent<BroadSlope>())sr.gameObject.AddComponent<BroadSlope>().Initialize(sr);
+            foreach(var water in GetComponentsInChildren<WaterVolume>(true))if(!water.GetComponent<BroadWaterArt>())water.gameObject.AddComponent<BroadWaterArt>();
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<BroadRailArt>())rail.gameObject.AddComponent<BroadRailArt>();
             foreach(var orbit in GetComponentsInChildren<Carousel>(true))if(!orbit.GetComponent<BroadCarouselArt>())orbit.gameObject.AddComponent<BroadCarouselArt>();
         }
@@ -79,4 +80,13 @@ namespace GloomBean.Campaign
             for(int i=0;i<orbit.arms.Length;i++)if(orbit.arms[i]){var old=transform.Find("spoke"+i);if(old){var r=old.GetComponent<LineRenderer>();if(r)r.enabled=false;}rods[i]=PrimitiveArt.Line("Broad visual / structural spoke "+i,transform,transform.position,orbit.arms[i].transform.position,.17f,new Color(.42f,.40f,.49f),-2);}
         }
     }
+    [DefaultExecutionOrder(250)]
+    public sealed class BroadWaterArt:MonoBehaviour
+    {
+        WaterVolume water;SpriteRenderer source,body,surface;BoxCollider2D shape;float elapsed;
+        void Start(){water=GetComponent<WaterVolume>();source=GetComponent<SpriteRenderer>();shape=GetComponent<BoxCollider2D>();body=BroadArt.Picture(transform,"water depth",source?source.sortingOrder:1);body.sprite=BroadArt.Get("water");body.drawMode=SpriteDrawMode.Tiled;surface=BroadArt.Picture(transform,"water contact",3);surface.sprite=BroadArt.Get("water");surface.drawMode=SpriteDrawMode.Tiled;}
+        void LateUpdate(){if(!shape||!body)return;if(source)source.forceRenderingOff=body.sprite!=null;body.size=shape.size;body.color=new Color(.72f,1,1,1);body.enabled=shape.enabled&&(!source||source.enabled);surface.size=new Vector2(shape.size.x,.16f);surface.transform.localPosition=new Vector3(shape.offset.x,shape.offset.y+shape.size.y*.5f-.08f,0);surface.color=new Color(.8f,1,.94f,1);surface.enabled=body.enabled;}
+        void OnDestroy(){if(source)source.forceRenderingOff=false;}
+    }
+
 }

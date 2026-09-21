@@ -11,7 +11,7 @@ namespace GloomBean.Campaign
     // Staging is isolated to this opt-in test. These images are never claimed as route proofs.
     public sealed class BroadVisualCapture:MonoBehaviour
     {
-        [Serializable] public class Shot{public string id,stage,title,anchor,form;public int stratum;public bool returned,holdout;public float x,y,cx,cy,size;public int colliders,renderers;}
+        [Serializable] public class Shot{public string id,stage,title,anchor,form;public int stratum;public bool returned,holdout;public float x,y,cx,cy,size;public int colliders,renderers,profile,eligible,applied,visualColliders;}
         [Serializable] public class Receipt{public string status,scope;public Shot[] shots;public string[] errors;}
         GameRoot game;string dir;List<Shot> shots=new List<Shot>();List<string> errors=new List<string>();
         public void Begin(GameRoot root){game=root;dir=root.reportDirectory;Directory.CreateDirectory(dir);Application.logMessageReceived+=Error;StartCoroutine(Run());}
@@ -36,8 +36,8 @@ namespace GloomBean.Campaign
                 for(int f=0;f<30;f++)yield return new WaitForFixedUpdate();
                 actor.Body.position=new Vector2(px,py);actor.transform.position=new Vector3(px,py,0);Time.timeScale=0;session.Notice("",0);yield return null;yield return new WaitForEndOfFrame();
                 string id=stage.id+"-"+(sample==0?"A-explore":sample==1?"B-altered":"C-holdout");var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(dir,id+".png"),image.EncodeToPNG());Destroy(image);
-                var shape=session.GetComponentsInChildren<Collider2D>(true);var sprites=session.GetComponentsInChildren<SpriteRenderer>(true);
-                shots.Add(new Shot{id=id,stage=stage.id,title=stage.title,anchor=anchor.name,form=form,stratum=sample,returned=returned,holdout=sample==2,x=px,y=py,cx=cx,cy=cy,size=camera.orthographicSize,colliders=shape.Length,renderers=sprites.Length});
+                var dressing=session.GetComponent<BroadWorldDressing>();if(dressing)dressing.Scan();var shape=session.GetComponentsInChildren<Collider2D>(true);var sprites=session.GetComponentsInChildren<SpriteRenderer>(true);
+                shots.Add(new Shot{id=id,stage=stage.id,title=stage.title,anchor=anchor.name,form=form,stratum=sample,returned=returned,holdout=sample==2,x=px,y=py,cx=cx,cy=cy,size=camera.orthographicSize,colliders=shape.Length,renderers=sprites.Length,profile=BroadArt.Profile(session),eligible=dressing?dressing.EligibleCount:0,applied=dressing?dressing.AppliedCount:0,visualColliders=dressing?dressing.VisualColliders:0});
                 File.WriteAllLines(Path.Combine(dir,id+"-geometry.txt"),shape.Select(c=>c.GetType().Name+"|"+c.name+"|"+c.isTrigger+"|"+c.gameObject.layer+"|"+c.bounds.center+"|"+c.bounds.size).OrderBy(s=>s));
                 File.WriteAllLines(Path.Combine(dir,id+"-objects.txt"),sprites.Where(s=>s.enabled&&!s.forceRenderingOff&&s.sprite).Select(s=>s.name+"|"+s.sprite.name+"|"+s.bounds.center+"|"+s.bounds.size+"|order="+s.sortingOrder));
                 Time.timeScale=1;follow.enabled=true;
