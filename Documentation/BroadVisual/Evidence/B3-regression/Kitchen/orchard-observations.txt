@@ -1,0 +1,51 @@
+BEGIN GB-L06 Kitchen of the Unfinished Feast
+PASS GB-L06 walk 16 | (15.80, 2.76) feet=2.01 hp=6
+PASS GB-L06 required tenant present: Gullet | (15.80, 2.76) feet=2.01 hp=6
+PASS GB-L06 focus Gullet | (15.80, 2.76) feet=2.01 hp=6
+EVENT t=3.10 terrain-swallowed GB-L06-tile-16-1.5
+PASS GB-L06 swallow an actual structural tile | (15.81, 2.72) feet=1.97 hp=6
+PASS GB-L06 fall through actual removed floor | (15.81, -1.25) feet=-2.00 hp=6
+PASS GB-L06 walk 25.5 | (25.30, -1.25) feet=-2.00 hp=6
+PASS GB-L06 required tenant present: Gullet | (25.30, -1.25) feet=-2.00 hp=6
+PASS GB-L06 focus Gullet | (25.30, -1.25) feet=-2.00 hp=6
+EVENT t=5.43 terrain-rehomed GB-L06-tile-16-1.5
+PASS GB-L06 rehome the same structural tile | (25.34, -1.25) feet=-2.00 hp=6
+PASS GB-L06 real grease lands in relocated runway's dish | (25.34, -1.25) feet=-2.00 hp=6
+PASS GB-L06 jump 28 / -1 peak 0.37 | (27.78, -0.25) feet=-1.00 hp=6
+PASS GB-L06 jump onto dynamic support 33 | (32.75, -0.25) feet=-1.00 hp=6
+PASS GB-L06 jump into the steam column | (36.03, 3.34) feet=2.59 hp=6
+PASS GB-L06 steam carries the Host through the pantry shaft | (36.73, 8.32) feet=7.57 hp=6
+PASS GB-L06 walk 42 | (41.80, 8.75) feet=8.00 hp=6
+PASS GB-L06 land at high serving counter | (41.80, 8.75) feet=8.00 hp=6
+PASS GB-L06 walk 44.5 | (44.30, 8.40) feet=7.65 hp=6
+PASS GB-L06 reach kitchen lower counter | (44.48, 5.75) feet=5.00 hp=6
+PASS GB-L06 walk 43.3 | (43.50, 5.57) feet=4.82 hp=6
+PASS GB-L06 service floor | (43.45, 3.75) feet=3.00 hp=6
+PASS GB-L06 walk 46 | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 votive source combines Wax with Gullet | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 required tenant present: Wax | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 focus Wax | (45.79, 3.75) feet=3.00 hp=6
+PASS GB-L06 Wax source acquired | (45.81, 3.75) feet=3.00 hp=6
+PASS GB-L06 melt through changed body footprint | (45.83, 3.16) feet=3.00 hp=6
+PASS GB-L06 walk 57 | (57.22, 3.16) feet=3.00 hp=6
+PASS GB-L06 Wax source acquired | (57.22, 3.16) feet=3.00 hp=6
+PASS GB-L06 reform with conserved volume | (57.22, 3.75) feet=3.00 hp=6
+PASS GB-L06 walk 64 | (63.79, 0.75) feet=0.00 hp=6
+PASS GB-L06 jump 67 / 1.8 peak 2.37 | (66.79, 2.55) feet=1.80 hp=6
+PASS GB-L06 walk 68.2 | (68.00, 2.55) feet=1.80 hp=6
+PASS GB-L06 jump 72 / 3.6 peak 4.17 | (71.79, 4.35) feet=3.60 hp=6
+PASS GB-L06 walk 73.2 | (73.00, 4.35) feet=3.60 hp=6
+PASS GB-L06 jump 77 / 5.4 peak 5.97 | (76.79, 6.15) feet=5.40 hp=6
+PASS GB-L06 walk 78.2 | (78.00, 6.15) feet=5.40 hp=6
+PASS GB-L06 jump 82 / 7.2 peak 7.97 | (81.78, 7.95) feet=7.20 hp=6
+PASS GB-L06 physical kitchen key | (81.78, 7.95) feet=7.20 hp=6
+PASS GB-L06 walk 83.6 | (83.39, 7.95) feet=7.20 hp=6
+PASS GB-L06 hatches reverse | (83.40, 7.95) feet=7.20 hp=6
+PASS GB-L06 walk 85.2 | (85.00, 7.95) feet=7.20 hp=6
+PASS GB-L06 jump 88 / 9 peak 9.77 | (87.79, 9.75) feet=9.00 hp=6
+PASS GB-L06 jump 86 / 10.8 peak 11.37 | (86.21, 11.56) feet=10.81 hp=6
+PASS GB-L06 walk -2 | (-1.82, 11.42) feet=10.67 hp=6
+PASS GB-L06 return gallery descends to entry | (-3.15, 2.75) feet=2.00 hp=6
+PASS GB-L06 walk 2 | (0.86, 2.75) feet=2.00 hp=6
+PASS GB-L06 complete actual stage | (0.86, 2.75) feet=2.00 hp=6
+PASS GB-L06 practice writes no earned progress | (0.86, 2.75) feet=2.00 hp=6

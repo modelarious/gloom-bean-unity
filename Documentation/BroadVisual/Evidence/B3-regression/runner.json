@@ -1,0 +1,77 @@
+{
+    "started":  "2026-09-21T13:55:41.2491745-06:00",
+    "id":  "Broad-Visual-B3-regression",
+    "results":  [
+                    {
+                        "passed":  391,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics-and-25-stage-rendering",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  87,
+                        "case":  "Opening",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "Kitchen",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  103,
+                        "case":  "Wet-root",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  47,
+                        "case":  "Mirror",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  54,
+                        "case":  "Fresco",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  104,
+                        "case":  "Weight",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  97,
+                        "case":  "Ink",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "7f203273e3bfb12482b7af3966f0fbf6d14ca6a2939fd000ef05dbb972f85de5",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "46fb6654b65691c18ca10ed5d72222e9e8e7a9950d031768cabfa5f48e04751b",
+    "player_sha256":  "36c5c9f13481406382a8e9ef8fc0ea7cdf055c43bb12fc8fd545b07c199cd277",
+    "source_commit":  "07d73fd03260bb3881b97ce6cdf5b8bdd5fd07bb",
+    "finished":  "2026-09-21T13:57:47.3795557-06:00"
+}

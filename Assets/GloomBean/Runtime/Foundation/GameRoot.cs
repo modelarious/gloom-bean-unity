@@ -132,7 +132,7 @@ namespace GloomBean.Foundation
             var cam=UnityEngine.Camera.main;var follow=cam.GetComponent<FollowCamera>();if(!follow)follow=cam.gameObject.AddComponent<FollowCamera>();Session.Camera=follow;
             var builder=new StageBuilder(stageRoot,Session);Source.Build(d,builder);
             StageLayoutSnapshot.Install(d.id,stageRoot);
-            follow.target=Session.player.transform;follow.secondary=null;follow.Snap();cam.backgroundColor=builder.background;
+            follow.target=Session.player.transform;follow.secondary=null;follow.presentationBounds=null;follow.Snap();cam.backgroundColor=builder.background;
             Session.player.GetComponent<ActorView>().corrupted=d.atlas&&IsCorrupted;
             Session.Completed+=()=>{screen=d.boss&&d.worldId=="W5"?ScreenMode.Ending:ScreenMode.Clear;Time.timeScale=0;choice=0;};
             Session.Failed+=()=>{screen=ScreenMode.Fail;Time.timeScale=0;choice=0;};

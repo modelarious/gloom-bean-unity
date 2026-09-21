@@ -1,6 +1,6 @@
 # Gates: whole-campaign graphical overhaul
 
-OWNS: Assets/GloomBean/Runtime/Campaign/Broad*, Assets/GloomBean/Runtime/Campaign/V6VisualArt.cs, Assets/GloomBean/Runtime/Campaign/CampaignScenery.cs, Assets/GloomBean/Runtime/Campaign/HostPixelArt.cs, Assets/GloomBean/Runtime/Foundation/GameRoot.cs, Assets/GloomBean/Resources/BroadVisual/**, Tools/*Broad*, Tools/*broad*, Documentation/BroadVisual/**, Documentation/Continuity/CURRENT_CHECKPOINT.json, docs/blog/**
+OWNS: Assets/GloomBean/Runtime/Campaign/Broad*, Assets/GloomBean/Runtime/Campaign/V6VisualArt.cs, Assets/GloomBean/Runtime/Campaign/CampaignScenery.cs, Assets/GloomBean/Runtime/Campaign/HostPixelArt.cs, Assets/GloomBean/Runtime/Foundation/GameRoot.cs, Assets/GloomBean/Runtime/Foundation/FollowCamera.cs, Assets/GloomBean/Resources/BroadVisual/**, Tools/*Broad*, Tools/*broad*, Documentation/BroadVisual/**, Documentation/Continuity/CURRENT_CHECKPOINT.json, docs/blog/**
 
 Scope: Execute a whole-game art improvement with new non-overlapping review scenes and fresh WL4 references. The old ten examples remain historical, not acceptance coverage for this overhaul.
 
