@@ -297,6 +297,7 @@ namespace GloomBean.Campaign
 
             }
             yield return NativePresentationChecks.Run(game,C);
+            yield return BroadVisualChecks.Run(game,C);
             C("coverage.all-fifteen-sources",seen.Count==15,string.Join(",",seen));C("coverage.twenty-unique-mercy-secrets",all.Count==20);
             C("permanent-corruption.retained",game.IsCorrupted);
             var ending=new SaveStore(Path.Combine(dir,"ending-boundary.json"));ending.Data.mercies.Clear();

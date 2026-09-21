@@ -1,0 +1,73 @@
+BEGIN GB-L18 Noon Without Shadows
+PASS GB-L18 walk 8 body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 noon lamp tears off an available shadow body=(7.79, 0.76) velocity=(1.61, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 16.3 body=(16.10, 0.76) velocity=(1.55, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (20.50, 0.35) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 0 body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (16.11, 0.01) body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(16.11, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 28 body=(27.78, 0.76) velocity=(1.68, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 48.3 body=(48.11, 0.76) velocity=(6.54, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 moving sunlight opens a real shadow connection 1 body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 tenant acquired Shadow body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 focus Shadow body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (52.50, 0.35) body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 controlled valid shadow operates latch 1 body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 traverse connected silhouette to (46.12, 0.01) body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(46.12, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 60 body=(59.84, 0.76) velocity=(9.69, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 walk 61.5 body=(61.34, 0.76) velocity=(9.91, 0.00) feet=0.008333325 hp=6
+PASS GB-L18 jump to 65 / 1.6 body=(64.71, 2.36) velocity=(0.89, 0.00) feet=1.605099 hp=6
+PASS GB-L18 walk 67 body=(66.80, 2.36) velocity=(1.52, 0.00) feet=1.605099 hp=6
+PASS GB-L18 jump to 71 / 3.2 body=(70.70, 3.95) velocity=(0.91, 0.00) feet=3.204999 hp=6
+PASS GB-L18 walk 73.35 body=(73.15, 3.95) velocity=(1.50, 0.00) feet=3.204999 hp=6
+PASS GB-L18 jump to 78 / 4.8 body=(77.70, 5.55) velocity=(0.96, 0.00) feet=4.804999 hp=6
+PASS GB-L18 Noon Keyling reached body=(77.70, 5.55) velocity=(0.96, 0.00) feet=4.804999 hp=6
+PASS GB-L18 jump to 74.8 / 6.5 body=(75.10, 7.26) velocity=(-0.92, 0.00) feet=6.507182 hp=6
+PASS GB-L18 walk 72 body=(72.22, 7.26) velocity=(-1.67, 0.00) feet=6.507182 hp=6
+PASS GB-L18 tenant acquired Lodestone body=(72.22, 7.26) velocity=(-1.67, 0.00) feet=6.507182 hp=6
+PASS GB-L18 focus Lodestone body=(72.21, 7.26) velocity=(0.00, 0.00) feet=6.507182 hp=6
+PASS GB-L18 energize suspension near the real jump apex body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.890061 hp=6
+PASS GB-L18 two actual magnetic screens suspend the body body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.890061 hp=6
+PASS GB-L18 tenant acquired Shadow body=(72.05, 9.64) velocity=(-0.36, 0.55) feet=8.890061 hp=6
+PASS GB-L18 focus Shadow body=(72.04, 9.66) velocity=(-0.33, 0.59) feet=8.909478 hp=6
+PASS GB-L18 traverse connected silhouette to (72.00, 5.60) body=(71.77, 10.15) velocity=(-0.97, 0.48) feet=9.402587 hp=6
+PASS GB-L18 the suspended Host casts the missing bridge body=(71.73, 10.19) velocity=(0.00, 0.30) feet=9.439883 hp=6
+PASS GB-L18 traverse connected silhouette to (71.73, 9.44) body=(71.73, 9.92) velocity=(0.00, -0.72) feet=9.166327 hp=6
+PASS GB-L18 tenant acquired Lodestone body=(71.73, 9.89) velocity=(0.00, -0.71) feet=9.14249 hp=6
+PASS GB-L18 focus Lodestone body=(71.73, 9.87) velocity=(0.00, -0.70) feet=9.119087 hp=6
+PASS GB-L18 suspension ends on the actual chamber floor body=(71.91, 7.36) velocity=(0.69, -1.01) feet=6.606912 hp=6
+PASS GB-L18 walk 68.4 body=(68.60, 7.26) velocity=(-1.57, 0.00) feet=6.506911 hp=6
+PASS GB-L18 own-body Mercy collected by the physical Host body=(68.60, 7.26) velocity=(-1.57, 0.00) feet=6.506911 hp=6
+PASS GB-L18 walk 78 body=(77.87, 6.51) velocity=(5.73, -6.67) feet=5.762381 hp=6
+PASS GB-L18 walk 80.5 body=(80.28, 5.55) velocity=(1.67, 0.00) feet=4.804891 hp=6
+PASS GB-L18 Nail fixes the sun overhead rather than accelerating it body=(80.29, 5.55) velocity=(0.00, 0.00) feet=4.80493 hp=6
+PASS GB-L18 walk 56.8 body=(57.02, 0.75) velocity=(-5.58, 0.00) feet=0.004999876 hp=6
+PASS GB-L18 tenant acquired Lodestone body=(57.02, 0.75) velocity=(-5.58, 0.00) feet=0.004999876 hp=6
+PASS GB-L18 focus Lodestone body=(57.02, 0.75) velocity=(-5.58, 0.00) feet=0.004999876 hp=6
+PASS GB-L18 physical iron screen manufactures the noon bridge 1 body=(56.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 tenant acquired Shadow body=(56.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 focus Shadow body=(56.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 traverse connected silhouette to (52.50, 0.35) body=(56.76, 0.76) velocity=(-0.24, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 controlled valid shadow operates latch 1 body=(56.73, 0.76) velocity=(-0.42, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 traverse connected silhouette to (56.73, 0.00) body=(55.83, 0.76) velocity=(-1.61, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(55.77, 0.76) velocity=(-1.64, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 walk 50 body=(50.15, 0.76) velocity=(-6.05, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 walk 24.8 body=(24.93, 0.76) velocity=(-6.32, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 tenant acquired Lodestone body=(24.93, 0.76) velocity=(-6.32, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 focus Lodestone body=(24.93, 0.76) velocity=(-6.32, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 physical iron screen manufactures the noon bridge 0 body=(24.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 tenant acquired Shadow body=(24.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 focus Shadow body=(24.77, 0.76) velocity=(0.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 traverse connected silhouette to (20.50, 0.35) body=(24.76, 0.76) velocity=(-0.24, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 controlled valid shadow operates latch 0 body=(24.73, 0.76) velocity=(-0.42, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 traverse connected silhouette to (24.73, 0.00) body=(23.83, 0.76) velocity=(-1.61, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 shadow rejoins without teleporting through light body=(23.77, 0.76) velocity=(-1.64, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 walk 18 body=(18.15, 0.76) velocity=(-6.05, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 walk 2 body=(3.15, 0.76) velocity=(-10.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 physical return completed body=(3.15, 0.76) velocity=(-10.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 practice does not award progress body=(3.15, 0.76) velocity=(-10.00, 0.00) feet=0.004999995 hp=6
+PASS GB-L18 practice never saves its optional Mercy body=(3.15, 0.76) velocity=(-10.00, 0.00) feet=0.004999995 hp=6

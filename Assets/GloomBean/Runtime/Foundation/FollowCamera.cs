@@ -8,6 +8,7 @@ namespace GloomBean.Foundation
     public sealed class FollowCamera : MonoBehaviour
     {
         public Transform target,secondary;
+        public Bounds? presentationBounds; // Optional render-only boss framing; default base camera is unchanged.
         public Rect bounds=new Rect(-10,-10,180,60);
         public float follow=.16f,lookAhead=2.2f,baseSize=7;
         Vector3 velocity;float shake;
@@ -23,6 +24,7 @@ namespace GloomBean.Foundation
             float size=baseSize;
             if(secondary)
             {dest=Vector3.Lerp(target.position,secondary.position,.5f)+new Vector3(0,1,-10);size=Mathf.Clamp(Mathf.Max(Mathf.Abs(target.position.y-secondary.position.y)*.6f,Mathf.Abs(target.position.x-secondary.position.x)/lens.aspect*.6f)+3,baseSize,13);}
+            if(presentationBounds.HasValue&&!secondary){var b=presentationBounds.Value;float bottom=Mathf.Min(target.position.y-1.4f,b.min.y),top=Mathf.Max(target.position.y+2,b.max.y+1.2f);size=Mathf.Max(size,(top-bottom)*.5f);size=Mathf.Min(size,11);dest.y=(top+bottom)*.5f;}
             lens.orthographicSize=Mathf.Lerp(lens.orthographicSize,size,Time.deltaTime*4);
             float halfH=lens.orthographicSize,halfW=halfH*lens.aspect;
             dest.x=bounds.width<halfW*2?bounds.center.x:Mathf.Clamp(dest.x,bounds.xMin+halfW,bounds.xMax-halfW);

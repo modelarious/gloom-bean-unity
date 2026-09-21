@@ -90,7 +90,7 @@ namespace GloomBean.Campaign
                 if(sr.GetComponent<TurnSwitch>()){sr.gameObject.AddComponent<V6PropView>().Initialize("nail",new Vector2(1.6f,2.1f));continue;}
                 var pickup=sr.GetComponent<Pickup>();if(pickup){string asset=pickup.kind==PickupKind.Coin?"coin":pickup.kind==PickupKind.Key?"key":pickup.kind==PickupKind.Mercy?"mercy":pickup.kind==PickupKind.Health?"heart":null;if(asset!=null)sr.gameObject.AddComponent<V6PropView>().Initialize(asset,Vector2.one);continue;}
                 if(sr.GetComponent<HostSource>()||sr.GetComponent<HostCure>())continue;
-                if(!collider.isTrigger&&collider is BoxCollider2D&&sr.sortingOrder<7&&!sr.GetComponent<ActorMotor>())
+                if(BroadArt.Eligible(sr))
                     sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
             }
             // Printed design labels are not foreground architecture. Keep functional signs, remove the giant duplicate stage caption.

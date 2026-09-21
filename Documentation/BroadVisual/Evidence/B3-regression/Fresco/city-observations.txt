@@ -1,0 +1,55 @@
+BEGIN GB-L10 The Street Behind the Wall
+PASS GB-L10 walk 17 | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 cherub opens the stone interior | (16.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 jump 20 / 1 peak 2.37 | (19.79, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-L10 jump 22 / 2 peak 3.37 | (21.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L10 jump 24.2 / 3 peak 3.50 | (23.99, 3.76) feet=3.01 hp=6 twin=none
+PASS GB-L10 jump 25.6 / 5 peak 5.37 | (25.38, 5.75) feet=5.00 hp=6 twin=none
+PASS GB-L10 jump 27.5 / 6 peak 7.37 | (27.29, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L10 walk 30.25 | (30.05, 6.76) feet=6.01 hp=6 twin=none
+PASS GB-L10 jump 32.2 / 7 peak 8.37 | (31.99, 7.76) feet=7.01 hp=6 twin=none
+PASS GB-L10 jump 34.2 / 8 peak 9.37 | (33.98, 8.76) feet=8.01 hp=6 twin=none
+PASS GB-L10 jump 35.6 / 10 peak 10.37 | (35.38, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-L10 jump 37.5 / 11 peak 12.37 | (37.29, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-L10 walk 42.4 | (42.20, 10.81) feet=10.06 hp=6 twin=none
+PASS GB-L10 empty frame restores ordinary collision | (42.20, 10.81) feet=10.06 hp=6 twin=none
+PASS GB-L10 walk 59 | (58.84, 6.39) feet=5.64 hp=6 twin=none
+PASS GB-L10 Mirror acquired on landing in second court | (59.01, 0.82) feet=0.07 hp=6 twin=(74.99, 0.82)
+PASS GB-L10 walk 64 | (63.81, 0.76) feet=0.01 hp=6 twin=(72.94, 0.76)
+PASS GB-L10 walk 62 | (62.22, 0.76) feet=0.01 hp=6 twin=(74.77, 0.76)
+PASS GB-L10 paint-pot desynchronization aligns both scales | (62.22, 0.76) feet=0.01 hp=6 twin=(74.77, 0.76)
+PASS GB-L10 walk 66 | (65.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 drawn curtain removes the twin | (65.81, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 walk 70 | (69.80, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L10 jump 74 / 0 peak 2.37 | (73.79, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 walk 82 | (81.80, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 jump 84 / 2 peak 2.37 | (83.79, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L10 walk 85.3 | (85.10, 2.75) feet=2.00 hp=6 twin=none
+PASS GB-L10 jump 89 / 3.8 peak 4.37 | (88.78, 4.55) feet=3.80 hp=6 twin=none
+PASS GB-L10 walk 90.3 | (90.10, 4.55) feet=3.80 hp=6 twin=none
+PASS GB-L10 jump 94 / 5.6 peak 6.17 | (93.78, 6.35) feet=5.60 hp=6 twin=none
+PASS GB-L10 walk 95.3 | (95.10, 6.35) feet=5.60 hp=6 twin=none
+PASS GB-L10 jump 99 / 7.4 peak 7.97 | (98.78, 8.16) feet=7.41 hp=6 twin=none
+PASS GB-L10 walk 105.6 | (105.40, 8.15) feet=7.40 hp=6 twin=none
+PASS GB-L10 fresco roof key | (105.40, 8.15) feet=7.40 hp=6 twin=none
+PASS GB-L10 fresco peels into return gallery | (105.41, 8.15) feet=7.40 hp=6 twin=none
+PASS GB-L10 jump 103 / 9.2 peak 9.77 | (103.21, 9.95) feet=9.20 hp=6 twin=none
+PASS GB-L10 jump 98 / 11 peak 11.57 | (98.21, 11.76) feet=11.01 hp=6 twin=none
+PASS GB-L10 walk 42.4 | (42.61, 11.64) feet=10.89 hp=6 twin=none
+PASS GB-L10 walk 39.6 | (39.82, 10.95) feet=10.20 hp=6 twin=none
+PASS GB-L10 return uses physical interior again | (39.82, 10.95) feet=10.20 hp=6 twin=none
+PASS GB-L10 jump 37.5 / 11 peak 12.57 | (37.71, 11.75) feet=11.00 hp=6 twin=none
+PASS GB-L10 walk 34.2 | (34.39, 10.46) feet=9.71 hp=6 twin=none
+PASS GB-L10 walk 32.2 | (32.39, 8.46) feet=7.71 hp=6 twin=none
+PASS GB-L10 walk 29 | (29.20, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L10 walk 27.5 | (27.70, 6.75) feet=6.00 hp=6 twin=none
+PASS GB-L10 walk 25.6 | (25.81, 6.71) feet=5.96 hp=6 twin=none
+PASS GB-L10 walk 24.2 | (24.40, 5.68) feet=4.93 hp=6 twin=none
+PASS GB-L10 walk 22 | (22.22, 3.47) feet=2.72 hp=6 twin=none
+PASS GB-L10 walk 20 | (20.22, 2.41) feet=1.66 hp=6 twin=none
+PASS GB-L10 walk 17 | (17.20, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 walk 14.3 | (14.50, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 street-side empty frame cures | (14.50, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 walk 2 | (3.15, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 stage cleared by actual return or boss solution | (3.15, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L10 practice writes no progress | (3.15, 0.75) feet=0.00 hp=6 twin=none

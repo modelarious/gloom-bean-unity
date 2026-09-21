@@ -12,7 +12,7 @@ namespace GloomBean.Campaign
         public static Sprite Get(string name,float ppu=16){string key=name+"@"+ppu;if(cache.TryGetValue(key,out var sprite))return sprite;var t=Resources.Load<Texture2D>("BroadVisual/"+name);if(!t)return null;t.filterMode=FilterMode.Point;t.wrapMode=TextureWrapMode.Repeat;sprite=Sprite.Create(t,new Rect(0,0,t.width,t.height),new Vector2(.5f,.5f),ppu,0,SpriteMeshType.FullRect);sprite.name="Broad art "+name;cache[key]=sprite;return sprite;}
         public static SpriteRenderer Picture(Transform parent,string name,int order){var go=new GameObject("Broad visual / "+name);go.transform.SetParent(parent,false);var sr=go.AddComponent<SpriteRenderer>();sr.sortingOrder=order;return sr;}
         public static void Fit(SpriteRenderer sr,Vector2 size){if(!sr.sprite)return;var b=sr.sprite.bounds.size;sr.transform.localScale=new Vector3(size.x/b.x,size.y/b.y,1);}
-        public static bool Eligible(SpriteRenderer sr){if(!sr||sr.name.StartsWith("V6 visual /")||sr.name.StartsWith("Broad visual /"))return false;var c=sr.GetComponent<BoxCollider2D>();return c&&!c.isTrigger&&sr.sortingOrder<7&&!sr.GetComponentInParent<ActorMotor>()&&!sr.GetComponentInParent<CarryableEnemy>()&&!sr.GetComponent<KneelingFigure>()&&!sr.GetComponent<V6PropView>()&&!sr.GetComponent<GbaMechanismView>()&&!sr.GetComponent<RipeningFruit>()&&!sr.name.Contains("Fruit insect");}
+        public static bool Eligible(SpriteRenderer sr){if(!sr||sr.name.StartsWith("V6 visual /")||sr.name.StartsWith("Broad visual /"))return false;var c=sr.GetComponent<BoxCollider2D>();return c&&!c.isTrigger&&sr.sortingOrder<7&&!sr.GetComponentInParent<ActorMotor>()&&!sr.GetComponentInParent<CarryableEnemy>()&&sr.name!="The exposed source of the first corruption"&&!sr.GetComponent<SurveyorCore>()&&!sr.GetComponent<KneelingFigure>()&&!sr.GetComponent<V6PropView>()&&!sr.GetComponent<GbaMechanismView>()&&!sr.GetComponent<RipeningFruit>()&&!sr.name.Contains("Fruit insect");}
         public static int Material(SpriteRenderer sr,int profile){if(sr.GetComponent<MagneticBody>())return 17;if(sr.GetComponent<EdibleChunk>())return 6;return profile;}
     }
     [DefaultExecutionOrder(235)]
@@ -59,14 +59,16 @@ namespace GloomBean.Campaign
         public int AppliedCount=>GetComponentsInChildren<BroadSurface>(true).Count(v=>v.Applied);
         public int VisualColliders=>GetComponentsInChildren<Transform>(true).Where(t=>t.name.StartsWith("Broad visual /")).Sum(t=>t.GetComponents<Collider2D>().Length);
         public void Initialize(){session=GetComponent<StageSession>();Scan();}
-        public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(BroadArt.Eligible(sr)&&!sr.GetComponent<BroadSurface>()&&!sr.GetComponent<V6Surface>())sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
+        public void Scan(){foreach(var anchor in GetComponentsInChildren<FinalHeartAnchor>(true))if(anchor.heart&&!anchor.heart.GetComponent<BroadHeartView>())anchor.heart.gameObject.AddComponent<BroadHeartView>().Initialize(anchor);foreach(var leftover in GetComponentsInChildren<SpriteRenderer>(true))if(leftover.name=="Witnessing eye"&&!leftover.GetComponent<Collider2D>())leftover.enabled=false;
+            foreach(var core in GetComponentsInChildren<SurveyorCore>(true))if(!core.GetComponent<BroadCoreView>())core.gameObject.AddComponent<BroadCoreView>();
+            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(BroadArt.Eligible(sr)&&!sr.GetComponent<BroadSurface>()&&!sr.GetComponent<V6Surface>())sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
             foreach(var sr in GetComponentsInChildren<MeshRenderer>(true))if(sr.name=="Slope mesh"&&!sr.GetComponent<BroadSlope>())sr.gameObject.AddComponent<BroadSlope>().Initialize(sr);
             foreach(var soil in GetComponentsInChildren<RootSoil>(true))if(!soil.GetComponent<BroadSoilArt>())soil.gameObject.AddComponent<BroadSoilArt>();
             foreach(var water in GetComponentsInChildren<WaterVolume>(true))if(!water.GetComponent<BroadWaterArt>())water.gameObject.AddComponent<BroadWaterArt>();
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<BroadRailArt>())rail.gameObject.AddComponent<BroadRailArt>();
             foreach(var orbit in GetComponentsInChildren<Carousel>(true))if(!orbit.GetComponent<BroadCarouselArt>())orbit.gameObject.AddComponent<BroadCarouselArt>();
         }
-        void Update(){if(Time.unscaledTime>=next){next=Time.unscaledTime+.75f;Scan();}}
+        void Update(){if(session&&session.definition.boss&&session.Camera){var boss=session.GetComponentInChildren<AtlasBoss>();var target=session.player;if(boss&&boss.body&&target&&!session.Camera.secondary){var sr=boss.body.GetComponent<SpriteRenderer>();float range=12f;if(sr&&Mathf.Abs(target.transform.position.x-sr.bounds.center.x)<range)session.Camera.presentationBounds=sr.bounds;else session.Camera.presentationBounds=null;}else session.Camera.presentationBounds=null;}if(Time.unscaledTime>=next){next=Time.unscaledTime+.75f;Scan();}}
     }
     public sealed class BroadRailArt:MonoBehaviour
     {
@@ -98,6 +100,24 @@ namespace GloomBean.Campaign
         void Start(){soil=GetComponent<RootSoil>();original=GetComponent<SpriteRenderer>();picture=BroadArt.Picture(transform,"wet root substrate",original?original.sortingOrder:0);picture.drawMode=SpriteDrawMode.Tiled;}
         void LateUpdate(){if(!soil||!picture)return;if(!ready||last!=soil.wet){ready=true;last=soil.wet;picture.sprite=BroadArt.Get("soil_"+(last?1:0));}picture.size=soil.size;picture.color=new Color(1,1,1,.7f);picture.enabled=!original||original.enabled;if(original)original.forceRenderingOff=picture.sprite!=null;}
         void OnDestroy(){if(original)original.forceRenderingOff=false;}
+    }
+
+    [DefaultExecutionOrder(248)]
+    public sealed class BroadCoreView:MonoBehaviour
+    {
+        SurveyorCore core;SpriteRenderer source,picture;BoxCollider2D shape;
+        void Start(){core=GetComponent<SurveyorCore>();source=GetComponent<SpriteRenderer>();shape=GetComponent<BoxCollider2D>();picture=BroadArt.Picture(transform,"Surveyor measuring eye",source?source.sortingOrder+1:5);}
+        void LateUpdate(){if(!core||!picture)return;bool open=core.Exposed==null||core.Exposed();picture.sprite=BroadArt.Get("core_"+(open?1:0));BroadArt.Fit(picture,shape?shape.size:Vector2.one);picture.color=core.struck?new Color(.5f,1,.8f,.4f):Color.white;picture.enabled=!source||source.enabled;if(source)source.forceRenderingOff=true;}
+        void OnDestroy(){if(source)source.forceRenderingOff=false;}
+    }
+
+    [DefaultExecutionOrder(249)]
+    public sealed class BroadHeartView:MonoBehaviour
+    {
+        FinalHeartAnchor anchor;AtlasBoss boss;SpriteRenderer source,picture;
+        public void Initialize(FinalHeartAnchor a){anchor=a;boss=a.GetComponent<AtlasBoss>();source=GetComponent<SpriteRenderer>();picture=BroadArt.Picture(transform,"living corruption heart",0);}
+        void LateUpdate(){if(!anchor||!picture)return;int phase=anchor.Released?2:boss&&boss.phase>=2?1:0;picture.sprite=BroadArt.Get("heart_"+phase,24);BroadArt.Fit(picture,Vector2.one*4);picture.sortingOrder=phase==0?-2:0;picture.color=Color.white;picture.enabled=!source||source.enabled;if(source)source.forceRenderingOff=picture.sprite!=null;}
+        void OnDestroy(){if(source)source.forceRenderingOff=false;}
     }
 
 }
