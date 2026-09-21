@@ -1,0 +1,29 @@
+{
+  "scope": "Dimensional cloth and book materials plus distinct laundry/library silhouettes. Original art only, no gameplay/fixture coordinate input.",
+  "files": [
+    {
+      "name": "skin",
+      "sha256": "56404d28443e717b061d682a26c0525a604d0b24a8bcc04a2eb7a42e1b6c871e"
+    },
+    {
+      "name": "garment_rack",
+      "sha256": "39c3820b62e3a239153509a2b79a89c102f4b69f74adfde9351930e1eecb6de7"
+    },
+    {
+      "name": "book",
+      "sha256": "e9a301f8e729f30712942db3349cdb2245ef6ea7dffa49bd5a4442734e4bb861"
+    },
+    {
+      "name": "bound_volume",
+      "sha256": "57f6f2d3042a6a304b907bd514bf340e10beaaef6a7dddb9c3fc8c3542b7d2fd"
+    },
+    {
+      "name": "wringer",
+      "sha256": "6a5162739af5198fd91df5421eb09a79e91198e87e9b9c3c05f0d7c2beb41a96"
+    },
+    {
+      "name": "wash_basket",
+      "sha256": "dbdf52ac6be8e4168f2c9025958fe504c15a67b2658f4175f22d76eacceb20e0"
+    }
+  ]
+}

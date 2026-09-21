@@ -20,6 +20,13 @@ namespace GloomBean.Campaign
             return !string.IsNullOrEmpty(id)&&id.Length>1&&int.TryParse(id.Substring(1),out world)?Mathf.Clamp(world,1,5):1;
         }
         public static string Motif(StageDefinition stage){if(stage.boss)return new[]{"bell","pump","balcony","coffin","statue"}[int.Parse(stage.worldId.Substring(1))-1];switch(stage.course){case 1:return "balcony";case 2:return "bell";case 3:return "washer";case 4:return "skin";case 5:return "fruit_cart";case 6:return "oven";case 7:return "garden_well";case 8:return "season_tree";case 9:case 12:return "tenement";case 10:return "balcony";case 11:return "ledger";case 13:return "coffin";case 14:return "spindle";case 15:return "coffin";case 16:return "statue";case 17:case 18:return "statue";case 19:return "book";default:return "statue";}}
+        public static string MotifVariant(StageDefinition stage,int index){
+            string motif=Motif(stage);int n=Mathf.Abs(index);
+            if(motif=="washer")return new[]{"washer","wringer","wash_basket"}[n%3];
+            if(motif=="skin")return n%2==0?"skin":"garment_rack";
+            if(motif=="book"||motif=="ledger")return n%3==0?"bound_volume":motif;
+            return motif;
+        }
         public static bool Eligible(SpriteRenderer sr){return BroadArt.Eligible(sr)&&!sr.name.StartsWith("QualityBar visual /");}
     }
     [DefaultExecutionOrder(275)]
@@ -52,8 +59,8 @@ namespace GloomBean.Campaign
                 if(size.x>=3&&!semanticTint&&!food&&!cloth){int count=Mathf.Clamp(Mathf.CeilToInt(size.x/7),1,32);for(int i=0;i<count;i++){float x=(i+.5f)*size.x/count-size.x*.5f;float w=Mathf.Min(5.8f,size.x/count);Add("truss_"+group,"load-bearing rear truss",new Vector2(x,-size.y*.5f-.72f),new Vector2(w,1.8f),-8,new Color(.80f,.72f,.81f,.85f));}}
                 // Room dressing follows all full floor spans; never a scene-camera or verification-coordinate whitelist.
                 if(Source.name=="Floor"&&size.x>=5&&!GetComponent<Rigidbody2D>()&&!food&&!cloth){
-                    int bays=Mathf.Clamp(Mathf.CeilToInt(size.x/12f),1,35);string motif=QualityBarArt.Motif(session.definition);
-                    for(int i=0;i<bays;i++){float span=size.x/bays;float x=(i+.5f)*span-size.x*.5f;float top=size.y*.5f;
+                    int bays=Mathf.Clamp(Mathf.CeilToInt(size.x/12f),1,35);
+                    for(int i=0;i<bays;i++){string motif=QualityBarArt.MotifVariant(session.definition,i+transform.GetSiblingIndex());float span=size.x/bays;float x=(i+.5f)*span-size.x*.5f;float top=size.y*.5f;
                         Add("column_"+group,"rear structural pier",new Vector2(x-span*.42f,top+3.4f),new Vector2(group==2?1.65f:1.1f,7),-21,new Color(.82f,.78f,.86f,1));
                         float maxH=motif=="statue"||motif=="season_tree"?6.0f:motif=="tenement"?4.8f:4.0f;float maxW=motif=="tenement"||motif=="season_tree"?6.2f:4.5f;
                         Vector2 prop=QualityBarArt.PropSize(motif,maxW,maxH);float w=prop.x,h=prop.y;
@@ -65,7 +72,7 @@ namespace GloomBean.Campaign
                     }
                 }
                 if(Source.name!="Floor"&&size.x>=2.5f&&size.y<2f&&(!GetComponent<Rigidbody2D>()||GetComponent<Rigidbody2D>().bodyType==RigidbodyType2D.Kinematic)&&!semanticTint&&!food&&!cloth&&!GetComponent<ProcessionCarrier>()){
-                    string motif=QualityBarArt.Motif(session.definition);Vector2 prop=QualityBarArt.PropSize(motif,Mathf.Min(size.x*1.1f,5f),motif=="statue"||motif=="season_tree"?5.5f:4.4f);float width=prop.x,height=prop.y;
+                    string motif=QualityBarArt.MotifVariant(session.definition,transform.GetSiblingIndex());Vector2 prop=QualityBarArt.PropSize(motif,Mathf.Min(size.x*1.1f,5f),motif=="statue"||motif=="season_tree"?5.5f:4.4f);float width=prop.x,height=prop.y;
                     bool above=motif!="washer"&&motif!="oven"&&motif!="bell"&&motif!="coffin";
                     float top=size.y*.5f;float y=above?top+height*.48f:top-height*.24f;
                     Add(motif,"rear elevated "+motif,new Vector2(0,y),new Vector2(width,height),-17,new Color(1,.96f,.98f,1));

@@ -1,0 +1,117 @@
+{
+    "started":  "2026-09-21T15:36:15.8452672-06:00",
+    "id":  "QualityBar-Q7-regression",
+    "results":  [
+                    {
+                        "passed":  466,
+                        "exceptions":  0,
+                        "checks":  null,
+                        "case":  "Mechanics-all25-renderers",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  87,
+                        "case":  "Opening",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  19,
+                        "case":  "Laundry",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "Kitchen",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  103,
+                        "case":  "Wet-root",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  88,
+                        "case":  "Seasons",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  47,
+                        "case":  "Mirror",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  54,
+                        "case":  "Fresco",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  44,
+                        "case":  "Procession",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  104,
+                        "case":  "Weight",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  48,
+                        "case":  "Choir",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  72,
+                        "case":  "Noon-shadow",
+                        "failed":  0,
+                        "status":  "PASS"
+                    },
+                    {
+                        "passed":  null,
+                        "exceptions":  null,
+                        "checks":  97,
+                        "case":  "Ink",
+                        "failed":  0,
+                        "status":  "PASS"
+                    }
+                ],
+    "managed_assembly_sha256":  "f8ccea4d3d2afbd78be982dfcad27fc5a11b33e68cce987550c20ca43b975ca3",
+    "status":  "PASS",
+    "phase":  "native-acceptance",
+    "request_sha256":  "bb78f9883a383bf31312c392f7e9ad4dde106d384c88627ac281b7607e12e80f",
+    "player_sha256":  "36c5c9f13481406382a8e9ef8fc0ea7cdf055c43bb12fc8fd545b07c199cd277",
+    "source_commit":  "86e1fd6e82710ec090704f5ddf8c494cf276ee43",
+    "finished":  "2026-09-21T15:38:22.9796711-06:00"
+}

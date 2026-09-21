@@ -1,0 +1,465 @@
+{
+  "scope": "Single-assistant ordinal art review of whole-stage Q6 contact sheets (175 actual native frames); Q7 fixes renderer ownership without changing artwork. Not a human panel or an animation-quality study.",
+  "dimensions": [
+    "style",
+    "character",
+    "clarity",
+    "polish"
+  ],
+  "scale": "0 missing/broken;1 prototype;2 crude;3 coherent development art;4 polished authored craft;5 exceptional. Ties are not wins.",
+  "stages": [
+    {
+      "stage": "GB-L01",
+      "reference": "WL4-03.png",
+      "current": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "The opening facades remain friendly and decorated across the level.",
+      "remaining": "Backstage repetitions and small actor poses remain weaker than the reference."
+    },
+    {
+      "stage": "GB-L02",
+      "reference": "WL4-14.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Bronze bells now have casting planes, seams and engraving throughout the belfry.",
+      "remaining": "Many identical bells and rectangular rear bays still read as a kit, not fully authored architecture."
+    },
+    {
+      "stage": "GB-L03",
+      "reference": "WL4-12.png",
+      "current": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Washer drums, hanging rails, tray cloth and structural housings appear at new locations.",
+      "remaining": "The washer motif repeats and some thin apparatus lacks the concept image's mechanical specificity."
+    },
+    {
+      "stage": "GB-L04",
+      "reference": "WL4-13.png",
+      "current": [
+        3,
+        3,
+        3.5,
+        3
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Cloth rooms and discarded-skin motifs remain legible under quieter lights.",
+      "remaining": "Large mask-shaped cloths are still flat and repetitive; torn material needs more authored form."
+    },
+    {
+      "stage": "GB-L05",
+      "reference": "WL4-04.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Tree depth, carts, fruit and timber surfaces have a coherent scene-wide treatment.",
+      "remaining": "Fruit carts dominate too many platforms; organic branch silhouettes are not rich enough."
+    },
+    {
+      "stage": "GB-L06",
+      "reference": "WL4-17.png",
+      "current": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Ovens are visible as construction rather than only hidden beneath platforms.",
+      "remaining": "Some edible surfaces still look like generic slats and cupboards."
+    },
+    {
+      "stage": "GB-L07",
+      "reference": "WL4-07.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Root seams, wells, beams and canopy read as a damp conservatory.",
+      "remaining": "The root material and wooden planes need stronger local contour variation."
+    },
+    {
+      "stage": "GB-L08",
+      "reference": "WL4-10.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Climate apparatus, grafted trees and per-level backing extend past the previous sample.",
+      "remaining": "Repeated tree forms and simplified seasonal detail do not reach the concept bar."
+    },
+    {
+      "stage": "GB-L09",
+      "reference": "WL4-37.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Cutaway rooms, window furniture and restored bevelled stone add architectural depth.",
+      "remaining": "Background partitions are still too geometrical and interfere with the real contact plane."
+    },
+    {
+      "stage": "GB-L10",
+      "reference": "WL4-36.png",
+      "current": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Transparent domains preserve their gameplay meaning rather than being coated solid.",
+      "remaining": "The mirror frames and static decoration need more distinctive acting and material cues."
+    },
+    {
+      "stage": "GB-L11",
+      "reference": "WL4-26.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Library shelves and ledger platforms remain consistent across all sampled corridors.",
+      "remaining": "Most books are repetitive stripes instead of individually authored objects."
+    },
+    {
+      "stage": "GB-L12",
+      "reference": "WL4-42.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Apartment backing now carries room identity, not just purple boxes.",
+      "remaining": "Repeated rooms lack enough visible structural differences and authored clutter."
+    },
+    {
+      "stage": "GB-L13",
+      "reference": "WL4-39.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Ruined city depth and dimensional sarcophagi improve the falling-world setting.",
+      "remaining": "Quiet warning phases still look sparse; the falling actors need better motion-pose craft."
+    },
+    {
+      "stage": "GB-L14",
+      "reference": "WL4-32.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Sewing spindles and structural joints show the level's actual seam theme.",
+      "remaining": "Some repeated hardware reads as surface ornament rather than believable fastening."
+    },
+    {
+      "stage": "GB-L15",
+      "reference": "WL4-38.png",
+      "current": [
+        3.5,
+        3.5,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Strapped sarcophagi, relief faces and moving pallbearers fit the procession.",
+      "remaining": "Coffin motion/expression needs fuller frame-authored animation, not only procedural positioning."
+    },
+    {
+      "stage": "GB-L16",
+      "reference": "WL4-35.png",
+      "current": [
+        4,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Detailed rose windows, stone arches and depth replace the earlier flat schematic vault.",
+      "remaining": "Repeated shrine panels and dense support layers still obscure some authored spatial rhythm."
+    },
+    {
+      "stage": "GB-L17",
+      "reference": "WL4-18.png",
+      "current": [
+        3.5,
+        3.5,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Warm metallic structures contrast against a recessed choir backdrop.",
+      "remaining": "The reciprocal magnetic apparatus is less physically expressive than the concept target."
+    },
+    {
+      "stage": "GB-L18",
+      "reference": "WL4-41.png",
+      "current": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Shadow-bearing silhouettes stay visible against the deeper architectural plane.",
+      "remaining": "Silhouette volumes and literal framed sculptures still feel like separate kits."
+    },
+    {
+      "stage": "GB-L19",
+      "reference": "WL4-20.png",
+      "current": [
+        4,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "The manuscript level keeps its own illuminated-paper identity.",
+      "remaining": "Word platforms still resemble labelled slabs and repetitive open books."
+    },
+    {
+      "stage": "GB-L20",
+      "reference": "WL4-34.png",
+      "current": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "The synthesis course uses the same polished material treatment at fresh later locations.",
+      "remaining": "It still lacks the composed set-piece variety required by extreme fidelity."
+    },
+    {
+      "stage": "GB-B1",
+      "reference": "WL4-46.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Bronze scene motifs are better, but the Usher still needs stronger expressive staging.",
+      "remaining": "This is not a pass against the supplied concept images or the selected retail benchmark."
+    },
+    {
+      "stage": "GB-B2",
+      "reference": "WL4-44.png",
+      "current": [
+        3.5,
+        3.5,
+        4,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "The orchard courthouse has consistent depth; the boss remains too close to a portrait.",
+      "remaining": "This is not a pass against the supplied concept images or the selected retail benchmark."
+    },
+    {
+      "stage": "GB-B3",
+      "reference": "WL4-51.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Surveying core and furnishings remain readable; action silhouette and camera composition need work.",
+      "remaining": "This is not a pass against the supplied concept images or the selected retail benchmark."
+    },
+    {
+      "stage": "GB-B4",
+      "reference": "WL4-48.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "Crowd weight and sarcophagi have richer contours; inactive phases remain sparse.",
+      "remaining": "This is not a pass against the supplied concept images or the selected retail benchmark."
+    },
+    {
+      "stage": "GB-B5",
+      "reference": "WL4-52.png",
+      "current": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "benchmark": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "improvement": "The real boss and living heart are connected, but expression and shot composition still lag.",
+      "remaining": "This is not a pass against the supplied concept images or the selected retail benchmark."
+    }
+  ],
+  "strict_concept_bar": "UNMET",
+  "strict_stage_sweeps": 0,
+  "sampling": "Retains existing ABCDE views and50 unseen F/G positions. Full corpus included, no best-only selection. All52 new references also retained."
+}
