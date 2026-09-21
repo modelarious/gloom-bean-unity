@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "content": "# Gloom Bean Unity\n\nUnity platformer implementation with a reusable Wario Land-inspired mechanical foundation and the original Gloom Bean Host Cycle campaign.\n\nThis repository is public by explicit owner direction. Existing local implementation history remains authoritative until the full verified history is attached and pushed.\n",
+      "path": "README.md"
+    },
+    {
+      "content": "/[Ll]ibrary/\n/[Tt]emp/\n/[Oo]bj/\n/[Bb]uilds/\n/[Ll]ogs/\n/[Uu]ser[Ss]ettings/\n.vs/\n*.csproj\n*.sln\n*.user\n*.pidb\n*.pdb\n*.mdb\n.DS_Store\n__pycache__/\n",
+      "path": ".gitignore"
+    }
+  ],
+  "idempotency_key": "gloombean-unity-public-20260919-b1",
+  "operation": "PROJECT_CREATE",
+  "origin": {
+    "client": "ChatGPT",
+    "conversation_url": null,
+    "user_request": "Just make it public. I'm pretty sure that the other one already made this public, I thought"
+  },
+  "owner": "modelarious",
+  "project": {
+    "semantic_status": "EXPERIMENTAL"
+  },
+  "repository": {
+    "description": "Gloom Bean \u2014 Unity horror transformation platformer built on a Wario Land-inspired mechanical foundation.",
+    "name": "gloom-bean-unity",
+    "visibility": "public"
+  },
+  "request_id": "gloombean-unity-public-20260919-b1",
+  "schema_version": 1
+}
