@@ -91,7 +91,7 @@ namespace GloomBean.Campaign
                 var pickup=sr.GetComponent<Pickup>();if(pickup){string asset=pickup.kind==PickupKind.Coin?"coin":pickup.kind==PickupKind.Key?"key":pickup.kind==PickupKind.Mercy?"mercy":pickup.kind==PickupKind.Health?"heart":null;if(asset!=null)sr.gameObject.AddComponent<V6PropView>().Initialize(asset,Vector2.one);continue;}
                 if(sr.GetComponent<HostSource>()||sr.GetComponent<HostCure>())continue;
                 if(!collider.isTrigger&&collider is BoxCollider2D&&sr.sortingOrder<7&&!sr.GetComponent<ActorMotor>())
-                    sr.gameObject.AddComponent<V6Surface>().Initialize(sr,world);
+                    sr.gameObject.AddComponent<BroadSurface>().Initialize(sr);
             }
             // Printed design labels are not foreground architecture. Keep functional signs, remove the giant duplicate stage caption.
             foreach(var text in GetComponentsInChildren<TextMesh>(true)){if(string.Equals(text.text,d.title,StringComparison.OrdinalIgnoreCase))text.GetComponent<MeshRenderer>().enabled=false;else text.gameObject.AddComponent<GbaWorldSign>().Initialize(text);}
