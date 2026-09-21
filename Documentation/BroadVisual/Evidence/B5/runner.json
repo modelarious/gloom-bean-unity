@@ -1,0 +1,10 @@
+﻿{
+    "source":  "64cf65bdf9e6be32dec09a028a1bde2c1f8d4768",
+    "exit":  0,
+    "started":  "2026-09-21T14:10:24.0533985-06:00",
+    "images":  125,
+    "scope":  "Native visual fixtures, not input-only gameplay",
+    "status":  "PASS",
+    "finished":  "2026-09-21T14:11:45.5013327-06:00",
+    "assembly":  "375139EFC3575DCCBFD878147462DD009716A54F949DA68850AE401876CF8149"
+}
