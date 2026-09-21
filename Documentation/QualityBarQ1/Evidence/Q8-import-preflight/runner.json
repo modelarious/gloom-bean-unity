@@ -1,0 +1,10 @@
+{
+    "started":  "2026-09-21T15:44:01.9654008-06:00",
+    "id":  "QualityBar-Q8-regression",
+    "status":  "FAIL",
+    "error":  "Uncommitted runtime source: checkpoint before building",
+    "phase":  "build",
+    "request_sha256":  "a6ff34d59c685eb57f3518bfdaf9b4422a7ac374fd496fc1da808b168eb336d1",
+    "source_commit":  "9b58bd878edd546936f32e34cbaee913b12fb3a8",
+    "finished":  "2026-09-21T15:44:02.0679518-06:00"
+}

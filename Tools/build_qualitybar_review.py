@@ -1,0 +1,40 @@
+"""Self-contained ordinary HTML report from actual native backbuffers.
+No canvas API, JavaScript, synthetic screenshots or runtime code is embedded.
+"""
+from pathlib import Path
+import sys,json,html,base64,io,hashlib,argparse
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'.visual-tools'),str(ROOT.parent/'GloomBeanUnity/.visual-tools')]
+from PIL import Image
+ap=argparse.ArgumentParser();ap.add_argument('run');args=ap.parse_args()
+R=ROOT/'Documentation/QualityBarQ1/Review';D=ROOT/'Reports/BroadVisual'/args.run;OLD=ROOT/'Reports/BroadVisual/Q4';REF=ROOT/'Documentation/BroadVisual/References'
+run=json.loads((D/'runner.json').read_text(encoding='utf-8-sig'));assert run['status']=='PASS'
+meta=json.loads((D/'broad-result.json').read_text());scores=json.loads((R/'scores.json').read_text());refs=json.loads((REF/'SOURCES.json').read_text());refmap={r['file']:r for r in refs['files']};rows={r['stage']:r for r in scores['stages']}
+def esc(x):return html.escape(str(x),quote=True)
+def pic(path,game=False):
+ im=Image.open(path).convert('RGB')
+ if game:
+  n=min(im.width//240,im.height//160);x=(im.width-240*n)//2;y=(im.height-160*n)//2;im=im.crop((x,y,x+240*n,y+160*n)).resize((240,160),Image.Resampling.NEAREST)
+ b=io.BytesIO();im.save(b,format='PNG');return 'data:image/png;base64,'+base64.b64encode(b.getvalue()).decode()
+def image(path,caption,game=False):return '<figure><img loading="lazy" src="'+pic(path,game)+'" alt="'+esc(caption)+'"><figcaption>'+esc(caption)+'</figcaption></figure>'
+def grades(xs):return ' / '.join(f'{x:g}' for x in xs)
+parts=["""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Gloom Bean — actual whole-game graphics</title><style>
+body{font:17px/1.55 system-ui,sans-serif;background:#16131d;color:#f4ecdc;margin:auto;max-width:1160px;padding:26px}h1{font-size:38px;line-height:1.12}h2{margin-top:52px;border-top:1px solid #69506a;padding-top:22px}h3{font-size:25px}p{max-width:940px}.muted,figcaption{color:#c8b8c8;font-size:14px}.notice{border-left:5px solid #ddad72;background:#302635;padding:18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.triple{grid-template-columns:repeat(3,minmax(0,1fr))}figure{margin:0 0 15px}img{display:block;width:100%;height:auto;image-rendering:pixelated;background:#09080c}figcaption{padding:8px 2px}details{margin:22px 0;border:1px solid #624e67;padding:14px}summary{cursor:pointer;font-size:19px;font-weight:650}a{color:#edbd92}code{font-size:13px;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:14px}td,th{text-align:left;padding:9px;border-bottom:1px solid #473b4d}th{color:#edbd92}@media(max-width:760px){.grid,.triple{grid-template-columns:1fr}body{padding:18px}h1{font-size:31px}}
+</style><header><p class="muted">GLOOM BEAN / V6 / QUALITY BRANCH / NATIVE UNITY</p><h1>Actual whole-game graphics.<br>Not generated concept scenes.</h1><p class="notice"><b>The concept-quality gate is still unmet.</b> This build has genuine campaign-wide changes, but repetitive construction and limited expressive animation remain visible. No successful build, coverage count or colour adjustment is being called artistic completion.</p></header>"""]
+parts+=['<p><b>175 current native screenshots</b> cover all 20 levels and 5 bosses. Seven positions per stage include 50 previously unseen F/G positions. All 52 additional Wario Land 4 references are preserved below, distinct from the old nine reference pixels. The sample includes quiet, crowded, awkward and weak frames—not just highlights.</p>', '<p class="muted">Camera/body/form are staged in these art fixtures; no progress is earned. Input-driven route and off-camera late-spawn tests are separate. Only uniform game letterboxing was removed, and its logical 240 × 160 image extracted without filtering. Nintendo images retain their source aspect. Current runtime: <code>'+esc(run['source'])+'</code>.</p>']
+parts.append('<nav>'+ ' · '.join('<a href="#world'+str(w)+'">World '+str(w)+'</a>' for w in range(1,6))+' · <a href="#references">All 52 references</a> · <a href="#method">Method / evidence</a></nav>')
+for world in range(1,6):
+ parts.append('<h2 id="world'+str(world)+'">'+['Parish','Orchard','City','Fall','False Empyrean'][world-1]+'</h2>')
+ ids=[f'GB-L{i:02}' for i in range((world-1)*4+1,world*4+1)]+[f'GB-B{world}']
+ for stage in ids:
+  shots=[s for s in meta['shots'] if s['stage']==stage];assert len(shots)==7;row=rows[stage];ref=refmap[row['reference']]
+  parts.append('<article><h3>'+esc(stage+' — '+shots[0]['title'])+'</h3><div class="grid triple">')
+  parts.append(image(OLD/(stage+'-A-explore.png'),'Earlier Q4 native build / A',True));parts.append(image(D/(stage+'-A-explore.png'),'Current '+args.run+' native build / A',True));parts.append(image(REF/row['reference'],'Retail reference: '+ref['level']+' / '+row['reference']))
+  parts.append('</div><p><b>Visible improvement:</b> '+esc(row['improvement'])+'<br><b>Still below the target:</b> '+esc(row['remaining'])+'</p><p class="muted">Single-reviewer still-image grades (style / character / clarity / polish): current '+grades(row['current'])+'; reference '+grades(row['benchmark'])+'. No objective metric, human-panel result or animation rating is claimed.</p>')
+  parts.append('<details><summary>All seven current views — including both unseen positions</summary><div class="grid">')
+  for s in shots:parts.append(image(D/(s['id']+'.png'),s['id']+' / '+s['form']+(' / return state' if s['returned'] else '')+' / anchor: '+s['anchor'],True))
+  parts.append('</div></details></article>')
+parts.append('<h2 id="references">The complete additional reference corpus</h2><p>These 52 retail screenshots are comparison and criticism only. They are not included in the game runtime. Exact original URLs and hashes are recorded in the source manifest; their pixel hashes do not overlap the earlier nine references.</p><div class="grid triple">')
+for ref in refs['files']:parts.append('<div>'+image(REF/ref['file'],ref['file']+' — '+ref['level'])+'<p class="muted"><a href="'+esc(ref['url'])+'">Original reference</a></p></div>')
+parts.append('</div><h2 id="method">Evidence and what it does not prove</h2><p>Renderer coverage applies to every eligible object in all 25 stages. Additional native checks place geometry far outside every review camera and confirm that late-spawned objects receive the same treatment. Disabling a source must hide its fitting sprites. No added presentation colliders are permitted.</p><p>Those checks do not prove that every possible frame is attractive. Gameplay logic, art quality, screenshot provenance and binary identity remain separate outcomes. The gallery retains all seven strata and all references, including framing where the boss is distant or offscreen. F/G supplement, rather than replace, the earlier camera strata.</p><p>The Q5 stone replacement was partly rejected after visual comparison. Q6 restored the stronger clusters and redrew bronze/sarcophagus props. Q7 fixed an actual nested-renderer initialization exception. Q8 added dimensional cloth and book material plus distinct laundry silhouettes; original negative evidence remains in Git.</p><p><b>Open work:</b> less repetitive individual apparatus and furnishings, more expressive action poses, richer material-specific silhouettes and validation by human play. The supplied concept scene quality has not been certified.</p><p class="muted">Source: modelarious/gloom-bean-unity, branch visual/qualitybar-q1. Ansimuz components retain their CC0 credits. Individual concept-derived prop fragments are disclosed in ArtSources/QualityBarQ1; no complete generated screenshot is a playable-scene image. Normal saves, game logic and original campaign requirements are unchanged.</p></html>')
+out=R/'GloomBean_Whole_Game_Visual_Review.html';out.write_text('\n'.join(parts),encoding='utf-8')
+print('WHOLE_GAME_GALLERY_BUILT',out.stat().st_size,hashlib.sha256(out.read_bytes()).hexdigest())

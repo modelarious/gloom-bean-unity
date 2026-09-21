@@ -1,0 +1,6448 @@
+{
+  "status": "PASS",
+  "source": "9b58bd878edd546936f32e34cbaee913b12fb3a8",
+  "assembly": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
+  "stage_count": 25,
+  "levels": 20,
+  "bosses": 5,
+  "images": [
+    {
+      "name": "GB-L01-A-explore.png",
+      "sha256": "7d27a04351ac80cc2cb137bbfe688e0d3fe120149ebd82793e5d5c481c5f7cc9",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 504,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-B-altered.png",
+      "sha256": "c01666f763b7f4902589d16c49c9eec2198169052d73484ab5ba60fbae8a9729",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 575,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-C-holdout.png",
+      "sha256": "f5b3ebcb43f1631a9129d3db53a290d4f31f537ae2030c03617f9a9ef4db7173",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 342,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-D-validation.png",
+      "sha256": "535167596e32adf70aeeba3928133024dd11f4e10b1fd37d93ef7e96a4ca6ead",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 467,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-E-final-check.png",
+      "sha256": "31fdb13b9bef9072f087b05edad09c96e2e6ddd6c89a09244d69ca87c109d8b7",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 500,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-F-unseen.png",
+      "sha256": "76d2b9b0e0689c6918306fb1753cacbb4876d26cfc4e487d6581725c05a422cf",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 498,
+      "pass": true
+    },
+    {
+      "name": "GB-L01-G-unseen.png",
+      "sha256": "9e793f68342f82794585a2dca9d199c2aed71dd0dfa372266f709d6841f98900",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 460,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-A-explore.png",
+      "sha256": "f4584880ec3434502c41b52a936917044437048061e1dec92086f3c3ef13cb37",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 893,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-B-altered.png",
+      "sha256": "ccd8879d1412a42ab76c43a0884127ef1a1a1ad7f1085568633fef336e8e5f12",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 514,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-C-holdout.png",
+      "sha256": "f37f7b45c11a8d458907f1d20849e74f813adbf9c1b929d612defad9ef14afeb",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 347,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-D-validation.png",
+      "sha256": "ee8c8e8544cf415a8e23b1bca62f08a04e9fc8573c5acd5395403f9b4d5019c0",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 576,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-E-final-check.png",
+      "sha256": "da738e9cc95a27d6a90f3a11f50843cb8753b730e6e3a8b9f081585fe06d4440",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 750,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-F-unseen.png",
+      "sha256": "2c7804b7aca5af93b0066832e5592253403fe0744bf518df4a42bf8bc3b8119e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 391,
+      "pass": true
+    },
+    {
+      "name": "GB-L02-G-unseen.png",
+      "sha256": "de5c6a6a011dfefc82292fb955dda7e3f456393514fc25918c6a0ea22fc40c9e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 482,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-A-explore.png",
+      "sha256": "63ca062c72d25cbcf9ffd1133399b0732826b50d938d8d7ca7f123b8e46965dd",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 674,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-B-altered.png",
+      "sha256": "1e3815c5268584098068cbc20f34c75d0828e1e5e88444b9ae6c607a2bf7c777",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 887,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-C-holdout.png",
+      "sha256": "8ca7fbd90ac23a65469e8db8b0ce18afb6f2494603737614cebd35219021b0c1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 763,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-D-validation.png",
+      "sha256": "22d3a2927978983b712256e53fbcd51f06eec63f425401045acaf7ad3d3dd774",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 386,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-E-final-check.png",
+      "sha256": "82706a05e0fd2d754b20dd823f0f6b8c7a6272bf23894ccedce4bb19a76340b8",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 502,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-F-unseen.png",
+      "sha256": "8dd0550c5f66b5d85a773c6d1daa4e35b858ebd97e1b529e6b1f546cb1363584",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 830,
+      "pass": true
+    },
+    {
+      "name": "GB-L03-G-unseen.png",
+      "sha256": "1979d77de64a19e7184cc2ead4ef747da8d039591fd84526fdb6ad957e378ba5",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 385,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-A-explore.png",
+      "sha256": "4b3261c12520b8f87dbca918a1cb227432c577a568cb4d0f875810c0044a9064",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 887,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-B-altered.png",
+      "sha256": "60d91fb116fa4dcf5a34ac613c3a8770f09c7fbb17e7309b2d5a5ca9a58f83ba",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 902,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-C-holdout.png",
+      "sha256": "283b903a91a50d140ee58e31df22d9e6bc21d0df96c0d0aa4160a40af8440947",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 576,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-D-validation.png",
+      "sha256": "41515a4ddb4abb910fbc115534affae3284f708aa9a4ed96d30267b4e010e1bf",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 670,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-E-final-check.png",
+      "sha256": "1ab27c1cc0d1e0130507b5df0efc0237e4f51dd44c4638ab796d357e104771ca",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 904,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-F-unseen.png",
+      "sha256": "8175a9af3fc93b189250ae1a2a2448019bc3bf2e776e1ac2f14485e58f71047e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 969,
+      "pass": true
+    },
+    {
+      "name": "GB-L04-G-unseen.png",
+      "sha256": "9a9d351c2301c6bee2ab5c5395d07e0d78423ae9247c8877c4136b65bcf5fd48",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 809,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-A-explore.png",
+      "sha256": "2eb5d88d8532b41dfbff49a42dd8a9f8d19d14266f4c810022404c3195e6aa22",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 752,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-B-altered.png",
+      "sha256": "ccea971a5f3eb45469568e7385211840115306176f54c88605623dbe70470d8b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 216,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-C-holdout.png",
+      "sha256": "fa88a2de5208c3212dcddb27163018126fb6c4de0228ccf03da81e08eee062af",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 463,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-D-validation.png",
+      "sha256": "c5eda8fab61fa4b9a04388b37115cf76b9ad7a218a1f6ee98a5d35ca726175ef",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 466,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-E-final-check.png",
+      "sha256": "7cf08b7c462395f9bfa819385cdd5e64fa794494347734cfc33f03ce0348ff40",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 754,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-F-unseen.png",
+      "sha256": "b55f7356748c422d2c9e718da2e0c3a5a6a56d2b6fe260621f65a6134e67fb01",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 738,
+      "pass": true
+    },
+    {
+      "name": "GB-B1-G-unseen.png",
+      "sha256": "4d715b2139b20e484e9f2dd41b9e616a81b6dadf1434bd2585c04450243836ca",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 110,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-A-explore.png",
+      "sha256": "58ae35029bf14b3c0679e86551ffb028dd1080d6b81d47ab585d2c78b912de75",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 479,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-B-altered.png",
+      "sha256": "e1226a29ed23144802f0b55eda06ebd6972d3c57b44e7b4fc6abd1d06e3cd32d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 353,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-C-holdout.png",
+      "sha256": "153ed9cc5825c14e8f9eda0b0adcefd4a9b6b511bf192347d8310c93b7dddebd",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 287,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-D-validation.png",
+      "sha256": "783317ae47edace645963df4178f88d0e970be416e9a9aead1e276389a31133d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 194,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-E-final-check.png",
+      "sha256": "55161ff1d58721c41dce7974f79f06f5e598d5b62eeb4f830102bb1b941d5f57",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 218,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-F-unseen.png",
+      "sha256": "119c8aaf19df6986255d8b5a762d9b30aa93d2a074daadd223455c326986d1a3",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 617,
+      "pass": true
+    },
+    {
+      "name": "GB-L05-G-unseen.png",
+      "sha256": "92ed0ad001ea9e50757be7bbd10c0b5483e86791e00beccd11747a7fad9b2699",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 208,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-A-explore.png",
+      "sha256": "0f60113a316077ef513e65bcf98a634cd542eecb5c252b66b2017ae19cdb7193",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 381,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-B-altered.png",
+      "sha256": "c7ed5b99c724e9441d7bdabf155a4e4422b9d78a206de047f358e4d71abf4cfc",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 139,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-C-holdout.png",
+      "sha256": "405707b067fd1b1ad5e08b065d09f7ce2f4e2310f418972395afd4ccdc24701c",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 426,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-D-validation.png",
+      "sha256": "547a836d75821e7bcef68fff7d3adafe64f152d968e9a0e907c0c5f4177219cd",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 390,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-E-final-check.png",
+      "sha256": "5e5129971b6798d594173c25184d0520d9d144daf9479944c1964a6690effc7a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 429,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-F-unseen.png",
+      "sha256": "73298e0ec9f015b324c15579dd7da4d2fd80feecaba3ab43df16ae2d9d82a157",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 453,
+      "pass": true
+    },
+    {
+      "name": "GB-L06-G-unseen.png",
+      "sha256": "d9814738ddbbca90d0210c8f0b302f5a489a4d856311f92248644e9c5a23d9f1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 378,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-A-explore.png",
+      "sha256": "9ba64c4d39bd15fbd8d646171bc19f9dbe93f33a3ffdcd5374b276eac8097499",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 432,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-B-altered.png",
+      "sha256": "eef121ffee251815ac70a7e466db67219ef86c21135ba22d48b9b553b0b33415",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 408,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-C-holdout.png",
+      "sha256": "973cf0ae03b0714131f71990cb025a95dde89363ac1db13035664cec350af9e3",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 366,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-D-validation.png",
+      "sha256": "cc367ee4d6cb33e0e8a8fc6ef56c50b03c0b93cb9f8dae14b6168920f5fdc3e4",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 454,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-E-final-check.png",
+      "sha256": "de567cf0248603c0b722b8b0bd3c00f0bef0aac17d51c896ca6fa51386cd0b8d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 538,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-F-unseen.png",
+      "sha256": "240665c16bc7312748602f09ef5fd8953607285f89a801a9de0c0b209e701a57",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 264,
+      "pass": true
+    },
+    {
+      "name": "GB-L07-G-unseen.png",
+      "sha256": "ceb2ae511870d35024b2f0db5aea37c99048738d6fdff7cb4f0a3462887c3b51",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 356,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-A-explore.png",
+      "sha256": "50095f7ec4c5accd593a3553d89075811464f8fff813c9792ced4cd58ce80170",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 744,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-B-altered.png",
+      "sha256": "c0aeee9a0d72ac5a35496a689b1c03c8c9b16694f9be6f0df2817bfa9cecb50a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 372,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-C-holdout.png",
+      "sha256": "5eddf4307cb050db570748341d4f5ba49c7dec01006ec9c918009241fb8b8659",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 469,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-D-validation.png",
+      "sha256": "e9c1968966f6afa05d1423837c5f96e2401ffea2be69f09d4c0058bcc89f86dc",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 639,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-E-final-check.png",
+      "sha256": "f0d8cae82d4c8693c31db5e9a6f5b047e2e93f402044be3665130a5d1119bc57",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 970,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-F-unseen.png",
+      "sha256": "04edf51f5dc5777eeaf2619bc96b9d8add95b2965bac77da6871a11e5ef7820e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 593,
+      "pass": true
+    },
+    {
+      "name": "GB-L08-G-unseen.png",
+      "sha256": "23b22d3e3f28e69e27413e916d6831501bc4aa25e363d417a42324f4da95b5bd",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 576,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-A-explore.png",
+      "sha256": "185ca9be527919c69054ccff2a1074ced9aad4fe6b8660a77b0e211a50ddb907",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 493,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-B-altered.png",
+      "sha256": "7dad3df0c945a8ac7a3a573910ce1818a11944eae425d40105cc906e9f3a2c56",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 485,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-C-holdout.png",
+      "sha256": "5c2a53eb61fefbf4566a2565d2798c89049a902959a394674c8ac532bab98f8e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 519,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-D-validation.png",
+      "sha256": "0ed5a5b95f26f76a59f22bfd38c6bf8077deb993dcfcc6bdd75e113d5132394a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 378,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-E-final-check.png",
+      "sha256": "4c58331a0dcf5065f904d8937b2bcabde73a6569ebeeb9a8dee19c636afdf6f5",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 608,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-F-unseen.png",
+      "sha256": "960e4330e74ec519a26e6cb7954551c072a861edf05a55cb7a516e2032ec756c",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 362,
+      "pass": true
+    },
+    {
+      "name": "GB-B2-G-unseen.png",
+      "sha256": "8a8fafbbea53edc7d9d2ab15a5e4f178f2a0156f6084c1815ea55fdbf912df84",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 566,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-A-explore.png",
+      "sha256": "ac1d8a2719d76fd1a487db964679b1a86c20dcd5d44e9e7aec3b5fd71879ca88",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 2640,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-B-altered.png",
+      "sha256": "92d85465ee158afe128de49d92d3203ba26b77b63e90dfb1169daec957e4887d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1300,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-C-holdout.png",
+      "sha256": "9e0186f562fa3460f4a480d8d03b283b22c3b1ba8cc076c1b5915a8b3a56d539",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 561,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-D-validation.png",
+      "sha256": "45eb29674a8a74f0127a62e6600773ab1882b3a31d950c2bd4a9e02f61c76773",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 705,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-E-final-check.png",
+      "sha256": "f3dc91659948ce8fb8b7409f2ee7a37e7b7f4251e0dcba2ac84a75d8e6c0867f",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 898,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-F-unseen.png",
+      "sha256": "93b98e586d57d593c40a2ec2d0da0eb66b6064a7deae19196c6eb73201efcd26",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 738,
+      "pass": true
+    },
+    {
+      "name": "GB-L09-G-unseen.png",
+      "sha256": "f88cc4049b1c2fd39cb1bb34c804c4214ebbce1c516025650208725d77ae0c5d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 706,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-A-explore.png",
+      "sha256": "64c34b3e61b6fe3345b693d5f90d3bd8e4c98e679554cf0756819998f8c934f7",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 972,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-B-altered.png",
+      "sha256": "3d782584b04e18debb919d83d38e6f9bad3f0143934c369c1d94005dd34537f8",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1393,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-C-holdout.png",
+      "sha256": "23b7a5979e77d05d84b8084080678d74e2ba585ba3ab20448762385c6abd3037",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 728,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-D-validation.png",
+      "sha256": "04c18beaf09d227a2c4c20b2190a5d732bfdb3dd47e1024922a04908c7b295c6",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 916,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-E-final-check.png",
+      "sha256": "4895bec568f5e939da88690a9204ce879ed802e3d9ed6c02a6c09612e0cfbd95",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1350,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-F-unseen.png",
+      "sha256": "c89348aad060c4e172839bf7ece2b278c91935a7f0e249a02b9e6c53f4dc5b75",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1314,
+      "pass": true
+    },
+    {
+      "name": "GB-L10-G-unseen.png",
+      "sha256": "f817b789cda3b80178dd82863e618eb60b79715bede90488d880ba7570fc7b3b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1219,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-A-explore.png",
+      "sha256": "756c510919f66ca059139e5d1226f8ca4308502368ceda1fb94f84102640111f",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 633,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-B-altered.png",
+      "sha256": "3449775b3486199523020cc2447cf3339787d6f708c4057eab46cdace35594b1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1650,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-C-holdout.png",
+      "sha256": "6d4dc47ec0a25bc428d119086a9471f1bf7a0baef02ad97ded6f64bfcc6bd2ad",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 653,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-D-validation.png",
+      "sha256": "e3572f0c3471c40db517707bba387b88388e5749bed08d2f2d07a8546767f799",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1390,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-E-final-check.png",
+      "sha256": "e37c88ce44968dda21b9203041f3e76e9d57dc87c07b5772e88a3a831cb77dea",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 951,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-F-unseen.png",
+      "sha256": "5d12f5d3a0db7b2f1669025697d6832ef67678a6b0bf02f198c0692c756add4f",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 553,
+      "pass": true
+    },
+    {
+      "name": "GB-L11-G-unseen.png",
+      "sha256": "276e663531fdbb5264097ea3a32e868dcd4734561ccfc48b95bf7d4b5aff2d0e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1799,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-A-explore.png",
+      "sha256": "a81f5dcd59089aa215e9d61e3e14000ab5767842bb07e6fa98a36a827919f6e1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 369,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-B-altered.png",
+      "sha256": "d8fed75ce137287769290424a81bbaa572398f376b45326df4e5d46a63fe0f20",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 798,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-C-holdout.png",
+      "sha256": "d9a5098d2b9b85702e3ad3849c6aa0276e72c5c68741401e3230711c289107ce",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 530,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-D-validation.png",
+      "sha256": "6a5f54a872a117eaec647af47cd1675ad27dc486cd0b3b9c08ec0992662e11c3",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 285,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-E-final-check.png",
+      "sha256": "b00c0e9997c37f5c2c4aeaf2e803d1f49d892af2c4754ce4f649f6b18bf07c9a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1178,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-F-unseen.png",
+      "sha256": "e13c4e0815a5d5e954aead9737a906d19ea2c13cad93c8b2cbf21537e5bc7533",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 868,
+      "pass": true
+    },
+    {
+      "name": "GB-L12-G-unseen.png",
+      "sha256": "9d29f0a7d7a98d60e7b16576f74edecadfac0209725357cbb976c9a902160642",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1083,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-A-explore.png",
+      "sha256": "7663aace38449b6b13502ff4d0eb8a5bac8d5f4aa07847b04fa7ce9014226ec1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 728,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-B-altered.png",
+      "sha256": "7663aace38449b6b13502ff4d0eb8a5bac8d5f4aa07847b04fa7ce9014226ec1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 728,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-C-holdout.png",
+      "sha256": "7663aace38449b6b13502ff4d0eb8a5bac8d5f4aa07847b04fa7ce9014226ec1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 728,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-D-validation.png",
+      "sha256": "dcab27cfbae2e638d86b42277dc6d86b1e2be61d59526fa7cdf53943fd6c7337",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 525,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-E-final-check.png",
+      "sha256": "da81421764ad2cd6e8834009077d44ae10075c6891e36c914d1d0dce69f2e3e4",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 702,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-F-unseen.png",
+      "sha256": "cdfdb0ea1f0ffad62ff16093b81972a95f0493acfc7d3d32c47161e0d2757308",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 709,
+      "pass": true
+    },
+    {
+      "name": "GB-B3-G-unseen.png",
+      "sha256": "522f3040de3608063ffefd0a07aefd7e42ba367ec3ce3239c911a9dd57afed17",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 675,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-A-explore.png",
+      "sha256": "2b7b16506ad5bd2010bff2eb00ed1aaac610ef737b6c3da7c79b525bfe8f1a22",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 669,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-B-altered.png",
+      "sha256": "931802b2f92c59beaa5608db211ebbb7f120e66815a1ef607050c3055b61c4f0",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 702,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-C-holdout.png",
+      "sha256": "fa76de93f6a39f400b9f423212ef7d991ed64768075765fc4ada535ea01ac882",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 616,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-D-validation.png",
+      "sha256": "afb95a98c26f2f7cbead9517386e866529382ceb6b54b6498f0d0c51df103416",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 764,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-E-final-check.png",
+      "sha256": "712ad690ea2e46ba2f3dfc9e8eff59df61a4a4c7b9c8ae4db7326826e506b232",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 617,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-F-unseen.png",
+      "sha256": "30a910ea03c38608951c40536dca099174bfdb6037f6b446039dc361d4435879",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 521,
+      "pass": true
+    },
+    {
+      "name": "GB-L13-G-unseen.png",
+      "sha256": "f36de59e22ae76d19bd5290dcd6ea3a5a37bfcc81ae0b1590e51b697439748d2",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 607,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-A-explore.png",
+      "sha256": "3b3cb0bf58e02ebfa1518be6cbe63caa9ff9ce8b3587392e40bcebf9312b3141",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1180,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-B-altered.png",
+      "sha256": "ff66d11e74e7f49f36487314c1d0ba03dc7c93c43b79b2c51889cbb2fbd25d2e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 429,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-C-holdout.png",
+      "sha256": "5181d8d106f2ff066c8081f7ec1c323840730e49ce923b7a1b12f5c30e3407c1",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 445,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-D-validation.png",
+      "sha256": "498b65028f3b630fd80c9d396c0d833840c3bbd02c0ff2bbe4df6740daf52be6",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1111,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-E-final-check.png",
+      "sha256": "5768db57e3bd62325daf560e41b27b55b77182411eba29b7175034d8f2dfb128",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 602,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-F-unseen.png",
+      "sha256": "e8ee9eb20184d0a34c9067f733c3839c7c739ef36281e710e252e52124e732df",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 954,
+      "pass": true
+    },
+    {
+      "name": "GB-L14-G-unseen.png",
+      "sha256": "9c644573ffd6f2bf0ef2cc489b56e079e864c9deea2f06dcde7b5e6f80e84991",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 664,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-A-explore.png",
+      "sha256": "b2ad30cb318b3e70119795477b5ca2be67fe2e60b392e1a11877a76008cc2202",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1266,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-B-altered.png",
+      "sha256": "1231563e5a72ddf4f1cee5730be4c6c95d801f5b3a5cd179fc7a84d831e11439",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1356,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-C-holdout.png",
+      "sha256": "f0ff4a44d11d8ffe5e1ee12772b5ff97e89149c4134443efe55fcd9395be6b0d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 566,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-D-validation.png",
+      "sha256": "6ba0f11624ea4ac660c2494b88f8bbd5ad4ce3422ea65630b489d775cf4c979e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1064,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-E-final-check.png",
+      "sha256": "a8736016b5511cd61c4a74d16d1f15bbc17da129ab65bb5b72543cae413bde9b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 628,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-F-unseen.png",
+      "sha256": "f9cf2477a1d402535dd1c4c98500a253f950113f712f408989affe1e66318fbf",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1412,
+      "pass": true
+    },
+    {
+      "name": "GB-L15-G-unseen.png",
+      "sha256": "a87c0b1193dfdf7f1539f373b1810cccb71d8bea8ccd2667240e318e529e9247",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1102,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-A-explore.png",
+      "sha256": "45953ca336c84e137cbe3e965c7de881c9e5143bf395063117dcfff684a0963b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 690,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-B-altered.png",
+      "sha256": "932d544dd0a6a71163dba786daa705d3a288a25e311f4b45724da4dafa2ef607",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 845,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-C-holdout.png",
+      "sha256": "6b1db6451ef63377928ad8cf791ac82b6c9ee78c16f03ad4d434aa75ef14396d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 809,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-D-validation.png",
+      "sha256": "29641f4fb053469bb966462469d082d696340bf4659fb8798dc2f8e7887a1798",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 810,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-E-final-check.png",
+      "sha256": "1aec45fa7f98a0fd6472a658da6662f2add54eb5ad080fe1f5f7703ec541f6b4",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 921,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-F-unseen.png",
+      "sha256": "0d8596f104c772498963398a81520ff895e8cf7592380ef28d2920b8cdaf1a27",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 575,
+      "pass": true
+    },
+    {
+      "name": "GB-L16-G-unseen.png",
+      "sha256": "490cc0270d9a99e2db743d78b77e0a51540175ed24c15a24e8253f21a7b4a50a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 648,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-A-explore.png",
+      "sha256": "b476dd0bd0f27be745ce3063d79cdc7b72aba5a6e0df2dc01baba91e55601824",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1030,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-B-altered.png",
+      "sha256": "1a67690eb5fb07ec65d8ba0658b3a89cf91669ccce469a484eefccec74097721",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 637,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-C-holdout.png",
+      "sha256": "a31bfbff6a3111ca65eb41cb0c7ccce60767d925f0a522eb6cb9b63d7595d828",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 638,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-D-validation.png",
+      "sha256": "ec3d8afcc29bc2cdc552910b92c4133ab342456139f4b8b391814c975ba1d854",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 471,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-E-final-check.png",
+      "sha256": "7a539e375fa1e79d2680404022bbf148f77a4ca81542e057f5e5dc6978eb38b7",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 608,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-F-unseen.png",
+      "sha256": "62736cc73b51958a51cbc409db4e964d0a5bfc2c1eeac5d7b9eede0d5e28bc92",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1106,
+      "pass": true
+    },
+    {
+      "name": "GB-B4-G-unseen.png",
+      "sha256": "83dd8b3207b5ee1f2dd83913cdf4e87a1e838bb42c77560467130156ce909d92",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1052,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-A-explore.png",
+      "sha256": "10a4411a9c81fb8cf8186bf12279f3c77c0b61b91271c04694a82c81c5cce6c6",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 651,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-B-altered.png",
+      "sha256": "9032ca59df74ef343d2f972de06cd425176ebaf9f1fc9df995ec400f64b89b2c",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 475,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-C-holdout.png",
+      "sha256": "08c1f08e49feea5d8b39bdddf15933a02f02e6a6b812efde11d581bcfa6d1559",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 509,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-D-validation.png",
+      "sha256": "34ef804cc9f577dd42511c562b42215609e262d2b0cb86c065a7c9851487dfb3",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 635,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-E-final-check.png",
+      "sha256": "7b3c407659130a778d291af26eebd3ded960d877361cf6904c1a6fe3a609aa2b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 562,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-F-unseen.png",
+      "sha256": "d43f8ffa3bcfb707bcee997d44f9872ac3a3b1812e9a4dd63b5ffc81e890a304",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 799,
+      "pass": true
+    },
+    {
+      "name": "GB-L17-G-unseen.png",
+      "sha256": "46cde850a29103060b62dddfbaa0cf0e1012cbf4485646e1e91801a3b35f80a6",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 615,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-A-explore.png",
+      "sha256": "c9a26f91f1980f14347361cf19f221680a9c80259369439f16452ad4d145fe24",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 945,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-B-altered.png",
+      "sha256": "9a6b053c1a791ede7160a250e7b2b24027654dec85c388ffdf9391f6f3b4cbe6",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1481,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-C-holdout.png",
+      "sha256": "582937b61f0c40a1232c2b4a375f73eda6c2f4d14c0209c5e7adecd9d5cd36de",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1040,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-D-validation.png",
+      "sha256": "71cbefce883c56a41197ff4fb83e385b8722ae37de622ead0f4402d0bb7b307b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1401,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-E-final-check.png",
+      "sha256": "cce842aecaea9594e44d980f1914d02e689aeb273e9ff921146bc318c6cfbe89",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 642,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-F-unseen.png",
+      "sha256": "a36a245a9b3f99c2457c8988ea7b65a554460dc8b1fc93e6aec897da2768c19c",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 540,
+      "pass": true
+    },
+    {
+      "name": "GB-L18-G-unseen.png",
+      "sha256": "f3e4a6d402f674e6355cd593f3ef51c3efb79210cb1a78e5094e555765fc4011",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1460,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-A-explore.png",
+      "sha256": "e8890572369ce288c9ea50ce7d8097e3a0413b1228312d3ae30229fcb1f419aa",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 861,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-B-altered.png",
+      "sha256": "6ddf727e132f973ae855466a3eb1efb2433236cce6a5e86bb7df6ee76db9019a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 898,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-C-holdout.png",
+      "sha256": "4bb47a9a2830578676a1a288213cdb2539f11776c3e97647c029f1e5e50d359f",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 613,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-D-validation.png",
+      "sha256": "91112fab1e1f3181c536709dc6120d1e9664751acb9eaf28ff82d880f0c6ff0a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1136,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-E-final-check.png",
+      "sha256": "a2825fd56430c44b95945c048b8b624a21cdbf5cb06ea4eb91c40f8be29edc8d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1028,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-F-unseen.png",
+      "sha256": "692e18f49366782d3790d348d62ea02230b8ad47c8b62294c23d6bb37ce5596e",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 885,
+      "pass": true
+    },
+    {
+      "name": "GB-L19-G-unseen.png",
+      "sha256": "407c35391427de80ba7a1e91fae8f5c804b08f1792219e3932cca201acfa8490",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 635,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-A-explore.png",
+      "sha256": "b0a7f75d60f32975f2f03d04efc8918f01b82122e67ff74d3f36692b35e33741",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 679,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-B-altered.png",
+      "sha256": "059f7ca69ee7593b0e456ccc650b44236cc7280044359084dd03752180452ab0",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 346,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-C-holdout.png",
+      "sha256": "3b3c7aec32de8cb6b27258cebf1c328ed79247fc2da3c055ef7aaa09e930b6f8",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1083,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-D-validation.png",
+      "sha256": "58dcb3ba0492beef4fec697b0ec4c0181a6c5e8ba6b2f8f94a162a059f4780b2",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 575,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-E-final-check.png",
+      "sha256": "be6ab8c3dff5bc9f337cc7662c765eb4f1cd0fde2968bc33faf226680b4a3017",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 410,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-F-unseen.png",
+      "sha256": "8ad18686dce82ef2615841793feec1417e01817c77a35a2a4a569842d0d8c0e2",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 495,
+      "pass": true
+    },
+    {
+      "name": "GB-L20-G-unseen.png",
+      "sha256": "8dff1c820af5cf526ae1264169f0e78dacdb1f4946c92e9fd155f35c0a9e3749",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 961,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-A-explore.png",
+      "sha256": "37dcf04a7b5f9e06334797c65ccbca282489a15fcf77144935fe1ad91757e192",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1741,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-B-altered.png",
+      "sha256": "f07bcfe3ba296d8fb812783e82392b95dd41d7567c66ebc1950240c2a0e0dafb",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1774,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-C-holdout.png",
+      "sha256": "c22b9712bf748c3cff41ce0fd7d84118351a43e9fa3ad251666ab1eafd22b17c",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 1061,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-D-validation.png",
+      "sha256": "cf46e8a255c18ce8363dd42b0a686f289bdf31dee11771f815cf493c4da4fa95",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 94,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-E-final-check.png",
+      "sha256": "f62c0f4cd26f13143ea1cd943fda60c309570a7c349d3d9a480aeed3952edc00",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 843,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-F-unseen.png",
+      "sha256": "7c1d607524b09dce3c29d7ced15b8985708b1c5a8d9805f190a55bf64bddc895",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 2012,
+      "pass": true
+    },
+    {
+      "name": "GB-B5-G-unseen.png",
+      "sha256": "0aefbf6adcc1720575197eca6324d23bf89dd11fd7246522017ecfffe9b236f0",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 2501,
+      "pass": true
+    }
+  ],
+  "per_stage_counts": {
+    "GB-L01": 7,
+    "GB-L02": 7,
+    "GB-L03": 7,
+    "GB-L04": 7,
+    "GB-B1": 7,
+    "GB-L05": 7,
+    "GB-L06": 7,
+    "GB-L07": 7,
+    "GB-L08": 7,
+    "GB-B2": 7,
+    "GB-L09": 7,
+    "GB-L10": 7,
+    "GB-L11": 7,
+    "GB-L12": 7,
+    "GB-B3": 7,
+    "GB-L13": 7,
+    "GB-L14": 7,
+    "GB-L15": 7,
+    "GB-L16": 7,
+    "GB-B4": 7,
+    "GB-L17": 7,
+    "GB-L18": 7,
+    "GB-L19": 7,
+    "GB-L20": 7,
+    "GB-B5": 7
+  },
+  "native_pixel_oracle_controls": [
+    "positive native frame",
+    "single changed subpixel rejected",
+    "empty frame rejected",
+    "bilinear frame rejected",
+    "odd client-size integer viewport"
+  ],
+  "new_FG_views": [
+    {
+      "id": "GB-L01-F-unseen",
+      "minimum_prior_camera_distance": 5.220153185946206
+    },
+    {
+      "id": "GB-L01-G-unseen",
+      "minimum_prior_camera_distance": 5.220153254455275
+    },
+    {
+      "id": "GB-L02-F-unseen",
+      "minimum_prior_camera_distance": 10.816653826391969
+    },
+    {
+      "id": "GB-L02-G-unseen",
+      "minimum_prior_camera_distance": 10.965855751860213
+    },
+    {
+      "id": "GB-L03-F-unseen",
+      "minimum_prior_camera_distance": 3.4000015258789062
+    },
+    {
+      "id": "GB-L03-G-unseen",
+      "minimum_prior_camera_distance": 10.25
+    },
+    {
+      "id": "GB-L04-F-unseen",
+      "minimum_prior_camera_distance": 11.364857934885377
+    },
+    {
+      "id": "GB-L04-G-unseen",
+      "minimum_prior_camera_distance": 10.770329791361892
+    },
+    {
+      "id": "GB-B1-F-unseen",
+      "minimum_prior_camera_distance": 4.47213574175154
+    },
+    {
+      "id": "GB-B1-G-unseen",
+      "minimum_prior_camera_distance": 5.30000010076559
+    },
+    {
+      "id": "GB-L05-F-unseen",
+      "minimum_prior_camera_distance": 8.005622834440539
+    },
+    {
+      "id": "GB-L05-G-unseen",
+      "minimum_prior_camera_distance": 3.851200103759795
+    },
+    {
+      "id": "GB-L06-F-unseen",
+      "minimum_prior_camera_distance": 4.123105163017669
+    },
+    {
+      "id": "GB-L06-G-unseen",
+      "minimum_prior_camera_distance": 5.314132166840183
+    },
+    {
+      "id": "GB-L07-F-unseen",
+      "minimum_prior_camera_distance": 34.44198008783185
+    },
+    {
+      "id": "GB-L07-G-unseen",
+      "minimum_prior_camera_distance": 4.400001525878906
+    },
+    {
+      "id": "GB-L08-F-unseen",
+      "minimum_prior_camera_distance": 6.0299253631831204
+    },
+    {
+      "id": "GB-L08-G-unseen",
+      "minimum_prior_camera_distance": 6.0
+    },
+    {
+      "id": "GB-B2-F-unseen",
+      "minimum_prior_camera_distance": 11.597413443069483
+    },
+    {
+      "id": "GB-B2-G-unseen",
+      "minimum_prior_camera_distance": 7.0576200075989775
+    },
+    {
+      "id": "GB-L09-F-unseen",
+      "minimum_prior_camera_distance": 3.825000762939453
+    },
+    {
+      "id": "GB-L09-G-unseen",
+      "minimum_prior_camera_distance": 8.321658087441469
+    },
+    {
+      "id": "GB-L10-F-unseen",
+      "minimum_prior_camera_distance": 27.111622009553255
+    },
+    {
+      "id": "GB-L10-G-unseen",
+      "minimum_prior_camera_distance": 5.314132166840183
+    },
+    {
+      "id": "GB-L11-F-unseen",
+      "minimum_prior_camera_distance": 6.241666386331404
+    },
+    {
+      "id": "GB-L11-G-unseen",
+      "minimum_prior_camera_distance": 5.003998431771973
+    },
+    {
+      "id": "GB-L12-F-unseen",
+      "minimum_prior_camera_distance": 13.39999771118164
+    },
+    {
+      "id": "GB-L12-G-unseen",
+      "minimum_prior_camera_distance": 7.179417030236122
+    },
+    {
+      "id": "GB-B3-F-unseen",
+      "minimum_prior_camera_distance": 23.375000953674316
+    },
+    {
+      "id": "GB-B3-G-unseen",
+      "minimum_prior_camera_distance": 17.375
+    },
+    {
+      "id": "GB-L13-F-unseen",
+      "minimum_prior_camera_distance": 9.241753167130845
+    },
+    {
+      "id": "GB-L13-G-unseen",
+      "minimum_prior_camera_distance": 4.712748837162148
+    },
+    {
+      "id": "GB-L14-F-unseen",
+      "minimum_prior_camera_distance": 7.9999998807907104
+    },
+    {
+      "id": "GB-L14-G-unseen",
+      "minimum_prior_camera_distance": 5.500000000000083
+    },
+    {
+      "id": "GB-L15-F-unseen",
+      "minimum_prior_camera_distance": 3.6055515399656763
+    },
+    {
+      "id": "GB-L15-G-unseen",
+      "minimum_prior_camera_distance": 6.058259058549072
+    },
+    {
+      "id": "GB-L16-F-unseen",
+      "minimum_prior_camera_distance": 6.324555320336759
+    },
+    {
+      "id": "GB-L16-G-unseen",
+      "minimum_prior_camera_distance": 4.47213595499958
+    },
+    {
+      "id": "GB-B4-F-unseen",
+      "minimum_prior_camera_distance": 6.082762530298219
+    },
+    {
+      "id": "GB-B4-G-unseen",
+      "minimum_prior_camera_distance": 4.400000095367432
+    },
+    {
+      "id": "GB-L17-F-unseen",
+      "minimum_prior_camera_distance": 23.138928260184574
+    },
+    {
+      "id": "GB-L17-G-unseen",
+      "minimum_prior_camera_distance": 10.925200841528575
+    },
+    {
+      "id": "GB-L18-F-unseen",
+      "minimum_prior_camera_distance": 25.400807990535796
+    },
+    {
+      "id": "GB-L18-G-unseen",
+      "minimum_prior_camera_distance": 3.448187199761665
+    },
+    {
+      "id": "GB-L19-F-unseen",
+      "minimum_prior_camera_distance": 22.928641847364787
+    },
+    {
+      "id": "GB-L19-G-unseen",
+      "minimum_prior_camera_distance": 15.146286660414717
+    },
+    {
+      "id": "GB-L20-F-unseen",
+      "minimum_prior_camera_distance": 23.04886114323222
+    },
+    {
+      "id": "GB-L20-G-unseen",
+      "minimum_prior_camera_distance": 23.69097725858511
+    },
+    {
+      "id": "GB-B5-F-unseen",
+      "minimum_prior_camera_distance": 3.605551804467407
+    },
+    {
+      "id": "GB-B5-G-unseen",
+      "minimum_prior_camera_distance": 11.661903544359914
+    }
+  ],
+  "application": [
+    {
+      "id": "GB-L01-A-explore",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-B-altered",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-C-holdout",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-D-validation",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-E-final-check",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-F-unseen",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L01-G-unseen",
+      "stage": "GB-L01",
+      "eligible": 27,
+      "applied": 27,
+      "qualityEligible": 27,
+      "qualityApplied": 27,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-A-explore",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-B-altered",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-C-holdout",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-D-validation",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-E-final-check",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-F-unseen",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L02-G-unseen",
+      "stage": "GB-L02",
+      "eligible": 33,
+      "applied": 33,
+      "qualityEligible": 33,
+      "qualityApplied": 33,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-A-explore",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-B-altered",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-C-holdout",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-D-validation",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-E-final-check",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-F-unseen",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L03-G-unseen",
+      "stage": "GB-L03",
+      "eligible": 12,
+      "applied": 12,
+      "qualityEligible": 12,
+      "qualityApplied": 12,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-A-explore",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-B-altered",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-C-holdout",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-D-validation",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-E-final-check",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-F-unseen",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L04-G-unseen",
+      "stage": "GB-L04",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-A-explore",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-B-altered",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-C-holdout",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-D-validation",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-E-final-check",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-F-unseen",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B1-G-unseen",
+      "stage": "GB-B1",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-A-explore",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-B-altered",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-C-holdout",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-D-validation",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-E-final-check",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-F-unseen",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L05-G-unseen",
+      "stage": "GB-L05",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-A-explore",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-B-altered",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-C-holdout",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-D-validation",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-E-final-check",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-F-unseen",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L06-G-unseen",
+      "stage": "GB-L06",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-A-explore",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-B-altered",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-C-holdout",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-D-validation",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-E-final-check",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-F-unseen",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L07-G-unseen",
+      "stage": "GB-L07",
+      "eligible": 10,
+      "applied": 10,
+      "qualityEligible": 10,
+      "qualityApplied": 10,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-A-explore",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-B-altered",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-C-holdout",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-D-validation",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-E-final-check",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-F-unseen",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L08-G-unseen",
+      "stage": "GB-L08",
+      "eligible": 19,
+      "applied": 19,
+      "qualityEligible": 19,
+      "qualityApplied": 19,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-A-explore",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-B-altered",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-C-holdout",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-D-validation",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-E-final-check",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-F-unseen",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B2-G-unseen",
+      "stage": "GB-B2",
+      "eligible": 8,
+      "applied": 8,
+      "qualityEligible": 8,
+      "qualityApplied": 8,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-A-explore",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-B-altered",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-C-holdout",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-D-validation",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-E-final-check",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-F-unseen",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L09-G-unseen",
+      "stage": "GB-L09",
+      "eligible": 29,
+      "applied": 29,
+      "qualityEligible": 29,
+      "qualityApplied": 29,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-A-explore",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-B-altered",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-C-holdout",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-D-validation",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-E-final-check",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-F-unseen",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L10-G-unseen",
+      "stage": "GB-L10",
+      "eligible": 543,
+      "applied": 543,
+      "qualityEligible": 543,
+      "qualityApplied": 543,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-A-explore",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-B-altered",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-C-holdout",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-D-validation",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-E-final-check",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-F-unseen",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L11-G-unseen",
+      "stage": "GB-L11",
+      "eligible": 416,
+      "applied": 416,
+      "qualityEligible": 416,
+      "qualityApplied": 416,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-A-explore",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-B-altered",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-C-holdout",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-D-validation",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-E-final-check",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-F-unseen",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L12-G-unseen",
+      "stage": "GB-L12",
+      "eligible": 165,
+      "applied": 165,
+      "qualityEligible": 165,
+      "qualityApplied": 165,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-A-explore",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-B-altered",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-C-holdout",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-D-validation",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-E-final-check",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-F-unseen",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B3-G-unseen",
+      "stage": "GB-B3",
+      "eligible": 396,
+      "applied": 396,
+      "qualityEligible": 396,
+      "qualityApplied": 396,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-A-explore",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-B-altered",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-C-holdout",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-D-validation",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-E-final-check",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-F-unseen",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L13-G-unseen",
+      "stage": "GB-L13",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-A-explore",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-B-altered",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-C-holdout",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-D-validation",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-E-final-check",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-F-unseen",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L14-G-unseen",
+      "stage": "GB-L14",
+      "eligible": 18,
+      "applied": 18,
+      "qualityEligible": 18,
+      "qualityApplied": 18,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-A-explore",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-B-altered",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-C-holdout",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-D-validation",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-E-final-check",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-F-unseen",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L15-G-unseen",
+      "stage": "GB-L15",
+      "eligible": 17,
+      "applied": 17,
+      "qualityEligible": 17,
+      "qualityApplied": 17,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-A-explore",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-B-altered",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-C-holdout",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-D-validation",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-E-final-check",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-F-unseen",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L16-G-unseen",
+      "stage": "GB-L16",
+      "eligible": 23,
+      "applied": 23,
+      "qualityEligible": 23,
+      "qualityApplied": 23,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-A-explore",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-B-altered",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-C-holdout",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-D-validation",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-E-final-check",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-F-unseen",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B4-G-unseen",
+      "stage": "GB-B4",
+      "eligible": 13,
+      "applied": 13,
+      "qualityEligible": 13,
+      "qualityApplied": 13,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-A-explore",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-B-altered",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-C-holdout",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-D-validation",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-E-final-check",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-F-unseen",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L17-G-unseen",
+      "stage": "GB-L17",
+      "eligible": 30,
+      "applied": 30,
+      "qualityEligible": 30,
+      "qualityApplied": 30,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-A-explore",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-B-altered",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-C-holdout",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-D-validation",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-E-final-check",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-F-unseen",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L18-G-unseen",
+      "stage": "GB-L18",
+      "eligible": 20,
+      "applied": 20,
+      "qualityEligible": 20,
+      "qualityApplied": 20,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-A-explore",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-B-altered",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-C-holdout",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-D-validation",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-E-final-check",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-F-unseen",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L19-G-unseen",
+      "stage": "GB-L19",
+      "eligible": 39,
+      "applied": 39,
+      "qualityEligible": 39,
+      "qualityApplied": 39,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-A-explore",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-B-altered",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-C-holdout",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-D-validation",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-E-final-check",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-F-unseen",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-L20-G-unseen",
+      "stage": "GB-L20",
+      "eligible": 459,
+      "applied": 459,
+      "qualityEligible": 459,
+      "qualityApplied": 459,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-A-explore",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-B-altered",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-C-holdout",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-D-validation",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-E-final-check",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-F-unseen",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    },
+    {
+      "id": "GB-B5-G-unseen",
+      "stage": "GB-B5",
+      "eligible": 45,
+      "applied": 45,
+      "qualityEligible": 45,
+      "qualityApplied": 45,
+      "qualityColliders": 0
+    }
+  ],
+  "new_WL4_frames": 52,
+  "old_WL4_overlap": 0,
+  "protected_runtime_files": 167,
+  "changed_existing_runtime": [
+    "Assets/GloomBean/Runtime/Campaign/BroadVisualCapture.cs",
+    "Assets/GloomBean/Runtime/Campaign/BroadVisualChecks.cs",
+    "Assets/GloomBean/Runtime/Campaign/CampaignScenery.cs",
+    "Assets/GloomBean/Runtime/Campaign/QualityBarWorld.cs"
+  ],
+  "prior_camera_comparisons": [
+    {
+      "id": "GB-L01-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L01-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L01-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L01-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L01-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L02-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L02-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L02-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L02-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L02-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L03-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L03-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L03-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L03-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L03-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L04-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L04-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L04-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L04-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L04-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B1-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B1-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B1-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B1-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B1-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L05-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L05-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L05-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L05-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L05-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L06-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L06-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L06-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L06-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L06-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": 6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L07-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L07-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L07-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L07-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L07-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": 6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L08-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L08-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L08-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L08-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L08-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B2-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B2-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B2-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B2-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B2-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L09-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L09-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L09-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L09-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L09-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L10-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L10-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L10-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L10-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L10-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L11-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L11-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L11-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L11-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L11-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L12-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L12-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L12-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L12-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L12-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B3-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B3-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B3-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B3-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B3-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": 6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L13-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L13-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L13-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L13-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L13-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L14-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L14-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L14-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L14-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L14-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": 6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L15-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L15-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L15-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L15-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L15-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L16-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L16-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L16-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L16-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L16-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": -6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B4-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B4-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B4-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B4-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B4-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L17-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L17-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L17-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L17-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L17-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {
+        "cx": -6.0
+      },
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L18-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L18-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L18-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L18-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L18-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L19-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L19-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L19-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L19-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L19-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L20-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L20-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L20-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L20-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-L20-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B5-A-explore",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B5-B-altered",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B5-C-holdout",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B5-D-validation",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    },
+    {
+      "id": "GB-B5-E-final-check",
+      "same_anchor": true,
+      "camera_deltas": {},
+      "note": "Do not call moving support or corrected-E sampling changes pixel-identical."
+    }
+  ],
+  "strict_concept_visual_quality": "UNMET",
+  "scope": "Full175-view native pixel/renderer coverage,50 unseen support-derived positions,52 different reference pixel hashes and protected source identity. Not continuous whole-game visibility, reachable poses, equal collision bounds or artistic superiority."
+}

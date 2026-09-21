@@ -1,6 +1,6 @@
 {
-  "id": "QualityBar-Q8-regression",
-  "build": false,
+  "id": "QualityBar-Q8-imported-regression",
+  "build": true,
   "cases": [
     {
       "name": "Mechanics-all25-renderers",
