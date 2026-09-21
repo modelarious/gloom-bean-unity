@@ -1,5 +1,5 @@
 {
-  "id": "V6-GBA-P1-regression",
+  "id": "V6-GBA-P6-regression",
   "build": false,
   "cases": [
     {
@@ -23,6 +23,19 @@
       "practice": true,
       "secrets": true,
       "renderFps": 60
+    },
+    {
+      "name": "Choir-secret",
+      "suite": "Empyrean",
+      "route": "GB-L17",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Weight-of-Everyone",
+      "suite": "Fall",
+      "route": "GB-B4"
     }
   ]
 }
