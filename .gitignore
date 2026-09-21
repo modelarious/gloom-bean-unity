@@ -38,3 +38,6 @@ Tools/Acceptance-Local.ps1
 /Tools/*-Local.ps1
 /Tools/parish-request.json
 /.continuity/
+
+# Local offline art-authoring dependency; not a game runtime dependency.
+.visual-tools/

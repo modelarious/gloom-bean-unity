@@ -1,0 +1,414 @@
+{
+  "version": 1,
+  "method": "Original deterministic pixel drawing; no imported Nintendo or generated-comparison assets",
+  "assets": [
+    {
+      "file": "background_0.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "a795ea2bfbbbe35b54a411919883d1548b47adbe289f1fba848f1f4e86aa4e1d"
+    },
+    {
+      "file": "fill_0.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "7578d490b8154b5f126e7094a9477278bee215ec04163dc9bb8b1dbbf78d1045"
+    },
+    {
+      "file": "lip_0.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "3724990caffa6e6b14b089bafeb0ae0c5138f3d0af88ed1e5ad44f0a56590d73"
+    },
+    {
+      "file": "corbel_0.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "309c385a9255933b49b4c39e0231c3edea55f325418be0abd293fdc354e05e42"
+    },
+    {
+      "file": "background_1.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "36212013bc0ac1699d36f4df03a3b1844f4e7540f9610a8f1207cf4ca916fc88"
+    },
+    {
+      "file": "fill_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "2e4b20a47e6b46e59bd5e61d7174b6610c226df24b5f230c31114a9759c7663a"
+    },
+    {
+      "file": "lip_1.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "f6ec86bc6736781c070288b216be49c5cf6c56ccd67233e352e83d9c33a0f525"
+    },
+    {
+      "file": "corbel_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "557deda3a57b2d85cdf4e27477304345db60ed3673c897aa1ca0abe116e7433b"
+    },
+    {
+      "file": "background_2.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "2a7a5de9b4768185e0b309f5b1bb6075c50541427ca0ff08446fe2eee264900d"
+    },
+    {
+      "file": "fill_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "a224069cb94940caea04d7f02f18fa493e3f26ca927f2797567713ce4624cb28"
+    },
+    {
+      "file": "lip_2.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "454e36fc866bcb587ccc1d9c42f113ab37f226523351d54d7899d3be7cc565b6"
+    },
+    {
+      "file": "corbel_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "d403004e6bf4227de19dec3ec10475e5d8eef49daf5aac0d056a1764548898f8"
+    },
+    {
+      "file": "background_3.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "4573438162aae9c3a76f5f1c60f097486097545c4dfe02a3ab77247e5dcd3895"
+    },
+    {
+      "file": "fill_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "e334a61956ced36862f0ff22e0d99e405494cf61a9df5fd9f032e128272454d7"
+    },
+    {
+      "file": "lip_3.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "005e6928dfec4c3cbc088b6becd8655c32a15de7f6d80f043b814e1cee1cc5ac"
+    },
+    {
+      "file": "corbel_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "99eb3a408beabb1743a76cd47aff18d478ea18366e0a963fd59135b4209b23b8"
+    },
+    {
+      "file": "background_4.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "9911482503c9474a8468f303878c65c7e6e9ccd01936dc5265fb0808adc4942d"
+    },
+    {
+      "file": "fill_4.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "da8b57690632c72ddbd7291928eba45d7d215cb111ea3e9b7bc04f27a5c4ed42"
+    },
+    {
+      "file": "lip_4.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "2784c04b779ac2b5dd1ac4afa8edaa5003e700151d35cb0997f981b1cfe72ac8"
+    },
+    {
+      "file": "corbel_4.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "5510544fbdb543014bf5a00428534bbf882db06cfdd202bed8e670f0fcc40914"
+    },
+    {
+      "file": "background_5.png",
+      "size": [
+        768,
+        480
+      ],
+      "sha256": "e6782a88e0b9bfd7d0dbcab33b28b3f698a50eb2e949fc92efb5ea0e809ef037"
+    },
+    {
+      "file": "fill_5.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "2c7d24cac82a16a320d774e99a962515813103aa9e2597d7407b8a07af7d0160"
+    },
+    {
+      "file": "lip_5.png",
+      "size": [
+        32,
+        16
+      ],
+      "sha256": "78d60852226118e43eb2853f7de9baeac9aedc499ec4b50bbc17b16c5a00d5fd"
+    },
+    {
+      "file": "corbel_5.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "603bf3df53fadf4329c99052a0b9e1bb9678eca4639148cf38ba0ef5a17c586a"
+    },
+    {
+      "file": "nail.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "6d9d61d0df85b0b9d8e175fa1299c1eb3aa2fd3534bb5e25c4b8dd6f886f21d5"
+    },
+    {
+      "file": "portal.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "5690c280f86ddffb0b874d9a324a4eb7dc050874c5a640cab3b623b4976b56e0"
+    },
+    {
+      "file": "hinge.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "527ee1915e37b62bccb89d4e64205645d2ce9f5971352c24919c55a51194b82d"
+    },
+    {
+      "file": "coin.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "28775ee60316c232b11369cabc64a07874ef4b40608716fbc1bed39c41ff47aa"
+    },
+    {
+      "file": "key.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "eb226ccbf757acde46737d415fd2aef563de31d29a530c156224a6c5b7719435"
+    },
+    {
+      "file": "mercy.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "16abe9056dded7f5a699938c907fb443ce4478a367f12dfeb36a5d53e032269b"
+    },
+    {
+      "file": "heart.png",
+      "size": [
+        64,
+        64
+      ],
+      "sha256": "343c28db72c4b2bb972f656e10151922c4e071e5c1b30ca1735959a5dc12f278"
+    },
+    {
+      "file": "penitent_falling.png",
+      "size": [
+        96,
+        128
+      ],
+      "sha256": "1f28344ffc75c2c0d72d45d1cc70120ff2292b823c581d6412439afcc18d28d6"
+    },
+    {
+      "file": "penitent_kneeling.png",
+      "size": [
+        128,
+        64
+      ],
+      "sha256": "97f71d535d52fda81c4fd6909107a770a6ee7abbc4ba17873c586a5ee0305b9e"
+    },
+    {
+      "file": "pear_0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "55829dcf976c5ccdc28d13c722f3dc009e685b98a2594b91ed7a4477d2afa2b7"
+    },
+    {
+      "file": "pear_1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "9b0903fdc4b50bb4637b395096ffd5a2d1c0a20c47269c2679c028c13b6134ed"
+    },
+    {
+      "file": "pear_2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "07afc557d63b7ca3f5eed0f0c5f60391694b10f327aa98f4f6b6a720bdaec289"
+    },
+    {
+      "file": "boss_1_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "45c0e9e59035244b5f353bb0db896a344476767aad765ba04d8e0a7c30ee4694"
+    },
+    {
+      "file": "boss_1_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "bc1b8074ff60962247bb56f75dc07d717d170632defa1ab6c9a8d8e5eb4ee851"
+    },
+    {
+      "file": "boss_1_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "87516ab5686af54899f61d818a68e3ffaef30a2f07bf249b3a3fb0928c3feda2"
+    },
+    {
+      "file": "boss_2_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "35f0103e233143180590bf1cb313b4969cef95c4623157e9bf30bc5ad0d0764a"
+    },
+    {
+      "file": "boss_2_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "e8fd63ce607a74730cf14439c04f70f1dddead430d998ac04b3b956e9db321a7"
+    },
+    {
+      "file": "boss_2_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "b81f5e74b0a31a6c0f6e2e1075616f5f4266c2bf998f226dc9230c7053b16dfd"
+    },
+    {
+      "file": "boss_3_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "6f5ac735b1ee552b52869b245ee23de0539d327055909c1ff254bc5fc9cc8098"
+    },
+    {
+      "file": "boss_3_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "b68ff574fda96a35f4f1bb6d36bdd1d725ebedc244c47b0e7621b88230749f5d"
+    },
+    {
+      "file": "boss_3_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "9d2da57c338b2715340b6a958854ddf8fc1b5cc61f779c679488020916efbc9e"
+    },
+    {
+      "file": "boss_4_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "4900ae79102c146674829513c19119eac3686092e730788404a3358fe8e50b6e"
+    },
+    {
+      "file": "boss_4_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "8b51a555c77c28c2dd05a0281b0e3764247941c097ac8679e4f9386bdd0ed7ac"
+    },
+    {
+      "file": "boss_4_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "90337b1a16939e56a60098e84e6866886dda8e86b79eb06d556369d418b248c1"
+    },
+    {
+      "file": "boss_5_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "3fd73ddc81d2d2113471b3751ba9e63afd3db64330359e224ada67725817963c"
+    },
+    {
+      "file": "boss_5_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "a476bbbadd0009d488a3116a077e7e3970390ae4594f8e3e6893177ec6804631"
+    },
+    {
+      "file": "boss_5_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "218fa5a0bc3055d5bceb1eea54ef17aa73cca22fa1244b7003a2dd1bb595c15f"
+    }
+  ]
+}
