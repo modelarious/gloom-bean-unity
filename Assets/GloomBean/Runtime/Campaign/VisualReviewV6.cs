@@ -55,6 +55,7 @@ namespace GloomBean.Campaign
                 Time.timeScale=0;session.Notice("",0);yield return null;yield return new WaitForEndOfFrame();
                 var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(Path.Combine(dir,shot.id+".png"),image.EncodeToPNG());Destroy(image);count++;
                 var shapes=session.GetComponentsInChildren<Collider2D>(true);File.WriteAllText(Path.Combine(dir,shot.id+"-geometry.txt"),string.Join("\n",shapes.Select(c=>c.GetType().Name+"|"+c.name+"|"+c.isTrigger+"|"+c.gameObject.layer).OrderBy(s=>s)));
+                File.WriteAllText(Path.Combine(dir,shot.id+"-renderers.txt"),string.Join("\n",session.GetComponentsInChildren<SpriteRenderer>(true).Where(sr=>sr.enabled&&!sr.forceRenderingOff&&sr.sprite).Select(sr=>sr.name+"|"+sr.sprite.name+"|"+sr.sprite.texture.name+"|"+sr.bounds.center+"|"+sr.bounds.size+"|order="+sr.sortingOrder)));
                 Time.timeScale=1;follow.enabled=true;
             }
             File.WriteAllText(Path.Combine(dir,"visual-result.json"),JsonUtility.ToJson(new Receipt{status=errors.Count==0&&count==actual.Count?"PASS":"FAIL",scope="Native 240x160-rendered art fixtures: original ten camera centers/lenses retained, plus explicitly prefixed GBA tighter framing. Aspect is now 3:2. Bodies/forms staged; not input-driven route evidence. No progress awarded.",unity=Application.unityVersion,images=count,shots=actual.ToArray(),errors=errors.ToArray()},true));

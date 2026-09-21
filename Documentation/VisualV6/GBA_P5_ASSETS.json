@@ -1,0 +1,69 @@
+{
+  "scope": "Original boss pixel silhouettes and CC0-fragment False Empyrean composition; no collider or source-rule changes",
+  "assets": [
+    {
+      "name": "background_5.png",
+      "size": [
+        384,
+        240
+      ],
+      "sha256": "1bcf5a8bbe5b31fd4ae6c9644f05678c8f7f705fcb1c4d5def08f5173c1088b5"
+    },
+    {
+      "name": "fill_5.png",
+      "size": [
+        32,
+        32
+      ],
+      "sha256": "b7fe4611516652f6a38a0c7d0ae35e72527da8bceb18501cf9e4036faa69a738"
+    },
+    {
+      "name": "boss_4_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "ef0710305becb619455174f76abc08da8316522e0ed96ee576c992f2b71d3e3e"
+    },
+    {
+      "name": "boss_4_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "57991333b3ff3462ebc3d0f8a2cce81b6befff63a463f86bc62314617c645eb3"
+    },
+    {
+      "name": "boss_4_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "c6eea778f4fb29caf868b212e6a29b88b48d451f7b6ec8a33fdd2a9a5f0dd13d"
+    },
+    {
+      "name": "boss_5_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "3dedb1f77455760fad10fb0d6d2767e9e8aa6bde96b8bc5a7d111fcb4fd4275b"
+    },
+    {
+      "name": "boss_5_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "5a4e971d6e0aa16c0f260717141ada6b41738bb78835560515f5bb76e56b9050"
+    },
+    {
+      "name": "boss_5_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "d42a20cebf929f14a8fb892e137d6a11ad348306ac6b578b650ad69f48f6a490"
+    }
+  ]
+}
