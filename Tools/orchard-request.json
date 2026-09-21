@@ -1,14 +1,26 @@
 {
-  "id": "V6-GBA-P7-regression",
+  "id": "Broad-Visual-B3-regression",
   "build": false,
   "cases": [
     {
-      "name": "Mechanics",
+      "name": "Mechanics-and-25-stage-rendering",
       "suite": "Mechanics"
     },
     {
       "name": "Opening",
       "suite": "OpeningRoute"
+    },
+    {
+      "name": "Kitchen",
+      "suite": "Orchard",
+      "route": "GB-L06",
+      "practice": true
+    },
+    {
+      "name": "Wet-root",
+      "suite": "Orchard",
+      "route": "GB-L07",
+      "practice": true
     },
     {
       "name": "Mirror",
@@ -17,25 +29,23 @@
       "practice": true
     },
     {
-      "name": "Ink-secret",
+      "name": "Fresco",
+      "suite": "City",
+      "route": "GB-L10",
+      "practice": true
+    },
+    {
+      "name": "Weight",
+      "suite": "Fall",
+      "route": "GB-B4"
+    },
+    {
+      "name": "Ink",
       "suite": "Empyrean",
       "route": "GB-L19",
       "practice": true,
       "secrets": true,
       "renderFps": 60
-    },
-    {
-      "name": "Choir-secret",
-      "suite": "Empyrean",
-      "route": "GB-L17",
-      "practice": true,
-      "secrets": true,
-      "renderFps": 60
-    },
-    {
-      "name": "Weight-of-Everyone",
-      "suite": "Fall",
-      "route": "GB-B4"
     }
   ]
 }
