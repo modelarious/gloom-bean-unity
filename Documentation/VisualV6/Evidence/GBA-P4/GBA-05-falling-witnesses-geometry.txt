@@ -1,0 +1,57 @@
+BoxCollider2D|CROSSWIND|True|13
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Key|True|13
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Outward penitent 0|False|9
+BoxCollider2D|Outward penitent 1|False|9
+BoxCollider2D|Outward penitent 2|False|9
+BoxCollider2D|Outward penitent 3|False|9
+BoxCollider2D|Outward penitent 4|False|9
+BoxCollider2D|Outward penitent 5|False|9
+BoxCollider2D|Outward penitent 6|False|9
+BoxCollider2D|Outward penitent 7|False|9
+BoxCollider2D|Outward penitent 8|False|9
+BoxCollider2D|Outward penitent 9|False|9
+BoxCollider2D|Patrol 1|False|12
+BoxCollider2D|Penitent bearing the Mercy|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return penitent 0|False|9
+BoxCollider2D|Return penitent 1|False|9
+BoxCollider2D|Return penitent 2|False|9
+BoxCollider2D|Return penitent 3|False|9
+BoxCollider2D|Return penitent 4|False|9
+BoxCollider2D|Return penitent 5|False|9
+BoxCollider2D|Return penitent 6|False|9
+BoxCollider2D|Return penitent 7|False|9
+BoxCollider2D|Return penitent 8|False|9
+BoxCollider2D|Return penitent 9|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Tenant: Censer|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11

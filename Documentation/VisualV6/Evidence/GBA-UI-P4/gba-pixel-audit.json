@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "scope": "Exact integer pixel blocks/nonempty actual screenshots and optional collider name/type/layer/trigger census. Not an art ranking, collider-bounds proof or gameplay certificate.",
+  "controls": [
+    "positive native frame",
+    "single changed subpixel rejected",
+    "empty frame rejected",
+    "bilinear frame rejected",
+    "odd client-size integer viewport"
+  ],
+  "images": [
+    {
+      "name": "01-cute-title.png",
+      "sha256": "bf4d4dc5ed3ef500b05fcedd95be0a2ced8d006406a4084a6f0d39c049aa1d71",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 70,
+      "pass": true
+    },
+    {
+      "name": "02-controls.png",
+      "sha256": "06f02e599781c4a11a735b8535289fa38dd2ed82cc4076015a673142df51fccc",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 48,
+      "pass": true
+    },
+    {
+      "name": "03-cute-world-selection.png",
+      "sha256": "77d41586782c5d23f2e1b7f0cfd5635b34b8cefbe5bfc6d0ec0f3a40da8d2373",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 47,
+      "pass": true
+    },
+    {
+      "name": "04-cute-level-selection.png",
+      "sha256": "88671efca4a44e51b7f8079f9efee9d978ad8170a9a7dadaf7b319de809a4ef7",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 47,
+      "pass": true
+    },
+    {
+      "name": "05-sunday-entry.png",
+      "sha256": "7c17c00be5b8ec6620c75a9eebc6e85574a28734011998d24db7ffb904aadfb5",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 170,
+      "pass": true
+    },
+    {
+      "name": "06-keyboard-jump.png",
+      "sha256": "ab1ee2e415a006ab213ae22ff375e7ed678a269881728d97007faf716c630460",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 156,
+      "pass": true
+    },
+    {
+      "name": "07-real-pause.png",
+      "sha256": "718042995c77df3fcf64d8c1a8810472478195cca0082f0e2118d93bfbfe65c8",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 178,
+      "pass": true
+    },
+    {
+      "name": "07b-first-pause-selection.png",
+      "sha256": "0385e09663aa62b297101030f51682ec543f211d94a2ea0f753870b6bd7cc8d6",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 178,
+      "pass": true
+    },
+    {
+      "name": "07c-second-pause-selection.png",
+      "sha256": "8d781a7de2b2a706388bd187578a3d3caa133a44bd1abd6d4ae73a89af26df20",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 178,
+      "pass": true
+    },
+    {
+      "name": "08-returned-level-select.png",
+      "sha256": "88671efca4a44e51b7f8079f9efee9d978ad8170a9a7dadaf7b319de809a4ef7",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 47,
+      "pass": true
+    },
+    {
+      "name": "09-practice-world-select.png",
+      "sha256": "8ca5fc451525a9355291337853ba78b095a77ea4944e7958fd5b66eb1052a1d8",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 28,
+      "pass": true
+    },
+    {
+      "name": "10-final-world-practice.png",
+      "sha256": "81d54b6f59d1e6fb056dc20b3e3c8311ec596648e504a15e717c6e8769528280",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 27,
+      "pass": true
+    },
+    {
+      "name": "11-final-boss-native.png",
+      "sha256": "7815ba00e571ded5d22a9ad8a78f9c74124ae5365eaacdc49e77c9ddefa9c541",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 261,
+      "pass": true
+    },
+    {
+      "name": "12-boss-controls-front.png",
+      "sha256": "14b12ece493579fdf094263800415c0d93e0382768e1ce2efd71abb876b130ac",
+      "screen": [
+        1274,
+        783
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 4,
+      "viewport": [
+        157,
+        71,
+        960,
+        640
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 110,
+      "pass": true
+    }
+  ],
+  "geometry": []
+}

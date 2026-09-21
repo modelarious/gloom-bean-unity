@@ -1,0 +1,505 @@
+{
+  "status": "PASS",
+  "scope": "Exact integer pixel blocks/nonempty actual screenshots and optional collider name/type/layer/trigger census. Not an art ranking, collider-bounds proof or gameplay certificate.",
+  "controls": [
+    "positive native frame",
+    "single changed subpixel rejected",
+    "empty frame rejected",
+    "bilinear frame rejected",
+    "odd client-size integer viewport"
+  ],
+  "images": [
+    {
+      "name": "01-cute-parade.png",
+      "sha256": "bddb97b93d00404b2cd4f2dffa07251ffed14873c56cd87222594ba2dd5b252d",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 198,
+      "pass": true
+    },
+    {
+      "name": "02-puppet-machinery.png",
+      "sha256": "73efd786b05d87e01fd5b245aa996ff42a3412a05573e0461b3b24557010a190",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 179,
+      "pass": true
+    },
+    {
+      "name": "03-orchard.png",
+      "sha256": "effb218272268f7013e8caf4c00b013dd0ff6ac5d6651b90d67f2c976bd62220",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 211,
+      "pass": true
+    },
+    {
+      "name": "04-mirror-tenement.png",
+      "sha256": "0887b5c9fae03c474405d3b8166f7776da9660754103dac50c6a5e384eaa2f3a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 288,
+      "pass": true
+    },
+    {
+      "name": "05-falling-witnesses.png",
+      "sha256": "516cf62520cf451b6f8e3fccb19ad750f2496776d64fe968f0862872f3b4981b",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 216,
+      "pass": true
+    },
+    {
+      "name": "06-cathedral.png",
+      "sha256": "4109f7f9bdf8c251b0322c39f3901cc64e6c04e221747e89083628d64204ce85",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 165,
+      "pass": true
+    },
+    {
+      "name": "07-iron-choir.png",
+      "sha256": "d313158e60ba4708177cf08e5d8f1f5f1b2fdcb485680e57142b28a9afb8f4a5",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 161,
+      "pass": true
+    },
+    {
+      "name": "08-scripture.png",
+      "sha256": "a95c2f3ce743a0e6c243c8cf37e7a0b02aa72410b2487eea2af557f393dd2fca",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 158,
+      "pass": true
+    },
+    {
+      "name": "09-mass-boss.png",
+      "sha256": "d023c41d99952da00fad5ffd777dca63b2bd513cec4eb57f4fdec6442ca98bbb",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 251,
+      "pass": true
+    },
+    {
+      "name": "10-final-host.png",
+      "sha256": "d6291b92fd3e1864f87eaec64b28add58c0eb23e5113899b1868a34e31bc7786",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 307,
+      "pass": true
+    },
+    {
+      "name": "GBA-01-cute-parade.png",
+      "sha256": "f71a7ea12c9821dc3225aab2ee731778c0ffd3f5cd3ba908fa0c9873e853bffb",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 173,
+      "pass": true
+    },
+    {
+      "name": "GBA-02-puppet-machinery.png",
+      "sha256": "b3e0baf5ff596aa96ae8d1e4f29a0f0a2840e33e3977d45d8cdebbc0e71aafb8",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 161,
+      "pass": true
+    },
+    {
+      "name": "GBA-03-orchard.png",
+      "sha256": "ad30d228e9e33ff154fe405b8adcd60712cc1cc9a81b7c6607ae48e35cc88df7",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 187,
+      "pass": true
+    },
+    {
+      "name": "GBA-04-mirror-tenement.png",
+      "sha256": "0887b5c9fae03c474405d3b8166f7776da9660754103dac50c6a5e384eaa2f3a",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 288,
+      "pass": true
+    },
+    {
+      "name": "GBA-05-falling-witnesses.png",
+      "sha256": "f4a952f3de20de5acd2e8d76902a2cf30577db941c12a14c82d252706791604f",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 158,
+      "pass": true
+    },
+    {
+      "name": "GBA-06-cathedral.png",
+      "sha256": "de5d15f464bdfe237651581adc63473962e8308a50fe29cd4f0206fca28d3a87",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 145,
+      "pass": true
+    },
+    {
+      "name": "GBA-07-iron-choir.png",
+      "sha256": "357b9f902bd7556d78ef8348ed9aa9b0a0bb28c3f8ac23777c55eb524baeba35",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 116,
+      "pass": true
+    },
+    {
+      "name": "GBA-08-scripture.png",
+      "sha256": "36d242da2226d4da982aa293de0642d1006a1c96e1c3c5aaad6909a60b736cfd",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 96,
+      "pass": true
+    },
+    {
+      "name": "GBA-09-mass-boss.png",
+      "sha256": "9201e94ee8db21a0cdd8ba25b7576d9048ab542bc1cfc54fd63f653ab6f098aa",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 267,
+      "pass": true
+    },
+    {
+      "name": "GBA-10-final-host.png",
+      "sha256": "303f11af73f6c35d471e89f47bffcaeeca8f8c2b95468dead952fd56a4128a36",
+      "screen": [
+        1280,
+        800
+      ],
+      "logical": [
+        240,
+        160
+      ],
+      "scale": 5,
+      "viewport": [
+        40,
+        0,
+        1200,
+        800
+      ],
+      "mixed_pixel_blocks": false,
+      "distinct_logical_colors": 348,
+      "pass": true
+    }
+  ],
+  "geometry": [
+    {
+      "file": "01-cute-parade-geometry.txt",
+      "same": true,
+      "colliders": 49
+    },
+    {
+      "file": "02-puppet-machinery-geometry.txt",
+      "same": true,
+      "colliders": 27
+    },
+    {
+      "file": "03-orchard-geometry.txt",
+      "same": true,
+      "colliders": 34
+    },
+    {
+      "file": "04-mirror-tenement-geometry.txt",
+      "same": true,
+      "colliders": 55
+    },
+    {
+      "file": "05-falling-witnesses-geometry.txt",
+      "same": true,
+      "colliders": 57
+    },
+    {
+      "file": "06-cathedral-geometry.txt",
+      "same": true,
+      "colliders": 44
+    },
+    {
+      "file": "07-iron-choir-geometry.txt",
+      "same": true,
+      "colliders": 55
+    },
+    {
+      "file": "08-scripture-geometry.txt",
+      "same": true,
+      "colliders": 52
+    },
+    {
+      "file": "09-mass-boss-geometry.txt",
+      "same": true,
+      "colliders": 36
+    },
+    {
+      "file": "10-final-host-geometry.txt",
+      "same": true,
+      "colliders": 95
+    }
+  ]
+}
