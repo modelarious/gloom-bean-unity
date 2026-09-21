@@ -1,14 +1,20 @@
 {
-  "id": "Broad-Visual-B6-regression",
+  "id": "QualityBar-Q6-regression",
   "build": false,
   "cases": [
     {
-      "name": "Mechanics-and-25-stage-rendering",
+      "name": "Mechanics-all25-renderers",
       "suite": "Mechanics"
     },
     {
       "name": "Opening",
       "suite": "OpeningRoute"
+    },
+    {
+      "name": "Laundry",
+      "suite": "Parish",
+      "route": "GB-L03",
+      "practice": true
     },
     {
       "name": "Kitchen",
@@ -20,6 +26,12 @@
       "name": "Wet-root",
       "suite": "Orchard",
       "route": "GB-L07",
+      "practice": true
+    },
+    {
+      "name": "Seasons",
+      "suite": "Orchard",
+      "route": "GB-L08",
       "practice": true
     },
     {
@@ -35,28 +47,36 @@
       "practice": true
     },
     {
+      "name": "Procession",
+      "suite": "Fall",
+      "route": "GB-L15",
+      "practice": true
+    },
+    {
       "name": "Weight",
       "suite": "Fall",
       "route": "GB-B4"
     },
     {
-      "name": "Ink",
+      "name": "Choir",
       "suite": "Empyrean",
-      "route": "GB-L19",
+      "route": "GB-L17",
       "practice": true,
       "secrets": true,
       "renderFps": 60
     },
     {
-      "name": "Surveyor",
-      "suite": "City",
-      "route": "GB-B3",
-      "practice": true
-    },
-    {
-      "name": "Noon-shadows",
+      "name": "Noon-shadow",
       "suite": "Empyrean",
       "route": "GB-L18",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Ink",
+      "suite": "Empyrean",
+      "route": "GB-L19",
       "practice": true,
       "secrets": true,
       "renderFps": 60
