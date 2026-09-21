@@ -1,0 +1,384 @@
+{
+  "status": "PASS",
+  "scope": "Native complete campaign, exact earned-save lineage and ending boundaries; not blind human acceptance or public publication",
+  "source": {
+    "settings": "552a717f21e59d1d7c65bde3cda9507b45601e50",
+    "head": "cc40096f1afa50b1d102c0cc7b75308bfd63d819",
+    "assets": "da0436ee9f4dda935dfbe2f8d2998343276c9703",
+    "packages": "3d7201db080528e09addee6e2cbe2cac9ae5461d"
+  },
+  "managed_assembly_sha256": "b6322fa1600134a47a903c17f3a08d2044f187b8e06758e039f377889a4a3746",
+  "case_count": 54,
+  "expected_negative_cases": 5,
+  "cases": [
+    {
+      "name": "Foundation",
+      "assertions": 72,
+      "expected_denial": false,
+      "result_sha256": "c7cd8f01a2116646127270c2a14f701df2036f1d23ec84f9b62fa8bdf6223ce8"
+    },
+    {
+      "name": "Mechanics",
+      "assertions": 313,
+      "expected_denial": false,
+      "result_sha256": "a9b4607b7d9f58a0e364ff6f405d795c0c9b15b0950329ea1b48afb18471534b"
+    },
+    {
+      "name": "W1-critical",
+      "assertions": 138,
+      "expected_denial": false,
+      "result_sha256": "ae5d588013a60034cbad490d2fd397a6eab6e02564bca29da499c1dd7311c60c"
+    },
+    {
+      "name": "W1-secrets",
+      "assertions": 174,
+      "expected_denial": false,
+      "result_sha256": "44d51eaedb66fb89a6c9393a632930c2ae4fb19cce318c574e14eb5c3e3c28c4"
+    },
+    {
+      "name": "W2-critical",
+      "assertions": 318,
+      "expected_denial": false,
+      "result_sha256": "664350cc03fecd63a0fd45f7519cd6eaf0ee55f612541a3a0df71599040daaaa"
+    },
+    {
+      "name": "W2-secrets",
+      "assertions": 374,
+      "expected_denial": false,
+      "result_sha256": "07767943f9ae1eef85e04470866a23fe3320064cc264d4f735c0560d6b7dbaff"
+    },
+    {
+      "name": "W3-critical",
+      "assertions": 284,
+      "expected_denial": false,
+      "result_sha256": "0b7bd5cd2e7e549c0a90aee7d61d878121be87c81008a58ce1bf3b8361bf78f7"
+    },
+    {
+      "name": "W3-secrets",
+      "assertions": 327,
+      "expected_denial": false,
+      "result_sha256": "be471fe5722bf98954941f7c9d297de784f0bcb7e6aaaec210404af1ad269eae"
+    },
+    {
+      "name": "Surveyor",
+      "assertions": 42,
+      "expected_denial": false,
+      "result_sha256": "571a1cd3a8c12681a53bf1806a2e329cb1062ae48da37533c32ebed1852e46c2"
+    },
+    {
+      "name": "City-practice",
+      "assertions": 47,
+      "expected_denial": false,
+      "result_sha256": "94548c2b7aae12b13a8a8accd6ff4781edfbf659a05acc319f041882d5a20bc6"
+    },
+    {
+      "name": "City-unearned-denied",
+      "assertions": 0,
+      "expected_denial": true,
+      "result_sha256": "3e6188a9f4059115223ba947e465b15af4cf2c72cff6d97dab8efb88ee33b8f5"
+    },
+    {
+      "name": "L13-ordinary",
+      "assertions": 178,
+      "expected_denial": false,
+      "result_sha256": "0c08b3653f5b364598a7a9c242dfc7924463be65d3abdf1ec629215d33dae553"
+    },
+    {
+      "name": "L14-ordinary",
+      "assertions": 54,
+      "expected_denial": false,
+      "result_sha256": "2e1255803335b8602683ccdffbbc4b9b6645c01b007a67999e5fcfb7acab89cb"
+    },
+    {
+      "name": "L15-ordinary",
+      "assertions": 45,
+      "expected_denial": false,
+      "result_sha256": "b95592a49e824550d8f6b902ccd8d64123897916b67ae97ce57ba4dba05c057f"
+    },
+    {
+      "name": "L16-ordinary",
+      "assertions": 38,
+      "expected_denial": false,
+      "result_sha256": "9ef33614ae531212e63943fee44edd6f4c4d41088869a9c1ed7f29229a066f06"
+    },
+    {
+      "name": "W4-critical",
+      "assertions": 106,
+      "expected_denial": false,
+      "result_sha256": "356c83c59632ea6781d8e12ef0848cfd8e3c4b1feed176da6befb45dc4594601"
+    },
+    {
+      "name": "L13-secret",
+      "assertions": 203,
+      "expected_denial": false,
+      "result_sha256": "ada1ed8f59accc8695685b851ae14d3e4cda417cc784aa36d20db1cb93de50df"
+    },
+    {
+      "name": "L14-secret",
+      "assertions": 60,
+      "expected_denial": false,
+      "result_sha256": "cfddd11b977a88fcc443f01c938c38d8a50c3dbc12173a8f936cd3b906f97277"
+    },
+    {
+      "name": "L15-secret",
+      "assertions": 51,
+      "expected_denial": false,
+      "result_sha256": "70978486825ce0564a0cb41bb2198a3c86870d3df3f4636c4f319540fe05736b"
+    },
+    {
+      "name": "L16-secret",
+      "assertions": 43,
+      "expected_denial": false,
+      "result_sha256": "96b357d7cb9fd283ee5ea17ba368643f6274e9d864702e9972bf9301df66279e"
+    },
+    {
+      "name": "W4-secrets",
+      "assertions": 106,
+      "expected_denial": false,
+      "result_sha256": "356c83c59632ea6781d8e12ef0848cfd8e3c4b1feed176da6befb45dc4594601"
+    },
+    {
+      "name": "Weight-of-Everyone",
+      "assertions": 104,
+      "expected_denial": false,
+      "result_sha256": "9fed4d960102cd2f3cb4ac1519ccd3d4185fec558230cf0d062edc66066a9281"
+    },
+    {
+      "name": "Fall-practice",
+      "assertions": 44,
+      "expected_denial": false,
+      "result_sha256": "5572fb130e2bdac21e33979dc875dcdd01c94a3c86e4e88815d9713687a73245"
+    },
+    {
+      "name": "Fall-unearned-denied",
+      "assertions": 0,
+      "expected_denial": true,
+      "result_sha256": "8e9cb402e6b91dc304fe5704c1902b281910fc66f9244b0a48afd9102338b616"
+    },
+    {
+      "name": "L17-ordinary",
+      "assertions": 43,
+      "expected_denial": false,
+      "result_sha256": "47871bc326dead616aaf1100f305593a7af8c51f0b12b287c25198f0fe95530d"
+    },
+    {
+      "name": "L17-secret",
+      "assertions": 48,
+      "expected_denial": false,
+      "result_sha256": "e2101724612eeb29bf85cedc47eef88d377d31ff92a59f9e37bb18dabd907bcc"
+    },
+    {
+      "name": "L18-ordinary",
+      "assertions": 59,
+      "expected_denial": false,
+      "result_sha256": "967f9d64eef8595b0ad653b7a253238072ec000b8ee3356d18f315381607b6a6"
+    },
+    {
+      "name": "L18-secret",
+      "assertions": 76,
+      "expected_denial": false,
+      "result_sha256": "74d2a5d47dedc2fa26606ac01291be49f7ab24485dd915be4b627ca0c0de5c78"
+    },
+    {
+      "name": "Empyrean-practice",
+      "assertions": 48,
+      "expected_denial": false,
+      "result_sha256": "e2101724612eeb29bf85cedc47eef88d377d31ff92a59f9e37bb18dabd907bcc"
+    },
+    {
+      "name": "Empyrean-unearned-world",
+      "assertions": 0,
+      "expected_denial": true,
+      "result_sha256": "7a34d963342d3468dc800b396547d8428082bc2a889fdc3918d2e098c1b163b0"
+    },
+    {
+      "name": "Empyrean-unearned-stage",
+      "assertions": 0,
+      "expected_denial": true,
+      "result_sha256": "7a34d963342d3468dc800b396547d8428082bc2a889fdc3918d2e098c1b163b0"
+    },
+    {
+      "name": "L17-30fps",
+      "assertions": 43,
+      "expected_denial": false,
+      "result_sha256": "47871bc326dead616aaf1100f305593a7af8c51f0b12b287c25198f0fe95530d"
+    },
+    {
+      "name": "L18-secret-30fps",
+      "assertions": 76,
+      "expected_denial": false,
+      "result_sha256": "74d2a5d47dedc2fa26606ac01291be49f7ab24485dd915be4b627ca0c0de5c78"
+    },
+    {
+      "name": "L19-ordinary",
+      "assertions": 78,
+      "expected_denial": false,
+      "result_sha256": "8bb9bed5f727d6b05b905dc5739e53395ad8f8f0a4d106dfca2b68db06d14f2b"
+    },
+    {
+      "name": "L19-secret",
+      "assertions": 97,
+      "expected_denial": false,
+      "result_sha256": "0c71f7a507ebe8f14b331de82af95e32c7dd2b6213b0fa32d2d09c602a920b28"
+    },
+    {
+      "name": "L20-ordinary",
+      "assertions": 159,
+      "expected_denial": false,
+      "result_sha256": "d8db9c261325f0a232fc05be825201f5de3f8be4a6dd1810bbd48f23bf7e494b"
+    },
+    {
+      "name": "L20-secret",
+      "assertions": 169,
+      "expected_denial": false,
+      "result_sha256": "0d73b4d9fb2a43a5dc63d3623153579f82499f325ae786bdf26b257ded9f70aa"
+    },
+    {
+      "name": "Final-ordinary",
+      "assertions": 51,
+      "expected_denial": false,
+      "result_sha256": "cb150db3ba6c1048674ca146f365008d097419f9a8c4c85d01333ebcb47d0173"
+    },
+    {
+      "name": "Final-restored",
+      "assertions": 54,
+      "expected_denial": false,
+      "result_sha256": "b3b1fecff9a331d07f0d0c51afcf04e97c44e46ef231728f1f9e1bae85bcf151"
+    },
+    {
+      "name": "L20-nineteen-Mercies",
+      "assertions": 159,
+      "expected_denial": false,
+      "result_sha256": "d8db9c261325f0a232fc05be825201f5de3f8be4a6dd1810bbd48f23bf7e494b"
+    },
+    {
+      "name": "Final-nineteen-not-restored",
+      "assertions": 54,
+      "expected_denial": false,
+      "result_sha256": "b3b1fecff9a331d07f0d0c51afcf04e97c44e46ef231728f1f9e1bae85bcf151"
+    },
+    {
+      "name": "L20-alternative-sanctums",
+      "assertions": 168,
+      "expected_denial": false,
+      "result_sha256": "bb5a153096996e17bea2dde6498c0d8359d6f111bf13b050a85952ab94d8d3c8"
+    },
+    {
+      "name": "Final-unearned-stage",
+      "assertions": 0,
+      "expected_denial": true,
+      "result_sha256": "7a34d963342d3468dc800b396547d8428082bc2a889fdc3918d2e098c1b163b0"
+    },
+    {
+      "name": "L19-practice-secret",
+      "assertions": 97,
+      "expected_denial": false,
+      "result_sha256": "0c71f7a507ebe8f14b331de82af95e32c7dd2b6213b0fa32d2d09c602a920b28"
+    },
+    {
+      "name": "Final-practice",
+      "assertions": 49,
+      "expected_denial": false,
+      "result_sha256": "15741c991c51bb52af939b7da2859dd75a37ce25d52de810a917f741303b5256"
+    },
+    {
+      "name": "Pair-magnet-shadow",
+      "assertions": 48,
+      "expected_denial": false,
+      "result_sha256": "e2101724612eeb29bf85cedc47eef88d377d31ff92a59f9e37bb18dabd907bcc"
+    },
+    {
+      "name": "Pair-echo-ink",
+      "assertions": 51,
+      "expected_denial": false,
+      "result_sha256": "cb150db3ba6c1048674ca146f365008d097419f9a8c4c85d01333ebcb47d0173"
+    },
+    {
+      "name": "Pair-wax-gullet",
+      "assertions": 62,
+      "expected_denial": false,
+      "result_sha256": "0a80722e94e0b764a2eed290f4af3890033536eb5e89772a0ecc4cc771e7252b"
+    },
+    {
+      "name": "Pair-stitch-coffin",
+      "assertions": 51,
+      "expected_denial": false,
+      "result_sha256": "cb150db3ba6c1048674ca146f365008d097419f9a8c4c85d01333ebcb47d0173"
+    },
+    {
+      "name": "Pair-mirror-parallax",
+      "assertions": 51,
+      "expected_denial": false,
+      "result_sha256": "cb150db3ba6c1048674ca146f365008d097419f9a8c4c85d01333ebcb47d0173"
+    },
+    {
+      "name": "L19-practice-30fps",
+      "assertions": 97,
+      "expected_denial": false,
+      "result_sha256": "0c71f7a507ebe8f14b331de82af95e32c7dd2b6213b0fa32d2d09c602a920b28"
+    },
+    {
+      "name": "L19-secret-delay",
+      "assertions": 96,
+      "expected_denial": false,
+      "result_sha256": "2810cf74820d6df8e01ccb005743a22f51a5cd16070aa521f06a325e0157534b"
+    },
+    {
+      "name": "Scripture-no-Ink-control",
+      "assertions": 5,
+      "expected_denial": false,
+      "result_sha256": "b65cf5a4b1b5038c58fad54511e81b92eaff275220dd7455a11866b4d931432c"
+    },
+    {
+      "name": "L19-practice-120fps-delay",
+      "assertions": 96,
+      "expected_denial": false,
+      "result_sha256": "2810cf74820d6df8e01ccb005743a22f51a5cd16070aa521f06a325e0157534b"
+    }
+  ],
+  "endings": [
+    {
+      "name": "Final-ordinary",
+      "mercies": 0,
+      "cleared": 25,
+      "restored": false,
+      "image_sha256": "81f9b38f9502d805e1858ab550ce93528ba1c1826cb1817331157a2f01cafc59",
+      "save_sha256": "66879d868c3e860ade63b8909e9254fdf432dc0560b5bf5f7520ece1ce8d3524"
+    },
+    {
+      "name": "Final-nineteen-not-restored",
+      "mercies": 19,
+      "cleared": 25,
+      "restored": false,
+      "image_sha256": "81f9b38f9502d805e1858ab550ce93528ba1c1826cb1817331157a2f01cafc59",
+      "save_sha256": "c59d5d08f83acb13e3e229f3b41fa90ae9b286ea5d1bf2931bfa1c1d892cffe3"
+    },
+    {
+      "name": "Final-restored",
+      "mercies": 20,
+      "cleared": 25,
+      "restored": true,
+      "image_sha256": "caf2ee6cec786036cf048f3844160dd081a5475b3f3dca145674501c9071f309",
+      "save_sha256": "de50dfa85e434367f8d644eb9fc2a68f4486af90f1a01e625d480ba63c849448"
+    }
+  ],
+  "builds": {
+    "foundation": {
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 0,
+      "bytes": 153036738,
+      "unity": "6000.5.9f1"
+    },
+    "atlas": {
+      "result": "Succeeded",
+      "errors": 0,
+      "warnings": 24,
+      "bytes": 97842095,
+      "unity": "6000.5.9f1"
+    }
+  },
+  "runner_sha256": "058f47a704715f885ef0e6a698ebd67355815117219ebe295ab869fa7201e386",
+  "config_sha256": "138e7b54d8d2a504802f060d48228f186a0c54f94869989f6f24bde95b9ae0f3",
+  "manual_acceptance": "UNKNOWN"
+}

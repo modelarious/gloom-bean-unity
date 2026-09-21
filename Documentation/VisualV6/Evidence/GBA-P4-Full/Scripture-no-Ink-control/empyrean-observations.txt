@@ -1,0 +1,8 @@
+BEGIN GB-L19 Scripture That Writes Back
+CAUSAL CONTROL ONLY: same physical opening, recording disabled with its real action button.
+PASS GB-L19 walk 8 body=(7.79, 8.75) velocity=(1.61, 0.00) feet=8.004998 hp=6
+PASS GB-L19 real input stops recording body=(7.80, 8.75) velocity=(0.00, 0.00) feet=8.004998 hp=6
+PASS GB-L19 walk 17 body=(16.79, 1.75) velocity=(1.60, 0.00) feet=1.004633 hp=6
+PASS GB-L19 control reaches the original lower margin body=(16.79, 1.75) velocity=(1.60, 0.00) feet=1.004633 hp=6
+PASS GB-L19 without the recorded fall ordinary jumps do not reach the comma body=(15.80, 1.75) velocity=(-0.20, 0.00) feet=1.004375 hp=6
+CONTROL max feet=3.369744

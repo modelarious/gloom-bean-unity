@@ -1,0 +1,163 @@
+BEGIN GB-B4 The Weight of Everyone
+PASS GB-B4 walk 6.6 | (6.39, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-B4 jump 9 / 1 peak 2.37 | (8.78, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (8.78, 1.75) feet=1.00 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (8.78, 1.76) feet=1.01 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (8.78, 1.76) feet=1.01 hp=6 twin=none
+BACK t=5.27 body=(8.80, 1.96) feet=1.211666 velocity=(0.75, 12.40) target=(12.00, 1.25) pose=Kneeling phaseTime=3.05141 scale=0.6246353
+BACK t=5.40 body=(9.14, 3.28) feet=2.525 velocity=(3.95, 7.87) target=(12.00, 1.25) pose=Kneeling phaseTime=3.143694 scale=0.7455904
+BACK t=5.53 body=(9.83, 3.98) feet=3.233889 velocity=(5.50, 3.33) target=(12.00, 1.25) pose=Kneeling phaseTime=3.249923 scale=0.8285841
+BACK t=5.67 body=(10.56, 4.09) feet=3.338334 velocity=(5.50, -1.20) target=(12.00, 1.25) pose=Kneeling phaseTime=3.363281 scale=0.8563235
+BACK t=5.80 body=(11.19, 3.59) feet=2.838334 velocity=(3.64, -5.73) target=(12.00, 1.25) pose=Kneeling phaseTime=3.473361 scale=0.7828383
+BACK t=5.94 body=(11.55, 2.48) feet=1.73389 velocity=(2.04, -10.27) target=(12.00, 1.25) pose=Kneeling phaseTime=3.559784 scale=0.5003619
+PASS GB-B4 land on real back of Falling congregation limb 0 | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (11.73, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 walk 12.8 | (12.60, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (12.60, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (12.61, 2.25) feet=1.50 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (12.61, 2.25) feet=1.50 hp=6 twin=none
+BACK t=14.12 body=(12.63, 2.46) feet=1.711666 velocity=(0.75, 12.40) target=(16.00, 2.95) pose=Kneeling phaseTime=0.01023038 scale=0.6138231
+BACK t=14.25 body=(12.97, 3.77) feet=3.024999 velocity=(3.95, 7.87) target=(16.00, 2.95) pose=Kneeling phaseTime=0.09181305 scale=0.6151688
+BACK t=14.39 body=(13.66, 4.48) feet=3.733888 velocity=(5.50, 3.33) target=(16.00, 2.95) pose=Kneeling phaseTime=0.173375 scale=0.6042274
+BACK t=14.52 body=(14.39, 4.59) feet=3.838333 velocity=(5.50, -1.20) target=(16.00, 2.95) pose=Kneeling phaseTime=0.2508931 scale=0.5531868
+BACK t=14.65 body=(15.08, 4.09) feet=3.338333 velocity=(4.18, -5.73) target=(16.00, 2.95) pose=Kneeling phaseTime=0.3142568 scale=0.3972673
+BACK t=14.79 body=(15.48, 3.95) feet=3.203362 velocity=(2.34, 0.00) target=(16.00, 2.95) pose=Kneeling phaseTime=0.3587683 scale=0.3226891
+BACK t=14.92 body=(15.71, 3.95) feet=3.204725 velocity=(1.31, 0.00) target=(16.00, 2.95) pose=Kneeling phaseTime=0.4031187 scale=0.3461594
+PASS GB-B4 land on real back of Falling congregation limb 1 | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (15.73, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 walk 16.8 | (16.60, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (16.60, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (16.61, 3.95) feet=3.20 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (16.61, 3.95) feet=3.20 hp=6 twin=none
+BACK t=17.22 body=(16.63, 4.16) feet=3.411666 velocity=(0.75, 12.40) target=(20.00, 4.65) pose=Kneeling phaseTime=3.955281 scale=0.6719332
+BACK t=17.35 body=(16.97, 5.47) feet=4.724999 velocity=(3.95, 7.87) target=(20.00, 4.65) pose=Kneeling phaseTime=4.045009 scale=0.6790263
+BACK t=17.49 body=(17.66, 6.18) feet=5.433888 velocity=(5.50, 3.33) target=(20.00, 4.65) pose=Kneeling phaseTime=4.135554 scale=0.6741858
+BACK t=17.62 body=(18.39, 6.29) feet=5.538333 velocity=(5.50, -1.20) target=(20.00, 4.65) pose=Kneeling phaseTime=4.222746 scale=0.6268163
+BACK t=17.76 body=(19.08, 5.79) feet=5.038333 velocity=(4.18, -5.73) target=(20.00, 4.65) pose=Kneeling phaseTime=4.295237 scale=0.4575013
+BACK t=17.89 body=(19.48, 5.65) feet=4.903361 velocity=(2.34, 0.00) target=(20.00, 4.65) pose=Kneeling phaseTime=4.346709 scale=0.3761773
+BACK t=18.02 body=(19.71, 5.65) feet=4.904725 velocity=(1.31, 0.00) target=(20.00, 4.65) pose=Kneeling phaseTime=4.399324 scale=0.4171465
+PASS GB-B4 land on real back of Falling congregation limb 2 | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (19.73, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 walk 20.8 | (20.60, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (20.60, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (20.61, 5.65) feet=4.90 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (20.61, 5.65) feet=4.90 hp=6 twin=none
+BACK t=25.05 body=(20.62, 5.86) feet=5.111666 velocity=(0.75, 12.40) target=(24.00, 6.35) pose=Kneeling phaseTime=0.01023129 scale=0.6138772
+BACK t=25.19 body=(20.96, 7.17) feet=6.424999 velocity=(3.95, 7.87) target=(24.00, 6.35) pose=Kneeling phaseTime=0.0918216 scale=0.6152275
+BACK t=25.32 body=(21.66, 7.88) feet=7.133888 velocity=(5.50, 3.33) target=(24.00, 6.35) pose=Kneeling phaseTime=0.1733912 scale=0.6042832
+BACK t=25.45 body=(22.39, 7.99) feet=7.238333 velocity=(5.50, -1.20) target=(24.00, 6.35) pose=Kneeling phaseTime=0.2509164 scale=0.5532376
+BACK t=25.59 body=(23.08, 7.49) feet=6.738333 velocity=(4.18, -5.73) target=(24.00, 6.35) pose=Kneeling phaseTime=0.3142859 scale=0.3972953
+BACK t=25.72 body=(23.48, 7.35) feet=6.603362 velocity=(2.34, 0.00) target=(24.00, 6.35) pose=Kneeling phaseTime=0.3588 scale=0.3227018
+BACK t=25.86 body=(23.71, 7.35) feet=6.604725 velocity=(1.31, 0.00) target=(24.00, 6.35) pose=Kneeling phaseTime=0.4031515 scale=0.3461647
+PASS GB-B4 land on real back of Falling congregation limb 3 | (23.73, 7.35) feet=6.60 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (23.73, 7.35) feet=6.60 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (23.73, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (23.73, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (23.73, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (23.73, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 walk 24.8 | (24.60, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (24.60, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (24.61, 7.36) feet=6.61 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (24.61, 7.36) feet=6.61 hp=6 twin=none
+BACK t=28.15 body=(24.63, 7.56) feet=6.811666 velocity=(0.75, 12.40) target=(28.00, 8.05) pose=Kneeling phaseTime=3.239734 scale=0.6719348
+BACK t=28.29 body=(24.97, 8.88) feet=8.125 velocity=(3.95, 7.87) target=(28.00, 8.05) pose=Kneeling phaseTime=3.329462 scale=0.679028
+BACK t=28.42 body=(25.66, 9.58) feet=8.833889 velocity=(5.50, 3.33) target=(28.00, 8.05) pose=Kneeling phaseTime=3.420007 scale=0.6741875
+BACK t=28.56 body=(26.39, 9.69) feet=8.938334 velocity=(5.50, -1.20) target=(28.00, 8.05) pose=Kneeling phaseTime=3.5072 scale=0.6268181
+BACK t=28.69 body=(27.08, 9.19) feet=8.438334 velocity=(4.18, -5.73) target=(28.00, 8.05) pose=Kneeling phaseTime=3.579691 scale=0.457502
+BACK t=28.82 body=(27.48, 9.05) feet=8.303362 velocity=(2.34, 0.00) target=(28.00, 8.05) pose=Kneeling phaseTime=3.631164 scale=0.3761779
+BACK t=28.95 body=(27.71, 9.05) feet=8.304726 velocity=(1.31, 0.00) target=(28.00, 8.05) pose=Kneeling phaseTime=3.68378 scale=0.4171467
+PASS GB-B4 land on real back of Falling congregation limb 4 | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (27.73, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 walk 28.8 | (28.60, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (28.60, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (28.61, 9.05) feet=8.30 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (28.61, 9.05) feet=8.30 hp=6 twin=none
+BACK t=37.72 body=(28.62, 9.26) feet=8.511665 velocity=(0.75, 12.40) target=(32.00, 9.75) pose=Kneeling phaseTime=0.01023129 scale=0.6138772
+BACK t=37.86 body=(28.96, 10.58) feet=9.824998 velocity=(3.95, 7.87) target=(32.00, 9.75) pose=Kneeling phaseTime=0.0918216 scale=0.6152275
+BACK t=37.99 body=(29.66, 11.28) feet=10.53389 velocity=(5.50, 3.33) target=(32.00, 9.75) pose=Kneeling phaseTime=0.1733912 scale=0.6042831
+BACK t=38.12 body=(30.39, 11.39) feet=10.63833 velocity=(5.50, -1.20) target=(32.00, 9.75) pose=Kneeling phaseTime=0.2509164 scale=0.5532374
+BACK t=38.25 body=(31.08, 10.89) feet=10.13833 velocity=(4.18, -5.73) target=(32.00, 9.75) pose=Kneeling phaseTime=0.3142858 scale=0.3972949
+BACK t=38.39 body=(31.48, 10.75) feet=10.00336 velocity=(2.34, 0.00) target=(32.00, 9.75) pose=Kneeling phaseTime=0.3587999 scale=0.3227018
+BACK t=38.52 body=(31.71, 10.75) feet=10.00473 velocity=(1.31, 0.00) target=(32.00, 9.75) pose=Kneeling phaseTime=0.4031514 scale=0.3461649
+PASS GB-B4 land on real back of Falling congregation limb 5 | (31.73, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (31.73, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (31.73, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (31.73, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (31.73, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (31.73, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 walk 32.8 | (32.60, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (32.60, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (32.61, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 kneeling back becomes a physical landing | (32.61, 10.76) feet=10.01 hp=6 twin=none
+BACK t=40.82 body=(32.63, 10.96) feet=10.21167 velocity=(0.75, 12.40) target=(36.00, 11.45) pose=Kneeling phaseTime=3.655289 scale=0.6719349
+BACK t=40.95 body=(32.97, 12.28) feet=11.525 velocity=(3.95, 7.87) target=(36.00, 11.45) pose=Kneeling phaseTime=3.745017 scale=0.679028
+BACK t=41.08 body=(33.66, 12.98) feet=12.23389 velocity=(5.50, 3.33) target=(36.00, 11.45) pose=Kneeling phaseTime=3.835562 scale=0.6741873
+BACK t=41.22 body=(34.39, 13.09) feet=12.33833 velocity=(5.50, -1.20) target=(36.00, 11.45) pose=Kneeling phaseTime=3.922754 scale=0.6268178
+BACK t=41.35 body=(35.08, 12.59) feet=11.83833 velocity=(4.18, -5.73) target=(36.00, 11.45) pose=Kneeling phaseTime=3.995246 scale=0.4575015
+BACK t=41.48 body=(35.48, 12.45) feet=11.70336 velocity=(2.34, 0.00) target=(36.00, 11.45) pose=Kneeling phaseTime=4.046718 scale=0.3761773
+BACK t=41.62 body=(35.71, 12.45) feet=11.70473 velocity=(1.31, 0.00) target=(36.00, 11.45) pose=Kneeling phaseTime=4.099334 scale=0.4171464
+PASS GB-B4 land on real back of Falling congregation limb 6 | (35.73, 12.45) feet=11.70 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (35.73, 12.45) feet=11.70 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (35.73, 12.46) feet=11.71 hp=6 twin=none
+PASS GB-B4 incense changes this body's simulation rate | (35.73, 12.46) feet=11.71 hp=6 twin=none
+PASS GB-B4 censer acquired from swinging incense | (35.73, 12.46) feet=11.71 hp=6 twin=none
+PASS GB-B4 stillness expands the local time field | (35.73, 12.46) feet=11.71 hp=6 twin=none
+PASS GB-B4 walk 36.8 | (36.58, 12.33) feet=11.58 hp=6 twin=none
+PASS GB-B4 jump 39 / 13.2 peak 13.21 | (38.79, 13.96) feet=13.21 hp=6 twin=none
+PASS GB-B4 walk 40 | (39.81, 13.96) feet=13.21 hp=6 twin=none
+EVENT t=47.36 boss-phase The Weight of Everyone:1
+PASS GB-B4 jump 43 / 15 peak 15.57 | (42.78, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 congregation reaches its structural second act | (42.78, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 seamstress joins the incense | (42.78, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 walk 44.8 | (44.59, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 required tenant present: Stitch | (44.59, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 focus Stitch | (44.59, 15.76) feet=15.01 hp=6 twin=none
+SEAM picked=avalanche@(53.00, 19.74, 0.00) focus=Stitch aim=(1.00, 0.30)
+SEAM option=avalanche@(53.00, 19.74, 0.00) distance=9.281078
+SEAM option=avalanche@(51.66, 23.74, 0.00) distance=10.64661
+SEAM option=catch@(43.92, 14.18, 0.00) distance=1.726233
+SEAM option=catch@(39.70, 3.60, 0.00) distance=13.11223
+PASS GB-B4 catch visible avalanche seam | (44.62, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 thread connects two real edges | (44.62, 15.76) feet=15.01 hp=6 twin=none
+EVENT t=48.92 stitch-tug Upper load-bearing slab
+PASS GB-B4 physical fold reaches 24.79 | (44.62, 15.76) feet=15.01 hp=6 twin=none
+EVENT t=50.61 boss-phase The Weight of Everyone:2
+PASS GB-B4 real mass falls into lower catch | (44.62, 15.76) feet=15.01 hp=6 twin=none
+PASS GB-B4 walk 48 | (47.78, 12.95) feet=12.20 hp=6 twin=none
+PASS GB-B4 descend to lower work platform | (47.99, 8.79) feet=8.04 hp=6 twin=none
+PASS GB-B4 walk 41.8 | (42.00, 8.75) feet=8.00 hp=6 twin=none
+PASS GB-B4 jump 38 / 10 peak 10.37 | (38.21, 10.75) feet=10.00 hp=6 twin=none
+PASS GB-B4 walk 33.2 | (33.41, 10.76) feet=10.01 hp=6 twin=none
+PASS GB-B4 undertaker closes the structural brace | (32.97, 11.06) feet=10.06 hp=6 twin=none
+PASS GB-B4 coffin crosses real ground to 34 | (34.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 lower release lever actually retracts its abutment | (34.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 coffin crosses real ground to 36 | (35.97, 11.06) feet=10.06 hp=6 twin=none
+PASS GB-B4 rigid coffin acquired | (35.97, 11.06) feet=10.06 hp=6 twin=none
+PASS GB-B4 quarter turn changes footprint | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 required tenant present: Stitch | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 focus Stitch | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 catch edge selected | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 lower catch edges joined | (37.47, 10.56) feet=10.06 hp=6 twin=none
+EVENT t=57.00 stitch-tug Lower load-bearing slab
+PASS GB-B4 real horizontal body arrests the folding load | (37.47, 10.56) feet=10.06 hp=6 twin=none
+EVENT t=60.34 boss-phase The Weight of Everyone:3
+PASS GB-B4 boss mass reaches the actual bottom | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 environmental victory is a physical altitude result | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 stage completes through physical exit or boss solution | (37.47, 10.56) feet=10.06 hp=6 twin=none
+PASS GB-B4 completion survives save | (37.47, 10.56) feet=10.06 hp=6 twin=none

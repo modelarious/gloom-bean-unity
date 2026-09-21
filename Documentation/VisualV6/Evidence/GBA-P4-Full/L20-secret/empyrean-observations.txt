@@ -1,0 +1,171 @@
+BEGIN GB-L20 The White Gate Is Below You
+PASS GB-L20 walk 5 body=(4.78, 0.76) velocity=(1.67, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 follow the leading body to 12 body=(11.91, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 sanctum starts with a leading Echo, not a prediction body=(11.91, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 Molt is acquired physically beside the leading echo body=(11.91, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 follow the leading body to 18.5 body=(18.40, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 the chosen leading pair contains Molt body=(18.40, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 delayed body focuses Molt body=(18.40, 0.76) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 leave an actual skin on the first sanctum scale body=(18.40, 0.56) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 follow the leading body to 28 body=(27.83, 0.56) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 two simultaneous bodies release the first sanctum body=(27.83, 0.56) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 follow the leading body to 36 body=(35.83, 0.56) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 first sanctum is traversed without granting its result body=(35.83, 0.56) velocity=(0.00, 0.00) feet=0.008333325 hp=6
+PASS GB-L20 follow the leading body to 40 body=(39.89, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 walk 48 body=(47.79, 0.75) velocity=(1.62, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 walk 47 body=(47.21, 0.75) velocity=(-1.63, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 root is available after the material sanctuary sources body=(47.21, 0.75) velocity=(-1.63, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 tenant acquired Root body=(47.21, 0.75) velocity=(-1.63, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 focus Root body=(47.21, 0.75) velocity=(-1.63, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 diagonal season moistens the starting seam body=(47.20, 0.75) velocity=(-0.55, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 extend root through actual seasonal substrate body=(47.20, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 steer seasonal root to (47.00, -4.00) body=(47.20, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 steer seasonal root to (60.00, -4.00) body=(47.20, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+PASS GB-L20 steer seasonal root to (60.00, 1.50) body=(47.20, 0.75) velocity=(0.00, 0.00) feet=0.004999876 hp=6
+ROOT EXIT tip=(60.00, 1.38) clear=True
+PASS GB-L20 body follows the curved seasonal root body=(60.00, 1.31) velocity=(0.00, 0.00) feet=0.5578671 hp=6
+PASS GB-L20 walk 68 body=(67.79, 0.76) velocity=(1.57, 0.00) feet=0.005089164 hp=6
+PASS GB-L20 seasonal wall was traversed through actual material body=(67.79, 0.76) velocity=(1.57, 0.00) feet=0.005089164 hp=6
+PASS GB-L20 walk 72 body=(71.80, 0.76) velocity=(1.56, 0.00) feet=0.005089164 hp=6
+PASS GB-L20 perspective source is available body=(71.80, 0.76) velocity=(1.56, 0.00) feet=0.005089164 hp=6
+PASS GB-L20 align the projected body to 0 body=(71.82, 0.75) velocity=(1.16, -0.57) feet=0.2581447 hp=6
+PASS GB-L20 walk 72.7 body=(72.49, 0.50) velocity=(1.20, 0.00) feet=0.009255826 hp=6
+PASS GB-L20 depth change has a real tenant body=(72.49, 0.50) velocity=(1.20, 0.00) feet=0.009255826 hp=6
+PASS GB-L20 real plane landing 0 at 77 body=(76.77, 2.65) velocity=(1.63, 0.00) feet=2.167478 hp=6
+PASS GB-L20 walk 78.2 body=(77.99, 2.65) velocity=(1.20, 0.00) feet=2.167499 hp=6
+PASS GB-L20 depth change has a real tenant body=(77.99, 2.65) velocity=(1.20, 0.00) feet=2.167499 hp=6
+PASS GB-L20 real plane landing 2 at 83 body=(82.77, 4.70) velocity=(1.42, 0.00) feet=3.654825 hp=6
+PASS GB-L20 walk 86 body=(85.79, 4.70) velocity=(1.88, 0.00) feet=3.654999 hp=6
+PASS GB-L20 spool nests alongside depth body=(85.79, 4.70) velocity=(1.88, 0.00) feet=3.654999 hp=6
+PASS GB-L20 walk 87 body=(86.85, 4.70) velocity=(4.21, 0.00) feet=3.654999 hp=6
+PASS GB-L20 land on the actual folded plane body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 tenant acquired Stitch body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 focus Stitch body=(91.01, 4.28) velocity=(-0.59, 0.00) feet=3.2295 hp=6
+PASS GB-L20 catch physical depth edge body=(91.03, 4.28) velocity=(0.00, 0.00) feet=3.229795 hp=6
+PASS GB-L20 connect two actual structural edges body=(91.04, 4.28) velocity=(0.00, 0.00) feet=3.229869 hp=6
+PASS GB-L20 folded ramp takes its physical angle body=(90.24, 4.81) velocity=(-2.08, -0.42) feet=3.76382 hp=6
+PASS GB-L20 walk 95 body=(94.81, 9.42) velocity=(1.66, 1.66) feet=8.370078 hp=6
+PASS GB-L20 jump to 97 / 10 body=(96.71, 10.94) velocity=(0.89, -1.00) feet=10.19212 hp=6
+PASS GB-L20 flat sign restores the normal footprint before the painted threshold body=(96.71, 10.94) velocity=(0.89, -1.00) feet=10.19212 hp=6
+PASS GB-L20 walk 101 body=(100.80, 10.75) velocity=(1.50, 0.00) feet=10.00497 hp=6
+PASS GB-L20 enter the folded fresco from its actual threshold body=(100.80, 10.75) velocity=(1.50, 0.00) feet=10.00497 hp=6
+PASS GB-L20 jump to 104 / 11 body=(103.71, 11.75) velocity=(0.91, 0.00) feet=11.00457 hp=6
+PASS GB-L20 jump to 106 / 12 body=(105.71, 12.75) velocity=(0.89, 0.00) feet=12.00152 hp=6
+PASS GB-L20 jump to 108.2 / 13 body=(107.90, 13.76) velocity=(0.92, 0.00) feet=13.005 hp=6
+PASS GB-L20 jump to 109.6 / 15 body=(109.31, 15.75) velocity=(0.89, 0.00) feet=14.99967 hp=6
+PASS GB-L20 jump to 111.5 / 16 body=(111.21, 16.75) velocity=(0.90, 0.00) feet=16.00484 hp=6
+PASS GB-L20 walk 114.25 body=(114.05, 16.76) velocity=(1.54, 0.00) feet=16.00838 hp=6
+PASS GB-L20 jump to 116.2 / 17 body=(115.91, 17.75) velocity=(0.89, -1.00) feet=17.00338 hp=6
+PASS GB-L20 jump to 118.2 / 18 body=(117.91, 18.75) velocity=(0.91, 0.00) feet=18.00077 hp=6
+PASS GB-L20 jump to 119.6 / 20 body=(119.30, 20.76) velocity=(0.93, 0.00) feet=20.0091 hp=6
+PASS GB-L20 jump to 121.5 / 21 body=(121.21, 21.75) velocity=(0.90, 0.00) feet=21.00428 hp=6
+PASS GB-L20 walk 126.4 body=(126.19, 20.78) velocity=(1.58, -1.00) feet=20.02664 hp=6
+PASS GB-L20 empty frame returns ordinary collision body=(126.19, 20.78) velocity=(1.58, -1.00) feet=20.02664 hp=6
+PASS GB-L20 walk 130 body=(129.80, 20.76) velocity=(1.51, 0.00) feet=20.00998 hp=6
+PASS GB-L20 rising sanctum supplies its actual incense body=(129.80, 20.76) velocity=(1.51, 0.00) feet=20.00998 hp=6
+PASS GB-L20 walk 131.3 body=(131.08, 20.76) velocity=(1.67, 0.00) feet=20.00998 hp=6
+PASS GB-L20 four independently moving architectural chunks body=(131.08, 20.76) velocity=(1.67, 0.00) feet=20.00998 hp=6
+PASS GB-L20 rising neighbour enters a reachable transfer window body=(131.09, 20.76) velocity=(0.00, 0.00) feet=20.00998 hp=6
+PASS GB-L20 land on the actual rising nave Ascending nave 0 body=(134.62, 19.76) velocity=(1.69, -1.00) feet=19.01331 hp=6
+PASS GB-L20 stillness slows the nave supporting the Host body=(134.63, 21.25) velocity=(0.00, -1.00) feet=20.50478 hp=6
+PASS GB-L20 walk 136.3 body=(136.10, 21.70) velocity=(1.56, -1.00) feet=20.94843 hp=6
+PASS GB-L20 rising neighbour enters a reachable transfer window body=(136.10, 23.79) velocity=(0.00, -1.00) feet=23.03573 hp=6
+PASS GB-L20 land on the actual rising nave Ascending nave 1 body=(140.57, 23.70) velocity=(2.34, -1.00) feet=22.95201 hp=6
+PASS GB-L20 stillness slows the nave supporting the Host body=(140.59, 22.85) velocity=(0.00, -1.00) feet=22.10045 hp=6
+PASS GB-L20 walk 142.3 body=(142.08, 22.60) velocity=(1.65, -1.00) feet=21.85136 hp=6
+PASS GB-L20 rising neighbour enters a reachable transfer window body=(142.08, 22.60) velocity=(1.65, -1.00) feet=21.85136 hp=6
+PASS GB-L20 land on the actual rising nave Ascending nave 2 body=(146.57, 21.66) velocity=(2.43, -1.00) feet=20.90671 hp=6
+PASS GB-L20 stillness slows the nave supporting the Host body=(146.59, 19.90) velocity=(0.00, -1.00) feet=19.15209 hp=6
+PASS GB-L20 walk 148.3 body=(148.08, 19.39) velocity=(1.65, -1.00) feet=18.63503 hp=6
+PASS GB-L20 rising neighbour enters a reachable transfer window body=(148.09, 23.45) velocity=(0.00, -1.00) feet=22.70441 hp=6
+PASS GB-L20 land on the actual rising nave Ascending nave 3 body=(152.57, 23.25) velocity=(2.40, -1.00) feet=22.50368 hp=6
+PASS GB-L20 stillness slows the nave supporting the Host body=(152.59, 22.54) velocity=(0.00, -1.00) feet=21.78845 hp=6
+PASS GB-L20 walk 154.3 body=(154.08, 22.32) velocity=(1.65, -1.00) feet=21.56596 hp=6
+PASS GB-L20 jump to 158 / 20 body=(157.71, 20.75) velocity=(0.89, 0.00) feet=20.00384 hp=6
+PASS GB-L20 walk 160 body=(159.85, 20.75) velocity=(4.52, 0.00) feet=20.00499 hp=6
+PASS GB-L20 record a running arc to 165 body=(164.69, 21.25) velocity=(3.18, 0.00) feet=20.50366 hp=6
+PASS GB-L20 walk 166.2 body=(165.99, 21.25) velocity=(5.96, 0.00) feet=20.50494 hp=6
+PASS GB-L20 record a running arc to 171 body=(171.25, 21.75) velocity=(6.60, 0.00) feet=21.00487 hp=6
+PASS GB-L20 bright sanctum has both physical iron and detached-shadow tenants body=(171.25, 21.75) velocity=(6.60, 0.00) feet=21.00487 hp=6
+PASS GB-L20 dark space is forbidden while luminous matter admits the shadow body=(171.25, 21.75) velocity=(6.60, 0.00) feet=21.00487 hp=6
+PASS GB-L20 tenant acquired Shadow body=(171.25, 21.75) velocity=(6.60, 0.00) feet=21.00487 hp=6
+PASS GB-L20 focus Shadow body=(171.25, 21.75) velocity=(6.60, 0.00) feet=21.00487 hp=6
+PASS GB-L20 traverse connected silhouette to (178.00, 24.00) body=(173.77, 21.76) velocity=(0.00, 0.00) feet=21.005 hp=6
+PASS GB-L20 shadow inside actual luminous geometry releases the last sanctum body=(173.77, 21.76) velocity=(0.00, 0.00) feet=21.005 hp=6
+PASS GB-L20 traverse connected silhouette to (174.00, 23.00) body=(173.77, 21.76) velocity=(0.00, 0.00) feet=21.005 hp=6
+PASS GB-L20 traverse connected silhouette to (173.77, 21.01) body=(173.77, 21.76) velocity=(0.00, 0.00) feet=21.005 hp=6
+PASS GB-L20 body and shadow reunite before physical exit body=(173.77, 21.76) velocity=(0.00, 0.00) feet=21.005 hp=6
+PASS GB-L20 jump to 175.2 / 23 body=(174.91, 23.77) velocity=(3.63, 0.00) feet=23.0211 hp=6
+PASS GB-L20 walk 175.5 body=(175.30, 23.77) velocity=(3.92, 0.00) feet=23.02117 hp=6
+PASS GB-L20 record a running arc to 179 body=(178.66, 23.76) velocity=(3.04, 0.00) feet=23.00598 hp=6
+PASS GB-L20 walk 184.8 body=(184.59, 23.76) velocity=(5.87, 0.00) feet=23.00598 hp=6
+PASS GB-L20 optional rhyme passage begins shut body=(184.59, 23.76) velocity=(5.87, 0.00) feet=23.00598 hp=6
+PASS GB-L20 brake magnetic inertia before recalling the rhyme body=(184.49, 23.76) velocity=(-0.15, 0.00) feet=23.00598 hp=6
+PASS GB-L20 the Sunday Best jump rhythm opens real terrain body=(184.46, 23.97) velocity=(-0.03, 12.40) feet=23.21598 hp=6
+PASS GB-L20 descend through the opened rhyme lid body=(186.67, 20.95) velocity=(-0.30, -1.00) feet=20.2045 hp=6
+PASS GB-L20 drop through the remembered rhyme into the twentieth Mercy body=(188.26, 19.35) velocity=(-0.05, -1.00) feet=18.59996 hp=6
+PASS GB-L20 jump to 186.9 / 20.1 body=(187.01, 20.95) velocity=(-1.55, -1.00) feet=20.19718 hp=6
+PASS GB-L20 jump to 188.8 / 21.7 body=(188.51, 22.46) velocity=(0.89, 0.00) feet=21.705 hp=6
+PASS GB-L20 jump to 188.4 / 21.7 body=(188.42, 22.45) velocity=(0.07, 0.00) feet=21.70487 hp=6
+PASS GB-L20 take the Keyling over the open rhyme chamber body=(188.42, 22.45) velocity=(0.07, 0.00) feet=21.70487 hp=6
+PASS GB-L20 jump to 193 / 23 body=(192.71, 23.76) velocity=(0.89, 0.00) feet=23.005 hp=6
+PASS GB-L20 walk 193 body=(192.78, 23.76) velocity=(2.39, 0.00) feet=23.005 hp=6
+PASS GB-L20 final Keyling is physically collected body=(192.78, 23.76) velocity=(2.39, 0.00) feet=23.005 hp=6
+PASS GB-L20 final Nail starts a physical collapse, not a cute reset body=(192.81, 23.74) velocity=(0.22, 0.00) feet=22.99166 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 194 body=(194.09, 25.33) velocity=(1.05, -1.00) feet=24.57555 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 193 body=(193.07, 26.80) velocity=(-0.97, -1.00) feet=26.05222 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 190 body=(190.11, 28.28) velocity=(-0.57, -1.00) feet=27.52888 hp=6
+PASS GB-L20 ceramic and eclipse thresholds restore only the corrupted base body=(190.11, 28.28) velocity=(-0.57, -1.00) feet=27.52888 hp=6
+PASS GB-L20 walk 187.7 body=(187.90, 28.01) velocity=(-5.99, -1.00) feet=27.2622 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 182 body=(181.97, 27.35) velocity=(-0.10, -1.00) feet=26.60087 hp=6
+PASS GB-L20 walk 179.7 body=(179.91, 27.08) velocity=(-5.50, -1.00) feet=26.33419 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 174 body=(173.91, 26.43) velocity=(-0.45, -1.00) feet=25.68081 hp=6
+PASS GB-L20 walk 171.7 body=(171.91, 26.18) velocity=(-5.85, -1.00) feet=25.42746 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 166 body=(165.86, 25.52) velocity=(-0.45, -1.00) feet=24.77408 hp=6
+PASS GB-L20 walk 163.7 body=(163.89, 25.27) velocity=(-5.50, -1.00) feet=24.52073 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 158 body=(157.89, 24.62) velocity=(-0.45, -1.00) feet=23.86735 hp=6
+PASS GB-L20 walk 155.7 body=(155.85, 24.35) velocity=(-4.42, -1.00) feet=23.60066 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 150 body=(149.91, 23.70) velocity=(-0.85, -1.00) feet=22.94728 hp=6
+PASS GB-L20 walk 147.7 body=(147.87, 23.44) velocity=(-5.17, -1.00) feet=22.69393 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 142 body=(141.93, 22.79) velocity=(-0.45, -1.00) feet=22.04055 hp=6
+PASS GB-L20 walk 139.7 body=(139.89, 22.54) velocity=(-6.22, -1.00) feet=21.7872 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 134 body=(133.95, 21.88) velocity=(-0.05, -1.00) feet=21.13382 hp=6
+PASS GB-L20 walk 131.7 body=(131.89, 21.62) velocity=(-5.50, -1.00) feet=20.86714 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 126 body=(125.90, 20.96) velocity=(-0.45, -1.00) feet=20.21376 hp=6
+PASS GB-L20 walk 123.7 body=(123.85, 20.70) velocity=(-4.48, -1.00) feet=19.94707 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 118 body=(117.89, 20.04) velocity=(-0.85, -1.00) feet=19.29369 hp=6
+PASS GB-L20 walk 115.7 body=(115.84, 19.79) velocity=(-5.50, -1.00) feet=19.04034 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 110 body=(109.85, 19.14) velocity=(-0.45, -1.00) feet=18.38696 hp=6
+PASS GB-L20 walk 107.7 body=(107.88, 18.88) velocity=(-5.50, -1.00) feet=18.13361 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 102 body=(101.88, 18.23) velocity=(-0.45, -1.00) feet=17.48023 hp=6
+PASS GB-L20 walk 99.7 body=(99.91, 17.98) velocity=(-5.50, -1.00) feet=17.22688 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 94 body=(93.92, 17.32) velocity=(-0.45, -1.00) feet=16.5735 hp=6
+PASS GB-L20 walk 91.7 body=(91.90, 17.07) velocity=(-5.98, -1.00) feet=16.32015 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 86 body=(85.96, 16.42) velocity=(-0.13, -1.00) feet=15.66681 hp=6
+PASS GB-L20 walk 83.7 body=(83.91, 16.16) velocity=(-7.00, -1.00) feet=15.41349 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 78 body=(77.88, 15.51) velocity=(-0.05, -1.00) feet=14.76014 hp=6
+PASS GB-L20 walk 75.7 body=(75.92, 15.26) velocity=(-6.25, -1.00) feet=14.50681 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 70 body=(69.97, 14.60) velocity=(-0.05, -1.00) feet=13.85347 hp=6
+PASS GB-L20 walk 67.7 body=(67.85, 14.32) velocity=(-4.42, -1.00) feet=13.57347 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 62 body=(61.90, 13.67) velocity=(-0.85, -1.00) feet=12.92014 hp=6
+PASS GB-L20 walk 59.7 body=(59.86, 13.42) velocity=(-5.17, -1.00) feet=12.66681 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 54 body=(53.93, 12.76) velocity=(-0.45, -1.00) feet=12.01348 hp=6
+PASS GB-L20 walk 51.7 body=(51.89, 12.51) velocity=(-6.13, -1.00) feet=11.76014 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 46 body=(45.96, 11.86) velocity=(-0.05, -1.00) feet=11.10681 hp=6
+PASS GB-L20 walk 43.7 body=(43.91, 11.59) velocity=(-5.50, -1.00) feet=10.84014 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 38 body=(37.91, 10.94) velocity=(-0.45, -1.00) feet=10.18681 hp=6
+PASS GB-L20 walk 35.7 body=(35.91, 10.68) velocity=(-5.88, -1.00) feet=9.933478 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 30 body=(29.85, 10.03) velocity=(-0.45, -1.00) feet=9.280146 hp=6
+PASS GB-L20 walk 27.7 body=(27.88, 9.78) velocity=(-5.50, -1.00) feet=9.026813 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 22 body=(21.89, 9.12) velocity=(-0.45, -1.00) feet=8.37348 hp=6
+PASS GB-L20 walk 19.7 body=(19.85, 8.86) velocity=(-4.42, -1.00) feet=8.106813 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 14 body=(13.90, 8.20) velocity=(-0.85, -1.00) feet=7.453949 hp=6
+PASS GB-L20 walk 11.7 body=(11.86, 7.95) velocity=(-5.17, -1.00) feet=7.200615 hp=6
+PASS GB-L20 jump through the collapsing sanctum at 6 body=(5.93, 7.30) velocity=(-0.45, -1.00) feet=6.546814 hp=6
+PASS GB-L20 walk 0 body=(0.20, 3.48) velocity=(-2.13, -14.60) feet=2.730148 hp=6
+PASS GB-L20 drop clear of the last collapsed ledge body=(0.12, 1.51) velocity=(0.00, -18.57) feet=0.7623701 hp=6
+PASS GB-L20 walk 2 body=(0.89, -0.89) velocity=(5.50, -1.00) feet=-1.639481 hp=6
+PASS GB-L20 normal return never restores the cute body body=(0.89, -0.89) velocity=(5.50, -1.00) feet=-1.639481 hp=6
+PASS GB-L20 physical return completed body=(0.89, -0.89) velocity=(5.50, -1.00) feet=-1.639481 hp=6
+PASS GB-L20 clear is persistent body=(0.89, -0.89) velocity=(5.50, -1.00) feet=-1.639481 hp=6
+PASS GB-L20 Mercy is saved body=(0.89, -0.89) velocity=(5.50, -1.00) feet=-1.639481 hp=6

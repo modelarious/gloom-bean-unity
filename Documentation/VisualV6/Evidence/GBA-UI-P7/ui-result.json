@@ -1,0 +1,129 @@
+﻿{
+    "screens":  [
+                    "01-cute-title",
+                    "02-controls",
+                    "03-cute-world-selection",
+                    "04-cute-level-selection",
+                    "05-sunday-entry",
+                    "06-keyboard-jump",
+                    "07-real-pause",
+                    "07b-first-pause-selection",
+                    "07c-second-pause-selection",
+                    "08-returned-level-select",
+                    "09-practice-world-select",
+                    "10-final-world-practice",
+                    "11-final-boss-native",
+                    "12-boss-controls-front"
+                ],
+    "started":  "2026-09-21T12:36:30.6560885-06:00",
+    "scope":  "Real keyboard and native window screenshots, not a complete playthrough",
+    "isolated_save_has_no_progress":  true,
+    "actions":  [
+                    {
+                        "key":  112,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  112,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  27,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  27,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  27,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  40,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  40,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  83,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  13,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  112,
+                        "milliseconds":  100
+                    },
+                    {
+                        "key":  112,
+                        "milliseconds":  100
+                    }
+                ],
+    "status":  "CAPTURED_PENDING_VISUAL_REVIEW",
+    "finished":  "2026-09-21T12:37:00.3426701-06:00"
+}
