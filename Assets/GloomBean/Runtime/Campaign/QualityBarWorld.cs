@@ -108,7 +108,9 @@ namespace GloomBean.Campaign
         public int AddedColliders=>GetComponentsInChildren<Transform>(true).Where(t=>t.name.StartsWith("QualityBar visual /")).Sum(t=>t.GetComponents<Collider2D>().Length);
         public void Initialize(){session=GetComponentInParent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
+            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarConstruction>())sr.gameObject.AddComponent<QualityBarConstruction>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
+            foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRailConstruction>())rail.gameObject.AddComponent<QualityBarRailConstruction>().Initialize(rail);
             foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.60f,.56f,.65f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
             foreach(var carrier in GetComponentsInChildren<ProcessionCarrier>(true))if(!carrier.GetComponent<QualityBarProcession>())carrier.gameObject.AddComponent<QualityBarProcession>();
             foreach(var wheel in GetComponentsInChildren<SeasonWheel>(true))if(!wheel.GetComponent<QualityBarSeason>())wheel.gameObject.AddComponent<QualityBarSeason>();

@@ -1,0 +1,269 @@
+{
+  "method": "Original offline stepped-pixel drawing; no Nintendo/third-party/concept screenshot pixels. Construction selected by material/object identity, never screenshot positions.",
+  "assets": [
+    {
+      "file": "construction_room_0.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "65af7c7c6699619d63371a0eff71d810289c642163bf86d39d8d9c0f75e6d248"
+    },
+    {
+      "file": "construction_room_1.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "d0fb7a6f167f0de12c49181321c1a1b2843a91efa639fea85385c659b7e6e129"
+    },
+    {
+      "file": "construction_room_2.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "dbb7dcc7b1256800112894e4751fa5326b61ce797b753e2d135eec7ee72a709c"
+    },
+    {
+      "file": "construction_room_3.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "001f8c2986ff76efa07b417303ed06a0a1711053cfaa343ff7b6f60495988f89"
+    },
+    {
+      "file": "construction_room_4.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "e9a9f151b169c5f8a2c1eb3901a7d166340c393292a24fc1b86c72c55274f594"
+    },
+    {
+      "file": "construction_room_5.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "e2b34ce1588db9d24f27d48ba8a64e51cc96f8a5072bedf5f7216f610d6d7a82"
+    },
+    {
+      "file": "construction_room_6.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "1eae1af21fa65c4086a7136f2d54df08d79c29d6f0258defce8f91c5feea7d82"
+    },
+    {
+      "file": "construction_room_7.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "1a4975a95d7092a16dd40b1196dd90a0c5e68244d08e858ccef4ba9864a77464"
+    },
+    {
+      "file": "construction_room_8.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "c9423411067776fd4ea0bc181e27cbe20a7ea601f280cc6859d8bb7276511a45"
+    },
+    {
+      "file": "construction_room_9.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "a8f2ffe1a70af59ec1caf83a53aac06ebbd880f9be9631d48f25500f7d20be25"
+    },
+    {
+      "file": "construction_room_10.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "58b3b97541fcf9b5aae9ad8c20325fa02a90541fc96fc1da80222e2e2e663166"
+    },
+    {
+      "file": "construction_room_11.png",
+      "size": [
+        128,
+        112
+      ],
+      "sha256": "00b8dbe04e9c5684a3f96f6c25718d2e86cf662629c3e1c1147b982e11136dfc"
+    },
+    {
+      "file": "construction_girder.png",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "5547ba8cbad1bc2c86660710154e44484aaefd99ff3ac9b008d124bf988b59e9"
+    },
+    {
+      "file": "construction_winch.png",
+      "size": [
+        48,
+        56
+      ],
+      "sha256": "5ead7cd1527247e39c3a06be0754e774211e2fdd9f59664e690d32244c4d62ca"
+    },
+    {
+      "file": "construction_cogbox.png",
+      "size": [
+        48,
+        48
+      ],
+      "sha256": "56fee81ebc6d83b27c9063739dad5a745f600b6ee28dcc78a37a067162486e12"
+    },
+    {
+      "file": "construction_hanging_0.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "3cd26e87148231a2329921cc69df2f6e11d0c30c07097904f2bf0af3658b6060"
+    },
+    {
+      "file": "construction_hanging_1.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "a64e15b6e53453443413b7b51cf4d95b93cd98f922d9d421dd1bc90e748fa1c8"
+    },
+    {
+      "file": "construction_hanging_2.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "931a95a07e9c8298d6358bf352addae83eb5c6133f3a86dba739d6703d0a26da"
+    },
+    {
+      "file": "construction_hanging_3.png",
+      "size": [
+        32,
+        48
+      ],
+      "sha256": "cbf1f83a64fef0b5f95a8463b228765bb559f0093d9a85bea9bc07e857a1d530"
+    },
+    {
+      "file": "construction_brace_0.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "37a74ca674ee766c578a5b3e7d086f48b6669f8c8c8055fee4a61a8c64d7b110"
+    },
+    {
+      "file": "construction_brace_1.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "37a74ca674ee766c578a5b3e7d086f48b6669f8c8c8055fee4a61a8c64d7b110"
+    },
+    {
+      "file": "construction_brace_2.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "d0a62994e97e19cf6b52ad3e8a3dabfbcc205f3ff8b10820498d01e2af20e823"
+    },
+    {
+      "file": "construction_brace_3.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "0938f3f5d4a28cb7643dbf736f2a2400bd809302f96c565819c02840fcc0e109"
+    },
+    {
+      "file": "construction_brace_4.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "0938f3f5d4a28cb7643dbf736f2a2400bd809302f96c565819c02840fcc0e109"
+    },
+    {
+      "file": "construction_brace_5.png",
+      "size": [
+        96,
+        64
+      ],
+      "sha256": "c541f2aae7f9c1cfc4ce702d226525ef41050398d10fe3137fb79887f62d0322"
+    },
+    {
+      "file": "construction_patrol_0_0.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "9db26b1e54538fa9492e873a63693b133110d6e1296fe4facb56143b8b0a7c13"
+    },
+    {
+      "file": "construction_patrol_0_1.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "1f1c1eb85d03316170333d6827a5dc201f8c55f9f0797973e7e362e41832a084"
+    },
+    {
+      "file": "construction_patrol_0_2.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "64b054579166c6e3bd49db707f6287af49f39fba615a377b64430b058bb9b2bc"
+    },
+    {
+      "file": "construction_patrol_0_3.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "1f1c1eb85d03316170333d6827a5dc201f8c55f9f0797973e7e362e41832a084"
+    },
+    {
+      "file": "construction_patrol_1_0.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "41ae9b7e6addefdfc1838f19ed8525e30d87604ed2d1ddfa4a1a80fd5077f7f9"
+    },
+    {
+      "file": "construction_patrol_1_1.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "623c3083a03d0ecae7346eec31fd8a7321e1d04a00f915370c502f586785764b"
+    },
+    {
+      "file": "construction_patrol_1_2.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "a9f05f21e55f9cfd8d1b6933e10b65524b5c82c902990ea97c97426fbd12ea15"
+    },
+    {
+      "file": "construction_patrol_1_3.png",
+      "size": [
+        48,
+        40
+      ],
+      "sha256": "623c3083a03d0ecae7346eec31fd8a7321e1d04a00f915370c502f586785764b"
+    }
+  ]
+}
