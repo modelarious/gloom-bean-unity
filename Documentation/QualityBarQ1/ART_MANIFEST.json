@@ -1,0 +1,573 @@
+{
+  "scope": "Separate reusable environment objects; all are true runtime assets, not complete concept screenshots",
+  "assets": [
+    {
+      "name": "balcony",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "889f8dccba5d7ab220c987ca255e5592f39621ccc02b2495d61dfe55e4e3233e"
+    },
+    {
+      "name": "bell",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "1ac5bf2dca1c71f293ee5f6eaed3e121693fdcbe65d73b737f3883d2a3019f69"
+    },
+    {
+      "name": "book",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "f3fa8021dfc9f4da4cc9fc3465de4d1460b5f21d035b00c70e01d841805edcff"
+    },
+    {
+      "name": "bracket_0",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "5fc18b96ca0ec11d99e47d81882a5a7fe1d860470b94dcd7ed806f3c248c481c"
+    },
+    {
+      "name": "bracket_1",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "68406b9c92ad71464bb399ad6a04af0d05f4b7c743e33e394c3fb4a749ff3a7b"
+    },
+    {
+      "name": "bracket_2",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "a4bf755b85b5aef407432c808f54efe665ce05b07eb69d3a83d506aff9d29850"
+    },
+    {
+      "name": "bracket_3",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "983ff9f479d52b39ad5ff446a86ec45dc69eef7310d6369db312cf9321d1aa71"
+    },
+    {
+      "name": "bracket_4",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "f6d63c2a559ede17e9853deec0c4ef08073cf03f9c5bc4a9db0caaa5e526a05b"
+    },
+    {
+      "name": "bracket_5",
+      "size": [
+        48,
+        28
+      ],
+      "sha256": "b54146638cb8093ed4fb28fdf37f4fda390f6d8dd7ac344751f0db9f3a286947"
+    },
+    {
+      "name": "chain_0",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "4aac4120a2dc9f2473747781353264f43fa3b09aa900800f5d6abe3c3e3fce18"
+    },
+    {
+      "name": "chain_1",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "0ab134bb08e1cc5a53246da02b442d1bef1207dfe9310c8660ac0671236ffdef"
+    },
+    {
+      "name": "chain_2",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "2b827ba6b4244d7765b739f2d991b87ad8ce088ceb00e60d0aca1595e7088e0d"
+    },
+    {
+      "name": "chain_3",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "b6e56b2d98a3cc5f5f00f4734b79d859fa75f614955d2c491735eeaf309c5d19"
+    },
+    {
+      "name": "chain_4",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "67f78a211ef6e3d6eaaff16fec31d73a38cac81639b2ca6bb99c8ddc636499bb"
+    },
+    {
+      "name": "chain_5",
+      "size": [
+        8,
+        32
+      ],
+      "sha256": "0fbc7443ec476efe68092e010c99e858ebba2d5b5e3a150359da418ed58d8c82"
+    },
+    {
+      "name": "coffin",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "fbd4d1f5f33f3c600b7cfe3e0d6847fa6db6c02273b82b90ca932d5e36963347"
+    },
+    {
+      "name": "column_0",
+      "size": [
+        20,
+        64
+      ],
+      "sha256": "ef8b1e5c6574f8def4c27a3f85841acc1d8982b11606bbf415384b1267ec2305"
+    },
+    {
+      "name": "column_1",
+      "size": [
+        20,
+        64
+      ],
+      "sha256": "06f630adc4b1c244ac88f2f8bb05bc2938a2d9fddec7c05f3fdfc906b80fa928"
+    },
+    {
+      "name": "column_2",
+      "size": [
+        32,
+        96
+      ],
+      "sha256": "67ac32f730bd4bcf12299d242b8212459b8986d21ac96d8a45a9bf2b508c67ac"
+    },
+    {
+      "name": "column_3",
+      "size": [
+        32,
+        96
+      ],
+      "sha256": "7e087b6170c7c4da64f48f2c77c6e8bfe5e786726f204318f0700c8d801eaea2"
+    },
+    {
+      "name": "column_4",
+      "size": [
+        32,
+        96
+      ],
+      "sha256": "ea91af654cc2fc08cfb791d95fe876577c7f5fdd60e294477e33d739d9dabe76"
+    },
+    {
+      "name": "column_5",
+      "size": [
+        32,
+        96
+      ],
+      "sha256": "143c50bba7e7f1a0e558fda60daef292de4f049254a30790b206d11b5170da67"
+    },
+    {
+      "name": "fascia_0",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "f3cc7d87421dc309ce0e0e0ae13ece79448dc0db0f8096953ed8ffa4d7478abd"
+    },
+    {
+      "name": "fascia_1",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "e446cdd2fae360da30efb9afd9e14fa288584a40d8ff1f041ccabda04b512f50"
+    },
+    {
+      "name": "fascia_2",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "f5b8b3d0c5dedb79384b0af8681539347cb7472145fa9aff12458754fb43f716"
+    },
+    {
+      "name": "fascia_3",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "78ce2eb0f16c2d88700ef6ded64e0a83675f448274cb7e855b3707fd928ace47"
+    },
+    {
+      "name": "fascia_4",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "6e7ea943d83e80c4d4c428fbbd29ac6c1b97401a9d88643ee461d413fd0a4eb1"
+    },
+    {
+      "name": "fascia_5",
+      "size": [
+        64,
+        32
+      ],
+      "sha256": "4c614a903d6b4c0731214bbb63dea588eebb36723f97d0475387f1f7feb0ae43"
+    },
+    {
+      "name": "fence_0",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "57f6d6e69a029d8b3071e207f7c2d996b007c6b979ff94d9d58bfaca74a9e0af"
+    },
+    {
+      "name": "fence_1",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "e368a10666e37c848cbb1756f2cd55c8cf8856d2fe2281bd696246bc9ae5f7db"
+    },
+    {
+      "name": "fence_2",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "781fdddcf5d0c9b13b12f5c974de4107e64fa8860f571f7b7cf3312180dc1d88"
+    },
+    {
+      "name": "fence_3",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "0977d669ea5e5da78c3661c2f4c03be18fc127fc6fa94b5d758a4dc03ffa2a40"
+    },
+    {
+      "name": "fence_4",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "a2fdfe40e2398757e971780259c39f0f416205a98ed0d98682c40281e9b92e5a"
+    },
+    {
+      "name": "fence_5",
+      "size": [
+        96,
+        32
+      ],
+      "sha256": "0b121d518ea3651f2a50a0d01ce96a84d3370a8d555a3604938abcf1a2833730"
+    },
+    {
+      "name": "gear_0",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "a2c5d7ae26cd894517a9b1dc489035d418fffce98d6a663201a5ade5746623c4"
+    },
+    {
+      "name": "gear_1",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "5679b40fbc27554bb6565dd0b34cc997c20529e4d2e4bcba02645215b6edffa9"
+    },
+    {
+      "name": "gear_2",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "f03633bbbd8dca04aecca0dd3a40d90a646961ce4aaaf66a2d4aea99feaf3721"
+    },
+    {
+      "name": "gear_3",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "974d3eae59e71e8a0063d671f976db82df55e33505e41e821708a38feb8551ea"
+    },
+    {
+      "name": "gear_4",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "8a61ebe681d3ee9a936d0dc090384733691f343175630a0d14a2a6bb769ef52f"
+    },
+    {
+      "name": "gear_5",
+      "size": [
+        40,
+        40
+      ],
+      "sha256": "87e2ccd49c7cc2a786f80aa2f4b7127f0ce6d0c1ac4f5c81e950084ef972588f"
+    },
+    {
+      "name": "halo",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "8dfb6bc27664f69a39229a228cd4c52280009d17f3219190cea92b4d1234df85"
+    },
+    {
+      "name": "lamp_0",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "313188cf1785ad69f43e95f1badfdb8adc81d6424bfce35ef7ea44b619f9df40"
+    },
+    {
+      "name": "lamp_1",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "73b37eedbdfd8a05b0ff2d149befbd3af8628cff5dabf9007ff97ca0dac79fdf"
+    },
+    {
+      "name": "lamp_2",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "6d58d076a3dd8a7dc29a6c8a0c8d93d44e693e97033a8e0c0cba665a0b758a38"
+    },
+    {
+      "name": "lamp_3",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "3f5f40190d8f3c6e9a2222a77e57daff4fea78744bed3ed8f33824a3eb86560e"
+    },
+    {
+      "name": "lamp_4",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "13a2ecc66d50d69166cbc9d0073bd68d438d1ef0a911fe5db73dbbfa6a97a48b"
+    },
+    {
+      "name": "lamp_5",
+      "size": [
+        32,
+        22
+      ],
+      "sha256": "956fd2a12d644fe0292a8b6feecc6aeb0d24c7758c5f474a450353d07e759192"
+    },
+    {
+      "name": "ledger",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "2677757d8c19c710b09960646e9a3d8cf0f3cebc83da9f52ea37aaddfa6baab1"
+    },
+    {
+      "name": "light_0",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "light_1",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "light_2",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "light_3",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "light_4",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "light_5",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1f1844f0dabe8a64d06506d97b8fcfbd9a31e4ad08014957c313925c9f3a6cc0"
+    },
+    {
+      "name": "oven",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "e747b3ba5bc69d8f18e3b85b6c49d497cda688174ae615e4f9afe2706ddd1859"
+    },
+    {
+      "name": "pipe_0",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "388e3d6fb4f92f5966dba5948dee67040cc7e383ca791e5fdd4df072a4584dd7"
+    },
+    {
+      "name": "pipe_1",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "4c6a68f34a92810e6dc4f2cd3f262fc587fc76bea0b69d566d8e674acaefc13d"
+    },
+    {
+      "name": "pipe_2",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "663a27a37c3836c7afeee84754fb084bac749359e42289de12cdfc1ddcb7e5e7"
+    },
+    {
+      "name": "pipe_3",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "a90aedc9c3b80594cbf243816e31e0ed6ae51c5934e60b599d626fc05366f85e"
+    },
+    {
+      "name": "pipe_4",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "fbd7f9a875e025172ae410746a7ed0c83de8c5d58f82e365767d7ee6b7be52a6"
+    },
+    {
+      "name": "pipe_5",
+      "size": [
+        16,
+        48
+      ],
+      "sha256": "497bd3f8027a3a56e0e59abc0b5fed58adffd317f1a2a410e11a7763a07d80b4"
+    },
+    {
+      "name": "pump",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "bf522bd6e46c87ef2a6ac2e9d274cd563889284b270c100d0cb620202e77b2ef"
+    },
+    {
+      "name": "skin",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "2d237a008c508f361e68e961494c52e9723970e297a5cb9e893c5c22296f9e01"
+    },
+    {
+      "name": "statue",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "906f7c262e43d764bc141441aac212e06baf6753f7cd5684a86a0ff64acf7621"
+    },
+    {
+      "name": "truss_0",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "b734ffd61e1f256c309c8b1b16644e5820f90ef7f1422f14314d5589d80eb721"
+    },
+    {
+      "name": "truss_1",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "1046ed026491761848707d9dc31054efcacb7ee880dff6319900d14d77973978"
+    },
+    {
+      "name": "truss_2",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "51a2b1bbca05daf2d35242622a747d53a3deef1e950bcbc858f20d1bc5f7af22"
+    },
+    {
+      "name": "truss_3",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "12094a1cddef8076b76d37b697aa5762b13c4151b3d9c548842d0c7a011f5894"
+    },
+    {
+      "name": "truss_4",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "568f2085c28e8bf2f2aac80245455f63e601bd0209429969b2dc947358cd15ae"
+    },
+    {
+      "name": "truss_5",
+      "size": [
+        96,
+        48
+      ],
+      "sha256": "fd1423435bc6e6774b487ec33aa1859604d63e86e17541517393bf33e6580483"
+    },
+    {
+      "name": "washer",
+      "size": [
+        96,
+        112
+      ],
+      "sha256": "03b261c9996ad5c8180ff9865923a0356a22431ca82634db03b31f505259d328"
+    }
+  ]
+}

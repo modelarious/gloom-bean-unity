@@ -1,0 +1,27 @@
+[
+  {
+    "name": "gear",
+    "sha256": "8c59604cf400afaefe9a882b96afc17d6ca6ce0663885b02b14fed1443aac6cc",
+    "source": "isolated generated-concept object; not an actual-game screenshot"
+  },
+  {
+    "name": "bracket",
+    "sha256": "ee01839f5b7be36a565dce3dc6adca04a7a196b0f1d98e6657f1ae07bca1cc0c",
+    "source": "isolated generated-concept object; not an actual-game screenshot"
+  },
+  {
+    "name": "cloth",
+    "sha256": "b925be1f3459043a92d5b727f2d4e8080a2a80bf9e30aa98e05838e80e3326c5",
+    "source": "isolated generated-concept object; not an actual-game screenshot"
+  },
+  {
+    "name": "lamp",
+    "sha256": "a5909d243a79f177cfd0aa5542b1227f57aad48afb39e2d2d6dd1c27e66f7e63",
+    "source": "isolated generated-concept object; not an actual-game screenshot"
+  },
+  {
+    "name": "plate",
+    "sha256": "806375a1ba3965443fa679e7fd0ea5eb119d93497927bea61a14b90a75dbe65e",
+    "source": "isolated generated-concept object; not an actual-game screenshot"
+  }
+]
