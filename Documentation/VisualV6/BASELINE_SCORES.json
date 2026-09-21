@@ -1,0 +1,173 @@
+{
+  "analyst": "Assistant visual review; subjective, not uncoached human study",
+  "scale": "0-5; ties do not pass superiority",
+  "dimensions": [
+    "style",
+    "character",
+    "clarity",
+    "polish"
+  ],
+  "scene_staging": "Fixed camera and body placement; actual native render, not input-only route proof",
+  "rows": [
+    {
+      "id": "01-cute-parade",
+      "ours": [
+        1.5,
+        2.5,
+        2.5,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "reason": "Huge decorative masks dominate; the smiling town and grass/soil materials are not expressed. Duplicate title is inside the level."
+    },
+    {
+      "id": "02-puppet-machinery",
+      "ours": [
+        2,
+        2.5,
+        2.5,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "reason": "Rail is a fine line over a repeated house wallpaper; the moving mechanism has no carved structure or weight."
+    },
+    {
+      "id": "03-orchard",
+      "ours": [
+        1.5,
+        2.5,
+        2,
+        1.5
+      ],
+      "wl4": [
+        5,
+        4.5,
+        4,
+        4.5
+      ],
+      "reason": "The bough is the same pink brick strip as every world. Pears are green rectangles and the glass bell is a generic roof."
+    },
+    {
+      "id": "04-mirror-tenement",
+      "ours": [
+        2,
+        2.5,
+        2.5,
+        2
+      ],
+      "wl4": [
+        4,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "reason": "Twin bodies have a useful distinction, but balcony/furniture materials and repeating background depth lack craft."
+    },
+    {
+      "id": "05-falling-witnesses",
+      "ours": [
+        2,
+        2.5,
+        1.5,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        4.5,
+        4,
+        4.5
+      ],
+      "reason": "Falling witnesses look like rectangular panels; giant background figures are clearer than the actual hazard actors."
+    },
+    {
+      "id": "06-cathedral",
+      "ours": [
+        1.5,
+        2.5,
+        2,
+        1.5
+      ],
+      "wl4": [
+        4,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "reason": "No cathedral-scale construction detail beyond wallpaper. Interactive elements lack identity and readable support hierarchy."
+    },
+    {
+      "id": "07-iron-choir",
+      "ours": [
+        1.5,
+        2.5,
+        2,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "reason": "All-beige background competes with metal and pale type. The fixed altar is a plain gray block."
+    },
+    {
+      "id": "08-scripture",
+      "ours": [
+        1.5,
+        2.5,
+        2,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        4.5,
+        4,
+        4.5
+      ],
+      "reason": "Typography is a tiny debugging label on generic strips rather than architecture; environment indistinguishable from the choir."
+    },
+    {
+      "id": "09-mass-boss",
+      "ours": [
+        2,
+        2,
+        1.5,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        5,
+        4.5,
+        5
+      ],
+      "reason": "Stacked HUD panels cover the boss; its generic face does not express intertwined falling bodies."
+    },
+    {
+      "id": "10-final-host",
+      "ours": [
+        1.5,
+        2,
+        2,
+        1.5
+      ],
+      "wl4": [
+        4.5,
+        5,
+        4.5,
+        5
+      ],
+      "reason": "The opening encounter shows no visual presence of its remote boss and still uses generic warehouse rails."
+    }
+  ]
+}

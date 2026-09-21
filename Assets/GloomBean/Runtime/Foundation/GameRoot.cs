@@ -17,6 +17,7 @@ namespace GloomBean.Foundation
         public string PossessionDisplay="";
         public string PossessionHelp="";
         public Action ExtraHud;
+        public Action GameplayHud;
         public Action<string> PresentationBackground;
         public string CurrentScreen=>screen.ToString();
         public bool ShowingRestoredEnding=>screen==ScreenMode.Ending&&!Practice&&Save.RestoredEnding;
@@ -221,6 +222,9 @@ namespace GloomBean.Foundation
             body.normal.textColor=small.normal.textColor=friendlyMenu?new Color(.25f,.17f,.29f):new Color(.88f,.87f,.92f);
             if(screen==ScreenMode.Play||screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
             {
+                bool visualHud=Session&&Session.definition.atlas&&GameplayHud!=null;
+                if(visualHud)GameplayHud();
+                else {
                 Panel(new Rect(0,0,960,72),new Color(.03f,.025f,.06f,.92f));
                 if(Session)
                 {
@@ -231,6 +235,7 @@ namespace GloomBean.Foundation
                     if(!string.IsNullOrEmpty(Session.Message)){Panel(new Rect(115,512,730,64),new Color(.07f,.05f,.1f,.93f));GUI.Label(new Rect(131,524,698,48),Session.Message,body);}
                     if(!string.IsNullOrEmpty(PossessionDisplay)){GUI.Label(new Rect(20,80,750,25),PossessionDisplay,heading);GUI.Label(new Rect(20,110,700,46),PossessionHelp,small);}
                     GUI.Label(new Rect(20,577,720,22),(Practice?"PRACTICE — no completion or Mercy save    ":"")+"F1 controls  ·  Esc pause",small);
+                }
                 }
                 ExtraHud?.Invoke();
             }

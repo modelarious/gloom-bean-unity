@@ -27,6 +27,8 @@ namespace GloomBean.Campaign
         void OnGUI()
         {
             if(!StageSession.Current||defeated||!GameRoot.Instance||GameRoot.Instance.CurrentScreen!="Play")return;
+            if(GameRoot.Instance.GameplayHud!=null)return; // The native V6 HUD owns only the encounter's presentation.
+
             var matrix=GUI.matrix;var color=GUI.color;int depth=GUI.depth;
             GUI.depth=10; // The controls card and pause menu stay above the encounter HUD.
             GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));

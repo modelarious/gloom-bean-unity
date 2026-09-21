@@ -1,0 +1,129 @@
+{
+    "status": "PASS",
+    "scope": "Native fixed-camera art fixtures. Bodies/forms are staged; not a route-playthrough claim. No campaign progress is awarded.",
+    "unity": "6000.5.9f1",
+    "images": 10,
+    "shots": [
+        {
+            "id": "01-cute-parade",
+            "stage": "GB-L01",
+            "form": "None",
+            "reference": "palm",
+            "x": 9.0,
+            "y": 2.5,
+            "cx": 12.0,
+            "cy": 4.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "02-puppet-machinery",
+            "stage": "GB-L03",
+            "form": "Marionette",
+            "reference": "factory",
+            "x": 37.0,
+            "y": 4.0,
+            "cx": 36.0,
+            "cy": 7.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "03-orchard",
+            "stage": "GB-L05",
+            "form": "Wax",
+            "reference": "wildflower",
+            "x": 41.0,
+            "y": 4.0,
+            "cx": 42.0,
+            "cy": 7.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "04-mirror-tenement",
+            "stage": "GB-L09",
+            "form": "Mirror",
+            "reference": "crescent",
+            "x": 12.0,
+            "y": 1.0,
+            "cx": 19.0,
+            "cy": 5.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "05-falling-witnesses",
+            "stage": "GB-L13",
+            "form": "Censer",
+            "reference": "fiery",
+            "x": 28.0,
+            "y": 9.0,
+            "cx": 28.0,
+            "cy": 11.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "06-cathedral",
+            "stage": "GB-L16",
+            "form": "Stitch",
+            "reference": "hotel",
+            "x": 42.0,
+            "y": 16.0,
+            "cx": 42.0,
+            "cy": 19.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "07-iron-choir",
+            "stage": "GB-L17",
+            "form": "Lodestone",
+            "reference": "arabian",
+            "x": 29.0,
+            "y": 5.0,
+            "cx": 29.0,
+            "cy": 7.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "08-scripture",
+            "stage": "GB-L19",
+            "form": "Ink",
+            "reference": "pinball",
+            "x": 29.0,
+            "y": 10.0,
+            "cx": 30.0,
+            "cy": 10.0,
+            "size": 7.0,
+            "turn": false
+        },
+        {
+            "id": "09-mass-boss",
+            "stage": "GB-B4",
+            "form": "Coffin",
+            "reference": "diva",
+            "x": 42.0,
+            "y": 16.0,
+            "cx": 43.0,
+            "cy": 18.0,
+            "size": 9.0,
+            "turn": false
+        },
+        {
+            "id": "10-final-host",
+            "stage": "GB-B5",
+            "form": "None",
+            "reference": "diva",
+            "x": 16.0,
+            "y": 1.0,
+            "cx": 24.0,
+            "cy": 7.0,
+            "size": 9.0,
+            "turn": false
+        }
+    ],
+    "errors": []
+}

@@ -11,6 +11,7 @@ namespace GloomBean.Campaign
         public static Color Sky(int world)=>world==0?new Color(.75f,.84f,.70f):world==1?new Color(.10f,.065f,.14f):world==2?new Color(.14f,.16f,.095f):world==3?new Color(.095f,.135f,.19f):world==4?new Color(.16f,.105f,.135f):new Color(.73f,.69f,.61f);
         public static Sprite Get(int world)
         {
+            var v6=V6Art.Sprite("background_"+world,24);if(v6)return v6;
             if(cache.TryGetValue(world,out var result))return result;
             Color sky=Sky(world),dark=Color.Lerp(sky,world==5?new Color(.42f,.39f,.38f):Color.black,.35f),mid=Color.Lerp(sky,world==0?Color.white:new Color(.59f,.44f,.54f),world==5?.30f:.22f),light=Color.Lerp(mid,world==5?new Color(.92f,.83f,.58f):new Color(.65f,.66f,.71f),.20f);
             var pixels=new Color32[W*H];for(int y=0;y<H;y++)for(int x=0;x<W;x++)pixels[x+y*W]=Color.Lerp(sky,dark,(1f-(float)y/H)*.25f);
@@ -58,6 +59,7 @@ namespace GloomBean.Campaign
             foreach(var s in GetComponentsInChildren<HostSource>(true))if(!s.GetComponent<TenantPixelView>())s.gameObject.AddComponent<TenantPixelView>();
             foreach(var enemy in GetComponentsInChildren<CarryableEnemy>(true))if(!enemy.GetComponent<PatrolPixelView>())enemy.gameObject.AddComponent<PatrolPixelView>().world=world;
             var boss=GetComponentInChildren<AtlasBoss>();if(boss&&boss.body){var skin=boss.body.gameObject.AddComponent<BossPixelView>();skin.boss=boss;skin.world=world;}
+            gameObject.AddComponent<V6WorldDressing>().Initialize(d);
         }
         void LateUpdate()
         {

@@ -124,6 +124,7 @@ namespace GloomBean.Campaign
         }
         public static Sprite Boss(int world,int act=0)
         {
+            var authored=V6Art.Sprite("boss_"+world+"_"+Mathf.Clamp(act,0,2),128);if(authored)return authored;
             string key="boss-"+world+"-"+act;if(bank.TryGetValue(key,out var old))return old;
             var p=new Pixel(128);Color32 flesh=world==2?Hex(0x9d9b60):world==3?Hex(0x8ca6ac):world==5?Hex(0xd9bd9f):Hex(0x927084);
             p.Ellipse(64,57,46,54,Ink);p.Ellipse(64,57,42,49,Dark);
