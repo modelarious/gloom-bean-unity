@@ -2,7 +2,7 @@ $ErrorActionPreference='Stop'
 $p=Split-Path $PSScriptRoot -Parent
 $identity=Get-Content "$p/Delivery/V6-GBA-P7/PACKAGE_IDENTITY.json" -Raw|ConvertFrom-Json
 $player=Join-Path $identity.extracted 'GloomBeanWindows/GloomBean.exe'
-$root=Join-Path $p 'Reports/V6-GBA-Packaged-P7'
+$root=Join-Path $p 'Reports/V6-GBA-Packaged-P7-R2'
 if(Test-Path $root){throw 'Refusing to overwrite packaged evidence'}
 New-Item -ItemType Directory $root|Out-Null
 . "$PSScriptRoot/CampaignGraph.ps1"
@@ -33,7 +33,7 @@ try {
   if($proc.ExitCode -ne 0 -or $result.failed -ne 0){throw ('Native gameplay failed: '+$case.name)}
   $frames=Get-Content "$out/NativeAction/native-action.json" -Raw|ConvertFrom-Json
   if(@($frames.shots).Count -lt 2){throw ('Insufficient actual action captures: '+$case.name)}
-  if(@($frames.shots|Where-Object {$_.input -ne 'ScriptedInput' -or -not $_.cameraFollow}).Count){throw 'Observed action was not the actual input-driven camera path'}
+  if(@($frames.shots|Where-Object {$_.input -ne 'WitnessInput' -or -not $_.cameraFollow}).Count){throw 'Final-boss action must use its actual WitnessInput adapter and live camera follow'}
   $ending=$null
   if($case.ContainsKey('mercies')){
    $ending=Get-Content "$out/ending-state.json" -Raw|ConvertFrom-Json

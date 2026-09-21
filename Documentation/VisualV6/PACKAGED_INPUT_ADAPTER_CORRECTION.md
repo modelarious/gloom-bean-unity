@@ -1,0 +1,7 @@
+# Exact-package observer validation correction
+
+The original package run completed Rain (177 assertions) and the ordinary final boss (51 assertions), both exit0 with zero gameplay failures. It then failed its external observer check because that new script assumed every witness used a class named ScriptedInput.
+
+Direct source inspection shows EmpyreanVerification has always used its own sealed WitnessInput : IActorInput. Consume() returns the current InputFrame or rule result and consumes edges; the production ActorMotor still executes all movement/physics. The final-boss run's11 records all report WitnessInput, enabled follow camera, enabled motor and dynamic body. Rain uses the separate ScriptedInput class and passed its30-frame observer check.
+
+The external final-boss oracle now requires exactly WitnessInput and live follow. Unknown types, a missing type and disabled follow remain rejected. No player build, game source, gameplay assertion, save or snapshot changed. The original failed outer receipt and all raw results remain under GBA-Packaged-P7-R1. R2 reruns the three ending cases from the same frozen ZIP and original unmodified earned seeds; the prior verified Rain action is retained separately, not rerun or silently reclassified.

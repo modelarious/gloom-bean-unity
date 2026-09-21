@@ -1,0 +1,23 @@
+{
+    "started":  "2026-09-21T12:40:29.4169555-06:00",
+    "seed_engine":  "cc40096f1afa50b1d102c0cc7b75308bfd63d819",
+    "render_engine":  "d221ea49253f885caf381e853e72bf1fb9c8f758",
+    "error":  "Observed action was not the actual input-driven camera path",
+    "cases":  [
+                  {
+                      "ending":  null,
+                      "exit":  0,
+                      "parent_sha256":  null,
+                      "name":  "Rain-action",
+                      "status":  "PASS",
+                      "action_images":  30,
+                      "checks":  177,
+                      "failed":  0
+                  }
+              ],
+    "assembly_sha256":  "47cbc050dd9401a8f704df15a78a477ea2899f2fd82c8e96190ca633bbcde277",
+    "status":  "FAIL",
+    "archive_sha256":  "e787dc7cc2106070470369e61f690b92e7dee8b48f3ab106d055e6c50f131030",
+    "phase":  "native-packaged-gameplay",
+    "finished":  "2026-09-21T12:45:01.5884887-06:00"
+}
