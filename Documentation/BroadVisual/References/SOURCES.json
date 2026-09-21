@@ -1,0 +1,717 @@
+{
+  "scope": "New native WL4 corpus excludes all prior reference pixel hashes",
+  "previous_reference_hashes": [
+    "147d3ba78b61e284023bbff04975ba07925fecbb73b406d6e9caa1a5d3450671",
+    "33bbaf6d3ba9efd85535db8ff904976ca903332d3c4dfa45ae3d69b8c2efabe3",
+    "3ecc56b20a627f7037864d90b9cbb408a66c5b10dcd47c84883808b3fb38ff93",
+    "46c369d129a2e296edf6dc69f820fc2f27d939a1f58d86cd978c51ddd97c4ab7",
+    "5ed13fb3fa1e9cf9aa59400697f8a3e8727e950e8098187e739b1eeca574e435",
+    "8480f4838bf724f62c74b17b332d367b3ada4d9f5a4bbcd75e792f86065c0978",
+    "a64d325d310a6eace28492ffd14dcb4860c00ea23a3cc9cb7997b74ddee45ff5",
+    "c809a6b6591a67333896ecfb6525f9ea57e72923a9ac1b45cb8dc53e44483d39",
+    "ecbebd158a633b7b609adf347cd822d761ba5b69b85d8f78fd54d2c89164384f"
+  ],
+  "files": [
+    {
+      "file": "WL4-01.png",
+      "level": "Hall of Hieroglyphs",
+      "url": "https://mario.wiki.gallery/images/1/1e/Wario_Land_4_Beginning_Level.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "b48c615590b045310297b6bd0d9d7040e281d26ace7803ab299a4128e4b2b057",
+      "pixel_sha256": "5e4df802ed8f4c496b4eb1176251f4175867415fa14a159443fd6962311c0419",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-02.png",
+      "level": "Hall of Hieroglyphs",
+      "url": "https://mario.wiki.gallery/images/2/21/WL4-Heart_Box_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "67bf67d86b30215a54d07a62913e8eb56802881d27a33a5c9d0e5ede02706071",
+      "pixel_sha256": "b0e895a384382f01b9347122c8bcb4c3fe41002ffed26d2ae293183f58b4d2cd",
+      "size": [
+        239,
+        161
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-03.png",
+      "level": "Palm Tree Paradise",
+      "url": "https://mario.wiki.gallery/images/d/d6/Palm_Tree_Paradise.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "0a370f68faf00d4668771c98589408d3e55533b5755f13d0c8be7296654f25d7",
+      "pixel_sha256": "00638fb826194fb8e10e2c9eebc6faeb9f7f7fb627f4784065818aad39188687",
+      "size": [
+        239,
+        157
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-04.png",
+      "level": "Wildflower Fields",
+      "url": "https://mario.wiki.gallery/images/b/bd/WL4-Money_Flower.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "fd5c8844dcdca5556e4bc3c3354e7203bf8ef9f9134e40be949f07a0adf204e6",
+      "pixel_sha256": "83b9d31b2cf20f03e7fe9302ddfdfa63c5551a21f27c93b0c010477436018506",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-05.png",
+      "level": "Wildflower Fields",
+      "url": "https://mario.wiki.gallery/images/9/9b/WL4-Moguramen.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "b932c3e9e86e923ea086de441409bda98c8c75887e60c739a8efe1acc9612c7a",
+      "pixel_sha256": "763be049d7726da2f2ba3d720d4aac7d5d80f9b2274e435f6cfe8713d538673c",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-06.png",
+      "level": "Wildflower Fields",
+      "url": "https://mario.wiki.gallery/images/2/20/WL4-Blue_Fish.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "44d0e7a7eebb9e21a9a62ef8654eb466e9864e0490f9c2bf84b89f28a026a4f6",
+      "pixel_sha256": "2be2375aa3afda70cb3e8f0eb60ac83492e7768e13c92e9ba28243b730408d2d",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-07.png",
+      "level": "Mystic Lake",
+      "url": "https://mario.wiki.gallery/images/5/53/WL4-Utsuboanko_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "9251729b759d679f0a3c659fab492730a54d2d5aaa70165cc74cdcc486412767",
+      "pixel_sha256": "5a226f990880698cdde4092a7326dc6bb2260151ded5fea614b39877282975c3",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-08.png",
+      "level": "Mystic Lake",
+      "url": "https://mario.wiki.gallery/images/a/ac/WL4-Bubble_Wario.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "042b8b8dd476bc3eced6cc11c1460738f3c12c43c10034c64a4d91ff3b708a94",
+      "pixel_sha256": "cdef062aece00c96fb4bae83eee132bf5304b1a6bf173ea75b2e28ba73c0000b",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-09.png",
+      "level": "Mystic Lake",
+      "url": "https://mario.wiki.gallery/images/d/d0/WL4_invisible_Frog_Blocks.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "91750879b5b5ad46ad27f654278e549b34a44000c164397382b803f1dea78ce0",
+      "pixel_sha256": "26bab1103018c4bcc8a6f852cbbae264df45a0d556405dc38bed3a9e5d1ffb57",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-10.png",
+      "level": "Monsoon Jungle",
+      "url": "https://mario.wiki.gallery/images/1/15/Monsoon_Jungle.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "93fb2a360dcc22a39fbb5cd4859075333c3abfce9a9c24ca0c2989bc0902aedb",
+      "pixel_sha256": "feae998304f11f08dd2f65bcc49f64ecd846b0be6f4f76807d49c12deb8d23d3",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-11.png",
+      "level": "Monsoon Jungle",
+      "url": "https://mario.wiki.gallery/images/7/7b/WL4-Tobawani.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "405743c4e826622f96141c033ee296751b49a0d01c04fb180f4394f8497e1ea6",
+      "pixel_sha256": "7ef88e248fd2ec69afab3a4e1c3d524035fd219075cdb0b38a57564207925929",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-12.png",
+      "level": "The Curious Factory",
+      "url": "https://mario.wiki.gallery/images/f/fc/WL4-Togerobo.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "441a11ae76b5a633263535a5b285be94fa60ae7626b4c20a4366f107b3ebeefa",
+      "pixel_sha256": "94f6143a40b7bf8ae149d8ccb511d76c9b1a94dba467fd7bd5ce6af69da89230",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-13.png",
+      "level": "The Curious Factory",
+      "url": "https://mario.wiki.gallery/images/d/d8/WL4-Flat_Wario.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "937615b676ea6b77763cd4146ec2b29f52be4ba57efab5a12a874e9b98429957",
+      "pixel_sha256": "6f1a71e9928525d471f23cf4508740045146356e0c3e12cee83c6040b9e97c67",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-14.png",
+      "level": "The Curious Factory",
+      "url": "https://mario.wiki.gallery/images/e/ea/WL4-Robo_Bird.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "f63b85d30b8badf643e82a62c98438c64578a36ab80de36da772856f1ea0e430",
+      "pixel_sha256": "125ac5b128e234ae513e5342603b4d92efcabfd3ab7e51c044fbd4311cf326a9",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-15.png",
+      "level": "The Toxic Landfill",
+      "url": "https://mario.wiki.gallery/images/3/35/The_Toxic_Landfill_WL4_screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "a322812091d25a400cbb31f52b35b6f0d818c609133f6723f49fc8eda9f1b553",
+      "pixel_sha256": "b7a699954f2797b78866c2d63e6423475cf69ea130638ec2f9cb09310a398a86",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-16.png",
+      "level": "The Toxic Landfill",
+      "url": "https://mario.wiki.gallery/images/b/b9/WL4_Ringosuki_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "a13528dc1fc19419768a288e449cdff594fde09e7a6c6a8f1664d8a61836f730",
+      "pixel_sha256": "8c2664c420a4b2cde4033f49baa083359e40451e6918af2163599902f2804879",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-17.png",
+      "level": "The Toxic Landfill",
+      "url": "https://mario.wiki.gallery/images/2/25/WL4-PET.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "ed5211eaa779501fd1b81aa12988af0d43682ad40dbaa5ea8f5901360dc7b973",
+      "pixel_sha256": "ad761f2e079124ca9f69b5e39e87469cee2840b4c7aec1b2d656a7e34ada440c",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-18.png",
+      "level": "40 Below Fridge",
+      "url": "https://mario.wiki.gallery/images/0/0c/40_Below_Fridge.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "51496fd25e9a7a0cfce0a040774466276f580e904ea59512042f262cfb6cf7bf",
+      "pixel_sha256": "fb66f7c8d96275a6c91b6b676151d5e00a142c9ed74a0b525ba31607e76e08c5",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-19.png",
+      "level": "40 Below Fridge",
+      "url": "https://mario.wiki.gallery/images/3/3d/WL4_Super_Ram_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "71e0653f3c88dc7c082539b777c8ffcd51ce68c4cb67acf7b69d3801f2fcb043",
+      "pixel_sha256": "229f10ff5b7a5bda3ac3b1491f91a8b19c6191768783752e073ef92d4e950501",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-20.png",
+      "level": "Pinball Zone",
+      "url": "https://mario.wiki.gallery/images/0/01/WL4-Blue_Spike_Cannon.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "97fb4e6ef8c14666dbf1c71562d797aec6aed0a81e122d3b9b77a33ce6a18718",
+      "pixel_sha256": "26544a753cc64581a18991f12112355a5a55c001a1470c3a568b3c67acd7ea69",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-21.png",
+      "level": "Pinball Zone",
+      "url": "https://mario.wiki.gallery/images/f/f5/WL4-Pinball_Zone_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "7eeda1224c70187c0d1dba74815365258939c77d9f3ee3e9afc14c45f6b3f74a",
+      "pixel_sha256": "c16dd568c6bfa544da5d32c3ddc2ea08b6fec2da22411b643077d9f791af9d7a",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-22.png",
+      "level": "Pinball Zone",
+      "url": "https://mario.wiki.gallery/images/8/8e/WL4-Green_Spike_Cannon.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "017dd4deb9faa5a77236f8748e71215222548e9817fe3c6e16bcc9971305edc8",
+      "pixel_sha256": "0061671e78218d436737f8ac1c3b94f528af7670f414ac2ae8028ccb0ec340ee",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-23.png",
+      "level": "Toy Block Tower",
+      "url": "https://mario.wiki.gallery/images/8/8c/Toy_Block_Tower.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "c15ef56b0e857b8e46719f6e98fd6d11b6748fd570bc90c229238fbc8e6a0351",
+      "pixel_sha256": "fa8b8a0b50e6a27533463b595ed97fd6ea52382ecabad342e080526c844b7921",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-24.png",
+      "level": "Toy Block Tower",
+      "url": "https://mario.wiki.gallery/images/2/29/WL4-Rolling_Toy_Block.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "ce12c2d96a6542be0f48b0de573524e58f6081a4e3c73598cf4f72d89aea95d2",
+      "pixel_sha256": "3eb5d10a2f30dba2e78146e7e81bbff79ffa6dcb5c615587c3c1526df8309e07",
+      "size": [
+        238,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-25.png",
+      "level": "Toy Block Tower",
+      "url": "https://mario.wiki.gallery/images/2/27/WL4-Pig_Head_Statue_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "27e8a9d4ade441c7f23a5819136f0d5339040ef90b7be9ec71d6217dcb4ec618",
+      "pixel_sha256": "00ee79b2308bae2e7c7a36a0e14662eaaedc4df6eb2ac403e449e09b4a421202",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-26.png",
+      "level": "The Big Board",
+      "url": "https://mario.wiki.gallery/images/9/97/TheBigBoard_WL4.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "248929aa0a8d281c67568e9bcfc1a310c75210f1bac1e574a2ebf7d8d2f9165e",
+      "pixel_sha256": "c02fcc8ea41e5fbdad783c364875f08989356854ec1aa2567cb3e18878148ec3",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-27.png",
+      "level": "The Big Board",
+      "url": "https://mario.wiki.gallery/images/5/5a/WL4-Toy_Car.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "8814771353b1ba217b55c780f7ab31ca151a7299fc70593be02f189cfa392c62",
+      "pixel_sha256": "786ca727bd1357c2a8c13a297cf2327ac291d68d231094d05efd8392d9fad759",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-28.png",
+      "level": "The Big Board",
+      "url": "https://mario.wiki.gallery/images/7/7a/WL4-Dice_Men.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "7294b7fe77186a739ac668abf605a4daed1fa6ea6c2dc3487e49af4b76e307c6",
+      "pixel_sha256": "96b1bcd57bc56e955dbbdf2afa5f6a09b6c92c47dd202e09b037307849826017",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-29.png",
+      "level": "Doodle Woods",
+      "url": "https://mario.wiki.gallery/images/c/c0/Wario_Land_4_Doodle_Woods.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "1b80863f4a59e609468d09ba0bc1ee88fc4c0584192fdf43c54e76fad643ef02",
+      "pixel_sha256": "74bea1624674225c7588fe8f15b799167e981b8583775d68d7261a9a84646080",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-30.png",
+      "level": "Doodle Woods",
+      "url": "https://mario.wiki.gallery/images/8/82/WL4-Butatabi.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "d451f07ececf9121bd9b0e3fe27ac228b0a095a63c8806baffb4af55d6b35b19",
+      "pixel_sha256": "35aad28fe6a1755e021b0bd6c1f4a6a3b9c0a63cffc52c3be86e0b2b88a32ba6",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-31.png",
+      "level": "Doodle Woods",
+      "url": "https://mario.wiki.gallery/images/9/90/Deburina_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "a71c6a2e99808f33ab0d9343d5a4653fd9256f4947b41841d6ce2e6f5ca0c10c",
+      "pixel_sha256": "4295a2d55a95ef1d44b4e575b20527fc82875bca3aad74ff1d0cefe24d045e80",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-32.png",
+      "level": "Domino Row",
+      "url": "https://mario.wiki.gallery/images/5/55/Domino_Row.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "0e176bd345a2322364373d9f8d256bc78dc5438341ef57a39268f864e783b6aa",
+      "pixel_sha256": "4c69f70d9fbffdf40976287fb0f043f76e8dbe9e9f7350d70ed28a3f5c39e243",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-33.png",
+      "level": "Domino Row",
+      "url": "https://mario.wiki.gallery/images/e/e6/WL4-Shieragucchi_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "98e2e18ca4d839d985e125db37c379c6a736425a98175cb384fe05ada94a50ca",
+      "pixel_sha256": "581024814c12153f5e852ddb882b6cabef8559be4085b4dc6d36d507ce6acab5",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-34.png",
+      "level": "Domino Row",
+      "url": "https://mario.wiki.gallery/images/9/99/WL4-SP_Frog_Block.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "f11aeea4b9125f591d42812af01e1ac872302f467f10c1f6c4f4384e831bfca9",
+      "pixel_sha256": "1cefeb68f008669d7ecd57c46946de4defb663b0b530657dd4b6896e95191469",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-35.png",
+      "level": "Crescent Moon Village",
+      "url": "https://mario.wiki.gallery/images/2/25/WL4_Diamond_Piece.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "23204388c64c988460052a5aa980462aef226b4042c7fa720f6872bc4eb43123",
+      "pixel_sha256": "8281d5a868d067a823c8caa79fc9cfba1f7dc6f27f33ee296644f5380481aee1",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-36.png",
+      "level": "Crescent Moon Village",
+      "url": "https://mario.wiki.gallery/images/2/2a/WL4-Vampire_Bat.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "edbf5988a544ba6ab0597768575b69619a0f343cedd88f16da7f278b38bcc110",
+      "pixel_sha256": "62a72dc772e201445a96f5564492819e9275ba2b9a8c7f200edbeee686e53dee",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-37.png",
+      "level": "Crescent Moon Village",
+      "url": "https://mario.wiki.gallery/images/8/8d/WL4-500_CD.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "d373c1f0e711aaaad1d8db90862d858d6c4f1a810a68b8bb1cc656e4191f6e7e",
+      "pixel_sha256": "142f34f91e46d44ba00cb2de5a2c0d1f9915e0fb78099ed9c12f1f0e657f36d4",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-38.png",
+      "level": "Arabian Night",
+      "url": "https://mario.wiki.gallery/images/4/4f/Onomi-Arabian-Night-WL4.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "a31c7642c3f61837419c58988608c1bfbead1eee8e766104ba06de07bd9ba5e5",
+      "pixel_sha256": "0aa4d7fb4f8e1dcd95c8c3305e5f3da835948a317afc64fa808ae43a93d00adb",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-39.png",
+      "level": "Fiery Cavern",
+      "url": "https://mario.wiki.gallery/images/8/81/WL4_Fiery_Cavern_and_Iwao.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "c90ad398eca170caafff70be5dc152de66da48363df9d858e6b9d48b133424ec",
+      "pixel_sha256": "75e58a2b6432a937ac45729339c5095d2c46e37e4688594af0611c52b97cca7d",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-40.png",
+      "level": "Fiery Cavern",
+      "url": "https://mario.wiki.gallery/images/3/3b/WL4-Ice_Switch.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "087be236ec492137c345d44fd9f8234f335016f949fffa006e2cc15c94aa73c3",
+      "pixel_sha256": "dcf3da395d44e822961111e157c1506ce9cdb59d0909a5c26bd9ccbe933c2fbc",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-41.png",
+      "level": "Fiery Cavern",
+      "url": "https://mario.wiki.gallery/images/9/91/WL4-Sneezing_Yeti.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "a0b3568e907bb0c4e77526c441816502e0b7c50e1e5b166db0602835c234aeb6",
+      "pixel_sha256": "b32f84e325bac863ff1fe153a6976f58e1668d773138afdec1fd9ddef4120ca3",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-42.png",
+      "level": "Hotel Horror",
+      "url": "https://mario.wiki.gallery/images/2/2d/WL4-Frog_Door.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "5bc2988746ce5c875e46e0be2e3f594c0b997c25abc3d96f66c9bdb50e75e623",
+      "pixel_sha256": "7271aa678c6056f781b72b93c8e842e7fd4e9e0ef5326e443058c02371ad6941",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-43.png",
+      "level": "Spoiled Rotten",
+      "url": "https://mario.wiki.gallery/images/a/a8/WL4-Petit-size_no_Pinkie_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "0ea25b9df35cafd433dbf330747a39619843133b336f7e7953d8131d17350b10",
+      "pixel_sha256": "3ca5b618c462686c58902bf3f307e0074567168397abe71de598bc7252a189a2",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-44.png",
+      "level": "Cractus",
+      "url": "https://mario.wiki.gallery/images/f/f3/WL4-Cractus_Battle.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "b7fe3d865acf34696a40cf5ada45098097dd61d39eaacd9091305d45666c120b",
+      "pixel_sha256": "4c0e8dd595e1d0b74d085cb67b2d6ff062f8098db8a2bbc01509b6ab3e2e5c99",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-45.png",
+      "level": "Cractus",
+      "url": "https://mario.wiki.gallery/images/f/fb/WL4-Firefly.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "b657c28571bece0f2b961150f447dd76386c2ff48943c8335af3059139cf7472",
+      "pixel_sha256": "a33d3b978ef28fc176c942ef00115d178965bae843672c951e717b8bbf8751f0",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-46.png",
+      "level": "Cuckoo Condor",
+      "url": "https://mario.wiki.gallery/images/6/60/Cuckoo_Condor_WL4_grabbing_Wario.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "09a580d69ccceb3fccf4f933a1fea459bf4b4f9a5497a567deaa30b37edcc2f3",
+      "pixel_sha256": "083148db0757e02cb0651c608b1aaec3ab3749cfd914a704c4a7088b51e4d5dd",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-47.png",
+      "level": "Cuckoo Condor",
+      "url": "https://mario.wiki.gallery/images/7/7d/Cuckoo_Condor_WL4_eggs.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "097eebb693c98fd69a3d4dd7a09f5e819cbccdae937be689bd82e62db7535fb9",
+      "pixel_sha256": "264045059a4d440f7c3ba552ac5ebbd3ea5334e5a4d6ba82addfc75713310647",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-48.png",
+      "level": "Aerodent",
+      "url": "https://mario.wiki.gallery/images/a/a9/WL4_Aerodent_Battle.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "8679ce5c683ab82d1e162f05666c2169ab55bde1b7003710de58a37e571b65de",
+      "pixel_sha256": "0e7938ed7c21b5d9616419d63e62c4707876ccee5a472600e007089c80e683d1",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-49.png",
+      "level": "Aerodent",
+      "url": "https://mario.wiki.gallery/images/c/cd/WL4-Tack_Soldier.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "de73f340d4b9dc1a5a17077c3c2013649372cb3fbd03d4f7906010e17a42af79",
+      "pixel_sha256": "1b6c1d4e05f937974e27524e01cf6e9e89f66373d5031fcb2fa00c052a661596",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-50.png",
+      "level": "Catbat",
+      "url": "https://mario.wiki.gallery/images/9/96/Catbat_WL4_boss_fight.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "b20c028a619ec52f464102362b3c458d90509c708406dbdb4cab8bb4b618bd03",
+      "pixel_sha256": "dfca343aaf28d38c0631e51248f36c3a37e948743e193cfbcbc6803e10ea49f4",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-51.png",
+      "level": "Catbat",
+      "url": "https://mario.wiki.gallery/images/f/fc/WL4-Coughing.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "7c5678dc5d6a0673eaa4107bd3035d8184f73ae6d708d802d491871f879a9d2a",
+      "pixel_sha256": "dae03247a39d79dd3b34116588f4f26e74a44fb600c86b39b0b75d350eebbb9f",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    },
+    {
+      "file": "WL4-52.png",
+      "level": "The Golden Diva",
+      "url": "https://mario.wiki.gallery/images/9/9d/WL4-Black_Cat_Battle.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "sha256": "cf84a90c19a25b52c9c8c62228c30905f2f2c041d012b85670c95a37da9d59b2",
+      "pixel_sha256": "29aa906c3c14ea8092721ec076d5d806041c2e04ccef62c57e49ea24c4902651",
+      "size": [
+        240,
+        160
+      ],
+      "rights": "Nintendo original gameplay; comparison/criticism only, not runtime art"
+    }
+  ],
+  "levels": {
+    "Hall of Hieroglyphs": 2,
+    "Palm Tree Paradise": 1,
+    "Wildflower Fields": 3,
+    "Mystic Lake": 3,
+    "Monsoon Jungle": 2,
+    "The Curious Factory": 3,
+    "The Toxic Landfill": 3,
+    "40 Below Fridge": 2,
+    "Pinball Zone": 3,
+    "Toy Block Tower": 3,
+    "The Big Board": 3,
+    "Doodle Woods": 3,
+    "Domino Row": 3,
+    "Crescent Moon Village": 3,
+    "Arabian Night": 1,
+    "Fiery Cavern": 3,
+    "Hotel Horror": 1,
+    "Spoiled Rotten": 1,
+    "Cractus": 2,
+    "Cuckoo Condor": 2,
+    "Aerodent": 2,
+    "Catbat": 2,
+    "The Golden Diva": 1
+  }
+}
