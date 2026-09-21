@@ -1,0 +1,34 @@
+BoxCollider2D|COLD FONT|True|13
+BoxCollider2D|Collapsed orchard maintenance path|False|8
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|Glass fruit balance shutter|False|8
+BoxCollider2D|Glass fruit bell roof|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Key|True|13
+BoxCollider2D|Lever|True|13
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Pear cage drain|True|13
+BoxCollider2D|Pear cage rising runnel|True|13
+BoxCollider2D|Plate 1|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Ripening pear counterweight|False|10
+BoxCollider2D|Ripening pear counterweight|False|10
+BoxCollider2D|Ripening pear counterweight|False|10
+BoxCollider2D|Tall capillary canopy|False|8
+BoxCollider2D|Tenant: Wax|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11

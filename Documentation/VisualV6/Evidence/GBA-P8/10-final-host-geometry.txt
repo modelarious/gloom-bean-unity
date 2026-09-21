@@ -1,0 +1,95 @@
+BoxCollider2D|Cargo scale counterweight|False|9
+BoxCollider2D|Conserved body cargo lift|False|9
+BoxCollider2D|EMPTY FRAME|True|13
+BoxCollider2D|EMPTY FRAME|True|13
+BoxCollider2D|Empty terrain footprint|True|13
+BoxCollider2D|Empty terrain footprint|True|13
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Final reusable structural morsel|False|8
+BoxCollider2D|Final shadow tendon|True|13
+BoxCollider2D|Final suspended iron screen|False|10
+BoxCollider2D|Fixed seam|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Foldable cloth-stone|False|9
+BoxCollider2D|Gate|False|8
+BoxCollider2D|Gate|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Health|True|13
+BoxCollider2D|Left side of heart shaft|False|8
+BoxCollider2D|Loose seam|True|13
+BoxCollider2D|Opaque heart partition|False|8
+BoxCollider2D|Perspective platform|False|17
+BoxCollider2D|Perspective platform|False|17
+BoxCollider2D|Perspective platform|False|19
+BoxCollider2D|Plate 0|True|13
+BoxCollider2D|Plate 1|True|13
+BoxCollider2D|Plate 2|True|13
+BoxCollider2D|Plate 5|True|13
+BoxCollider2D|Plate 6|True|13
+BoxCollider2D|Plate 7|True|13
+BoxCollider2D|Plate 8|True|13
+BoxCollider2D|Plate 9|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Reflection left caliper|False|8
+BoxCollider2D|Reflection right caliper|False|8
+BoxCollider2D|Right side of heart shaft|False|8
+BoxCollider2D|Root seam|True|13
+BoxCollider2D|Root seam|True|13
+BoxCollider2D|Root seam|True|13
+BoxCollider2D|Sealed digestion vault|False|8
+BoxCollider2D|Second act removable support|False|8
+BoxCollider2D|Shared silhouette|True|13
+BoxCollider2D|Shared silhouette|True|13
+BoxCollider2D|Tenant: Coffin|True|13
+BoxCollider2D|Tenant: Echo|True|13
+BoxCollider2D|Tenant: Echo|True|13
+BoxCollider2D|Tenant: Gullet|True|13
+BoxCollider2D|Tenant: Gullet|True|13
+BoxCollider2D|Tenant: Ink|True|13
+BoxCollider2D|Tenant: Lodestone|True|13
+BoxCollider2D|Tenant: Mirror|True|13
+BoxCollider2D|Tenant: Parallax|True|13
+BoxCollider2D|Tenant: Parallax|True|13
+BoxCollider2D|Tenant: Root|True|13
+BoxCollider2D|Tenant: Shadow|True|13
+BoxCollider2D|Tenant: Stitch|True|13
+BoxCollider2D|Tenant: Wax|True|13
+BoxCollider2D|Tenant: Wax|True|13
+BoxCollider2D|The exposed source of the first corruption|False|10
+BoxCollider2D|The reflected near-plane stamp|True|13
+BoxCollider2D|The unprojected upper absence|False|8
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+CapsuleCollider2D|Host|False|11

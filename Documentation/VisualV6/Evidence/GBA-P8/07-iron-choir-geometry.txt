@@ -1,0 +1,55 @@
+BoxCollider2D|Bell saddle backstop|False|8
+BoxCollider2D|CERAMIC ARCH|True|13
+BoxCollider2D|Coil lever 16|True|13
+BoxCollider2D|Coil lever 27|True|13
+BoxCollider2D|Coil lever 38|True|13
+BoxCollider2D|Coil lever 49|True|13
+BoxCollider2D|Coil lever 60|True|13
+BoxCollider2D|Coil lever 71|True|13
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Greased bell saddle|False|8
+BoxCollider2D|Hanging iron screen|False|10
+BoxCollider2D|Health|True|13
+BoxCollider2D|Key|True|13
+BoxCollider2D|Launch coil 16|False|8
+BoxCollider2D|Launch coil 27|False|8
+BoxCollider2D|Launch coil 38|False|8
+BoxCollider2D|Launch coil 49|False|8
+BoxCollider2D|Launch coil 60|False|8
+BoxCollider2D|Launch coil 71|False|8
+BoxCollider2D|Lever|True|13
+BoxCollider2D|Loose bell counterweight|False|10
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Orbital entry coil|False|8
+BoxCollider2D|Orbital velocity matching mass|False|8
+BoxCollider2D|Orbital velocity matching mass|False|8
+BoxCollider2D|Orbiting iron halo 0|False|9
+BoxCollider2D|Orbiting iron halo 1|False|9
+BoxCollider2D|Orbiting iron halo 2|False|9
+BoxCollider2D|Orbiting iron halo 3|False|9
+BoxCollider2D|Orbiting iron halo 4|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Separate counterweight chute|False|8
+BoxCollider2D|Tenant: Lodestone|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11
+CircleCollider2D|Orbiting iron halo 0|False|9
+CircleCollider2D|Orbiting iron halo 1|False|9
+CircleCollider2D|Orbiting iron halo 2|False|9
+CircleCollider2D|Orbiting iron halo 3|False|9
+CircleCollider2D|Orbiting iron halo 4|False|9
+EdgeCollider2D|Orbiting Mercy halo|False|9
