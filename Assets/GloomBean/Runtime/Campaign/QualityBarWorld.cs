@@ -21,15 +21,15 @@ namespace GloomBean.Campaign
     {
         public SpriteRenderer Source {get;private set;}
         public bool Applied=>Source&&fascia&&fascia.sprite&&fascia.enabled==Source.enabled;
-        StageSession session;int group=-1;Vector2 previous;SpriteRenderer fascia,capLeft,capRight;readonly List<SpriteRenderer> details=new List<SpriteRenderer>();bool semanticTint;
-        public void Initialize(SpriteRenderer sr){Source=sr;session=GetComponentInParent<StageSession>();semanticTint=GetComponent<MagneticBody>()||GetComponent<DepthGeometry>();fascia=QualityBarArt.Picture(transform,"recessed load housing",sr.sortingOrder-2);fascia.drawMode=SpriteDrawMode.Tiled;capLeft=QualityBarArt.Picture(transform,"left housing bracket",sr.sortingOrder-2);capRight=QualityBarArt.Picture(transform,"right housing bracket",sr.sortingOrder-2);LateUpdate();}
+        StageSession session;int group=-1;Vector2 previous;SpriteRenderer fascia,capLeft,capRight,main,contact;readonly List<SpriteRenderer> details=new List<SpriteRenderer>();bool semanticTint;
+        public void Initialize(SpriteRenderer sr){Source=sr;session=GetComponentInParent<StageSession>();semanticTint=GetComponent<MagneticBody>()||GetComponent<DepthGeometry>();main=QualityBarArt.Picture(transform,"physical material face",sr.sortingOrder);main.drawMode=SpriteDrawMode.Tiled;contact=QualityBarArt.Picture(transform,"physical contact edge",sr.sortingOrder+1);contact.drawMode=SpriteDrawMode.Tiled;fascia=QualityBarArt.Picture(transform,"recessed load housing",sr.sortingOrder-2);fascia.drawMode=SpriteDrawMode.Tiled;capLeft=QualityBarArt.Picture(transform,"left housing bracket",sr.sortingOrder-2);capRight=QualityBarArt.Picture(transform,"right housing bracket",sr.sortingOrder-2);LateUpdate();}
         void LateUpdate()
         {
             if(!Source||!Source.sprite||!session)return;int next=QualityBarArt.Group(session);bool magnetic=GetComponent<MagneticBody>();if(magnetic)next=5;
             Vector2 size=Source.drawMode==SpriteDrawMode.Simple?(Vector2)Source.sprite.bounds.size:Source.size;
             if(next!=group||(size-previous).sqrMagnitude>.001f){group=next;previous=size;Rebuild(size);}
             Color color=semanticTint?new Color(Source.color.r,Source.color.g,Source.color.b,Source.color.a):new Color(.98f,.91f,.93f,Source.color.a);
-            bool visible=Source.enabled;fascia.enabled=visible;fascia.color=color;capLeft.enabled=capRight.enabled=visible;capLeft.color=capRight.color=color;
+            bool visible=Source.enabled;main.enabled=visible;main.color=color;contact.enabled=visible&&size.x>1.6f&&size.y<size.x*.65f;contact.color=color;fascia.enabled=visible;fascia.color=color;capLeft.enabled=capRight.enabled=visible;capLeft.color=capRight.color=color;
             foreach(var sr in details){if(!sr)continue;sr.enabled=visible;var tint=sr.color;tint.a=Source.color.a*(sr.name.Contains("light cone")?.50f:sr.name.Contains("rear")?.72f:.88f);sr.color=tint;}
         }
         void Add(string art,string name,Vector2 at,Vector2 dimensions,int order,Color tint){var sr=QualityBarArt.Picture(transform,name,order);sr.sprite=QualityBarArt.Get(art);QualityBarArt.Fit(sr,dimensions);sr.transform.localPosition=new Vector3(at.x,at.y,.08f);sr.color=tint;details.Add(sr);}
@@ -37,6 +37,8 @@ namespace GloomBean.Campaign
         {
             foreach(var old in details)if(old)Destroy(old.gameObject);details.Clear();
             bool horizontal=size.x>1.6f&&size.y<size.x*.65f;bool thin=horizontal&&size.y<1.2f;
+            main.sprite=QualityBarArt.Get("solid_"+group);main.size=size;contact.sprite=QualityBarArt.Get("edge_"+group);contact.size=new Vector2(size.x,.5f);float edgeHeight=Mathf.Min(size.y,.28f);contact.transform.localScale=new Vector3(1,edgeHeight/.5f,1);contact.transform.localPosition=new Vector3(0,size.y*.5f-edgeHeight*.5f,0);
+            foreach(Transform child in transform){if(child.name=="Broad visual / solid material"||child.name=="Broad visual / contact cornice"||child.name=="Broad visual / left material edge"||child.name=="Broad visual / right material edge"){var sr=child.GetComponent<SpriteRenderer>();if(sr)sr.forceRenderingOff=true;}}
             // This is recessed ornament behind the collision/actor layer. The existing sharp contact trim stays at the physical top.
             if(horizontal){fascia.sprite=QualityBarArt.Get("fascia_"+group);float depth=thin?Mathf.Min(1.35f,size.x*.32f):Mathf.Min(size.y,1.7f);
                 fascia.size=new Vector2(Mathf.Max(.1f,size.x),2);fascia.transform.localScale=new Vector3(1,depth/2,1);fascia.transform.localPosition=new Vector3(0,size.y*.5f-depth*.5f-.025f,0);
@@ -53,6 +55,12 @@ namespace GloomBean.Campaign
                         Add(motif,"rear "+motif,new Vector2(x+span*.12f,y),new Vector2(w,h),-18,new Color(.77f,.66f,.75f,.86f));
                         if(group!=2){float lx=x-span*.21f;Add("lamp_"+group,"rear hanging lamp",new Vector2(lx,top+5.0f),new Vector2(1.4f,1.0f),-17,new Color(1,.91f,.76f,1));Add("light_"+group,"rear light cone",new Vector2(lx,top+2.55f),new Vector2(3.6f,4.4f),-19,new Color(1,1,1,.5f));Add("chain_"+group,"rear lamp chain",new Vector2(lx,top+6.2f),new Vector2(.16f,1.8f),-20,Color.white);}
                     }
+                }
+                if(Source.name!="Floor"&&size.x>=2.5f&&size.y<2f&&!GetComponent<Rigidbody2D>()&&!semanticTint){
+                    string motif=QualityBarArt.Motif(session.definition);float width=Mathf.Min(size.x*.95f,4f);float height=motif=="washer"?width*.8f:width*1.1f;bool above=motif=="balcony"||motif=="ledger"||motif=="statue";
+                    float top=size.y*.5f;float y=above?top+height*.48f:top-height*.60f;
+                    Add(motif,"rear elevated "+motif,new Vector2(0,y),new Vector2(width,height),-17,new Color(.88f,.78f,.83f,.9f));
+                    if(group!=2){float lx=-width*.36f;Add("lamp_"+group,"rear elevated lamp",new Vector2(lx,top+3.6f),new Vector2(1.2f,.82f),-15,new Color(1,.96f,.86f,1));Add("light_"+group,"rear elevated light cone",new Vector2(lx,top+1.62f),new Vector2(3.0f,3.65f),-16,Color.white);}
                 }
                 if(GetComponent<MotionPlatform>()||GetComponent<Rigidbody2D>()&&Source.name.Contains("Halo")){
                     Add("gear_"+group,"moving axle",new Vector2(0,size.y*.5f-1.1f),new Vector2(1.2f,1.2f),-3,new Color(1,.93f,.84f,1));
@@ -81,14 +89,18 @@ namespace GloomBean.Campaign
         public void Initialize(){session=GetComponent<StageSession>();Scan();}
         public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
+            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.48f,.43f,.58f,sr.color.a);else if(sr.name=="Broad visual / recessed material support")sr.forceRenderingOff=true;}
+            var host=session.player?session.player.GetComponent<HostController>():null;if(host&&!host.GetComponent<QualityBarAnchor>())host.gameObject.AddComponent<QualityBarAnchor>();
         }
         void Update(){if(Time.unscaledTime>=next){next=Time.unscaledTime+.75f;Scan();}}
-        void LateUpdate(){
-            // Push decorative room bays back. The real contacts/player/objects retain their authored luminance.
-            foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true)){
-                if(sr.name=="Broad visual / level architecture bay")sr.color=new Color(.55f,.49f,.64f,sr.color.a);
-                else if(sr.name=="Broad visual / recessed material support")sr.enabled=false;
-            }
-        }
+
     }
+    [DefaultExecutionOrder(280)]
+    public sealed class QualityBarAnchor:MonoBehaviour
+    {
+        HostController host;SpriteRenderer trolley;
+        void Start(){host=GetComponent<HostController>();trolley=QualityBarArt.Picture(transform,"actual marionette rail trolley",15);trolley.sprite=QualityBarArt.Get("gear_1");QualityBarArt.Fit(trolley,new Vector2(.82f,.82f));}
+        void LateUpdate(){if(!host||!trolley)return;MarionetteForm form=null;foreach(var f in host.Forms)if(f is MarionetteForm found)form=found;trolley.enabled=form!=null&&form.Joint;if(trolley.enabled){trolley.transform.position=form.Joint.connectedAnchor;trolley.transform.rotation=Quaternion.identity;}}
+    }
+
 }
