@@ -1,0 +1,41 @@
+{
+  "scope": "Original three-phase artwork for Usher/Judge/Surveyor. Last two bosses retain already-authored P5 sprites. No new boss behavior or colliders.",
+  "assets": [
+    {
+      "file": "boss_1_0.png",
+      "sha256": "dc11f5b05b08d413d16cd0e431ab5e687f58670356b011d4da6e2f702c157daa"
+    },
+    {
+      "file": "boss_1_1.png",
+      "sha256": "99638356bcfcc4c1be7caa970f1b6ff3383177dff872f62eb06eac0575111942"
+    },
+    {
+      "file": "boss_1_2.png",
+      "sha256": "079575f55afa75d2f987d4382a07ec1c5b45db405eb6eac622a18a927f1aa724"
+    },
+    {
+      "file": "boss_2_0.png",
+      "sha256": "8bff8bd9f357c4ea6a851788e84dcf204b34c2a0bba0f4e64a824751ab33daea"
+    },
+    {
+      "file": "boss_2_1.png",
+      "sha256": "2a647a2830d925b534296b78bd2956e3a3ae2bc625ea815adad697ba1c3967ee"
+    },
+    {
+      "file": "boss_2_2.png",
+      "sha256": "523b23e37234012f1446ab4578cf200217f7f82a00e61118eaf5526d4959c2ff"
+    },
+    {
+      "file": "boss_3_0.png",
+      "sha256": "0dddd8f45072557d1acd46f370842b849a1b47cfea38afd0a113d66a8ae33600"
+    },
+    {
+      "file": "boss_3_1.png",
+      "sha256": "3b7e62ade27fd5ba2a1e468a0a949f9d2d44a33b9b7810fcf02ab879a897ddae"
+    },
+    {
+      "file": "boss_3_2.png",
+      "sha256": "fc1d209630005a7a668437c6a1f72cbb83395dff207d7ffcd24e1251faf98a88"
+    }
+  ]
+}
