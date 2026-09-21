@@ -1,0 +1,371 @@
+{
+  "status": "PASS_FOR_CAPTURE_PROVENANCE_AND_PIXEL_INTEGRITY",
+  "native_action_frames": 40,
+  "keyboard_frames": 14,
+  "ending_states": [
+    0,
+    19,
+    20
+  ],
+  "all_25_stage_contact_sheets_reviewed": true,
+  "manual_scope": "Direct visual review of175 staged Q8 views,40 action backbuffers,14 keyboard frames and ordinary/restored endings. Not a human playtest, all-actions proof or achievement of the concept bar.",
+  "concept_bar": "UNMET",
+  "remaining_visible_failures": [
+    "Sparse Laundry scenery during long unsupported swings",
+    "Geometrical repetitive apartment backdrops",
+    "Labelled slab geometry in Scripture",
+    "Limited expressive character animation"
+  ],
+  "pixel_checks": [
+    {
+      "path": "Laundry\\NativeAction\\01-GB-L03.png",
+      "sha256": "c3024d5e45d75d92b978a44b47a87438ca8768ccfe29bde8d3f6e426ff6e0d6b",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\02-GB-L03.png",
+      "sha256": "5a21c609df5bc43c0251b0614852d123060fe44c3ec6a450a6ac2f6430905085",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\03-GB-L03.png",
+      "sha256": "3ba21b616ebeb4d2a5705a02617eb376212c53008a04a1e4bb9ac704e3b05ac1",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\04-GB-L03.png",
+      "sha256": "4bf824631d1b56fd55dfbf41b880ab441aa45b2e7c1e7b807e1c873bf9f4d71f",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\05-GB-L03.png",
+      "sha256": "7a425031f6ca06286f18110777e7159ef490ca12889a3a94a47b8fa3be4d91e9",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\06-GB-L03.png",
+      "sha256": "acba1a4053ad428e43907985c12819a06dd371d36d569729a6a08f372cdfbf7b",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\07-GB-L03.png",
+      "sha256": "58287fdbb688d078e1988152eef42d63fb0d05558b426c5c9a081ec30cd8fe86",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\08-GB-L03.png",
+      "sha256": "dde6a4289c0c3856c52a2bd3d4156f81714072b3bb2bc49c837e742a15b01388",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\09-GB-L03.png",
+      "sha256": "480bc571788136a8424f2924c93e175712d62741534f38ae1401b94677242311",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\10-GB-L03.png",
+      "sha256": "45685e800d470e5b3a2bc737aa2bae4f7c04ae525d16ec8b1d32abf0f5da2a68",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\11-GB-L03.png",
+      "sha256": "8b58494b2d2b6a602087619d801ba5ff9b4a206a87c85fa3dd158c5499933690",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Laundry\\NativeAction\\12-GB-L03.png",
+      "sha256": "e78be3bafd98d825df471e89a53ba1a26b58f3ef28faed4def5e2c49799180fe",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\01-GB-L09.png",
+      "sha256": "b0d34177c07fe28a0c4cc103d37ccebc9ff08166c3b54b07d519f2b5044921e1",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\02-GB-L09.png",
+      "sha256": "f03d73a3c367723b966ec6b7d78442b20a94188d8ad238b4996054a9cf4b9a23",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\03-GB-L09.png",
+      "sha256": "80addd5b78b18e5c6ed41d22af156106f074360034d1de1a0f301ff9e33f1c0e",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\04-GB-L09.png",
+      "sha256": "5a44c6fad678cc3950c0df479533278c321d3ef03e0ff00d30c92bc5872b0773",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\05-GB-L09.png",
+      "sha256": "27050d2f89c73fbe5a48b39d640de269b7c7d42d611b45fe493359a078036c0c",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\06-GB-L09.png",
+      "sha256": "a702a0889f1383e21f02f7e7cf7a1e12212c744cb90fa79f621ae9f8d0a4ba57",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\07-GB-L09.png",
+      "sha256": "33922e8992eb2bc2dc6297616fc3816e7f271d9c834ab6781a0ebcc1c9f427b1",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\08-GB-L09.png",
+      "sha256": "55c7cafc0842b1f37a10e2d998a2deaeefc69e560fbcce84532e958428482143",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\09-GB-L09.png",
+      "sha256": "c96652d8c0e1d7bec03d6cb26bd70112d155d32ccfd4d57b6aea73dc104996de",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\10-GB-L09.png",
+      "sha256": "d9e6a653d1bb4368346d12f99daaa0f2c0b47f2187085ab3e1da82a5457bdefe",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Mirror\\NativeAction\\11-GB-L09.png",
+      "sha256": "3875044b315456e5715f2d56221c1c32c66110ac049b5b5a68d0fd3961a8471d",
+      "input": "ScriptedInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\01-GB-L19.png",
+      "sha256": "09943f57b4a943eb1b10ba3cd94ea67c5a2c4fbac5aa80fda11c5249364dc835",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\02-GB-L19.png",
+      "sha256": "1774d1b3245b7b9e36e225a3cb5c4f72db794ce0ada1acdac48e9e7cdc7fbfd4",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\03-GB-L19.png",
+      "sha256": "ad06d6f052854a4baacd8d9b35c49401bb470f171c72cccfb5eeb703d3991d1a",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\04-GB-L19.png",
+      "sha256": "644e952b6ca2243958a53a0fa3706eac3bdfc19640e42c944d050a836fdf15a7",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\05-GB-L19.png",
+      "sha256": "87b323404b7649eb0533d7c19a679cb87803f38a9a34976d15925959c6d65e81",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\06-GB-L19.png",
+      "sha256": "67f0a5d0c0c991d9637ec1ee6af471a4b2dafc743e1b539b0a501d249be0f9e5",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\07-GB-L19.png",
+      "sha256": "5aab4e017bbd51b39214f422394550dccfcb467239f3cd27c99dcb4eb4586b58",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\08-GB-L19.png",
+      "sha256": "c54a10e944c998c22e7ee5672be14114e2ef72a944e753ce46456db1c077a97c",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\09-GB-L19.png",
+      "sha256": "dda2fa364da0730be1eb12293733e49e63a11eede8c4375380ef246d03fe6915",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\10-GB-L19.png",
+      "sha256": "409d796b982732635a9a74105c5875efa0ea20f06ee3599effa605ab26d03fbe",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\11-GB-L19.png",
+      "sha256": "0683bfd77b8e1db9c7942dc9f3bb989912c9b2ca998311d047c345545739fd15",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\12-GB-L19.png",
+      "sha256": "74b5192f0ac8b8cba08aa7b260f9d1957c1984ac58aa4997eb30447cba18badc",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\13-GB-L19.png",
+      "sha256": "fa6087cc26b4010316b97df12df449989314492302f32ede8de2ac728aedfacc",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\14-GB-L19.png",
+      "sha256": "a4c4a49aec7b49da80d33e1af6d53a9651181c0055cc3f7fd06aa127c869f875",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\15-GB-L19.png",
+      "sha256": "4b406bcc724855a351c6e9a5007a5ad1f6da6083cab31b07b9a96a825e72cccf",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\16-GB-L19.png",
+      "sha256": "9329caab970ca401be6f9398b61bd7061de8b92a91dbb36f519dc9e03467d65a",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "Scripture\\NativeAction\\17-GB-L19.png",
+      "sha256": "4c2d74c8512e458e641b44c7c9afcd0048d9de3afafdb96ba30ce2f74b8f6b0a",
+      "input": "WitnessInput",
+      "cameraFollow": true,
+      "motorEnabled": true
+    },
+    {
+      "path": "KeyboardUI\\01-cute-title.png",
+      "sha256": "75012decbabf844444d7680556377278f02ff3e285ab20963f53f3c9ee6de814",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\02-controls.png",
+      "sha256": "13b06fb1592487b1382fce5fa380b29ab9c60bace5e97b55563b74726406c8de",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\03-cute-world-selection.png",
+      "sha256": "a8436d5593debfd3fb631841abb68751c36f67dc45b5ffbce3c27e865b6e2eaf",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\04-cute-level-selection.png",
+      "sha256": "f006eb6abe552f92f4722b7012cf4fe985dad5d679af2863314ae4110c095171",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\05-sunday-entry.png",
+      "sha256": "18750866b7f36de3dee071ffa1c4729c691cb1b83c680c53de0422de19d74ac8",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\06-keyboard-jump.png",
+      "sha256": "16a4ee8991ef69fe020ab5226da550bccf6676e31074cd49a9f72a456cf2edce",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\07-real-pause.png",
+      "sha256": "3c2ad507681b97cecfd4d15edc0712033cc13ef4d287a04b9c3cc0de8fa44025",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\07b-first-pause-selection.png",
+      "sha256": "e2a5a2b1a6979d0bd99ffb9e9a8d6d22b91bdece26f0c3a2f6ce787756451194",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\07c-second-pause-selection.png",
+      "sha256": "049da9a7c5e3990902a50367ff82a76ae692a9aa05e69d23339dd24963aaa5e2",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\08-returned-level-select.png",
+      "sha256": "f006eb6abe552f92f4722b7012cf4fe985dad5d679af2863314ae4110c095171",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\09-practice-world-select.png",
+      "sha256": "9feb6375d6e7025526e13a00caa0c773ebfecbab231f6d8c044a4dab6b42d894",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\10-final-world-practice.png",
+      "sha256": "98fa738b948cc30ab51c1d89cfa7f8f78e4c1d1041f6c30263a3535ebd92b84b",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\11-final-boss-native.png",
+      "sha256": "6447c7e4242642048abbc28d8352cfcd251cb82cc0019daea43c30a4297d6df4",
+      "scope": "actual keyboard"
+    },
+    {
+      "path": "KeyboardUI\\12-boss-controls-front.png",
+      "sha256": "567388c7d587523e9f27882525d668a5baffb2ef0cc657071e53bb1a989a89b3",
+      "scope": "actual keyboard"
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+# Active whole-game quality work
+
+**Use `visual/qualitybar-q1` at `C:\Users\micha\Projects\GloomBean QualityBar Q1`.** Read `Documentation/QualityBarQ1/Review/README.md` and `Documentation/Continuity/CURRENT_CHECKPOINT.json` first. Q8 is a current native whole-game graphical update; the concept-quality goal remains unmet. Public GitHub source push works. Do not reconstruct old chapters, the repository, or solved access problems. The older overview below is historical background, not the current next-work pointer.
+
 # ACTIVE WHOLE-GAME VISUAL OVERHAUL
 
 Read `Documentation/BroadVisual/CURRENT.json` and `GATES.md` first. The new user request replaces final acceptance on the older ten-pair sample with coverage throughout all25stages. Existing26profile art/75frame captures are committed; do not rebuild or rely on stale P8-only guidance below.

@@ -5,3 +5,5 @@
 The current release audit owns measured outcomes. Articles explain the work; they do not promote proposals or manual judgements into verified results.
 
 - [Making Gloom Bean read like a GBA game — and refusing to fake the comparison](2026-09-21-native-gba-visual-pipeline.md)
+
+- [From concept images to a verifiable whole-game visual update](2026-09-21-whole-game-qualitybar-overhaul.md)

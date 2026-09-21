@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "sha256": "a9e0aafdf8ece1261aec71faf2b176117e1643daa806b9129549aaa5c6dbde06",
+  "images_loaded": 359,
+  "unique_stage_articles": 25,
+  "expanders": 30,
+  "broken_images": 0,
+  "desktop_horizontal_overflow": false,
+  "mobile_horizontal_overflow": false,
+  "page_errors": [],
+  "method": "Direct container Chromium rendering of authorized authored HTML bytes at1240px and390px widths. All embedded images loaded; desktop/mobile/expanded stage sections visually inspected. No proxy or browser security flags used."
+}

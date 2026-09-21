@@ -1,0 +1,40 @@
+{
+    "archive_sha256":  "b53918ba4ac366892e461e245d3f4c00dbc96b13ecf3ca397d1df115b908da91",
+    "scope":  "Exact extracted Windows ZIP; three native input-only final victories from unchanged genuinely earned pre-final saves",
+    "started":  "2026-09-21T15:48:53.6455431-06:00",
+    "assembly_sha256":  "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
+    "finished":  "2026-09-21T15:52:00.0467405-06:00",
+    "status":  "PASS",
+    "cases":  [
+                  {
+                      "exit":  0,
+                      "restored":  false,
+                      "name":  "Ordinary",
+                      "seed_sha256":  "49cba446c28efb760905a111aacfd814caaed7049fefe7e1048cb4551948d57f",
+                      "status":  "PASS",
+                      "mercies":  0,
+                      "ending_image_sha256":  "1f76b8459cd4e24da5997923b2e99ccc9dd6cd515bb832398a3a6f66b5cbf9b5",
+                      "checks":  51
+                  },
+                  {
+                      "exit":  0,
+                      "restored":  false,
+                      "name":  "Nineteen",
+                      "seed_sha256":  "6a195da4ec6e095e523473ebcc7e2e2c7cd55634c9d808e3e3e157ed3000c258",
+                      "status":  "PASS",
+                      "mercies":  19,
+                      "ending_image_sha256":  "1f76b8459cd4e24da5997923b2e99ccc9dd6cd515bb832398a3a6f66b5cbf9b5",
+                      "checks":  54
+                  },
+                  {
+                      "exit":  0,
+                      "restored":  true,
+                      "name":  "Restored",
+                      "seed_sha256":  "821bb7797db88849016c64d030773810071c1fa8ac5ec8ce8e3d85dcec6ee591",
+                      "status":  "PASS",
+                      "mercies":  20,
+                      "ending_image_sha256":  "0b3e9975f470f7398e0a2920da201468e973e22842ce43c064c78cce6bc86f62",
+                      "checks":  54
+                  }
+              ]
+}
