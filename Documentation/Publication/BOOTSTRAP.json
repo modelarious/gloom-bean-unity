@@ -1,0 +1,12 @@
+{
+  "old_full_history_head": "0aa3bde78256f5b8ef93ba6bb4e6458a8e6e4f4c",
+  "factory_bootstrap": "1e7c4d81c4e17c92328bd8ff0dcbcae30624c8c1",
+  "factory_issue": 38,
+  "repository": "modelarious/gloom-bean-unity",
+  "method": "Non-destructive unrelated-history merge; keep authored README/gitignore and factory receipt/origin/requirements",
+  "authorization": "Current explicit user request; PUBLIC",
+  "credential": "Repository-scoped ed25519 deploy key 163915852; master token used only inside Mac process and never copied",
+  "ssh_host_verification": "Pinned official GitHub Ed25519 fingerprint +DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU",
+  "historical_text_blobs_scanned": 2066,
+  "publication": "PENDING_PUSH"
+}
