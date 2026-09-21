@@ -41,7 +41,7 @@ namespace GloomBean.Editor
         public static void BuildWindows()
         {
             Bootstrap();Directory.CreateDirectory("Builds/Windows");
-            var options=new BuildPlayerOptions{scenes=new[]{Boot},locationPathName="Builds/Windows/GloomBean.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development};
+            var options=new BuildPlayerOptions{scenes=new[]{Boot},locationPathName="Builds/Windows/GloomBean.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.None};
             var report=BuildPipeline.BuildPlayer(options);
             Directory.CreateDirectory("Reports");File.WriteAllText("Reports/build-result.json","{\"result\":\""+report.summary.result+"\",\"errors\":"+report.summary.totalErrors+",\"warnings\":"+report.summary.totalWarnings+",\"bytes\":"+report.summary.totalSize+",\"unity\":\""+Application.unityVersion+"\"}");
             if(report.summary.result!=BuildResult.Succeeded)throw new Exception("Windows build failed: "+report.summary.result);

@@ -18,6 +18,11 @@ namespace GloomBean.Foundation
         public string PossessionHelp="";
         public Action ExtraHud;
         public Action GameplayHud;
+        public Action<Rect,string,int,Color> PixelLabel;
+        public Action<Rect,Color> PixelPanel;
+        public Action<Rect,string,bool,bool> PixelButton;
+        public Func<Matrix4x4> PresentationMatrix;
+
         public Action<string> PresentationBackground;
         public string CurrentScreen=>screen.ToString();
         public bool ShowingRestoredEnding=>screen==ScreenMode.Ending&&!Practice&&Save.RestoredEnding;
@@ -202,20 +207,22 @@ namespace GloomBean.Foundation
             small=new GUIStyle(body){fontSize=12};
             button=new GUIStyle(GUI.skin.button){fontSize=17,alignment=TextAnchor.MiddleLeft,padding=new RectOffset(17,12,8,8)};
         }
-        void Panel(Rect r,Color c){var old=GUI.color;GUI.color=c;GUI.DrawTexture(r,white);GUI.color=old;}
+        void Text(Rect r,string value,GUIStyle style){if(PixelLabel!=null)PixelLabel(r,value,style.fontSize,style.normal.textColor);else GUI.Label(r,value,style);}
+        void Panel(Rect r,Color c){if(PixelPanel!=null){PixelPanel(r,c);return;}var old=GUI.color;GUI.color=c;GUI.DrawTexture(r,white);GUI.color=old;}
         int buttonIndex;
         bool Button(Rect rect,string text,bool enabled=true)
         {
             int i=buttonIndex++;bool selected=choice==i;var old=GUI.backgroundColor;
             GUI.backgroundColor=selected?new Color(.65f,.32f,.65f):new Color(.25f,.23f,.33f);
             GUI.enabled=enabled;
-            bool clicked=GUI.Button(rect,(selected?">  ":"    ")+text,button);
+            bool clicked=PixelButton!=null?GUI.Button(rect,GUIContent.none,GUIStyle.none):GUI.Button(rect,(selected?">  ":"    ")+text,button);
+            if(PixelButton!=null)PixelButton(rect,text,selected,enabled);
             bool enter=pendingEnter&&selected&&Event.current.type==EventType.Repaint;
             if(enter)pendingEnter=false;GUI.enabled=true;GUI.backgroundColor=old;return enabled&&(clicked||enter);
         }
         void OnGUI()
         {
-            Styles();GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));buttonIndex=0;
+            Styles();GUI.matrix=PresentationMatrix!=null?PresentationMatrix():Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/960f,Screen.height/600f,1));buttonIndex=0;
             bool friendlyMenu=PresentationBackground!=null&&!IsCorrupted&&!Practice&&(screen==ScreenMode.Home||screen==ScreenMode.Worlds||screen==ScreenMode.Levels);
             title.normal.textColor=friendlyMenu?new Color(.33f,.11f,.37f):new Color(1,.86f,.49f);
             heading.normal.textColor=friendlyMenu?new Color(.24f,.10f,.30f):Color.white;
@@ -228,13 +235,13 @@ namespace GloomBean.Foundation
                 Panel(new Rect(0,0,960,72),new Color(.03f,.025f,.06f,.92f));
                 if(Session)
                 {
-                    GUI.Label(new Rect(20,9,650,28),Session.definition.title,heading);
+                    Text(new Rect(20,9,650,28),Session.definition.title,heading);
                     string status="HEALTH "+Session.player.Health+"   COINS "+Session.Coins+"   "+(Session.definition.requiredShards>0?"SEALS "+Session.Shards+"/"+Session.definition.requiredShards+"   ":"")+(Session.definition.requiresKey?(Session.HasKey?"KEYLING YES":"KEYLING —")+"   ":"")+"MERCY "+Session.Mercies.Count;
-                    GUI.Label(new Rect(20,42,780,24),status,small);
-                    GUI.Label(new Rect(755,14,185,38),Session.Phase==RunPhase.Returning?(Session.definition.timed?TimeSpan.FromSeconds(Mathf.Max(0,Session.Remaining)).ToString(@"mm\:ss"):"THE TURN"):"EXPLORE",heading);
-                    if(!string.IsNullOrEmpty(Session.Message)){Panel(new Rect(115,512,730,64),new Color(.07f,.05f,.1f,.93f));GUI.Label(new Rect(131,524,698,48),Session.Message,body);}
-                    if(!string.IsNullOrEmpty(PossessionDisplay)){GUI.Label(new Rect(20,80,750,25),PossessionDisplay,heading);GUI.Label(new Rect(20,110,700,46),PossessionHelp,small);}
-                    GUI.Label(new Rect(20,577,720,22),(Practice?"PRACTICE — no completion or Mercy save    ":"")+"F1 controls  ·  Esc pause",small);
+                    Text(new Rect(20,42,780,24),status,small);
+                    Text(new Rect(755,14,185,38),Session.Phase==RunPhase.Returning?(Session.definition.timed?TimeSpan.FromSeconds(Mathf.Max(0,Session.Remaining)).ToString(@"mm\:ss"):"THE TURN"):"EXPLORE",heading);
+                    if(!string.IsNullOrEmpty(Session.Message)){Panel(new Rect(115,512,730,64),new Color(.07f,.05f,.1f,.93f));Text(new Rect(131,524,698,48),Session.Message,body);}
+                    if(!string.IsNullOrEmpty(PossessionDisplay)){Text(new Rect(20,80,750,25),PossessionDisplay,heading);Text(new Rect(20,110,700,46),PossessionHelp,small);}
+                    Text(new Rect(20,577,720,22),(Practice?"PRACTICE — no completion or Mercy save    ":"")+"F1 controls  ·  Esc pause",small);
                 }
                 }
                 ExtraHud?.Invoke();
@@ -243,9 +250,9 @@ namespace GloomBean.Foundation
             {
                 Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));
                 PresentationBackground?.Invoke("Home");
-                GUI.Label(new Rect(56,53,870,76),IsCorrupted?"GLOOM BEAN":"BEAN'S SUNDAY BEST",title);
-                GUI.Label(new Rect(61,140,800,35),IsCorrupted?"SAME BEAN. DIFFERENT HOST.":"A LITTLE SUNDAY WALK. A LONG WAY HOME.",heading);
-                GUI.Label(new Rect(61,182,810,58),IsCorrupted?"Twenty routes. Fifteen unwanted guests. One body to keep.\nExplore, borrow a creature's rule, and find your way back.":"The parade is ready. The town is smiling. Put on your best shoes.\nThere is nothing under the scenery. Nothing at all.",body);
+                Text(new Rect(56,53,870,76),IsCorrupted?"GLOOM BEAN":"BEAN'S SUNDAY BEST",title);
+                Text(new Rect(61,140,800,35),IsCorrupted?"SAME BEAN. DIFFERENT HOST.":"A LITTLE SUNDAY WALK. A LONG WAY HOME.",heading);
+                Text(new Rect(61,182,810,58),IsCorrupted?"TWENTY ROUTES. FIFTEEN UNWANTED GUESTS.\nBORROW A RULE. FIND YOUR WAY BACK.":"THE PARADE IS READY. PUT ON YOUR SHOES.\nTHERE IS NOTHING UNDER THE SCENERY.",body);
                 float y=270;
                 for(int i=0;i<sources.Count;i++)
                 {
@@ -254,11 +261,11 @@ namespace GloomBean.Foundation
                     y+=60;
                 }
                 if(Button(new Rect(60,y,630,48),"PRACTICE / direct level selection")){SelectSource(sources.Count-1);Practice=true;screen=ScreenMode.Worlds;choice=0;}
-                GUI.Label(new Rect(61,520,820,54),"Keyboard: arrows / WASD, Space, Shift, J, K, E.\nGamepad: left stick, A jump, X tackle, Y carry, B interact, LB run. See F1 for possession controls.",small);
+                Text(new Rect(61,520,820,54),"Keyboard: arrows / WASD, Space, Shift, J, K, E.\nGamepad: left stick, A jump, X tackle, Y carry, B interact, LB run. See F1 for possession controls.",small);
             }
             if(screen==ScreenMode.Worlds)
             {
-                Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Worlds");GUI.Label(new Rect(50,35,860,55),Practice?"CHOOSE A WORLD — PRACTICE":"CHOOSE A WORLD",heading);
+                Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Worlds");Text(new Rect(50,35,860,55),Practice?"CHOOSE A WORLD — PRACTICE":"CHOOSE A WORLD",heading);
                 for(int i=0;i<worlds.Length;i++)
                 {
                     bool open=CampaignProgression.WorldOpen(worlds,i,Save.Data,Practice);
@@ -268,13 +275,13 @@ namespace GloomBean.Foundation
             }
             if(screen==ScreenMode.Levels)
             {
-                var world=worlds[worldIndex];Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Levels");GUI.Label(new Rect(50,35,860,50),WorldTitle(world),heading);
+                var world=worlds[worldIndex];Panel(new Rect(0,0,960,600),new Color(.055f,.04f,.085f));PresentationBackground?.Invoke("Levels");Text(new Rect(50,35,860,50),WorldTitle(world),heading);
                 bool all=true;
                 for(int i=0;i<world.levels.Length;i++)
                 {
                     var stage=world.levels[i];bool done=Save.Data.cleared.Contains(stage.id);all&=done;
                     bool unlocked=CampaignProgression.LevelOpen(world,i,Save.Data,Practice);
-                    if(Button(new Rect(55,106+i*64,830,49),(i+1)+". "+StageTitle(stage)+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
+                    if(Button(new Rect(55,106+i*64,830,58),(i+1)+". "+StageTitle(stage)+(done?"  [cleared]":""),unlocked))LoadStage(stage,Practice);
                 }
                 if(Button(new Rect(55,380,830,52),"BOSS — "+world.boss.title,CampaignProgression.BossOpen(world,Save.Data,Practice)))LoadStage(world.boss,Practice);
                 if(Button(new Rect(55,470,350,44),"World select")){screen=ScreenMode.Worlds;choice=0;}
@@ -282,8 +289,8 @@ namespace GloomBean.Foundation
             if(screen==ScreenMode.Pause||screen==ScreenMode.Clear||screen==ScreenMode.Fail)
             {
                 Panel(new Rect(220,162,520,290),new Color(.035f,.025f,.06f,.97f));
-                GUI.Label(new Rect(247,179,470,40),screen==ScreenMode.Pause?"PAUSED":screen==ScreenMode.Clear?"YOU MADE IT BACK":"THE ROUTE WAS LOST",heading);
-                if(screen==ScreenMode.Fail)GUI.Label(new Rect(247,220,470,32),Session.FailureReason,body);
+                Text(new Rect(247,179,470,40),screen==ScreenMode.Pause?"PAUSED":screen==ScreenMode.Clear?"YOU MADE IT BACK":"THE ROUTE WAS LOST",heading);
+                if(screen==ScreenMode.Fail)Text(new Rect(247,220,470,32),Session.FailureReason,body);
                 if(screen==ScreenMode.Pause&&Button(new Rect(247,239,466,43),"Resume")){screen=ScreenMode.Play;Time.timeScale=1;}
                 if(screen==ScreenMode.Clear&&Button(new Rect(247,239,466,43),"Continue the journey"))ContinueJourney();
                 if(Button(new Rect(247,292,466,43),"Restart level"))LoadStage(Session.definition,Practice);
@@ -294,16 +301,16 @@ namespace GloomBean.Foundation
                 Panel(new Rect(0,0,960,600),new Color(.08f,.05f,.12f));
                 PresentationBackground?.Invoke("Ending");
                 bool restore=ShowingRestoredEnding;
-                GUI.Label(new Rect(70,64,830,50),restore?"A BODY OF YOUR OWN":"STILL YOURSELF. STILL OPEN.",heading);
-                GUI.Label(new Rect(70,135,790,85),restore?"Twenty small mercies deny the final tenant. For this ending, the original Bean returns.\nThe journey's scars remain in the saved world.":"The Host of Hosts is gone. The Open Host survives.\nOrdinary completion does not undo the first corruption.",body);
+                Text(new Rect(70,64,830,50),restore?"A BODY OF YOUR OWN":"STILL YOURSELF. STILL OPEN.",heading);
+                Text(new Rect(70,135,790,85),restore?"Twenty small mercies deny the final tenant. For this ending, the original Bean returns.\nThe journey's scars remain in the saved world.":"The Host of Hosts is gone. The Open Host survives.\nOrdinary completion does not undo the first corruption.",body);
                 if(Button(new Rect(250,535,460,42),"Return to title"))MainMenu();
             }
             if(controls)
             {
                 // Controls always use their own dark modal panel, including over a friendly title.
                 heading.normal.textColor=Color.white;body.normal.textColor=new Color(.88f,.87f,.92f);
-                Panel(new Rect(95,90,770,420),new Color(.02f,.015f,.04f,.98f));GUI.Label(new Rect(119,108,725,35),"CONTROLS / MOVEMENT VOCABULARY",heading);
-                GUI.Label(new Rect(119,153,715,332),"Move: WASD / arrows / left stick\nJump: Space / Z / gamepad A (release early for a shorter jump)\nRun: Shift / LB. Tackle: J / X / gamepad X\nGround pound: L or Down + tackle while airborne\nCrouch / crawl: Down. Start a roll by crouching on a slope\nCarry / throw: K / C / gamepad Y (stun first; aim up/down)\nSwim dash: tackle while swimming. Surface jump: A / Space\nInteract / pull Nail: E / gamepad B\nPossession action: U / RB. Secondary / swap: I / Back\nPause: Esc / Start. Close this card: F1. Sound on/off: F4. Music: F5\n\nPossessions are acquired from entities in the level, never from a menu.\nTheir on-screen short rules appear only after contact.",body);
+                Panel(new Rect(24,18,912,564),new Color(.02f,.015f,.04f,.98f));Text(new Rect(44,34,870,40),"CONTROLS / MOVEMENT VOCABULARY",heading);
+                Text(new Rect(44,91,868,470),"MOVE: ARROWS / WASD / LEFT STICK\nJUMP: SPACE / Z / PAD A\nRUN: SHIFT / LB     TACKLE: J / PAD X\nPOUND: L / DOWN+TACKLE IN AIR\nCROUCH / CRAWL / SLOPE ROLL: DOWN\nCARRY / THROW: K / C / PAD Y\nSTUN FIRST. UP / DOWN AIMS THE THROW.\nSWIM DASH: TACKLE IN WATER\nINTERACT / PULL NAIL: E / PAD B\nPOSSESSION: U / RB   SECONDARY: I\nCHANGE FOCUSED FORM: DOWN+I\nPAUSE: ESC / START  CLOSE HELP: F1\nSOUND: F4          MUSIC: F5\n\nFORMS COME FROM CREATURES, NOT MENUS.\nACCEPT THEIR RULE. FIND THEIR CURE.\nF2 SHOWS DEVELOPMENT NOTES",body);
             }
             if(Event.current.type==EventType.Repaint&&buttonIndex>0){choice=Mathf.Clamp(choice,0,buttonIndex-1);pendingEnter=false;}
         }

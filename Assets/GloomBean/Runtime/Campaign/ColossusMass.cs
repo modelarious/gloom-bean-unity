@@ -14,6 +14,6 @@ namespace GloomBean.Campaign
             if(Mathf.Abs(scale-lastScale)>.001f)Body.linearVelocity*=scale/lastScale;lastScale=scale;}
         void OnCollisionEnter2D(Collision2D hit){LastContact=hit.collider.name;var actor=hit.collider.GetComponent<ActorMotor>();if(!actor)return;
             var brace=actor.GetComponent<LoadBearingBody>();if(!brace||!brace.bracing)actor.Hit(new HitInfo(null,(actor.Body.position-Body.position).normalized,2));}
-        void OnGUI(){if(!StageSession.Current||StageSession.Current.Phase==RunPhase.Cleared)return;GUI.Label(new Rect(28,168,540,32),"THE WEIGHT OF EVERYONE  /  ALTITUDE  "+Altitude.ToString("0.0")+" m");}
+        void OnGUI(){if(GameRoot.Instance&&GameRoot.Instance.GameplayHud!=null)return;if(!StageSession.Current||StageSession.Current.Phase==RunPhase.Cleared)return;GUI.Label(new Rect(28,168,540,32),"THE WEIGHT OF EVERYONE  /  ALTITUDE  "+Altitude.ToString("0.0")+" m");}
     }
 }

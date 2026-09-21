@@ -9,10 +9,11 @@ namespace GloomBean.Campaign
     {
         public string LastPaintedScreen {get;private set;}="";public bool LastFigureWasNormal {get;private set;}
         GameRoot game;CampaignScore score;GUIStyle caption,kicker;string lastScreen="";float entered;
-        void Start(){game=GetComponent<GameRoot>();game.PresentationBackground=Draw;gameObject.AddComponent<V6VisualHud>();score=gameObject.AddComponent<CampaignScore>();score.Initialize(game);}
+        void Start(){game=GetComponent<GameRoot>();game.PresentationBackground=Draw;gameObject.AddComponent<GbaDisplay>();game.PixelLabel=GbaPixels.LegacyLabel;game.PixelPanel=GbaPixels.LegacyPanel;game.PixelButton=GbaPixels.LegacyButton;game.PresentationMatrix=()=>GbaDisplay.LegacyMatrix;gameObject.AddComponent<V6VisualHud>();score=gameObject.AddComponent<CampaignScore>();score.Initialize(game);}
         void Update(){if(!game)return;if(lastScreen!=game.CurrentScreen){lastScreen=game.CurrentScreen;entered=Time.unscaledTime;}}
-        static void Texture(Rect r,Sprite sprite,Color tint){var before=GUI.color;GUI.color=tint;GUI.DrawTexture(r,sprite.texture,ScaleMode.ScaleToFit,true);GUI.color=before;}
-        static void Fill(Rect r,Color tint){var before=GUI.color;GUI.color=tint;GUI.DrawTexture(r,Texture2D.whiteTexture);GUI.color=before;}
+        static void Texture(Rect r,Sprite sprite,Color tint){GbaPixels.LegacySprite(r,sprite,tint);}
+        static void Fill(Rect r,Color tint){GbaPixels.LegacyPanel(r,tint);}
+        static void Label(Rect r,string text,GUIStyle style){GbaPixels.LegacyLabel(r,text,style.fontSize,style.normal.textColor);}
         void Draw(string screen)
         {
             if(caption==null){caption=new GUIStyle(GUI.skin.label){fontSize=17,wordWrap=true,alignment=TextAnchor.MiddleCenter,normal={textColor=new Color(.95f,.88f,.70f)}};kicker=new GUIStyle(caption){fontSize=11,alignment=TextAnchor.MiddleLeft};}
@@ -28,8 +29,8 @@ namespace GloomBean.Campaign
             if(screen=="Home"){
                 var sprite=HostPixelArt.Host(HostKind.None,game.IsCorrupted,(int)(Time.unscaledTime*3)%4);
                 Texture(new Rect(714,253,196,215),sprite,Color.white);
-                GUI.Label(new Rect(704,475,216,45),game.IsCorrupted?"SAME BEAN.\nDIFFERENT HOST.":"YOUR SUNDAY BEST.",caption);
-                GUI.Label(new Rect(61,557,790,25),"Original Host Cycle campaign  /  Editable native Unity project",kicker);
+                Label(new Rect(704,475,216,45),game.IsCorrupted?"SAME BEAN.\nDIFFERENT HOST.":"YOUR SUNDAY BEST.",caption);
+                Label(new Rect(61,557,790,25),"Original Host Cycle campaign  /  Editable native Unity project",kicker);
             }else if(ending){
                 float age=Time.unscaledTime-entered;bool showNormal=restored&&age>=5;LastFigureWasNormal=showNormal;
                 float wobble=showNormal?0:Mathf.Sin(age*1.4f)*5;
@@ -37,7 +38,7 @@ namespace GloomBean.Campaign
                 if(restored){for(int i=0;i<20;i++){float angle=i*Mathf.PI*2/20+age*.18f;Vector2 p=new Vector2(480+Mathf.Cos(angle)*(age<5?143:165),344+Mathf.Sin(angle)*99);Fill(new Rect(p.x-3,p.y-3,6,6),new Color(1,.87f,.52f,Mathf.Clamp01(age/2)));}}
                 else for(int i=0;i<5;i++){float x=421+i*27;Fill(new Rect(x,433,3,15+Mathf.Sin(age+i)*5),new Color(.83f,.09f,.36f));}
                 string line=age<2?"The last cable gives way.":age<5?"For once, the silence belongs to you.":restored?"Twenty small mercies. One body that is finally yours.":"You are still open. You are still yourself.";
-                GUI.Label(new Rect(145,477,670,43),line,caption);
+                Label(new Rect(145,477,670,43),line,caption);
             }
         }
         void OnDestroy(){if(game)game.PresentationBackground=null;}

@@ -13,7 +13,7 @@ namespace GloomBean.Campaign
             string key=name+"@"+ppu;if(sprites.TryGetValue(key,out var s))return s;
             var t=Resources.Load<Texture2D>("VisualV6/"+name);if(!t)return null;
             t.filterMode=FilterMode.Point;t.wrapMode=TextureWrapMode.Clamp;
-            s=UnityEngine.Sprite.Create(t,new Rect(0,0,t.width,t.height),Vector2.one*.5f,ppu,0,SpriteMeshType.FullRect);s.name="V6 original "+name;sprites[key]=s;return s;
+            s=UnityEngine.Sprite.Create(t,new Rect(0,0,t.width,t.height),Vector2.one*.5f,ppu,0,SpriteMeshType.FullRect);s.name="V6 art "+name;sprites[key]=s;return s;
         }
         public static SpriteRenderer Picture(Transform parent,string name,int order)
         {var go=new GameObject("V6 visual / "+name);go.transform.SetParent(parent,false);var sr=go.AddComponent<SpriteRenderer>();sr.sortingOrder=order;return sr;}
@@ -36,7 +36,7 @@ namespace GloomBean.Campaign
         {
             if(!source||!face)return;
             int t=session&&session.definition.course==1&&GameRoot.Instance&&!GameRoot.Instance.IsCorrupted?0:world;
-            if(t!=theme){theme=t;face.sprite=V6Art.Sprite("fill_"+t,32);lip.sprite=V6Art.Sprite("lip_"+t,32);if(brackets!=null)foreach(var b in brackets)b.sprite=V6Art.Sprite("corbel_"+t,64);}
+            if(t!=theme){theme=t;face.sprite=V6Art.Sprite("fill_"+t,16);lip.sprite=V6Art.Sprite("lip_"+t,16);if(brackets!=null)foreach(var b in brackets)b.sprite=V6Art.Sprite("corbel_"+t,64);}
             Vector2 size=source.drawMode==SpriteDrawMode.Simple?(Vector2)source.sprite.bounds.size:source.size;
             source.forceRenderingOff=face.sprite!=null;face.size=size;face.enabled=source.enabled&&face.sprite!=null;face.color=tint?source.color:new Color(1,1,1,source.color.a);
             bool horizontal=size.x>1.7f&&size.y<size.x*.55f;
@@ -82,7 +82,7 @@ namespace GloomBean.Campaign
                 var collider=sr.GetComponent<Collider2D>();if(!collider)continue;
                 if(sr.GetComponent<KneelingFigure>()){sr.gameObject.AddComponent<V6PropView>().Initialize("penitent_falling",new Vector2(1.8f,2.65f));continue;}
                 if(sr.GetComponent<RipeningFruit>()){sr.gameObject.AddComponent<V6PropView>().Initialize("pear_0",new Vector2(1.25f,1.9f));continue;}
-                if(sr.GetComponent<ExitPortal>()){sr.gameObject.AddComponent<V6PropView>().Initialize("portal",new Vector2(1.05f,1.05f));continue;}
+                if(sr.GetComponent<ExitPortal>()){sr.gameObject.AddComponent<V6PropView>().Initialize("portal",new Vector2(1.5f,2.2f));continue;}
                 if(sr.GetComponent<TurnSwitch>()){sr.gameObject.AddComponent<V6PropView>().Initialize("nail",new Vector2(1.6f,2.1f));continue;}
                 var pickup=sr.GetComponent<Pickup>();if(pickup){string asset=pickup.kind==PickupKind.Coin?"coin":pickup.kind==PickupKind.Key?"key":pickup.kind==PickupKind.Mercy?"mercy":pickup.kind==PickupKind.Health?"heart":null;if(asset!=null)sr.gameObject.AddComponent<V6PropView>().Initialize(asset,Vector2.one);continue;}
                 if(sr.GetComponent<HostSource>()||sr.GetComponent<HostCure>())continue;
@@ -90,7 +90,7 @@ namespace GloomBean.Campaign
                     sr.gameObject.AddComponent<V6Surface>().Initialize(sr,world);
             }
             // Printed design labels are not foreground architecture. Keep functional signs, remove the giant duplicate stage caption.
-            foreach(var text in GetComponentsInChildren<TextMesh>(true))if(string.Equals(text.text,d.title,StringComparison.OrdinalIgnoreCase))text.GetComponent<MeshRenderer>().enabled=false;
+            foreach(var text in GetComponentsInChildren<TextMesh>(true)){if(string.Equals(text.text,d.title,StringComparison.OrdinalIgnoreCase))text.GetComponent<MeshRenderer>().enabled=false;else text.gameObject.AddComponent<GbaWorldSign>().Initialize(text);}
             boss=GetComponentInChildren<AtlasBoss>();
             if(boss&&world==5){presence=V6Art.Picture(transform,"distant Host manifestation",-12);presence.sprite=V6Art.Sprite("boss_5_0",128);presence.transform.localScale=new Vector3(7,9,1);}
         }

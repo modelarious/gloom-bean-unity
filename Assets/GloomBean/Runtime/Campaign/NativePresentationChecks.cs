@@ -25,7 +25,7 @@ namespace GloomBean.Campaign
         public static IEnumerator Run(GameRoot game,Action<string,bool,string> check)
         {
             string dir=Path.Combine(game.reportDirectory,"Presentation");Directory.CreateDirectory(dir);
-            var v6Textures=Resources.LoadAll<Texture2D>("VisualV6");check("presentation.v6.texture2d-resource-contract",v6Textures.Length==51&&v6Textures.All(t=>t.filterMode==FilterMode.Point),"Texture2D="+v6Textures.Length);
+            var v6Textures=Resources.LoadAll<Texture2D>("VisualV6");check("presentation.v6.texture2d-resource-contract",V6Art.RequiredAssets.All(n=>v6Textures.Any(t=>t.name==n))&&v6Textures.All(t=>t.filterMode==FilterMode.Point),"Texture2D="+v6Textures.Length);
 
             var hashes=new HashSet<string>();var sheet=new Texture2D(6*64,3*64,TextureFormat.RGBA32,false);sheet.SetPixels32(new Color32[6*64*3*64]);
             for(int i=0;i<17;i++){
