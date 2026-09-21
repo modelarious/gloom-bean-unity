@@ -1,5 +1,5 @@
 {
-  "id": "Broad-Visual-B3-regression",
+  "id": "Broad-Visual-B4-regression",
   "build": false,
   "cases": [
     {
@@ -43,6 +43,20 @@
       "name": "Ink",
       "suite": "Empyrean",
       "route": "GB-L19",
+      "practice": true,
+      "secrets": true,
+      "renderFps": 60
+    },
+    {
+      "name": "Surveyor",
+      "suite": "City",
+      "route": "GB-B3",
+      "practice": true
+    },
+    {
+      "name": "Noon-shadows",
+      "suite": "Empyrean",
+      "route": "GB-L18",
       "practice": true,
       "secrets": true,
       "renderFps": 60
