@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "method": "Original deterministic keyed body/limb/face pixel drawing. No third-party or reference screenshot pixels. Animation reads actor state; it never changes gameplay.",
+  "poses": [
+    "idle",
+    "tackle",
+    "swim",
+    "pound",
+    "hurt",
+    "walk",
+    "run",
+    "rise",
+    "fall",
+    "windup",
+    "carry",
+    "crouch",
+    "brake",
+    "swimdash",
+    "land",
+    "dead"
+  ],
+  "cell": [
+    64,
+    64
+  ],
+  "frames": 8,
+  "sheets": [
+    {
+      "name": "host_motion_original.png",
+      "bytes": 43612,
+      "sha256": "f9b1bb13a60d20e172e97271a99ddcda55f2686f8455d76450b4d022978a7eb5"
+    },
+    {
+      "name": "host_motion_open.png",
+      "bytes": 54107,
+      "sha256": "7a24d07a5ea7d063d457e12cfabd2d97e101e4697a5a1ff9615d775433e3a526"
+    }
+  ]
+}

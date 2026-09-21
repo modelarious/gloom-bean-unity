@@ -21,12 +21,12 @@ namespace GloomBean.Campaign
             public void Line(int x,int y,int z,int w,int thick,Color32 c){int steps=Math.Max(Math.Abs(z-x),Math.Abs(w-y));for(int i=0;i<=steps;i++){float t=steps==0?0:(float)i/steps;Ellipse(Mathf.RoundToInt(Mathf.Lerp(x,z,t)),Mathf.RoundToInt(Mathf.Lerp(y,w,t)),thick,thick,c);}}
             public bool Reference(bool corrupt,HostKind form,int frame,int pose)
             {
-                var texture=Resources.Load<Texture2D>("VisualV6/"+(corrupt?"host_corrupted":"host_original"));
-                if(!texture||texture.width!=64||texture.height!=64)return false;
-                var reference=texture.GetPixels32();
+                var reference=QualityBarMotion.Pixels(corrupt,pose,frame);
+                bool authored=reference!=null;
+                if(!authored){var texture=Resources.Load<Texture2D>("VisualV6/"+(corrupt?"host_corrupted":"host_original"));if(!texture||texture.width!=64||texture.height!=64)return false;reference=texture.GetPixels32();}
                 int step=frame==1?1:frame==3?-1:0;
                 for(int y=0;y<64;y++)for(int x=0;x<64;x++){
-                    int sy=y;if(y<15)sy=y+(x<33?step:-step);else if(pose==2)sy=y-1;
+                    int sy=y;if(!authored){if(y<15)sy=y+(x<33?step:-step);else if(pose==2)sy=y-1;}
                     if(sy<0||sy>=64)continue;var c=reference[x+sy*64];
                     if(c.a>0&&c.r<150&&c.g<95&&c.b>c.g*1.3f&&c.b>c.r){
                         if(form==HostKind.Wax)c=(Color32)Color.Lerp(new Color(.27f,.17f,.17f),new Color(.95f,.82f,.48f),Mathf.Clamp01(c.r/110f));
@@ -45,14 +45,14 @@ namespace GloomBean.Campaign
         static void Glove(Pixel p,int x,int y){p.Ellipse(x,y,7,7,Ink);p.Ellipse(x,y+1,5,5,Lavender);p.Ellipse(x-1,y+2,4,4,White);p.Line(x+1,y-2,x+3,y-1,1,Hex(0x746080));}
         public static Sprite Host(HostKind form,bool corrupt,int frame=0,int pose=0)
         {
-            frame&=3;string key="host-"+form+"-"+corrupt+"-"+frame+"-"+pose;if(bank.TryGetValue(key,out var cached))return cached;
+            int motionFrame=frame&7;frame&=3;string key="host-"+form+"-"+corrupt+"-"+motionFrame+"-"+pose;if(bank.TryGetValue(key,out var cached))return cached;
             var p=new Pixel(64);int lift=pose==2?2:0,bob=frame==1||frame==3?1:0,foot=frame==1?2:frame==3?-2:0;
             Color32 body=form==HostKind.Wax?Hex(0xddb971):form==HostKind.Root?Hex(0x556c3b):form==HostKind.Ink?Hex(0x2f2457):Purple;
             if(form==HostKind.Coffin){
                 p.Rect(18,5,29,50,Ink);p.Rect(15,13,35,32,Ink);p.Rect(20,8,25,45,Hex(0x7d4856));p.Rect(18,15,29,28,Hex(0x482e40));p.Rect(22,10,2,41,Hex(0xad726a));p.Rect(42,10,2,41,Hex(0xad726a));
                 p.Rect(25,41,15,2,Gold);p.Rect(31,35,2,14,Gold);Eye(p,29,29,5,8,0);Eye(p,39,30,4,6,0);p.Line(33,21,32,10,1,Pink);foreach(int y in new[]{12,23,39,49}){p.Rect(20,y,2,2,Cream);p.Rect(43,y,2,2,Cream);}Glove(p,11,28);Glove(p,53,28);
             }else{
-                if(!p.Reference(corrupt,form,frame,pose)){
+                if(!p.Reference(corrupt,form,motionFrame,pose)){
                 Shoe(p,23,8+foot+lift);Shoe(p,44,8-foot+lift);
                 p.Line(26,43,24,54,4,Ink);p.Line(24,54,30,59,4,Ink);p.Line(30,59,34,56,4,Ink);p.Line(26,44,25,54,2,Mid);p.Line(25,54,30,57,2,High);
                 p.Ellipse(33,29+bob,21,21,Ink);p.Ellipse(33,29+bob,18,18,body);p.Ellipse(29,34+bob,15,15,Mid);p.Ellipse(25,38+bob,9,8,High);p.Ellipse(38,23+bob,13,12,body);p.Ellipse(38,19+bob,12,7,Dark);
