@@ -29,7 +29,7 @@ namespace GloomBean.Campaign
             tint=GetComponent<MagneticBody>()||GetComponent<PressurePlate>();
             face=V6Art.Picture(transform,"material",source.sortingOrder);face.drawMode=SpriteDrawMode.Tiled;
             lip=V6Art.Picture(transform,"walking edge",source.sortingOrder+1);lip.drawMode=SpriteDrawMode.Tiled;
-            source.forceRenderingOff=true;LateUpdate();
+            LateUpdate();
         }
         void LateUpdate()
         {
@@ -37,7 +37,7 @@ namespace GloomBean.Campaign
             int t=session&&session.definition.course==1&&GameRoot.Instance&&!GameRoot.Instance.IsCorrupted?0:world;
             if(t!=theme){theme=t;face.sprite=V6Art.Sprite("fill_"+t,32);lip.sprite=V6Art.Sprite("lip_"+t,32);if(brackets!=null)foreach(var b in brackets)b.sprite=V6Art.Sprite("corbel_"+t,64);}
             Vector2 size=source.drawMode==SpriteDrawMode.Simple?(Vector2)source.sprite.bounds.size:source.size;
-            face.size=size;face.enabled=source.enabled;face.color=tint?source.color:new Color(1,1,1,source.color.a);
+            source.forceRenderingOff=face.sprite!=null;face.size=size;face.enabled=source.enabled&&face.sprite!=null;face.color=tint?source.color:new Color(1,1,1,source.color.a);
             bool horizontal=size.x>1.7f&&size.y<size.x*.55f;
             lip.enabled=source.enabled&&horizontal;lip.size=new Vector2(size.x,.5f);lip.transform.localPosition=new Vector3(0,size.y*.5f-.25f,0);lip.color=face.color;
             if(size!=prior){prior=size;
@@ -56,13 +56,13 @@ namespace GloomBean.Campaign
     {
         SpriteRenderer source,picture;RipeningFruit fruit;KneelingFigure penitent;string asset;Vector2 size;bool followTint;
         public void Initialize(string name,Vector2 dimensions,bool tinted=false)
-        {source=GetComponent<SpriteRenderer>();if(!source)return;asset=name;size=dimensions;followTint=tinted;fruit=GetComponent<RipeningFruit>();penitent=GetComponent<KneelingFigure>();picture=V6Art.Picture(transform,name,source.sortingOrder+1);source.forceRenderingOff=true;}
+        {source=GetComponent<SpriteRenderer>();if(!source)return;asset=name;size=dimensions;followTint=tinted;fruit=GetComponent<RipeningFruit>();penitent=GetComponent<KneelingFigure>();picture=V6Art.Picture(transform,name,source.sortingOrder+1);}
         void LateUpdate()
         {
             if(!picture||!source)return;picture.enabled=source.enabled;
             if(fruit)asset="pear_"+(fruit.age>=fruit.rotAfter?2:fruit.age>=fruit.ripeAfter?1:0);
             if(penitent){bool kneel=penitent.pose==KneelingFigure.Pose.Kneeling||penitent.pose==KneelingFigure.Pose.Sinking;asset=kneel?"penitent_kneeling":"penitent_falling";size=kneel?new Vector2(3.6f,1.8f):new Vector2(1.8f,2.65f);picture.transform.localPosition=new Vector3(0,kneel?-.52f:0,0);picture.enabled=penitent.pose!=KneelingFigure.Pose.Warning;}
-            picture.sprite=V6Art.Sprite(asset,64);V6Art.Fit(picture,size);picture.color=followTint?source.color:new Color(1,1,1,source.color.a);
+            picture.sprite=V6Art.Sprite(asset,64);source.forceRenderingOff=picture.sprite!=null;V6Art.Fit(picture,size);picture.color=followTint?source.color:new Color(1,1,1,source.color.a);
         }
         void OnDestroy(){if(source)source.forceRenderingOff=false;}
     }
@@ -89,7 +89,7 @@ namespace GloomBean.Campaign
                     sr.gameObject.AddComponent<V6Surface>().Initialize(sr,world);
             }
             // Printed design labels are not foreground architecture. Keep functional signs, remove the giant duplicate stage caption.
-            foreach(var text in GetComponentsInChildren<TextMesh>(true))if(text.text==d.title)text.GetComponent<MeshRenderer>().enabled=false;
+            foreach(var text in GetComponentsInChildren<TextMesh>(true))if(string.Equals(text.text,d.title,StringComparison.OrdinalIgnoreCase))text.GetComponent<MeshRenderer>().enabled=false;
             boss=GetComponentInChildren<AtlasBoss>();
             if(boss&&world==5){presence=V6Art.Picture(transform,"distant Host manifestation",-12);presence.sprite=V6Art.Sprite("boss_5_0",128);presence.transform.localScale=new Vector3(7,9,1);}
         }

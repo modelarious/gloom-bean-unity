@@ -1,0 +1,49 @@
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Backstage return brace|False|9
+BoxCollider2D|Behind the mascot|False|8
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Coin|True|13
+BoxCollider2D|Fall reset|True|13
+BoxCollider2D|FELT|True|13
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Floor|False|8
+BoxCollider2D|Gate|False|8
+BoxCollider2D|Gate|False|8
+BoxCollider2D|Health|True|13
+BoxCollider2D|Key|True|13
+BoxCollider2D|Mercy|True|13
+BoxCollider2D|Parade jump-rope rhythm|True|13
+BoxCollider2D|Plate 11|True|13
+BoxCollider2D|Plate 9|True|13
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Platform|False|9
+BoxCollider2D|Return portal|True|13
+BoxCollider2D|Tenant: Echo|True|13
+BoxCollider2D|The thing under the smiling face|True|13
+BoxCollider2D|Tip|True|13
+BoxCollider2D|World Nail|False|8
+CapsuleCollider2D|Host|False|11
