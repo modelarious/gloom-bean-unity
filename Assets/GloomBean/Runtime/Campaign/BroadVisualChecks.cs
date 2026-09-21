@@ -18,7 +18,7 @@ namespace GloomBean.Campaign
                 int eligible=dressing.EligibleCount,applied=dressing.AppliedCount;
                 check("broad.stage-coverage-"+stage.id,eligible>0&&eligible==applied&&dressing.VisualColliders==0,"eligible="+eligible+" applied="+applied+" visualColliders="+dressing.VisualColliders);
                 // Newly-created geometry deliberately far outside EVERY review camera. No game state grants.
-                var probe=PrimitiveArt.Shape("Broad late-spawn verification solid",session.transform,new Vector2(-1000,-1000),Vector2.one,Color.white);probe.layer=Layers.Ground;
+                var probe=PrimitiveArt.Shape("Broad late-spawn verification solid",session.transform,new Vector2(-1000,-1000),Vector2.one,Color.white);probe.layer=Layers.Terrain;
                 var sr=probe.GetComponent<SpriteRenderer>();sr.drawMode=SpriteDrawMode.Tiled;sr.size=new Vector2(3,.5f);probe.AddComponent<BoxCollider2D>().size=sr.size;
                 dressing.Scan();yield return null;var skin=probe.GetComponent<BroadSurface>();check("broad.late-spawn-"+stage.id,skin&&skin.Applied&&skin.Profile==BroadArt.Profile(session),"New off-camera object receives the current profile without fixture coordinates");
                 UnityEngine.Object.Destroy(probe);yield return null;

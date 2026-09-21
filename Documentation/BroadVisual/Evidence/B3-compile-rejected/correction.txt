@@ -1,0 +1,1 @@
+The new synthetic late-spawn test used a nonexistent layer symbol. Contracts.cs defines Terrain=8. Corrected only that test reference. No production geometry or assertion threshold changed. Separate ArtSources/QualityBarQ1 untracked work was observed and left untouched.

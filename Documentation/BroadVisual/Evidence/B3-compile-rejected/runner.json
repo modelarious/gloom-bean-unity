@@ -1,0 +1,8 @@
+﻿{
+    "source":  "85a711051387b61a728f991dadc9d951fa809775",
+    "started":  "2026-09-21T13:52:02.5252971-06:00",
+    "error":  "Unity build failed with exit 1. Log: C:\\Users\\micha\\Projects\\GloomBeanUnity\\Reports\\Build-20260921-135202-562\\editor.log",
+    "scope":  "Native visual fixtures, not input-only gameplay",
+    "status":  "FAIL",
+    "finished":  "2026-09-21T13:52:06.3079129-06:00"
+}
