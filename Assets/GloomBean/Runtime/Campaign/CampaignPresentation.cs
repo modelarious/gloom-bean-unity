@@ -35,7 +35,7 @@ namespace GloomBean.Campaign
                 Texture(new Rect(374+wobble,245,216,218),HostPixelArt.Host(HostKind.None,!showNormal,(int)(age*3)%4),Color.white);
                 if(restored){for(int i=0;i<20;i++){float angle=i*Mathf.PI*2/20+age*.18f;Vector2 p=new Vector2(480+Mathf.Cos(angle)*(age<5?143:165),344+Mathf.Sin(angle)*99);Fill(new Rect(p.x-3,p.y-3,6,6),new Color(1,.87f,.52f,Mathf.Clamp01(age/2)));}}
                 else for(int i=0;i<5;i++){float x=421+i*27;Fill(new Rect(x,433,3,15+Mathf.Sin(age+i)*5),new Color(.83f,.09f,.36f));}
-                string line=age<2?"The last cable gives way.":age<5?"For once, the silence belongs to you.":restored?"Twenty small mercies. One body that is finally yours.":"You are still open. You are still yourself.";
+                string line=age<2?"THE LAST CABLE GIVES WAY.":age<5?"THE SILENCE IS YOURS.":restored?"TWENTY MERCIES. ONE BODY.":"STILL OPEN. STILL YOURSELF.";
                 Label(new Rect(145,477,670,43),line,caption);
             }
         }

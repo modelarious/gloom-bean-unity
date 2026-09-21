@@ -1,0 +1,309 @@
+{
+  "status": "REVIEWED_NATIVE_P7_STRICT_TARGET_UNMET",
+  "reviewer": "Single assistant still-image assessment; no human-panel consensus",
+  "rubric": {
+    "dimensions": [
+      "Style / identity",
+      "Character / expression",
+      "Clarity",
+      "Polish / material execution"
+    ],
+    "range": [
+      0,
+      5
+    ],
+    "increments": 0.5,
+    "ties_are_not_wins": true,
+    "anchors": {
+      "0": "broken/missing",
+      "1": "placeholder",
+      "2": "readable but crude",
+      "3": "coherent development art",
+      "4": "polished professional",
+      "5": "exceptional authored example"
+    }
+  },
+  "baseline_source": "4424d5c46256bc74cbfd402cb61f2d6c3183603f",
+  "current_source": "d221ea49253f885caf381e853e72bf1fb9c8f758",
+  "method": "Ten preselected pairs, original lenses retained alongside explicitly labelled GBA views. Native backbuffers only; staged art images are not reachable-route evidence. No animation-feel or hardware-port claim.",
+  "rows": [
+    {
+      "id": "01-cute-parade",
+      "level": "Sunday Best",
+      "reference_level": "Palm Tree Paradise",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "gloom_improvement": "The cheerful fronts read as constructed parade scenery, with bright walking edges and a compact pixel HUD.",
+      "remaining_wl4_advantage": "WL4 has stronger organic texture, depth separation and character posing.",
+      "next_art_work": "Author varied cardboard fronts and backstage construction details.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "02-puppet-machinery",
+      "level": "The Puppet Laundry",
+      "reference_level": "The Curious Factory",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3,
+        3,
+        3.5,
+        3
+      ],
+      "gloom_improvement": "The line, hanging body and material edge share a clear native pixel grid.",
+      "remaining_wl4_advantage": "Our moving structures remain thin and repetitive beside the reference pistons.",
+      "next_art_work": "Author the actual pulley housings, counterweight cars and hanging fabric.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "03-orchard",
+      "level": "Pear Tree Gallows",
+      "reference_level": "Wildflower Fields",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3,
+        3.5,
+        3
+      ],
+      "gloom_improvement": "The canopy, chapel, wooden surfaces, fruit and Wax volume are more coherent.",
+      "remaining_wl4_advantage": "Our terrain still reads as beams and a large lever label competes with the fruit.",
+      "next_art_work": "Replace generic supports visually with branches, fruit cages and roots; preserve the true contact edges.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "04-mirror-tenement",
+      "level": "Tenement of Two Suns",
+      "reference_level": "Crescent Moon Village",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3,
+        3,
+        3.5,
+        3
+      ],
+      "gloom_improvement": "The wider Mirror view retains both bodies and a consistent material scale.",
+      "remaining_wl4_advantage": "WL4 has more tangible doors, streets and light; ours is still detached ledges.",
+      "next_art_work": "Make each collision domain read as actual apartment rooms, shutters and furniture.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "05-falling-witnesses",
+      "level": "Rain of Kneeling Men",
+      "reference_level": "Fiery Cavern",
+      "wl4_scores": [
+        5,
+        4.5,
+        4.5,
+        5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2,
+        2.5
+      ],
+      "current_scores": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "gloom_improvement": "The slanted city composition and Censer field radius are visible.",
+      "remaining_wl4_advantage": "The retained warning-phase frame is sparse; it does not explain its ecology as clearly as the lava reference.",
+      "next_art_work": "Author warning, falling and kneeling poses, and judge their whole actual motion sequence.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "06-cathedral",
+      "level": "Cathedral in Freefall",
+      "reference_level": "Hotel Horror",
+      "wl4_scores": [
+        4,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3,
+        3.5,
+        3
+      ],
+      "gloom_improvement": "A distinct rib-vault and rose-window interior replaces the shared open skyline.",
+      "remaining_wl4_advantage": "The new ribs are still repetitive linework; WL4 gives fewer objects more material depth.",
+      "next_art_work": "Distinguish chained moving modules from attached masonry and weight-bearing joints.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "07-iron-choir",
+      "level": "Choir of Iron Halos",
+      "reference_level": "Arabian Night",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4.5,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3,
+        4,
+        3.5
+      ],
+      "gloom_improvement": "Ivory masonry, warm windows and violet recesses replace a grey wash; polarity is readable.",
+      "remaining_wl4_advantage": "Our thin halo is less immediately interpretable than the reference traversal object.",
+      "next_art_work": "Differentiate anchored/free metal, mounting hardware and reciprocal-force motion cues.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "08-scripture",
+      "level": "Scripture That Writes Back",
+      "reference_level": "Pinball Zone",
+      "wl4_scores": [
+        4.5,
+        4.5,
+        4,
+        4.5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3,
+        3.5,
+        3.5
+      ],
+      "gloom_improvement": "The illuminated page is fully framed; real bitmap signs and Ink state remain visible.",
+      "remaining_wl4_advantage": "Words remain labelled slabs instead of convincing physical typography.",
+      "next_art_work": "Author actual word and punctuation silhouettes with clear collision surfaces.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "09-mass-boss",
+      "level": "The Weight of Everyone",
+      "reference_level": "Golden Diva",
+      "wl4_scores": [
+        5,
+        5,
+        4.5,
+        5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3.5,
+        3,
+        3.5
+      ],
+      "gloom_improvement": "Interlocking hoods, faces and limbs are rendered on the unchanged physical mass.",
+      "remaining_wl4_advantage": "Diva remains more expressive and composed; the relocated top HUD partly overlaps this high boss in the retained frame.",
+      "next_art_work": "Author structural apparatus and crowd compression/impact/release poses; do not merely enlarge the portrait.",
+      "all_four_strictly_better_than_wl4": false
+    },
+    {
+      "id": "10-final-host",
+      "level": "The Host of Hosts",
+      "reference_level": "Golden Diva",
+      "wl4_scores": [
+        5,
+        5,
+        4.5,
+        5
+      ],
+      "pre_gba_scores": [
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ],
+      "current_scores": [
+        3.5,
+        3.5,
+        3,
+        3.5
+      ],
+      "gloom_improvement": "The final entity has a more readable asymmetric face and contained opening apparition.",
+      "remaining_wl4_advantage": "The large noncolliding opening apparition is not the combat body or an expressive action proof.",
+      "next_art_work": "Use actual three-act action frames to refine anticipation, posing and specific arena props.",
+      "all_four_strictly_better_than_wl4": false
+    }
+  ],
+  "summary": {
+    "pre_gba_mean": 2.4625,
+    "current_mean": 3.2875,
+    "wl4_mean": 4.575,
+    "pairs": 10,
+    "strict_sweeps": 0,
+    "superiority_gate": "UNMET"
+  }
+}

@@ -302,7 +302,7 @@ namespace GloomBean.Foundation
                 PresentationBackground?.Invoke("Ending");
                 bool restore=ShowingRestoredEnding;
                 Text(new Rect(70,64,830,50),restore?"A BODY OF YOUR OWN":"STILL YOURSELF. STILL OPEN.",heading);
-                Text(new Rect(70,135,790,85),restore?"Twenty small mercies deny the final tenant. For this ending, the original Bean returns.\nThe journey's scars remain in the saved world.":"The Host of Hosts is gone. The Open Host survives.\nOrdinary completion does not undo the first corruption.",body);
+                Text(new Rect(70,135,790,95),restore?"20 MERCIES REJECT THE TENANT.\nTHE ORIGINAL BEAN RETURNS HERE.\nTHE SAVED WORLD KEEPS ITS SCARS.":"THE HOST OF HOSTS IS GONE.\nYOU SURVIVE. YOU REMAIN OPEN.\nTHE CORRUPTION IS NOT UNDONE.",body);
                 if(Button(new Rect(250,535,460,42),"Return to title"))MainMenu();
             }
             if(controls)
