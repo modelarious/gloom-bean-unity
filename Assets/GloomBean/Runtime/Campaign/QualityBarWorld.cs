@@ -27,6 +27,11 @@ namespace GloomBean.Campaign
             if(motif=="book"||motif=="ledger")return n%3==0?"bound_volume":motif;
             return motif;
         }
+        public static string FaceMaterial(StageSession session,Vector2 size,bool food,bool cloth){
+            if(food)return "solid_food";if(cloth)return "solid_cloth";int group=Group(session);
+            if(group==2){if(session.definition.course==6)return "kiln_masonry";return size.y>size.x*1.6f?"rooted_vertical":"rooted_earth";}
+            return "solid_"+group;
+        }
         public static bool Eligible(SpriteRenderer sr){return BroadArt.Eligible(sr)&&!sr.name.StartsWith("QualityBar visual /");}
     }
     [DefaultExecutionOrder(275)]
@@ -50,7 +55,7 @@ namespace GloomBean.Campaign
         {
             foreach(var old in details)if(old)Destroy(old.gameObject);details.Clear();detailAlpha.Clear();
             bool horizontal=size.x>1.6f&&size.y<size.x*.65f;bool thin=horizontal&&size.y<1.2f;
-            main.sprite=QualityBarArt.Get(food?"solid_food":cloth?"solid_cloth":"solid_"+group);main.size=size;contact.sprite=QualityBarArt.Get("edge_"+group);contact.size=new Vector2(size.x,.5f);float edgeHeight=Mathf.Min(size.y,.28f);contact.transform.localScale=new Vector3(1,edgeHeight/.5f,1);contact.transform.localPosition=new Vector3(0,size.y*.5f-edgeHeight*.5f,0);
+            main.sprite=QualityBarArt.Get(semanticTint?"solid_"+group:QualityBarArt.FaceMaterial(session,size,food,cloth));main.size=size;contact.sprite=QualityBarArt.Get("edge_"+group);contact.size=new Vector2(size.x,.5f);float edgeHeight=Mathf.Min(size.y,.28f);contact.transform.localScale=new Vector3(1,edgeHeight/.5f,1);contact.transform.localPosition=new Vector3(0,size.y*.5f-edgeHeight*.5f,0);
             foreach(Transform child in transform){if(child.name=="Broad visual / solid material"||child.name=="Broad visual / contact cornice"||child.name=="Broad visual / left material edge"||child.name=="Broad visual / right material edge"){var sr=child.GetComponent<SpriteRenderer>();if(sr)sr.forceRenderingOff=true;}}
             // This is recessed ornament behind the collision/actor layer. The existing sharp contact trim stays at the physical top.
             if(horizontal){fascia.sprite=QualityBarArt.Get(food?"solid_food":"fascia_"+group);float depth=thin?Mathf.Min(1.35f,size.x*.32f):Mathf.Min(size.y,1.7f);

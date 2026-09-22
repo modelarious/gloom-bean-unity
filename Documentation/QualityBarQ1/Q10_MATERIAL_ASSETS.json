@@ -1,0 +1,29 @@
+{
+  "scope": "Rooted ground/vertical growth and furnace stone. Actual food/cloth/semantic-tint material identities remain separate.",
+  "assets": [
+    {
+      "name": "rooted_earth",
+      "sha256": "1c065a3642d3a9839e61ac4f43e06757ca89fc5da466566b65cf6cef36a7689c",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "rooted_vertical",
+      "sha256": "f2f283b2e0265cab42f7c1376db2dc5549b8f71f40d87fc7c8aadf08f89bff99",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "kiln_masonry",
+      "sha256": "967378d70842283280e9dc053c3cfb7fe2c0cf0d25dd3f1a81dfcba70308664b",
+      "size": [
+        32,
+        32
+      ]
+    }
+  ]
+}
