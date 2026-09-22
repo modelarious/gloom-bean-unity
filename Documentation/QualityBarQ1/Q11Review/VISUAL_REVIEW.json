@@ -1,0 +1,26 @@
+{
+  "status": "REVIEWED_WITH_REMAINING_DEFECTS",
+  "method": "Assistant inspected all225 native still views via ten world contact sheets and enlarged samples; chronological16-frame storyboards for eight actual routes, plus71-frame and109-frame late-phase sequences summarized by chronological storyboards. Browser decoded and advanced all10 encoded videos. Technical pixel/integrity audits cover all1880 action images. No claim of human playtesting or manual frame-by-frame inspection of every action image.",
+  "still_images": 225,
+  "original_action_images": 1700,
+  "late_action_images": 180,
+  "late_source_runs": {
+    "Weight": {
+      "checks": 104,
+      "frames": 71
+    },
+    "FinalHost": {
+      "checks": 49,
+      "frames": 109
+    }
+  },
+  "findings": [
+    "New actor families are present in normal production-input routes, not only art fixtures.",
+    "Physical falling mass retains its actual four-unit footprint and reaches release/victory through its existing mechanism.",
+    "Later FinalHost footage shows adaptation and actual final-act gameplay rather than relying on the distant opening apparition.",
+    "Repeated support/facade modules and long sparse spans remain below concept quality.",
+    "Repeated upper-playfield instructional messages obscure too much of real action; they are retained in footage, not hidden for comparison."
+  ],
+  "strict_concept_fidelity": "UNMET",
+  "independent_human_animation_quality": "UNKNOWN"
+}

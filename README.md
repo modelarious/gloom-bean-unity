@@ -1,23 +1,12 @@
-# Current whole-game visual update
+# Gloom Bean Q11 — current native visual update
 
-**Active branch: `visual/qualitybar-q1`.** This is the current native Q8 whole-game art update, not the earlier P8 GBA-renderer milestone. Open [the actual175-view whole-game gallery](Documentation/QualityBarQ1/Review/GloomBean_Whole_Game_Visual_Review.html), [the current evidence and limits](Documentation/QualityBarQ1/Review/README.md), and [the exact continuation state](Documentation/Continuity/CURRENT_CHECKPOINT.json).
+**Branch: `visual/qualitybar-q11`.** The whole-game update is playable and its source is published. The generated concept scenes were never game screenshots, and **their extreme-fidelity bar remains unmet**.
 
-The supplied concept quality is **not yet achieved**. The update is implemented across all25 stages, including later-spawned objects. It is not limited to the old ten showcase points. The gallery also contains all52 additional WL4 references,40 real-action frames,14 real-keyboard frames and three actual ending screens. Full public history and the independent foundation remain preserved. The older release instructions below remain useful for controls/building but are not the current visual-quality verdict.
+Start with the [actual before/after gallery](Documentation/QualityBarQ1/Q11Review/GloomBean_Q11_Visual_Review.html), [native package audit](Documentation/QualityBarQ1/Q11Review/DELIVERY_AUDIT.json), [reviewed remaining defects](Documentation/QualityBarQ1/Q11Review/VISUAL_REVIEW.json), and [current checkpoint](Documentation/Continuity/CURRENT_CHECKPOINT.json).
 
----
+Q11 adds authored state-driven patrol and boss poses to the preceding whole-stage construction/material and living-environment changes. All 25 stages remain represented by 225 current views; 62 WL4 gameplay references and six presentation-only frames are retained. Ten actual-action clips include separately captured later boss sequences. The review does not substitute staged views or concept art for playthrough evidence.
 
-# Gloom Bean / Host Cycle — native Unity game
-
-Twenty authored levels. Five worlds and bosses. Fifteen temporary possessions. One irreversible first corruption.
-
-## Current V6 GBA visual preview
-
-The active art branch is **visual/v6**, now published with the complete source history. [Read the actual10-pair visual review](Documentation/VisualV6/Review/README.md), [view the18-page PDF](Documentation/VisualV6/Review/GloomBean_V6_GBA_Visual_Review.pdf), and inspect [the exact package proof](Documentation/VisualV6/Review/PACKAGED_AUDIT.json).
-
-The campaign now uses a genuine **240x160 point-filtered framebuffer, integer scaling and original bitmap UI**, with revised scenic framing, contact materials, source/cure objects, parade/cathedral art and boss silhouettes. This remains a native Windows Unity game, not a GBA ROM. **The strict superiority target is still UNMET:0/10 selected pairs win every dimension over Wario Land4.** The development preview is useful; it is not a final-art victory claim.
-
-[Current gates and remaining work](Documentation/VisualV6/GBA_GATES.md) distinguish P4's54-case full regression, P7's focused current checks and P8's ending-copy-only correction and exact-package0/19/20 proofs. Stable main and the independent foundation are preserved. Do not reconstruct completed campaign chapters or repeat solved repository provisioning.
-
+Current verification: 16 scenarios and 801 mechanics/presentation assertions passed. The exact extracted package passed three earned 0/19/20-Mercy endings and eight selected production-input routes. Older full-campaign certificates retain their own identities. These checks do not establish universal artistic superiority or human playtest approval.
 
 ## Play
 

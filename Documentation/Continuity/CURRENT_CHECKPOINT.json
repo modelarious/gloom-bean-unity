@@ -1,78 +1,69 @@
 {
-  "schema_version": 12,
-  "status": "Q11B_NATIVE_VERIFIED_EXACT_PACKAGE_MOTION_RUNNING",
-  "active_branch": "visual/qualitybar-q11",
+  "schema_version": 14,
+  "project": "gloom-bean-unity",
+  "status": "Q11_ACTOR_UPDATE_DELIVERED_CONCEPT_FIDELITY_UNMET",
+  "source_repository": "modelarious/gloom-bean-unity",
+  "source_branch": "visual/qualitybar-q11",
   "worktree": "C:\\ProgramData\\SentinelX\\workspace\\GloomBean-Q11",
-  "runtime_art_commit": "9b58bd878edd546936f32e34cbaee913b12fb3a8",
-  "tested_candidate": "4d224f03810a50a072fa62754627f01731299122",
-  "native_assembly_sha256": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
-  "active_job": {
-    "task": "GloomBean-Q11-Delivery",
-    "receipt": "Reports/Delivery-WholeGame-Q11/runner.json",
-    "status": "RUNNING_AT_OBSERVATION"
-  },
-  "repository": "modelarious/gloom-bean-unity",
+  "tested_runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
+  "assembly_sha256": "3c9ad091a605ab44272024f7d58027a8bf95140532940ac1aa557cb5e9448bf3",
+  "active_job": null,
+  "active_jobs": [],
   "publication": "AUTHORIZED_PUSH_VERIFIED",
-  "other_worktree": "C:\\Users\\micha\\Projects\\GloomBeanUnity remains on visual/v6; unrelated untracked broad/quality artifacts were left unchanged.",
   "coverage": {
     "stages": 25,
-    "native_staged_views": 175,
-    "new_FG_positions": 50,
-    "additional_WL4_refs": 52,
-    "old_ref_pixel_overlap": 0,
-    "current_scenarios": 13,
-    "mechanics_assertions": 466,
-    "new_quality_lifecycle_assertions": 75,
-    "protected_runtime_sources": 167
+    "current_native_views": 225,
+    "reference_gameplay": 62,
+    "reference_presentation_only": 6,
+    "old_reference_pixel_overlap": 0,
+    "actual_action_frames": 1700,
+    "additional_late_frames": 180,
+    "actual_keyboard_frames": 14,
+    "scope": "Nine staged views per stage plus separate actual input-driven motion; not exhaustive every-frame coverage."
   },
-  "actual_package": {
-    "path": "Delivery/WholeGame-Q8/GloomBean_Whole_Game_Visual_Update_Windows.zip",
-    "sha256": "b53918ba4ac366892e461e245d3f4c00dbc96b13ecf3ca397d1df115b908da91",
-    "bytes": 36832694,
-    "ending_boundaries": [
-      0,
-      19,
-      20
-    ],
+  "tests": {
+    "current_scenarios": 16,
+    "mechanics_assertions": 801,
+    "failures": 0,
+    "exceptions": 0,
+    "native_receipt": "Documentation/QualityBarQ1/Evidence/Q11B-regression/runner.json",
+    "exact_package_receipt": "Documentation/QualityBarQ1/Q11Review/DELIVERY_AUDIT.json",
     "ending_checks": [
       51,
       54,
       54
     ],
-    "actual_action_frames": 40,
-    "keyboard_frames": 14,
-    "normal_saves_modified": false
+    "ending_mercies": [
+      0,
+      19,
+      20
+    ],
+    "scope": "Current16 scenarios and exact-package selected routes/endings, not a reissued full54-case campaign certificate."
   },
-  "review": "Documentation/QualityBarQ1/Review/README.md",
+  "package": {
+    "path": "Delivery/WholeGame-Q11/GloomBean_Q11_Windows.zip",
+    "sha256": "64a9e91f27ff536c0d9c464c552abfa9e7cd48adf80fce30c02d95522038caf4",
+    "bytes": 37241513,
+    "payloads": 156,
+    "status": "EXACT_EXTRACTED_PACKAGE_VERIFIED"
+  },
+  "review": {
+    "html": "Documentation/QualityBarQ1/Q11Review/GloomBean_Q11_Visual_Review.html",
+    "sha256": "354a103f482d07c437e09e1bf3997f67a4786ae37b044b4e6b7657dd06688238",
+    "embedded_images": 663,
+    "videos": 10,
+    "browser": "Isolated Windows Chrome, sandbox enabled; all media load/decode and desktop/mobile width checks pass",
+    "visual_method": "Ten whole-world contact sheets and chronological action storyboards including later boss sequences; full-image pixel/integrity audit is independent of subjective review."
+  },
   "gates": "Documentation/QualityBarQ1/Q11_GATES.md",
-  "native_audit": "Documentation/QualityBarQ1/AUDIT_Q8.json",
-  "latest_tests": "Documentation/QualityBarQ1/Review/NATIVE_REGRESSION.json",
-  "exact_package_tests": "Documentation/QualityBarQ1/Review/EXACT_PACKAGE_RUN.json",
-  "strict_visual_bar": "UNMET",
-  "next_work": "Finish the already-running exact-package replay/motion job; inspect all-eight actual sequences, build the self-contained whole-game before/after gallery, verify artifact hashes and publish final current state. No engine work or old Q8/Q10 reconstruction is pending.",
+  "strict_concept_fidelity": "UNMET",
+  "next_work": "Actual art priorities remain repeated foreground room/support modules, sparse traversal spans and in-action instruction overlays obscuring the upper playfield. Preserve all25-stage and actual-action evidence. Q11 actor implementation, captures and package are complete at their documented scope; do not reconstruct Q8/Q10, re-provision GitHub or rerun completed delivery jobs. The parallel grammar experiment is separate and must not be merged without task authority.",
+  "access_recipe": "The original C:/Users/micha projects are read-only under file_ops. Work only in this explicit rw workspace; no policy bypass. Git identity/SSH and licensed native task already work.",
   "known_recipes": [
-    "Run-BroadVisual.ps1 requires a new RunId; after first import of new PNGs, inspect/commit normalized metadata before a clean-source native test.",
-    "QualityBarWorld must resolve GetComponentInParent<StageSession>; existing mechanics tests build scenery on a child.",
-    "Current temporary Python art/QA modules are in GloomBeanUnity/.visual-tools; the quality worktree scripts include that fallback.",
-    "Use existing Verify-PackagedEndings.ps1; Empyrean input class is WitnessInput and ending receipt is ENDING.json. No new custom guesses needed."
+    "Verify-PackagedEndings.ps1 is the proven exact-package ending verifier; Empyrean input is WitnessInput and ending record is ENDING.json.",
+    "Native Chrome QA works directly with Playwright in C:/ProgramData/SentinelX/workspace/q11-browser-tools and chromium_sandbox=True. Container browser navigation is policy-denied; do not change it. Edge under the service exited1002.",
+    "The orphaned03:10 checkpoint nonce was preserved only after no worker/index lock/staged files and a matching remote HEAD were verified. Do not remove a live lock. Remote publication is verified; do not regenerate a huge full-history bundle for every tiny documentation commit."
   ],
-  "fidelity_limits": [
-    "No concept-quality or universal-WL4-superiority approval",
-    "No human controller or uncoached gameplay assessment"
-  ],
-  "recovered_source": "1aa968104e597807bc3a3046402673bb80b77261",
-  "tested_runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
-  "latest_native": {
-    "scenarios": 16,
-    "passed": 16,
-    "mechanics_assertions": 801,
-    "unexpected_failures": 0,
-    "receipt": "Reports/Orchard-v04/QualityBar-Q11B-regression/runner.json"
-  },
-  "latest_capture": {
-    "run": "Q11B",
-    "images": 225,
-    "stages": 25,
-    "strict_concept_quality": "UNMET"
-  }
+  "source_snapshot": "Final source snapshot omits .git, historical raw evidence, video copies and generated HTML; all are preserved in public Git or separate gallery. Final exact artifact hashes belong to the post-snapshot delivery receipt.",
+  "manual_acceptance": "UNKNOWN: uncoached human/controller/animation/horror judgement; still-art reviewer reports no strict all-dimension concept win."
 }

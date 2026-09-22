@@ -5,10 +5,12 @@
   "before_views": 225,
   "WL4_gameplay": 62,
   "WL4_presentation_only": 6,
-  "embedded_image_instances": 657,
+  "embedded_image_instances": 663,
   "source_runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
-  "sha256": "9ed74a992b4ae15b4bfee34cad384458efecf96d2c6ee03386dc47175e5a2de5",
-  "bytes": 41388653,
+  "sha256": "354a103f482d07c437e09e1bf3997f67a4786ae37b044b4e6b7657dd06688238",
+  "bytes": 45536143,
   "strict_concept_fidelity": "UNMET",
-  "status": "BUILT_PENDING_BROWSER_AND_MOTION_REVIEW"
+  "status": "VERIFIED_BROWSER_AND_REVIEWED_NATIVE_IMAGES",
+  "video_sequences": 10,
+  "native_action_images": 1880
 }

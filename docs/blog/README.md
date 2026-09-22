@@ -7,3 +7,5 @@ The current release audit owns measured outcomes. Articles explain the work; the
 - [Making Gloom Bean read like a GBA game — and refusing to fake the comparison](2026-09-21-native-gba-visual-pipeline.md)
 
 - [From concept images to a verifiable whole-game visual update](2026-09-21-whole-game-qualitybar-overhaul.md)
+
+- [Q11: actors that belong to the game, not just the screenshot](2026-09-22-q11-authored-actors-and-actual-motion.md)
