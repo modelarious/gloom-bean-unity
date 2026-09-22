@@ -4,15 +4,15 @@
   "assets": [
     {
       "file": "construction_room_4.png",
-      "sha256": "82cb0d3ad64b03aded5782f0a51b9a91c376ff8d4dfb6fb654730b6b9cf31f8c"
+      "sha256": "1bd144ba49c8df4c95d2970a7ee34a5c1f0ef3bf6ee86ec7aa6551535664626e"
     },
     {
       "file": "construction_room_12.png",
-      "sha256": "8531ed1fdc812efbba3fa271c7bfe7a40cf8cc03e2e58b018d273a62728eec31"
+      "sha256": "3f615f3911b9db9b8b98873e4acadeaffaf920b0a99673a77306807a66eaa195"
     },
     {
       "file": "construction_room_13.png",
-      "sha256": "141e57883934fbb6aef8324e59adc0f0873cd551d4154495c4ef263bab725374"
+      "sha256": "5ec84840dc0314b734e936131b6e3b2cd36902e6ba0479faafc41dae692e0f52"
     }
   ]
 }

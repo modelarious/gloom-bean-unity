@@ -7,7 +7,7 @@ from pathlib import Path
 import sys,math,json,hashlib,uuid
 ROOT=Path(__file__).resolve().parents[1]
 for path in [ROOT/'.visual-tools',ROOT.parent/'GloomBeanUnity/.visual-tools']:sys.path.insert(0,str(path))
-from PIL import Image,ImageDraw
+from PIL import Image,ImageDraw,ImageChops
 OUT=ROOT/'Assets/GloomBean/Resources/QualityBar';N=Image.Resampling.NEAREST
 INK='#181d29';DARK='#34302c';WOOD='#51453a';MID='#816f53';LIGHT='#b3a074';LEAF='#63765c';MOSS='#99a073'
 source=Image.open(OUT/'season_tree.png').convert('RGBA')
@@ -21,6 +21,14 @@ def foliage(image,box,xy,size,autumn=False):
    if g>r*.9 and g>b*1.2 and a:pixels.append((min(210,int(r*1.55+22)),min(145,int(g*.98+4)),min(100,int(b*.8+7)),a))
    else:pixels.append((r,g,b,a))
   leaf.putdata(pixels)
+ # Cut the sampled leaf texture to an irregular native-pixel crown. A rectangular
+ # source crop must not become a visible rectangular silhouette in the game.
+ mask=Image.new('L',leaf.size);md=ImageDraw.Draw(mask);w,h=leaf.size
+ points=[]
+ for i in range(48):
+  t=i*math.pi*2/48;r=.94+.045*math.sin(t*7)+.035*math.sin(t*13)
+  points.append((round((w-1)/2+math.cos(t)*(w-1)*.5*r),round((h-1)/2+math.sin(t)*(h-1)*.5*r)))
+ md.polygon(points,fill=255);leaf.putalpha(ImageChops.multiply(leaf.getchannel('A'),mask))
  image.alpha_composite(leaf,xy)
 def pear(d,x,y,size,green=True):
  w=size//2;d.line((x,y-5,x+2,y-8),fill=MID,width=2)
