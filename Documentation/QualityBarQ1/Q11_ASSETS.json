@@ -1,0 +1,126 @@
+{
+  "method": "Original offline authored pixels; layered fixed-cell poses, no source-game art or generative screenshot content",
+  "actors": [
+    {
+      "name": "actor_boss_1.png",
+      "sha256": "5b7ebb153245a8e340377f1919113f91a3dfcebdb1042d7ec7e15bca2122ccbd",
+      "size": [
+        1024,
+        1152
+      ]
+    },
+    {
+      "name": "actor_boss_2.png",
+      "sha256": "8b85e8840ef71d504ea425f14bb593ece6a4c3b4e3280748c0cfdd58ba80b630",
+      "size": [
+        1024,
+        1152
+      ]
+    },
+    {
+      "name": "actor_boss_3.png",
+      "sha256": "1940ed781ab9d16fe664adcd119b898aa9d948cf787e456f573d1ca1415a3aeb",
+      "size": [
+        1024,
+        1152
+      ]
+    },
+    {
+      "name": "actor_boss_4.png",
+      "sha256": "3eb913d364a06fe4173850922cce3c30ec400dd67971f04d3ed7110a3c524f86",
+      "size": [
+        1024,
+        1152
+      ]
+    },
+    {
+      "name": "actor_boss_5.png",
+      "sha256": "b67ca45bc953ff0bd9a8b1cce9a9e4f3049792ecfe31697aa16d14fc686c23a3",
+      "size": [
+        1024,
+        1152
+      ]
+    },
+    {
+      "name": "actor_patrol_1_0.png",
+      "sha256": "440becac8ce0ef5d9d6cff6b9b85169b6aaa93011bd40c2d3d8155aa46a119cb",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_1_1.png",
+      "sha256": "147a462b27b102fca24aab51e3d5100a6d14dba3490b00fc286df2f5777379b4",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_2_0.png",
+      "sha256": "2c591bffa3a1494c8760a8182d6113d3a8229d53770624a0c5d62dfe145d6e19",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_2_1.png",
+      "sha256": "506f4497859019edd8cc5f3f9690bcda06dfcf27ba661d3b1b03c56d00b2fbbf",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_3_0.png",
+      "sha256": "6eca058902520a825158b2874b9da953ad422f3e481e66e773f79d8a0222f499",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_3_1.png",
+      "sha256": "3426fb0e5ece1e46c0560e37f0c2e4f871c3733b474a9ac5ebaf590c6611ab32",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_4_0.png",
+      "sha256": "c1c65e3792f988ace12338357eb1a7877bb85b5105677bd6fe8cb0d210aa6c58",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_4_1.png",
+      "sha256": "73f502631d2db8eb456eaf46ad96b15de544f6482afe692ad867ee9273db360c",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_5_0.png",
+      "sha256": "fb1e08c9ad1ed75ee16537ba5508626031f30738c3f061cabc332c32be368195",
+      "size": [
+        256,
+        160
+      ]
+    },
+    {
+      "name": "actor_patrol_5_1.png",
+      "sha256": "6c6a4c7bb38f3a916da89dce250263873199734a6bf856e3871f338da96251e1",
+      "size": [
+        256,
+        160
+      ]
+    }
+  ],
+  "runtime_contract": "5 boss sheets:8 frames x9 rows,128px cells;10 patrol sheets:8 frames x5 rows,32px cells"
+}

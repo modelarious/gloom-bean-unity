@@ -1,8 +1,8 @@
 {
   "schema_version": 12,
   "status": "Q11_ACTOR_PRESENTATION_IN_PROGRESS",
-  "active_branch": "visual/qualitybar-q1",
-  "worktree": "C:\\Users\\micha\\Projects\\GloomBean QualityBar Q1",
+  "active_branch": "visual/qualitybar-q11",
+  "worktree": "C:\\ProgramData\\SentinelX\\workspace\\GloomBean-Q11",
   "runtime_art_commit": "9b58bd878edd546936f32e34cbaee913b12fb3a8",
   "tested_candidate": "4d224f03810a50a072fa62754627f01731299122",
   "native_assembly_sha256": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
@@ -45,7 +45,7 @@
   "latest_tests": "Documentation/QualityBarQ1/Review/NATIVE_REGRESSION.json",
   "exact_package_tests": "Documentation/QualityBarQ1/Review/EXACT_PACKAGE_RUN.json",
   "strict_visual_bar": "UNMET",
-  "next_work": "Q10B tests and exact package/motion already completed. Continue actual actor/world expression revision and all225 same-camera validation; do not restart Q9 regression or repository setup. Inspect the current Q11 gate before work.",
+  "next_work": "Build and inspect Q11 authored actor cells; original C:/Users/micha checkout is read-only per direct-editor policy. Use this explicit rw workspace, not a policy bypass. All225 views and native mechanics/routes remain required.",
   "known_recipes": [
     "Run-BroadVisual.ps1 requires a new RunId; after first import of new PNGs, inspect/commit normalized metadata before a clean-source native test.",
     "QualityBarWorld must resolve GetComponentInParent<StageSession>; existing mechanics tests build scenery on a child.",

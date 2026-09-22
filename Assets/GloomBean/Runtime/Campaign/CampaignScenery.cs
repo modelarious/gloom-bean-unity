@@ -81,15 +81,43 @@ namespace GloomBean.Campaign
     }
     public sealed class BossPixelView:MonoBehaviour
     {
-        public AtlasBoss boss;public int world;SpriteRenderer picture;
-        void Start(){picture=GetComponent<SpriteRenderer>();foreach(var old in GetComponentsInChildren<SpriteRenderer>())if(old!=picture)old.enabled=false;}
-        void LateUpdate(){if(picture&&boss){picture.sprite=HostPixelArt.Boss(world,Mathf.Clamp(boss.phase,0,2));picture.color=Color.white;}}
+        public AtlasBoss boss;public int world;SpriteRenderer source,picture;bool originalForce;int lastPhase=-1;float strainUntil;
+        public QualityBossPose DisplayPose {get;private set;}
+        public SpriteRenderer Picture=>picture;
+        void Start(){source=GetComponent<SpriteRenderer>();originalForce=source&&source.forceRenderingOff;
+            foreach(var old in GetComponentsInChildren<SpriteRenderer>())if(old!=source)old.enabled=false;
+            var child=new GameObject("Q11 visual / authored boss");child.transform.SetParent(transform,false);picture=child.AddComponent<SpriteRenderer>();picture.sortingOrder=source?source.sortingOrder:7;Refresh();}
+        public void Refresh(){if(!picture||!boss||!source)return;
+            if(lastPhase<0)lastPhase=boss.phase;else if(lastPhase!=boss.phase){lastPhase=boss.phase;strainUntil=boss.phaseClock+.40f;}
+            bool straining=boss.phaseClock<strainUntil;bool commitment=false;var session=boss.GetComponentInParent<StageSession>();
+            if(session&&boss.combat)foreach(var tell in session.GetComponentsInChildren<BossLaneAttack>())if(tell.enabled&&tell.gameObject.activeInHierarchy){commitment=true;break;}
+            DisplayPose=straining?QualityBossPose.Strain:commitment?QualityBossPose.Commit:QualityBossPose.Watch;
+            picture.sprite=QualityBarActorArt.Boss(world,boss.phase,DisplayPose,QualityBarActorArt.Frame(boss.phaseClock*4))??HostPixelArt.Boss(world,Mathf.Clamp(boss.phase,0,2));
+            picture.enabled=source.enabled&&boss.enabled;picture.color=new Color(1,1,1,source.color.a);source.forceRenderingOff=picture.sprite!=null;
+        }
+        void LateUpdate()=>Refresh();
+        void OnDisable(){if(picture)picture.enabled=false;if(source)source.forceRenderingOff=originalForce;}
+        void OnDestroy(){if(picture)Destroy(picture.gameObject);if(source)source.forceRenderingOff=originalForce;}
     }
     public sealed class PatrolPixelView:MonoBehaviour
     {
-        public int world;CarryableEnemy enemy;SpriteRenderer picture;Transform image;
-        void Start(){enemy=GetComponent<CarryableEnemy>();foreach(var old in GetComponentsInChildren<SpriteRenderer>())old.enabled=false;image=new GameObject("Patrol mask pixel artwork").transform;image.SetParent(transform,false);image.localScale=Vector3.one*1.24f;picture=image.gameObject.AddComponent<SpriteRenderer>();picture.sortingOrder=10;}
-        void LateUpdate(){if(!enemy||!picture)return;bool stunned=enemy.state==EnemyState.Stunned||enemy.state==EnemyState.Carried;picture.sprite=HostPixelArt.Enemy(world,(int)(Time.time*5)%2,stunned,enemy.armored);picture.flipX=enemy.direction<0;image.localRotation=Quaternion.Euler(0,0,enemy.state==EnemyState.Thrown?Time.time*750:0);}
+        public int world;CarryableEnemy enemy;SpriteRenderer source,picture;Transform image;bool originalForce;float stride;Vector2 previous;bool positioned;
+        public QualityPatrolPose DisplayPose {get;private set;}
+        public int DisplayFrame {get;private set;}
+        public SpriteRenderer Picture=>picture;
+        void Start(){enemy=GetComponent<CarryableEnemy>();source=GetComponent<SpriteRenderer>();originalForce=source&&source.forceRenderingOff;
+            foreach(var old in GetComponentsInChildren<SpriteRenderer>())if(old!=source)old.enabled=false;
+            image=new GameObject("Q11 visual / authored patrol").transform;image.SetParent(transform,false);image.localScale=Vector3.one*1.24f;picture=image.gameObject.AddComponent<SpriteRenderer>();picture.sortingOrder=10;previous=transform.position;positioned=true;Refresh();}
+        public void Refresh(){if(!enemy||!picture)return;Vector2 position=transform.position;float distance=positioned?Vector2.Distance(position,previous):0;previous=position;positioned=true;
+            if(enemy.state==EnemyState.Patrol&&distance<.6f)stride+=distance*7.0f;
+            float speed=enemy.Body?enemy.Body.linearVelocity.x:0;DisplayPose=QualityBarActorArt.PatrolPose(enemy.state,speed);
+            DisplayFrame=DisplayPose==QualityPatrolPose.Walk?QualityBarActorArt.Frame(stride):DisplayPose==QualityPatrolPose.Thrown||DisplayPose==QualityPatrolPose.Stunned?QualityBarActorArt.Frame(Time.time*7):0;
+            picture.sprite=QualityBarActorArt.Patrol(world,DisplayPose,DisplayFrame,enemy.armored)??HostPixelArt.Enemy(world,DisplayFrame,enemy.CanPickUp,enemy.armored);
+            picture.flipX=enemy.direction<0;picture.enabled=enemy.enabled&&enemy.state!=EnemyState.Dead&&(!source||source.enabled);picture.color=new Color(1,1,1,source?source.color.a:1);
+            image.localRotation=Quaternion.identity;if(source)source.forceRenderingOff=picture.sprite!=null;
+        }
+        void LateUpdate()=>Refresh();
+        void OnDisable(){if(picture)picture.enabled=false;if(source)source.forceRenderingOff=originalForce;}
+        void OnDestroy(){if(image)Destroy(image.gameObject);if(source)source.forceRenderingOff=originalForce;}
     }
-
 }
