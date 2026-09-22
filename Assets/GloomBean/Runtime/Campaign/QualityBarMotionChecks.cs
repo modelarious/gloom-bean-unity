@@ -12,6 +12,9 @@ namespace GloomBean.Campaign
         static string Hash(Color32[] pixels){var bytes=new byte[pixels.Length*4];for(int i=0;i<pixels.Length;i++){bytes[i*4]=pixels[i].r;bytes[i*4+1]=pixels[i].g;bytes[i*4+2]=pixels[i].b;bytes[i*4+3]=pixels[i].a;}using(var h=SHA256.Create())return Convert.ToBase64String(h.ComputeHash(bytes));}
         public static IEnumerator Run(GameRoot game,Action<string,bool,string> check)
         {
+            check("caption.near-object-readable",GbaWorldSign.CaptionVisibility("FELT",2f)==1f,"Nearby creature cure name remains readable");
+            check("caption.distant-object-no-clutter",GbaWorldSign.CaptionVisibility("FELT",8f)==0f,"Only distant object-name captions are removed");
+            check("caption.puzzle-word-retained",GbaWorldSign.CaptionVisibility("RETURN",100f)==1f&&GbaWorldSign.CaptionVisibility("FIVE WORDS",100f)==1f,"Puzzle lettering never treated as a convenience caption");
             foreach(bool open in new[]{false,true}){
                 var texture=Resources.Load<Texture2D>("QualityBar/host_motion_"+(open?"open":"original"));
                 check("motion.import."+open,texture&&texture.width==512&&texture.height==1024&&texture.filterMode==FilterMode.Point&&texture.isReadable,"Exact native readable sprite atlas");
