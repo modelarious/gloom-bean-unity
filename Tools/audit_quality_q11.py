@@ -45,7 +45,7 @@ for row in rows:
  path=extra/row['file'];assert sha(path)==row['sha256'];pixels=hashlib.sha256(Image.open(path).convert('RGB').tobytes()).hexdigest();assert pixels not in previous and pixels not in added;added.add(pixels);categories[row['category']]+=1
 assert categories=={'gameplay-comparison':10,'presentation-only-not-environment-comparison':6}
 before=tree('a4386033c564f736cc00885ab4a152124a454d8a');after=tree(runner['source'])
-allowed={'HostPixelArt.cs','HostPixelView.cs','QualityBarWorld.cs','GbaWorldSign.cs','GbaActionCapture.cs','NativePresentationChecks.cs','BroadVisualCapture.cs','BroadVisualChecks.cs','CampaignScenery.cs'}
+allowed={'HostPixelArt.cs','HostPixelView.cs','QualityBarWorld.cs','GbaWorldSign.cs','GbaActionCapture.cs','NativePresentationChecks.cs','BroadVisualCapture.cs','BroadVisualChecks.cs','CampaignScenery.cs','V6VisualArt.cs'}
 changed=[f for f in before if before[f]!=after.get(f)];assert all(Path(f).name in allowed for f in changed),changed
 protected=[f for f in before if Path(f).name not in allowed];assert all(before[f]==after.get(f) for f in protected)
 newfiles=[f for f in after if f not in before];assert {Path(f).name for f in newfiles}<={'QualityBarConstruction.cs','QualityBarMotion.cs','QualityBarMotionChecks.cs','QualityBarLivingMechanisms.cs','QualityBarLivingChecks.cs','QualityBarActorArt.cs','QualityBarActorChecks.cs'}

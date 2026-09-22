@@ -81,11 +81,13 @@ namespace GloomBean.Campaign
     }
     public sealed class BossPixelView:MonoBehaviour
     {
-        public AtlasBoss boss;public int world;SpriteRenderer source,picture;bool originalForce;int lastPhase=-1;float strainUntil;
+        public AtlasBoss boss;public int world;SpriteRenderer source,picture;bool originalForce;int lastPhase=-1;float strainUntil;readonly List<KeyValuePair<SpriteRenderer,bool>> oldEyes=new List<KeyValuePair<SpriteRenderer,bool>>();
         public QualityBossPose DisplayPose {get;private set;}
         public SpriteRenderer Picture=>picture;
         void Start(){source=GetComponent<SpriteRenderer>();originalForce=source&&source.forceRenderingOff;
             foreach(var old in GetComponentsInChildren<SpriteRenderer>())if(old!=source)old.enabled=false;
+            var root=boss?boss.GetComponentInParent<StageSession>():null;
+            if(root)foreach(var eye in root.GetComponentsInChildren<SpriteRenderer>(true))if(eye.name=="Witnessing eye"&&!eye.GetComponent<Collider2D>()){oldEyes.Add(new KeyValuePair<SpriteRenderer,bool>(eye,eye.forceRenderingOff));eye.forceRenderingOff=true;}
             var child=new GameObject("Q11 visual / authored boss");child.transform.SetParent(transform,false);picture=child.AddComponent<SpriteRenderer>();picture.sortingOrder=source?source.sortingOrder:7;Refresh();}
         public void Refresh(){if(!picture||!boss||!source)return;
             if(lastPhase<0)lastPhase=boss.phase;else if(lastPhase!=boss.phase){lastPhase=boss.phase;strainUntil=boss.phaseClock+.40f;}
@@ -93,11 +95,13 @@ namespace GloomBean.Campaign
             if(session&&boss.combat)foreach(var tell in session.GetComponentsInChildren<BossLaneAttack>())if(tell.enabled&&tell.gameObject.activeInHierarchy){commitment=true;break;}
             DisplayPose=straining?QualityBossPose.Strain:commitment?QualityBossPose.Commit:QualityBossPose.Watch;
             picture.sprite=QualityBarActorArt.Boss(world,boss.phase,DisplayPose,QualityBarActorArt.Frame(boss.phaseClock*4))??HostPixelArt.Boss(world,Mathf.Clamp(boss.phase,0,2));
+            picture.transform.localScale=source.drawMode==SpriteDrawMode.Simple?Vector3.one:new Vector3(source.size.x,source.size.y,1);
+            foreach(var eye in oldEyes)if(eye.Key)eye.Key.forceRenderingOff=true;
             picture.enabled=source.enabled&&boss.enabled;picture.color=new Color(1,1,1,source.color.a);source.forceRenderingOff=picture.sprite!=null;
         }
         void LateUpdate()=>Refresh();
-        void OnDisable(){if(picture)picture.enabled=false;if(source)source.forceRenderingOff=originalForce;}
-        void OnDestroy(){if(picture)Destroy(picture.gameObject);if(source)source.forceRenderingOff=originalForce;}
+        void OnDisable(){if(picture)picture.enabled=false;if(source)source.forceRenderingOff=originalForce;foreach(var eye in oldEyes)if(eye.Key)eye.Key.forceRenderingOff=eye.Value;}
+        void OnDestroy(){if(picture)Destroy(picture.gameObject);if(source)source.forceRenderingOff=originalForce;foreach(var eye in oldEyes)if(eye.Key)eye.Key.forceRenderingOff=eye.Value;}
     }
     public sealed class PatrolPixelView:MonoBehaviour
     {

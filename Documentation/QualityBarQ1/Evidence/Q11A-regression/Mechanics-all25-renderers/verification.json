@@ -1,0 +1,2270 @@
+{
+    "unity": "6000.5.9f1",
+    "platform": "WindowsPlayer",
+    "scope": "Actual Unity physics and production components; not a human-feel or full-campaign solvability certificate.",
+    "passed": 452,
+    "failed": 1,
+    "exceptions": 1,
+    "tests": [
+        {
+            "name": "foundation.catalog.4-levels-and-boss",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "ground.contact",
+            "pass": true,
+            "observation": "(600.00, 0.00)"
+        },
+        {
+            "name": "shape.centered-shrink-preserves-position",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "shape.centered-growth-rejects-ground-overlap",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "shape.centered-resize-preserves-health",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "walk.acceleration",
+            "pass": true,
+            "observation": "2.458557 units / 0.5s"
+        },
+        {
+            "name": "walk.braking",
+            "pass": true,
+            "observation": "(0.00, 0.00)"
+        },
+        {
+            "name": "jump.variable-height",
+            "pass": true,
+            "observation": "full=3.1168 short=2.013"
+        },
+        {
+            "name": "jump.buffered-on-landing",
+            "pass": true,
+            "observation": "(600.00, 2.30) (0.00, 7.87)"
+        },
+        {
+            "name": "jump.coyote-after-edge",
+            "pass": true,
+            "observation": "(5.50, 11.83)"
+        },
+        {
+            "name": "crouch.reduces-collider",
+            "pass": true,
+            "observation": "0.795"
+        },
+        {
+            "name": "crouch.cannot-stand-through-roof",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.stands-when-clear",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crawl.speed-limited",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.stands-beneath-one-way-floor",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "crouch.one-way-exception-does-not-ignore-solid-roofs",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "tackle.normal-tier",
+            "pass": true,
+            "observation": "Tackle"
+        },
+        {
+            "name": "tackle.run-up-tier",
+            "pass": true,
+            "observation": "RunTackle"
+        },
+        {
+            "name": "tackle.running-jump-preserves-attack",
+            "pass": true,
+            "observation": "AirTackle (13.50, 11.27)"
+        },
+        {
+            "name": "pound.short-drop-normal",
+            "pass": true,
+            "observation": "2"
+        },
+        {
+            "name": "pound.long-drop-uber",
+            "pass": true,
+            "observation": "3"
+        },
+        {
+            "name": "break.rejects-weak-hit",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "break.accepts-uber",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "enemy.pick-up-stunned",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "enemy.throw-collides-with-enemy",
+            "pass": true,
+            "observation": "victim destroyed"
+        },
+        {
+            "name": "enemy.patrol-turns-at-wall",
+            "pass": true,
+            "observation": "direction=-1"
+        },
+        {
+            "name": "enemy.recovers-from-stun",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "water.swim-vertical",
+            "pass": true,
+            "observation": "Swim"
+        },
+        {
+            "name": "water.dash",
+            "pass": true,
+            "observation": "(10.00, 0.00)"
+        },
+        {
+            "name": "roll.slope-accelerates-without-forward-input",
+            "pass": true,
+            "observation": "Roll dx=3.445984"
+        },
+        {
+            "name": "platform.carries-standing-actor",
+            "pass": true,
+            "observation": "relative delta=0"
+        },
+        {
+            "name": "platform.carries-kinematic-support-in-another-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "carousel.four-upright-arms",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "conveyor.bounded-support-relative-speed",
+            "pass": true,
+            "observation": "peak=2 dx=3.999023"
+        },
+        {
+            "name": "plate.actor-mass-opens-gate",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.release-closes-gate",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.rejects-self-propelled-structural-shutter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "plate.accepts-released-physical-counterweight",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "damage.lethal-hit-clamps-health-to-zero",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "attack.cannot-hit-geometry-in-excluded-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "attack.can-hit-same-target-in-contact-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.no-clock-before-turn",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.cannot-clear-before-switch",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.switch-one-shot",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.required-items-enforced",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "collect.stable-id-deduplication",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.optional-mercy-not-required",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "save.round-trip",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "save.corrupt-primary-recovers-backup",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "escape.timeout-fails",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-1",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-2",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-3",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "course.construct.BASE-4",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "boss.foundation-constructed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.oneway.rise-through-and-land",
+            "pass": true,
+            "observation": "peak=2.368362 feet=2.004999"
+        },
+        {
+            "name": "iteration.layout.captures-static-positive-control",
+            "pass": true,
+            "observation": "nodes=3"
+        },
+        {
+            "name": "iteration.layout.excludes-scripted-machinery",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.pose-collider-and-sprite-roundtrip",
+            "pass": true,
+            "observation": "changes=1 "
+        },
+        {
+            "name": "iteration.layout.stale-patch-rejected-atomically",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.duplicate-target-rejected",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.layout.added-hierarchy-is-not-silently-lost",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.audio.bounded-finite-original-cue",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.audio.verification-forces-silence",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.later-stage-and-boss-initially-locked",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.first-clear-opens-only-next-stage",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.all-course-clears-open-boss",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.boss-opens-next-world",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.progress.invalid-indices-stay-closed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.body.wide-capsule-physical-footprint",
+            "pass": true,
+            "observation": "(1.50, 0.32, 0.00)"
+        },
+        {
+            "name": "iteration.body.restore-vertical-capsule",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "iteration.body.reposition-preserves-damage",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.extension.registered",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.crouch.can-stand-beneath-one-way-floor",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.crouch.still-respects-solid-ceiling",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.echo.waits-two-seconds",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.echo.replays-input-with-delay",
+            "pass": true,
+            "observation": "11.00098"
+        },
+        {
+            "name": "atlas.echo.position-replay-not-just-velocity",
+            "pass": true,
+            "observation": "max error=0 over 100 fixed-step comparisons"
+        },
+        {
+            "name": "atlas.echo.leading-secondary-action-keeps-history-body",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.echo.leading-secondary-action-is-delayed-not-lost",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.focus.fixture-is-an-actual-slope",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.focus.chord-does-not-crouch-or-roll",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.focus.ordinary-down-still-rolls-positive-control",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.focus.chord-does-not-also-step-depth",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.focus.ordinary-down-still-steps-depth",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.echo.inherits-core-dimensions-and-mass",
+            "pass": true,
+            "observation": "height=1.095 mass=0.5329"
+        },
+        {
+            "name": "atlas.cure.absent-tenant-preserves-existing-body",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.reclaim-refuses-unsafe-growth",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.reclaim-restores-the-body",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.abandoned-skin-remains-reclaimable-after-cure",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.cutting-thread-keeps-molt-cost",
+            "pass": true,
+            "observation": "height=1.095 mass=0.5329 tackle disabled=True"
+        },
+        {
+            "name": "atlas.echo.leading-is-body-latency",
+            "pass": true,
+            "observation": "body=0 echo=6.125549"
+        },
+        {
+            "name": "atlas.echo.delayed-primary-eventually-moves",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.marionette.anchor-follows-rail",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.marionette.body-is-tethered",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.marionette.thread-does-not-push-like-a-strut",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.marionette.transfers-at-junction",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.marionette.vertical-rail",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.first-real-skin",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.second-skin-small-core",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.bounded-budget",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.molt.reclaims-nearby",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.wax.conserves-volume",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.wax.liquid-changes-collider",
+            "pass": true,
+            "observation": "liquid=True height=0.32"
+        },
+        {
+            "name": "atlas.wax.physical-capsule-matches-puddle",
+            "pass": true,
+            "observation": "(1.17, 0.32, 0.00)"
+        },
+        {
+            "name": "atlas.wax.cannot-reform-through-ceiling",
+            "pass": true,
+            "observation": "liquid=True height=0.32"
+        },
+        {
+            "name": "atlas.wax.reforms-in-clear-space",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.gullet.removes-actual-terrain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.gullet.no-duplicate-spit",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.gullet.position-changed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.root.curve-recorded-in-wet-seam",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.root.body-follows-curve-not-chord",
+            "pass": true,
+            "observation": "(608.00, 0.75) peak=5.952441"
+        },
+        {
+            "name": "atlas.mirror.twins-remain-collidable",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.mirror.opposite-controls",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.mirror.collision-desynchronizes",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.insideout.crosses-normal-solid",
+            "pass": true,
+            "observation": "(610.06, 0.76)"
+        },
+        {
+            "name": "atlas.insideout.stops-at-complement",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.parallax.position-preserved",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.parallax.scale-and-collision-domain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.parallax.requires-overlap",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.cure.thread-cut-does-not-demand-full-size-space",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.cure.echo-thread-fixture-blocks-full-restoration",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.cure.echo-thread-cut-preserves-unchanged-footprint",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.mirror-cure-keeps-far-body-under-low-roof",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.full-restoration-still-rejects-occupied-roof",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.hotel.room-carries-neutral-occupant",
+            "pass": true,
+            "observation": "(594.00, 10.76) room=(594.00, 10.00, 0.00)"
+        },
+        {
+            "name": "atlas.hotel.compound-prop-carried-once",
+            "pass": true,
+            "observation": "relative error=6.103516E-05"
+        },
+        {
+            "name": "atlas.parallax.foreign-one-way-floor-is-not-solid",
+            "pass": true,
+            "observation": "(600.00, 0.49) effectorMask=False"
+        },
+        {
+            "name": "atlas.parallax.selected-one-way-floor-supports-body",
+            "pass": true,
+            "observation": "(600.00, 2.62)"
+        },
+        {
+            "name": "atlas.penitent.reaches-kneel",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.penitent.stationary-kneel-does-not-retain-fall-velocity",
+            "pass": true,
+            "observation": "(606.00, 2.25)"
+        },
+        {
+            "name": "atlas.censer.return-only-mover-receives-clock",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.censer.activated-return-mover-really-slows",
+            "pass": true,
+            "observation": "local displacement=0.7298584 outside displacement=2"
+        },
+        {
+            "name": "atlas.censer.cured-return-mover-restores-speed",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.inspection.upright-passenger-blocks-real-clearance",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.inspection.blocked-trip-returns-instead-of-crushing",
+            "pass": true,
+            "observation": "(599.98, 6.95)"
+        },
+        {
+            "name": "atlas.censer.local-not-global-time",
+            "pass": true,
+            "observation": "near=0.918457 far=2"
+        },
+        {
+            "name": "atlas.stitch.rotates-real-architecture",
+            "pass": true,
+            "observation": "90"
+        },
+        {
+            "name": "atlas.stitch.cut-does-not-teleport-panel",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.stitch.finished-hinge-holds-angle",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.coffin.corner-pivot-not-jump",
+            "pass": true,
+            "observation": "(601.50, 0.55) rot=-90"
+        },
+        {
+            "name": "atlas.coffin.horizontal-brace",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.coffin.rejects-blocked-swept-volume",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.coffin.partial-cure-restores-capsule",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.stitch-aim-selects-real-edge",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.stitch-aim-preserves-coffin-brace",
+            "pass": true,
+            "observation": "position=(601.50, 0.55) angle=-90"
+        },
+        {
+            "name": "atlas.composition.stitch-release-restores-coffin-motion",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.lodestone.reciprocal-motion",
+            "pass": true,
+            "observation": "601.353 / 604.8864"
+        },
+        {
+            "name": "atlas.lodestone.polarity-reverses-force",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.lodestone.local-field-is-bounded",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.lodestone.bounded-field-retains-reciprocity",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.lodestone.leaving-field-retains-air-momentum",
+            "pass": true,
+            "observation": "(17.12, -0.83)"
+        },
+        {
+            "name": "atlas.lodestone.internal-attraction-cannot-lift-its-own-support",
+            "pass": true,
+            "observation": "highest=3.990222"
+        },
+        {
+            "name": "atlas.shadow.rotated-outline-is-not-aabb",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.noon-erases-sideways-bridge",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.isolated-room-retains-own-light",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.foreign-light-excludes-room",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.cable.falling-mass-raises-real-deck",
+            "pass": true,
+            "observation": "(600.00, 14.00) / (606.00, 0.61)"
+        },
+        {
+            "name": "atlas.cable.bounded-length-without-teleport",
+            "pass": true,
+            "observation": "max stretch=0.0555563 current slack=-2.615177 peak tension=36.99184"
+        },
+        {
+            "name": "atlas.shadow.follows-projected-silhouette",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.cannot-cross-empty-light",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.primary-body-remains",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.attached-form-follows-ordinary-body",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.explicitly-detached-anchor",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.shadow.tether-constrains-physical-body",
+            "pass": true,
+            "observation": "(583.81, 0.75) shadow=(597.79, 0.00)"
+        },
+        {
+            "name": "atlas.ink.not-solid-immediately",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.ink.hardens-after-delay",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.ink.expires",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.ink.finite-length-budget",
+            "pass": true,
+            "observation": "18"
+        },
+        {
+            "name": "atlas.scripture.physical-comma-selects-line-break",
+            "pass": true,
+            "observation": "x=604.7496 wrap=3"
+        },
+        {
+            "name": "atlas.scripture.same-word-moves-between-rows",
+            "pass": true,
+            "observation": "(624.72, 18.82, 0.00)"
+        },
+        {
+            "name": "atlas.scripture.erases-repeated-route-not-fresh-ink",
+            "pass": true,
+            "observation": "erased=1"
+        },
+        {
+            "name": "atlas.composition.compatible-pair-retained",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.cure.restores-base-controller",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.composition.locomotion-swap-preserves-stored-terrain",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.sluice.cover-retains-local-moisture",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.sluice.removed-terrain-dries-actual-soil",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.sluice.reverse-restores-actual-soil",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.arena.reposition-does-not-heal",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.catalog.five-worlds-four-levels-five-bosses",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L01.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L01.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L01.declared-tenants-present",
+            "pass": true,
+            "observation": "Echo"
+        },
+        {
+            "name": "atlas.course.GB-L01.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.nail.withdrawn-after-pulling",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L02.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L02.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L02.declared-tenants-present",
+            "pass": true,
+            "observation": "Echo"
+        },
+        {
+            "name": "atlas.course.GB-L02.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L03.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L03.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L03.declared-tenants-present",
+            "pass": true,
+            "observation": "Marionette"
+        },
+        {
+            "name": "atlas.course.GB-L03.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L04.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L04.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L04.declared-tenants-present",
+            "pass": true,
+            "observation": "Molt,Marionette,Echo"
+        },
+        {
+            "name": "atlas.course.GB-L04.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.W1.distinct-mechanical-encounter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.usher.pendulum-can-physically-hit-catch",
+            "pass": true,
+            "observation": "real joint, force and collision; not a boss victory certificate"
+        },
+        {
+            "name": "atlas.course.GB-L05.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L05.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L05.declared-tenants-present",
+            "pass": true,
+            "observation": "Wax"
+        },
+        {
+            "name": "atlas.course.GB-L05.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L06.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L06.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L06.declared-tenants-present",
+            "pass": true,
+            "observation": "Gullet,Wax"
+        },
+        {
+            "name": "atlas.course.GB-L06.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L07.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L07.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L07.declared-tenants-present",
+            "pass": true,
+            "observation": "Root,Gullet"
+        },
+        {
+            "name": "atlas.course.GB-L07.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L08.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L08.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L08.declared-tenants-present",
+            "pass": true,
+            "observation": "Wax,Gullet,Root"
+        },
+        {
+            "name": "atlas.course.GB-L08.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.W2.distinct-mechanical-encounter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L09.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L09.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L09.declared-tenants-present",
+            "pass": true,
+            "observation": "Mirror"
+        },
+        {
+            "name": "atlas.course.GB-L09.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L10.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L10.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L10.declared-tenants-present",
+            "pass": true,
+            "observation": "InsideOut,Mirror"
+        },
+        {
+            "name": "atlas.course.GB-L10.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L11.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L11.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L11.declared-tenants-present",
+            "pass": true,
+            "observation": "Parallax,InsideOut"
+        },
+        {
+            "name": "atlas.course.GB-L11.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L12.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L12.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L12.declared-tenants-present",
+            "pass": true,
+            "observation": "Parallax,Mirror,InsideOut"
+        },
+        {
+            "name": "atlas.course.GB-L12.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.W3.distinct-mechanical-encounter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L13.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L13.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L13.declared-tenants-present",
+            "pass": true,
+            "observation": "Censer"
+        },
+        {
+            "name": "atlas.course.GB-L13.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L14.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L14.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L14.declared-tenants-present",
+            "pass": true,
+            "observation": "Stitch,Censer"
+        },
+        {
+            "name": "atlas.course.GB-L14.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L15.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L15.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L15.declared-tenants-present",
+            "pass": true,
+            "observation": "Coffin,Stitch"
+        },
+        {
+            "name": "atlas.course.GB-L15.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L16.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L16.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L16.declared-tenants-present",
+            "pass": true,
+            "observation": "Censer,Stitch,Coffin"
+        },
+        {
+            "name": "atlas.course.GB-L16.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.W4.distinct-mechanical-encounter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L17.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L17.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L17.declared-tenants-present",
+            "pass": true,
+            "observation": "Lodestone"
+        },
+        {
+            "name": "atlas.course.GB-L17.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L18.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L18.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L18.declared-tenants-present",
+            "pass": true,
+            "observation": "Shadow,Lodestone"
+        },
+        {
+            "name": "atlas.course.GB-L18.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L19.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L19.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L19.declared-tenants-present",
+            "pass": true,
+            "observation": "Ink,Shadow"
+        },
+        {
+            "name": "atlas.course.GB-L19.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L20.pixel-views-attached",
+            "pass": true,
+            "observation": "Actual constructed scene, not only source presence"
+        },
+        {
+            "name": "atlas.course.GB-L20.construction-and-one-mercy",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.course.GB-L20.declared-tenants-present",
+            "pass": true,
+            "observation": "Echo,Molt,Mirror,Ink,Root,Gullet,Wax,Stitch,Marionette,Parallax,InsideOut,Censer,Coffin,Lodestone,Shadow"
+        },
+        {
+            "name": "atlas.course.GB-L20.turn-state",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.boss.W5.distinct-mechanical-encounter",
+            "pass": true,
+            "observation": ""
+        },
+        {
+            "name": "atlas.presentation.v6.texture2d-resource-contract",
+            "pass": true,
+            "observation": "Texture2D=78"
+        },
+        {
+            "name": "atlas.presentation.gba.native-render-surface",
+            "pass": true,
+            "observation": "Actual native render target"
+        },
+        {
+            "name": "atlas.presentation.gba.world-lettering-survives-ui-cache-turnover",
+            "pass": true,
+            "observation": "visible pixels=127"
+        },
+        {
+            "name": "atlas.presentation.gba.owned-lettering-visible-on-gpu",
+            "pass": true,
+            "observation": "Actual GPU sign pixels"
+        },
+        {
+            "name": "atlas.caption.near-object-readable",
+            "pass": true,
+            "observation": "Nearby creature cure name remains readable"
+        },
+        {
+            "name": "atlas.caption.distant-object-no-clutter",
+            "pass": true,
+            "observation": "Only distant object-name captions are removed"
+        },
+        {
+            "name": "atlas.caption.puzzle-word-retained",
+            "pass": true,
+            "observation": "Puzzle lettering never treated as a convenience caption"
+        },
+        {
+            "name": "atlas.motion.import.False",
+            "pass": true,
+            "observation": "Exact native readable sprite atlas"
+        },
+        {
+            "name": "atlas.motion.cells.False.Idle",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Tackle",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Swim",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Pound",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Hurt",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Walk",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.False.Walk",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.False.Run",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.False.Run",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.False.Rise",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Fall",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Windup",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Carry",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.False.Carry",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.False.Crouch",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Brake",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.SwimDash",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Land",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.False.Dead",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.distinct-actions.False",
+            "pass": true,
+            "observation": "Pose silhouettes distinct=16"
+        },
+        {
+            "name": "atlas.motion.import.True",
+            "pass": true,
+            "observation": "Exact native readable sprite atlas"
+        },
+        {
+            "name": "atlas.motion.cells.True.Idle",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Tackle",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Swim",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Pound",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Hurt",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Walk",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.True.Walk",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.True.Run",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.True.Run",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.True.Rise",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Fall",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Windup",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Carry",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.stride.True.Carry",
+            "pass": true,
+            "observation": "eight independently drawn stride frames=8"
+        },
+        {
+            "name": "atlas.motion.cells.True.Crouch",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Brake",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.SwimDash",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Land",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.cells.True.Dead",
+            "pass": true,
+            "observation": "All8 authored cells readable and nonempty, not an opaque rectangle"
+        },
+        {
+            "name": "atlas.motion.distinct-actions.True",
+            "pass": true,
+            "observation": "Pose silhouettes distinct=16"
+        },
+        {
+            "name": "atlas.motion.identity-distinct",
+            "pass": true,
+            "observation": "Cute and permanently corrupted identities never share one body cell"
+        },
+        {
+            "name": "atlas.motion.select.Idle",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Run",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Swim",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.SwimDash",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Tackle",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.PoundWindup",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Pound",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.SuperPound",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Hurt",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.Dead",
+            "pass": true,
+            "observation": "Read-only priority selection"
+        },
+        {
+            "name": "atlas.motion.select.rise",
+            "pass": true,
+            "observation": "Vertical ascent"
+        },
+        {
+            "name": "atlas.motion.select.fall",
+            "pass": true,
+            "observation": "Falling silhouette differs"
+        },
+        {
+            "name": "atlas.motion.select.brake",
+            "pass": true,
+            "observation": "Reversing stance, no friction change"
+        },
+        {
+            "name": "atlas.motion.select.carry",
+            "pass": true,
+            "observation": "Hands carry the real actor object"
+        },
+        {
+            "name": "atlas.motion.select.crouch",
+            "pass": true,
+            "observation": "Art does not change clearance"
+        },
+        {
+            "name": "atlas.living.phase-forward",
+            "pass": true,
+            "observation": "Finite eight-frame wrap"
+        },
+        {
+            "name": "atlas.living.phase-reverse",
+            "pass": true,
+            "observation": "Signed displacement is not clamped away"
+        },
+        {
+            "name": "atlas.living.frame-resource-contract",
+            "pass": true,
+            "observation": "Actual imported frame cells=72"
+        },
+        {
+            "name": "atlas.living.offcamera-water-installs",
+            "pass": true,
+            "observation": "Current late object, not a camera fixture"
+        },
+        {
+            "name": "atlas.living.water-current-observation",
+            "pass": true,
+            "observation": "No current mutation"
+        },
+        {
+            "name": "atlas.living.water-surface-aligned",
+            "pass": true,
+            "observation": "Rendered surface is the real collider surface"
+        },
+        {
+            "name": "atlas.living.disabled-water-hides",
+            "pass": true,
+            "observation": "No false water/ledge remains"
+        },
+        {
+            "name": "atlas.living.disabled-visual-restores-original",
+            "pass": true,
+            "observation": "Disabling only the new layer restores the underlying water renderer"
+        },
+        {
+            "name": "atlas.living.disabled-water-component-hides",
+            "pass": true,
+            "observation": "Owner behavior disabled"
+        },
+        {
+            "name": "atlas.living.late-belt-installs",
+            "pass": true,
+            "observation": "Real speed unchanged"
+        },
+        {
+            "name": "atlas.living.stationary-belt-stops",
+            "pass": true,
+            "observation": "Art stops with actual belt"
+        },
+        {
+            "name": "atlas.living.disabled-belt-hides",
+            "pass": true,
+            "observation": "No active fake rollers"
+        },
+        {
+            "name": "atlas.living.late-carousel-installs",
+            "pass": true,
+            "observation": "Actual wheel gets casing/arm/pins"
+        },
+        {
+            "name": "atlas.living.carousel-does-not-move-arms",
+            "pass": true,
+            "observation": "Rendering only reads live endpoints"
+        },
+        {
+            "name": "atlas.living.carousel-uses-actual-angle",
+            "pass": true,
+            "observation": "Fixture moves the actual arm once; renderer follows without setting orbit phase"
+        },
+        {
+            "name": "atlas.living.disabled-carousel-hides",
+            "pass": true,
+            "observation": "Disabled parent mechanism has no independent animation"
+        },
+        {
+            "name": "atlas.living.no-added-colliders",
+            "pass": true,
+            "observation": "No collision added by any new visual child"
+        },
+        {
+            "name": "atlas.actors.state.walk",
+            "pass": true,
+            "observation": "Real velocity selects gait"
+        },
+        {
+            "name": "atlas.actors.state.idle",
+            "pass": true,
+            "observation": "No running in place"
+        },
+        {
+            "name": "atlas.actors.state.stunned",
+            "pass": true,
+            "observation": "Stunned pose precedes slide speed"
+        },
+        {
+            "name": "atlas.actors.state.carried",
+            "pass": true,
+            "observation": "Raised-hand carried pose"
+        },
+        {
+            "name": "atlas.actors.state.thrown",
+            "pass": true,
+            "observation": "Authored tumbling cell"
+        },
+        {
+            "name": "atlas.actors.signed-clock",
+            "pass": true,
+            "observation": "Signed wrap bounded"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.0.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.0.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.0.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.0.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.0.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.1.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.1.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.1.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.1.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.1.1.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.0.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.0.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.0.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.1.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.1.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.1.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.2.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.2.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.1.2.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.0.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.0.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.0.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.0.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.0.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.1.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.1.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.1.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.1.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.2.1.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.0.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.0.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.0.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.1.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.1.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.1.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.2.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.2.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.2.2.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.0.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.0.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.0.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.0.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.0.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.1.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.1.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.1.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.1.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.3.1.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.0.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.0.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.0.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.1.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.1.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.1.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.2.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.2.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.3.2.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.0.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.0.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.0.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.0.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.0.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.1.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.1.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.1.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.1.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.4.1.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.0.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.0.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.0.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.1.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.1.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.1.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.2.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.2.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.4.2.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.0.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.0.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.0.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.0.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.0.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.1.0",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.1.1",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.1.2",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.1.3",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.patrol.5.1.4",
+            "pass": true,
+            "observation": "All8 authored cells imported/transparent"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.0.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.0.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.0.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.1.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.1.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.1.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.2.0",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.2.1",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.cells.boss.5.2.2",
+            "pass": true,
+            "observation": "All8 fixed-footprint boss cells imported"
+        },
+        {
+            "name": "atlas.actors.late-offcamera-patrol",
+            "pass": true,
+            "observation": "Component scan outside all sampled cameras"
+        },
+        {
+            "name": "atlas.actors.refresh-read-only",
+            "pass": true,
+            "observation": "No body/input/collision/state mutation"
+        }
+    ]
+}

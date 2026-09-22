@@ -96,13 +96,13 @@ namespace GloomBean.Campaign
             // Printed design labels are not foreground architecture. Keep functional signs, remove the giant duplicate stage caption.
             foreach(var text in GetComponentsInChildren<TextMesh>(true)){if(string.Equals(text.text,d.title,StringComparison.OrdinalIgnoreCase))text.GetComponent<MeshRenderer>().enabled=false;else text.gameObject.AddComponent<GbaWorldSign>().Initialize(text);}
             boss=GetComponentInChildren<AtlasBoss>();
-            if(boss&&world==5){presence=V6Art.Picture(transform,"distant Host manifestation",-12);presence.sprite=V6Art.Sprite("boss_5_0",128);presence.transform.localScale=new Vector3(5.5f,7,1);}
+            if(boss&&world==5){presence=V6Art.Picture(transform,"distant Host manifestation",-12);presence.sprite=QualityBarActorArt.Boss(5,0,QualityBossPose.Watch,0)??V6Art.Sprite("boss_5_0",128);presence.transform.localScale=new Vector3(5.5f,7,1);}
         }
         void LateUpdate()
         {
             if(!presence||!boss)return;var c=UnityEngine.Camera.main;if(!c)return;
             bool physicalVisible=boss.body&&Mathf.Abs(boss.body.position.x-c.transform.position.x)<c.orthographicSize*c.aspect+3;
-            presence.enabled=!physicalVisible&&!boss.defeated;presence.sprite=V6Art.Sprite("boss_5_"+Mathf.Clamp(boss.phase,0,2),128);presence.color=new Color(.85f,.78f,.86f,.60f);
+            presence.enabled=!physicalVisible&&!boss.defeated;presence.sprite=QualityBarActorArt.Boss(5,boss.phase,QualityBossPose.Watch,QualityBarActorArt.Frame(boss.phaseClock*4))??V6Art.Sprite("boss_5_"+Mathf.Clamp(boss.phase,0,2),128);presence.color=new Color(.85f,.78f,.86f,.60f);
             presence.transform.position=new Vector3(c.transform.position.x+3.6f,c.transform.position.y+1.2f,1);
         }
     }

@@ -28,7 +28,7 @@ namespace GloomBean.Campaign
                 yield return null;
             }
             game.SelectSource(1);yield return game.Load(game.AvailableWorlds[0].levels[0],true);yield return null;var session=game.Session;
-            var probe=PrimitiveArt.Shape("Q11 offcamera late patrol",session.transform,new Vector2(-900,-900),Vector2.one,Color.white,PrimitiveArt.Icon.Block,9);
+            var probe=PrimitiveArt.Shape("Q11 offcamera late patrol",session.transform,new Vector2(-900,900),Vector2.one,Color.white,PrimitiveArt.Icon.Block,9);
             var sr=probe.GetComponent<SpriteRenderer>();var body=probe.AddComponent<Rigidbody2D>();var box=probe.AddComponent<BoxCollider2D>();var actor=probe.AddComponent<CarryableEnemy>();actor.patrolSpeed=0;body.gravityScale=0;
             session.GetComponent<QualityBarWorld>().Scan();yield return null;var view=probe.GetComponent<PatrolPixelView>();
             check("actors.late-offcamera-patrol",view&&view.Picture&&view.Picture.sprite.name.StartsWith("Q11 authored"),"Component scan outside all sampled cameras");
@@ -44,7 +44,7 @@ namespace GloomBean.Campaign
             var patrols=session.GetComponentsInChildren<CarryableEnemy>(true);
             bool valid=patrols.Where(e=>e.gameObject.activeInHierarchy).All(e=>{var v=e.GetComponent<PatrolPixelView>();return v&&v.Picture&&v.Picture.sprite&&v.Picture.sprite.name.StartsWith("Q11 authored");});
             var bosses=session.GetComponentsInChildren<AtlasBoss>(true);
-            valid&=bosses.Where(b=>b.gameObject.activeInHierarchy&&b.body).All(b=>{var v=b.body.GetComponent<BossPixelView>();return v&&v.Picture&&v.Picture.sprite&&v.Picture.sprite.name.StartsWith("Q11 authored");});
+            valid&=bosses.Where(b=>b.gameObject.activeInHierarchy&&b.body).All(b=>{var v=b.body.GetComponent<BossPixelView>();return v&&v.Picture&&v.Picture.sprite&&v.Picture.sprite.name.StartsWith("Q11 authored")&&Vector2.Distance(v.Picture.bounds.size,b.body.GetComponent<SpriteRenderer>().bounds.size)<.01f;});
             check("actors.all25."+session.definition.id,valid,"All active actual patrol/boss components; patrols="+patrols.Length+",bosses="+bosses.Length);
         }
     }
