@@ -1,0 +1,18 @@
+{
+  "provenance": "Existing season_tree leaf fragments retain ArtSources/Ansimuz CC0 provenance. New branches, pears, roots and composition are an adaptation, not wholly original source leaves.",
+  "rejected": "Q9C opaque indoor fruit-rack backdrop on outdoor stages5,7,8",
+  "assets": [
+    {
+      "file": "construction_room_4.png",
+      "sha256": "82cb0d3ad64b03aded5782f0a51b9a91c376ff8d4dfb6fb654730b6b9cf31f8c"
+    },
+    {
+      "file": "construction_room_12.png",
+      "sha256": "8531ed1fdc812efbba3fa271c7bfe7a40cf8cc03e2e58b018d273a62728eec31"
+    },
+    {
+      "file": "construction_room_13.png",
+      "sha256": "141e57883934fbb6aef8324e59adc0f0873cd551d4154495c4ef263bab725374"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Q9C whole-game review / outdoor regression rejected
+
+All225 views captured; the13 native scenarios passed including599 assertions. This did not imply artistic approval. Full-world contact-sheet inspection found that the new fruit-rack room panel converted outdoor Orchard, Wet Garden and Seasons into repetitive warehouses. Q9D replaces those panels with transparent gnarled boughs, hanging pears, reed/root growth and an autumn crown. Leaf fragments retain the existing Ansimuz CC0 attribution; no Nintendo/reference pixels enter runtime.
+
+The whole-campaign scope andH/I holdouts remain unchanged. City interiors and laundry mechanics are more explicit than Q8 but still too repetitive to meet the supplied concept bar. High-contrast physical edges remain separate from noncolliding distant composition. The last six automatically selected new WL4 images were actual presentation/cutscene frames, not gameplay; their manifest now states that and excludes them from environment grading. None of those classification/coverage corrections claim artistic superiority.

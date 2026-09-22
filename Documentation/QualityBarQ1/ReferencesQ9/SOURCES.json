@@ -1,0 +1,267 @@
+{
+  "scope": "16 additional decoded-pixel-new WL4 references:10 actual gameplay comparisons and6 presentation/cutscene-only frames. Human-like assistant visual inspection corrected automatic native-dimension classification. All raw images retained; the six presentation images are not graded as environment gameplay. Prior9+52 have zero decoded-pixel overlap.",
+  "images": [
+    {
+      "file": "WL4-Q9-01.png",
+      "url": "https://mario.wiki.gallery/images/0/0b/WL4-Big_Flower.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Big Flower",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "14926ca0d4b8ed499d9d84cc601f5792ab8dc0a75179784acc615dccbc8a08e7",
+      "pixel_sha256": "13a1d053c85dc1ccc5f17cacc08ebbc97450cfbfa27c9c6f13d94d71555ff3bf",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-02.png",
+      "url": "https://mario.wiki.gallery/images/f/f4/WL4-Yellow_Spear_Mask.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Yellow Spear Mask",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "183774379e07152009a985901b48829d78959584a35f16288a100a78bd09468a",
+      "pixel_sha256": "f362779dab658f67c80f9625c146d0726710f786df76a78b5196580b4cfb606b",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-03.png",
+      "url": "https://mario.wiki.gallery/images/5/5a/Octopus.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "Octopus",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "964e131d489a8395a9d9d217306213b6be56beb70a16f644f0d17477dc015cf3",
+      "pixel_sha256": "869c46e31236274cb513f05b3c816b2b4a48c6606038cd7207c69411d1e78f5d",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-04.png",
+      "url": "https://mario.wiki.gallery/images/3/3a/WL4_solid_Frog_Blocks.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4 solid Frog Blocks",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "9fbfcfbd72e8f8deb64125daacca60818d3d4ff010485f4a2aa05fca4b0623d3",
+      "pixel_sha256": "dbb373e0b2053f96919ab6b4d943a32e7e5b009294235bb98a1fbfbaf80c33dd",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-05.png",
+      "url": "https://mario.wiki.gallery/images/3/38/Mystic_Lake.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "Mystic Lake",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "afd31e2324312026e33f124143958a446d5681abada9106a8c742de9557e9ef7",
+      "pixel_sha256": "ff6908b1c10ac91fd0c039a5a03adc68e58027b0bc1d718de208a4eae816a167",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-06.png",
+      "url": "https://mario.wiki.gallery/images/c/c6/FlamingWario_WL4.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "FlamingWario WL4",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "c5ca78160998a2a491c016c7d66cee4262acb38935b271edf861821f2423d9ed",
+      "pixel_sha256": "7c8f8bcf6cdedddf8b575c2076f5166f19681d0e0956c0695db1d7f2c90e02fd",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-07.png",
+      "url": "https://mario.wiki.gallery/images/4/48/WL4-Harimenzetto_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Harimenzetto Screenshot",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "87a192c0e11e5a3b88c6e3e2ec9c1970409555dc9e90e26069e5626c9e796f26",
+      "pixel_sha256": "080faa44139f98d0a3f1b856dbb16f7c508b54caad3fcd94a2f534a02f54e942",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-08.png",
+      "url": "https://mario.wiki.gallery/images/6/66/WL4-Get_a_Goal.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Get a Goal",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "73399cb41af468403300473186b4481681a9164312f6792b0ff34dc39f10b145",
+      "pixel_sha256": "9c3a6c2c61d896bd4a87c823bd16003929d14acad748cce87a7a8bc8d2df9af7",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-09.png",
+      "url": "https://mario.wiki.gallery/images/7/72/WL4-Harimen_Screenshot.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Harimen Screenshot",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "a68fbd57bf8c8d9dc0057dfc1457e211ddc41dd6161113c262c5d372cccc3bdd",
+      "pixel_sha256": "508ab6129f5f05d3feef88da188d1f5ccaacaf1f9466d817be00cc8abb9da9a9",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-10.png",
+      "url": "https://mario.wiki.gallery/images/4/48/WL4-Yurei_Steals_Keyzer.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Yurei Steals Keyzer",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "2ac96da2ce49d8a06cab4d77867c0b911f7585ebc97acbe12df57ba78ba6a4ea",
+      "pixel_sha256": "f5f96d2ed6c97908bbc240c9145c456a53ff0384ad98c8c3a5670e5b82c7841d",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "gameplay-comparison"
+    },
+    {
+      "file": "WL4-Q9-11.png",
+      "url": "https://mario.wiki.gallery/images/e/e2/WL4-Newspaper.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Newspaper",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "1597234a3a9c33a6045f9569ba2beecfed2981f18cebdf90ec22f8d3a5dfdf29",
+      "pixel_sha256": "2cca8bbab6f0c3fd360809c3d22c49ed1f276c0cb7d9c2ca6e829839031cc9f3",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    },
+    {
+      "file": "WL4-Q9-12.png",
+      "url": "https://mario.wiki.gallery/images/a/a6/WL4-Black_Cat_Pyramid.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Black Cat Pyramid",
+      "size": [
+        239,
+        159
+      ],
+      "sha256": "62e905f629a885e25eb6eb37819df74fab8e4522d9ee448d838e4f0d186ef7a8",
+      "pixel_sha256": "4e5da49d5428a23cd7a1abd0ec6a0261491fc9e7b85b5fd626e966386508b082",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    },
+    {
+      "file": "WL4-Q9-13.png",
+      "url": "https://mario.wiki.gallery/images/6/65/WL4-Golden_Passage_Switch.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Golden Passage Switch",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "8c4d8ba21772bc679841a81a46c1e5df6388b54e9a3dac4012850c71ed75b29a",
+      "pixel_sha256": "9bb8bff6cb062040799bf88a6c3800227c27fc84fcbcc02dcb8628abd0368a54",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    },
+    {
+      "file": "WL4-Q9-14.png",
+      "url": "https://mario.wiki.gallery/images/1/18/WL4-Pyramid_Escape.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Pyramid Escape",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "2ecf167fc78ff847d9ade5170608f98a3b8e8f1f154d6d3e58ed32a66ddc7d36",
+      "pixel_sha256": "2eea292e13937ad920cb475bf70652d98bd5c8fa41d8dec1bfa74976f4ad8d7b",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    },
+    {
+      "file": "WL4-Q9-15.png",
+      "url": "https://mario.wiki.gallery/images/d/d6/WL4-Steaks.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Steaks",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "e467a946a0fad2f3f89c65183240957f24ed30e8a8049248f6f829eb935eb224",
+      "pixel_sha256": "7cf816f530991f03dd5acfb2943ebdff21f72b7d945ec667082d15560508e8e3",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    },
+    {
+      "file": "WL4-Q9-16.png",
+      "url": "https://mario.wiki.gallery/images/a/ae/WL4-Credits.png",
+      "page": "https://www.mariowiki.com/Gallery:Wario_Land_4",
+      "label": "WL4-Credits",
+      "size": [
+        240,
+        160
+      ],
+      "sha256": "c91d99d0f540df3a4bed894059a7a6b2beb3c1ed2a225ac334374cd5c52f688f",
+      "pixel_sha256": "f144d0cc239b3d6b507468e84563aec93ec19d9706fa6ac39679eb53956c6029",
+      "rights": "Nintendo gameplay, comparison/criticism only outside runtime Assets",
+      "category": "presentation-only-not-environment-comparison"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://mario.wiki.gallery/images/0/07/Wario_land_4_500_coin.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/4/40/WildflowerFields.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/f/f3/The_Curious_Factory_WL4_screenshot.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/1/13/Pinball_Zone_WL4_screenshot.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/f/f4/Crescent_Moon_Village_WL4_screenshot.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/f/fd/WL4-Mayu_Bird.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/0/09/Fiery_Cavern_WL4_screenshot.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/e/ea/Hotel_Horror_WL4_screenshot.png",
+      "reason": "Decoded pixels already used"
+    },
+    {
+      "url": "https://mario.wiki.gallery/images/f/fd/WL4-Golden_Diva_Battle.png",
+      "reason": "Decoded pixels already used"
+    }
+  ]
+}

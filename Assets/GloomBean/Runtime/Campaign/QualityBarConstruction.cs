@@ -16,7 +16,7 @@ namespace GloomBean.Campaign
         public static int Room(StageDefinition s,int index,bool cute)
         {
             if(cute)return 0;if(s.boss)return new[]{1,5,8,10,9}[int.Parse(s.worldId.Substring(1))-1];
-            switch(s.course){case 1:case 2:return 1;case 3:return 2;case 4:return 3;case 5:case 7:case 8:return 4;case 6:return 5;case 9:return index%2==0?6:7;case 10:return 7;case 11:return 8;case 12:return index%2==0?7:8;case 13:case 15:return 10;case 14:return 3;case 16:case 17:case 20:return 9;case 18:return 10;default:return 11;}
+            switch(s.course){case 1:case 2:return 1;case 3:return 2;case 4:return 3;case 5:return 4;case 7:return 12;case 8:return 13;case 6:return 5;case 9:return index%2==0?6:7;case 10:return 7;case 11:return 8;case 12:return index%2==0?7:8;case 13:case 15:return 10;case 14:return 3;case 16:case 17:case 20:return 9;case 18:return 10;default:return 11;}
         }
         SpriteRenderer Add(string asset,Vector2 position,Vector2 size,int order,Color color,bool flip=false)
         {
