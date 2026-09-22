@@ -32,7 +32,7 @@ namespace GloomBean.Campaign
             if(swimming){Vector2 at=transform.InverseTransformPoint(actor.transform.position);bool atSurface=Mathf.Abs(actor.transform.position.y-water.Surface)<.8f;at.x-=Mathf.Sign(actor.Body.linearVelocity.x)*.55f;at.x=Mathf.Clamp(at.x,box.offset.x-box.size.x*.5f+.4f,box.offset.x+box.size.x*.5f-.4f);at.y=atSurface?box.offset.y+box.size.y*.5f:Mathf.Clamp(at.y,box.offset.y-box.size.y*.5f+.2f,box.offset.y+box.size.y*.5f-.2f);wake.transform.localPosition=at;wake.sprite=QualityBarArt.Get("living_wake_"+QualityLivingArt.Frame(Time.time*9));wake.color=new Color(.85f,1,1,atSurface?.9f:.5f);}
         }
         void LateUpdate()=>Refresh();
-        void OnDisable(){if(body)body.enabled=false;if(surface)surface.enabled=false;if(wake)wake.enabled=false;}
+        void OnDisable(){if(body)body.enabled=false;if(surface)surface.enabled=false;if(wake)wake.enabled=false;if(source)source.forceRenderingOff=false;foreach(var r in covered)if(r)r.forceRenderingOff=false;}
         void OnDestroy(){if(source)source.forceRenderingOff=false;foreach(var r in covered)if(r)r.forceRenderingOff=false;}
     }
     [DefaultExecutionOrder(314)]
