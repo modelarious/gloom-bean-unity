@@ -14,8 +14,8 @@ Scope: Continue the recovered, committed Q10 whole-stage/motion changes, improve
   CHECK: python Tools/audit_q11_delivery.py
   EXPECT: Q11_EXACT_PACKAGE_AUDIT_PASS
   EVIDENCE: current exact-package audit passed; original failures and prior certificate identities retained.
-- [ ] A5: Source, build, before/after gallery, motion clips and journal are delivered and Git-verified; exact current canonical checkpoint and derived recall updated.
-  EVIDENCE: pending. Hindsight direct plugin discovery returned none; established host bridge will be checked rather than claiming recall succeeded.
+- [x] A5: Source, build, before/after gallery, motion clips and journal are delivered and Git-verified; exact current canonical checkpoint and derived recall updated.
+  EVIDENCE: PASS: source/player/gallery independently retrieved and payload-hashed; canonical close e062ff777622f13aa63b18dd6b39bc5e9f1c2b5b, final state4e341f9ee523e656df3c93a42d5c327dc559992a. Source-specific Hindsight recall returned8 matching units from the non-quarantined close document.
 - [ ] A6: Whole-game concept/extreme-fidelity quality achieved.
   EVIDENCE: UNMET. The recovered actual build still has repetition and weak actor/boss expression; prior generated images were not gameplay.
 
@@ -27,9 +27,11 @@ Contract: current cloud-context/Turn Kernel/Unlazy loaded. Global Git authority,
   EVIDENCE: PASS: retained all eight early clips and additional71/109 late frames. Actual later release/victory reviewed; large instruction overlays remain an explicitly visible deficit.
 - [x] A8: Self-contained review renders without broken media or horizontal overflow at desktop/mobile sizes; video playback is actually decoded and advancing.
   EVIDENCE: PASS: authorized host Chrome with an isolated sandboxed context. All663 embedded images load, all10 videos decode/advance; no desktop/mobile overflow or external image dependency. Policies and personal profiles untouched.
-- [ ] A9: Current exact source/artifact identity, original failures and meaningful work result are preserved in public source and canonical Git; Hindsight recall verifies the new close record before the answer.
+- [x] A9: Current exact source/artifact identity, original failures and meaningful work result are preserved in public source and canonical Git; Hindsight recall verifies the new close record before the answer.
   EVIDENCE: canonical revision observed abb2371a6c8386d3895284864e05bb8cfbca453d. Global contracts compiled by direct JSON semantics: Git authority, historical recall, persistence order, semantic force, no paid Codex workers; deterministic-first followed; retired authority paths rejected; whole-chat acquisition remains unknown. All three required canonical skills were loaded. Project CONTRACT.json is absent; original requirements and current user amendments remain authoritative.
 
 This resume finishes the previously interrupted Q11 actor implementation and delivery. It does not certify A6 or silently abandon the user's whole-game visual target. No implementation/test process was left running at resume; the stale checkpoint was not treated as actual machine state. Existing current source is 05dceff, tested runtime701a361, and publication is working in the explicitly writable workspace.
 
 Final delivery gates A5/A9 resolve through the post-snapshot canonical artifact receipt and verified Hindsight recall, rather than a circular source-archive self-hash. A6 remains unmet, not abandoned.
+
+Final A9 receipt: canonical state commit4e341f9ee523e656df3c93a42d5c327dc559992a and Hindsight document context-ingress:gloombean-q11-verified-delivery-20260922-r1@9ff58a920f930fe3. All delivery/integrity gates are resolved; A6 artistic fidelity is the sole remaining unmet goal. Source snapshot1063993 remains frozen and matches runtime701a361; this later commit is closure metadata only.

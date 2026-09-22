@@ -65,5 +65,17 @@
     "The orphaned03:10 checkpoint nonce was preserved only after no worker/index lock/staged files and a matching remote HEAD were verified. Do not remove a live lock. Remote publication is verified; do not regenerate a huge full-history bundle for every tiny documentation commit."
   ],
   "source_snapshot": "Final source snapshot omits .git, historical raw evidence, video copies and generated HTML; all are preserved in public Git or separate gallery. Final exact artifact hashes belong to the post-snapshot delivery receipt.",
-  "manual_acceptance": "UNKNOWN: uncoached human/controller/animation/horror judgement; still-art reviewer reports no strict all-dimension concept win."
+  "manual_acceptance": "UNKNOWN: uncoached human/controller/animation/horror judgement; still-art reviewer reports no strict all-dimension concept win.",
+  "delivery_closure": {
+    "canonical_state_commit": "4e341f9ee523e656df3c93a42d5c327dc559992a",
+    "raw_close_commit": "e062ff777622f13aa63b18dd6b39bc5e9f1c2b5b",
+    "hindsight_document": "context-ingress:gloombean-q11-verified-delivery-20260922-r1@9ff58a920f930fe3",
+    "recall_matches": 8,
+    "gates_met": 8,
+    "gates_unmet": [
+      "A6 extreme visual fidelity"
+    ],
+    "abandoned_gates": 0,
+    "frozen_source_snapshot": "1063993bb198b09b958380f475c0e8bdb07c97f9"
+  }
 }
