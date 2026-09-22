@@ -1,5 +1,5 @@
 {
-  "id": "QualityBar-Q10B-regression",
+  "id": "QualityBar-Q11A-regression",
   "build": false,
   "cases": [
     {
@@ -80,6 +80,24 @@
       "practice": true,
       "secrets": true,
       "renderFps": 60
+    },
+    {
+      "name": "Usher",
+      "suite": "Parish",
+      "route": "GB-B1",
+      "practice": true
+    },
+    {
+      "name": "Judge",
+      "suite": "Orchard",
+      "route": "GB-B2",
+      "practice": true
+    },
+    {
+      "name": "Surveyor",
+      "suite": "City",
+      "route": "GB-B3",
+      "practice": true
     }
   ]
 }
