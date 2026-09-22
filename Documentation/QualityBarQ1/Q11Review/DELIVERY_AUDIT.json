@@ -1,0 +1,119 @@
+{
+  "status": "PASS_TECHNICAL_NATIVE_PACKAGE",
+  "runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
+  "assembly_sha256": "3c9ad091a605ab44272024f7d58027a8bf95140532940ac1aa557cb5e9448bf3",
+  "player_archive": {
+    "path": "C:\\ProgramData\\SentinelX\\workspace\\GloomBean-Q11\\Delivery\\WholeGame-Q11\\GloomBean_Q11_Windows.zip",
+    "bytes": 37241513,
+    "sha256": "64a9e91f27ff536c0d9c464c552abfa9e7cd48adf80fce30c02d95522038caf4",
+    "payload_files": 156,
+    "assembly_sha256": "3c9ad091a605ab44272024f7d58027a8bf95140532940ac1aa557cb5e9448bf3",
+    "extracted": "C:\\ProgramData\\SentinelX\\workspace\\GloomBean-Q11-Extracted",
+    "runtime_commit": "701a361437db40d4c37c12ab72d44b6e25a38244",
+    "source_head": "06755ab20adbce2ed371386d1de3c1cb07e47890",
+    "status": "HASH_VERIFIED_NATIVE_PACKAGE_REPLAY_PENDING"
+  },
+  "payloads_verified": 156,
+  "current_scenarios": 16,
+  "mechanics_assertions": 801,
+  "motion_frames": 1700,
+  "motion": [
+    {
+      "name": "Laundry",
+      "checks": 19,
+      "frames": 240,
+      "source_seconds": 35.16844215989113,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "Mirror",
+      "checks": 47,
+      "frames": 240,
+      "source_seconds": 35.19556234776974,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "RootDitch",
+      "checks": 103,
+      "frames": 240,
+      "source_seconds": 35.12569563090801,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "Weight",
+      "checks": 104,
+      "frames": 240,
+      "source_seconds": 35.19981977343559,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "Usher",
+      "checks": 13,
+      "frames": 179,
+      "source_seconds": 26.124692179262638,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "Judge",
+      "checks": 29,
+      "frames": 203,
+      "source_seconds": 29.69367825984955,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "Surveyor",
+      "checks": 42,
+      "frames": 118,
+      "source_seconds": 17.44636868685484,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    },
+    {
+      "name": "FinalHost",
+      "checks": 49,
+      "frames": 240,
+      "source_seconds": 37.12352412939072,
+      "pixel_blocks": "PASS",
+      "actual_input_follow": "PASS"
+    }
+  ],
+  "endings": [
+    {
+      "name": "Ordinary",
+      "mercies": 0,
+      "checks": 51,
+      "native_image_sha256": "ee7a96f11a88765112e2755791bc23f1046db1aac36e135e7bd7c4532326d3ee",
+      "seed_sha256": "49cba446c28efb760905a111aacfd814caaed7049fefe7e1048cb4551948d57f"
+    },
+    {
+      "name": "Nineteen",
+      "mercies": 19,
+      "checks": 54,
+      "native_image_sha256": "ee7a96f11a88765112e2755791bc23f1046db1aac36e135e7bd7c4532326d3ee",
+      "seed_sha256": "6a195da4ec6e095e523473ebcc7e2e2c7cd55634c9d808e3e3e157ed3000c258"
+    },
+    {
+      "name": "Restored",
+      "mercies": 20,
+      "checks": 54,
+      "native_image_sha256": "08c6273fc2277cdb05f08afd3027fd4756870a7e994ddc5b7b55d95e0dfb288f",
+      "seed_sha256": "821bb7797db88849016c64d030773810071c1fa8ac5ec8ce8e3d85dcec6ee591"
+    }
+  ],
+  "keyboard_frames": 14,
+  "pixel_oracle_controls": [
+    "positive native frame",
+    "single changed subpixel rejected",
+    "empty frame rejected",
+    "bilinear frame rejected",
+    "odd client-size integer viewport"
+  ],
+  "concept_quality": "UNMET",
+  "scope": "Data integrity, exact-package replay, actual captured input/camera path and pixel-grid validation. Not an animation-quality or visual-superiority judgement; the prior full-campaign certificate remains tied to its own source."
+}
