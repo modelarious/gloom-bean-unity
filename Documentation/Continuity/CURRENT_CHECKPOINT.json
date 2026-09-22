@@ -1,15 +1,12 @@
 {
   "schema_version": 12,
-  "status": "Q10_LIVING_PRESENTATION_IN_PROGRESS",
+  "status": "Q11_ACTOR_PRESENTATION_IN_PROGRESS",
   "active_branch": "visual/qualitybar-q1",
   "worktree": "C:\\Users\\micha\\Projects\\GloomBean QualityBar Q1",
   "runtime_art_commit": "9b58bd878edd546936f32e34cbaee913b12fb3a8",
   "tested_candidate": "4d224f03810a50a072fa62754627f01731299122",
   "native_assembly_sha256": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
-  "active_job": {
-    "task": "GloomBean-QualityBar-Q1",
-    "receipt": "Reports/Orchard-v04/QualityBar-Q9F-regression/runner.json"
-  },
+  "active_job": null,
   "repository": "modelarious/gloom-bean-unity",
   "publication": "AUTHORIZED_PUSH_VERIFIED",
   "other_worktree": "C:\\Users\\micha\\Projects\\GloomBeanUnity remains on visual/v6; unrelated untracked broad/quality artifacts were left unchanged.",
@@ -43,12 +40,12 @@
     "normal_saves_modified": false
   },
   "review": "Documentation/QualityBarQ1/Review/README.md",
-  "gates": "Documentation/QualityBarQ1/Q10_GATES.md",
+  "gates": "Documentation/QualityBarQ1/Q11_GATES.md",
   "native_audit": "Documentation/QualityBarQ1/AUDIT_Q8.json",
   "latest_tests": "Documentation/QualityBarQ1/Review/NATIVE_REGRESSION.json",
   "exact_package_tests": "Documentation/QualityBarQ1/Review/EXACT_PACKAGE_RUN.json",
   "strict_visual_bar": "UNMET",
-  "next_work": "Finish current Q9F regression, author/test read-only environment mechanisms, then capture225 unchanged sample views and actual motion. Whole-game concept quality remains unmet.",
+  "next_work": "Q10B tests and exact package/motion already completed. Continue actual actor/world expression revision and all225 same-camera validation; do not restart Q9 regression or repository setup. Inspect the current Q11 gate before work.",
   "known_recipes": [
     "Run-BroadVisual.ps1 requires a new RunId; after first import of new PNGs, inspect/commit normalized metadata before a clean-source native test.",
     "QualityBarWorld must resolve GetComponentInParent<StageSession>; existing mechanics tests build scenery on a child.",
@@ -59,5 +56,5 @@
     "No concept-quality or universal-WL4-superiority approval",
     "No human controller or uncoached gameplay assessment"
   ],
-  "recovered_source": "cbfcdea795b28489ffc4e414e969be3d3ab051e7"
+  "recovered_source": "1aa968104e597807bc3a3046402673bb80b77261"
 }
