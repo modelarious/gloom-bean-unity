@@ -1,0 +1,540 @@
+{
+  "status": "STRICT_CONCEPT_FIDELITY_UNMET",
+  "scope": "Single-assistant ordinal still-image assessment of all225 native Q11B frames and the retained62 WL4 gameplay references. Six cutscene/UI references remain separate. Not a human panel or an animation-feel certificate.",
+  "dimensions": [
+    "style",
+    "character",
+    "clarity",
+    "polish"
+  ],
+  "scale": "0 missing/broken;1 placeholder;2 crude;3 coherent development art;4 polished professional example;5 exceptional authored example. Half-point increments; a tie is not superiority.",
+  "baseline_source": "c5142ce907c7abb67c36b955bd88f83e29b2f751",
+  "current_runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
+  "rows": [
+    {
+      "stage": "GB-L01",
+      "title": "Sunday Best",
+      "current_grades": [
+        3.5,
+        3.5,
+        4,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-03.png"
+      ],
+      "strength": "The welcoming facades, actor silhouette and readable contact edges work together.",
+      "remaining_deficit": "Repeated wall modules and the sparse upper silhouettes remain less individually authored than the benchmark.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L02",
+      "title": "Belfry of Late Voices",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-12.png",
+        "WL4-14.png"
+      ],
+      "strength": "Bells, supports and distinct actor poses remain visible through the course.",
+      "remaining_deficit": "Repetitive platform construction and diagram-like machinery still weaken the room composition.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L03",
+      "title": "The Puppet Laundry",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-13.png",
+        "WL4-16.png"
+      ],
+      "strength": "The wringers, baskets and state-driven actors form a coherent mechanical vocabulary.",
+      "remaining_deficit": "Long swings still expose empty stretches; the concept has much richer authored machinery.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L04",
+      "title": "House of Borrowed Skins",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-42.png"
+      ],
+      "strength": "Hanging skins and repeated supports make the transformation theme legible.",
+      "remaining_deficit": "Repetition and crowded object labels compete with gameplay silhouettes.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-B1",
+      "title": "The Kindly Usher",
+      "current_grades": [
+        3.5,
+        4,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-46.png",
+        "WL4-47.png"
+      ],
+      "strength": "The Usher now has an asymmetric face, sleeve gestures and a weighted coat rather than a largely static mask.",
+      "remaining_deficit": "Sparse boss-room rhythm and occasional framing cuts remain; this is not benchmark-quality animation approval.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L05",
+      "title": "Pear Tree Gallows",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-04.png",
+        "WL4-06.png"
+      ],
+      "strength": "Fruit cages, rooted materials and the revised orchard patrol read as one setting.",
+      "remaining_deficit": "The same cage and tree motifs repeat; highlights and foliage depth are less deliberately placed than WL4.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L06",
+      "title": "Kitchen of the Unfinished Feast",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-15.png",
+        "WL4-18.png"
+      ],
+      "strength": "The separate furnace masonry, cauldrons and actor states retain their material distinction.",
+      "remaining_deficit": "Repetitive fire icons and wall bays still substitute for varied kitchen apparatus.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L07",
+      "title": "The Saint's Irrigation Ditch",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-07.png",
+        "WL4-09.png"
+      ],
+      "strength": "Root faces, water and patrol silhouettes remain coherent in unseen support views.",
+      "remaining_deficit": "Water and soil share too much midtone in some areas; the environment could explain its construction more strongly.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L08",
+      "title": "The Garden of No Seasons",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-10.png",
+        "WL4-11.png"
+      ],
+      "strength": "Seasonal foliage and rooted supporting surfaces distinguish the garden from the interior levels.",
+      "remaining_deficit": "Foliage clustering and foreground variation still lag the reference.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-B2",
+      "title": "The Orchard Judge",
+      "current_grades": [
+        3.5,
+        4,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-44.png",
+        "WL4-45.png"
+      ],
+      "strength": "The Judge has crown, scales, layered regalia and distinct facial reactions.",
+      "remaining_deficit": "The fixed framing can crop the head; limbs and regalia are still less expressive than the best reference poses.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L09",
+      "title": "Tenement of Two Suns",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-35.png",
+        "WL4-36.png"
+      ],
+      "strength": "The player and mirror relationship remain readable amid apartment motifs.",
+      "remaining_deficit": "Identical furnishings and panel bays remain visibly procedural; mirror scenes need more authored spatial hierarchy.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L10",
+      "title": "The Street Behind the Wall",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-29.png",
+        "WL4-30.png"
+      ],
+      "strength": "The contour and interior forms retain a clear silhouette against the blue stone.",
+      "remaining_deficit": "The empty vertical pockets and repeated frames remain weaker than a purpose-composed room.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L11",
+      "title": "The Perspective Tax Office",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-26.png",
+        "WL4-27.png"
+      ],
+      "strength": "Books, counters and the new metal-mask patrol belong to a consistent visual language.",
+      "remaining_deficit": "The long bookshelf texture and repetitive shelves read as tiling more than an inhabited office.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L12",
+      "title": "The Hotel That Is Its Own Courtyard",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-42.png",
+        "WL4-37.png"
+      ],
+      "strength": "Repeated views keep the indoor traversal surfaces and form silhouettes legible.",
+      "remaining_deficit": "The hotel still needs stronger room identity and furniture variety; additional texture alone is not enough.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-B3",
+      "title": "The Surveyor",
+      "current_grades": [
+        3.5,
+        4,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-48.png",
+        "WL4-49.png"
+      ],
+      "strength": "Angular face planes and measuring limbs give the Surveyor a more distinct identity.",
+      "remaining_deficit": "The horizontal arena furniture is highly repetitive and the sampled camera often follows the player away from the boss.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L13",
+      "title": "Rain of Kneeling Men",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-39.png",
+        "WL4-41.png"
+      ],
+      "strength": "Falling supports and warning regions remain clear in the returned and unseen samples.",
+      "remaining_deficit": "The warning phase is visually sparse; actual-action sequences are necessary to judge the falling ecology.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L14",
+      "title": "The Seamstress Bridge",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-32.png",
+        "WL4-34.png"
+      ],
+      "strength": "The stitching and moving bridge construction retain dimension and visible edges.",
+      "remaining_deficit": "Repeating open bays and oversized labels compete with the seam relationships.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L15",
+      "title": "Procession of Closed Lids",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-23.png",
+        "WL4-25.png"
+      ],
+      "strength": "Coffins and turning structures read as physical objects rather than anonymous blocks.",
+      "remaining_deficit": "Similar shapes repeat too evenly; the processional rhythm and weight still need more individual staging.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L16",
+      "title": "The Cathedral in Freefall",
+      "current_grades": [
+        4,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-38.png",
+        "WL4-42.png"
+      ],
+      "strength": "The stained-glass and architectural framing distinguish the cathedral strongly.",
+      "remaining_deficit": "Foreground platforms remain thin relative to the monumental background; moving joints need richer authored expression.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-B4",
+      "title": "The Weight of Everyone",
+      "current_grades": [
+        3.5,
+        4,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-50.png",
+        "WL4-51.png"
+      ],
+      "strength": "The corrected four-unit falling mass reads as interlocking heads and grasping arms; its true collision footprint is unchanged.",
+      "remaining_deficit": "Crowd compression and physical release still need more carefully authored action poses. No still-image grade certifies its feel.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L17",
+      "title": "Choir of Iron Halos",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-22.png",
+        "WL4-38.png"
+      ],
+      "strength": "Metal mounts, ivy-free ivory surfaces and polarity state are clear across the course.",
+      "remaining_deficit": "Coil labels and repeated shrine furniture are not yet the rich mechanical architecture of the supplied target.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L18",
+      "title": "Noon Without Shadows",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-19.png",
+        "WL4-39.png"
+      ],
+      "strength": "Cast-shadow areas and dark/light boundaries remain visible through the different viewpoints.",
+      "remaining_deficit": "Shadow, scenic recess and decorative darkness can still merge; readable depth needs more authored separation.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L19",
+      "title": "Scripture That Writes Back",
+      "current_grades": [
+        4,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-20.png",
+        "WL4-28.png"
+      ],
+      "strength": "Illuminated pages, real Ink state and lettered supports distinguish this level from the others.",
+      "remaining_deficit": "Words remain book-shaped platforms rather than a deeply expressive physical typographic world.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-L20",
+      "title": "The White Gate Is Below You",
+      "current_grades": [
+        3.5,
+        3.5,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-40.png",
+        "WL4-24.png"
+      ],
+      "strength": "The mixed possession route retains all physical/material distinctions in the broad unseen views.",
+      "remaining_deficit": "The long vertical spaces and repeated shrines remain far less dense and individually authored than the concept.",
+      "strict_win": false
+    },
+    {
+      "stage": "GB-B5",
+      "title": "The Host of Hosts",
+      "current_grades": [
+        3.5,
+        4,
+        3.5,
+        3.5
+      ],
+      "wl4_comparison_range": [
+        4,
+        5
+      ],
+      "reference_files": [
+        "WL4-52.png",
+        "WL4-43.png"
+      ],
+      "strength": "The final face, tongue and radial tendrils have a coherent new authored family shared by the real body and distant apparition.",
+      "remaining_deficit": "The apparition is not the combat body. Actual final-act footage and stronger arena composition are still needed for the high bar.",
+      "strict_win": false
+    }
+  ],
+  "strict_wins": 0,
+  "stages": 25
+}

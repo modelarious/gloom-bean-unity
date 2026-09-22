@@ -1,12 +1,16 @@
 {
   "schema_version": 12,
-  "status": "Q11_ACTOR_PRESENTATION_IN_PROGRESS",
+  "status": "Q11B_NATIVE_VERIFIED_EXACT_PACKAGE_MOTION_RUNNING",
   "active_branch": "visual/qualitybar-q11",
   "worktree": "C:\\ProgramData\\SentinelX\\workspace\\GloomBean-Q11",
   "runtime_art_commit": "9b58bd878edd546936f32e34cbaee913b12fb3a8",
   "tested_candidate": "4d224f03810a50a072fa62754627f01731299122",
   "native_assembly_sha256": "3ce4fdb7a087dd28975d231706b9dceb5a8af506e849721fcfdf3a1ed3419097",
-  "active_job": null,
+  "active_job": {
+    "task": "GloomBean-Q11-Delivery",
+    "receipt": "Reports/Delivery-WholeGame-Q11/runner.json",
+    "status": "RUNNING_AT_OBSERVATION"
+  },
   "repository": "modelarious/gloom-bean-unity",
   "publication": "AUTHORIZED_PUSH_VERIFIED",
   "other_worktree": "C:\\Users\\micha\\Projects\\GloomBeanUnity remains on visual/v6; unrelated untracked broad/quality artifacts were left unchanged.",
@@ -45,7 +49,7 @@
   "latest_tests": "Documentation/QualityBarQ1/Review/NATIVE_REGRESSION.json",
   "exact_package_tests": "Documentation/QualityBarQ1/Review/EXACT_PACKAGE_RUN.json",
   "strict_visual_bar": "UNMET",
-  "next_work": "Build and inspect Q11 authored actor cells; original C:/Users/micha checkout is read-only per direct-editor policy. Use this explicit rw workspace, not a policy bypass. All225 views and native mechanics/routes remain required.",
+  "next_work": "Finish the already-running exact-package replay/motion job; inspect all-eight actual sequences, build the self-contained whole-game before/after gallery, verify artifact hashes and publish final current state. No engine work or old Q8/Q10 reconstruction is pending.",
   "known_recipes": [
     "Run-BroadVisual.ps1 requires a new RunId; after first import of new PNGs, inspect/commit normalized metadata before a clean-source native test.",
     "QualityBarWorld must resolve GetComponentInParent<StageSession>; existing mechanics tests build scenery on a child.",
@@ -56,5 +60,19 @@
     "No concept-quality or universal-WL4-superiority approval",
     "No human controller or uncoached gameplay assessment"
   ],
-  "recovered_source": "1aa968104e597807bc3a3046402673bb80b77261"
+  "recovered_source": "1aa968104e597807bc3a3046402673bb80b77261",
+  "tested_runtime": "701a361437db40d4c37c12ab72d44b6e25a38244",
+  "latest_native": {
+    "scenarios": 16,
+    "passed": 16,
+    "mechanics_assertions": 801,
+    "unexpected_failures": 0,
+    "receipt": "Reports/Orchard-v04/QualityBar-Q11B-regression/runner.json"
+  },
+  "latest_capture": {
+    "run": "Q11B",
+    "images": 225,
+    "stages": 25,
+    "strict_concept_quality": "UNMET"
+  }
 }
