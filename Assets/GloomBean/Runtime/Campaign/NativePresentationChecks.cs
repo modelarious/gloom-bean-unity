@@ -33,6 +33,7 @@ namespace GloomBean.Campaign
             check("presentation.gba.world-lettering-survives-ui-cache-turnover",independent&&opaque>25&&independent.GetPixels32().Count(c=>c.a>0)==opaque,"visible pixels="+opaque);
             var glyphGpu=ReadTexture(independent);check("presentation.gba.owned-lettering-visible-on-gpu",glyphGpu.GetPixels32().Count(c=>c.a>0)>25,"Actual GPU sign pixels");UnityEngine.Object.Destroy(glyphGpu);UnityEngine.Object.Destroy(independent);
             yield return QualityBarMotionChecks.Run(game,check);
+            yield return QualityBarLivingChecks.Run(game,check);
             var hashes=new HashSet<string>();var sheet=new Texture2D(6*64,3*64,TextureFormat.RGBA32,false);sheet.SetPixels32(new Color32[6*64*3*64]);
             for(int i=0;i<17;i++){
                 var form=i<2?HostKind.None:(HostKind)(i-1);var sprite=HostPixelArt.Host(form,i!=0,0);var t=ReadTexture(sprite.texture);var pixels=t.GetPixels32();int visible=pixels.Count(c=>c.a>0);

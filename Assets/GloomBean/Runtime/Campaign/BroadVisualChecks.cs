@@ -20,6 +20,7 @@ namespace GloomBean.Campaign
                 check("quality.stage-coverage-"+stage.id,quality&&quality.EligibleCount>0&&quality.AppliedCount==quality.EligibleCount&&quality.AddedColliders==0&&session.GetComponentsInChildren<Collider2D>(true).Length==colliderBefore,"Whole-stage eligible="+(quality?quality.EligibleCount:0)+" rendered="+(quality?quality.AppliedCount:0));
                 check("motion.stage-installed-"+stage.id,session.player.GetComponent<HostPixelView>()&&QualityBarMotion.Pixels(true,0,0)!=null,"Actual stage player receives the shared authored motion renderer");
                 check("construction.stage-installed-"+stage.id,session.GetComponentsInChildren<QualityBarConstruction>(true).Any(c=>c.Applied),"Physical floor/support-driven construction exists in the stage");
+                QualityBarLivingChecks.Stage(session,check);
                 int eligible=dressing.EligibleCount,applied=dressing.AppliedCount;
                 check("broad.stage-coverage-"+stage.id,eligible>0&&eligible==applied&&dressing.VisualColliders==0,"eligible="+eligible+" applied="+applied+" visualColliders="+dressing.VisualColliders);
                 // Newly-created geometry deliberately far outside EVERY review camera. No game state grants.
