@@ -58,6 +58,8 @@ namespace GloomBean.Foundation
             sources.Add(new FoundationCampaign());
             var atlasType=Type.GetType("GloomBean.Campaign.AtlasCampaign, Assembly-CSharp");
             if(atlasType!=null&&typeof(ICampaignSource).IsAssignableFrom(atlasType))sources.Add((ICampaignSource)Activator.CreateInstance(atlasType));
+            var grammarType=Type.GetType("GloomBean.Grammar.GrammarMvpCampaign, Assembly-CSharp");
+            if(grammarType!=null&&typeof(ICampaignSource).IsAssignableFrom(grammarType))sources.Add((ICampaignSource)Activator.CreateInstance(grammarType));
             Source=sources[0];worlds=Source.Worlds();screen=ScreenMode.Home;
             string[] args=Environment.GetCommandLineArgs();
             testMode=Array.IndexOf(args,"-gb-broad-review")>=0||Array.IndexOf(args,"-gb-visual-v6")>=0||Array.IndexOf(args,"-gb-verify")>=0||Array.IndexOf(args,"-gb-route-verify")>=0||Array.IndexOf(args,"-gb-parish-verify")>=0||Array.IndexOf(args,"-gb-orchard-verify")>=0||Array.IndexOf(args,"-gb-city-verify")>=0||Array.IndexOf(args,"-gb-fall-verify")>=0||Array.IndexOf(args,"-gb-empyrean-verify")>=0;
@@ -258,10 +260,12 @@ namespace GloomBean.Foundation
                 for(int i=0;i<sources.Count;i++)
                 {
                     int index=sources.Count-1-i;
-                    if(Button(new Rect(60,y,630,48),index==0?"PLATFORMER FOUNDATION":"BEGIN / CONTINUE HOST CYCLE")){SelectSource(index);screen=ScreenMode.Worlds;choice=0;Practice=false;}
+                    bool grammar=sources[index].GetType().Name=="GrammarMvpCampaign";
+                    string sourceLabel=index==0?"PLATFORMER FOUNDATION":grammar?"GRAMMAR MVP / GENERATED ROOMS":"BEGIN / CONTINUE HOST CYCLE";
+                    if(Button(new Rect(60,y,630,48),sourceLabel)){SelectSource(index);screen=ScreenMode.Worlds;choice=0;Practice=grammar;}
                     y+=60;
                 }
-                if(Button(new Rect(60,y,630,48),"PRACTICE / direct level selection")){SelectSource(sources.Count-1);Practice=true;screen=ScreenMode.Worlds;choice=0;}
+                if(Button(new Rect(60,y,630,48),"PRACTICE / direct level selection")){int atlas=sources.FindIndex(v=>v.GetType().Name=="AtlasCampaign");SelectSource(atlas>=0?atlas:sources.Count-1);Practice=true;screen=ScreenMode.Worlds;choice=0;}
                 Text(new Rect(61,520,820,65),"ARROWS MOVE / SPACE JUMPS\nF1 HELP / ESC PAUSE / PAD A JUMP",small);
             }
             if(screen==ScreenMode.Worlds)

@@ -1,0 +1,263 @@
+{
+  "bounds": {
+    "h": 36.0,
+    "w": 90.8,
+    "x": -8.0,
+    "y": -10.0
+  },
+  "coins": [
+    {
+      "ax": 16.0,
+      "ay": 2.2,
+      "bx": 20.0,
+      "by": 2.2,
+      "count": 3
+    },
+    {
+      "ax": 25.1,
+      "ay": 1.2,
+      "bx": 29.1,
+      "by": 1.2,
+      "count": 6
+    },
+    {
+      "ax": 34.0,
+      "ay": 1.2,
+      "bx": 37.6,
+      "by": 1.2,
+      "count": 5
+    },
+    {
+      "ax": 42.3,
+      "ay": 1.2,
+      "bx": 46.3,
+      "by": 1.2,
+      "count": 4
+    },
+    {
+      "ax": 50.9,
+      "ay": 2.2,
+      "bx": 54.9,
+      "by": 2.2,
+      "count": 3
+    }
+  ],
+  "cure": {
+    "x": 5.0,
+    "y": 1.0
+  },
+  "enemies": [
+    {
+      "direction": 1,
+      "x": 27.1,
+      "y": 0.65
+    },
+    {
+      "direction": -1,
+      "x": 44.3,
+      "y": 0.65
+    }
+  ],
+  "exit": {
+    "x": 2.0,
+    "y": 1.1
+  },
+  "hazards": [
+    {
+      "width": 2.0,
+      "x": 13.0,
+      "y": -1.25
+    },
+    {
+      "width": 1.6,
+      "x": 22.8,
+      "y": -1.25
+    },
+    {
+      "width": 2.2,
+      "x": 31.7,
+      "y": -1.25
+    },
+    {
+      "width": 2.0,
+      "x": 39.8,
+      "y": -1.25
+    },
+    {
+      "width": 1.6,
+      "x": 48.6,
+      "y": -1.25
+    }
+  ],
+  "id": "GB-GRAMMAR-0137",
+  "key": {
+    "x": 60.8,
+    "y": 1.35
+  },
+  "mercy": {
+    "x": 29.3,
+    "y": 4.35
+  },
+  "nail": {
+    "x": 64.8,
+    "y": 0.45
+  },
+  "possession": "Marionette",
+  "productionTrace": [
+    "Level -> Entry Forward Turn Return Exit",
+    "Forward -> SafeRun Transform Beat Beat Key",
+    "Turn -> Nail Reveal(Return)",
+    "Return -> AlternateHighPath OptionalSecret Exit",
+    "Visual -> ExistingObjectDrivenArt(StageBuilderObjects)"
+  ],
+  "schemaVersion": 1,
+  "seed": 137,
+  "source": {
+    "x": 16.8,
+    "y": 2.0
+  },
+  "spawn": {
+    "x": 2.0,
+    "y": 1.1
+  },
+  "surfaces": [
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "entry",
+      "w": 17,
+      "x": 3.5,
+      "y": 0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 8.0,
+      "x": 18.0,
+      "y": 1.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 7.0,
+      "x": 27.1,
+      "y": 0.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 6.0,
+      "x": 35.8,
+      "y": 0.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 7.0,
+      "x": 44.3,
+      "y": 0.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 7.0,
+      "x": 52.9,
+      "y": 1.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "floor",
+      "returnOnly": false,
+      "role": "forward",
+      "w": 10.0,
+      "x": 62.8,
+      "y": 0.0
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": false,
+      "role": "secret",
+      "w": 3.2,
+      "x": 25.7,
+      "y": 1.8
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": false,
+      "role": "secret",
+      "w": 3.4,
+      "x": 29.3,
+      "y": 3.1
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 5.2,
+      "x": 62.8,
+      "y": 3.2
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 4.55,
+      "x": 52.9,
+      "y": 4.9
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 4.55,
+      "x": 44.3,
+      "y": 3.2
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 3.9,
+      "x": 35.8,
+      "y": 3.9
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 4.55,
+      "x": 27.1,
+      "y": 3.2
+    },
+    {
+      "deactivateOnTurn": false,
+      "kind": "ledge",
+      "returnOnly": true,
+      "role": "return",
+      "w": 5.2,
+      "x": 18.0,
+      "y": 4.9
+    }
+  ],
+  "title": "Generated Laundry 137",
+  "visualCourse": 3,
+  "worldId": "W1"
+}
