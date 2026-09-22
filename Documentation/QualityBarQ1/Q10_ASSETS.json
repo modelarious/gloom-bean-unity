@@ -1,0 +1,589 @@
+{
+  "scope": "Original48x48 articulated bronze wheels; signed belt treads and48water/surface frames,8wakes. Pixel art only, no physics/rules or screen-derived decoration.",
+  "assets": [
+    {
+      "file": "living_gear_0.png",
+      "sha256": "0872cba81a5ff0b9719ad198a853b0b98f2ced5da9b07fb9a2bc7ec7c514ac68",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_0.png",
+      "sha256": "17cd3cf137138b4e0d19d478360a121f3c2d1bb782e7a91ec8a007a3b57b612a",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_0.png",
+      "sha256": "d924cf0a62b1f972f502a848c5489b0b122e7df18c222dba6942fc299d972493",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_0.png",
+      "sha256": "4a669fca81520b5df077351d988840d0110c331ff505b36797399ed52e093079",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_0.png",
+      "sha256": "494f987fabef6d427b0e3e1025cb313e88abb34f6a85a52c92966997331b3b5f",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_0.png",
+      "sha256": "d9e644809dd753a75a974c88d785d41b4c4691651dcf09904307b22fedbc00ea",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_0.png",
+      "sha256": "908e5a45aeb3637e0356460beeb274bd0e804613984fbf5506c76215971e2386",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_0.png",
+      "sha256": "991dfd2d514283d5e12f26e12682c85ce97cd45bc818ed4e78d59b55f71b01a4",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_0.png",
+      "sha256": "4d6bc60e15489abd7d955103616841f661ec67b4795ab8a46afcdf2932daaab1",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_1.png",
+      "sha256": "2224736bb46e2e03e7e58d20959cf0bf4bdb9aedc1488a33d2cf6339ce92db3d",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_1.png",
+      "sha256": "3a688132e0e467459e1f3b2415ed0c56c97bb993d2c954e401365c2f4b6f2309",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_1.png",
+      "sha256": "c2f9fab6fabe83962293bb0fa494c66e14bf19d7165b2ff1b3e2f3c483c3dead",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_1.png",
+      "sha256": "73907f93cae74f4f4d1cc849ae617232e799489825c2f60e7c7dad320e85d6e5",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_1.png",
+      "sha256": "47ae48cb9ae101a2b95ef8f122a17de197b5624bc83351c5c225dadd144144fe",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_1.png",
+      "sha256": "d214ff3dda4472ca9e914e80d075693393958d54d7e2fc9f595c3cb8fbb97e04",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_1.png",
+      "sha256": "2c3690bb4f4b91dc8dcfdd6392e3e925e1f6671e0b2cdba51cd8e962ed654ca7",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_1.png",
+      "sha256": "d25b6c22ab77c8b3b625684057b2b9df6b54d415175d6705f144997546ac9fe6",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_1.png",
+      "sha256": "c3e4a5e907a4849dd2d13cf966bd23f3f9df4ed55928c707c80259abcf82bf08",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_2.png",
+      "sha256": "9dcb6db34ed1be562ec91b5f01569e06fdc5fdd22177ffa8c517c549890f667f",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_2.png",
+      "sha256": "19c65981e438f38a0065f4e66df84a82b4503f537c6fa6b9fa75f0b0ce71bab0",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_2.png",
+      "sha256": "cac99f428463620cf7357816583ba60a5dbce95ed17029a540152ea20a331ad2",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_2.png",
+      "sha256": "8d8f70a172a3055d71e587604a2d4bc1f7ddf4ea95c258b1f91d6056b0cd1bd9",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_2.png",
+      "sha256": "3dc8671056d87a045f256206bbd0fc07830078c748da0bc43caad54cd3ee3db8",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_2.png",
+      "sha256": "fdbd33ecd3c0c7f9ae20bed6ac29b704ba419ef3b865189a67f4bf7b337f7871",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_2.png",
+      "sha256": "51f1c3ff23ccf0d0a53cf982ff417ccdbf3ffb79b8feb823313567b1211fcf00",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_2.png",
+      "sha256": "4276640c292e8ea85a7d4f94c8eee296db8c62a498e53162465c4bf4a134fd5f",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_2.png",
+      "sha256": "9308bf8237280c96a11aa3b8656f719621a1f79534a91b0d72b17c55a49e5b5f",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_3.png",
+      "sha256": "7cab2933b1cf0cdf85d36f12f65d2bfb5492ae2821ef87e96b1d2e2140ece330",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_3.png",
+      "sha256": "73cf0b7cbeead695f8edd41614401ac3a1ab039926bec876a720e9cbf32427a1",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_3.png",
+      "sha256": "a29f36c7fb52fba637d31263700c91b8a0984ca661315c6a7d016fb125fcd700",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_3.png",
+      "sha256": "1660459a63c9e1b5dfe13605531c13066f99a9207be4c6eb3e3fc5620d68fac8",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_3.png",
+      "sha256": "63aaa86f4266c7eff32b67b52171efcf5353208f80a78a885956ceadfdccfc0f",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_3.png",
+      "sha256": "0f43f7193a763d2336dcb5aa419b0b2183b2c8eb18f129a2eced92c202b2bb08",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_3.png",
+      "sha256": "e4798d25c308a195e49066ac034ec26e5940fd0b68f59dd39c635b7946ff1f46",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_3.png",
+      "sha256": "952836ba5e3de430fb0f56c25ea11ceeeae3df6f22193913ac41415870f5913c",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_3.png",
+      "sha256": "cd3230a0737a800d45fca9bf92010eb7539ed3c126b323b40f5fb10f228b11af",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_4.png",
+      "sha256": "dcfec0a81834a64addf30f89dbc775a932d68b3e10ddbd519486b0f29a472295",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_4.png",
+      "sha256": "a0f038ac5202b89fe100e8d10773593739320d32df694c515fba1d70e1e8563b",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_4.png",
+      "sha256": "15507512f36eea243ca1530ada09c9a4a88013d5cae342caac2816586494da38",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_4.png",
+      "sha256": "549dad1b9b12543023687600a025c46298d174756584547a7d2a28bd9e54a1d4",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_4.png",
+      "sha256": "289b45d2f8192aa166f5ee59f1ad48460b40957507bbef27ec2d2ba74a8a0d12",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_4.png",
+      "sha256": "923e44a232c8bcdbcd82de310ca1b4d576be3f04cbef94d9182a7626923406a6",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_4.png",
+      "sha256": "10cf7d7229883ff642b11fb9bfd867ac421e6ec079eb13c66dbf67e3c65fab4d",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_4.png",
+      "sha256": "d4b77c60ea5cc45d7802dbaa44c956369db16b4aedbe76ef36d8f4e3ae5e3593",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_4.png",
+      "sha256": "710e7589cf6a4b40b5e6eae963366ac629294d4ac96307395da13660b56a9305",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_5.png",
+      "sha256": "864918bd1c1bdcae24ba209ad931ff01507b5117595724156fb5911a12c003f5",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_5.png",
+      "sha256": "b90f598f32d9d55e40123fe1b4a1930f0dd873dc4a1057887020565ce13beeb4",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_5.png",
+      "sha256": "423c7a245ecc297bb74d6844c14853f830e78354ed773858976dfd43ed55f2dd",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_5.png",
+      "sha256": "3ec3f0175c5f457af6207aa7174961e365c71e9a198cd9b04d2544fc9129d95a",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_5.png",
+      "sha256": "a535021b98ac42f89e4b3b0b922d137fac70c278eab6f6381c282bdfc7b92197",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_5.png",
+      "sha256": "3ad4075302436e20f6d93be19fc5d2d8c6d2ee9f3534ee11581f5f6e54be62cf",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_5.png",
+      "sha256": "a56b57fb3cacbc06d0ee0746b4af15c13098d7cfa4f857d124f0d0afd70da705",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_5.png",
+      "sha256": "0103a318f68423aa492347b4e37cd99cdc2244868f0674595cf070eb31cc53d2",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_5.png",
+      "sha256": "63926a75fcd1a950af1f6e0daf90a822e711c1a7cd498e7dc6b456a4b43d8680",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_6.png",
+      "sha256": "120d1be782067ca1ed3e1e7e7404ef5d7bfeeb3c6d5893d6cfb2a1f04b864256",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_6.png",
+      "sha256": "a760635a68a5b789a361b158a1c6ca43fd3f15a9a6e71eb80e406dcbe3fe6cc9",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_6.png",
+      "sha256": "0c686fe7854ee0d1d83e200137487a3475d4e59bd4be5dd77f63d1227f8383a9",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_6.png",
+      "sha256": "a94106d4352cabb0f02f477cb04cb2cec34ee3e93fc051cc3134943e39af7eb6",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_6.png",
+      "sha256": "e445050b2c5703432206248edb1786d5d83cd69c4fc2e9bfe025dccc20ce5a92",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_6.png",
+      "sha256": "b6bd8bc2996568b4269bb95599c1f29da0a03f0d75694a6878cde9cec565da32",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_6.png",
+      "sha256": "4ca7cdb4f3676e937488252453cdb3471901ccc83a867f0bd5d114d2a55189b1",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_6.png",
+      "sha256": "834abf111ddbf2b672e864c66a7b5f70a9453b52d690fee6eb7f97207dff7e40",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_6.png",
+      "sha256": "23bcd491b5e3323b2983fd14006947b13a6530f8f6f6c2b86b006c4d85685014",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_gear_7.png",
+      "sha256": "0e732c37882e2d972ffe448e22b3e85adb1455166b70ffcdb11a3ba00fcde486",
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "living_water_0_7.png",
+      "sha256": "852ddb3e230817ae13d5b501dd4bd569c529a1999a7efd2f5368c9915aec849e",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_0_7.png",
+      "sha256": "a27977f2f7c3898bd4d1ebbc64249aa6944eab4f3ac3da2ef178760462781bf8",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_1_7.png",
+      "sha256": "3619f607278259a2a2a0a203946d6ec882a033908ccf3731963400f83a132878",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_1_7.png",
+      "sha256": "99bc052349f7ccc6ab2a4e2979cfcc8ad6524e732e54994797b26905cf79492e",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_water_2_7.png",
+      "sha256": "2354ae3daa8aa3de924c4cc5c01b905a708e7c58d8257a3d240d14beb0228463",
+      "pixels": [
+        64,
+        32
+      ]
+    },
+    {
+      "file": "living_surface_2_7.png",
+      "sha256": "e18bb28ff98cbf03ec1b103d7f0b96bc47f9e7c94556d6aa2243f7740fd2043e",
+      "pixels": [
+        64,
+        8
+      ]
+    },
+    {
+      "file": "living_tread_7.png",
+      "sha256": "2c8473408e8225d15bd3371ec1640c18228d2804f2baba85efa08d42fc4b9bc9",
+      "pixels": [
+        32,
+        8
+      ]
+    },
+    {
+      "file": "living_wake_7.png",
+      "sha256": "4dbd8c8f646d9fdd485af801a8df30c5ef9dfd065bc71c3891d6ed453f2a3e2d",
+      "pixels": [
+        32,
+        12
+      ]
+    },
+    {
+      "file": "living_casing.png",
+      "sha256": "db87d02bf3252bf54f6425a9065d08ebb9c8e0d348549d3912b90b651f62b5dc",
+      "pixels": [
+        64,
+        64
+      ]
+    }
+  ]
+}

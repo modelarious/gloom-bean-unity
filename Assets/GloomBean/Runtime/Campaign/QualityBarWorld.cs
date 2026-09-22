@@ -107,7 +107,12 @@ namespace GloomBean.Campaign
         public int EligibleCount=>GetComponentsInChildren<SpriteRenderer>(true).Count(QualityBarArt.Eligible);
         public int AddedColliders=>GetComponentsInChildren<Transform>(true).Where(t=>t.name.StartsWith("QualityBar visual /")).Sum(t=>t.GetComponents<Collider2D>().Length);
         public void Initialize(){session=GetComponentInParent<StageSession>();Scan();}
-        public void Scan(){foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
+        public void Scan(){
+            foreach(var water in GetComponentsInChildren<WaterVolume>(true))if(!water.GetComponent<QualityBarWaterDetail>())water.gameObject.AddComponent<QualityBarWaterDetail>().Initialize(water);
+            foreach(var belt in GetComponentsInChildren<Conveyor>(true))if(!belt.GetComponent<QualityBarConveyorDetail>())belt.gameObject.AddComponent<QualityBarConveyorDetail>().Initialize(belt);
+            foreach(var wheel in GetComponentsInChildren<Carousel>(true))if(!wheel.GetComponent<QualityBarCarouselDetail>())wheel.gameObject.AddComponent<QualityBarCarouselDetail>().Initialize(wheel);
+            foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRailDrive>())rail.gameObject.AddComponent<QualityBarRailDrive>().Initialize(rail);
+foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarSurface>())sr.gameObject.AddComponent<QualityBarSurface>().Initialize(sr);
             foreach(var sr in GetComponentsInChildren<SpriteRenderer>(true))if(QualityBarArt.Eligible(sr)&&!sr.GetComponent<QualityBarConstruction>())sr.gameObject.AddComponent<QualityBarConstruction>().Initialize(sr);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRail>())rail.gameObject.AddComponent<QualityBarRail>().Initialize(rail);
             foreach(var rail in GetComponentsInChildren<RailPath>(true))if(!rail.GetComponent<QualityBarRailConstruction>())rail.gameObject.AddComponent<QualityBarRailConstruction>().Initialize(rail);
