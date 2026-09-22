@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "EXPERIMENTAL_STATIC_GATES_PASS_NATIVE_UNKNOWN",
+  "branch": "experiment/grammar-art-mvp",
+  "worktree": "/home/modelarious/Projects/gloom-bean-grammar-mvp",
+  "parent_branch": "visual/qualitybar-q1",
+  "parent_revision": "0cf69af1dc5e50028eaf876c235ef3aee811296f",
+  "implementation_commit": "d2e74aa29c6031cd41c80ef9b9415f428e7d58c0",
+  "generated_seeds": [137, 911, 2026, 4096],
+  "generated_plan_count": 4,
+  "grammar_shape": "ENTRY -> FORWARD -> KEY -> TURN -> ALTERNATE_RETURN -> EXIT, plus possession source and optional Mercy branch",
+  "art_realization": "Existing CampaignScenery -> V6WorldDressing + BroadWorldDressing + QualityBarWorld",
+  "authored_atlas_level_files_modified": 0,
+  "verified_gates": ["GM01", "GM02", "GM03", "GM04", "GM05", "GM06"],
+  "first_failing_gate": "GM07",
+  "unknown": [
+    "Unity C# import/compilation on the licensed Windows editor",
+    "native traversal of a generated plan",
+    "native Turn/alternate-return behavior",
+    "240x160 visual quality/readability of current art on generated geometry"
+  ],
+  "blocker": "DESKTOP-S717DNM was offline during this implementation pass",
+  "next_action": "When the Windows host is available, import this exact branch, exercise at least one full generated route, capture all four generated rooms at 240x160, and convert recurring visual failures into reusable grammar/art rules rather than coordinate patches."
+}

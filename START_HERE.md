@@ -1,3 +1,7 @@
+# THIS BRANCH: Grammar + current-art MVP
+
+This worktree is the isolated `experiment/grammar-art-mvp` experiment, not the active authored visual-overhaul branch. Start with `Documentation/GrammarMVP/START_HERE.md`, `PLAN.md`, and `GATES.md`. The authored Host Cycle remains intact. Static gates GM01-GM06 are met at the current checkpoint; native Windows Unity/art inspection GM07 remains UNKNOWN.
+
 # Active whole-game quality work
 
 **Use `visual/qualitybar-q1` at `C:\Users\micha\Projects\GloomBean QualityBar Q1`.** Read `Documentation/QualityBarQ1/Review/README.md` and `Documentation/Continuity/CURRENT_CHECKPOINT.json` first. Q8 is a current native whole-game graphical update; the concept-quality goal remains unmet. Public GitHub source push works. Do not reconstruct old chapters, the repository, or solved access problems. The older overview below is historical background, not the current next-work pointer.
