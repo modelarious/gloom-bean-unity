@@ -1,0 +1,17 @@
+BEGIN GB-B1 The Kindly Usher
+PASS GB-B1 walk 12 | (11.79, 0.76) feet=0.01 hp=6
+PASS GB-B1 walk 23 | (22.81, 0.76) feet=0.01 hp=6
+EVENT t=4.82 boss-phase The Kindly Usher:1
+PASS GB-B1 Usher act I: overlap two scales | (23.13, 0.76) feet=0.01 hp=6
+PASS GB-B1 walk 7 | (7.19, 2.51) feet=1.76 hp=6
+PASS GB-B1 Usher strings Host | (7.19, 2.51) feet=1.76 hp=6
+PASS GB-B1 thread 17 length 4.3 | (20.78, 12.22) feet=11.47 hp=6
+EVENT t=11.95 boss-phase The Kindly Usher:2
+PASS GB-B1 Usher act II: real chandelier impact | (24.68, 2.66) feet=1.91 hp=6
+PASS GB-B1 walk 7 | (7.19, 0.75) feet=0.00 hp=6
+PASS GB-B1 coat-check moth | (7.19, 0.75) feet=0.00 hp=6
+PASS GB-B1 walk 19 | (18.80, 0.75) feet=0.00 hp=6
+EVENT t=26.24 boss-phase The Kindly Usher:3
+PASS GB-B1 walk 42 | (40.01, 0.30) feet=0.00 hp=6
+PASS GB-B1 Usher defeated by backstage route | (40.01, 0.30) feet=0.00 hp=6
+PASS GB-B1 practice does not write stage or Mercy progress | (40.01, 0.30) feet=0.00 hp=6

@@ -1,0 +1,96 @@
+BEGIN GB-L08 The Garden of No Seasons
+PASS GB-L08 walk 9 | (8.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (8.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 melt through changed body footprint | (8.87, 0.17) feet=0.01 hp=6
+PASS GB-L08 walk 19 | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (19.22, 0.17) feet=0.01 hp=6
+PASS GB-L08 reform with conserved volume | (19.22, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 20 | (19.81, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 30.2 | (29.98, 0.76) feet=0.01 hp=6
+PASS GB-L08 jump onto dynamic support 34 | (33.76, 1.35) feet=0.60 hp=6
+PASS GB-L08 walk 34.8 | (34.58, 1.35) feet=0.60 hp=6
+PASS GB-L08 jump onto dynamic support 39 | (38.77, 0.81) feet=0.06 hp=6
+PASS GB-L08 walk 43 | (42.79, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Gullet | (42.79, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Gullet | (42.79, 0.75) feet=0.00 hp=6
+EVENT t=9.18 terrain-swallowed GB-L08-tile-44.5--0.5
+PASS GB-L08 swallow an actual structural tile | (42.81, 0.71) feet=-0.04 hp=6
+PASS GB-L08 pantry catches the displaced floor | (42.81, -1.19) feet=-1.94 hp=6
+PASS GB-L08 jump 45.5 / -0.7 peak 0.42 | (45.29, 0.05) feet=-0.70 hp=6
+PASS GB-L08 jump onto dynamic support 49 | (48.76, 0.75) feet=0.00 hp=6
+PASS GB-L08 walk 55 | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Root | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Root | (54.78, 0.75) feet=0.00 hp=6
+PASS GB-L08 required tenant present: Root | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 focus Root | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 Root acquired before soil route | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 grow from adjacent wet substrate | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (55.00, -4.00) | (54.80, 0.75) feet=0.00 hp=6
+TRACE root tip=(63.06, -3.98) target=(65.00, -4.00)
+PASS GB-L08 steer root to (65.00, -4.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (65.00, 1.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 steer root to (65.50, 1.00) | (54.80, 0.75) feet=0.00 hp=6
+PASS GB-L08 body follows root route into exit pocket | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 root arrival has full body clearance | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 required tenant present: Gullet | (65.30, 0.96) feet=0.21 hp=6
+PASS GB-L08 focus Gullet | (65.30, 0.93) feet=0.18 hp=6
+PASS GB-L08 required tenant present: Gullet | (65.30, 0.93) feet=0.18 hp=6
+PASS GB-L08 focus Gullet | (65.30, 0.93) feet=0.18 hp=6
+EVENT t=19.52 terrain-rehomed GB-L08-tile-44.5--0.5
+PASS GB-L08 rehome the same structural tile | (65.31, 0.86) feet=0.11 hp=6
+PASS GB-L08 jump onto dynamic support 69 | (68.75, 1.75) feet=1.00 hp=6
+PASS GB-L08 jump onto dynamic support 74 | (73.75, 0.76) feet=0.01 hp=6
+PASS GB-L08 jump onto dynamic support 78 | (77.75, 2.40) feet=1.65 hp=6
+PASS GB-L08 walk 79.3 | (79.09, 2.40) feet=1.65 hp=6
+PASS GB-L08 jump onto dynamic support 84 | (83.77, 2.62) feet=1.87 hp=6
+PASS GB-L08 walk 85.3 | (85.09, 2.63) feet=1.88 hp=6
+PASS GB-L08 jump onto dynamic support 90 | (89.76, 2.84) feet=2.09 hp=6
+PASS GB-L08 walk 91.3 | (91.08, 2.84) feet=2.09 hp=6
+PASS GB-L08 jump onto dynamic support 96 | (95.77, 1.05) feet=0.30 hp=6
+PASS GB-L08 walk 97.3 | (97.10, 1.05) feet=0.30 hp=6
+PASS GB-L08 jump onto dynamic support 101 | (100.76, 2.75) feet=2.00 hp=6
+PASS GB-L08 jump 105 / 4 peak 4.37 | (104.78, 4.75) feet=4.00 hp=6
+PASS GB-L08 walk 106.8 | (106.58, 4.75) feet=4.00 hp=6
+PASS GB-L08 season key | (106.58, 4.75) feet=4.00 hp=6
+PASS GB-L08 jump onto dynamic support 113 | (112.76, 6.75) feet=6.00 hp=6
+PASS GB-L08 walk 115.6 | (115.41, 6.75) feet=6.00 hp=6
+PASS GB-L08 bands drift after the Turn | (115.42, 6.75) feet=6.00 hp=6
+PASS GB-L08 walk 104 | (104.20, 4.76) feet=4.01 hp=6
+PASS GB-L08 jump onto dynamic support 96 | (96.25, 3.06) feet=2.31 hp=6
+PASS GB-L08 jump onto dynamic support 90 | (90.23, 4.07) feet=3.32 hp=6
+PASS GB-L08 jump onto dynamic support 84 | (84.24, 4.15) feet=3.40 hp=6
+PASS GB-L08 jump onto dynamic support 78 | (78.25, 3.30) feet=2.55 hp=6
+PASS GB-L08 jump onto dynamic support 74 | (74.16, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 69 | (69.24, 1.75) feet=1.00 hp=6
+PASS GB-L08 jump onto dynamic support 65.5 | (65.53, 0.83) feet=0.08 hp=6
+PASS GB-L08 required tenant present: Root | (65.53, 0.83) feet=0.08 hp=6
+PASS GB-L08 focus Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 required tenant present: Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 focus Root | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 Root acquired before soil route | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 grow from adjacent wet substrate | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 steer root to (65.00, -4.00) | (65.53, 0.80) feet=0.05 hp=6
+TRACE root tip=(64.88, -3.88) target=(55.00, -4.00)
+TRACE root tip=(61.61, -3.92) target=(55.00, -4.00)
+PASS GB-L08 steer root to (55.00, -4.00) | (65.53, 0.80) feet=0.05 hp=6
+TRACE root tip=(55.05, -1.20) target=(55.00, 1.00)
+TRACE root tip=(55.05, -1.20) target=(55.00, 1.00)
+PASS GB-L08 steer root to (55.00, 1.00) | (65.53, 0.80) feet=0.05 hp=6
+PASS GB-L08 body follows root route into exit pocket | (55.00, 0.89) feet=0.14 hp=6
+PASS GB-L08 root arrival has full body clearance | (55.00, 0.89) feet=0.14 hp=6
+PASS GB-L08 walk 47.8 | (47.99, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 41 | (41.23, 0.75) feet=0.00 hp=6
+PASS GB-L08 walk 39 | (39.21, 0.75) feet=0.00 hp=6
+PASS GB-L08 jump onto dynamic support 34 | (34.24, 1.35) feet=0.60 hp=6
+PASS GB-L08 jump onto dynamic support 29 | (29.23, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 20 | (20.22, 0.76) feet=0.01 hp=6
+PASS GB-L08 walk 18.5 | (18.70, 0.76) feet=0.01 hp=6
+PASS GB-L08 return path needs a wax source | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 required tenant present: Wax | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 focus Wax | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 Wax source acquired | (18.69, 0.76) feet=0.01 hp=6
+PASS GB-L08 melt through changed body footprint | (18.69, 0.17) feet=0.01 hp=6
+PASS GB-L08 walk 5 | (5.06, 0.17) feet=-0.58 hp=6
+PASS GB-L08 walk 2 | (3.12, 0.75) feet=0.00 hp=6
+PASS GB-L08 complete actual stage | (3.12, 0.75) feet=0.00 hp=6
+PASS GB-L08 practice writes no earned progress | (3.12, 0.75) feet=0.00 hp=6

@@ -1,0 +1,50 @@
+BEGIN GB-L15 Procession of Closed Lids
+PASS GB-L15 walk 6.5 | (6.29, 0.76) feet=0.01 hp=6 twin=none
+PASS GB-L15 undertaker closes the coffin | (7.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 12.5 | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 pallbearer docks within a real flip | (13.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 16.4 | (16.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin rides moving pallbearers | (23.52, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 28 | (28.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 30 | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 seamstress can share the coffin | (30.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 41 | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (40.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (40.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 rigid coffin acquired | (42.00, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 quarter turn changes footprint | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 horizontal footprint beneath the bearing head | (43.50, 0.56) feet=0.06 hp=6 twin=none
+EVENT t=27.47 bearing-released Inspection bearing press
+PASS GB-L15 actual bracing releases the counterweight | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 counterweight physically retracts | (43.50, 0.56) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 47.2 | (48.54, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 pallbearer docks within a real flip | (47.92, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 50.4 | (50.64, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin rides moving pallbearers | (60.03, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 63 | (63.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 78.8 | (78.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 procession Keyling | (78.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 return silences bells | (78.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 64 | (63.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 required tenant present: Stitch | (63.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 focus Stitch | (63.61, 1.06) feet=0.06 hp=6 twin=none
+SEAM picked=procession-b@(58.72, 8.77, 0.00) focus=Stitch aim=(0.00, 1.00)
+PASS GB-L15 catch visible procession-b seam | (63.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 thread connects two real edges | (63.61, 1.06) feet=0.06 hp=6 twin=none
+EVENT t=60.82 stitch-tug Second procession banner
+PASS GB-L15 physical fold reaches 0 | (63.61, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 40 | (40.33, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 28 | (28.33, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 required tenant present: Stitch | (28.33, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 focus Stitch | (28.33, 1.06) feet=0.06 hp=6 twin=none
+SEAM picked=procession-a@(23.19, 7.49, 0.00) focus=Stitch aim=(0.00, 1.00)
+PASS GB-L15 catch visible procession-a seam | (28.33, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 thread connects two real edges | (28.33, 1.06) feet=0.06 hp=6 twin=none
+EVENT t=73.23 stitch-tug First procession banner
+PASS GB-L15 physical fold reaches 0 | (28.33, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 coffin crosses real ground to 6 | (5.29, 1.06) feet=0.06 hp=6 twin=none
+PASS GB-L15 walk 2 | (3.18, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L15 stage completes through physical exit or boss solution | (3.18, 0.75) feet=0.00 hp=6 twin=none
+PASS GB-L15 practice writes no earned progress | (3.18, 0.75) feet=0.00 hp=6 twin=none

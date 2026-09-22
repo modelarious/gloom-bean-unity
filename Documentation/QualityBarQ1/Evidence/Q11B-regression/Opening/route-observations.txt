@@ -1,0 +1,87 @@
+PASS walk to 6.7 | (6.46, 0.75)
+TRACE jump x=6.45785 feet=0.004999876 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=7.0096 feet=1.253333 vy=9 ground=False lastJump=False lastHeld=True
+TRACE jump x=7.5596 feet=1.955 vy=5.6 ground=False lastJump=False lastHeld=True
+TRACE jump x=8.069818 feet=2.316667 vy=2.200001 ground=False lastJump=False lastHeld=True
+TRACE jump x=8.502129 feet=2.308889 vy=-1.766666 ground=False lastJump=False lastHeld=True
+TRACE jump x=8.767018 feet=1.933889 vy=-5.166666 ground=False lastJump=False lastHeld=True
+PASS jump to 9.5 @ 1.6 peak=2.37 | (8.90, 2.35)
+PASS walk to 11.6 | (11.35, 2.35)
+TRACE jump x=11.34908 feet=1.604996 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=11.81783 feet=2.703329 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=12.36782 feet=3.461663 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=12.91782 feet=3.879996 vy=2.766667 ground=False lastJump=False lastHeld=True
+TRACE jump x=13.43634 feet=3.958329 vy=-0.6333328 ground=False lastJump=False lastHeld=True
+TRACE jump x=13.82491 feet=3.696663 vy=-4.033333 ground=False lastJump=False lastHeld=True
+TRACE jump x=14.1103 feet=3.094996 vy=-7.433332 ground=False lastJump=False lastHeld=True
+PASS jump to 14.9 @ 2.6 peak=3.969996 | (14.26, 3.40)
+PASS walk to 20.4 | (20.16, 3.19)
+PASS walk to 22 | (21.75, 0.76)
+TRACE jump x=21.74748 feet=0.01188982 vy=-12.9 ground=False lastJump=False lastHeld=False
+TRACE jump x=22.28998 feet=0.943278 vy=10.13333 ground=False lastJump=False lastHeld=True
+TRACE jump x=22.83998 feet=1.758278 vy=6.733334 ground=False lastJump=False lastHeld=True
+TRACE jump x=23.33294 feet=2.233278 vy=3.333334 ground=False lastJump=False lastHeld=True
+TRACE jump x=23.74615 feet=2.357723 vy=-0.6333328 ground=False lastJump=False lastHeld=True
+TRACE jump x=23.99936 feet=2.096056 vy=-4.033333 ground=False lastJump=False lastHeld=True
+TRACE jump x=24.18535 feet=1.601612 vy=-1 ground=True lastJump=False lastHeld=True
+PASS jump to 24.7 @ 1.5 peak=2.369389 | (24.19, 2.35)
+PASS walk to 43 | (42.75, -3.25)
+PASS world contact permanently corrupts run | (42.75, -3.25)
+PASS source contact acquires Echo | (42.75, -3.25)
+PASS walk to 58.2 | (57.96, -3.25)
+PASS Echo reopens real forward door | (57.96, -3.25)
+TRACE jump x=57.96395 feet=-3.995001 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=58.41801 feet=-2.896667 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=58.62171 feet=-2.138334 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=58.92171 feet=-1.720001 vy=2.766667 ground=False lastJump=False lastHeld=True
+TRACE jump x=59.42417 feet=-1.641667 vy=-0.6333328 ground=False lastJump=False lastHeld=True
+TRACE jump x=59.84251 feet=-1.903334 vy=-4.033333 ground=False lastJump=False lastHeld=True
+PASS jump to 61 @ -2.2 peak=-1.630001 | (60.06, -1.43)
+PASS walk to 62.5 | (62.22, -1.45)
+TRACE jump x=62.2239 feet=-2.195 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=62.71547 feet=-1.096667 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=63.26547 feet=-0.3383337 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=63.81548 feet=0.07999969 vy=2.766667 ground=False lastJump=False lastHeld=True
+TRACE jump x=64.35543 feet=0.1383331 vy=-1.199999 ground=False lastJump=False lastHeld=True
+TRACE jump x=64.68581 feet=-0.1800002 vy=-4.599999 ground=False lastJump=False lastHeld=True
+PASS jump to 65.6 @ -0.7 peak=0.1699997 | (64.89, 0.15)
+PASS walk to 67.5 | (67.26, 0.05)
+TRACE jump x=67.2581 feet=-0.6950206 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=67.71793 feet=0.4033128 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=68.26794 feet=1.161646 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=68.81794 feet=1.57998 vy=2.766667 ground=False lastJump=False lastHeld=True
+TRACE jump x=69.29153 feet=1.658313 vy=-0.6333328 ground=False lastJump=False lastHeld=True
+TRACE jump x=69.63889 feet=1.396646 vy=-4.033333 ground=False lastJump=False lastHeld=True
+PASS jump to 70.6 @ 0.8 peak=1.66998 | (69.89, 1.65)
+PASS walk to 72.5 | (72.26, 1.55)
+TRACE jump x=72.25842 feet=0.8049792 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=72.71794 feet=1.903313 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=73.26794 feet=2.661646 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=73.81795 feet=3.07998 vy=2.766667 ground=False lastJump=False lastHeld=True
+TRACE jump x=74.29153 feet=3.158313 vy=-0.6333328 ground=False lastJump=False lastHeld=True
+TRACE jump x=74.63889 feet=2.896646 vy=-4.033333 ground=False lastJump=False lastHeld=True
+PASS jump to 75.6 @ 2.3 peak=3.16998 | (74.89, 3.15)
+PASS walk to 77.5 | (77.26, 3.05)
+TRACE jump x=77.25842 feet=2.304979 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=77.80961 feet=3.553313 vy=9 ground=False lastJump=False lastHeld=True
+TRACE jump x=78.35961 feet=4.25498 vy=5.6 ground=False lastJump=False lastHeld=True
+TRACE jump x=78.90829 feet=4.616646 vy=2.200001 ground=False lastJump=False lastHeld=True
+TRACE jump x=79.35712 feet=4.638313 vy=-1.199999 ground=False lastJump=False lastHeld=True
+TRACE jump x=79.68706 feet=4.31998 vy=-4.599999 ground=False lastJump=False lastHeld=True
+PASS jump to 80.6 @ 3.8 peak=4.66998 | (79.89, 4.65)
+PASS walk to 82.5 | (82.26, 4.55)
+TRACE jump x=82.25842 feet=3.804979 vy=0 ground=True lastJump=False lastHeld=False
+TRACE jump x=82.71794 feet=4.903313 vy=9.566667 ground=False lastJump=False lastHeld=True
+TRACE jump x=83.26794 feet=5.661646 vy=6.166667 ground=False lastJump=False lastHeld=True
+TRACE jump x=83.90829 feet=6.116646 vy=2.200001 ground=False lastJump=False lastHeld=True
+TRACE jump x=84.35712 feet=6.138313 vy=-1.199999 ground=False lastJump=False lastHeld=True
+TRACE jump x=84.68706 feet=5.81998 vy=-4.599999 ground=False lastJump=False lastHeld=True
+PASS jump to 85.6 @ 5.3 peak=6.16998 | (84.89, 6.15)
+PASS Keyling collected by actual overlap | (84.89, 6.15)
+PASS walk to 94.9 | (94.62, 6.05)
+PASS interact pulls World Nail | (94.68, 6.05)
+PASS walk to 27 | (27.25, 6.06)
+PASS walk to 2 | (3.19, 0.75)
+PASS Sunday Best entrance-to-exit with production inputs | (3.19, 0.75)
+PASS Mercy never required for ordinary clear | (3.19, 0.75)
+PASS ordinary completion persisted in isolated real save | (3.19, 0.75)
