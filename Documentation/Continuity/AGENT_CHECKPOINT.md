@@ -8,19 +8,13 @@ The complete native campaign is implemented: twenty stages, five world bosses, f
 
 The original user asked for a separately committed reusable platformer foundation, then implementation of the 44-page atlas. The independent `foundation` branch and immutable original `foundation-v0.1.0` tag remain intact. Gloom Bean is not DungeonForge's top-down generator.
 
-## 2. Canonical authority and first read
-
-Canonical project/user context: `modelarious/obsidian-notes`, main. Global skills: `modelarious/chatgpt-skills`, main. Load current `global/cloud-context/SKILL.md`, follow HOME and the explicit registry slug `gloom-bean-unity`, then complete requirements and relevant records. GitHub commits are durable ingestion; no legacy ACK daemon is needed. Read current `global/unlazy/SKILL.md` for substantial work. Shared procedure versions are not copied into this project as competing globals.
+## 2. Source atlas
 
 The source atlas identity is `c006f063e336651e89109251fbc74cac1114ca8d939867acdd209646a90bc5fc`. Its reference PDF and supplied character image are included in the delivered archive. Normative source wording stays unchanged. The atlas's schematic layouts are not final tile-accurate production maps. New proposals and human judgements must not silently become decided requirements.
 
-## 3. One bounded access probe
+## 3. Working directories
 
-Discover only the currently needed connector schema. The known Windows route is SentinelX `sentinel_script_run` with `interpreter=python3` for filesystem/Git and `powershell` for scheduled tasks. The observed enrolled host is `win-desktop-s717dnm` / `DESKTOP-S717DNM`; verify the returned operational host rather than using an old ephemeral session ID.
-
-Run `python Tools/agent_status.py --probe-write` in the existing project. It checks HEAD, dirty/staged state, source identity, checkpoint/request receipts and a reversible scoped write. Current task/process observations are read-only. An absent historical tool name is not a revoked permission. A real permission or policy denial must be respected; never bypass it.
-
-The main worktree is `C:\Users\micha\Projects\GloomBeanUnity`; the independent base is `C:\Users\micha\Projects\GloomBeanFoundation`. These are observed execution paths, not stronger authority than the registry. Probe them before broad disk/history searches. Do not use SentinelX temporary script paths, old process IDs or a cached virtualenv executable as authority.
+The main worktree is `C:/Users/micha/Projects/GloomBeanUnity`. The independent base is `C:/Users/micha/Projects/GloomBeanFoundation`.
 
 ## 4. Native Unity is already available
 
@@ -107,7 +101,7 @@ Human judgement of controller mapping, feel, comprehension, art, audio mix and p
 
 ## 12. Close without losing the work position
 
-Update the actual next gate, candidate, finished reports and any active task in CURRENT_CHECKPOINT before stopping. Refresh RELEASE_STATUS from measured evidence. Publish an engineering-journal entry for meaningful work, preserving failed attempts and limitations. Commit reviewed owned files, retrieve a complete verified history/package, then capture the substantial result through canonical GitHub ingress and update the semantic project record.
+
 
 Read back the canonical commit. No ACK file is required. Do not claim background implementation after the response; completed native jobs and manual/publication boundaries must be explicit. When another agent resumes, HOME -> Gloom Bean entry -> current JSON -> bounded machine probe must reach the correct work immediately.
 
