@@ -38,7 +38,7 @@ Use a separate branch/worktree for actual concurrent workers; two connectors poi
 
 Before long builds, host/tool changes or context exhaustion, commit the meaningful owned unit. A clearly labeled WIP commit is better than losing uncommitted work while waiting for a whole release. `Tools/checkpoint_work.py --expected-head <observed-head> --message <message> --paths <explicit-owned-paths>` refuses an unexpected HEAD, pre-existing staged changes and unsafe paths. It records the commit and verifies a complete-history bundle under `.continuity/`.
 
-Do not use a blind `git add .`. Preserve another worker's files. Never stage credentials, private saves, license-bearing logs or caches. Report local commit, retrieved bundle, canonical context and public source push separately. The user explicitly authorized PUBLIC visibility for the intended `modelarious/gloom-bean-unity` repo; do not silently recreate a private request.
+Do not use a blind `git add .`. Preserve another worker's files. Never stage credentials, private saves, license-bearing logs or caches. The user explicitly authorized PUBLIC visibility for the intended `modelarious/gloom-bean-unity` repo; do not silently recreate a private request.
 
 ## 7. The acceptance layers are deliberately different
 
@@ -63,7 +63,6 @@ Never run a visible UI journey concurrently with another visible ending test. Th
 | Symptom | Established interpretation / treatment |
 |---|---|
 | Old summary says a world is absent | Compare actual HEAD, worktree, current request and newest report; source survived multiple failed chats. |
-| Historical tool unavailable by name | Discover current schema and perform the bounded probe; do not infer revoked authorization. |
 | Unity entitlement exit under SYSTEM | Reuse licensed-user runner; no credential/licence extraction. |
 | Fixture jump passes but route stalls | Inspect actual headroom, support and return-only geometry. |
 | Pendulum crosses target with no collision | World-anchored joint collision configuration matters. |
@@ -98,12 +97,6 @@ The workbench and `MovementTuning.asset` provide the shortest loop. Safe static 
 Keep secrets optional. Do not restore the cute body during normal play. The full set of twenty canonical Mercies restores it only in the ending. Local gimmicks and world-specific Turns must remain meaningful; not every Turn needs a timer. Do not reduce fifteen systemic possessions to fifteen colored door keys. The first corruption is a permanent narrative/state change, not an equipable ability.
 
 Human judgement of controller mapping, feel, comprehension, art, audio mix and pacing remains manual. Do not claim those gates from native scripts. Conversely, absence of a manual judgement is not evidence that working code or a durable user requirement is missing.
-
-## 12. Close without losing the work position
-
-
-
-Read back the canonical commit. No ACK file is required. Do not claim background implementation after the response; completed native jobs and manual/publication boundaries must be explicit. When another agent resumes, HOME -> Gloom Bean entry -> current JSON -> bounded machine probe must reach the correct work immediately.
 
 ### Large delivery transport, observed M1
 
